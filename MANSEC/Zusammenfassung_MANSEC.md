@@ -1,8 +1,8 @@
-#MANSEC - Zusammenfassung
+# MANSEC - Zusammenfassung
 
-##Einführung in Information Security Management
+## Einführung in Information Security Management
 
-###Definitionen
+### Definitionen
 
 Sicherheit = CIA ; Non-Repudiation = nR
 >**CIA**:
@@ -12,7 +12,7 @@ Sicherheit = CIA ; Non-Repudiation = nR
 
 **Triple "A"**: Authentication, Authorization, Accounting
 
-###Dimensionen
+### Dimensionen
 
 * Legal, Organisatorisch, Menschlich (inkl. Usability) und Technologisch
 * **Management**: Managers (Kategorien) und Gemeinschaften
@@ -21,7 +21,7 @@ Sicherheit = CIA ; Non-Repudiation = nR
 * Sicherheit & Sicherheits**gefühl** -> wie schliesst man die Lücke?
 * **Handelnd**: Maschine vs. Mensch
 
-###Management
+### Management
 
 * Rollen von Managern (Informierend, Interpersonell, Entscheidend)
 * Führer (Leadership) und Manager: Unterschied?
@@ -37,7 +37,7 @@ Sicherheit = CIA ; Non-Repudiation = nR
 
 <img src="PlanningControllingLink.png" width="400">
 
-###Problemlösungsprozess
+### Problemlösungsprozess
 
 1. Erkenne und definiere das Problem
 2. Sammle Fakten und stelle Vermutungen auf
@@ -48,7 +48,7 @@ Sicherheit = CIA ; Non-Repudiation = nR
 
 <img src="CorrectingDeviations.png" width="500">
 
-###Grundsätze des Information Security Managements
+### Grundsätze des Information Security Managements
 
 1. Planung / Planning
 2. Strategie / Policy
@@ -56,8 +56,8 @@ Sicherheit = CIA ; Non-Repudiation = nR
 4. Schutz / Protection
 5. Projekte
 
-###Managing People - Technology Development Process
-####Charakteristiken des Personals in Beziehung zum Prozesszyklus
+### Managing People - Technology Development Process
+#### Charakteristiken des Personals in Beziehung zum Prozesszyklus
 
 * **Inventor (Erfinder)**: Persönlichkeiten vom "Go West Type", kreativ, akzeptieren keine Grenzen oder Einschränkungen *(Happy that we can... that it works...)*
 * **Early Adapters and Evangelists**: Erste Integration, Experten, diese Personen haben eine Mission
@@ -67,7 +67,7 @@ Sicherheit = CIA ; Non-Repudiation = nR
 
 Diese Technologie spielt bei diesen Charakteren keinen Einfluss (Autos, Nuklearenergie, Computer, Sicherheit, ...)
 
-###Trends in Industrie und Nachforschung
+### Trends in Industrie und Nachforschung
 
 Die Philosophie der Information Security hat sich in der Vergangenheit häufig geändert. 
 
@@ -95,7 +95,7 @@ Die Philosophie der Information Security hat sich in der Vergangenheit häufig g
 22. **Reshaping surveillance or revolution**: Bürger werden *data space ruling* nicht mehr akzeptieren (könnte vor 2020 passieren);
 23. zur gleichen Zeit: **Nationalization of IT**: Versüche, um politische Cybergrenzen aufzubauen z.Bsp. China; VPN und Proxy? 
 
-###Basic Information Security Technologies
+### Basic Information Security Technologies
 
 **[Beispiel von WCK Lancelot]**
 
@@ -122,7 +122,7 @@ Die Philosophie der Information Security hat sich in der Vergangenheit häufig g
 * The internal and global thread
 * Computer attack and defence
 
-####Der neue Security Officer 2016++
+#### Der neue Security Officer 2016++
 
 Die **Rolle eines Security Officer** wird sich entwicklen:
 
@@ -142,7 +142,7 @@ Was ist einem Security Officer heute **von Bedeutung**:
 * Überbetriebliche Akzeptanz und Glaubwürdigkeit
 * Fähig das machbare zu erledigen und sich in einer Risikosituation nicht zu beschweren oder verzweifeln
 
-####Ist die Qualität eines Security Officers heutzutage messbar?
+#### Ist die Qualität eines Security Officers heutzutage messbar?
 
 **Voraussetzungen**:
 
@@ -161,7 +161,7 @@ Was ist einem Security Officer heute **von Bedeutung**:
 * **Ziel ist, Multi-Unternehmen-Support für akzeptierte Evaluation der Wirksamkeit**
 * **führt zu Fortschritt im praktischen Security Management**
 
-###Conclusion (nach Hämmerli)
+### Conclusion (nach Hämmerli)
 
 1. Security is approaching the bureaucratic and purity phase.2. Organisational issues: Major tools are risk assessment methodology, standardsand frameworks for governance and compliance.3. Technical issues: Security system integration (e.g. log correlation), improvedsecurity management tools up to security cockpit, new and improved security systems components. 
 4. Outsourcing of security is unavoidable for SME. Large companies outsourcesecurity in granular steps without noticing it.5. The security office is-promoter, coach, communicator of the security messages as well as police. -changing from a technocrat to a business enabler.-mastering laws and regulations (better know them before)
