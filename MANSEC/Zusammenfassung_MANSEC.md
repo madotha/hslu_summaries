@@ -167,3 +167,38 @@ Was ist einem Security Officer heute **von Bedeutung**:
 4. Outsourcing of security is unavoidable for SME. Large companies outsourcesecurity in granular steps without noticing it.5. The security office is-promoter, coach, communicator of the security messages as well as police. -changing from a technocrat to a business enabler.-mastering laws and regulations (better know them before)
 6. Risk Control is a kind of “quality assurance of risk management”.7. The security dimension of new trends must be studied well:**SCADA Security, Application Security, Mobile Device Security, IDM and Entitlement Management, Outsourcing, Internal Crime, Data Leakage Prevention, Virtualization Security, Cloud Security, USB AutoRunSecurity, PDF Security ...** Measurement of soft factor security (effectiveness, communication skills etc.) are important for progressing in information security management. It could be also a mean to avoid the nomination of weak security officer to give free hands to the CIO ...)8. The CISO job will change dramatically again, when corporation just use cloudservices. Still IT-Security remain in the company, but with more human and organizational tasks.
 
+## Über das Termpaper
+
+> **Research / Recherche** = neues Wissen generieren;
+> Systematische Nachforschungen, um Fakten aufzustellen und zu neuen Schlüssen zu kommen.
+
+**Nachforschungsmethoden:**
+
+* Angewandte Nachforschungen (wie auf 5 Beispielen auf den Folien)
+* Kern- (Basis-) Nachforschungen (wie trad. Universitäten)
+
+**Identifizieren von Nachforschungsthemen:**
+
+* Lückenanalyse <-> Use Case
+* Hypothese (Problemstellung) -> Nachforschungsfragen
+
+**Must-Outcome:** Grobe Beantwortung zur Lückenanalyse (Gap Analysis) oder detaillierte Antworten auf Nachforschungsfragen.
+
+### Gültige Punkte einer Nachforschung
+
+* **Referenzen:** Zwingend notwendig gegen Plagiate!
+* **Nachvollziehbarkeit:** Eine andere Person mit ähnlichen Quellen und Methodik sollte ähnliche Resultate erhalten, wenn sie die gleiche Studie durchführt.
+* **Struktur:** Inhalt, wie viele Seiten pro Thema etc.
+* **Planung** des Ziels
+
+Das Wichtigste ist das **Ziel**, ein schlechtes Ziel kann nicht zu einem guten Resultat führen (Ziel muss optimal sein). Dem Dozenten müssen folgende Punkte vorgelegt werden:
+
+* Quellen
+* Das Ziel
+* Inhalt (Index) mit Seiten pro Unterkapitel (kann Fokus kreiieren)
+* Methodik
+
+<img src="img/ModelTarget.png" width="600">
+
+## Security Policy
+
