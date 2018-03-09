@@ -35,7 +35,7 @@ Sicherheit = CIA ; Non-Repudiation = nR
 
 **Planning**: strategic, operational, tactical
 
-<img src="PlanningControllingLink.png" width="400">
+<img src="img/PlanningControllingLink.png" width="400">
 
 ### Problemlösungsprozess
 
@@ -46,7 +46,7 @@ Sicherheit = CIA ; Non-Repudiation = nR
 
 **Abbildung**: Abweichungen korrigieren
 
-<img src="CorrectingDeviations.png" width="500">
+<img src="img/CorrectingDeviations.png" width="500">
 
 ### Grundsätze des Information Security Managements
 
@@ -99,9 +99,9 @@ Die Philosophie der Information Security hat sich in der Vergangenheit häufig g
 
 **[Beispiel von WCK Lancelot]**
 
-<img src="WCKLancelot.png" width="600">
+<img src="img/WCKLancelot.png" width="600">
 
-<img src="NextInSecurity.png" width="500">
+<img src="img/NextInSecurity.png" width="500">
 
 **GRC Governance Risk and Compliance** (Regierungsrisiko- und Erfüllung?)
 
