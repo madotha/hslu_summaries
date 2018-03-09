@@ -200,5 +200,40 @@ Das Wichtigste ist das **Ziel**, ein schlechtes Ziel kann nicht zu einem guten R
 
 <img src="img/ModelTarget.png" width="600">
 
-## Security Policy
+## Security Policy / Strategie
+
+### Why Policy?
+
+Policy / Strategie ist die essentielle Grundlage für ein erfolgreiches Information Security Programm:
+
+* Erfolg eines Information Resources Protection Programms hängt von der Strategie ab und von der Einstellung des Managements gegenüber der Sicherung von Informationen auf automatisierten Systemen.
+* Der Policy Maker gibt den Ton an und zeigt auf, wie wichtig die Rolle der Information Security in einer Firma ist.
+* Hauptverantwortung liegt darin, die Information Resource Security Policy für die Firma zu setzen, mit den Zielen auf: 
+ * reduziertes Risiko
+ * Übereinstimmung mit Gesetzen und Regulierungen
+ * Gewissheit der betrieblichen Kontinuität
+ * Informationsvollständigkeit
+ * Vertraulichkeit / Diskretion
+
+Policies sind die günstigen Mittel zur Kontrolle und gleichzeitig die am schwierigsten zu implementierenden. Beim Bilden von Policies müssen einige Regeln befolgt werden:
+
+* Policy sollte nicht mit den Gesetzen kollidieren
+* Policy muss sich vor Gericht behaupten können
+* Policy muss richtig unterstützt und administriert werden
+
+Nach Bergeron und Bérubé können folgende Leitfäden in der Formulierung helfen:
+
+* Alle Policies müssen zum Erfolg der Organisation beitragen.
+* Das Management muss eine angemessene Aufteilung der Zuständigkeiten für die korrekte Nutzung der Informationssysteme versichern können.
+* Endnutzer von Informationssystemen sollten in die Schritte der Policy-Formulierung einbezogen werden.
+
+### Policy Centric Decision Making
+*Bulls-Eye Model:*
+
+<img src="img/BullsEye.png" width="300">
+
+* **Policies:** Erste Schicht der Verteidigung
+* **Networks:** Bedrohungen treffen als erstes auf das Netzwerk der Organisation
+* **Systems:** Computer- und Produktionssysteme
+* **Applications:** Applikationssysteme
 
