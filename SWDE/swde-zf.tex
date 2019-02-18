@@ -1,0 +1,59 @@
+\documentclass[a4paper]{article}
+
+\usepackage[margin=80pt]{geometry}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\title{\textbf{SWDE - Software Development\\
+Zusammenfassung FS 2019}}
+\date{\today}
+\author{Maurin D. Thalmann}
+
+\begin{document}
+	\pagenumbering{gobble}
+	\maketitle
+	\newpage
+	\pagenumbering{arabic}
+	\tableofcontents
+	\newpage
+	
+	\section{Buildautomatisation}
+	
+		\subsection{Sie kennen die Vorteile eines automatisierten Buildprozesses}
+			\begin{itemize}
+				\item Automatisierter Ablauf, keine Interaktion mehr benötigt
+				\item Reproduzierbare Ergebnisse
+				\item lange Builds können auch über Nacht laufen
+				\item Unabhängig von Entwicklungsumgebung
+			\end{itemize}
+		
+		\subsection{Sie können verschiedene Beispiele von Buildwerkzeugen benennen}
+			\begin{description}
+				\item[Make] (für C/C++ Projekte), Urvater der Build Tools, \\
+				hohe Flexibilität, gewöhnungsbedürftige Syntax
+				\item[Ant] Java mit XML
+				\item[Maven] Java mit XML
+				\item[Buildr] Ruby-Script
+				\item[Gradle] Groovy Script mit DSL
+				\item[Bazel] Java mit Python-like Scripts
+			\end{description}
+		
+		\subsection{Sie beherrschen die Anwendung eines ausgewählten Buildwerkzeuges (Apache Maven)}
+		Beherrschen muss man es selber, es kann entweder aus der Shell (Terminal/Konsole) verwendet werden oder aus den integrierten Funktionen in der IDE selbst.
+		
+		\subsection{Sie sind mit den wesentlichen Konzepten von Apache Maven vertraut}
+		Deklaration des Projektes in XML, zentrales Element pro Projekt ist das \textbf{Project Object Model (POM)}, welches Metainformationen, Plugins und Dependencies definiert. Basiert auf einem globalen, binären Repository. Plugins werden durch Dependencies dynamisch ins lokale Repository geladen (\$HOME/.m2/repository)\\
+		Bei einem Buildprozess durchläuft ein Projekt einen Lifecycle mit folgenden Phasen:
+		\begin{description}
+			\item[validate] validiert Projektdefinition
+			\item[compile] Kompiliert die Quellen
+			\item[test] Ausführen der Unit-Tests
+			\item[package] Packen der Distribution
+			\item[verify] Ausführen der Integrations-Tests
+			\item[install] Deployment im lokalen Repository
+			\item[deploy] Deployment im zentralen Repository
+		\end{description}
+		
+	\section{Buildserver und CI}
+\end{document}
