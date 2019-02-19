@@ -1,2 +1,4 @@
 \babel@toc {ngerman}{}
 \contentsline {section}{\numberline {1}Android 1 - Grundlagen}{2}% 
+\contentsline {subsection}{\numberline {1.1}Komponenten}{2}% 
+\contentsline {subsection}{\numberline {1.2}Das Android-Manifest}{2}% 

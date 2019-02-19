@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840) (preloaded format=pdflatex 2019.2.19)  19 FEB 2019 16:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840) (preloaded format=pdflatex 2019.2.19)  19 FEB 2019 17:23
 entering extended mode
 **./mobpro-zf.tex
 (mobpro-zf.tex
@@ -445,76 +445,69 @@ LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 2.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 9.49997pt on input line 2.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 3.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 3.
 )
 \tf@toc=\write3
 \openout3 = `mobpro-zf.toc'.
 
  [1]
 LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <10> not available
-(Font)              Font shape `T1/phv/b/it' tried instead on input line 59.
+(Font)              Font shape `T1/phv/b/it' tried instead on input line 58.
 LaTeX Font Info:    Font shape `T1/phv/b/it' in size <10> not available
-(Font)              Font shape `T1/phv/b/sl' tried instead on input line 59.
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 58.
 LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
-(Font)              scaled to size 9.49997pt on input line 59.
-LaTeX Font Info:    Try loading font information for OMS+phv on input line 64.
+(Font)              scaled to size 9.49997pt on input line 58.
+LaTeX Font Info:    Try loading font information for OMS+phv on input line 63.
 
 ("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
 atex/psnfss/omsphv.fd"
 File: omsphv.fd 
 )
 LaTeX Font Info:    Font shape `OMS/phv/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 64.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 70.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 70.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 63.
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 67.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 11.39996pt on input line 67.
 
 Overfull \hbox (15.46797pt too wide) in paragraph at lines 70--78
 [][] 
  []
 
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 81.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 82.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 9.49997pt on input line 81.
-
-Overfull \hbox (19.6636pt too wide) in paragraph at lines 80--85
-\T1/phv/b/n/10 Service \T1/phv/m/n/10 läuft typischerweise im Hintergrund für u
-nbeschränkte Zeit, hat keine graphische Benutzerschnittstelle
- []
-
-
-Overfull \hbox (65.40923pt too wide) in paragraph at lines 80--85
-\T1/phv/m/n/10 Standard-API für Suchen, Löschen, Aktualisieren und Einfügen von
- Daten. Basisklasse: \T1/phv/m/sl/10 android.content.ContentProvider 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 80--85
-
- []
-
-[2] (mobpro-zf.aux) ) 
+(Font)              scaled to size 9.49997pt on input line 82.
+[2]
+<img/manifestxml.jpg, id=16, 665.76pt x 397.85pt>
+File: img/manifestxml.jpg Graphic file (type jpg)
+<use img/manifestxml.jpg>
+Package pdftex.def Info: img/manifestxml.jpg  used on input line 107.
+(pdftex.def)             Requested size: 341.43306pt x 204.03603pt.
+ [3 <./img/manifestxml.jpg>] (mobpro-zf.aux) ) 
 Here is how much of TeX's memory you used:
- 5656 strings out of 494866
- 83449 string characters out of 3176097
- 352802 words of memory out of 3000000
- 9207 multiletter control sequences out of 15000+200000
- 30453 words of font info for 40 fonts, out of 3000000 for 9000
+ 5667 strings out of 494866
+ 83617 string characters out of 3176097
+ 354802 words of memory out of 3000000
+ 9214 multiletter control sequences out of 15000+200000
+ 33183 words of font info for 42 fonts, out of 3000000 for 9000
  0 hyphenation exceptions out of 8191
  41i,10n,40p,818b,264s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/Users/maurinthalmann/Library/Application Support/MiKTeX/
-texmfs/install/fonts/enc/dvips/base/8r.enc}</Users/maurinthalmann/Library/Appli
-cation Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-</Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/fonts/
-type1/urw/helvetic/uhvb8a.pfb></Users/maurinthalmann/Library/Application Suppor
-t/MiKTeX/texmfs/install/fonts/type1/urw/helvetic/uhvbo8a.pfb></Users/maurinthal
-mann/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/urw/helvetic
-/uhvr8a.pfb></Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/in
-stall/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on mobpro-zf.pdf (3 pages, 50108 bytes).
+{/Users/maurinthalmann/Library/Ap
+plication Support/MiKTeX/texmfs/install/fonts/enc/dvips/base/8r.enc}</Users/mau
+rinthalmann/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/publi
+c/amsfonts/cm/cmsy10.pfb></Users/maurinthalmann/Library/Application Support/MiK
+TeX/texmfs/install/fonts/type1/urw/helvetic/uhvb8a.pfb></Users/maurinthalmann/L
+ibrary/Application Support/MiKTeX/texmfs/install/fonts/type1/urw/helvetic/uhvbo
+8a.pfb></Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install
+/fonts/type1/urw/helvetic/uhvr8a.pfb></Users/maurinthalmann/Library/Application
+ Support/MiKTeX/texmfs/install/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on mobpro-zf.pdf (4 pages, 141719 bytes).
 PDF statistics:
- 33 PDF objects out of 1000 (max. 8388607)
+ 37 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
