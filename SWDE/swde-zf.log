@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840) (preloaded format=pdflatex 2019.2.18)  18 FEB 2019 15:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840) (preloaded format=pdflatex 2019.2.18)  19 FEB 2019 12:11
 entering extended mode
 **./swde-zf.tex
 (swde-zf.tex
@@ -187,6 +187,12 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 3.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 3.
+
+Overfull \hbox (3.21786pt too wide) in paragraph at lines 10--10
+ [][] []\T1/cmr/m/n/10 Sie können mit verschiedenen (Client-)Werkzeugen von Ver
+sionskontrollsystemen alleine 
+ []
+
 )
 \tf@toc=\write3
 \openout3 = `swde-zf.toc'.
@@ -200,29 +206,75 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 25.
- [2] (swde-zf.aux) ) 
+ [2]
+Underfull \hbox (badness 10000) in paragraph at lines 70--75
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 70--75
+
+ []
+
+
+Overfull \hbox (7.88226pt too wide) in paragraph at lines 70--75
+\T1/cmr/m/n/10 Ausschliesslich Quell-Artefakte werden verwaltet, \T1/cmr/bx/n/1
+0 NIE \T1/cmr/m/n/10 generierte/erzeugt Artefakte einchecken, können
+ []
+
+
+Overfull \hbox (57.87088pt too wide) in paragraph at lines 76--76
+[]\T1/cmr/bx/n/12 Sie kennen die verschiedenen Konzepte und Arten von Versionsk
+ontrollsystemen 
+ []
+
+
+Overfull \hbox (65.13995pt too wide) in paragraph at lines 86--86
+[]\T1/cmr/bx/n/12 Sie können mit verschiedenen (Client-)Werkzeugen von Versions
+kontrollsystemen
+ []
+
+
+Overfull \hbox (8.46667pt too wide) in paragraph at lines 89--90
+[]\T1/cmr/m/n/10 UT-Versionskontrollsystem, stabil, wenig Fehler, einfache Anwe
+ndung, ABER nur dateibasierend,
+ []
+
+
+Overfull \hbox (27.13127pt too wide) in paragraph at lines 90--91
+[]\T1/cmr/m/n/10 Transaktionsorieniert, versioniert ganze Verzeichnisstruktur, 
+optimierte/effiziente Speicherung
+ []
+
+
+Overfull \hbox (18.2203pt too wide) in paragraph at lines 90--91
+\T1/cmr/m/n/10 und Übertragung, Repositorystruktur frei wählbar (für Experten f
+lexibler, für Anfänger schwieriger),
+ []
+
+[3] (swde-zf.aux) ) 
 Here is how much of TeX's memory you used:
  1627 strings out of 494866
- 23400 string characters out of 3176097
+ 23163 string characters out of 3176097
  91846 words of memory out of 3000000
  5288 multiletter control sequences out of 15000+200000
  12543 words of font info for 31 fonts, out of 3000000 for 9000
  0 hyphenation exceptions out of 8191
  25i,6n,32p,353b,187s stack positions out of 5000i,500n,10000p,200000b,50000s
- </Users/maurinthalmann/Library/Application Support/MiKTeX/
-texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1200.pk> </Users/maurinthalm
-ann/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/
-dpi600/ecrm1000.pk> </Users/maurinthalmann/Library/Application Support/MiKTeX/t
-exmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1000.pk> </Users/maurinthalma
+ </Users/maurinthalmann/Library/Application Support/MiKTeX/t
+exmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1200.pk> </Users/maurinthalma
 nn/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/d
-pi600/ecbx1440.pk> </Users/maurinthalmann/Library/Application Support/MiKTeX/te
-xmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1200.pk> </Users/maurinthalman
+pi600/ecrm1000.pk> </Users/maurinthalmann/Library/Application Support/MiKTeX/te
+xmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1000.pk> </Users/maurinthalman
 n/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dp
-i600/ecbx1728.pk></Users/maurinthalmann/Library/Application Support/MiKTeX/texm
-fs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on swde-zf.pdf (3 pages, 82432 bytes).
+i600/ecbx1440.pk> </Users/maurinthalmann/Library/Application Support/MiKTeX/tex
+mfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1200.pk> </Users/maurinthalmann
+/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi
+600/ecbx1728.pk></Users/maurinthalmann/Library/Application Support/MiKTeX/texmf
+s/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on swde-zf.pdf (4 pages, 96042 bytes).
 PDF statistics:
- 240 PDF objects out of 1000 (max. 8388607)
+ 274 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

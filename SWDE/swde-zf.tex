@@ -4,6 +4,8 @@
 \usepackage[ngerman]{babel}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{pdflatex}
 
 \title{\textbf{SWDE - Software Development\\
 Zusammenfassung FS 2019}}
@@ -54,6 +56,41 @@ Zusammenfassung FS 2019}}
 			\item[install] Deployment im lokalen Repository
 			\item[deploy] Deployment im zentralen Repository
 		\end{description}
+	
+	\newpage	
+	\section{Versionskontrolle mit Git und GitLab}
+	
+		\subsection{Sie kennen die Aufgaben eines Versionskontrollsystems und können grundlegend damit arbeiten}
+		\textbf{Grundlegende Arbeit:}
+		\begin{description}
+			\item[checkout] lokale Arbeitskopie eines Projekts erstellen
+			\item[update] Änderungen Dritter in Arbeitskopie aktualisieren
+			\item[log] Bearbeitungsgeschichte eines Artefakts ansehen
+			\item[diff] verschiedene Revisionen miteinander vergleichen
+			\item[commit / checkin] Artefakte ins Repository schreiben $\rightarrow$ aussagekräftiger Kommentar!
+		\end{description}
+		\textbf{Tagging:} Revisionsstand mit Namen markieren, Marke oder Version: 1.5.2beta o.ä. Nützlich bei Release eines Produkts (aber auch meilensteine, Testversionen, Auslieferungszustände, etc.) wird unterschiedlich realisiert.\\
+		\\
+		\textbf{Branching:} Parallele, voneinander getrennte Entwicklungszweige (für Bugfixing, Prototypen, Tests, Experimente, nachvollziehbare Änderungsworkflows, etc.) Bei Nicht-Wegwerf-Entwicklungen später Merging möglich/notwendig.\\
+		\\
+		Ausschliesslich Quell-Artefakte werden verwaltet, \textbf{NIE} generierte/erzeugt Artefakte einchecken, können mit Hilfe der SCM ignoriert werden (.gitignore)
 		
-	\section{Buildserver und CI}
+		\subsection{Sie kennen die verschiedenen Konzepte und Arten von Versionskontrollsystemen}
+		\begin{itemize}
+			\item Zentrale oder verteilte Systeme 
+			\item Optimistische und pessimistische Lockverfahren 
+			\item Versionierung auf Basis einer Datei, Verzeichnisstruktur oder der Änderung (changeset) 
+			\item Transaktionsunterstützung (vorhanden oder nicht) 
+			\item Verschiedene Zugriffsprotokolle und Sicherheitsmechanismen 
+			\item Integration in Webserver (vorhanden oder nicht)
+		\end{itemize}
+		
+		\subsection{Sie können mit verschiedenen (Client-)Werkzeugen von Versionskontrollsystemen alleine und im Team arbeiten}
+		
+		\begin{description}
+			\item[CVS] UT-Versionskontrollsystem, stabil, wenig Fehler, einfache Anwendung, ABER nur dateibasierend, Verzeichnisstruktur nicht versioniert, unterscheidet zwischen Text- und Binärdateien, Ablage von Binärdateien platzintensiv, keine Transaktionen
+			\item[Subversion] Transaktionsorieniert, versioniert ganze Verzeichnisstruktur, optimierte/effiziente Speicherung und Übertragung, Repositorystruktur frei wählbar (für Experten flexibler, für Anfänger schwieriger), Integration in Webserver möglich, aber Branching und Tagging technisch eig. Kopien/Links
+			\item[git] verteiltes System, primär lokale Arbeit, beliebig viele Server/Repos möglich, auch rein lokal einsetzbar, skaliert, Integration mit zusätzlichen Web-Applikationen, erfordert aber ein solides Konzept, für Einsteiger schwierig, da sehr mächtig und viele Funktionen
+		\end{description}
+		
 \end{document}
