@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840) (preloaded format=pdflatex 2019.2.19)  19 FEB 2019 12:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840) (preloaded format=pdflatex 2019.2.19)  19 FEB 2019 16:29
 entering extended mode
 **./mobpro-zf.tex
 (mobpro-zf.tex
@@ -24,43 +24,6 @@ File: size10.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/geometry/geometry.sty"
-Package: geometry 2018/04/16 v5.8 Page Geometry
-
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/graphics/keyval.sty"
-Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks14
-)
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/g
-eneric/oberdiek/ifpdf.sty"
-Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
-)
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/g
-eneric/oberdiek/ifvtex.sty"
-Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
-Package ifvtex Info: VTeX not detected.
-)
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/g
-eneric/ifxetex/ifxetex.sty"
-Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
-)
-\Gm@cnth=\count88
-\Gm@cntv=\count89
-\c@Gm@tempcnt=\count90
-\Gm@bindingoffset=\dimen103
-\Gm@wd@mp=\dimen104
-\Gm@odd@mp=\dimen105
-\Gm@even@mp=\dimen106
-\Gm@layoutwidth=\dimen107
-\Gm@layoutheight=\dimen108
-\Gm@layouthoffset=\dimen109
-\Gm@layoutvoffset=\dimen110
-\Gm@dimlist=\toks15
-
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/geometry/geometry.cfg"))
 ("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/g
 eneric/babel/babel.sty"
 Package: babel 2018/11/13 3.27 The Babel package
@@ -91,12 +54,12 @@ aphy)
 ("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/g
 eneric/babel/babel.def"
 File: babel.def 2018/11/13 3.27 Babel common definitions
-\babel@savecnt=\count91
-\U@D=\dimen111
+\babel@savecnt=\count88
+\U@D=\dimen103
 
 ("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/g
 eneric/babel/txtbabel.def")
-\bbl@dirlevel=\count92
+\bbl@dirlevel=\count89
 )
 
 Package babel Warning: No hyphenation patterns were preloaded for
@@ -110,6 +73,21 @@ Package babel Warning: No hyphenation patterns were preloaded for
 Package babel Info: Making " an active character on input line 121.
 )))
 ("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/base/inputenc.sty"
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+)
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/psnfss/helvet.sty"
+Package: helvet 2005/04/12 PSNFSS-v9.2a (WaS) 
+
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/graphics/keyval.sty"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+))
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
 atex/base/fontenc.sty"
 Package: fontenc 2018/08/11 v2.0j Standard LaTeX package
 
@@ -119,11 +97,37 @@ File: t1enc.def 2018/08/11 v2.0j Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 ))
 ("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/base/inputenc.sty"
-Package: inputenc 2018/08/11 v1.3c Input encoding file
-\inpenc@prehook=\toks16
-\inpenc@posthook=\toks17
+atex/geometry/geometry.sty"
+Package: geometry 2018/04/16 v5.8 Page Geometry
+
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/g
+eneric/oberdiek/ifpdf.sty"
+Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
 )
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/g
+eneric/oberdiek/ifvtex.sty"
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/g
+eneric/ifxetex/ifxetex.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count90
+\Gm@cntv=\count91
+\c@Gm@tempcnt=\count92
+\Gm@bindingoffset=\dimen104
+\Gm@wd@mp=\dimen105
+\Gm@odd@mp=\dimen106
+\Gm@even@mp=\dimen107
+\Gm@layoutwidth=\dimen108
+\Gm@layoutheight=\dimen109
+\Gm@layouthoffset=\dimen110
+\Gm@layoutvoffset=\dimen111
+\Gm@dimlist=\toks17
+
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/geometry/geometry.cfg"))
 ("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
 atex/graphics/graphicx.sty"
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
@@ -176,21 +180,131 @@ atex/listings/listings.cfg"
 File: listings.cfg 2018/09/02 1.7 listings configuration
 ))
 Package: listings 2018/09/02 1.7 (Carsten Heinz)
+
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/graphics/color.sty"
+Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
+
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/graphics-cfg/color.cfg"
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 147.
+)
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/xcolor/xcolor.sty"
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/graphics-cfg/color.cfg"
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/colortbl/colortbl.sty"
+Package: colortbl 2018/12/12 v1.0d Color table columns (DPC)
+
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/tools/array.sty"
+Package: array 2018/12/30 v2.4k Tabular extension package (FMi)
+\col@sep=\dimen118
+\ar@mcellbox=\box29
+\extrarowheight=\dimen119
+\NC@list=\toks19
+\extratabsurround=\skip43
+\backup@length=\skip44
+\ar@cellbox=\box30
+)
+\everycr=\toks20
+\minrowclearance=\skip45
+)
+LaTeX Info: Redefining \color on input line 709.
+\rownum=\count101
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/csquotes/csquotes.sty"
+Package: csquotes 2018/04/13 v5.2d context-sensitive quotations (JAW)
+
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/etoolbox/etoolbox.sty"
+Package: etoolbox 2018/08/19 v2.5f e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count102
+)
+\csq@reset=\count103
+\csq@gtype=\count104
+\csq@glevel=\count105
+\csq@qlevel=\count106
+\csq@maxlvl=\count107
+\csq@tshold=\count108
+\csq@ltx@everypar=\toks21
+
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/csquotes/csquotes.def"
+File: csquotes.def 2018/04/13 v5.2d csquotes generic definitions (JAW)
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/csquotes/csquotes.cfg"
+File: csquotes.cfg 
+)
+Package csquotes Info: Enabling multilingual quotes.
+
+
+! Package keyval Error: No value specified for german.
+
+See the keyval package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2465 \ProcessOptions*
+                       
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+)
+Package csquotes Info: Allocating character ".
+
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/listings/lstlang1.sty"
+File: lstlang1.sty 2018/09/02 1.7 listings language file
+)
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... found 'babel' package.
  (mobpro-zf.aux)
 \openout1 = `mobpro-zf.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 46.
+
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/psnfss/t1phv.fd"
+File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
+)
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 9.49997pt on input line 46.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -230,17 +344,17 @@ LaTeX Font Info:    ... okay on input line 16.
 ("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/c
 ontext/base/supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count101
-\scratchdimen=\dimen118
-\scratchbox=\box29
-\nofMPsegments=\count102
-\nofMParguments=\count103
-\everyMPshowfont=\toks19
-\MPscratchCnt=\count104
-\MPscratchDim=\dimen119
-\MPnumerator=\count105
-\makeMPintoPDFobject=\count106
-\everyMPtoPDFconversion=\toks20
+\scratchcounter=\count109
+\scratchdimen=\dimen120
+\scratchbox=\box31
+\nofMPsegments=\count110
+\nofMParguments=\count111
+\everyMPshowfont=\toks22
+\MPscratchCnt=\count112
+\MPscratchDim=\dimen121
+\MPnumerator=\count113
+\makeMPintoPDFobject=\count114
+\everyMPtoPDFconversion=\toks23
 )
 ("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
 atex/oberdiek/epstopdf-base.sty"
@@ -300,41 +414,107 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
-\c@lstlisting=\count107
+\c@lstlisting=\count115
+Package csquotes Info: Redefining character " on input line 46.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 16.41594pt on input line 48.
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <17.28> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 48.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 16.41594pt on input line 48.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 11.39996pt on input line 48.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 18.
+(Font)              <12> on input line 48.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 18.
+(Font)              <8> on input line 48.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 18.
+(Font)              <6> on input line 48.
  [1
 
 {/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/data/pdftex/co
-nfig/pdftex.map}] (mobpro-zf.toc)
+nfig/pdftex.map}]
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 13.67995pt on input line 51.
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 51.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 13.67995pt on input line 51.
+ (mobpro-zf.toc
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 2.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 9.49997pt on input line 2.
+)
 \tf@toc=\write3
 \openout3 = `mobpro-zf.toc'.
 
  [1]
+LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <10> not available
+(Font)              Font shape `T1/phv/b/it' tried instead on input line 59.
+LaTeX Font Info:    Font shape `T1/phv/b/it' in size <10> not available
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 59.
+LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
+(Font)              scaled to size 9.49997pt on input line 59.
+LaTeX Font Info:    Try loading font information for OMS+phv on input line 64.
+
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/psnfss/omsphv.fd"
+File: omsphv.fd 
+)
+LaTeX Font Info:    Font shape `OMS/phv/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 64.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 70.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 70.
+
+Overfull \hbox (15.46797pt too wide) in paragraph at lines 70--78
+[][] 
+ []
+
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 81.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 9.49997pt on input line 81.
+
+Overfull \hbox (19.6636pt too wide) in paragraph at lines 80--85
+\T1/phv/b/n/10 Service \T1/phv/m/n/10 läuft typischerweise im Hintergrund für u
+nbeschränkte Zeit, hat keine graphische Benutzerschnittstelle
+ []
+
+
+Overfull \hbox (65.40923pt too wide) in paragraph at lines 80--85
+\T1/phv/m/n/10 Standard-API für Suchen, Löschen, Aktualisieren und Einfügen von
+ Daten. Basisklasse: \T1/phv/m/sl/10 android.content.ContentProvider 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--85
+
+ []
+
 [2] (mobpro-zf.aux) ) 
 Here is how much of TeX's memory you used:
- 4362 strings out of 494866
- 62702 string characters out of 3176097
- 129720 words of memory out of 3000000
- 7961 multiletter control sequences out of 15000+200000
- 11767 words of font info for 30 fonts, out of 3000000 for 9000
+ 5656 strings out of 494866
+ 83449 string characters out of 3176097
+ 352802 words of memory out of 3000000
+ 9207 multiletter control sequences out of 15000+200000
+ 30453 words of font info for 40 fonts, out of 3000000 for 9000
  0 hyphenation exceptions out of 8191
- 41i,6n,32p,278b,970s stack positions out of 5000i,500n,10000p,200000b,50000s
- </Users/maurinthalmann/Library/Application Support/MiKTeX
-/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1000.pk> </Users/maurinthal
-mann/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec
-/dpi600/ecbx1000.pk> </Users/maurinthalmann/Library/Application Support/MiKTeX/
-texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1440.pk> </Users/maurinthalm
-ann/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/
-dpi600/ecrm1200.pk> </Users/maurinthalmann/Library/Application Support/MiKTeX/t
-exmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1728.pk>
-Output written on mobpro-zf.pdf (3 pages, 40073 bytes).
+ 41i,10n,40p,818b,264s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/Users/maurinthalmann/Library/Application Support/MiKTeX/
+texmfs/install/fonts/enc/dvips/base/8r.enc}</Users/maurinthalmann/Library/Appli
+cation Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+</Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/fonts/
+type1/urw/helvetic/uhvb8a.pfb></Users/maurinthalmann/Library/Application Suppor
+t/MiKTeX/texmfs/install/fonts/type1/urw/helvetic/uhvbo8a.pfb></Users/maurinthal
+mann/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/urw/helvetic
+/uhvr8a.pfb></Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/in
+stall/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on mobpro-zf.pdf (3 pages, 50108 bytes).
 PDF statistics:
- 136 PDF objects out of 1000 (max. 8388607)
+ 33 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

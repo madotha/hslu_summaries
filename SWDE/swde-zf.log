@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840) (preloaded format=pdflatex 2019.2.18)  19 FEB 2019 12:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840) (preloaded format=pdflatex 2019.2.19)  19 FEB 2019 15:51
 entering extended mode
 **./swde-zf.tex
 (swde-zf.tex
@@ -110,6 +110,10 @@ Package babel Warning: No hyphenation patterns were preloaded for
 Package babel Info: Making " an active character on input line 121.
 )))
 ("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/psnfss/helvet.sty"
+Package: helvet 2005/04/12 PSNFSS-v9.2a (WaS) 
+)
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
 atex/base/fontenc.sty"
 Package: fontenc 2018/08/11 v2.0j Standard LaTeX package
 
@@ -123,21 +127,54 @@ atex/base/inputenc.sty"
 Package: inputenc 2018/08/11 v1.3c Input encoding file
 \inpenc@prehook=\toks16
 \inpenc@posthook=\toks17
+)
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/graphics/graphicx.sty"
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/graphics/graphics.sty"
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/graphics/trig.sty"
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/graphics-cfg/graphics.cfg"
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/graphics-def/pdftex.def"
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen112
+\Gin@req@width=\dimen113
 ) (swde-zf.aux)
 \openout1 = `swde-zf.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 18.
+
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/psnfss/t1phv.fd"
+File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
+)
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 9.49997pt on input line 18.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -173,108 +210,212 @@ LaTeX Font Info:    ... okay on input line 13.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/c
+ontext/base/supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count93
+\scratchdimen=\dimen114
+\scratchbox=\box27
+\nofMPsegments=\count94
+\nofMParguments=\count95
+\everyMPshowfont=\toks18
+\MPscratchCnt=\count96
+\MPscratchDim=\dimen115
+\MPnumerator=\count97
+\makeMPintoPDFobject=\count98
+\everyMPtoPDFconversion=\toks19
+)
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/oberdiek/epstopdf-base.sty"
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/g
+eneric/oberdiek/infwarerr.sty"
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/oberdiek/grfext.sty"
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/g
+eneric/oberdiek/kvdefinekeys.sty"
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/g
+eneric/oberdiek/ltxcmds.sty"
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)))
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/oberdiek/kvoptions.sty"
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/g
+eneric/oberdiek/kvsetkeys.sty"
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/g
+eneric/oberdiek/etexcmds.sty"
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/g
+eneric/oberdiek/ifluatex.sty"
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/g
+eneric/oberdiek/pdftexcmds.sty"
+Package: pdftexcmds 2018/09/10 v0.29 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+)
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 16.41594pt on input line 20.
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <17.28> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 20.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 16.41594pt on input line 20.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 11.39996pt on input line 20.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 15.
+(Font)              <12> on input line 20.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 15.
+(Font)              <8> on input line 20.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 15.
-[1
+(Font)              <6> on input line 20.
+ [1
 
 {/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/data/pdftex/co
-nfig/pdftex.map}] (swde-zf.toc
+nfig/pdftex.map}]
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 13.67995pt on input line 23.
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 23.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 13.67995pt on input line 23.
+ (swde-zf.toc
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 2.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 9.49997pt on input line 2.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 3.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 3.
-
-Overfull \hbox (3.21786pt too wide) in paragraph at lines 10--10
- [][] []\T1/cmr/m/n/10 Sie können mit verschiedenen (Client-)Werkzeugen von Ver
-sionskontrollsystemen alleine 
- []
-
 )
 \tf@toc=\write3
 \openout3 = `swde-zf.toc'.
 
  [1]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 25.
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 28.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 11.39996pt on input line 28.
+LaTeX Font Info:    Try loading font information for OMS+phv on input line 30.
 
 ("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/base/omscmr.fd"
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+atex/psnfss/omsphv.fd"
+File: omsphv.fd 
 )
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 25.
- [2]
-Underfull \hbox (badness 10000) in paragraph at lines 70--75
+LaTeX Font Info:    Font shape `OMS/phv/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 30.
+
+Overfull \hbox (16.12677pt too wide) in paragraph at lines 47--47
+[]\T1/phv/b/n/12 Sie beherrschen die Anwendung eines ausgewählten Buildwerkzeug
+es (Apache
+ []
+
+
+Overfull \hbox (41.75122pt too wide) in paragraph at lines 51--53
+\T1/phv/m/n/10 Repository. Plugins werden durch Dependencies dynamisch ins loka
+le Repository geladen ($HOME/.m2/repository) 
+ []
+
+[2]
+Overfull \hbox (28.96321pt too wide) in paragraph at lines 66--66
+[]\T1/phv/b/n/12 Sie kennen die Aufgaben eines Versionskontrollsystems und könn
+en grundlegend
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--80
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 70--75
+Overfull \hbox (31.6242pt too wide) in paragraph at lines 75--80
+\T1/phv/b/n/10 Branching: \T1/phv/m/n/10 Parallele, voneinander getrennte Entwi
+cklungszweige (für Bugfixing, Prototypen, Tests, Experimente,
+ []
+
+
+Overfull \hbox (37.78032pt too wide) in paragraph at lines 75--80
+\T1/phv/m/n/10 nachvollziehbare Änderungsworkflows, etc.) Bei Nicht-Wegwerf-Ent
+wicklungen später Merging möglich/notwendig. 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--80
 
  []
 
 
-Overfull \hbox (7.88226pt too wide) in paragraph at lines 70--75
-\T1/cmr/m/n/10 Ausschliesslich Quell-Artefakte werden verwaltet, \T1/cmr/bx/n/1
-0 NIE \T1/cmr/m/n/10 generierte/erzeugt Artefakte einchecken, können
+Overfull \hbox (25.34932pt too wide) in paragraph at lines 81--81
+[]\T1/phv/b/n/12 Sie kennen die verschiedenen Konzepte und Arten von Versionsko
+ntrollsystemen 
  []
 
 
-Overfull \hbox (57.87088pt too wide) in paragraph at lines 76--76
-[]\T1/cmr/bx/n/12 Sie kennen die verschiedenen Konzepte und Arten von Versionsk
-ontrollsystemen 
+Overfull \hbox (29.89748pt too wide) in paragraph at lines 91--91
+[]\T1/phv/b/n/12 Sie können mit verschiedenen (Client-)Werkzeugen von Versionsk
+ontrollsystemen
  []
 
 
-Overfull \hbox (65.13995pt too wide) in paragraph at lines 86--86
-[]\T1/cmr/bx/n/12 Sie können mit verschiedenen (Client-)Werkzeugen von Versions
-kontrollsystemen
- []
-
-
-Overfull \hbox (8.46667pt too wide) in paragraph at lines 89--90
-[]\T1/cmr/m/n/10 UT-Versionskontrollsystem, stabil, wenig Fehler, einfache Anwe
-ndung, ABER nur dateibasierend,
- []
-
-
-Overfull \hbox (27.13127pt too wide) in paragraph at lines 90--91
-[]\T1/cmr/m/n/10 Transaktionsorieniert, versioniert ganze Verzeichnisstruktur, 
+Overfull \hbox (7.66808pt too wide) in paragraph at lines 95--96
+[]\T1/phv/m/n/10 Transaktionsorieniert, versioniert ganze Verzeichnisstruktur, 
 optimierte/effiziente Speicherung
  []
 
 
-Overfull \hbox (18.2203pt too wide) in paragraph at lines 90--91
-\T1/cmr/m/n/10 und Übertragung, Repositorystruktur frei wählbar (für Experten f
-lexibler, für Anfänger schwieriger),
+Overfull \hbox (2.7663pt too wide) in paragraph at lines 96--97
+[]\T1/phv/m/n/10 verteiltes System, primär lokale Arbeit, beliebig viele Server
+/Repos möglich, auch rein lokal einsetzbar,
  []
 
 [3] (swde-zf.aux) ) 
 Here is how much of TeX's memory you used:
- 1627 strings out of 494866
- 23163 string characters out of 3176097
- 91846 words of memory out of 3000000
- 5288 multiletter control sequences out of 15000+200000
- 12543 words of font info for 31 fonts, out of 3000000 for 9000
+ 2849 strings out of 494866
+ 43119 string characters out of 3176097
+ 112274 words of memory out of 3000000
+ 6448 multiletter control sequences out of 15000+200000
+ 27311 words of font info for 38 fonts, out of 3000000 for 9000
  0 hyphenation exceptions out of 8191
- 25i,6n,32p,353b,187s stack positions out of 5000i,500n,10000p,200000b,50000s
- </Users/maurinthalmann/Library/Application Support/MiKTeX/t
-exmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1200.pk> </Users/maurinthalma
-nn/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/d
-pi600/ecrm1000.pk> </Users/maurinthalmann/Library/Application Support/MiKTeX/te
-xmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1000.pk> </Users/maurinthalman
-n/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dp
-i600/ecbx1440.pk> </Users/maurinthalmann/Library/Application Support/MiKTeX/tex
-mfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1200.pk> </Users/maurinthalmann
-/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi
-600/ecbx1728.pk></Users/maurinthalmann/Library/Application Support/MiKTeX/texmf
-s/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on swde-zf.pdf (4 pages, 96042 bytes).
+ 41i,6n,32p,353b,189s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/Users/maurinthalmann/Library/Application Support/MiKTeX/te
+xmfs/install/fonts/enc/dvips/base/8r.enc}</Users/maurinthalmann/Library/Applica
+tion Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb></
+Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/fonts/ty
+pe1/urw/helvetic/uhvb8a.pfb></Users/maurinthalmann/Library/Application Support/
+MiKTeX/texmfs/install/fonts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on swde-zf.pdf (4 pages, 41226 bytes).
 PDF statistics:
- 274 PDF objects out of 1000 (max. 8388607)
+ 28 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
