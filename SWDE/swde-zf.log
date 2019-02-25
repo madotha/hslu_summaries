@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840) (preloaded format=pdflatex 2019.2.19)  19 FEB 2019 15:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840) (preloaded format=pdflatex 2019.2.19)  25 FEB 2019 16:31
 entering extended mode
 **./swde-zf.tex
 (swde-zf.tex
@@ -152,29 +152,39 @@ File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen112
 \Gin@req@width=\dimen113
+)
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/enumitem/enumitem.sty"
+Package: enumitem 2019/02/04 v3.8 Customized lists
+\labelindent=\skip43
+\enit@outerparindent=\dimen114
+\enit@toks=\toks18
+\enit@inbox=\box27
+\enit@count@id=\count93
+\enitdp@description=\count94
 ) (swde-zf.aux)
 \openout1 = `swde-zf.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Try loading font information for T1+phv on input line 18.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 19.
 
 ("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
 atex/psnfss/t1phv.fd"
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 9.49997pt on input line 18.
+(Font)              scaled to size 9.49997pt on input line 19.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -214,17 +224,17 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 ("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/c
 ontext/base/supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count93
-\scratchdimen=\dimen114
-\scratchbox=\box27
-\nofMPsegments=\count94
-\nofMParguments=\count95
-\everyMPshowfont=\toks18
-\MPscratchCnt=\count96
-\MPscratchDim=\dimen115
-\MPnumerator=\count97
-\makeMPintoPDFobject=\count98
-\everyMPtoPDFconversion=\toks19
+\scratchcounter=\count95
+\scratchdimen=\dimen115
+\scratchbox=\box28
+\nofMPsegments=\count96
+\nofMParguments=\count97
+\everyMPshowfont=\toks19
+\MPscratchCnt=\count98
+\MPscratchDim=\dimen116
+\MPnumerator=\count99
+\makeMPintoPDFobject=\count100
+\everyMPtoPDFconversion=\toks20
 )
 ("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
 atex/oberdiek/epstopdf-base.sty"
@@ -285,29 +295,29 @@ G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 16.41594pt on input line 20.
+(Font)              scaled to size 16.41594pt on input line 21.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <17.28> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 20.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 21.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 16.41594pt on input line 20.
+(Font)              scaled to size 16.41594pt on input line 21.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 11.39996pt on input line 20.
+(Font)              scaled to size 11.39996pt on input line 21.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 20.
+(Font)              <12> on input line 21.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 20.
+(Font)              <8> on input line 21.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 20.
+(Font)              <6> on input line 21.
  [1
 
 {/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/data/pdftex/co
 nfig/pdftex.map}]
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 13.67995pt on input line 23.
+(Font)              scaled to size 13.67995pt on input line 24.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 23.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 24.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 13.67995pt on input line 23.
+(Font)              scaled to size 13.67995pt on input line 24.
  (swde-zf.toc
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 2.
@@ -317,105 +327,321 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 3.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 3.
+
+Overfull \hbox (32.69853pt too wide) in paragraph at lines 10--10
+ [][] []\T1/phv/m/n/10 Sie können die Begriffe auf verschiedenen Abstraktionseb
+enen in einen sinnvollen Zusammenhang 
+ []
+
+
+Overfull \hbox (3.44771pt too wide) in paragraph at lines 18--18
+ [] []\T1/phv/b/n/10 Versionskontrollsysteme - Source Code Management (SCM) / V
+ersion Control Systems (VCS) []  
+ []
+
 )
 \tf@toc=\write3
 \openout3 = `swde-zf.toc'.
 
  [1]
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 28.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 29.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 11.39996pt on input line 28.
-LaTeX Font Info:    Try loading font information for OMS+phv on input line 30.
+(Font)              scaled to size 11.39996pt on input line 29.
+LaTeX Font Info:    Try loading font information for OMS+phv on input line 31.
 
 ("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
 atex/psnfss/omsphv.fd"
 File: omsphv.fd 
 )
 LaTeX Font Info:    Font shape `OMS/phv/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 30.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 31.
 
-Overfull \hbox (16.12677pt too wide) in paragraph at lines 47--47
+Overfull \hbox (16.12677pt too wide) in paragraph at lines 48--48
 []\T1/phv/b/n/12 Sie beherrschen die Anwendung eines ausgewählten Buildwerkzeug
 es (Apache
  []
 
 
-Overfull \hbox (41.75122pt too wide) in paragraph at lines 51--53
+Overfull \hbox (41.75122pt too wide) in paragraph at lines 52--55
 \T1/phv/m/n/10 Repository. Plugins werden durch Dependencies dynamisch ins loka
 le Repository geladen ($HOME/.m2/repository) 
  []
 
 [2]
-Overfull \hbox (28.96321pt too wide) in paragraph at lines 66--66
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 68.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 9.49997pt on input line 68.
+
+Overfull \hbox (48.50816pt too wide) in paragraph at lines 79--80
+[]\T1/phv/m/n/10 Eine Sammlung thematisch zusammengehörender Funktionen (z.Bsp.
+ Kalendermodul, Trigonometriemodul,
+ []
+
+
+Overfull \hbox (30.29654pt too wide) in paragraph at lines 83--83
+[]\T1/phv/b/n/12 Sie können die Begriffe auf verschiedenen Abstraktionsebenen i
+n einen sinnvollen
+ []
+
+
+Overfull \hbox (2.15836pt too wide) in paragraph at lines 94--96
+[]\T1/phv/m/n/10 Modul(-gruppen) können logische Kette bilden, die vertikal als
+ Schichten abgebildet werden. 
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 101--127
+
+ []
+
+
+Overfull \hbox (4.96783pt too wide) in paragraph at lines 101--127
+\T1/phv/b/n/10 Modellierung/Abstraktion physischer Modelle: \T1/phv/m/n/10 Modu
+l abstrahiert reales, physisch existierendes System
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--127
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--127
+
+ []
+
+[4]
+LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <10> not available
+(Font)              Font shape `T1/phv/b/it' tried instead on input line 134.
+LaTeX Font Info:    Font shape `T1/phv/b/it' in size <10> not available
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 134.
+LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
+(Font)              scaled to size 9.49997pt on input line 134.
+
+Overfull \hbox (29.46066pt too wide) in paragraph at lines 134--135
+[]\T1/phv/m/sl/10 Eine Softwarekomponente ist ein Softwareelement, das zu einem
+ bestimmten \T1/phv/b/sl/10 Komponentenmodell
+ []
+
+
+Overfull \hbox (25.26137pt too wide) in paragraph at lines 134--135
+\T1/phv/m/sl/10 passt und entsprechend einem Composition Standard ohne Änderung
+en mit anderen Komponenten
+ []
+
+
+Overfull \hbox (6.96237pt too wide) in paragraph at lines 136--143
+\T1/phv/m/n/10 Eine \T1/phv/b/n/10 Komponente \T1/phv/m/n/10 erfüllt strengere 
+Kriterien als ein Modul und benötigt meist einen \T1/phv/b/n/10 Kontext\T1/phv/
+m/n/10 . Komponenten
+ []
+
+
+Overfull \hbox (9.4035pt too wide) in paragraph at lines 136--143
+\T1/phv/m/n/10 (installiert, deployed, etc.) werden und dort lauffähig sind. (C
+ontainer stellen den Komponenten Basisdienste
+ []
+
+
+Overfull \hbox (17.78325pt too wide) in paragraph at lines 136--143
+\T1/phv/m/n/10 Komponenten bedienen sich spezifischer Laufzeitumgebungen (z.Bsp
+. Container) in welche die Komponenten
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 136--143
+
+ []
+
+
+Overfull \hbox (2.96349pt too wide) in paragraph at lines 136--143
+\T1/phv/b/n/10 Komponentenmodelle\T1/phv/m/n/10 : konkrete Ausprägungen des Par
+adigmas der komponentenbasierten Entwicklung
+ []
+
+
+Overfull \hbox (4.85345pt too wide) in paragraph at lines 136--143
+\T1/phv/m/n/10 Komponenten festlegen: wie kommunizieren Komponenten untereinand
+er/mit dem Container Idealerweise:
+ []
+
+
+Overfull \hbox (17.80196pt too wide) in paragraph at lines 136--143
+\T1/phv/m/n/10 Komponentenmodell unabhängig von Gremium standardisiert (kann so
+mit in unterschiedlichen Ausprägungen
+ []
+
+
+Overfull \hbox (10.28856pt too wide) in paragraph at lines 144--145
+[]\T1/phv/b/n/10 Beispiele\T1/phv/m/n/10 : Microsoft DCOM/ActiveX/.NET Remoting
+ Services (WCF), CORBA (Common Object
+ []
+
+
+Overfull \hbox (2.15788pt too wide) in paragraph at lines 144--145
+\T1/phv/m/n/10 Request Broker Architecture), Enterprise Java Beans, OSGi (Open 
+Services Gateway initiative
+ []
+
+
+Overfull \hbox (10.41103pt too wide) in paragraph at lines 150--152
+\T1/phv/m/n/10 Schnittstellen werden konsequent für die kontrollierte Kommunika
+tion zwischen Modulen oder Komponenten
+ []
+
+
+Overfull \hbox (4.89703pt too wide) in paragraph at lines 154--155
+[]\T1/phv/m/n/10 Schnittstellen helfen Abhängigkeiten zu reduzieren, vermeiden 
+Abhängigkeiten zur Implementierung. 
+ []
+
+
+Overfull \hbox (27.76662pt too wide) in paragraph at lines 165--169
+\T1/phv/b/n/10 Service\T1/phv/m/n/10 : abstrahierte Schnittstelle, definiert si
+ch primär über Fachlichkeit, dahinterliegende Technik idealerweise
+ []
+
+
+Overfull \hbox (15.46458pt too wide) in paragraph at lines 165--169
+\T1/phv/m/n/10 vollständig isoliert (Bsp. Webservice, wird über Web-Protokolle 
+angeboten und abstrahiert die Implementation
+ []
+
+
+Overfull \hbox (17.81052pt too wide) in paragraph at lines 165--169
+\T1/phv/m/n/10 Komponente auf Quellcodeebene definiert (Bsp. JDBC [Java Databas
+e Connectivity], einheitliche Schnittstelle
+ []
+
+
+Overfull \hbox (8.73894pt too wide) in paragraph at lines 165--169
+\T1/phv/m/n/10 Ebene \T1/phv/b/n/10 Modularisierung\T1/phv/m/n/10 : Schnittstel
+le = logische Zusammenfassung versch. Artefakte (Klassen, Interfaces,
+ []
+
+[5]
+Overfull \hbox (1.64862pt too wide) in paragraph at lines 171--171
+[]\T1/phv/b/n/12 Sie kennen verschiedene organisatorische und technische Varian
+ten um eine
+ []
+
+
+Overfull \hbox (5.10283pt too wide) in paragraph at lines 171--171
+\T1/phv/b/n/12 sinnvolle Modularisierung in der Entwicklung und im Deployment e
+inzusetzen 
+ []
+
+
+Overfull \hbox (35.04054pt too wide) in paragraph at lines 173--183
+\T1/phv/m/n/10 Schnittstellen in getrennten JAR's (Modulen) verteilen $\OMS/cms
+y/m/n/10 !$ \T1/phv/m/n/10 einfacher Austausch unterschiedlicher Implementation
+en 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 173--183
+
+ []
+
+
+Overfull \hbox (12.05052pt too wide) in paragraph at lines 190--191
+[]\T1/phv/b/n/10 Scalable Platform: \T1/phv/m/n/10 Java-Plattform selber wurde 
+modularisiert, so können für Anwendungen individuell
+ []
+
+
+Overfull \hbox (9.39047pt too wide) in paragraph at lines 196--197
+[]\T1/phv/m/n/10 Pro Modul wird ein \T1/phv/m/sl/10 module-info.java \T1/phv/m/
+n/10 definiert (explizite Definition von Imports/Exports/Abhängigkeiten) 
+ []
+
+
+Overfull \hbox (11.48961pt too wide) in paragraph at lines 197--198
+[]\T1/phv/m/n/10 Start einer Applikation: Laufzeitprüfung wird ausgeführt, ob a
+lle notwendigen Komponenten vorhanden
+ []
+
+[6]
+Overfull \hbox (26.46977pt too wide) in paragraph at lines 204--204
+[]\T1/phv/b/n/14.4 Versionskontrollsysteme - Source Code Management (SCM) / Ver
+sion
+ []
+
+
+Overfull \hbox (28.96321pt too wide) in paragraph at lines 206--206
 []\T1/phv/b/n/12 Sie kennen die Aufgaben eines Versionskontrollsystems und könn
 en grundlegend
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 75--80
+Underfull \hbox (badness 10000) in paragraph at lines 215--220
 
  []
 
 
-Overfull \hbox (31.6242pt too wide) in paragraph at lines 75--80
+Overfull \hbox (31.6242pt too wide) in paragraph at lines 215--220
 \T1/phv/b/n/10 Branching: \T1/phv/m/n/10 Parallele, voneinander getrennte Entwi
 cklungszweige (für Bugfixing, Prototypen, Tests, Experimente,
  []
 
 
-Overfull \hbox (37.78032pt too wide) in paragraph at lines 75--80
+Overfull \hbox (37.78032pt too wide) in paragraph at lines 215--220
 \T1/phv/m/n/10 nachvollziehbare Änderungsworkflows, etc.) Bei Nicht-Wegwerf-Ent
 wicklungen später Merging möglich/notwendig. 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 75--80
+Underfull \hbox (badness 10000) in paragraph at lines 215--220
 
  []
 
 
-Overfull \hbox (25.34932pt too wide) in paragraph at lines 81--81
+Overfull \hbox (25.34932pt too wide) in paragraph at lines 221--221
 []\T1/phv/b/n/12 Sie kennen die verschiedenen Konzepte und Arten von Versionsko
 ntrollsystemen 
  []
 
 
-Overfull \hbox (29.89748pt too wide) in paragraph at lines 91--91
+Overfull \hbox (29.89748pt too wide) in paragraph at lines 231--231
 []\T1/phv/b/n/12 Sie können mit verschiedenen (Client-)Werkzeugen von Versionsk
 ontrollsystemen
  []
 
 
-Overfull \hbox (7.66808pt too wide) in paragraph at lines 95--96
+Overfull \hbox (7.66808pt too wide) in paragraph at lines 235--236
 []\T1/phv/m/n/10 Transaktionsorieniert, versioniert ganze Verzeichnisstruktur, 
 optimierte/effiziente Speicherung
  []
 
 
-Overfull \hbox (2.7663pt too wide) in paragraph at lines 96--97
+Overfull \hbox (2.7663pt too wide) in paragraph at lines 236--237
 []\T1/phv/m/n/10 verteiltes System, primär lokale Arbeit, beliebig viele Server
 /Repos möglich, auch rein lokal einsetzbar,
  []
 
-[3] (swde-zf.aux) ) 
+[7] (swde-zf.aux) ) 
 Here is how much of TeX's memory you used:
- 2849 strings out of 494866
- 43119 string characters out of 3176097
- 112274 words of memory out of 3000000
- 6448 multiletter control sequences out of 15000+200000
- 27311 words of font info for 38 fonts, out of 3000000 for 9000
+ 3173 strings out of 494866
+ 48637 string characters out of 3176097
+ 120771 words of memory out of 3000000
+ 6764 multiletter control sequences out of 15000+200000
+ 33183 words of font info for 42 fonts, out of 3000000 for 9000
  0 hyphenation exceptions out of 8191
- 41i,6n,32p,353b,189s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,6n,32p,492b,192s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/Users/maurinthalmann/Library/Application Support/MiKTeX/te
 xmfs/install/fonts/enc/dvips/base/8r.enc}</Users/maurinthalmann/Library/Applica
 tion Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb></
 Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/fonts/ty
 pe1/urw/helvetic/uhvb8a.pfb></Users/maurinthalmann/Library/Application Support/
-MiKTeX/texmfs/install/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on swde-zf.pdf (4 pages, 41226 bytes).
+MiKTeX/texmfs/install/fonts/type1/urw/helvetic/uhvbo8a.pfb></Users/maurinthalma
+nn/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/urw/helvetic/u
+hvr8a.pfb></Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/inst
+all/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on swde-zf.pdf (8 pages, 72139 bytes).
 PDF statistics:
- 28 PDF objects out of 1000 (max. 8388607)
+ 50 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

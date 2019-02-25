@@ -9,6 +9,7 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
+\usepackage{enumitem}
 
 \title{\textbf{SWDE - Software Development\\
 Zusammenfassung FS 2019}}
@@ -59,9 +60,148 @@ Zusammenfassung FS 2019}}
 			\item[install] Deployment im lokalen Repository
 			\item[deploy] Deployment im zentralen Repository
 		\end{description}
+
+	\newpage
+	\section{Modularisierung - Module, Komponenten, Schnittstellen}
+	
+	\subsection{Sie wissen, was unter dem Begriff Modularisierung zu verstehen ist}
+	\textit{«Ein grosses Ganzes in mehrere, sich abgeschlossene Einheiten (Module) aufteilen»} \\
+	Flexible Zusammenstellung, Durchführung und Prüfung der einzelnen Module. Zwischen den Modulen können aber auch Abhängigkeiten bestehen.
+	
+	\subsection{Sie kennen die Begriffe Modul, Library, Komponenten und Schnittstelle auf der Ebene des Softwaredesigns}
+	\textbf{Kleinste Einheit:} Klasse (Methoden/Daten/Attribute) $\leftrightarrow$ \textbf{Grösste Einheit:} vollständiges Softwaresystem
+	\begin{description}
+		\item[Modul] In sich abgeschlossene und austauschbare Einheiten, \\
+		soll nur über seine Schnittstellen verwendet werden können $\rightarrow$ lose Kopplung; \\
+		Starke Kohäsion (möglichst in sich abgeschlossene Aufgabe erfüllen) $\rightarrow$ Information Hiding
+		\item[Schnittstelle] lässt Module untereinander interagieren / austauschen
+		\item[Komponente] strengere Form eines Moduls
+		\item[Library] Eine Sammlung thematisch zusammengehörender Funktionen (z.Bsp. Kalendermodul, Trigonometriemodul, etc.)
+	\end{description}
+	\textit{Die einzelnen Begriffe werden in einem späteren Lernziel ausführlicher beschrieben.}
+	
+	\subsection{Sie können die Begriffe auf verschiedenen Abstraktionsebenen in einen sinnvollen Zusammenhang und Kontext setzen}
+	\begin{description}
+		\item[Kopplung] Ausmass der Kommunikation zwischen Modulen (Abhängigkeit zw. Modulen)
+		\item[Kohäsion] Ausmass der Kommunikation innerhalb eines Moduls (interner Zusammenhalt)
+		\item[Ziel] $\rightarrow$ Maximierung der Kohäsion, Minimierung der Kopplung
+	\end{description}
+	\begin{description}
+		\item[Gruppierung] Modulen mit gemeinsamen Eigenschaften als Gruppe handhaben. \\
+			\textit{Beispiel}: Modul für Datenexport in versch. Formate
+		\item[Hierarchie (Rekursiv)] Modul fasst mehrere (Sub-) Module zu einem zusammen. \\
+			\textit{Beispiel}: Persistenzmodul als Datenspeicher mehrerer Entitäten
+		\item[Geschichtet] Modul(-gruppen) können logische Kette bilden, die vertikal als Schichten abgebildet werden. \\
+			\textit{Beispiel}: Schichtenarchitektur, OSI-Referenzmodell, etc.
+	\end{description}
+	
+	\newpage
+	\subsection{Sie sind in der Lage ein System zu analysieren und darin sinnvolle Module zu identifizieren}
+	\subsubsection{Modul}
+	\textbf{\underline{Kriterien für Entwurf von Modulen:}}\\
+	\textbf{Zerlegbarkeit / Dekomposition}\\
+	möglichst unabhängig voneinander, können einzeln genutzt/wiederverwendet werden\\
+	\textbf{Kombinierbarkeit}\\
+	sollen in anderem Umfeld wieder einsetzbar sein \\
+	\textit{(Zerlegbar, um auf andere Art wieder kombiniert werden zu können)}\\
+	\textbf{Verständlichkeit}\\
+	unabhängig und in sich abgeschlossen verständlich sein, kann aber trotzdem hohe Komplexität erreichen.\\
+	\textbf{Stetigkeit / Stabilität / Kontinuität}\\
+	Struktur soll sich nicht stetig verändern, Aufteilung soll robust gegenüber Änderungen sein. Änderungen sollen sich auf eine minimale Anzahl Module beschränken.\\
+	\newline
+	\textbf{\underline{Arten von Modulen:}}\\
+	\textbf{Bibliothek/Library:} beschrieben unter 2.2\\
+	\textbf{Abstrakte (komplexe) Datentypen:} Modul implementiert neuen komplexen Datentyp und stellt darauf definierte Operationen zur Verfügung (Bsp. Komplexe Zahlen, Koordinatendarstellung, etc.)\\
+	\textbf{Modellierung/Abstraktion physischer Modelle:} Modul abstrahiert reales, physisch existierendes System (z.Bsp. Sensor, Gerätetreiber, Anzeigemodul, etc.)\\
+	\textbf{Modellierung/Abstraktion logisch-konzeptioneller Systeme:} Modul abstrahiert ein nur rein logisch existierendes System und macht es für eine höhere Abstraktionsebene nutzbar (z.Bsp. Grafikmodule, Datenbankmodule, Messaging, GUI-Module, etc.)\\
+	\newline
+	\textbf{\underline{Definition eines Moduls:}}\\
+	\textbf{Verhalten:} Funktionalität des Moduls?\\
+	\textbf{Export:} Was bieten wir, Schnittstelle, um das Verhalten des Moduls für andere Module verfügbar zu machen.\\
+	\textbf{Import:} Was brauchen wir, von welchen Schnittstellen ist das Modul evtl. abhängig? (Dependencies)\\
+	\newline
+	\textbf{\underline{Herausforderung bei Modulen:}} \\
+	\textbf{Basiskonzepte:} Hohe Kohäsion, lose Kopplung, starke Datenkapselung \& Information Hiding\\
+	\textbf{Vier Kriterien:} Zerlegbarkeit, Kombinierbarkeit, Verständlichkeit \& Stetigkeit\\
+	\textbf{Verschiedene Arten:} Bibliotheken, abstrakte Datentypen, physische / logische Modelle, Komponenten, etc.
+	
+	\newpage
+	\subsubsection{Komponente}
+	\begin{quote}
+		\textit{Eine Softwarekomponente ist ein Softwareelement, das zu einem
+bestimmten \textbf{Komponentenmodell} passt und entsprechend
+einem Composition Standard ohne Änderungen mit anderen
+Komponenten verknüpft und ausgeführt werden kann.}
+	\end{quote}
+	Eine \textbf{Komponente} erfüllt strengere Kriterien als ein Modul und benötigt meist einen \textbf{Kontext}. Komponenten bedienen sich spezifischer Laufzeitumgebungen (Bsp. Container) in welche die Komponenten integriert (installiert, deployed, etc.) werden und dort lauffähig sind. (Container stellen den Komponenten Basisdienste z.Bsp. für Lifecycle und Kommunikation bereit)\\
+	Komponenten bedienen sich spezifischer Laufzeitumgebungen (z.Bsp. Container) in welche die Komponenten integriert (installiert, deployed, etc.) werden und dort lauffähig sind (Container stellen den Komponenten Basisdienste z.Bsp. für Lifecycle und Kommunikation bereit)\\
+	Komponenten können teilweise \textbf{dynamisch zur Laufzeit} ergänzt/entfernt/ausgetauscht werden
+	\\ \indent $\rightarrow$ «Hot-Deployment» / Plugin-Mechanismen\\
+	Komponenten bieten Funktionalität an und sind von Funktionalität des eingesetzten Komponentenmodells (Framework/Produkt) \textbf{abhängig}.\\
+	\newline
+	\textbf{Komponentenmodelle}: konkrete Ausprägungen des Paradigmas der komponentenbasierten Entwicklung in Form eines Standards, Frameworks, Produktes. Schnittstellen für Interaktion und Komposition von Komponenten festlegen: wie kommunizieren Komponenten untereinander/mit dem Container Idealerweise: Komponentenmodell unabhängig von Gremium standardisiert (kann somit in unterschiedlichen Ausprägungen von versch. Herstellern implementiert/genutzt werden)
+	\begin{quote}
+			\textbf{Beispiele}: Microsoft DCOM/ActiveX/.NET Remoting Services (WCF), CORBA (Common Object Request Broker Architecture), Enterprise Java Beans, OSGi (Open Services Gateway initiative / Alliance)
+	\end{quote}
+	\textbf{Komponente} wird wie Modul über \textit{Verhalten, Export, Import} definiert. \\
+	Zusätzlich wird ein \textbf{Kontext} verlangt: definiert notwendige Rahmenbedingungen, die für Betrieb der Komponente notwendig sind.
+	
+	\subsubsection{Schnittstelle}
+	Schnittstellen werden konsequent für die kontrollierte Kommunikation zwischen Modulen oder Komponenten verwendet. \textbf{Vorteile} davon:
+	\begin{itemize}
+		\setlength\itemsep{0em}
+		\item Schnittstelle ist einfach verständlich, einfacher als die Implementierung.
+		\item Schnittstellen helfen Abhängigkeiten zu reduzieren, vermeiden Abhängigkeiten zur Implementierung.
+		\item Schnittstellen erleichtern Wiederverwendung.
+	\end{itemize}
+	Beziehungen zwischen einzelnen Teilen einer Software werden über Schnittstellen realisiert. Module konzentrieren sich auf ihre lokalen Probleme, Architektur definiert und hält Fäden (Beziehungen) des Systems zusammen.\\
+	Schnittstellen sollen minimal und schmal sein $\rightarrow$ aussagekräftige Methoden, präzis typisierte Parameter, \textbf{Methoden} sollen möglichst:
+	\begin{itemize}
+		\setlength\itemsep{0em}
+		\item keine Überschneidungen haben
+		\item keine globalen Daten verwenden
+		\item statuslos (stateless) sein
+	\end{itemize}
+	\textbf{Service}: abstrahierte Schnittstelle, definiert sich primär über Fachlichkeit, dahinterliegende Technik idealerweise vollständig isoliert (Bsp. Webservice, wird über Web-Protokolle angeboten und abstrahiert die Implementation [Plattform, Sprache, Technologie] vollständig) \\
+	\textbf{API}: \textit{(Application Programming Interface)}, technisch orientierte Schnittstelle, welche die Anbindung einer Komponente auf Quellcodeebene definiert (Bsp. JDBC [Java Database Connectivity], einheitliche Schnittstelle zur Kommunikation mit versch. DBMS) \\
+	Ebene \textbf{Objektorientiertes Design}: Schnittstelle = Java Interface \\
+	Ebene \textbf{Modularisierung}: Schnittstelle = logische Zusammenfassung versch. Artefakte (Klassen, Interfaces, Konfigurationsdateien, Doku etc.)
+	
+	\newpage
+	\subsection{Sie kennen verschiedene organisatorische und technische Varianten um eine sinnvolle Modularisierung in der Entwicklung und im Deployment einzusetzen}
+	\subsubsection{Java 8}
+	Module/Komponenten mit Klassen und Interfaces realisiert, Deployment meist als JAR. 
+	Klassen können sich an «Java Bean Spezifikation» halten \\ 
+	\indent $\rightarrow$ Default-Konstruktor, Setter/Getter, PropertyChange, Serialisierbar, etc. \\
+	Schnittstellen mit Java-Interfaces (zu class-Dateien kompiliert) \\
+	Komplexere Schnittstellen: mehrere Interfaces in Package zusammenfassen \\
+	Java 1.8 unterstützt selber keine Modularisierung \\
+	Information Hiding (einzelne Elemente vor Zugriff schützen) durch Packages, Sichtbarkeiten und Import, ermöglicht Zusammenfassen von Klassen/Interfaces in Gruppen, aber keine explizite Möglichkeit, Exports \& Dependencies zu deklarieren \\
+	manifest.mf enthält Infos zu Identifikation, Herkunft und Version \\
+	Schnittstellen in getrennten JAR’s (Modulen) verteilen $\rightarrow$ einfacher Austausch unterschiedlicher Implementationen \\
+	\textit{Workaround}: Namenskonventionen und hohe Disziplin \\
+	
+	\subsubsection{Java 9}
+	Modularisierung möglich, drei Ziele im Vordergrund:
+	\begin{itemize}
+		\setlength\itemsep{0em}
+		\item \textbf{Reliable Configuration:} fehleranfälligen Classpath durch auf Modul-Abhängigkeiten basierenden Modul-Path ablösen
+		\item \textbf{Strong Encapsulation:} Modul definiert explizit sein öffentliches API. Auf alle restlichen Klassen ist von aussen kein Zugriff mehr möglich (auch wenn public).
+		\item \textbf{Scalable Platform:} Java-Plattform selber wurde modularisiert, so können für Anwendungen individuell angepasste, schlankere Runtime-Images gebaut werden.
+	\end{itemize}
+	Weiteres zu Modularisierung in Java 9:
+	\begin{itemize}
+		\setlength\itemsep{0em}
+		\item Java-Packages neu in Modulen zusammenfassbar (zusätzliche Strukturebene in der Dateiablage, eindeutige Namensgebung analog zu Packages)
+		\item Pro Modul wird ein \textit{module-info.java} definiert (explizite Definition von Imports/Exports/Abhängigkeiten)
+		\item Start einer Applikation: Laufzeitprüfung wird ausgeführt, ob alle notwendigen Komponenten vorhanden sind.
+		\item Ende der «JAR-Hell»: Neues Format \textit{jmod}, Class-Path wird durch Modul-Path abgelöst
+		\item Vollständig rückwärtskompatibel
+	\end{itemize}
+
 	
 	\newpage	
-	\section{Versionskontrolle mit Git und GitLab}
+	\section{Versionskontrollsysteme - Source Code Management (SCM) / Version Control Systems (VCS)}
 	
 		\subsection{Sie kennen die Aufgaben eines Versionskontrollsystems und können grundlegend damit arbeiten}
 		\textbf{Grundlegende Arbeit:}
