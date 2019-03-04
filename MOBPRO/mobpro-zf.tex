@@ -2,21 +2,24 @@
 
 \usepackage[ngerman]{babel}
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 
 \usepackage[scaled]{helvet}
 \renewcommand{\familydefault}{\sfdefault}
-\usepackage[T1]{fontenc}
 
 \usepackage[margin=80pt]{geometry}
 
+\usepackage{multicol}
 \usepackage{graphicx}
+\usepackage{caption}
 \usepackage{color}
 \usepackage[table,xcdraw]{xcolor}
+\usepackage{courier}
 
 \usepackage{enumitem}
 \setlist{nosep}
 
-\usepackage [autostyle, german]{csquotes}
+\usepackage [autostyle]{csquotes}
 \MakeOuterQuote{"}
 
 \usepackage[hidelinks]{hyperref}
@@ -346,6 +349,8 @@ Schachtelung möglich, aber nicht effizient, wenn möglich immer das Constraint-
 \end{itemize}
 
 \subsubsection{Constraint-Layout}
+
+\begin{multicols}{2}
 \begin{itemize}
 	\item Erstellung von komplexen Layouts, ohne zu schachteln
 	\item Elemente werden relativ mit Bedingungen platziert
@@ -356,5 +361,121 @@ Schachtelung möglich, aber nicht effizient, wenn möglich immer das Constraint-
 	\end{itemize}
 	\item Layout-Hilfen (Hilfslinien, Barriers)
 \end{itemize}
+\columnbreak
+\begin{minipage}[c]{\columnwidth}
+	\centering
+	\includegraphics[width=0.7\linewidth]{img/constraintlayout.jpg}
+	\captionof{figure}{Constraint Layout}
+\end{minipage}
+\end{multicols}
+
+\subsubsection{LinearLayout}
+
+\begin{multicols}{2}
+\begin{itemize}
+	\item Reiht Elemente neben-/untereinander auf
+	\begin{itemize}
+		\item kann geschachtelt werden, um Zeilen/Spalten zu formen (nicht zu tief, sonst schlechte Performanz
+	\end{itemize}
+	\item Eigenschaften:\\
+	 \textit{(orientation, gravity, weigthSum, etc.)}
+	\item Layout-Parameter für Children
+	\begin{itemize}
+		\item layout\_width, layout\_height
+		\item layout\_margin...
+		\item layout\_weight, layout\_gravity
+	\end{itemize}
+\end{itemize}
+\columnbreak
+\begin{minipage}[c]{\columnwidth}
+	\centering
+	\includegraphics[width=0.5\linewidth]{img/linearlayout.jpg}
+	\captionof{figure}{LinearLayout}
+\end{minipage}
+\end{multicols}
+
+\paragraph{Warum nutzt man trotzdem noch LinearLayout?}
+\begin{itemize}
+	\item Nach wie vor einfachste Lösung für Button- oder Action-Bars ("flow semantik") und einfache Screens
+	\item Kaum Konfiguration nötig, robust
+	\item Für scrollbare Listen mit dynamischer Anzahl Elemente besser \textit{ListView} verwenden (siehe Adapter-Views)
+	\item Einsatz mit Bedacht durchaus sinnvoll
+\end{itemize}
+\vspace{1em}
+\noindent
+Es gibt noch die \textbf{ScrollView}, deren Nutzung vertikales Scrollen bei zu grossen Layouts erlaubt, sie kann jedoch \underline{nur ein Kind} haben und enthält typischerweise das Top-Level-Layout einer Bildschirmseite.
+
+\paragraph{Pixalangaben}
+\textit{(Typischerweise werden Angaben in dp verwendet, ausser sp bei Schriftgrössen.)}
+\begin{itemize}
+	\item \textbf{dp - density-independent:} \\ Passen sich der physischen Dichte des Screens an, dp passen sich gegenüber den realen Dimensionen eines Screens und dessen Verhältnisse an.
+	\item \textbf{sp - scale-independent:} \\Ähnlich der dp-Einheit, passt sich jedoch der Schriftskalierung des Nutzers an.
+	\item \textbf{px - Pixels:} \\Passen sich der Anzahl Pixel eines Bildschirms an, deren Nutzung wird nicht empfohlen.
+\end{itemize}
+
+\newpage
+
+\subsection{Ressourcen, Konfigurationen und Internationalisierung}
+\textbf{Ressourcen} sind alle Nicht-Java-Teile einer Applikation und sind im \textit{/res}-Verzeichnis abgelegt, sogennante ausgelagerte Konstanten-Definitionen. Sie werden im Layout und Java-Code über die \textbf{\textit{automatisch generierte R-Klasse}} mit ID-Konstanten (int) referenziert. Kontextabhängige Ressourcen sind möglich z.Bsp. für Sprache, Gerätetyp, Orientierung, ...\\
+\textbf{Beispiele}: Strings, Styles, Colors, Dimensionen, Bilder (drawables), Layouts (portrait, landscape), Array-Werte (z.Bsp. für Spinner) und Menü-Items\\
+
+% TODO
+
+\newpage
+\section{Android 3 - Persistenz \& Content Providers}
+
+Persistenz: Daten über Laufzeit der App erhalten.
+Für lokale Persistenz gibt es drei Möglichkeiten:
+\begin{itemize}
+	\item \textbf{Shared Preferences}\\
+	Key/Value-Paare, Verwendung für kleine Datenmengen
+	\item \textbf{Dateisystem}\\
+	intern oder extern, in App-Sandbox (privat) oder auf SD-Karte (öffentlich), Verwendung für binäre/grosse Dateien, Export
+	\item \textbf{Datenbank (Room)}\\
+	SQLite + Object Relational Mapper (ORM), Verwendung für strukturierte Daten + Abfragen/Suche
+\end{itemize}
+
+\subsection{(Shared) Preferences}
+\begin{itemize}
+	\item Jede Activity hat ein SharedPreferences-Profil, persistente Einstellungen für Activity oder Applikation
+	\item Key-Value-Store (persistente Map)
+	\item Preferences für \textbf{Activity}: \\
+	\texttt{Activity.getPreferences(mode)}\\
+	Anwendungsfall: Activity-State persistent speichern
+	\item Preferences für \textbf{Applikation}: \\
+	\texttt{PreferenceManager.getDefaultSharedPreferences(ctx)}\\
+	\texttt{Context.getSharedPreferences(name, mode)}
+	\item Mögliche Datentypen für Preferences-Werte:\\
+	\textit{String, int, float, long, boolean, Set<String>} (mit seperaten Werten)
+\end{itemize}
+\paragraph{Lesen und Schreiben auf Preferences}
+\begin{itemize}
+	\item Mehrere Dateien pro Applikation möglich, Zugriff mit\\
+		\texttt{Activity.getSharedPreferences(name, mode)} (unterschiedliche Dateinamen)
+	\item Lesen mit Methoden \texttt{SharedPreferences.get\textbf{X}()}\\
+		\textbf{X} steht für den Typ, also String, Int, Boolean, ...
+	\item 
+\end{itemize}
+
+	% TODO
+	
+\subsection{Dateisystem}
+
+\begin{itemize}
+	\item \textbf{Einsatzbereiche}
+		\begin{itemize}
+			\item Speichern/Laden von binären Dateien (Bilder, Musik, Video, Java-Objects, etc.)
+			\item Caching (Heruntergeladene Dateien)
+			\item Grosse Text-Dateien(Plain Text, Strukturierte Daten wie XML, JSON,))
+		\end{itemize}
+	\item Teilen / Freigeben von erstelltem Inhalt (Externer Speicher wie SD-Karte)
+\end{itemize}
+
+
+	% TODO
+	
+\subsection{Permission-Model}
+
+
 
 \end{document}
