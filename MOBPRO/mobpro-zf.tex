@@ -13,6 +13,9 @@
 \usepackage{color}
 \usepackage[table,xcdraw]{xcolor}
 
+\usepackage{enumitem}
+\setlist{nosep}
+
 \usepackage [autostyle, german]{csquotes}
 \MakeOuterQuote{"}
 
@@ -290,6 +293,68 @@ Durch das Überschreiben dieser Methoden können wir uns in den Lebenszyklus ein
 \newpage
 \section{Android 2 - Benutzerschnittstellen}
 
+\subsection{GUI einer Activity}
 
+GUI wird als XML definiert, der Name resultiert in einer Konstante: \textit{\textbf{R}.layout.xxx}. Diese wird im \textit{onCreate()} einer Activity mit \textit{setContentView()} angegeben.
+
+\begin{figure}[htb!]
+	\centering
+	\includegraphics[width=10cm]{img/gui_xml_example.jpg}
+	\caption{Beispiel eines XML für ein Layout}
+	\label{fig:guixmlexamp}
+\end{figure}
+\noindent
+Je nach Layout müssen die Elemente unterschiedlich konfiguriert werden, was bei der Arbeit mit dem Layout-Editor nicht offensichtlich, aber trotzdem gut zu wissen ist. \\
+Ein Android-UI ist hierarchisch aufgebaut und besteht aus \textbf{ViewGroups} (Cointainer für Views oder weitere ViewGroups, angeordnet durch Layout) und \textbf{Views} (Widgets). Sollte auf unterschiedlichen Bildschirmgrössen gleich aussehen (Elemente deshalb \textbf{relativ} und nicht absolut positionieren)
+
+\begin{figure}[htb!]
+	\centering
+	\includegraphics[width=10cm]{img/xml_layouts.jpg}
+	\caption{Layout-Varianten bei Android}
+	\label{fig:xmllayouts}
+\end{figure}
+\noindent
+Schachtelung möglich, aber nicht effizient, wenn möglich immer das Constraint-Layout verwenden. Layouts spezifiziert man auf zwei verschiedene Arten:
+\begin{itemize}
+	\item \textbf{Statisch / Deklarativ (XML)}
+	\item \textit{Grundsätzlich in MOBPRO verwendet, bietet viele Vorteile (Deklarativ, weniger umständlich als Code, Struktur eminent, Umformungen ohne Rekompilierung möglich...)}
+		\begin{itemize}
+			\item Deklarative Beschreibung des GUI als Komponentenbaum
+			\item XML-Datei unter \textit{res/layout}
+			\item Referenzen auf Bilder/Texte/etc.
+			\item Typischerweise ein XML pro Activity
+		\end{itemize}
+	\item \textbf{Dynamisch (in Java)}
+	\item \textit{Jedes XML hat eine korrespondierende Java-Klasse, XML $\rightarrow$ Java = Inflating}
+		\begin{itemize}
+			\item Aufbau und Definition des GUI im Java-Code
+			\item Normalerweise nicht nötig: die meisten GUIs haben fixe Struktur
+			\item Änderung von Eigenschaften während Laufzeit ist normal (Bsp. Visibility, Ausblenden einer View, wenn nicht benötigt)
+		\end{itemize}
+\end{itemize}
+\newpage
+\subsection{XML-Layout}
+\begin{itemize}
+	\item Jedes Layout ist ein eigenes XML-File
+	\begin{itemize}
+		\item Root-Element = View oder ViewGroup
+		\item Kann Standard- oder eigene View-Klassen enthalten
+	\end{itemize}
+	\item XML können mit Inflater "aufgeblasen" bzw. instanziiert werden, damit eigene wiederverwendbare Komponenten/Templates/Prototypen erzeugt werden können
+	\item Innere Elemente können unterhalb eines Parents via View-ID referenziert werden (\textit{findViewById()})
+	\item Debugging mit dem Layout-Inspector	
+\end{itemize}
+
+\subsubsection{Constraint-Layout}
+\begin{itemize}
+	\item Erstellung von komplexen Layouts, ohne zu schachteln
+	\item Elemente werden relativ mit Bedingungen platziert
+	\begin{itemize}
+		\item zu anderen Elementen
+		\item zum Parent-Container
+		\item Element-Chains (spread/pack)
+	\end{itemize}
+	\item Layout-Hilfen (Hilfslinien, Barriers)
+\end{itemize}
 
 \end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840) (preloaded format=pdflatex 2019.2.19)  25 FEB 2019 18:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840) (preloaded format=pdflatex 2019.3.4)  4 MAR 2019 10:20
 entering extended mode
 **./mobpro-zf.tex
 (mobpro-zf.tex
@@ -204,21 +204,31 @@ Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
 ("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/enumitem/enumitem.sty"
+Package: enumitem 2019/02/04 v3.8 Customized lists
+\labelindent=\skip46
+\enit@outerparindent=\dimen116
+\enit@toks=\toks20
+\enit@inbox=\box29
+\enit@count@id=\count94
+\enitdp@description=\count95
+)
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
 atex/csquotes/csquotes.sty"
 Package: csquotes 2018/04/13 v5.2d context-sensitive quotations (JAW)
 
 ("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
 atex/etoolbox/etoolbox.sty"
 Package: etoolbox 2018/08/19 v2.5f e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count94
+\etb@tempcnta=\count96
 )
-\csq@reset=\count95
-\csq@gtype=\count96
-\csq@glevel=\count97
-\csq@qlevel=\count98
-\csq@maxlvl=\count99
-\csq@tshold=\count100
-\csq@ltx@everypar=\toks20
+\csq@reset=\count97
+\csq@gtype=\count98
+\csq@glevel=\count99
+\csq@qlevel=\count100
+\csq@maxlvl=\count101
+\csq@tshold=\count102
+\csq@ltx@everypar=\toks21
 
 ("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
 atex/csquotes/csquotes.def"
@@ -304,9 +314,9 @@ Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 atex/oberdiek/kvoptions.sty"
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 )
-\@linkdim=\dimen116
-\Hy@linkcounter=\count101
-\Hy@pagecounter=\count102
+\@linkdim=\dimen117
+\Hy@linkcounter=\count103
+\Hy@pagecounter=\count104
 
 ("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
 atex/hyperref/pd1enc.def"
@@ -314,7 +324,7 @@ File: pd1enc.def 2018/11/30 v6.88e Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-\Hy@SavedSpaceFactor=\count103
+\Hy@SavedSpaceFactor=\count105
 
 ("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
 atex/00miktex/hyperref.cfg"
@@ -327,7 +337,7 @@ Package hyperref Info: Plain pages OFF on input line 4534.
 Package hyperref Info: Backreferencing OFF on input line 4539.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4772.
-\c@Hy@tempcnt=\count104
+\c@Hy@tempcnt=\count106
 
 ("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
 atex/url/url.sty"
@@ -335,10 +345,10 @@ atex/url/url.sty"
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5125.
-\XeTeXLinkMargin=\dimen117
-\Fld@menulength=\count105
-\Field@Width=\dimen118
-\Fld@charsize=\dimen119
+\XeTeXLinkMargin=\dimen118
+\Fld@menulength=\count107
+\Field@Width=\dimen119
+\Fld@charsize=\dimen120
 Package hyperref Info: Hyper figures OFF on input line 6380.
 Package hyperref Info: Link nesting OFF on input line 6385.
 Package hyperref Info: Hyper index ON on input line 6388.
@@ -348,17 +358,17 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6405.
 Package hyperref Info: PDF/A mode OFF on input line 6410.
 LaTeX Info: Redefining \ref on input line 6450.
 LaTeX Info: Redefining \pageref on input line 6454.
-\Hy@abspage=\count106
-\c@Item=\count107
-\c@Hfootnote=\count108
+\Hy@abspage=\count108
+\c@Item=\count109
+\c@Hfootnote=\count110
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
 ("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
 atex/hyperref/hpdftex.def"
 File: hpdftex.def 2018/11/30 v6.88e Hyperref driver for pdfTeX
-\Fld@listcount=\count109
-\c@bookmark@seq@number=\count110
+\Fld@listcount=\count111
+\c@bookmark@seq@number=\count112
 
 ("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
 atex/oberdiek/rerunfilecheck.sty"
@@ -366,69 +376,69 @@ Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
-\Hy@SectionHShift=\skip46
+\Hy@SectionHShift=\skip47
 )
-Package hyperref Info: Option `colorlinks' set `false' on input line 20.
+Package hyperref Info: Option `colorlinks' set `false' on input line 23.
 
 ("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
 atex/listings/listings.sty"
-\lst@mode=\count111
-\lst@gtempboxa=\box29
-\lst@token=\toks21
-\lst@length=\count112
-\lst@currlwidth=\dimen120
-\lst@column=\count113
-\lst@pos=\count114
-\lst@lostspace=\dimen121
-\lst@width=\dimen122
-\lst@newlines=\count115
-\lst@lineno=\count116
-\lst@maxwidth=\dimen123
+\lst@mode=\count113
+\lst@gtempboxa=\box30
+\lst@token=\toks22
+\lst@length=\count114
+\lst@currlwidth=\dimen121
+\lst@column=\count115
+\lst@pos=\count116
+\lst@lostspace=\dimen122
+\lst@width=\dimen123
+\lst@newlines=\count117
+\lst@lineno=\count118
+\lst@maxwidth=\dimen124
 
 ("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
 atex/listings/lstmisc.sty"
-File: lstmisc.sty 2018/09/02 1.7 (Carsten Heinz)
-\c@lstnumber=\count117
-\lst@skipnumbers=\count118
-\lst@framebox=\box30
+File: lstmisc.sty 2019/02/27 1.8b (Carsten Heinz)
+\c@lstnumber=\count119
+\lst@skipnumbers=\count120
+\lst@framebox=\box31
 )
 ("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
 atex/listings/listings.cfg"
-File: listings.cfg 2018/09/02 1.7 listings configuration
+File: listings.cfg 2019/02/27 1.8b listings configuration
 ))
-Package: listings 2018/09/02 1.7 (Carsten Heinz)
+Package: listings 2019/02/27 1.8b (Carsten Heinz)
 
 ("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
 atex/listings/lstlang1.sty"
-File: lstlang1.sty 2018/09/02 1.7 listings language file
+File: lstlang1.sty 2019/02/27 1.8b listings language file
 )
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
  (mobpro-zf.aux)
 \openout1 = `mobpro-zf.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Try loading font information for T1+phv on input line 50.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 53.
 
 ("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
 atex/psnfss/t1phv.fd"
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 9.49997pt on input line 50.
+(Font)              scaled to size 9.49997pt on input line 53.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -466,19 +476,19 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 
 
 ("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/c
-ontext/base/supp-pdf.mkii"
+ontext/base/mkii/supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count119
-\scratchdimen=\dimen124
-\scratchbox=\box31
-\nofMPsegments=\count120
-\nofMParguments=\count121
-\everyMPshowfont=\toks22
-\MPscratchCnt=\count122
-\MPscratchDim=\dimen125
-\MPnumerator=\count123
-\makeMPintoPDFobject=\count124
-\everyMPtoPDFconversion=\toks23
+\scratchcounter=\count121
+\scratchdimen=\dimen125
+\scratchbox=\box32
+\nofMPsegments=\count122
+\nofMParguments=\count123
+\everyMPshowfont=\toks23
+\MPscratchCnt=\count124
+\MPscratchDim=\dimen126
+\MPnumerator=\count125
+\makeMPintoPDFobject=\count126
+\everyMPtoPDFconversion=\toks24
 )
 ("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
 atex/oberdiek/epstopdf-base.sty"
@@ -495,9 +505,9 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
-Package csquotes Info: Redefining character " on input line 50.
-\AtBeginShipoutBox=\box32
-Package hyperref Info: Link coloring OFF on input line 50.
+Package csquotes Info: Redefining character " on input line 53.
+\AtBeginShipoutBox=\box33
+Package hyperref Info: Link coloring OFF on input line 53.
 
 ("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
 atex/hyperref/nameref.sty"
@@ -507,40 +517,40 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 eneric/oberdiek/gettitlestring.sty"
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count125
+\c@section@level=\count127
 )
-LaTeX Info: Redefining \ref on input line 50.
-LaTeX Info: Redefining \pageref on input line 50.
-LaTeX Info: Redefining \nameref on input line 50.
+LaTeX Info: Redefining \ref on input line 53.
+LaTeX Info: Redefining \pageref on input line 53.
+LaTeX Info: Redefining \nameref on input line 53.
  (mobpro-zf.out) (mobpro-zf.out)
 \@outlinefile=\write3
 \openout3 = `mobpro-zf.out'.
 
-\c@lstlisting=\count126
+\c@lstlisting=\count128
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 16.41594pt on input line 53.
+(Font)              scaled to size 16.41594pt on input line 56.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <17.28> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 53.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 56.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 16.41594pt on input line 53.
+(Font)              scaled to size 16.41594pt on input line 56.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 11.39996pt on input line 53.
+(Font)              scaled to size 11.39996pt on input line 56.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 53.
+(Font)              <12> on input line 56.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 53.
+(Font)              <8> on input line 56.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 53.
+(Font)              <6> on input line 56.
  [1
 
 {/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/data/pdftex/co
 nfig/pdftex.map}]
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 13.67995pt on input line 55.
+(Font)              scaled to size 13.67995pt on input line 58.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 55.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 58.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 13.67995pt on input line 55.
+(Font)              scaled to size 13.67995pt on input line 58.
  (mobpro-zf.toc
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 2.
@@ -556,136 +566,172 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
  [1]
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 59.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 62.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 9.49997pt on input line 59.
+(Font)              scaled to size 9.49997pt on input line 62.
 
-Overfull \hbox (7.99802pt too wide) in paragraph at lines 59--62
+Overfull \hbox (7.99802pt too wide) in paragraph at lines 62--66
 \T1/phv/m/n/10 Informationen zur Androidprogrammierung können stets dem Android
  Developer Guide entnommen werden
  []
 
 LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <10> not available
-(Font)              Font shape `T1/phv/b/it' tried instead on input line 63.
+(Font)              Font shape `T1/phv/b/it' tried instead on input line 66.
 LaTeX Font Info:    Font shape `T1/phv/b/it' in size <10> not available
-(Font)              Font shape `T1/phv/b/sl' tried instead on input line 63.
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 66.
 LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
-(Font)              scaled to size 9.49997pt on input line 63.
-LaTeX Font Info:    Try loading font information for OMS+phv on input line 69.
+(Font)              scaled to size 9.49997pt on input line 66.
+LaTeX Font Info:    Try loading font information for OMS+phv on input line 72.
 
 ("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
 atex/psnfss/omsphv.fd"
 File: omsphv.fd 
 )
 LaTeX Font Info:    Font shape `OMS/phv/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 69.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 72.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 73.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 76.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 11.39996pt on input line 73.
+(Font)              scaled to size 11.39996pt on input line 76.
 
-Underfull \hbox (badness 1924) in paragraph at lines 81--82
+Underfull \hbox (badness 1924) in paragraph at lines 84--85
 []|\T1/phv/m/n/10 Event-Handler, welche auf App-interne oder systemweite Broadc
 ast-
  []
 
 
-Underfull \hbox (badness 1442) in paragraph at lines 82--83
+Underfull \hbox (badness 1442) in paragraph at lines 85--86
 []|\T1/phv/m/n/10 Komponente, welche Datenaustausch zwischen versch. Applikatio
 nen
  []
 
 [2]
-<img/manifestxml.jpg, id=93, 665.76pt x 397.85pt>
+<img/manifestxml.jpg, id=103, 665.76pt x 397.85pt>
 File: img/manifestxml.jpg Graphic file (type jpg)
 <use img/manifestxml.jpg>
-Package pdftex.def Info: img/manifestxml.jpg  used on input line 113.
+Package pdftex.def Info: img/manifestxml.jpg  used on input line 116.
 (pdftex.def)             Requested size: 341.43306pt x 204.03603pt.
  [3 <./img/manifestxml.jpg>]
-<img/intents_comm.png, id=99, 955.57pt x 776.9025pt>
+<img/intents_comm.png, id=109, 955.57pt x 776.9025pt>
 File: img/intents_comm.png Graphic file (type png)
 <use img/intents_comm.png>
-Package pdftex.def Info: img/intents_comm.png  used on input line 129.
+Package pdftex.def Info: img/intents_comm.png  used on input line 132.
 (pdftex.def)             Requested size: 213.39566pt x 173.49152pt.
 
-Overfull \hbox (18.37215pt too wide) in paragraph at lines 139--140
+Overfull \hbox (18.37215pt too wide) in paragraph at lines 142--143
 \T1/phv/m/n/10 und eine Exception schmeissen. Das geht auch ganz einfach folgen
 dermassen im Manifest unter   application: 
  []
 
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 8.54997pt on input line 140.
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 140.
+(Font)              scaled to size 8.54997pt on input line 143.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 143.
 
 
 ("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
 atex/base/t1cmtt.fd"
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 ) [4 <./img/intents_comm.png>]
-Overfull \hbox (4.2829pt too wide) in paragraph at lines 172--173
+Overfull \hbox (4.2829pt too wide) in paragraph at lines 175--176
 \T1/phv/m/sl/10 ACTION_VIEW \T1/phv/m/n/10 ist hierbei kein expliziter Empfänge
 rtyp, sondern nur eine gewünschte Aktion. Die mitgege-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 172--173
+Underfull \hbox (badness 10000) in paragraph at lines 175--176
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 192--193
+Underfull \hbox (badness 10000) in paragraph at lines 195--196
 
  []
 
 [5]
-<img/lifecycle.jpg, id=147, 343.78906pt x 444.42673pt>
+<img/lifecycle.jpg, id=157, 343.78906pt x 444.42673pt>
 File: img/lifecycle.jpg Graphic file (type jpg)
 <use img/lifecycle.jpg>
-Package pdftex.def Info: img/lifecycle.jpg  used on input line 208.
+Package pdftex.def Info: img/lifecycle.jpg  used on input line 211.
 (pdftex.def)             Requested size: 369.88582pt x 478.16985pt.
-<img/lifetime.jpg, id=148, 667.14244pt x 130.98938pt>
+<img/lifetime.jpg, id=158, 667.14244pt x 130.98938pt>
 File: img/lifetime.jpg Graphic file (type jpg)
 <use img/lifetime.jpg>
-Package pdftex.def Info: img/lifetime.jpg  used on input line 214.
+Package pdftex.def Info: img/lifetime.jpg  used on input line 217.
 (pdftex.def)             Requested size: 312.9803pt x 61.45308pt.
  [6 <./img/lifecycle.jpg> <./img/lifetime.jpg>]
-Overfull \hbox (2.3938pt too wide) in paragraph at lines 251--252
+Overfull \hbox (2.3938pt too wide) in paragraph at lines 254--255
 \T1/phv/m/n/10 Durch das Überschreiben dieser Methoden können wir uns in den Le
 benszyklus einklinken. Immer \T1/phv/b/n/10 super()
  []
 
 [7]
-<img/androidstack.jpg, id=168, 408.42496pt x 283.77579pt>
+<img/androidstack.jpg, id=178, 408.42496pt x 283.77579pt>
 File: img/androidstack.jpg Graphic file (type jpg)
 <use img/androidstack.jpg>
-Package pdftex.def Info: img/androidstack.jpg  used on input line 256.
+Package pdftex.def Info: img/androidstack.jpg  used on input line 259.
 (pdftex.def)             Requested size: 312.9803pt x 217.46881pt.
  [8 <./img/androidstack.jpg>]
-Overfull \hbox (15.42342pt too wide) in paragraph at lines 279--280
+Overfull \hbox (15.42342pt too wide) in paragraph at lines 282--283
 []\T1/phv/m/n/10 Das Berechtigungssystem von Linux ist Benutzer-basiert, es bet
 rifft deshalb sowohl den Speicherzugriff
  []
 
-<img/securitymodel.jpg, id=174, 544.68758pt x 260.172pt>
+<img/securitymodel.jpg, id=184, 544.68758pt x 260.172pt>
 File: img/securitymodel.jpg Graphic file (type jpg)
 <use img/securitymodel.jpg>
-Package pdftex.def Info: img/securitymodel.jpg  used on input line 285.
+Package pdftex.def Info: img/securitymodel.jpg  used on input line 288.
 (pdftex.def)             Requested size: 341.43306pt x 163.09538pt.
 [9 <./img/securitymodel.jpg>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 295.
- [10]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 295.
+<img/gui_xml_example.jpg, id=190, 514.16519pt x 250.46245pt>
+File: img/gui_xml_example.jpg Graphic file (type jpg)
+<use img/gui_xml_example.jpg>
+Package pdftex.def Info: img/gui_xml_example.jpg  used on input line 302.
+(pdftex.def)             Requested size: 284.52756pt x 138.59937pt.
+
+Overfull \hbox (0.30241pt too wide) in paragraph at lines 306--309
+\T1/phv/m/n/10 Ein Android-UI ist hierarchisch aufgebaut und besteht aus \T1/ph
+v/b/n/10 ViewGroups \T1/phv/m/n/10 (Cointainer für Views oder weitere
+ []
+
+
+Overfull \hbox (14.23953pt too wide) in paragraph at lines 306--309
+\T1/phv/m/n/10 ViewGroups, angeordnet durch Layout) und \T1/phv/b/n/10 Views \T
+1/phv/m/n/10 (Widgets). Sollte auf unterschiedlichen Bildschirmgrössen
+ []
+
+<img/xml_layouts.jpg, id=191, 546.79755pt x 255.67216pt>
+File: img/xml_layouts.jpg Graphic file (type jpg)
+<use img/xml_layouts.jpg>
+Package pdftex.def Info: img/xml_layouts.jpg  used on input line 312.
+(pdftex.def)             Requested size: 284.52756pt x 133.04001pt.
+
+Overfull \hbox (5.02486pt too wide) in paragraph at lines 316--319
+\T1/phv/m/n/10 Schachtelung möglich, aber nicht effizient, wenn möglich immer d
+as Constraint-Layout verwenden. Layouts
+ []
+
+[10 <./img/gui_xml_example.jpg> <./img/xml_layouts.jpg>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 360.
+ [11]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 360.
  (mobpro-zf.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 295.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 295.
-Package rerunfilecheck Info: File `mobpro-zf.out' has not changed.
-(rerunfilecheck)             Checksum: 2B22D6B3F6BC83865A9F69397F7B64E3;1132.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 360.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 360.
+
+
+Package rerunfilecheck Warning: File `mobpro-zf.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `mobpro-zf.out':
+(rerunfilecheck)             Before: 0F696500D9E13AA327B55B00FCA8CA3C;1260
+(rerunfilecheck)             After:  24B8A2BE6D3F542D2AD2AEAB83BC5C60;1337.
  ) 
 Here is how much of TeX's memory you used:
- 9593 strings out of 494866
- 142013 string characters out of 3176097
- 455263 words of memory out of 3000000
- 13036 multiletter control sequences out of 15000+200000
+ 9929 strings out of 494866
+ 147835 string characters out of 3176098
+ 462823 words of memory out of 3000000
+ 13360 multiletter control sequences out of 15000+200000
  35232 words of font info for 44 fonts, out of 3000000 for 9000
  0 hyphenation exceptions out of 8191
  29i,12n,40p,818b,1174s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -699,9 +745,9 @@ y/Application Support/MiKTeX/texmfs/install/fonts/type1/urw/helvetic/uhvbo8a.pf
 b></Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/font
 s/type1/urw/helvetic/uhvr8a.pfb></Users/maurinthalmann/Library/Application Supp
 ort/MiKTeX/texmfs/install/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on mobpro-zf.pdf (11 pages, 385178 bytes).
+Output written on mobpro-zf.pdf (12 pages, 500598 bytes).
 PDF statistics:
- 287 PDF objects out of 1000 (max. 8388607)
- 76 named destinations out of 1000 (max. 500000)
- 143 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 307 PDF objects out of 1000 (max. 8388607)
+ 82 named destinations out of 1000 (max. 500000)
+ 169 words of extra memory for PDF output out of 10000 (max. 10000000)
 
