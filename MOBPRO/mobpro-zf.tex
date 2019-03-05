@@ -15,6 +15,7 @@
 \usepackage{color}
 \usepackage[table,xcdraw]{xcolor}
 \usepackage{courier}
+\usepackage{subcaption}
 
 \usepackage{enumitem}
 \setlist{nosep}
@@ -419,7 +420,87 @@ Es gibt noch die \textbf{ScrollView}, deren Nutzung vertikales Scrollen bei zu g
 \textbf{Ressourcen} sind alle Nicht-Java-Teile einer Applikation und sind im \textit{/res}-Verzeichnis abgelegt, sogennante ausgelagerte Konstanten-Definitionen. Sie werden im Layout und Java-Code über die \textbf{\textit{automatisch generierte R-Klasse}} mit ID-Konstanten (int) referenziert. Kontextabhängige Ressourcen sind möglich z.Bsp. für Sprache, Gerätetyp, Orientierung, ...\\
 \textbf{Beispiele}: Strings, Styles, Colors, Dimensionen, Bilder (drawables), Layouts (portrait, landscape), Array-Werte (z.Bsp. für Spinner) und Menü-Items\\
 
-	% TODO
+\begin{figure}[htb!]
+	\centering
+	\begin{subfigure}{0.5\textwidth}
+		\centering
+		\includegraphics[width=0.8\linewidth]{img/references_xml.jpg}
+		\caption{Referenz in XML mit @}
+	\end{subfigure}%
+	\begin{subfigure}{0.5\textwidth}
+		\centering
+		\includegraphics[width=0.8\linewidth]{img/references_code.jpg}
+		\caption{Referenz in Code über \texttt{R}-Klasse, diese wird beim Build automatisch generiert}
+	\end{subfigure}
+\end{figure}
+\noindent
+Für verschiedene Systemkonfigurationen benötigt es unterschiedliche Ausprägungen einer Ressource, beispielsweise:
+\begin{itemize}
+	\item \textbf{Internationalisierung}: komplette/teilweise Übersetzung, für diese werden unterschiedliche Ordner je nach Land/Sprache und seperate .xml angelegt
+	\item \textbf{Auflösungsklassen}: \texttt{ldpi} (~120dpi), \texttt{mdpi} (~160dpi), \texttt{hdpi} (~240dpi), \texttt{xhdpi} (~320dpi) 
+	\item \textbf{Orientierung} des Displays: landscape / portrait
+	\item Verschiedene \textbf{HW-Modelle}: HTC, Samsung, Sony, LG, ...
+\end{itemize}
+Default-Verzeichnisse sind innerhalb von \texttt{res/} angelegt: drawable, layout, menu, values, ...\\
+Bei spezifischen Konfigurationen werden meist Kopien der Default-Verzeichnisse/Ordner mit einem Suffix angelegt, bspw. \texttt{res/strings-de-rCH}, in welchen dann die Ressourcen (XML) erneut angelegt werden.
+\begin{figure}[htb!]
+	\centering
+	\includegraphics[width=0.3\linewidth]{img/ressources.jpg}
+	\caption{Beispiel der Default-Ressourcen}
+\end{figure}
+
+\newpage
+\subsection{UI-Event-Handling}
+\begin{itemize}
+	\item Jedes View-Element hat eine entsprechende Java-Klasse (auch View-Groups!) \\$\rightarrow$ Layout könnte auch dynamisch in Java programmiert werden
+	\item APIs der einzelnen View-Klassen sind \href{http://developer.android.com/reference/android/widget/package-summary.html}{hier} oder unter "Nützliche Links" genauer beschrieben
+\end{itemize}
+\begin{figure}[htb!]
+	\centering
+	\includegraphics[width=0.5\linewidth]{img/layout_id.jpg}
+	\includegraphics[width=0.5\linewidth]{img/reference_code.jpg}
+	\caption{ID im Layout erfassen und Referenz im Code}
+\end{figure}
+
+\subsubsection{GUI-Events}
+\begin{itemize}
+	\item \textbf{Observer/Listener}: einen Listener für ein entsprechendes Event bei der View registrieren, bspw. bei \texttt{Button myButton}:\\
+	\texttt{myButton.setOnClickListener(listener)}
+	\item verschiedenste Event- und Listener-Typen:\\
+	\texttt{OnClickListener,  OnLongClickListener,  OnKeyListener,  OnTouchListener,  OnDragListener, ...} 
+	\\$\rightarrow$ \texttt{public static} Interfaces der Klasse \texttt{View}
+\end{itemize}
+\textbf{Ziel:} Auf Klick-Event eines Buttons reagieren
+\begin{itemize}
+	\item Button muss eine ID haben im layout.xml
+	\item Registrierungs eines Listeners an die View (Button) im Code:
+\end{itemize}
+\begin{lstlisting}
+Button button = (Button) findViewById(R.id.question_button_done);
+button.setOnClickListener(new OnClickListener() {
+	@Override
+	public void onClick(View v) {
+		// handler code
+		buttonClicked();
+	}
+});
+\end{lstlisting}
+\textbf{onClick-Event-Registrierung in XML}
+\begin{figure}[htb!]
+	\centering
+	\includegraphics[width=0.6\linewidth]{img/onclick.jpg}
+	\caption{Definition onClick-Handler im Layout $\rightarrow$ so nur für OnClick-Events}
+\end{figure}
+\begin{lstlisting}
+// Implementierung OnClick-Handler-Methode in der Activity
+public void increaseInternalCounter(View button){
+	// ... handler code ...
+}
+\end{lstlisting}
+
+\newpage
+
+% TODO ab Seite 34
 
 \newpage
 \section{Android 3 - Persistenz \& Content Providers}
@@ -480,7 +561,7 @@ Für lokale Persistenz gibt es drei Möglichkeiten:
 	
 \subsection{Datenbank (Room)}
 
-%Android-DB \textbf{SQLite} ist bei Android fix integriert. Room ist ein Object Relational Mapper (ORM) für Android
+Android-DB \textbf{SQLite} ist bei Android fix integriert. Room ist ein Object Relational Mapper (ORM) für Android
 
 
 

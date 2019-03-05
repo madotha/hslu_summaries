@@ -20,8 +20,11 @@
 \contentsline {paragraph}{Warum nutzt man trotzdem noch LinearLayout?}{11}{section*.12}% 
 \contentsline {paragraph}{Pixalangaben}{11}{section*.13}% 
 \contentsline {subsection}{\numberline {2.3}Ressourcen, Konfigurationen und Internationalisierung}{12}{subsection.2.3}% 
-\contentsline {section}{\numberline {3}Android 3 - Persistenz \& Content Providers}{13}{section.3}% 
-\contentsline {subsection}{\numberline {3.1}(Shared) Preferences}{13}{subsection.3.1}% 
-\contentsline {paragraph}{Lesen und Schreiben auf Preferences}{13}{section*.14}% 
-\contentsline {subsection}{\numberline {3.2}Dateisystem}{13}{subsection.3.2}% 
-\contentsline {subsection}{\numberline {3.3}Permission-Model}{13}{subsection.3.3}% 
+\contentsline {subsection}{\numberline {2.4}UI-Event-Handling}{13}{subsection.2.4}% 
+\contentsline {subsubsection}{\numberline {2.4.1}GUI-Events}{13}{subsubsection.2.4.1}% 
+\contentsline {section}{\numberline {3}Android 3 - Persistenz \& Content Providers}{14}{section.3}% 
+\contentsline {subsection}{\numberline {3.1}(Shared) Preferences}{14}{subsection.3.1}% 
+\contentsline {paragraph}{Lesen und Schreiben auf Preferences}{14}{section*.18}% 
+\contentsline {subsection}{\numberline {3.2}Dateisystem}{14}{subsection.3.2}% 
+\contentsline {subsubsection}{\numberline {3.2.1}Exkurs: Permission-Model}{14}{subsubsection.3.2.1}% 
+\contentsline {subsection}{\numberline {3.3}Datenbank (Room)}{14}{subsection.3.3}% 
