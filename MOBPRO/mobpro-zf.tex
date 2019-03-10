@@ -67,11 +67,13 @@ Zusammenfassung FS 2019}}
 	Informationen zur Androidprogrammierung können stets dem Android Developer Guide entnommen werden unter: \textit{\href{https://developer.android.com/}{developer.android.com}}
 	Apps sollen grundsätzlich gegen das aktuellste API entwickelt werden, aktuell API Level 28 Android 9 "Pie".
 	Im Gradle-Build-Skript werden deshalb folgende SDK-Versionen festgehalten:
+\vspace{1em}
 	\begin{description}
 		\item[\textit{minSdkVersion}] Mindestanforderung an die SDK, Minimum-Version
 		\item[\textit{targetSdkVersion}] Ziel-SDK-Version, auf welcher die App lauffähig sein soll
 		\item[\textit{compileSdkVersion}] Version mit welcher die App (APK) erstellt wird, meist gleich der Target-Version	
 	\end{description}
+\vspace{1em}
 	\textbf{ART (Android Runtime)} verwaltet Applikationen bzw. deren einzelne Komponenten:
 	\begin{itemize}
 		\item Komponente kann andere Komponente mit Intent-Mechanismus aufrufen
@@ -501,7 +503,360 @@ public void increaseInternalCounter(View button){
 
 \newpage
 
-% TODO ab Seite 34
+\subsubsection{Exkurs: Data Binding}
+
+\begin{figure}[htb!]
+	\centering
+	\includegraphics[width=0.5\textwidth]{img/data_binding_model.png}
+	\caption{Modell für Data Binding}
+\end{figure}
+\noindent
+\textbf{Data Binding:} separiert UI und Daten, synchronisiert UI mit Daten (1-, resp. 2-way-binding), verwendet «binding expressions» mit @{..} Syntax im Layout-File, um View-Attribute zu initialisieren. Anbei ein Beispiel (auskommentiert):
+
+\begin{lstlisting}
+<?xml version="1.0" encoding="utf-8"?> 
+<layout xmlns:android="http://schemas.android.com/apk/res/android"> 
+	<data> 
+		<variable name="model" type="org.example.MyModel"/> 
+	</data>  // Definition der Layout-Variablen
+	<LinearLayout ...> 
+		<Button 
+			android:id="@+id/button" 
+			...
+			android:enabled="@{model.user.role == `admin`}" 
+			android:text="@{model.buttonText}" // Data Binding (1-way)
+			...
+			android:onClick="@{() -> model.increaseClickCount()}" /> // Event Binding
+		<EditText 
+			android:id="@+id/input"
+			...
+			android:text="@={model.inputText}"/> // Data Binding (2-way)
+	</LinearLayout> 
+</layout>
+
+protected void onCreate(Bundle savedInstanceState) { 
+	super.onCreate(savedInstanceState); 
+	ActivityMainBinding binding = DataBindingUtil.setContentView(...); 
+	model = new MainModel();
+	model.load(); 
+	binding.setModel(model);
+	// Binden der Layout-Daten auf effektive Daten
+	// z.B. ViewModel mit Observables
+}
+\end{lstlisting}
+\newpage
+
+\subsection{Options-Menü}
+
+\begin{itemize}
+	\item Android-Apps können oben rechts ein Menü mit Optionen anbieten
+	\item Erzeugung durch Aufruf \textit{Hook} in der Activity-Klasse:\\
+	\texttt{onCreateOptionsMenu(Menu menu)}
+	\begin{itemize}
+		\item Hier kann ein Menü mit Einträgen bestückt werden
+		\item \texttt{MenuInflater} + XML benutzen oder Java oder beides
+	\end{itemize}
+	\item Beim Klick auf Eintrag Aufruf eines anderen Hooks:\\
+	\texttt{onOptionsItemSelected(MenuItem item)}
+\end{itemize}
+\noindent
+Für ein Options-Menü muss eine .xml-Datei (Bsp. main\_menu.xml) im Ordner \texttt{res/menu} angelegt werden. Danach werden Informationen folgendermassen eingetragen:
+\begin{figure}[htb!]
+	\begin{subfigure}{0.5\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{img/menu_example.jpg}
+		\caption{Menü und Items in XML definieren}
+	\end{subfigure}
+	\begin{subfigure}{0.5\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{img/menuinflater.jpg}
+		\caption{Menü mit \texttt{MenuInflater} aufblasen}
+	\end{subfigure}
+\end{figure}
+
+Um bspw. einen String in einem Menüpunkt einzufügen, gibt es drei verschiedene Möglichkeiten:
+\begin{figure}[htb!]
+	\centering
+	\includegraphics[width=.8\textwidth]{img/menu_string.jpg}
+	\caption{Möglichkeiten zum Einlesen eines Strings}
+\end{figure}
+\begin{figure}[htb!]
+	\centering
+	\includegraphics[width=.7\textwidth]{img/menu_selektierung.jpg}
+	\caption{Event-Handling: Selektierung}
+\end{figure}
+
+\newpage
+
+\subsection{Adapter-Views}
+\emph{Behandelt wird hier nur das synchrone Laden von kleinen/schnellen Datenquellen, für asynchrones Laden von langsamen/grossen Datenquellen konsultiere Doku über \textbf{Loaders}.}
+\begin{figure}[htb!]
+	\centering
+	\includegraphics[width=.8\textwidth]{img/adapter.png}
+	\caption{Aufgabe des Adapters}
+\end{figure}
+\begin{itemize}
+	\item Adapter $\rightarrow$ Verbindung zwischen Datenquelle und GUI
+	\item Zapft \textit{Datenquelle} an und beliefert \textit{AdapterView}
+	\item Erzeugt (Sub-)Views pro gefundenes Datenelement
+	\item Transformiert Daten ggf. in benötigtes Zielformat
+	\item Datenquellen:\\
+	String-Array, String-Liste, Bilder, Datenbank, ...
+\end{itemize}
+
+\vspace{3em}
+
+\begin{figure}[htb!]
+	\centering
+	\includegraphics[width=.8\textwidth]{img/adapter_string.png}
+	\caption{Beispiel eines ArrayAdapter}
+\end{figure}
+\begin{itemize}
+	\item Bindet irgend ein Array oder Liste mit beliebig getypeten Elementen an irgend eine AdapterView
+	\item Für jedes Daten-Element wird eine SubView erzeugt
+	\item \textbf{Default}: Erstellt \texttt{TextView} mit \texttt{element.toString()}-Wert
+\end{itemize}
+\begin{figure}[htb!]
+	\centering
+	\includegraphics[width=.8\textwidth]{img/adapterview_example.jpg}
+	\caption{Beispiel einer AdapterView}
+\end{figure}
+
+\subsubsection{AdapterViews \& ListActivity}
+
+\begin{itemize}
+	\item \textbf{AdapterViews}: spezielle View-Klassen
+		\begin{itemize}
+			\item Sind für Zusammenarbeit mit Adaptern optimiert \\
+			(Bsp.\texttt{ListView, GridView, Gallery, Spinner, Stack,...})
+			\item Füllen Teile von sich mit von Adaptern erzeugten Views
+			\item Leiten ab von \texttt{android.widget.AdapterView<T extends android.widget.Adapter>}
+		\end{itemize}
+	\item Spezielle Activity: \textbf{ListActivity}
+		\begin{itemize}
+			\item Vordefiniertes Layout (enthält eine \texttt{ListView}, kein XML nötig)
+			\item Vordefinierte Callbacks (bei Auswahl einer List-Entry)
+			\item Bietet Zugriff auf aktuelle Selektion / Datenposition
+		\end{itemize}
+\end{itemize}
+
+\newpage
+
+\subsubsection{android.widget.Spinner}
+
+\begin{itemize}
+	\item ComboBox oder DropDown-List genannt (weitere Alternative: AutoCompleteTextView)
+	\item Zeigt ein ausgewähltes Element, bei Klick erscheint ein Auswahlmenü
+	\item 2 Varianten, um Daten auf Spinner zu setzen:
+		\begin{itemize}
+			\item Im Code mit Adapter:\\
+			\texttt{spinner.setAdapter(myAdapter)}
+			\item Im XML mit Angabe einer String-Array-ID:\\
+			\texttt{android:entries="@array/spinnerValues"}
+		\end{itemize}
+	\item Listener setzen für Behandlung der Auswahl:\\
+	\texttt{spinner.setOnItemSelectedListener(...)}
+\end{itemize}
+\vspace{2em}
+\begin{figure}[htb!]
+	\centering
+	\includegraphics[width=\textwidth]{img/spinner_demo.png}
+	\caption{Übungs-Demo aus der Vorlesung SW02 - Spinner}
+\end{figure}
+
+\newpage
+
+\subsubsection{android.widget.ListView}
+
+\begin{itemize}
+	\item Liste von Views/Items, die zur Auswahl stehen
+	\item Braucht viel Platz! Meist wird ihr der ganze Bildschirm zugeteilt
+	\item i.d.R. zusammen mit \texttt{ListActivity} verwendet, Verwendung:
+		\begin{enumerate}
+			\item Navigiere zu eigener ListActivity
+			\item Auswahl $\rightarrow$ Resultat setzen $\rightarrow$ finish
+			\item Auswertung des Rückgabewert im Caller
+		\end{enumerate}
+	\item Konzeptionell identisch zum Spinner, jedoch andere Darstellung auf UI
+		\begin{itemize}
+			\item Verwendungsentscheid:
+			\begin{itemize}
+				\item Kurze Liste $\rightarrow$ Spinner
+				\item (Sehr) lange Listen $\rightarrow$ ListView / ListActivity
+				\item Kennt der User die möglichen Auswahlwerte $\rightarrow$ AutoCompleteTextView
+			\end{itemize}
+			\item Adapter- / Datendefinition grundsätzlich bei beiden gleich\\
+			(d.h. im Code oder durch XML-Array)
+			\item Auswahlmodus: \texttt{setChoiceMode(ListView.CHOICE\_MODE\_*} \\
+			$\rightarrow$ Single- / Multiselection
+		\end{itemize}
+\end{itemize}
+
+\subsubsection{android.app.ListActivity}
+
+\begin{itemize}
+	\item Spezielle Activity zur Darstellung einer ListView
+	\item Vordefiniertes Layout (full-screen Liste)
+		\begin{itemize}
+			\item \texttt{setContentView(...)} muss nicht aufgerufen werden
+			\item Aufruf i.d.R. mit \texttt{startActivityForResult(...)}
+			\item Vordefinierte vererbte Konfigurationsmethoden
+				\begin{itemize}
+					\item \texttt{setListAdapter(adapter)} setzt Daten für die Liste
+					\item \texttt{getListView()} erlaubt Zugriff auf ListView-Instanz\\
+					\textit{(anstelle von findViewById(..) + Casten)}
+				\end{itemize}
+		\end{itemize}
+	\item Callback bei der Auswahl
+		\begin{itemize}
+			\item \texttt{onListItemClick(parentView, view, position, id)}\\
+			Wird bei Auswahl aufgerufen (muss in Subklasse überschrieben werden, keine Listener-Registrierung nötig)
+		\end{itemize}
+\end{itemize}
+
+\begin{figure}[htb!]
+	\centering
+	\includegraphics[width=.8\linewidth]{img/listview_demo.png}
+	\caption{Übungs-Demo aus der Vorlesung SW02 - ListView / ListActivity}
+\end{figure}
+
+\newpage
+
+\subsection{ViewModel - Konfigurationswechsel \& temporäre Datenspeicherung}
+
+Bei jedem Konfigurationswechsel (z.B. Änderung Bildschirmorientation) wird die aktuelle Activity-Instanz zerstört und neu aufgebaut. Dabei besteht das Problem des \textbf{Zustandsverlusts}. Der Zustand alles Views mit einer ID (mit einigen Ausnahmen) wird automatisch gesichert und wiederhergestellt. Der \textbf{inhärente Zustand}, alles was nicht sichtbar und in Feldern gespeichert ist, geht jedoch verloren. Um entgegenzuwirken, kann ein \textbf{ViewModel} verwendet werden.
+
+\begin{figure}[htb!]
+	\centering
+	\includegraphics[width=.6\textwidth]{img/viewmodel}
+	\caption{Position des ViewModels in der temp. Datenspeicherung}
+\end{figure}
+
+\begin{itemize}
+	\item Kapselt UI-Daten so, dass diese bei einer Konfigurationsänderung einer Activity in-memory erhalten bleiben \textit{(Für den Fall eines App-Kills müssen Daten immer noch persistiert werden)}
+	\item Lebensdauer mit der Activity gekoppelt
+	\item Weniger Aufwand für Behandlung von Konfigurationsänderungen
+\end{itemize}
+
+\begin{figure}[htb!]
+	\centering
+	\includegraphics[width=\textwidth]{img/viewmodel_demo.png}
+	\caption{Übungs-Demo aus der Vorlesung SW02 - ViewModel}
+\end{figure}
+
+\newpage
+
+\subsection{Rückmeldungen an den Benutzer}
+
+\subsubsection{Toast}
+
+\begin{itemize}
+	\item Kurze Rückmeldung (Popup) an den Benutzer, keine Interaktion möglich, verschwindet nach gewisser Zeit.
+	\item Konfiguration: Text, Layout, Anzeigezeit (kurz/lang), Ort (gravity)
+	\item Toasts mit eigenem Layout werden mit CustomToastView erstellt
+\end{itemize}
+\vspace{1em}
+Beispielcode zur Erstellung von Toasts:
+
+\begin{lstlisting}
+// Default-Toast: Einzeiler
+Toast.makeToast(getApplicationContext(), "Das ist..", Toast.LENGTH_LONG).show()
+																						// LENGTH: Nur LONG oder SHORT
+							// Kontext: meistens "this"
+							
+// Toast mit anderem Anzeigeort:
+Context context = getApplicationContext();
+Toast toast = Toast.makeText(context, "Toast links oben!", Toast.LENGTH_LONG);
+toast.setGravity(Gravity.TOP|Gravity.START,0,0); // (x,y) Offset
+toast.show()
+\end{lstlisting}
+
+\subsubsection{Alert-Dialog}
+
+\begin{figure}[htb!]
+	\centering
+	\includegraphics[width=.35\textwidth]{img/alert_dialog.jpg}
+	\caption{Beispiel eines Alert-Dialogs}
+\end{figure}
+
+\begin{itemize}
+	\item Fenster mit Interaktionsmöglichkeiten für den Benutzer
+		\begin{itemize}
+			\item Information / Eingabe von Daten
+			\item Interaktion möglich
+			\item Buttons: positive, neutral, negative
+		\end{itemize}
+	\item Vorteile
+	\begin{itemize}
+		\item Kaum Einschränken in punkto Darstellung
+		\item Vorbereitet für die Anzeige von Daten
+		\item Verschwindet erst, wenn sie vom Benutzer quittiert wurde
+	\end{itemize}
+	\item Konfiguration: Buttons, Titel, Icon, Nachricht\\
+	Inhalt: Liste von Items oder eigene View
+\end{itemize}
+
+\newpage
+
+\begin{itemize}
+	\item Vorgehen beim Erstellen eines Alert-Dialog mit Builder-Muster
+	\begin{enumerate}
+		\item Builder erstellen: \texttt{new AlertBuilder.Builder(this)}
+		\item Builder konfigurieren: \\
+		\texttt{setXXX} + Registrierung von \texttt{ClickListeners}
+		\item Dialog erstellen: \texttt{Dialog dialog = builder.create()}
+		\item Dialog anzeigen: \texttt{dialog.show()}
+	\end{enumerate}
+	\item Anzeige von Dialogen ist \textbf{immer asynchron!}\\
+	Bei \texttt{show()} wird nicht gewartet, kein Rückgabewert\\
+	$\rightarrow$ Behandlung von Benutzerselektion mit Listener
+\end{itemize}
+
+\begin{figure}[htb!]
+	\centering
+	\includegraphics[width=.9\textwidth]{img/alertdialog.jpg}
+	\caption{Beispiel eines AlertDialog aus Vorlesung}
+\end{figure}
+
+\newpage
+
+\begin{figure}[htb!]
+	\centering
+	\includegraphics[width=\textwidth]{img/alertdialog_daten.png}
+	\caption{Beispiel mit Auswahl-Daten}
+\end{figure}
+\begin{figure}[htb!]
+	\centering
+	\includegraphics[width=\textwidth]{img/alertdialog_custom.png}
+	\caption{Beispiel mit eigenem Layout}
+\end{figure}
+
+\newpage
+\noindent
+Ein (offener) Dialog gehört zum Zustand einer Activity, ist ein Dialog noch geöffnet bei einem Konfigurationswechsel, dann wird dieser nicht gespeichert und auch nicht wiederhergestellt! Deshalb sollten Dialoge als \texttt{DialogFragment} implementiert werden. Der Zustand des Dialogs wird dann vom \texttt{FragmentManager} korrekt mit Lifecycle und Activity synchronisiert (save/restore)\\
+Für den Moment: Ein \textbf{Fragment} ist ein wiederverwendbarer "UI Schnippsel" mit eigenem Zustand und Lifecycle.
+
+\subsubsection{Notifications (Status-Bar)}
+
+\begin{itemize}
+	\item Persistente Nachricht
+	\begin{itemize}
+		\item Kurze Ticker-Nachricht in der Status-Bar
+		\item Danach persistente Anzeige im Notification Window
+		\item Bei Auswahl erfolgt Aufruf einer definierten Activity
+	\end{itemize}
+	\item Vorteile:\\
+	Nachricht bleibt erhalten bis vom Nutzer quittiert\\
+	Beliebig komplexe Behandlung, da Start einer Activity
+	\item Nachteil:\\
+	Etwas komplexere Mechanik wegen \texttt{PendingIntent}
+\end{itemize}
+
+\begin{figure}[htb!]
+	\centering
+	\includegraphics[width=\textwidth]{img/notification_demo.png}
+	\caption{Übungs-Demo aus der Vorlesung SW02 - Notification}
+\end{figure}
 
 \newpage
 \section{Android 3 - Persistenz \& Content Providers}

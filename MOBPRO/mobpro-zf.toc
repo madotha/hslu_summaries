@@ -22,9 +22,21 @@
 \contentsline {subsection}{\numberline {2.3}Ressourcen, Konfigurationen und Internationalisierung}{12}{subsection.2.3}% 
 \contentsline {subsection}{\numberline {2.4}UI-Event-Handling}{13}{subsection.2.4}% 
 \contentsline {subsubsection}{\numberline {2.4.1}GUI-Events}{13}{subsubsection.2.4.1}% 
-\contentsline {section}{\numberline {3}Android 3 - Persistenz \& Content Providers}{14}{section.3}% 
-\contentsline {subsection}{\numberline {3.1}(Shared) Preferences}{14}{subsection.3.1}% 
-\contentsline {paragraph}{Lesen und Schreiben auf Preferences}{14}{section*.18}% 
-\contentsline {subsection}{\numberline {3.2}Dateisystem}{14}{subsection.3.2}% 
-\contentsline {subsubsection}{\numberline {3.2.1}Exkurs: Permission-Model}{14}{subsubsection.3.2.1}% 
-\contentsline {subsection}{\numberline {3.3}Datenbank (Room)}{14}{subsection.3.3}% 
+\contentsline {subsubsection}{\numberline {2.4.2}Exkurs: Data Binding}{14}{subsubsection.2.4.2}% 
+\contentsline {subsection}{\numberline {2.5}Options-Men\IeC {\"u}}{15}{subsection.2.5}% 
+\contentsline {subsection}{\numberline {2.6}Adapter-Views}{16}{subsection.2.6}% 
+\contentsline {subsubsection}{\numberline {2.6.1}AdapterViews \& ListActivity}{16}{subsubsection.2.6.1}% 
+\contentsline {subsubsection}{\numberline {2.6.2}android.widget.Spinner}{17}{subsubsection.2.6.2}% 
+\contentsline {subsubsection}{\numberline {2.6.3}android.widget.ListView}{18}{subsubsection.2.6.3}% 
+\contentsline {subsubsection}{\numberline {2.6.4}android.app.ListActivity}{18}{subsubsection.2.6.4}% 
+\contentsline {subsection}{\numberline {2.7}ViewModel - Konfigurationswechsel \& tempor\IeC {\"a}re Datenspeicherung}{19}{subsection.2.7}% 
+\contentsline {subsection}{\numberline {2.8}R\IeC {\"u}ckmeldungen an den Benutzer}{20}{subsection.2.8}% 
+\contentsline {subsubsection}{\numberline {2.8.1}Toast}{20}{subsubsection.2.8.1}% 
+\contentsline {subsubsection}{\numberline {2.8.2}Alert-Dialog}{20}{subsubsection.2.8.2}% 
+\contentsline {subsubsection}{\numberline {2.8.3}Notifications (Status-Bar)}{23}{subsubsection.2.8.3}% 
+\contentsline {section}{\numberline {3}Android 3 - Persistenz \& Content Providers}{24}{section.3}% 
+\contentsline {subsection}{\numberline {3.1}(Shared) Preferences}{24}{subsection.3.1}% 
+\contentsline {paragraph}{Lesen und Schreiben auf Preferences}{24}{section*.34}% 
+\contentsline {subsection}{\numberline {3.2}Dateisystem}{24}{subsection.3.2}% 
+\contentsline {subsubsection}{\numberline {3.2.1}Exkurs: Permission-Model}{24}{subsubsection.3.2.1}% 
+\contentsline {subsection}{\numberline {3.3}Datenbank (Room)}{24}{subsection.3.3}% 

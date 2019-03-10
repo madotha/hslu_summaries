@@ -19,8 +19,20 @@
 \BOOKMARK [2][-]{subsection.2.3}{Ressourcen, Konfigurationen und Internationalisierung}{section.2}% 19
 \BOOKMARK [2][-]{subsection.2.4}{UI-Event-Handling}{section.2}% 20
 \BOOKMARK [3][-]{subsubsection.2.4.1}{GUI-Events}{subsection.2.4}% 21
-\BOOKMARK [1][-]{section.3}{Android 3 - Persistenz \046 Content Providers}{}% 22
-\BOOKMARK [2][-]{subsection.3.1}{\(Shared\) Preferences}{section.3}% 23
-\BOOKMARK [2][-]{subsection.3.2}{Dateisystem}{section.3}% 24
-\BOOKMARK [3][-]{subsubsection.3.2.1}{Exkurs: Permission-Model}{subsection.3.2}% 25
-\BOOKMARK [2][-]{subsection.3.3}{Datenbank \(Room\)}{section.3}% 26
+\BOOKMARK [3][-]{subsubsection.2.4.2}{Exkurs: Data Binding}{subsection.2.4}% 22
+\BOOKMARK [2][-]{subsection.2.5}{Options-Men\374}{section.2}% 23
+\BOOKMARK [2][-]{subsection.2.6}{Adapter-Views}{section.2}% 24
+\BOOKMARK [3][-]{subsubsection.2.6.1}{AdapterViews \046 ListActivity}{subsection.2.6}% 25
+\BOOKMARK [3][-]{subsubsection.2.6.2}{android.widget.Spinner}{subsection.2.6}% 26
+\BOOKMARK [3][-]{subsubsection.2.6.3}{android.widget.ListView}{subsection.2.6}% 27
+\BOOKMARK [3][-]{subsubsection.2.6.4}{android.app.ListActivity}{subsection.2.6}% 28
+\BOOKMARK [2][-]{subsection.2.7}{ViewModel - Konfigurationswechsel \046 tempor\344re Datenspeicherung}{section.2}% 29
+\BOOKMARK [2][-]{subsection.2.8}{R\374ckmeldungen an den Benutzer}{section.2}% 30
+\BOOKMARK [3][-]{subsubsection.2.8.1}{Toast}{subsection.2.8}% 31
+\BOOKMARK [3][-]{subsubsection.2.8.2}{Alert-Dialog}{subsection.2.8}% 32
+\BOOKMARK [3][-]{subsubsection.2.8.3}{Notifications \(Status-Bar\)}{subsection.2.8}% 33
+\BOOKMARK [1][-]{section.3}{Android 3 - Persistenz \046 Content Providers}{}% 34
+\BOOKMARK [2][-]{subsection.3.1}{\(Shared\) Preferences}{section.3}% 35
+\BOOKMARK [2][-]{subsection.3.2}{Dateisystem}{section.3}% 36
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Exkurs: Permission-Model}{subsection.3.2}% 37
+\BOOKMARK [2][-]{subsection.3.3}{Datenbank \(Room\)}{section.3}% 38
