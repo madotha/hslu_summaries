@@ -39,7 +39,7 @@
 	showstringspaces=false,
 	columns=flexible,
 	basicstyle={\small\ttfamily},
-	numbers=none,
+	numbers=left,
 	numberstyle=\tiny\color{gray},
 	keywordstyle=\color{blue},
 	commentstyle=\color{dkgreen},
@@ -1105,16 +1105,399 @@ editor.apply();
 	
 \subsection{Datenbank (Room)}
 
-Android-DB \textbf{SQLite} ist bei Android fix integriert. Room ist ein Object Relational Mapper (ORM) für Android
+Android-DB \textbf{SQLite} ist bei Android fix integriert. Ein DB-Adapter ist die Verbindung zwischen Business-Objekten und einer Datenbank.
 
-	%TODO
+\begin{figure}[htb!]
+	\centering
+	\includegraphics[width=.85\textwidth]{img/sqlite_framework.png}
+	\caption{SQLite Framework}
+\end{figure}
+
+\begin{itemize}
+	\item Room ist ein Object Relational Mapper (ORM) für Android
+		\begin{itemize}
+			\item Klassen werden auf relationale DB-Tabellen gemappt
+			\item Zugriff auf Datenbank wird abstrahiert\\
+			$\rightarrow$ Typischerweise werden SQL-Statements durch Methodenaufrufe gekapselt
+		\end{itemize}
+	\item Spezialfälle des Room ORM
+		\begin{itemize}
+			\item \textit{Datenzugriff über DAO}: Queries werde als SQL-Statements in Annotationen definiert
+			\item Beziehungen zwischen Entitäten müssen manuell abgebildet werden (Performance!)
+			\item \textit{Nested Objects}: mehrere POJOs in einer Tabelle
+			\item Einschränkungen für Datenzugriffe, standardmässig nicht möglich im UI Thread
+		\end{itemize}
+	\item Die drei Komponenten von Room
+		\begin{description}
+			\item[Database] Abstraktion der Datenverbindung
+			\item[Entity] Repräsentation einer Tabelle in der relationalen DB
+			\item[DAO] (Data Access Object) Enthält Methoden für Datenzugriff
+		\end{description}
+\end{itemize}
+
+\begin{figure}[htb!]
+	\centering
+	\includegraphics[width=.5\textwidth]{img/room_components.jpg}
+	\caption{Komponenten von Room}
+\end{figure}
+
+\newpage
+
+\subsubsection{Room - Code-Beispiele}
+
+\begin{lstlisting}
+@Entity // POJO mit Annotationen
+public class User {
+	@PrimaryKey
+	public int uid;
+	
+	@ColumnInfo(name = "first_name")
+	public String firstName;
+	
+	@ColumnInfo(name = "last_name")
+	public String lastName;
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+@Dao // Datenzugriff ueber Annotationen (teilweise mit SQL-Queries)
+public interface UserDao {
+	@Query("SELECT * FROM user") 
+	List<User> getAll(); 
+	
+	@Query("SELECT * FROM user WHERE uid IN (:userIds)") 
+	List<User> loadAllByIds(int[] userIds); 
+	
+	@Insert 
+	void insertAll(User... users); 
+	
+	@Delete 
+	void delete(User user);
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+// Database: Subklasse von RoomDatabase, konfiguriert mit Database Annotation
+@Database(entities = {User.class}, version = 1)
+public abstract class AppDatabase extends RoomDatabase {
+	public abstract UserDao userDao();
+}
+
+// Zum Erzeugen einer Instanz der DB:
+AppDatabase db = Room.databaseBuilder(
+			getApplicationContext(),
+			AppDatabase.class,
+			"database-name"
+).build();
+\end{lstlisting}
+
+\newpage
+
+\subsubsection{Room - Daten mit Entitäten definieren}
+
+\begin{itemize}
+	\item Ein POJO mit \texttt{@Entity} Annotation
+	\item Primärschlüssel (wird in jeder Entität benötigt)
+		\begin{itemize}
+			\item \texttt{@PrimaryKey} für ein einzelnes Feld, optional mit \texttt{autoGenerate} Property
+			\item Für zusammengesetzte Primärschlüssel:\\
+			\texttt{primaryKeys} Property in \texttt{@Entity} Annotation
+		\end{itemize}
+	\item Falls bestimmte Felder nicht gespeichert werden sollen
+		\begin{itemize}
+			\item \texttt{@Ignore} Annotation für ein einzelnes Feld
+			\item mit \texttt{ignoredColumns} Property in \texttt{@Entity} Annotation für mehrere Felder \\
+			(v.a. von Superklassen)
+		\end{itemize}
+\end{itemize}
+
+\begin{lstlisting}
+// Code-Beispiel
+// ACHTUNG: dieses Beispiel definiert mehrere Primary Keys und vermischt Ansaetze zum Ignorieren von Feldern zwecks Syntax-Demonstration!
+
+@Entity(primaryKeys = {"firstName", "lastName"},
+			ignoredColumns = "password, otherField")
+public class User extends Party {
+	@PrimaryKey(autoGenerate = true)
+	public int id;
+	
+	public String firstName;
+	public String lastName;
+	
+	@Ignore
+	Bitmap picture;
+}
+\end{lstlisting}
+
+\subsubsection{Room - Beziehungen modellieren}
+
+\textbf{Beachte:} Room erlaubt aus Performanzgründen keine Objektreferenzierungen!
+
+\begin{lstlisting}
+@Entity(foreignKeys = @ForeignKey(entity = User.class,
+															parentColumns = "id",
+															childColumns = "user_id"))
+public class Book {
+	@PrimaryKey
+	public int bookId;
+	
+	public String title;
+	
+	@ColumnInfo(name = "user_id"
+	public int userId; // Feld-Typ: nur ID, nicht User
+}
+\end{lstlisting}
+
+\newpage
+
+\subsection{Mit DAOs auf Daten zugreifen}
+
+\begin{itemize}
+	\item DAOs enthalten Methoden für den abstrahierenden Datenbankzugriff
+	\item Trägt zur \textit{Separation of Concerns} bei und erhöht die Testbarkeit\\
+	$\rightarrow$ DAOs können gemockt werden!
+	\item DAOs als Interfaces oder abstrakte Klassen definieren\\
+	$\rightarrow$ Room erzeugt passende Implementationen bei der Kompilierung\\
+	\textit{(Typischerweise eine DAO-Klasse pro Entity, mit allen möglichen Operationen)}
+	\item Zwei Möglichkeiten:\\
+	Convenienve Queries \textbf{oder} \texttt{@Query} Annotation mit SQL-Statements
+\end{itemize}
+
+\subsubsection{Convenience Queries}
+
+\begin{itemize}
+	\item Werden über Annotations für die jeweiligen Methoden definiert:\\
+	\texttt{@Insert, @Update, @Delete}
+	\item Alle Parameter müssen Klassen mit einer \texttt{@Entity} Annotation \\
+	(oder Collections/Arrays) davon sein
+	\item Rückgabewerte:
+		\begin{itemize}
+			\item \textbf{Insert}: \texttt{long} bzw. \texttt{long[]} bzw. \texttt{List<Long>} \textit{(liefert Row-IDs zurück)}
+			\item \textbf{Update / Delete}: \texttt{int} \textit{(Anzahl modifizierte Tabelleneinträge)}
+		\end{itemize}
+	\begin{lstlisting}
+@Insert
+public long[] insertUsersAndFriends(User user, List<User> friends);
+		// ID Rueckgabe, sonst void
+															// Parameter fuer Operation (Entities)
+	\end{lstlisting}
+\end{itemize}
+
+\begin{lstlisting}
+// Weitere Convenience Queries Beispiele
+
+@Dao
+public interface MyDao {
+
+	@Insert (onConflict = OnConflictStrategy.REPLACE)
+	public void insertUsers(User... users);
+	@Insert
+	public void insertBothUsers(User user1, User user2);
+	@Insert
+	public long[] insertUsersAndFriends(User user, List<User> friends);
+	
+	@Update
+	public void updateUsers(User... users);
+	
+	@Delete
+	public void deleteUsers(User... users);
+}	
+\end{lstlisting}
+
+\newpage
+
+\subsubsection{Custom Queries mit @Query}
+
+\begin{itemize}
+	\item DIe \texttt{@Query} Annotation kann für Schreib- und Lesevorgänge genutzt werden
+	\item Jede \texttt{@Query} wird zur Kompilierzeit überprüft\\
+	$\rightarrow$ Kompilierfehler bei ungültigen Queries, keine Laufzeitfehler!
+	\item Für eine \texttt{@Query} kann eine beliebige Anzahl (0..n) Parameter verwendet werden
+	\item Wenn nicht ganze Objekte benötigt werden, können Ressourcen gespart werden durch die Verwendung von POJOs mit \texttt{@ColumnInfo} Annotationen
+\end{itemize}
+
+\begin{lstlisting}
+// Custom Queries Codebeispiele
+
+@Dao 
+public interface MyDao { 
+	@Query("SELECT * FROM user") 
+	public User[] loadAllUsers();
+
+	@Query("SELECT * FROM user WHERE age > :minAge") 
+	public User[] loadAllUsersOlderThan(int minAge);
+
+	@Query("SELECT first_name, last_name FROM user WHERE region IN (:regions)") 
+	public List<NameTuple> loadUsersFromRegions(List<String> regions); 
+}
+
+public class NameTuple { 
+	@ColumnInfo(name = "first_name") 
+	public String firstName;
+
+	@ColumnInfo(name = "last_name") 
+	public String lastName; 
+}
+\end{lstlisting}
+
+\newpage
+
+\subsection{DB-Einträge in einer Liste anzeigen}
+
+\begin{itemize}
+	\item Verschiedene Ansätze, je nach Umfang/Komplexität der Datensätze:\\
+	ListView, RecyclerView, Kombination mit ViewModel und LiveData
+	\item In jedem Fall werden spezifische Adapter benötigt, um die Daten auf Views zu mappen
+\end{itemize}
+
+\begin{figure}[htb!]
+	\centering
+	\includegraphics[width=\textwidth]{img/dbentries_list.png}
+	\caption{Codebeispiel für das Darstellen von DB-Einträgen in einer Liste}
+\end{figure}
+
+
+\subsubsection{Room - weitere Themen}
+
+	%TODO Room (weitere Themen - Links)
+
+\newpage
 
 \subsection{Content Providers}
 
-	%TODO
-	
-	
+\begin{itemize}
+	\item Content Provider stellen für andere Applikationen Daten bereit
+	\item Die Daten stammen aus einer gekapselten DB \textbf{oder} aus dem privaten Dateisystem \textbf{oder} werden on-the-fly erzeugt
+	\item Zugriff auf die Daten über URI (Uniform Ressource ID), Beispiel siehe in Abbildung \ref{fig:uri_content}
+	\item Zwei Arten von URIs
+		\begin{itemize}
+			\item Pfad (Bezeichnete Datenmenge, vgl. Verzeichnit mit Daten)
+			\item Item (Einzelnes Datenelement, vgl. einzelne Datei)
+		\end{itemize}
+\end{itemize}
 
+\begin{figure}[htb!]
+	\centering
+	\includegraphics[width=.8\textwidth]{img/content_uri.png}
+	\caption{Aufbau eines URI}
+	\label{fig:uri_content}
+\end{figure}
+	
+\subsubsection{Standard Content Providers}
 
+\begin{itemize}
+	\item Im Android-System gibt es bereits einige Content Providers, die genutzt werden können
+		\begin{itemize}
+			\item Kontakte: Namen, Telefon-Nummern, Emails, Adressen, etc.
+			\item SMS/MMS: Erhaltene/Gesendete/Drafts SMS/MMS
+			\item Media Store: Auf Gerät gespeicherte Audio-, Video-, Bilder-Daten
+			\item Settings: Einstellungen für das Gerät
+			\item Kalender: Kalender, Events, Erinnerungen, Teilnehmer, etc. 
+		\end{itemize}
+	\item Daten sind meist in mehreren Tabellen abgelegt
+\end{itemize}	
+
+\subsection{Exkurs : REST-ful Webservices}
+
+\begin{itemize}
+	\item Webservices auf der Basis von HTTP
+	\item Grundidee (in purer Form)
+		\begin{itemize}
+			\item URL einer Ressourcensammlung \textit{(http://directory.com/contacts)}\\
+			oder URL einzelner Ressource \textit{(http://directory.com/contacts/17)}
+			\item HTTP-Methode = Operation auf Daten\\
+			(GET, PUT, POST, DELETE)
+			\item Antwort-Datenformat = XML, JSON, ...
+		\end{itemize}
+\end{itemize}
+
+\begin{figure}[htb!]
+	\centering
+	\includegraphics[width=\textwidth]{img/state_transfer.png}
+	\caption{Beispiel - Representational State Transfer}
+\end{figure}
+
+\newpage
+
+\subsection{Content Resolver \& Content Provider}
+
+\begin{itemize}
+	\item Zugriff auf einen Content Provider erfolgt über einen \textbf{Content Resolver}\\
+	\texttt{Context.getContentResolver()}
+		\begin{itemize}
+			\item Bietet DB-Methoden und Zugriff auf Content via Streams
+				\begin{itemize}
+					\item CRUD: \texttt{insert() / query() / update() / delete()}
+					\item \texttt{openInputStream(uri) / openOutputStream(uri)}
+				\end{itemize}
+			\item Ein Content Resolver ist ein Proxy, der...
+				\begin{itemize}
+					\item ...URI auflöst und zuständigen Content Provider sucht / findet
+					\item ...Interprozess-Kommunikation behandelt (aufrufende App ist meist in einem anderen Package als der aufgerufene Content Provider)
+				\end{itemize}
+		\end{itemize}
+	\item Unter Umständen müssen die Permissions noch gesetzt werden (im Manifest)
+\end{itemize}
+	
+\subsubsection{Zugriff auf Daten über Content Resolver \& Query}	
+
+\begin{lstlisting}
+Cursor cursor = getContentResolver().query( 
+		contentUri, 			// The content URI of the table 
+		projection, 			// The columns to return for each row 
+		selectionClause, 	// Selection criteria 
+		selectionArgs, 		// Selection criteria 
+		sortOrder); 			// The sort order for the returned row
+\end{lstlisting}
+	
+\begin{figure}[htb!]
+	\centering
+	\includegraphics[width=\textwidth]{img/compare_query.png}
+	\caption{Vergleich: ContentProvider Query und SQL Query Parameter}
+\end{figure}
+
+\begin{figure}[htb!]
+	\centering
+	\includegraphics[width=.7\textwidth]{img/contentprovider.jpg}
+	\caption{Content Provider - Anwendung (Data: Dateisystem, XML: Preferences)}
+\end{figure}
+
+\newpage
+
+\begin{itemize}
+	\item SMS des Systems sind über den Content Provider zugänglich\\
+	\textit{(Benötigt Permission für SMS, diese testen und ggf. beantragen)}:
+		\begin{itemize}
+			\item \texttt{android.provider.Telephony.Sms}\\
+			\textit{("Sub-Providers" für Sent, Inbox, Draft, etc.)}
+			\item Im Package \texttt{android.provider.*} finden wir \\
+			"Contract Klasse" \texttt{Telephone.Sms} mit \\
+			Hilfsklassen \texttt{BaseColumns} und \texttt{Telephony.TextBasedSmsColumns}\\
+			\textit{(Hier findet man Content-URI und Spalten-Namen für Projections)}
+		\end{itemize}
+\end{itemize}
+
+\begin{figure}[htb!]
+	\centering
+	\includegraphics[width=\textwidth]{img/content_sms.jpg}
+	\caption{Anwendungsbeispiel - Alle SMS mit Text anzeigen}
+\end{figure}
+
+Jeder Content Provider bietet eine eigene Standard-API, in der Android Dokumentation sind die Zugriffe auf Kontakte und Kalender gut dokumentiert (da dies eher komplizierte Modelle sind). Einstiegspunkt für die meisten Provider: \texttt{android.provider.*}
+
+\subsection{Eigener Content Provider}
+
+\begin{itemize}
+	\item Um eigenen Content Provider zu schreiben, muss die eigene Klasse von der abstrakten Klasse\\ \texttt{android.content.ContentProvider} ableiten
+	\item Wird bei App-Start hochgefahren und bleibt aktiv, in \texttt{onCreate()} kann eine Initialisierung vorgenommen werden (einzige Lifecycle-Methode)
+	\item CRUD-Methoden: query, insert, update, delete (muss nicht alle implementieren)\\
+	\textit{(Möglichkeit, einen read-only Content Provider anzulegen)}
+\end{itemize}
+
+\begin{figure}[htb!]
+	\centering
+	\includegraphics[width=.75\textwidth]{img/content_notes.png}
+	\caption{Anwendungsbeispiel - Content Provider für Notizen}
+\end{figure}
 
 \end{document}

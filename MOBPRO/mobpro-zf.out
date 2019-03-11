@@ -41,4 +41,17 @@
 \BOOKMARK [3][-]{subsubsection.3.2.2}{Exkurs ff: Runtime Permissions}{subsection.3.2}% 41
 \BOOKMARK [3][-]{subsubsection.3.2.3}{Exkurs ff: Persistenz mit Datei}{subsection.3.2}% 42
 \BOOKMARK [2][-]{subsection.3.3}{Datenbank \(Room\)}{section.3}% 43
-\BOOKMARK [2][-]{subsection.3.4}{Content Providers}{section.3}% 44
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Room - Code-Beispiele}{subsection.3.3}% 44
+\BOOKMARK [3][-]{subsubsection.3.3.2}{Room - Daten mit Entit\344ten definieren}{subsection.3.3}% 45
+\BOOKMARK [3][-]{subsubsection.3.3.3}{Room - Beziehungen modellieren}{subsection.3.3}% 46
+\BOOKMARK [2][-]{subsection.3.4}{Mit DAOs auf Daten zugreifen}{section.3}% 47
+\BOOKMARK [3][-]{subsubsection.3.4.1}{Convenience Queries}{subsection.3.4}% 48
+\BOOKMARK [3][-]{subsubsection.3.4.2}{Custom Queries mit @Query}{subsection.3.4}% 49
+\BOOKMARK [2][-]{subsection.3.5}{DB-Eintr\344ge in einer Liste anzeigen}{section.3}% 50
+\BOOKMARK [3][-]{subsubsection.3.5.1}{Room - weitere Themen}{subsection.3.5}% 51
+\BOOKMARK [2][-]{subsection.3.6}{Content Providers}{section.3}% 52
+\BOOKMARK [3][-]{subsubsection.3.6.1}{Standard Content Providers}{subsection.3.6}% 53
+\BOOKMARK [2][-]{subsection.3.7}{Exkurs : REST-ful Webservices}{section.3}% 54
+\BOOKMARK [2][-]{subsection.3.8}{Content Resolver \046 Content Provider}{section.3}% 55
+\BOOKMARK [3][-]{subsubsection.3.8.1}{Zugriff auf Daten \374ber Content Resolver \046 Query}{subsection.3.8}% 56
+\BOOKMARK [2][-]{subsection.3.9}{Eigener Content Provider}{section.3}% 57
