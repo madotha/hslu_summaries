@@ -19,3 +19,6 @@
 \contentsline {subsection}{\numberline {3.1}Sie kennen die Aufgaben eines Versionskontrollsystems und k\IeC {\"o}nnen grundlegend damit arbeiten}{7}% 
 \contentsline {subsection}{\numberline {3.2}Sie kennen die verschiedenen Konzepte und Arten von Versionskontrollsystemen}{7}% 
 \contentsline {subsection}{\numberline {3.3}Sie k\IeC {\"o}nnen mit verschiedenen (Client-)Werkzeugen von Versionskontrollsystemen alleine und im Team arbeiten}{7}% 
+\contentsline {section}{\numberline {4}Unit Testing}{8}% 
+\contentsline {section}{\numberline {5}Software Architektur}{8}% 
+\contentsline {section}{\numberline {6}Grafisches User Interface - mit JavaFX}{8}% 

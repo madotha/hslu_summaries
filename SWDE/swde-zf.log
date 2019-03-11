@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840) (preloaded format=pdflatex 2019.3.4)  8 MAR 2019 13:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840) (preloaded format=pdflatex 2019.3.11)  11 MAR 2019 11:18
 entering extended mode
 **./swde-zf.tex
 (swde-zf.tex
@@ -98,15 +98,6 @@ File: babel.def 2018/11/13 3.27 Babel common definitions
 eneric/babel/txtbabel.def")
 \bbl@dirlevel=\count92
 )
-
-Package babel Warning: No hyphenation patterns were preloaded for
-(babel)                the language `German (new orthography)' into the format.
-
-(babel)                Please, configure your TeX system to add them and
-(babel)                rebuild the format. Now I will use the patterns
-(babel)                preloaded for \language=0 instead on input line 47.
-
-\l@ngerman = a dialect from \language0
 Package babel Info: Making " an active character on input line 121.
 )))
 ("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
@@ -371,15 +362,9 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 3.
 
-Overfull \hbox (32.69853pt too wide) in paragraph at lines 10--10
- [][] []\T1/phv/m/n/10 Sie können die Begriffe auf verschiedenen Abstraktionseb
-enen in einen sinnvollen Zusammenhang 
- []
-
-
 Overfull \hbox (3.44771pt too wide) in paragraph at lines 18--18
- [] []\T1/phv/b/n/10 Versionskontrollsysteme - Source Code Management (SCM) / V
-ersion Control Systems (VCS) []  
+ [] []\T1/phv/b/n/10 Versionskontrollsysteme - Sour-ce Co-de Ma-na-ge-ment (SCM
+) / Ver-si-on Con-trol Sys-tems (VCS) []  
  []
 
 )
@@ -400,15 +385,15 @@ File: omsphv.fd
 LaTeX Font Info:    Font shape `OMS/phv/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 54.
 
-Overfull \hbox (16.12677pt too wide) in paragraph at lines 71--71
-[]\T1/phv/b/n/12 Sie beherrschen die Anwendung eines ausgewählten Buildwerkzeug
-es (Apache
+Overfull \hbox (0.39493pt too wide) in paragraph at lines 71--71
+[]\T1/phv/b/n/12 Sie be-herr-schen die An-wen-dung ei-nes aus-ge-wähl-ten Build
+-werk-zeu-ges (Apa-
  []
 
 
-Overfull \hbox (41.75122pt too wide) in paragraph at lines 75--78
-\T1/phv/m/n/10 Repository. Plugins werden durch Dependencies dynamisch ins loka
-le Repository geladen ($HOME/.m2/repository) 
+Overfull \hbox (29.61035pt too wide) in paragraph at lines 75--78
+\T1/phv/m/n/10 po-si-to-ry. Plug-ins wer-den durch De-pen-den-cies dy-na-misch 
+ins lo-ka-le Re-po-si-to-ry ge-la-den ($HO-ME/.m2/repository) 
  []
 
 [2]
@@ -417,32 +402,14 @@ LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 (Font)              scaled to size 9.49997pt on input line 91.
 
-Overfull \hbox (48.50816pt too wide) in paragraph at lines 102--103
-[]\T1/phv/m/n/10 Eine Sammlung thematisch zusammengehörender Funktionen (z.Bsp.
- Kalendermodul, Trigonometriemodul,
- []
-
-
-Overfull \hbox (30.29654pt too wide) in paragraph at lines 106--106
-[]\T1/phv/b/n/12 Sie können die Begriffe auf verschiedenen Abstraktionsebenen i
-n einen sinnvollen
- []
-
-
-Overfull \hbox (2.15836pt too wide) in paragraph at lines 117--119
-[]\T1/phv/m/n/10 Modul(-gruppen) können logische Kette bilden, die vertikal als
- Schichten abgebildet werden. 
+Overfull \hbox (1.94505pt too wide) in paragraph at lines 106--106
+[]\T1/phv/b/n/12 Sie kön-nen die Be-grif-fe auf ver-schie-de-nen Ab-strak-ti-on
+s-ebe-nen in einen sinn-
  []
 
 [3]
 Underfull \hbox (badness 10000) in paragraph at lines 124--150
 
- []
-
-
-Overfull \hbox (4.96783pt too wide) in paragraph at lines 124--150
-\T1/phv/b/n/10 Modellierung/Abstraktion physischer Modelle: \T1/phv/m/n/10 Modu
-l abstrahiert reales, physisch existierendes System
  []
 
 
@@ -463,159 +430,19 @@ LaTeX Font Info:    Font shape `T1/phv/b/it' in size <10> not available
 LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
 (Font)              scaled to size 9.49997pt on input line 157.
 
-Overfull \hbox (29.46066pt too wide) in paragraph at lines 157--158
-[]\T1/phv/m/sl/10 Eine Softwarekomponente ist ein Softwareelement, das zu einem
- bestimmten \T1/phv/b/sl/10 Komponentenmodell
- []
-
-
-Overfull \hbox (25.26137pt too wide) in paragraph at lines 157--158
-\T1/phv/m/sl/10 passt und entsprechend einem Composition Standard ohne Änderung
-en mit anderen Komponenten
- []
-
-
-Overfull \hbox (6.96237pt too wide) in paragraph at lines 159--166
-\T1/phv/m/n/10 Eine \T1/phv/b/n/10 Komponente \T1/phv/m/n/10 erfüllt strengere 
-Kriterien als ein Modul und benötigt meist einen \T1/phv/b/n/10 Kontext\T1/phv/
-m/n/10 . Komponenten
- []
-
-
-Overfull \hbox (9.4035pt too wide) in paragraph at lines 159--166
-\T1/phv/m/n/10 (installiert, deployed, etc.) werden und dort lauffähig sind. (C
-ontainer stellen den Komponenten Basisdienste
- []
-
-
-Overfull \hbox (17.78325pt too wide) in paragraph at lines 159--166
-\T1/phv/m/n/10 Komponenten bedienen sich spezifischer Laufzeitumgebungen (z.Bsp
-. Container) in welche die Komponenten
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 159--166
 
  []
 
-
-Overfull \hbox (2.96349pt too wide) in paragraph at lines 159--166
-\T1/phv/b/n/10 Komponentenmodelle\T1/phv/m/n/10 : konkrete Ausprägungen des Par
-adigmas der komponentenbasierten Entwicklung
- []
-
-
-Overfull \hbox (4.85345pt too wide) in paragraph at lines 159--166
-\T1/phv/m/n/10 Komponenten festlegen: wie kommunizieren Komponenten untereinand
-er/mit dem Container Idealerweise:
- []
-
-
-Overfull \hbox (17.80196pt too wide) in paragraph at lines 159--166
-\T1/phv/m/n/10 Komponentenmodell unabhängig von Gremium standardisiert (kann so
-mit in unterschiedlichen Ausprägungen
- []
-
-
-Overfull \hbox (10.28856pt too wide) in paragraph at lines 167--168
-[]\T1/phv/b/n/10 Beispiele\T1/phv/m/n/10 : Microsoft DCOM/ActiveX/.NET Remoting
- Services (WCF), CORBA (Common Object
- []
-
-
-Overfull \hbox (2.15788pt too wide) in paragraph at lines 167--168
-\T1/phv/m/n/10 Request Broker Architecture), Enterprise Java Beans, OSGi (Open 
-Services Gateway initiative
- []
-
-
-Overfull \hbox (10.41103pt too wide) in paragraph at lines 173--175
-\T1/phv/m/n/10 Schnittstellen werden konsequent für die kontrollierte Kommunika
-tion zwischen Modulen oder Komponenten
- []
-
-
-Overfull \hbox (4.89703pt too wide) in paragraph at lines 177--178
-[]\T1/phv/m/n/10 Schnittstellen helfen Abhängigkeiten zu reduzieren, vermeiden 
-Abhängigkeiten zur Implementierung. 
- []
-
-
-Overfull \hbox (27.76662pt too wide) in paragraph at lines 188--192
-\T1/phv/b/n/10 Service\T1/phv/m/n/10 : abstrahierte Schnittstelle, definiert si
-ch primär über Fachlichkeit, dahinterliegende Technik idealerweise
- []
-
-
-Overfull \hbox (15.46458pt too wide) in paragraph at lines 188--192
-\T1/phv/m/n/10 vollständig isoliert (Bsp. Webservice, wird über Web-Protokolle 
-angeboten und abstrahiert die Implementation
- []
-
-
-Overfull \hbox (17.81052pt too wide) in paragraph at lines 188--192
-\T1/phv/m/n/10 Komponente auf Quellcodeebene definiert (Bsp. JDBC [Java Databas
-e Connectivity], einheitliche Schnittstelle
- []
-
-
-Overfull \hbox (8.73894pt too wide) in paragraph at lines 188--192
-\T1/phv/m/n/10 Ebene \T1/phv/b/n/10 Modularisierung\T1/phv/m/n/10 : Schnittstel
-le = logische Zusammenfassung versch. Artefakte (Klassen, Interfaces,
- []
-
 [5]
-Overfull \hbox (1.64862pt too wide) in paragraph at lines 194--194
-[]\T1/phv/b/n/12 Sie kennen verschiedene organisatorische und technische Varian
-ten um eine
- []
-
-
-Overfull \hbox (5.10283pt too wide) in paragraph at lines 194--194
-\T1/phv/b/n/12 sinnvolle Modularisierung in der Entwicklung und im Deployment e
-inzusetzen 
- []
-
-
-Overfull \hbox (35.04054pt too wide) in paragraph at lines 196--206
-\T1/phv/m/n/10 Schnittstellen in getrennten JAR's (Modulen) verteilen $\OMS/cms
-y/m/n/10 !$ \T1/phv/m/n/10 einfacher Austausch unterschiedlicher Implementation
-en 
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 196--206
 
  []
 
-
-Overfull \hbox (12.05052pt too wide) in paragraph at lines 213--214
-[]\T1/phv/b/n/10 Scalable Platform: \T1/phv/m/n/10 Java-Plattform selber wurde 
-modularisiert, so können für Anwendungen individuell
- []
-
-
-Overfull \hbox (9.39047pt too wide) in paragraph at lines 219--220
-[]\T1/phv/m/n/10 Pro Modul wird ein \T1/phv/m/sl/10 module-info.java \T1/phv/m/
-n/10 definiert (explizite Definition von Imports/Exports/Abhängigkeiten) 
- []
-
-
-Overfull \hbox (11.48961pt too wide) in paragraph at lines 220--221
-[]\T1/phv/m/n/10 Start einer Applikation: Laufzeitprüfung wird ausgeführt, ob a
-lle notwendigen Komponenten vorhanden
- []
-
 [6]
-Overfull \hbox (26.46977pt too wide) in paragraph at lines 227--227
-[]\T1/phv/b/n/14.4 Versionskontrollsysteme - Source Code Management (SCM) / Ver
-sion
- []
-
-
-Overfull \hbox (28.96321pt too wide) in paragraph at lines 229--229
-[]\T1/phv/b/n/12 Sie kennen die Aufgaben eines Versionskontrollsystems und könn
-en grundlegend
+Overfull \hbox (2.83096pt too wide) in paragraph at lines 227--227
+[]\T1/phv/b/n/14.4 Versionskontrollsysteme - Sour-ce Co-de Ma-na-ge-ment (SCM) 
+/ Ver-
  []
 
 
@@ -624,67 +451,37 @@ Underfull \hbox (badness 10000) in paragraph at lines 238--243
  []
 
 
-Overfull \hbox (31.6242pt too wide) in paragraph at lines 238--243
-\T1/phv/b/n/10 Branching: \T1/phv/m/n/10 Parallele, voneinander getrennte Entwi
-cklungszweige (für Bugfixing, Prototypen, Tests, Experimente,
- []
-
-
-Overfull \hbox (37.78032pt too wide) in paragraph at lines 238--243
-\T1/phv/m/n/10 nachvollziehbare Änderungsworkflows, etc.) Bei Nicht-Wegwerf-Ent
-wicklungen später Merging möglich/notwendig. 
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 238--243
 
  []
 
 
-Overfull \hbox (25.34932pt too wide) in paragraph at lines 244--244
-[]\T1/phv/b/n/12 Sie kennen die verschiedenen Konzepte und Arten von Versionsko
-ntrollsystemen 
+Overfull \hbox (0.12106pt too wide) in paragraph at lines 254--254
+[]\T1/phv/b/n/12 Sie kön-nen mit ver-schie-de-nen (Client-)Werkzeugen von Ver-s
+i-ons-kon-troll-sys-
  []
 
-
-Overfull \hbox (29.89748pt too wide) in paragraph at lines 254--254
-[]\T1/phv/b/n/12 Sie können mit verschiedenen (Client-)Werkzeugen von Versionsk
-ontrollsystemen
- []
-
-
-Overfull \hbox (7.66808pt too wide) in paragraph at lines 258--259
-[]\T1/phv/m/n/10 Transaktionsorieniert, versioniert ganze Verzeichnisstruktur, 
-optimierte/effiziente Speicherung
- []
-
-
-Overfull \hbox (2.7663pt too wide) in paragraph at lines 259--260
-[]\T1/phv/m/n/10 verteiltes System, primär lokale Arbeit, beliebig viele Server
-/Repos möglich, auch rein lokal einsetzbar,
- []
-
-[7] (swde-zf.aux) ) 
+[7] [8] (swde-zf.aux) ) 
 Here is how much of TeX's memory you used:
- 4574 strings out of 494866
- 69227 string characters out of 3176098
- 323761 words of memory out of 3000000
- 8145 multiletter control sequences out of 15000+200000
+ 4571 strings out of 492982
+ 69192 string characters out of 3118053
+ 329257 words of memory out of 3000000
+ 8372 multiletter control sequences out of 15000+200000
  33183 words of font info for 42 fonts, out of 3000000 for 9000
- 0 hyphenation exceptions out of 8191
+ 1141 hyphenation exceptions out of 8191
  41i,6n,40p,492b,217s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/Users/maurinthalmann/Library/Application Support/MiKTeX/te
-xmfs/install/fonts/enc/dvips/base/8r.enc}</Users/maurinthalmann/Library/Applica
-tion Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb></
-Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/fonts/ty
-pe1/urw/helvetic/uhvb8a.pfb></Users/maurinthalmann/Library/Application Support/
-MiKTeX/texmfs/install/fonts/type1/urw/helvetic/uhvbo8a.pfb></Users/maurinthalma
-nn/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/urw/helvetic/u
-hvr8a.pfb></Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/inst
-all/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on swde-zf.pdf (8 pages, 72333 bytes).
+{/Users/maurinthalmann/Library/Application Support/MiKTe
+X/texmfs/install/fonts/enc/dvips/base/8r.enc}</Users/maurinthalmann/Library/App
+lication Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pf
+b></Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/font
+s/type1/urw/helvetic/uhvb8a.pfb></Users/maurinthalmann/Library/Application Supp
+ort/MiKTeX/texmfs/install/fonts/type1/urw/helvetic/uhvbo8a.pfb></Users/maurinth
+almann/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/urw/helvet
+ic/uhvr8a.pfb></Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/
+install/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on swde-zf.pdf (9 pages, 73874 bytes).
 PDF statistics:
- 50 PDF objects out of 1000 (max. 8388607)
+ 53 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
