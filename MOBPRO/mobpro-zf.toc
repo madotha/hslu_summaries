@@ -37,6 +37,12 @@
 \contentsline {section}{\numberline {3}Android 3 - Persistenz \& Content Providers}{24}{section.3}% 
 \contentsline {subsection}{\numberline {3.1}(Shared) Preferences}{24}{subsection.3.1}% 
 \contentsline {paragraph}{Lesen und Schreiben auf Preferences}{24}{section*.34}% 
-\contentsline {subsection}{\numberline {3.2}Dateisystem}{24}{subsection.3.2}% 
-\contentsline {subsubsection}{\numberline {3.2.1}Exkurs: Permission-Model}{24}{subsubsection.3.2.1}% 
-\contentsline {subsection}{\numberline {3.3}Datenbank (Room)}{24}{subsection.3.3}% 
+\contentsline {subsubsection}{\numberline {3.1.1}Darstellung User-Preferences}{24}{subsubsection.3.1.1}% 
+\contentsline {subsubsection}{\numberline {3.1.2}PreferenceFragment}{26}{subsubsection.3.1.2}% 
+\contentsline {subsubsection}{\numberline {3.1.3}Default-Pr\IeC {\"a}ferenzen}{26}{subsubsection.3.1.3}% 
+\contentsline {subsection}{\numberline {3.2}Dateisystem}{27}{subsection.3.2}% 
+\contentsline {subsubsection}{\numberline {3.2.1}Exkurs: Permission-Model}{27}{subsubsection.3.2.1}% 
+\contentsline {subsubsection}{\numberline {3.2.2}Exkurs ff: Runtime Permissions}{28}{subsubsection.3.2.2}% 
+\contentsline {subsubsection}{\numberline {3.2.3}Exkurs ff: Persistenz mit Datei}{28}{subsubsection.3.2.3}% 
+\contentsline {subsection}{\numberline {3.3}Datenbank (Room)}{29}{subsection.3.3}% 
+\contentsline {subsection}{\numberline {3.4}Content Providers}{29}{subsection.3.4}% 

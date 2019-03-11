@@ -888,13 +888,112 @@ Für lokale Persistenz gibt es drei Möglichkeiten:
 \paragraph{Lesen und Schreiben auf Preferences}
 \begin{itemize}
 	\item Mehrere Dateien pro Applikation möglich, Zugriff mit\\
-		\texttt{Activity.getSharedPreferences(name, mode)} (unterschiedliche Dateinamen)
+		\texttt{Activity.getSharedPreferences(name, mode)} (unterschiedliche Dateinamen)\\
+		oder auch über \texttt{getDefaultSharedPreferences(mode)}, die Applikation findet danach anhand der Preference-Benennungen die Einträge auch selber
 	\item Lesen mit Methoden \texttt{SharedPreferences.get\textbf{X}()}\\
 		\textbf{X} steht für den Typ, also String, Int, Boolean, ...
-	\item 
+	\item Schreiben immer mit dem Editor:
+		\begin{enumerate}
+			\item \texttt{SharedPreferences.Editor editor = preferences.edit()}
+			\item \texttt{editor.put\textbf{X}(...)}
+			\item \texttt{editor.apply()} Persistierung der Änderungen
+				\begin{itemize}
+					\item asynchrone Persistierung, blockiert die Methode nicht
+					\item für synchrone Persistierung: \texttt{editor.commit()}
+				\end{itemize}
+		\end{enumerate}
 \end{itemize}
+\vspace{1em}
+Beispiel, um die Anzahl Aufrufe einer App über die Lebenszeit der App hinaus zu persistieren:
 
-	% TODO
+\begin{lstlisting}
+final SharedPreferences preferences = getPreferences(MODE_PRIVATE);
+final int newResumeCount = preferences.getInt(COUNTER_KEY, 0) + 1;
+final SharedPreferences.Editor editor = preferences.edit();
+editor.putInt(COUNTER_KEY, newResumeCount);
+editor.apply();
+\end{lstlisting}
+
+\subsubsection{Darstellung User-Preferences}
+
+	\begin{itemize}
+		\item Automatische Darstellung mit \texttt{PreferenceFragment}, eigener Editor für jeden Wertetyp
+		\item \texttt{PreferenceFragment} schreibt/liest grundsätzlich in die DefaultSharedPreferences, kann aber auch für andere Preference-Stores konfiguriert werden
+	\end{itemize}
+
+\newpage
+\noindent
+User-Präferenzen können in XML deklariert werden unter \texttt{res/xml} z.Bsp. als \texttt{preferences.xml}, wobei untersch. Präferenzen bspw. als \texttt{CheckBoxPreference, ListPreference} usw. erfasst werden. Daten können wie in diesem Beispiel aus den Array-Ressourcen bezogen werden:
+
+\begin{figure}[htb!]
+	\centering
+	\includegraphics[width=.7\textwidth]{img/prefs_xml.jpg}
+	\caption{Beispiel eines Präferenzen-XML}
+\end{figure}
+
+\begin{itemize}
+	\item Ohne \texttt{android:summary} würde die gewählte Preference angezeigt werden
+	\item \texttt{android:dependency} deklariert eine Abhängigkeit zu einer anderen Preference, ist diese nicht gegeben kann die andere Preference nicht ausgewählt werden
+	\item \textbf{Entries}: "Anzeigestring", übersetzbar\\
+	\textbf{EntryValues}: "Werte", nicht übersetzt, technischer Schlüssel
+\end{itemize}
+\begin{lstlisting}
+// Zur "Uebersetzung" von Values zu Entries (Beispiel)
+public String getValueFromKey(String key) {
+	String[] keys = getResources().getStringArray(R.array.teaSweetenerValues);
+	String[] values = getResources().getStringArray(R.array.teaSweetener);
+	int i = 0;
+	while(i < keys.length) {
+		if(keys[i].equals(key)) {
+			return values[i];
+			}
+		i++;
+	}
+	return "";
+}
+\end{lstlisting}
+
+\newpage
+
+\subsubsection{PreferenceFragment}
+
+Ein \texttt{PreferenceFragment} kann in einer eigenen Activity (hier \texttt{TeaPreferenceActivity}) erstellt werden:
+
+\begin{lstlisting}
+public class TeaPreferenceActivity extends Activity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		getFragmentManager().beginTransaction().replace(android.R.id.content,
+			new TeaPreferenceInitializer()).commit();
+	}
+	
+	// PreferenceFragment als statische innere Klasse
+	public static final class TeaPreferenceInitializer extends PreferenceFragment {
+		@Override
+		public void onCreate(final Bundle savedInstanceState) {
+			super.onCreate(savedInstanceState);
+			addPreferencesFromResource(R.xml.preferences);
+			// Referenz auf preferences.xml
+	}
+}
+\end{lstlisting}
+
+\subsubsection{Default-Präferenzen}
+
+Präferenzen können programmatisch auch wieder auf "Standard"-Werte oder auf festgelegte Werte gesetzt werden, für das Tee-Beispiel kann dies bspw. folgendermassen vorgenommen werden:
+
+\begin{lstlisting}
+SharedPreferences teaPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+SharedPreferences.Editor editor = teaPrefs.edit();
+editor.putString("teaPreferred", "Lipton/Pfefferminztee");
+editor.putString("teaSweetener", "natural");
+editor.putBoolean("teaWithSugar", true);
+editor.apply();
+\end{lstlisting}
+
+\newpage
 	
 \subsection{Dateisystem}
 
@@ -908,20 +1007,113 @@ Für lokale Persistenz gibt es drei Möglichkeiten:
 	\item Teilen / Freigeben von erstelltem Inhalt (Externer Speicher wie SD-Karte)
 \end{itemize}
 
-
-	% TODO
+\begin{itemize}
+	\item Dateien sind entweder
+	\begin{itemize}
+		\item PRIVATE $\rightarrow$ ins Applikationsverzeichnis\\
+		\textit{(Zugriff für andere Apps nur über Content Provider möglich)}
+		\begin{itemize}
+			\item \texttt{Context.getFilesDir()}
+		\end{itemize}
+		\item PUBLIC $\rightarrow$ auf die SD-Karte 
+		\begin{itemize}
+			\item \texttt{Environment.getExternalStorageDirectory()}\\
+			\texttt{Environment.getExternalStorageState();}
+		\end{itemize}
+	\end{itemize}
+	\item Für Zugriff auf SD-Karte muss die Permission im Manifest eingetragen werden! (siehe nachfolgend)
+\end{itemize}
 	
 \subsubsection{Exkurs: Permission-Model}
 
-	% TODO
+	\begin{itemize}
+		\item Vor gewissen Operationen müssen Apps die Berechtigung des Nutzers erhalten (Kontaktzugriff, Internet, SD-Karte, Kamera, SMS, etc.)
+		\item Klasse: \texttt{android.Manifest.permission}
+		\item Seit API 23 werden keine dangerous Permissions mehr gewährt, der Nutzer muss diese selber freigeben (Applikation fragt beim Nutzer nach), Permissions werden einzeln gewährt/abgelehnt.\\
+		\textbf{Konsequenz}: Apps müssen mit eingeschränkten Permissions umgehen können
+		\item Arten von Permissions
+		\begin{itemize}
+			\item \textit{normal}
+				\begin{itemize}
+					\item Wird bei der Installation automatisch erlaubt
+				\end{itemize}
+			\item \textit{dangerous}
+				\begin{itemize}
+					\item Muss von User erlaubt werden (kann wieder entzogen werden)
+				\end{itemize}
+			\item \textit{signature}
+				\begin{itemize}
+					\item Wird automatisch erlaubt, wenn die App, welche die Permission definiert, vom gleichen Hersteller ist wie die App, welche die Permission beanträgt (sonst ist sie "dangerous")
+				\end{itemize}
+			\item \textit{signatureOrSystem}
+				\begin{itemize}
+					\item Wird automatisch erlaubt für Apps, welche im System-Image sind, sonst wie "signature"
+				\end{itemize}
+		\end{itemize}
+		\item Permissions können gruppiert werden, User gibt Freigabe für alle Permissions in einer Gruppe (keine einzelnen Permissions), falls benötigt
+	\end{itemize}
+	
+	\begin{figure}[htb!]
+		\centering
+		\includegraphics[width=.7\textwidth]{img/manifest_permissions.jpg}
+		\caption{Erfassung von Permissions im Manifest}
+	\end{figure}
+
+\newpage
+
+	\subsubsection{Exkurs ff: Runtime Permissions}
+	
+	\begin{figure}[htb!]
+		\centering
+		\includegraphics[width=.9\textwidth]{img/runtimeperm1.jpg}
+		\caption{RuntimeCheck der Permissions}
+	\end{figure}
+	
+	\begin{figure}[htb!]
+		\centering
+		\includegraphics[width=.9\textwidth]{img/runtimeperm2.jpg}
+		\caption{Callback aus Permission-Abfrage}
+	\end{figure}
+	
+	\subsubsection{Exkurs ff: Persistenz mit Datei}
+	
+	Repetition zu Streams, Reader \& Co.
+	
+	\begin{itemize}
+		\item Stream: Byte-Datenstrom \texttt{[28,11,200,255,2,15,33]}
+			\begin{itemize}
+				\item Auf \texttt{File} öffnen:\\
+				\texttt{FileOutputStream, FileInputStream}
+			\end{itemize}
+		\item Stream kann in Zeichenstrom \texttt{['h','a','l','l','o']} umgewandelt werden
+			\begin{itemize}
+				\item \texttt{FileReader, FileWriter} + "Buffered"-Versionen
+			\end{itemize}
+		\item Immer schliessen!\\
+		\texttt{stream.close() / reader.close()}
+		\item Nicht vergessen: \texttt{try-catch-finally} implementieren
+		\item \texttt{java.nio.file.Path}: ist ab API 26 in Android verfügbar!
+	\end{itemize}
+
+	\begin{figure}[htb!]
+		\centering
+		\includegraphics[width=.7\textwidth]{img/persist_text.jpg}
+		\caption{Beispielcode zur Persistierung in einem Textfile}
+	\end{figure}
+
+\newpage	
 	
 \subsection{Datenbank (Room)}
 
 Android-DB \textbf{SQLite} ist bei Android fix integriert. Room ist ein Object Relational Mapper (ORM) für Android
 
+	%TODO
 
+\subsection{Content Providers}
 
-
+	%TODO
+	
+	
 
 
 

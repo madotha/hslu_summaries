@@ -1,11 +1,15 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.2.27)  10 MAR 2019 15:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840) (preloaded format=pdflatex 2019.3.4)  11 MAR 2019 11:11
 entering extended mode
 **./mobpro-zf.tex
 (mobpro-zf.tex
 LaTeX2e <2018-12-01>
-("C:\Program Files\MiKTeX 2.9\tex/latex/base\article.cls"
+
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/base/article.cls"
 Document Class: article 2018/09/03 v1.4i Standard LaTeX document class
-("C:\Program Files\MiKTeX 2.9\tex/latex/base\size10.clo"
+
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/base/size10.clo"
 File: size10.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
 )
 \c@part=\count80
@@ -20,67 +24,93 @@ File: size10.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-("C:\Program Files\MiKTeX 2.9\tex/generic/babel\babel.sty"
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/g
+eneric/babel/babel.sty"
 Package: babel 2018/11/13 3.27 The Babel package
 
-("C:\Program Files\MiKTeX 2.9\tex/generic/babel\switch.def"
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/g
+eneric/babel/switch.def"
 File: switch.def 2018/11/13 3.27 Babel switching mechanism
 )
 *************************************
 * Local config file bblopts.cfg used
 *
-("C:\Program Files\MiKTeX 2.9\tex/latex/arabi\bblopts.cfg"
+
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/arabi/bblopts.cfg"
 File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
  babel
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/babel-german\ngerman.ldf"
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/babel-german/ngerman.ldf"
 Language: ngerman 2018/12/08 v2.11 German support for babel (post-1996 orthogra
 phy)
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/babel-german\ngermanb.ldf"
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/babel-german/ngermanb.ldf"
 Language: ngermanb 2018/12/08 v2.11 German support for babel (post-1996 orthogr
 aphy)
 
-("C:\Program Files\MiKTeX 2.9\tex/generic/babel\babel.def"
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/g
+eneric/babel/babel.def"
 File: babel.def 2018/11/13 3.27 Babel common definitions
 \babel@savecnt=\count88
 \U@D=\dimen103
 
-("C:\Program Files\MiKTeX 2.9\tex/generic/babel\txtbabel.def")
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/g
+eneric/babel/txtbabel.def")
 \bbl@dirlevel=\count89
 )
+
+Package babel Warning: No hyphenation patterns were preloaded for
+(babel)                the language `German (new orthography)' into the format.
+
+(babel)                Please, configure your TeX system to add them and
+(babel)                rebuild the format. Now I will use the patterns
+(babel)                preloaded for \language=0 instead on input line 47.
+
+\l@ngerman = a dialect from \language0
 Package babel Info: Making " an active character on input line 121.
 )))
-("C:\Program Files\MiKTeX 2.9\tex/latex/base\inputenc.sty"
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/base/inputenc.sty"
 Package: inputenc 2018/08/11 v1.3c Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/base\fontenc.sty"
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/base/fontenc.sty"
 Package: fontenc 2018/08/11 v2.0j Standard LaTeX package
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/base\t1enc.def"
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/base/t1enc.def"
 File: t1enc.def 2018/08/11 v2.0j Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 ))
-("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\helvet.sty"
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/psnfss/helvet.sty"
 Package: helvet 2005/04/12 PSNFSS-v9.2a (WaS) 
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\keyval.sty"
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/graphics/keyval.sty"
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks16
 ))
-("C:\Program Files\MiKTeX 2.9\tex/latex/geometry\geometry.sty"
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/geometry/geometry.sty"
 Package: geometry 2018/04/16 v5.8 Page Geometry
 
-("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\ifpdf.sty"
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/g
+eneric/oberdiek/ifpdf.sty"
 Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
 )
-("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\ifvtex.sty"
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/g
+eneric/oberdiek/ifvtex.sty"
 Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 )
-("C:\Program Files\MiKTeX 2.9\tex/generic/ifxetex\ifxetex.sty"
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/g
+eneric/ifxetex/ifxetex.sty"
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
 \Gm@cnth=\count90
@@ -96,8 +126,10 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutvoffset=\dimen111
 \Gm@dimlist=\toks17
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/geometry\geometry.cfg"))
-("C:\Program Files\MiKTeX 2.9\tex/latex/tools\multicol.sty"
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/geometry/geometry.cfg"))
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/tools/multicol.sty"
 Package: multicol 2018/12/27 v1.8v multicolumn formatting (FMi)
 \c@tracingmulticols=\count93
 \mult@box=\box27
@@ -146,30 +178,37 @@ Package: multicol 2018/12/27 v1.8v multicolumn formatting (FMi)
 \colbreak@box=\box52
 \mc@col@check@num=\count101
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\graphicx.sty"
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/graphics/graphicx.sty"
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\graphics.sty"
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/graphics/graphics.sty"
 Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\trig.sty"
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/graphics/trig.sty"
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics-cfg\graphics.cfg"
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/graphics-cfg/graphics.cfg"
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 99.
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics-def\pdftex.def"
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/graphics-def/pdftex.def"
 File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen121
 \Gin@req@width=\dimen122
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/caption\caption.sty"
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/caption/caption.sty"
 Package: caption 2018/10/06 v3.3-154 Customizing captions (AR)
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/caption\caption3.sty"
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/caption/caption3.sty"
 Package: caption3 2018/09/12 v1.8c caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 64.
 \captionmargin=\dimen123
@@ -183,18 +222,22 @@ Package caption3 Info: TeX engine: e-TeX on input line 64.
 \c@caption@flags=\count102
 \c@ContinuedFloat=\count103
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/xcolor\xcolor.sty"
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/xcolor/xcolor.sty"
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics-cfg\color.cfg"
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/graphics-cfg/color.cfg"
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/colortbl\colortbl.sty"
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/colortbl/colortbl.sty"
 Package: colortbl 2018/12/12 v1.0d Color table columns (DPC)
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/tools\array.sty"
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/tools/array.sty"
 Package: array 2018/12/30 v2.4k Tabular extension package (FMi)
 \col@sep=\dimen130
 \ar@mcellbox=\box53
@@ -218,15 +261,18 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\courier.sty"
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/psnfss/courier.sty"
 Package: courier 2005/04/12 PSNFSS-v9.2a (WaS) 
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/caption\subcaption.sty"
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/caption/subcaption.sty"
 Package: subcaption 2018/05/01 v1.1-162 Sub-captions (AR)
 \c@subfigure=\count105
 \c@subtable=\count106
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/enumitem\enumitem.sty"
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/enumitem/enumitem.sty"
 Package: enumitem 2019/02/04 v3.8 Customized lists
 \labelindent=\skip48
 \enit@outerparindent=\dimen132
@@ -235,10 +281,12 @@ Package: enumitem 2019/02/04 v3.8 Customized lists
 \enit@count@id=\count107
 \enitdp@description=\count108
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/csquotes\csquotes.sty"
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/csquotes/csquotes.sty"
 Package: csquotes 2018/04/13 v5.2d context-sensitive quotations (JAW)
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/etoolbox\etoolbox.sty"
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/etoolbox/etoolbox.sty"
 Package: etoolbox 2018/08/19 v2.5f e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count109
 )
@@ -250,27 +298,32 @@ Package: etoolbox 2018/08/19 v2.5f e-TeX tools for LaTeX (JAW)
 \csq@tshold=\count115
 \csq@ltx@everypar=\toks21
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/csquotes\csquotes.def"
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/csquotes/csquotes.def"
 File: csquotes.def 2018/04/13 v5.2d csquotes generic definitions (JAW)
 )
 Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
 Package csquotes Info: ... configuration file loaded successfully.
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/csquotes\csquotes.cfg"
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/csquotes/csquotes.cfg"
 File: csquotes.cfg 
 )
 Package csquotes Info: Enabling multilingual quotes.
 )
 Package csquotes Info: Allocating character ".
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/hyperref\hyperref.sty"
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/hyperref/hyperref.sty"
 Package: hyperref 2018/11/30 v6.88e Hypertext links for LaTeX
 
-("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\hobsub-hyperref.sty"
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/g
+eneric/oberdiek/hobsub-hyperref.sty"
 Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
 
 
-("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\hobsub-generic.sty"
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/g
+eneric/oberdiek/hobsub-generic.sty"
 Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
 Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
 Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
@@ -281,6 +334,10 @@ Package hobsub Info: Skipping package `ifvtex' (already loaded).
 Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
 Package hobsub Info: Skipping package `ifpdf' (already loaded).
 Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
 Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
 Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
 Package: pdftexcmds 2018/09/10 v0.29 Utility functions of pdfTeX for LuaTeX (HO
@@ -304,24 +361,28 @@ Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
 Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
 Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/oberdiek\auxhook.sty"
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/oberdiek/auxhook.sty"
 Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/oberdiek\kvoptions.sty"
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/oberdiek/kvoptions.sty"
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 )
 \@linkdim=\dimen133
 \Hy@linkcounter=\count116
 \Hy@pagecounter=\count117
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/hyperref\pd1enc.def"
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/hyperref/pd1enc.def"
 File: pd1enc.def 2018/11/30 v6.88e Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
 \Hy@SavedSpaceFactor=\count118
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/00miktex\hyperref.cfg"
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/00miktex/hyperref.cfg"
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
 Package hyperref Info: Hyper figures OFF on input line 4519.
@@ -333,7 +394,8 @@ Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4772.
 \c@Hy@tempcnt=\count119
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/url\url.sty"
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/url/url.sty"
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
@@ -357,12 +419,14 @@ LaTeX Info: Redefining \pageref on input line 6454.
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/hyperref\hpdftex.def"
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/hyperref/hpdftex.def"
 File: hpdftex.def 2018/11/30 v6.88e Hyperref driver for pdfTeX
 \Fld@listcount=\count124
 \c@bookmark@seq@number=\count125
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/oberdiek\rerunfilecheck.sty"
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/oberdiek/rerunfilecheck.sty"
 Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
@@ -371,7 +435,8 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 Package hyperref Info: Option `colorlinks' set `false' on input line 27.
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/listings\listings.sty"
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/listings/listings.sty"
 \lst@mode=\count126
 \lst@gtempboxa=\box56
 \lst@token=\toks22
@@ -385,18 +450,21 @@ Package hyperref Info: Option `colorlinks' set `false' on input line 27.
 \lst@lineno=\count131
 \lst@maxwidth=\dimen140
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/listings\lstmisc.sty"
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/listings/lstmisc.sty"
 File: lstmisc.sty 2019/02/27 1.8b (Carsten Heinz)
 \c@lstnumber=\count132
 \lst@skipnumbers=\count133
 \lst@framebox=\box57
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/listings\listings.cfg"
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/listings/listings.cfg"
 File: listings.cfg 2019/02/27 1.8b listings configuration
 ))
 Package: listings 2019/02/27 1.8b (Carsten Heinz)
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/listings\lstlang1.sty"
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/listings/lstlang1.sty"
 File: lstlang1.sty 2019/02/27 1.8b listings language file
 )
 Package csquotes Info: Checking for multilingual support...
@@ -419,7 +487,9 @@ LaTeX Font Info:    ... okay on input line 58.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 58.
 LaTeX Font Info:    ... okay on input line 58.
 LaTeX Font Info:    Try loading font information for T1+phv on input line 58.
-("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\t1phv.fd"
+
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/psnfss/t1phv.fd"
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
@@ -459,7 +529,9 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-("C:\Program Files\MiKTeX 2.9\tex/context/base/mkii\supp-pdf.mkii"
+
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/c
+ontext/base/mkii/supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count134
 \scratchdimen=\dimen141
@@ -472,10 +544,13 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 \MPnumerator=\count138
 \makeMPintoPDFobject=\count139
 \everyMPtoPDFconversion=\toks24
-) ("C:\Program Files\MiKTeX 2.9\tex/latex/oberdiek\epstopdf-base.sty"
+)
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/oberdiek/epstopdf-base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/oberdiek\grfext.sty"
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/oberdiek/grfext.sty"
 Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
 )
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -493,10 +568,12 @@ Package csquotes Info: Redefining character " on input line 58.
 \AtBeginShipoutBox=\box59
 Package hyperref Info: Link coloring OFF on input line 58.
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/hyperref\nameref.sty"
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/hyperref/nameref.sty"
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
-("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\gettitlestring.sty"
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/g
+eneric/oberdiek/gettitlestring.sty"
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count140
@@ -504,8 +581,7 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 58.
 LaTeX Info: Redefining \pageref on input line 58.
 LaTeX Info: Redefining \nameref on input line 58.
-
-(mobpro-zf.out) (mobpro-zf.out)
+ (mobpro-zf.out) (mobpro-zf.out)
 \@outlinefile=\write3
 \openout3 = `mobpro-zf.out'.
 
@@ -526,8 +602,8 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 61.
  [1
 
-{C:/Users/Maurin.DESKTOP-B919TN3/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.
-map}]
+{/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/data/pdftex/co
+nfig/pdftex.map}]
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 13.67995pt on input line 63.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <14.4> not available
@@ -552,6 +628,12 @@ LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 67.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 (Font)              scaled to size 9.49997pt on input line 67.
+
+Overfull \hbox (7.99802pt too wide) in paragraph at lines 67--72
+\T1/phv/m/n/10 Informationen zur Androidprogrammierung können stets dem Android
+ Developer Guide entnommen werden
+ []
+
 LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <10> not available
 (Font)              Font shape `T1/phv/b/it' tried instead on input line 72.
 LaTeX Font Info:    Font shape `T1/phv/b/it' in size <10> not available
@@ -560,7 +642,8 @@ LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
 (Font)              scaled to size 9.49997pt on input line 72.
 LaTeX Font Info:    Try loading font information for OMS+phv on input line 79.
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\omsphv.fd"
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/psnfss/omsphv.fd"
 File: omsphv.fd 
 )
 LaTeX Font Info:    Font shape `OMS/phv/m/n' in size <10> not available
@@ -571,32 +654,45 @@ LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 11.39996pt on input line 83.
 
 Underfull \hbox (badness 1924) in paragraph at lines 91--92
-[]|\T1/phv/m/n/10 Event-Handler, wel-che auf App-interne oder sys-tem-wei-te Br
-oadcast-
+[]|\T1/phv/m/n/10 Event-Handler, welche auf App-interne oder systemweite Broadc
+ast-
+ []
+
+
+Underfull \hbox (badness 1442) in paragraph at lines 92--93
+[]|\T1/phv/m/n/10 Komponente, welche Datenaustausch zwischen versch. Applikatio
+nen
  []
 
 [2]
-<img/manifestxml.jpg, id=214, 665.76pt x 397.85pt>
+<img/manifestxml.jpg, id=244, 665.76pt x 397.85pt>
 File: img/manifestxml.jpg Graphic file (type jpg)
 <use img/manifestxml.jpg>
 Package pdftex.def Info: img/manifestxml.jpg  used on input line 123.
 (pdftex.def)             Requested size: 341.43306pt x 204.03603pt.
  [3 <./img/manifestxml.jpg>]
-<img/intents_comm.png, id=220, 955.57pt x 776.9025pt>
+<img/intents_comm.png, id=250, 955.57pt x 776.9025pt>
 File: img/intents_comm.png Graphic file (type png)
 <use img/intents_comm.png>
 Package pdftex.def Info: img/intents_comm.png  used on input line 139.
 (pdftex.def)             Requested size: 213.39566pt x 173.49152pt.
+
+Overfull \hbox (18.37215pt too wide) in paragraph at lines 149--150
+\T1/phv/m/n/10 und eine Exception schmeissen. Das geht auch ganz einfach folgen
+dermassen im Manifest unter   application: 
+ []
+
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 8.54997pt on input line 150.
 LaTeX Font Info:    Try loading font information for T1+pcr on input line 150.
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\t1pcr.fd"
+("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
+atex/psnfss/t1pcr.fd"
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 ) [4 <./img/intents_comm.png>]
 Overfull \hbox (4.2829pt too wide) in paragraph at lines 182--183
-\T1/phv/m/sl/10 ACTION_VIEW \T1/phv/m/n/10 ist hier-bei kein ex-pli-zi-ter Emp-
-fän-ger-typ, son-dern nur ei-ne ge-wünsch-te Ak-ti-on. Die mitgege-
+\T1/phv/m/sl/10 ACTION_VIEW \T1/phv/m/n/10 ist hierbei kein expliziter Empfänge
+rtyp, sondern nur eine gewünschte Aktion. Die mitgege-
  []
 
 
@@ -610,41 +706,70 @@ Underfull \hbox (badness 10000) in paragraph at lines 202--203
  []
 
 [5]
-<img/lifecycle.jpg, id=269, 343.78906pt x 444.42673pt>
+<img/lifecycle.jpg, id=299, 343.78906pt x 444.42673pt>
 File: img/lifecycle.jpg Graphic file (type jpg)
 <use img/lifecycle.jpg>
 Package pdftex.def Info: img/lifecycle.jpg  used on input line 218.
 (pdftex.def)             Requested size: 369.88582pt x 478.16985pt.
-<img/lifetime.jpg, id=270, 667.14244pt x 130.98938pt>
+<img/lifetime.jpg, id=300, 667.14244pt x 130.98938pt>
 File: img/lifetime.jpg Graphic file (type jpg)
 <use img/lifetime.jpg>
 Package pdftex.def Info: img/lifetime.jpg  used on input line 224.
 (pdftex.def)             Requested size: 312.9803pt x 61.45308pt.
- [6 <./img/lifecycle.jpg> <./img/lifetime.jpg>] [7]
-<img/androidstack.jpg, id=290, 408.42496pt x 283.77579pt>
+ [6 <./img/lifecycle.jpg> <./img/lifetime.jpg>]
+Overfull \hbox (2.3938pt too wide) in paragraph at lines 261--262
+\T1/phv/m/n/10 Durch das Überschreiben dieser Methoden können wir uns in den Le
+benszyklus einklinken. Immer \T1/phv/b/n/10 super()
+ []
+
+[7]
+<img/androidstack.jpg, id=320, 408.42496pt x 283.77579pt>
 File: img/androidstack.jpg Graphic file (type jpg)
 <use img/androidstack.jpg>
 Package pdftex.def Info: img/androidstack.jpg  used on input line 266.
 (pdftex.def)             Requested size: 312.9803pt x 217.46881pt.
  [8 <./img/androidstack.jpg>]
-<img/securitymodel.jpg, id=296, 544.68758pt x 260.172pt>
+Overfull \hbox (15.42342pt too wide) in paragraph at lines 289--290
+[]\T1/phv/m/n/10 Das Berechtigungssystem von Linux ist Benutzer-basiert, es bet
+rifft deshalb sowohl den Speicherzugriff
+ []
+
+<img/securitymodel.jpg, id=326, 544.68758pt x 260.172pt>
 File: img/securitymodel.jpg Graphic file (type jpg)
 <use img/securitymodel.jpg>
 Package pdftex.def Info: img/securitymodel.jpg  used on input line 295.
 (pdftex.def)             Requested size: 341.43306pt x 163.09538pt.
- [9 <./img/securitymodel.jpg>]
-<img/gui_xml_example.jpg, id=302, 514.16519pt x 250.46245pt>
+[9 <./img/securitymodel.jpg>]
+<img/gui_xml_example.jpg, id=332, 514.16519pt x 250.46245pt>
 File: img/gui_xml_example.jpg Graphic file (type jpg)
 <use img/gui_xml_example.jpg>
 Package pdftex.def Info: img/gui_xml_example.jpg  used on input line 309.
 (pdftex.def)             Requested size: 284.52756pt x 138.59937pt.
-<img/xml_layouts.jpg, id=303, 546.79755pt x 255.67216pt>
+
+Overfull \hbox (0.30241pt too wide) in paragraph at lines 313--316
+\T1/phv/m/n/10 Ein Android-UI ist hierarchisch aufgebaut und besteht aus \T1/ph
+v/b/n/10 ViewGroups \T1/phv/m/n/10 (Cointainer für Views oder weitere
+ []
+
+
+Overfull \hbox (14.23953pt too wide) in paragraph at lines 313--316
+\T1/phv/m/n/10 ViewGroups, angeordnet durch Layout) und \T1/phv/b/n/10 Views \T
+1/phv/m/n/10 (Widgets). Sollte auf unterschiedlichen Bildschirmgrössen
+ []
+
+<img/xml_layouts.jpg, id=333, 546.79755pt x 255.67216pt>
 File: img/xml_layouts.jpg Graphic file (type jpg)
 <use img/xml_layouts.jpg>
 Package pdftex.def Info: img/xml_layouts.jpg  used on input line 319.
 (pdftex.def)             Requested size: 284.52756pt x 133.04001pt.
- [10 <./img/gui_xml_example.jpg> <./img/xml_layouts.jpg>]
-<img/constraintlayout.jpg, id=310, 247.85933pt x 119.91467pt>
+
+Overfull \hbox (5.02486pt too wide) in paragraph at lines 323--326
+\T1/phv/m/n/10 Schachtelung möglich, aber nicht effizient, wenn möglich immer d
+as Constraint-Layout verwenden. Layouts
+ []
+
+[10 <./img/gui_xml_example.jpg> <./img/xml_layouts.jpg>]
+<img/constraintlayout.jpg, id=340, 247.85933pt x 119.91467pt>
 File: img/constraintlayout.jpg Graphic file (type jpg)
 <use img/constraintlayout.jpg>
 Package pdftex.def Info: img/constraintlayout.jpg  used on input line 371.
@@ -655,7 +780,12 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 372.
 See the caption package documentation for explanation.
 
-<img/linearlayout.jpg, id=311, 222.97939pt x 171.86159pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 382--383
+[]\T1/phv/m/n/10 kann geschachtelt werden, um
+ []
+
+<img/linearlayout.jpg, id=341, 222.97939pt x 171.86159pt>
 File: img/linearlayout.jpg Graphic file (type jpg)
 <use img/linearlayout.jpg>
 Package pdftex.def Info: img/linearlayout.jpg  used on input line 396.
@@ -667,38 +797,63 @@ See the caption package documentation for explanation.
 
 
 Overfull \hbox (0.77484pt too wide) in paragraph at lines 403--404
-[]\T1/phv/m/n/10 Nach wie vor ein-fachs-te Lö-sung für Button- oder Action-Bars
- (  flow se-man-tik) und ein-fa-che Screens 
+[]\T1/phv/m/n/10 Nach wie vor einfachste Lösung für Button- oder Action-Bars (
+  flow semantik) und einfache Screens 
+ []
+
+
+Overfull \hbox (16.30763pt too wide) in paragraph at lines 415--416
+\T1/phv/m/n/10 Passen sich der physischen Dichte des Screens an, dp passen sich
+ gegenüber den realen Dimensionen
  []
 
 [11 <./img/constraintlayout.jpg> <./img/linearlayout.jpg>]
+Overfull \hbox (4.9679pt too wide) in paragraph at lines 423--425
+\T1/phv/b/n/10 Ressourcen \T1/phv/m/n/10 sind alle Nicht-Java-Teile einer Appli
+kation und sind im \T1/phv/m/sl/10 /res\T1/phv/m/n/10 -Verzeichnis abgelegt, so
+gennante
+ []
+
+
+Overfull \hbox (21.35474pt too wide) in paragraph at lines 423--425
+\T1/phv/m/n/10 ausgelagerte Konstanten-Definitionen. Sie werden im Layout und J
+ava-Code über die \T1/phv/b/sl/10 automatisch generierte
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 423--425
 
  []
 
-<img/references_xml.jpg, id=320, 471.9231pt x 148.1535pt>
+<img/references_xml.jpg, id=350, 471.9231pt x 148.1535pt>
 File: img/references_xml.jpg Graphic file (type jpg)
 <use img/references_xml.jpg>
 Package pdftex.def Info: img/references_xml.jpg  used on input line 430.
 (pdftex.def)             Requested size: 175.00381pt x 54.938pt.
-<img/references_code.jpg, id=321, 414.16269pt x 50.72798pt>
+<img/references_code.jpg, id=351, 414.16269pt x 50.72798pt>
 File: img/references_code.jpg Graphic file (type jpg)
 <use img/references_code.jpg>
 Package pdftex.def Info: img/references_code.jpg  used on input line 435.
 (pdftex.def)             Requested size: 175.00381pt x 21.43486pt.
-<img/ressources.jpg, id=322, 214.0034pt x 384.50447pt>
+<img/ressources.jpg, id=352, 214.0034pt x 384.50447pt>
 File: img/ressources.jpg Graphic file (type jpg)
 <use img/ressources.jpg>
 Package pdftex.def Info: img/ressources.jpg  used on input line 451.
 (pdftex.def)             Requested size: 131.2537pt x 235.8264pt.
+
+Overfull \hbox (8.4018pt too wide) in paragraph at lines 447--454
+\T1/phv/m/n/10 angelegt, bspw. \T1/pcr/m/n/10 res/strings-de-rCH\T1/phv/m/n/10 
+, in welchen dann die Ressourcen (XML) erneut angelegt werden.
+ []
+
 [12 <./img/references_xml.jpg> <./img/references_code.jpg> <./img/ressources.jp
 g>]
-<img/layout_id.jpg, id=331, 455.98929pt x 92.91856pt>
+<img/layout_id.jpg, id=361, 455.98929pt x 92.91856pt>
 File: img/layout_id.jpg Graphic file (type jpg)
 <use img/layout_id.jpg>
 Package pdftex.def Info: img/layout_id.jpg  used on input line 463.
 (pdftex.def)             Requested size: 218.75394pt x 44.57628pt.
-<img/reference_code.jpg, id=332, 614.6921pt x 102.44868pt>
+<img/reference_code.jpg, id=362, 614.6921pt x 102.44868pt>
 File: img/reference_code.jpg Graphic file (type jpg)
 <use img/reference_code.jpg>
 Package pdftex.def Info: img/reference_code.jpg  used on input line 464.
@@ -709,25 +864,30 @@ Overfull \hbox (1.49216pt too wide) in paragraph at lines 472--475
 ener,
  []
 
-<img/onclick.jpg, id=333, 524.14pt x 110.23pt>
+<img/onclick.jpg, id=363, 524.14pt x 110.23pt>
 File: img/onclick.jpg Graphic file (type jpg)
 <use img/onclick.jpg>
 Package pdftex.def Info: img/onclick.jpg  used on input line 494.
 (pdftex.def)             Requested size: 262.50739pt x 55.20735pt.
 [13 <./img/layout_id.jpg> <./img/reference_code.jpg> <./img/onclick.jpg>]
-<img/data_binding_model.png, id=354, 624.83438pt x 279.29344pt>
+<img/data_binding_model.png, id=384, 624.83438pt x 279.29344pt>
 File: img/data_binding_model.png Graphic file (type png)
 <use img/data_binding_model.png>
 Package pdftex.def Info: img/data_binding_model.png  used on input line 510.
 (pdftex.def)             Requested size: 218.75394pt x 97.77972pt.
 
+Overfull \hbox (0.52159pt too wide) in paragraph at lines 513--515
+\T1/phv/m/n/10 binding expressions mit @.. Syntax im Layout-File, um View-Att
+ribute zu initialisieren. Anbei ein Beispiel
+ []
+
 [14 <./img/data_binding_model.png>]
-<img/menu_example.jpg, id=391, 424.91277pt x 113.19397pt>
+<img/menu_example.jpg, id=421, 424.91277pt x 113.19397pt>
 File: img/menu_example.jpg Graphic file (type jpg)
 <use img/menu_example.jpg>
 Package pdftex.def Info: img/menu_example.jpg  used on input line 567.
 (pdftex.def)             Requested size: 218.75394pt x 58.27394pt.
-<img/menuinflater.jpg, id=392, 386.54504pt x 114.04074pt>
+<img/menuinflater.jpg, id=422, 386.54504pt x 114.04074pt>
 File: img/menuinflater.jpg Graphic file (type jpg)
 <use img/menuinflater.jpg>
 Package pdftex.def Info: img/menuinflater.jpg  used on input line 572.
@@ -737,29 +897,35 @@ Overfull \hbox (2.01399pt too wide) in paragraph at lines 565--575
 []$[]$ $[]$ 
  []
 
-<img/menu_string.jpg, id=393, 427.28978pt x 38.50883pt>
+
+Overfull \hbox (6.2189pt too wide) in paragraph at lines 562--576
+\T1/phv/m/n/10 Für ein Options-Menü muss eine .xml-Datei (Bsp. main_menu.xml) i
+m Ordner \T1/pcr/m/n/10 res/menu \T1/phv/m/n/10 angelegt werden.
+ []
+
+<img/menu_string.jpg, id=423, 427.28978pt x 38.50883pt>
 File: img/menu_string.jpg Graphic file (type jpg)
 <use img/menu_string.jpg>
 Package pdftex.def Info: img/menu_string.jpg  used on input line 580.
 (pdftex.def)             Requested size: 350.00763pt x 31.54395pt.
-<img/menu_selektierung.jpg, id=394, 404.10976pt x 102.98476pt>
+<img/menu_selektierung.jpg, id=424, 404.10976pt x 102.98476pt>
 File: img/menu_selektierung.jpg Graphic file (type jpg)
 <use img/menu_selektierung.jpg>
 Package pdftex.def Info: img/menu_selektierung.jpg  used on input line 585.
 (pdftex.def)             Requested size: 306.25417pt x 78.04921pt.
 [15 <./img/menu_example.jpg> <./img/menuinflater.jpg> <./img/menu_string.jpg> <
 ./img/menu_selektierung.jpg>]
-<img/adapter.png, id=402, 583.42969pt x 139.27031pt>
+<img/adapter.png, id=432, 583.42969pt x 139.27031pt>
 File: img/adapter.png Graphic file (type png)
 <use img/adapter.png>
 Package pdftex.def Info: img/adapter.png  used on input line 595.
 (pdftex.def)             Requested size: 350.00763pt x 83.55219pt.
-<img/adapter_string.png, id=403, 878.53218pt x 172.39406pt>
+<img/adapter_string.png, id=433, 878.53218pt x 172.39406pt>
 File: img/adapter_string.png Graphic file (type png)
 <use img/adapter_string.png>
 Package pdftex.def Info: img/adapter_string.png  used on input line 611.
 (pdftex.def)             Requested size: 350.00763pt x 68.68282pt.
-<img/adapterview_example.jpg, id=404, 592.18254pt x 53.93283pt>
+<img/adapterview_example.jpg, id=434, 592.18254pt x 53.93283pt>
 File: img/adapterview_example.jpg Graphic file (type jpg)
 <use img/adapterview_example.jpg>
 Package pdftex.def Info: img/adapterview_example.jpg  used on input line 621.
@@ -772,92 +938,178 @@ nds android.widget.Adapter>
 
 [16 <./img/adapter.png> <./img/adapter_string.png> <./img/adapterview_example.j
 pg>]
-<img/spinner_demo.png, id=414, 904.88063pt x 639.13782pt>
+<img/spinner_demo.png, id=444, 904.88063pt x 639.13782pt>
 File: img/spinner_demo.png Graphic file (type png)
 <use img/spinner_demo.png>
 Package pdftex.def Info: img/spinner_demo.png  used on input line 663.
 (pdftex.def)             Requested size: 437.50787pt x 309.01598pt.
  [17 <./img/spinner_demo.png>]
 Overfull \hbox (29.5385pt too wide) in paragraph at lines 712--714
-\T1/phv/m/n/10 Wird bei Aus-wahl auf-ge-ru-fen (muss in Sub-klas-se über-schrie
--ben wer-den, kei-ne Listener-Registrierung
+\T1/phv/m/n/10 Wird bei Auswahl aufgerufen (muss in Subklasse überschrieben wer
+den, keine Listener-Registrierung
  []
 
-<img/listview_demo.png, id=421, 909.3975pt x 616.55344pt>
+<img/listview_demo.png, id=451, 909.3975pt x 616.55344pt>
 File: img/listview_demo.png Graphic file (type png)
 <use img/listview_demo.png>
 Package pdftex.def Info: img/listview_demo.png  used on input line 719.
 (pdftex.def)             Requested size: 350.00763pt x 237.30324pt.
 [18 <./img/listview_demo.png>]
-<img/viewmodel.png, id=432, 606.01407pt x 207.02344pt>
+Overfull \hbox (14.68599pt too wide) in paragraph at lines 727--728
+\T1/phv/b/n/10 Zustand\T1/phv/m/n/10 , alles was nicht sichtbar und in Feldern 
+gespeichert ist, geht jedoch verloren. Um entgegenzuwirken,
+ []
+
+<img/viewmodel.png, id=462, 606.01407pt x 207.02344pt>
 File: img/viewmodel.png Graphic file (type png)
 <use img/viewmodel.png>
 Package pdftex.def Info: img/viewmodel.png  used on input line 731.
 (pdftex.def)             Requested size: 262.50739pt x 89.67538pt.
-<img/viewmodel_demo.png, id=433, 866.48718pt x 608.2725pt>
+<img/viewmodel_demo.png, id=463, 866.48718pt x 608.2725pt>
 File: img/viewmodel_demo.png Graphic file (type png)
 <use img/viewmodel_demo.png>
 Package pdftex.def Info: img/viewmodel_demo.png  used on input line 743.
 (pdftex.def)             Requested size: 437.50787pt x 307.13342pt.
- [19 <./img/viewmodel.png> <./img/viewmodel_demo.png>]
-<img/alert_dialog.jpg, id=441, 207.4513pt x 125.30266pt>
+[19 <./img/viewmodel.png> <./img/viewmodel_demo.png>]
+Overfull \hbox (6.80748pt too wide) in paragraph at lines 754--755
+[]\T1/phv/m/n/10 Kurze Rückmeldung (Popup) an den Benutzer, keine Interaktion m
+öglich, verschwindet nach gewisser
+ []
+
+<img/alert_dialog.jpg, id=471, 207.4513pt x 125.30266pt>
 File: img/alert_dialog.jpg Graphic file (type jpg)
 <use img/alert_dialog.jpg>
 Package pdftex.def Info: img/alert_dialog.jpg  used on input line 778.
 (pdftex.def)             Requested size: 153.13042pt x 92.49689pt.
- [20 <./img/alert_dialog.jpg>]
-<img/alertdialog.jpg, id=458, 572.60077pt x 364.82452pt>
+[20 <./img/alert_dialog.jpg>]
+<img/alertdialog.jpg, id=488, 572.60077pt x 364.82452pt>
 File: img/alertdialog.jpg Graphic file (type jpg)
 <use img/alertdialog.jpg>
 Package pdftex.def Info: img/alertdialog.jpg  used on input line 817.
 (pdftex.def)             Requested size: 393.75441pt x 250.87747pt.
  [21 <./img/alertdialog.jpg>]
-<img/alertdialog_daten.png, id=468, 894.34125pt x 633.11531pt>
+<img/alertdialog_daten.png, id=498, 894.34125pt x 633.11531pt>
 File: img/alertdialog_daten.png Graphic file (type png)
 <use img/alertdialog_daten.png>
 Package pdftex.def Info: img/alertdialog_daten.png  used on input line 825.
 (pdftex.def)             Requested size: 437.50787pt x 309.7172pt.
-<img/alertdialog_custom.png, id=469, 916.1728pt x 608.2725pt>
+<img/alertdialog_custom.png, id=499, 916.1728pt x 608.2725pt>
 File: img/alertdialog_custom.png Graphic file (type png)
 <use img/alertdialog_custom.png>
 Package pdftex.def Info: img/alertdialog_custom.png  used on input line 830.
 (pdftex.def)             Requested size: 437.50787pt x 290.47318pt.
  [22 <./img/alertdialog_daten.png> <./img/alertdialog_custom.png>]
-<img/notification_demo.png, id=476, 906.38625pt x 678.28406pt>
+Overfull \hbox (40.82968pt too wide) in paragraph at lines 835--838
+\T1/phv/m/n/10 Ein (offener) Dialog gehört zum Zustand einer Activity, ist ein 
+Dialog noch geöffnet bei einem Konfigurationswechsel,
+ []
+
+
+Overfull \hbox (44.22314pt too wide) in paragraph at lines 835--838
+\T1/phv/m/n/10 dann wird dieser nicht gespeichert und auch nicht wiederhergeste
+llt! Deshalb sollten Dialoge als \T1/pcr/m/n/10 DialogFragment
+ []
+
+<img/notification_demo.png, id=506, 906.38625pt x 678.28406pt>
 File: img/notification_demo.png Graphic file (type png)
 <use img/notification_demo.png>
 Package pdftex.def Info: img/notification_demo.png  used on input line 857.
 (pdftex.def)             Requested size: 437.50787pt x 327.40456pt.
- [23 <./img/notification_demo.png>]
+[23 <./img/notification_demo.png>]
+Overfull \hbox (17.16127pt too wide) in paragraph at lines 869--871
+\T1/phv/m/n/10 intern oder extern, in App-Sandbox (privat) oder auf SD-Karte (ö
+ffentlich), Verwendung für binäre/grosse
+ []
+
+
+Overfull \hbox (3.32964pt too wide) in paragraph at lines 877--878
+[]\T1/phv/m/n/10 Jede Activity hat ein SharedPreferences-Profil, persistente Ei
+nstellungen für Activity oder Applikation 
+ []
+
+
+Overfull \hbox (8.08353pt too wide) in paragraph at lines 890--893
+\T1/phv/m/n/10 oder auch über \T1/pcr/m/n/10 getDefaultSharedPreferences(mode)\
+T1/phv/m/n/10 , die Applikation findet danach anhand
+ []
+
 LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <10> not available
-(Font)              Font shape `T1/pcr/b/n' tried instead on input line 892.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 928.
- [24]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 928.
+(Font)              Font shape `T1/pcr/b/n' tried instead on input line 893.
+[24]
+Overfull \hbox (14.69551pt too wide) in paragraph at lines 925--927
+\T1/phv/m/n/10 wobei untersch. Präferenzen bspw. als \T1/pcr/m/n/10 CheckBoxPre
+ference, ListPreference \T1/phv/m/n/10 usw. erfasst werden.
+ []
+
+<img/prefs_xml.jpg, id=529, 429.605pt x 307.37056pt>
+File: img/prefs_xml.jpg Graphic file (type jpg)
+<use img/prefs_xml.jpg>
+Package pdftex.def Info: img/prefs_xml.jpg  used on input line 930.
+(pdftex.def)             Requested size: 306.25417pt x 219.12103pt.
+[25 <./img/prefs_xml.jpg>]
+Overfull \hbox (4.73933pt too wide) in paragraph at lines 985--986
+\T1/phv/m/n/10 Präferenzen können programmatisch auch wieder auf   Standard-W
+erte oder auf festgelegte Werte gesetzt
+ []
+
+[26]
+<img/manifest_permissions.jpg, id=579, 464.59285pt x 103.88812pt>
+File: img/manifest_permissions.jpg Graphic file (type jpg)
+<use img/manifest_permissions.jpg>
+Package pdftex.def Info: img/manifest_permissions.jpg  used on input line 1058.
+
+(pdftex.def)             Requested size: 306.25417pt x 68.48552pt.
+ [27 <./img/manifest_permissions.jpg>]
+<img/runtimeperm1.jpg, id=585, 575.6093pt x 136.88788pt>
+File: img/runtimeperm1.jpg Graphic file (type jpg)
+<use img/runtimeperm1.jpg>
+Package pdftex.def Info: img/runtimeperm1.jpg  used on input line 1068.
+(pdftex.def)             Requested size: 393.75441pt x 93.64229pt.
+<img/runtimeperm2.jpg, id=586, 546.88933pt x 167.47183pt>
+File: img/runtimeperm2.jpg Graphic file (type jpg)
+<use img/runtimeperm2.jpg>
+Package pdftex.def Info: img/runtimeperm2.jpg  used on input line 1074.
+(pdftex.def)             Requested size: 393.75441pt x 120.57962pt.
+<img/persist_text.jpg, id=587, 466.7156pt x 181.68813pt>
+File: img/persist_text.jpg Graphic file (type jpg)
+<use img/persist_text.jpg>
+Package pdftex.def Info: img/persist_text.jpg  used on input line 1100.
+(pdftex.def)             Requested size: 306.25417pt x 119.22697pt.
+ [28 <./img/runtimeperm1.jpg> <./img/runtimeperm2.jpg> <./img/persist_text.jpg>
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1120.
+ [29]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1120.
  (mobpro-zf.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 928.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 928.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1120.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1120.
+
 Package rerunfilecheck Info: File `mobpro-zf.out' has not changed.
-(rerunfilecheck)             Checksum: 9B501D7086982D139A09798C16A1F77A;3025.
+(rerunfilecheck)             Checksum: DDEFBC2ACC0555E16FB4CCFE78C7F6FF;3483.
  ) 
 Here is how much of TeX's memory you used:
- 11483 strings out of 492946
- 169350 string characters out of 3135476
- 499049 words of memory out of 3000000
- 14999 multiletter control sequences out of 15000+200000
+ 11626 strings out of 494866
+ 178061 string characters out of 3176098
+ 493316 words of memory out of 3000000
+ 14826 multiletter control sequences out of 15000+200000
  37936 words of font info for 50 fonts, out of 3000000 for 9000
- 1141 hyphenation exceptions out of 8191
+ 0 hyphenation exceptions out of 8191
  36i,12n,40p,818b,1174s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9
-/fonts/type1/urw/courier/ucrb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/ur
-w/courier/ucrr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb
-8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvbo8a.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files/Mi
-KTeX 2.9/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on mobpro-zf.pdf (25 pages, 2156958 bytes).
+{/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/font
+s/enc/dvips/base/8r.enc}</Users/maurinthalmann/Library/Application Support/MiKT
+eX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb></Users/maurinthalm
+ann/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/urw/courier/u
+crb8a.pfb></Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/inst
+all/fonts/type1/urw/courier/ucrr8a.pfb></Users/maurinthalmann/Library/Applicati
+on Support/MiKTeX/texmfs/install/fonts/type1/urw/helvetic/uhvb8a.pfb></Users/ma
+urinthalmann/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/urw/
+helvetic/uhvbo8a.pfb></Users/maurinthalmann/Library/Application Support/MiKTeX/
+texmfs/install/fonts/type1/urw/helvetic/uhvr8a.pfb></Users/maurinthalmann/Libra
+ry/Application Support/MiKTeX/texmfs/install/fonts/type1/urw/helvetic/uhvro8a.p
+fb>
+Output written on mobpro-zf.pdf (30 pages, 2388149 bytes).
 PDF statistics:
- 558 PDF objects out of 1000 (max. 8388607)
- 205 named destinations out of 1000 (max. 500000)
- 470 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 681 PDF objects out of 1000 (max. 8388607)
+ 270 named destinations out of 1000 (max. 500000)
+ 543 words of extra memory for PDF output out of 10000 (max. 10000000)
 
