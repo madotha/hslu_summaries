@@ -2,60 +2,68 @@
 \BOOKMARK [2][-]{subsection.1.1}{Android 1 - Grundlagen}{section.1}% 2
 \BOOKMARK [2][-]{subsection.1.2}{Android 2 - Benutzerschnittstellen}{section.1}% 3
 \BOOKMARK [2][-]{subsection.1.3}{Android 3 - Persistenz}{section.1}% 4
-\BOOKMARK [1][-]{section.2}{Android 1 - Grundlagen}{}% 5
-\BOOKMARK [2][-]{subsection.2.1}{Komponenten}{section.2}% 6
-\BOOKMARK [2][-]{subsection.2.2}{Das Android-Manifest}{section.2}% 7
-\BOOKMARK [2][-]{subsection.2.3}{Activities \046 Aufruf mit Intents}{section.2}% 8
-\BOOKMARK [3][-]{subsubsection.2.3.1}{Beispielaufruf Expliziter Intent}{subsection.2.3}% 9
-\BOOKMARK [3][-]{subsubsection.2.3.2}{Beispielaufruf Impliziter Intent}{subsection.2.3}% 10
-\BOOKMARK [2][-]{subsection.2.4}{Activities \046 Subactivities}{section.2}% 11
-\BOOKMARK [2][-]{subsection.2.5}{Lebenszyklus \046 Zust\344nde von Applikationen/Activities}{section.2}% 12
-\BOOKMARK [3][-]{subsubsection.2.5.1}{Lifecycle einer Applikation}{subsection.2.5}% 13
-\BOOKMARK [2][-]{subsection.2.6}{Charakterisierung einer Activity}{section.2}% 14
-\BOOKMARK [3][-]{subsubsection.2.6.1}{Zustands\344nderung - Hook-Methoden}{subsection.2.6}% 15
-\BOOKMARK [2][-]{subsection.2.7}{Android - Hinter den Kulissen}{section.2}% 16
-\BOOKMARK [3][-]{subsubsection.2.7.1}{Android-Security-Konzept}{subsection.2.7}% 17
-\BOOKMARK [1][-]{section.3}{Android 2 - Benutzerschnittstellen}{}% 18
-\BOOKMARK [2][-]{subsection.3.1}{GUI einer Activity}{section.3}% 19
-\BOOKMARK [2][-]{subsection.3.2}{XML-Layout}{section.3}% 20
-\BOOKMARK [3][-]{subsubsection.3.2.1}{Constraint-Layout}{subsection.3.2}% 21
-\BOOKMARK [3][-]{subsubsection.3.2.2}{LinearLayout}{subsection.3.2}% 22
-\BOOKMARK [2][-]{subsection.3.3}{Ressourcen, Konfigurationen und Internationalisierung}{section.3}% 23
-\BOOKMARK [2][-]{subsection.3.4}{UI-Event-Handling}{section.3}% 24
-\BOOKMARK [3][-]{subsubsection.3.4.1}{GUI-Events}{subsection.3.4}% 25
-\BOOKMARK [3][-]{subsubsection.3.4.2}{Exkurs: Data Binding}{subsection.3.4}% 26
-\BOOKMARK [2][-]{subsection.3.5}{Options-Men\374}{section.3}% 27
-\BOOKMARK [2][-]{subsection.3.6}{Adapter-Views}{section.3}% 28
-\BOOKMARK [3][-]{subsubsection.3.6.1}{AdapterViews \046 ListActivity}{subsection.3.6}% 29
-\BOOKMARK [3][-]{subsubsection.3.6.2}{android.widget.Spinner}{subsection.3.6}% 30
-\BOOKMARK [3][-]{subsubsection.3.6.3}{android.widget.ListView}{subsection.3.6}% 31
-\BOOKMARK [3][-]{subsubsection.3.6.4}{android.app.ListActivity}{subsection.3.6}% 32
-\BOOKMARK [2][-]{subsection.3.7}{ViewModel - Konfigurationswechsel \046 tempor\344re Datenspeicherung}{section.3}% 33
-\BOOKMARK [2][-]{subsection.3.8}{R\374ckmeldungen an den Benutzer}{section.3}% 34
-\BOOKMARK [3][-]{subsubsection.3.8.1}{Toast}{subsection.3.8}% 35
-\BOOKMARK [3][-]{subsubsection.3.8.2}{Alert-Dialog}{subsection.3.8}% 36
-\BOOKMARK [3][-]{subsubsection.3.8.3}{Notifications \(Status-Bar\)}{subsection.3.8}% 37
-\BOOKMARK [1][-]{section.4}{Android 3 - Persistenz \046 Content Providers}{}% 38
-\BOOKMARK [2][-]{subsection.4.1}{\(Shared\) Preferences}{section.4}% 39
-\BOOKMARK [3][-]{subsubsection.4.1.1}{Darstellung User-Preferences}{subsection.4.1}% 40
-\BOOKMARK [3][-]{subsubsection.4.1.2}{PreferenceFragment}{subsection.4.1}% 41
-\BOOKMARK [3][-]{subsubsection.4.1.3}{Default-Pr\344ferenzen}{subsection.4.1}% 42
-\BOOKMARK [2][-]{subsection.4.2}{Dateisystem}{section.4}% 43
-\BOOKMARK [3][-]{subsubsection.4.2.1}{Exkurs: Permission-Model}{subsection.4.2}% 44
-\BOOKMARK [3][-]{subsubsection.4.2.2}{Exkurs ff: Runtime Permissions}{subsection.4.2}% 45
-\BOOKMARK [3][-]{subsubsection.4.2.3}{Exkurs ff: Persistenz mit Datei}{subsection.4.2}% 46
-\BOOKMARK [2][-]{subsection.4.3}{Datenbank \(Room\)}{section.4}% 47
-\BOOKMARK [3][-]{subsubsection.4.3.1}{Room - Code-Beispiele}{subsection.4.3}% 48
-\BOOKMARK [3][-]{subsubsection.4.3.2}{Room - Daten mit Entit\344ten definieren}{subsection.4.3}% 49
-\BOOKMARK [3][-]{subsubsection.4.3.3}{Room - Beziehungen modellieren}{subsection.4.3}% 50
-\BOOKMARK [2][-]{subsection.4.4}{Mit DAOs auf Daten zugreifen}{section.4}% 51
-\BOOKMARK [3][-]{subsubsection.4.4.1}{Convenience Queries}{subsection.4.4}% 52
-\BOOKMARK [3][-]{subsubsection.4.4.2}{Custom Queries mit @Query}{subsection.4.4}% 53
-\BOOKMARK [2][-]{subsection.4.5}{DB-Eintr\344ge in einer Liste anzeigen}{section.4}% 54
-\BOOKMARK [3][-]{subsubsection.4.5.1}{Room - weitere Themen}{subsection.4.5}% 55
+\BOOKMARK [2][-]{subsection.1.4}{Android 4 - Kommunikation \046 Nebenl\344ufigkeit}{section.1}% 5
+\BOOKMARK [1][-]{section.2}{Android 1 - Grundlagen}{}% 6
+\BOOKMARK [2][-]{subsection.2.1}{Komponenten}{section.2}% 7
+\BOOKMARK [2][-]{subsection.2.2}{Das Android-Manifest}{section.2}% 8
+\BOOKMARK [2][-]{subsection.2.3}{Activities \046 Aufruf mit Intents}{section.2}% 9
+\BOOKMARK [3][-]{subsubsection.2.3.1}{Beispielaufruf Expliziter Intent}{subsection.2.3}% 10
+\BOOKMARK [3][-]{subsubsection.2.3.2}{Beispielaufruf Impliziter Intent}{subsection.2.3}% 11
+\BOOKMARK [2][-]{subsection.2.4}{Activities \046 Subactivities}{section.2}% 12
+\BOOKMARK [2][-]{subsection.2.5}{Lebenszyklus \046 Zust\344nde von Applikationen/Activities}{section.2}% 13
+\BOOKMARK [3][-]{subsubsection.2.5.1}{Lifecycle einer Applikation}{subsection.2.5}% 14
+\BOOKMARK [2][-]{subsection.2.6}{Charakterisierung einer Activity}{section.2}% 15
+\BOOKMARK [3][-]{subsubsection.2.6.1}{Zustands\344nderung - Hook-Methoden}{subsection.2.6}% 16
+\BOOKMARK [2][-]{subsection.2.7}{Android - Hinter den Kulissen}{section.2}% 17
+\BOOKMARK [3][-]{subsubsection.2.7.1}{Android-Security-Konzept}{subsection.2.7}% 18
+\BOOKMARK [1][-]{section.3}{Android 2 - Benutzerschnittstellen}{}% 19
+\BOOKMARK [2][-]{subsection.3.1}{GUI einer Activity}{section.3}% 20
+\BOOKMARK [2][-]{subsection.3.2}{XML-Layout}{section.3}% 21
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Constraint-Layout}{subsection.3.2}% 22
+\BOOKMARK [3][-]{subsubsection.3.2.2}{LinearLayout}{subsection.3.2}% 23
+\BOOKMARK [2][-]{subsection.3.3}{Ressourcen, Konfigurationen und Internationalisierung}{section.3}% 24
+\BOOKMARK [2][-]{subsection.3.4}{UI-Event-Handling}{section.3}% 25
+\BOOKMARK [3][-]{subsubsection.3.4.1}{GUI-Events}{subsection.3.4}% 26
+\BOOKMARK [3][-]{subsubsection.3.4.2}{Exkurs: Data Binding}{subsection.3.4}% 27
+\BOOKMARK [2][-]{subsection.3.5}{Options-Men\374}{section.3}% 28
+\BOOKMARK [2][-]{subsection.3.6}{Adapter-Views}{section.3}% 29
+\BOOKMARK [3][-]{subsubsection.3.6.1}{AdapterViews \046 ListActivity}{subsection.3.6}% 30
+\BOOKMARK [3][-]{subsubsection.3.6.2}{android.widget.Spinner}{subsection.3.6}% 31
+\BOOKMARK [3][-]{subsubsection.3.6.3}{android.widget.ListView}{subsection.3.6}% 32
+\BOOKMARK [3][-]{subsubsection.3.6.4}{android.app.ListActivity}{subsection.3.6}% 33
+\BOOKMARK [2][-]{subsection.3.7}{ViewModel - Konfigurationswechsel \046 tempor\344re Datenspeicherung}{section.3}% 34
+\BOOKMARK [2][-]{subsection.3.8}{R\374ckmeldungen an den Benutzer}{section.3}% 35
+\BOOKMARK [3][-]{subsubsection.3.8.1}{Toast}{subsection.3.8}% 36
+\BOOKMARK [3][-]{subsubsection.3.8.2}{Alert-Dialog}{subsection.3.8}% 37
+\BOOKMARK [3][-]{subsubsection.3.8.3}{Notifications \(Status-Bar\)}{subsection.3.8}% 38
+\BOOKMARK [1][-]{section.4}{Android 3 - Persistenz \046 Content Providers}{}% 39
+\BOOKMARK [2][-]{subsection.4.1}{\(Shared\) Preferences}{section.4}% 40
+\BOOKMARK [3][-]{subsubsection.4.1.1}{Darstellung User-Preferences}{subsection.4.1}% 41
+\BOOKMARK [3][-]{subsubsection.4.1.2}{PreferenceFragment}{subsection.4.1}% 42
+\BOOKMARK [3][-]{subsubsection.4.1.3}{Default-Pr\344ferenzen}{subsection.4.1}% 43
+\BOOKMARK [2][-]{subsection.4.2}{Dateisystem}{section.4}% 44
+\BOOKMARK [3][-]{subsubsection.4.2.1}{Exkurs: Permission-Model}{subsection.4.2}% 45
+\BOOKMARK [3][-]{subsubsection.4.2.2}{Exkurs ff: Runtime Permissions}{subsection.4.2}% 46
+\BOOKMARK [3][-]{subsubsection.4.2.3}{Exkurs ff: Persistenz mit Datei}{subsection.4.2}% 47
+\BOOKMARK [2][-]{subsection.4.3}{Datenbank \(Room\)}{section.4}% 48
+\BOOKMARK [3][-]{subsubsection.4.3.1}{Room - Code-Beispiele}{subsection.4.3}% 49
+\BOOKMARK [3][-]{subsubsection.4.3.2}{Room - Daten mit Entit\344ten definieren}{subsection.4.3}% 50
+\BOOKMARK [3][-]{subsubsection.4.3.3}{Room - Beziehungen modellieren}{subsection.4.3}% 51
+\BOOKMARK [2][-]{subsection.4.4}{Mit DAOs auf Daten zugreifen}{section.4}% 52
+\BOOKMARK [3][-]{subsubsection.4.4.1}{Convenience Queries}{subsection.4.4}% 53
+\BOOKMARK [3][-]{subsubsection.4.4.2}{Custom Queries mit @Query}{subsection.4.4}% 54
+\BOOKMARK [2][-]{subsection.4.5}{DB-Eintr\344ge in einer Liste anzeigen}{section.4}% 55
 \BOOKMARK [2][-]{subsection.4.6}{Content Providers}{section.4}% 56
 \BOOKMARK [3][-]{subsubsection.4.6.1}{Standard Content Providers}{subsection.4.6}% 57
 \BOOKMARK [2][-]{subsection.4.7}{Exkurs : REST-ful Webservices}{section.4}% 58
 \BOOKMARK [2][-]{subsection.4.8}{Content Resolver \046 Content Provider}{section.4}% 59
 \BOOKMARK [3][-]{subsubsection.4.8.1}{Zugriff auf Daten \374ber Content Resolver \046 Query}{subsection.4.8}% 60
 \BOOKMARK [2][-]{subsection.4.9}{Eigener Content Provider}{section.4}% 61
+\BOOKMARK [1][-]{section.5}{Android 4 - Kommunikation \046 Nebenl\344ufigkeit}{}% 62
+\BOOKMARK [2][-]{subsection.5.1}{Nebenl\344ufigkeit}{section.5}% 63
+\BOOKMARK [3][-]{subsubsection.5.1.1}{Android und der Main-Thread}{subsection.5.1}% 64
+\BOOKMARK [3][-]{subsubsection.5.1.2}{Android-\334berwachung - ANR \(Application Not Responding\)}{subsection.5.1}% 65
+\BOOKMARK [2][-]{subsection.5.2}{Nebenl\344ufigkeit: AsyncTask}{section.5}% 66
+\BOOKMARK [2][-]{subsection.5.3}{Nebenl\344ufigkeit: Threads}{section.5}% 67
+\BOOKMARK [2][-]{subsection.5.4}{\(Backend-\) Kommunikation \374ber HTTP}{section.5}% 68
+\BOOKMARK [2][-]{subsection.5.5}{JSON-Webservices mit Retrofit konsumieren}{section.5}% 69
