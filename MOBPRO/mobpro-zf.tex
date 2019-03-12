@@ -1699,7 +1699,13 @@ Jeder Content Provider bietet eine eigene Standard-API, in der Android Dokumenta
 
 	\subsubsection{Android und der Main-Thread}
 
-	%TODO
+	\begin{itemize}
+		\item Eine Applikation baut ihr UI nur auf einem Thread, dem \textbf{main-Thread} auf\\
+		$\rightarrow$ blockiert man den main-Thread, friert das ganze UI ein
+		\item UI-Komponenten sind nicht Thread-safe\\
+		$\rightarrow$ UI-Zugriff nur aus main-Thread, sonst Exception
+		\item Netzwerk- und andere Methoden können lange dauern und sind blockierend, werden diese auf dem main-Thread aufgerufen, wird er blockiert und es werden keine UI-Events mehr aufgerufen
+	\end{itemize}
 
 	\subsubsection{Android-Überwachung - ANR (Application Not Responding)}
 

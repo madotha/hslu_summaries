@@ -1,15 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840) (preloaded format=pdflatex 2019.3.11)  11 MAR 2019 19:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.2.27)  12 MAR 2019 15:30
 entering extended mode
 **./mobpro-zf.tex
 (mobpro-zf.tex
 LaTeX2e <2018-12-01>
-
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/base/article.cls"
+("C:\Program Files\MiKTeX 2.9\tex/latex/base\article.cls"
 Document Class: article 2018/09/03 v1.4i Standard LaTeX document class
-
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/base/size10.clo"
+("C:\Program Files\MiKTeX 2.9\tex/latex/base\size10.clo"
 File: size10.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
 )
 \c@part=\count80
@@ -24,84 +20,67 @@ File: size10.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/g
-eneric/babel/babel.sty"
+("C:\Program Files\MiKTeX 2.9\tex/generic/babel\babel.sty"
 Package: babel 2018/11/13 3.27 The Babel package
 
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/g
-eneric/babel/switch.def"
+("C:\Program Files\MiKTeX 2.9\tex/generic/babel\switch.def"
 File: switch.def 2018/11/13 3.27 Babel switching mechanism
 )
 *************************************
 * Local config file bblopts.cfg used
 *
-
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/arabi/bblopts.cfg"
+("C:\Program Files\MiKTeX 2.9\tex/latex/arabi\bblopts.cfg"
 File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
  babel
 )
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/babel-german/ngerman.ldf"
+("C:\Program Files\MiKTeX 2.9\tex/latex/babel-german\ngerman.ldf"
 Language: ngerman 2018/12/08 v2.11 German support for babel (post-1996 orthogra
 phy)
 
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/babel-german/ngermanb.ldf"
+("C:\Program Files\MiKTeX 2.9\tex/latex/babel-german\ngermanb.ldf"
 Language: ngermanb 2018/12/08 v2.11 German support for babel (post-1996 orthogr
 aphy)
 
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/g
-eneric/babel/babel.def"
+("C:\Program Files\MiKTeX 2.9\tex/generic/babel\babel.def"
 File: babel.def 2018/11/13 3.27 Babel common definitions
 \babel@savecnt=\count88
 \U@D=\dimen103
 
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/g
-eneric/babel/txtbabel.def")
+("C:\Program Files\MiKTeX 2.9\tex/generic/babel\txtbabel.def")
 \bbl@dirlevel=\count89
 )
 Package babel Info: Making " an active character on input line 121.
 )))
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/base/inputenc.sty"
+("C:\Program Files\MiKTeX 2.9\tex/latex/base\inputenc.sty"
 Package: inputenc 2018/08/11 v1.3c Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
 )
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/base/fontenc.sty"
+("C:\Program Files\MiKTeX 2.9\tex/latex/base\fontenc.sty"
 Package: fontenc 2018/08/11 v2.0j Standard LaTeX package
 
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/base/t1enc.def"
+("C:\Program Files\MiKTeX 2.9\tex/latex/base\t1enc.def"
 File: t1enc.def 2018/08/11 v2.0j Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 ))
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/psnfss/helvet.sty"
+("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\helvet.sty"
 Package: helvet 2005/04/12 PSNFSS-v9.2a (WaS) 
 
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/graphics/keyval.sty"
+("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\keyval.sty"
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks16
 ))
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/geometry/geometry.sty"
+("C:\Program Files\MiKTeX 2.9\tex/latex/geometry\geometry.sty"
 Package: geometry 2018/04/16 v5.8 Page Geometry
 
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/g
-eneric/oberdiek/ifpdf.sty"
+("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\ifpdf.sty"
 Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
 )
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/g
-eneric/oberdiek/ifvtex.sty"
+("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\ifvtex.sty"
 Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 )
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/g
-eneric/ifxetex/ifxetex.sty"
+("C:\Program Files\MiKTeX 2.9\tex/generic/ifxetex\ifxetex.sty"
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
 \Gm@cnth=\count90
@@ -117,10 +96,8 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutvoffset=\dimen111
 \Gm@dimlist=\toks17
 
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/geometry/geometry.cfg"))
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/tools/multicol.sty"
+("C:\Program Files\MiKTeX 2.9\tex/latex/geometry\geometry.cfg"))
+("C:\Program Files\MiKTeX 2.9\tex/latex/tools\multicol.sty"
 Package: multicol 2018/12/27 v1.8v multicolumn formatting (FMi)
 \c@tracingmulticols=\count93
 \mult@box=\box27
@@ -169,37 +146,30 @@ Package: multicol 2018/12/27 v1.8v multicolumn formatting (FMi)
 \colbreak@box=\box52
 \mc@col@check@num=\count101
 )
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/graphics/graphicx.sty"
+("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\graphicx.sty"
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
 
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/graphics/graphics.sty"
+("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\graphics.sty"
 Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
 
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/graphics/trig.sty"
+("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\trig.sty"
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/graphics-cfg/graphics.cfg"
+("C:\Program Files\MiKTeX 2.9\tex/latex/graphics-cfg\graphics.cfg"
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 99.
 
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/graphics-def/pdftex.def"
+("C:\Program Files\MiKTeX 2.9\tex/latex/graphics-def\pdftex.def"
 File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen121
 \Gin@req@width=\dimen122
 )
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/caption/caption.sty"
+("C:\Program Files\MiKTeX 2.9\tex/latex/caption\caption.sty"
 Package: caption 2018/10/06 v3.3-154 Customizing captions (AR)
 
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/caption/caption3.sty"
+("C:\Program Files\MiKTeX 2.9\tex/latex/caption\caption3.sty"
 Package: caption3 2018/09/12 v1.8c caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 64.
 \captionmargin=\dimen123
@@ -213,22 +183,18 @@ Package caption3 Info: TeX engine: e-TeX on input line 64.
 \c@caption@flags=\count102
 \c@ContinuedFloat=\count103
 )
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/xcolor/xcolor.sty"
+("C:\Program Files\MiKTeX 2.9\tex/latex/xcolor\xcolor.sty"
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/graphics-cfg/color.cfg"
+("C:\Program Files\MiKTeX 2.9\tex/latex/graphics-cfg\color.cfg"
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
 
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/colortbl/colortbl.sty"
+("C:\Program Files\MiKTeX 2.9\tex/latex/colortbl\colortbl.sty"
 Package: colortbl 2018/12/12 v1.0d Color table columns (DPC)
 
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/tools/array.sty"
+("C:\Program Files\MiKTeX 2.9\tex/latex/tools\array.sty"
 Package: array 2018/12/30 v2.4k Tabular extension package (FMi)
 \col@sep=\dimen130
 \ar@mcellbox=\box53
@@ -252,18 +218,15 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/psnfss/courier.sty"
+("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\courier.sty"
 Package: courier 2005/04/12 PSNFSS-v9.2a (WaS) 
 )
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/caption/subcaption.sty"
+("C:\Program Files\MiKTeX 2.9\tex/latex/caption\subcaption.sty"
 Package: subcaption 2018/05/01 v1.1-162 Sub-captions (AR)
 \c@subfigure=\count105
 \c@subtable=\count106
 )
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/enumitem/enumitem.sty"
+("C:\Program Files\MiKTeX 2.9\tex/latex/enumitem\enumitem.sty"
 Package: enumitem 2019/02/04 v3.8 Customized lists
 \labelindent=\skip48
 \enit@outerparindent=\dimen132
@@ -272,12 +235,10 @@ Package: enumitem 2019/02/04 v3.8 Customized lists
 \enit@count@id=\count107
 \enitdp@description=\count108
 )
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/csquotes/csquotes.sty"
+("C:\Program Files\MiKTeX 2.9\tex/latex/csquotes\csquotes.sty"
 Package: csquotes 2018/04/13 v5.2d context-sensitive quotations (JAW)
 
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/etoolbox/etoolbox.sty"
+("C:\Program Files\MiKTeX 2.9\tex/latex/etoolbox\etoolbox.sty"
 Package: etoolbox 2018/08/19 v2.5f e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count109
 )
@@ -289,32 +250,27 @@ Package: etoolbox 2018/08/19 v2.5f e-TeX tools for LaTeX (JAW)
 \csq@tshold=\count115
 \csq@ltx@everypar=\toks21
 
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/csquotes/csquotes.def"
+("C:\Program Files\MiKTeX 2.9\tex/latex/csquotes\csquotes.def"
 File: csquotes.def 2018/04/13 v5.2d csquotes generic definitions (JAW)
 )
 Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
 Package csquotes Info: ... configuration file loaded successfully.
 
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/csquotes/csquotes.cfg"
+("C:\Program Files\MiKTeX 2.9\tex/latex/csquotes\csquotes.cfg"
 File: csquotes.cfg 
 )
 Package csquotes Info: Enabling multilingual quotes.
 )
 Package csquotes Info: Allocating character ".
 
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/hyperref/hyperref.sty"
+("C:\Program Files\MiKTeX 2.9\tex/latex/hyperref\hyperref.sty"
 Package: hyperref 2018/11/30 v6.88e Hypertext links for LaTeX
 
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/g
-eneric/oberdiek/hobsub-hyperref.sty"
+("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\hobsub-hyperref.sty"
 Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
 
 
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/g
-eneric/oberdiek/hobsub-generic.sty"
+("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\hobsub-generic.sty"
 Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
 Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
 Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
@@ -325,10 +281,6 @@ Package hobsub Info: Skipping package `ifvtex' (already loaded).
 Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
 Package hobsub Info: Skipping package `ifpdf' (already loaded).
 Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
 Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
 Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
 Package: pdftexcmds 2018/09/10 v0.29 Utility functions of pdfTeX for LuaTeX (HO
@@ -352,28 +304,24 @@ Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
 Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
 Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
 )
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/oberdiek/auxhook.sty"
+("C:\Program Files\MiKTeX 2.9\tex/latex/oberdiek\auxhook.sty"
 Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 )
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/oberdiek/kvoptions.sty"
+("C:\Program Files\MiKTeX 2.9\tex/latex/oberdiek\kvoptions.sty"
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 )
 \@linkdim=\dimen133
 \Hy@linkcounter=\count116
 \Hy@pagecounter=\count117
 
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/hyperref/pd1enc.def"
+("C:\Program Files\MiKTeX 2.9\tex/latex/hyperref\pd1enc.def"
 File: pd1enc.def 2018/11/30 v6.88e Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
 \Hy@SavedSpaceFactor=\count118
 
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/00miktex/hyperref.cfg"
+("C:\Program Files\MiKTeX 2.9\tex/latex/00miktex\hyperref.cfg"
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
 Package hyperref Info: Hyper figures OFF on input line 4519.
@@ -385,8 +333,7 @@ Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4772.
 \c@Hy@tempcnt=\count119
 
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/url/url.sty"
+("C:\Program Files\MiKTeX 2.9\tex/latex/url\url.sty"
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
@@ -410,14 +357,12 @@ LaTeX Info: Redefining \pageref on input line 6454.
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/hyperref/hpdftex.def"
+("C:\Program Files\MiKTeX 2.9\tex/latex/hyperref\hpdftex.def"
 File: hpdftex.def 2018/11/30 v6.88e Hyperref driver for pdfTeX
 \Fld@listcount=\count124
 \c@bookmark@seq@number=\count125
 
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/oberdiek/rerunfilecheck.sty"
+("C:\Program Files\MiKTeX 2.9\tex/latex/oberdiek\rerunfilecheck.sty"
 Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
@@ -426,8 +371,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 Package hyperref Info: Option `colorlinks' set `false' on input line 27.
 
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/listings/listings.sty"
+("C:\Program Files\MiKTeX 2.9\tex/latex/listings\listings.sty"
 \lst@mode=\count126
 \lst@gtempboxa=\box56
 \lst@token=\toks22
@@ -441,21 +385,18 @@ atex/listings/listings.sty"
 \lst@lineno=\count131
 \lst@maxwidth=\dimen140
 
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/listings/lstmisc.sty"
+("C:\Program Files\MiKTeX 2.9\tex/latex/listings\lstmisc.sty"
 File: lstmisc.sty 2019/02/27 1.8b (Carsten Heinz)
 \c@lstnumber=\count132
 \lst@skipnumbers=\count133
 \lst@framebox=\box57
 )
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/listings/listings.cfg"
+("C:\Program Files\MiKTeX 2.9\tex/latex/listings\listings.cfg"
 File: listings.cfg 2019/02/27 1.8b listings configuration
 ))
 Package: listings 2019/02/27 1.8b (Carsten Heinz)
 
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/listings/lstlang1.sty"
+("C:\Program Files\MiKTeX 2.9\tex/latex/listings\lstlang1.sty"
 File: lstlang1.sty 2019/02/27 1.8b listings language file
 )
 Package csquotes Info: Checking for multilingual support...
@@ -478,9 +419,7 @@ LaTeX Font Info:    ... okay on input line 58.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 58.
 LaTeX Font Info:    ... okay on input line 58.
 LaTeX Font Info:    Try loading font information for T1+phv on input line 58.
-
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/psnfss/t1phv.fd"
+("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\t1phv.fd"
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
@@ -520,9 +459,7 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/c
-ontext/base/mkii/supp-pdf.mkii"
+("C:\Program Files\MiKTeX 2.9\tex/context/base/mkii\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count134
 \scratchdimen=\dimen141
@@ -535,13 +472,10 @@ ontext/base/mkii/supp-pdf.mkii"
 \MPnumerator=\count138
 \makeMPintoPDFobject=\count139
 \everyMPtoPDFconversion=\toks24
-)
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/oberdiek/epstopdf-base.sty"
+) ("C:\Program Files\MiKTeX 2.9\tex/latex/oberdiek\epstopdf-base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/oberdiek/grfext.sty"
+("C:\Program Files\MiKTeX 2.9\tex/latex/oberdiek\grfext.sty"
 Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
 )
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -559,12 +493,10 @@ Package csquotes Info: Redefining character " on input line 58.
 \AtBeginShipoutBox=\box59
 Package hyperref Info: Link coloring OFF on input line 58.
 
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/hyperref/nameref.sty"
+("C:\Program Files\MiKTeX 2.9\tex/latex/hyperref\nameref.sty"
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/g
-eneric/oberdiek/gettitlestring.sty"
+("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\gettitlestring.sty"
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count140
@@ -572,7 +504,8 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 58.
 LaTeX Info: Redefining \pageref on input line 58.
 LaTeX Info: Redefining \nameref on input line 58.
- (mobpro-zf.out) (mobpro-zf.out)
+
+(mobpro-zf.out) (mobpro-zf.out)
 \@outlinefile=\write3
 \openout3 = `mobpro-zf.out'.
 
@@ -593,8 +526,8 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 61.
  [1
 
-{/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/data/pdftex/co
-nfig/pdftex.map}]
+{C:/Users/Maurin.DESKTOP-B919TN3/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.
+map}]
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 13.67995pt on input line 63.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <14.4> not available
@@ -621,8 +554,7 @@ LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 11.39996pt on input line 68.
 LaTeX Font Info:    Try loading font information for OMS+phv on input line 71.
 
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/psnfss/omsphv.fd"
+("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\omsphv.fd"
 File: omsphv.fd 
 )
 LaTeX Font Info:    Font shape `OMS/phv/m/n' in size <10> not available
@@ -660,8 +592,7 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 8.54997pt on input line 348.
 LaTeX Font Info:    Try loading font information for T1+pcr on input line 348.
 
-("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
-atex/psnfss/t1pcr.fd"
+("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\t1pcr.fd"
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
@@ -985,37 +916,33 @@ File: img/content_notes.png Graphic file (type png)
 <use img/content_notes.png>
 Package pdftex.def Info: img/content_notes.png  used on input line 1692.
 (pdftex.def)             Requested size: 328.1309pt x 235.6301pt.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1727.
- [40 <./img/content_sms.jpg> <./img/content_notes.png>] [41]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1727.
+ [40 <./img/content_sms.jpg> <./img/content_notes.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1733.
+ [41]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1733.
  (mobpro-zf.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1727.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1727.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1733.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1733.
 
 Package rerunfilecheck Info: File `mobpro-zf.out' has not changed.
-(rerunfilecheck)             Checksum: 59816FBBDC4DC92568783D91D7BFAE85;5600.
+(rerunfilecheck)             Checksum: D30CB6F6EB45E72BF82393762A27D3BA;5669.
  ) 
 Here is how much of TeX's memory you used:
- 11933 strings out of 492982
- 183051 string characters out of 3118053
- 506812 words of memory out of 3000000
- 15185 multiletter control sequences out of 15000+200000
+ 11931 strings out of 492946
+ 176705 string characters out of 3135476
+ 507049 words of memory out of 3000000
+ 15199 multiletter control sequences out of 15000+200000
  40826 words of font info for 52 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,12n,40p,818b,1224s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/font
-s/enc/dvips/base/8r.enc}</Users/maurinthalmann/Library/Application Support/MiKT
-eX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb></Users/maurinthalm
-ann/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/urw/courier/u
-crb8a.pfb></Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/inst
-all/fonts/type1/urw/courier/ucrr8a.pfb></Users/maurinthalmann/Library/Applicati
-on Support/MiKTeX/texmfs/install/fonts/type1/urw/helvetic/uhvb8a.pfb></Users/ma
-urinthalmann/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/urw/
-helvetic/uhvbo8a.pfb></Users/maurinthalmann/Library/Application Support/MiKTeX/
-texmfs/install/fonts/type1/urw/helvetic/uhvr8a.pfb></Users/maurinthalmann/Libra
-ry/Application Support/MiKTeX/texmfs/install/fonts/type1/urw/helvetic/uhvro8a.p
-fb>
-Output written on mobpro-zf.pdf (42 pages, 3558864 bytes).
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9
+/fonts/type1/urw/courier/ucrb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/ur
+w/courier/ucrr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb
+8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvbo8a.pfb><C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files/Mi
+KTeX 2.9/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on mobpro-zf.pdf (42 pages, 3557749 bytes).
 PDF statistics:
  1081 PDF objects out of 1200 (max. 8388607)
  438 named destinations out of 1000 (max. 500000)
