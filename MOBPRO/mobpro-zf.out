@@ -67,3 +67,6 @@
 \BOOKMARK [2][-]{subsection.5.3}{Nebenl\344ufigkeit: Threads}{section.5}% 67
 \BOOKMARK [2][-]{subsection.5.4}{\(Backend-\) Kommunikation \374ber HTTP}{section.5}% 68
 \BOOKMARK [2][-]{subsection.5.5}{JSON-Webservices mit Retrofit konsumieren}{section.5}% 69
+\BOOKMARK [1][-]{section.6}{Android 5 - Services \046 Broadcast Receiver}{}% 70
+\BOOKMARK [1][-]{section.7}{Android 6 - Intents, Fragments, App-Widgets}{}% 71
+\BOOKMARK [1][-]{section.8}{Android 7 - Hybrid WebApp}{}% 72

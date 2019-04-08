@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840) (preloaded format=pdflatex 2019.3.11)  11 MAR 2019 11:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840) (preloaded format=pdflatex 2019.4.8)  8 APR 2019 11:51
 entering extended mode
 **./swde-zf.tex
 (swde-zf.tex
@@ -461,27 +461,27 @@ Overfull \hbox (0.12106pt too wide) in paragraph at lines 254--254
 i-ons-kon-troll-sys-
  []
 
-[7] [8] (swde-zf.aux) ) 
+[7] [8] [9] [10] [11] [12] [13] [14] (swde-zf.aux) ) 
 Here is how much of TeX's memory you used:
  4571 strings out of 492982
- 69192 string characters out of 3118053
- 329257 words of memory out of 3000000
+ 69192 string characters out of 3118054
+ 330257 words of memory out of 3000000
  8372 multiletter control sequences out of 15000+200000
  33183 words of font info for 42 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,6n,40p,492b,217s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/Users/maurinthalmann/Library/Application Support/MiKTe
-X/texmfs/install/fonts/enc/dvips/base/8r.enc}</Users/maurinthalmann/Library/App
-lication Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pf
-b></Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/font
-s/type1/urw/helvetic/uhvb8a.pfb></Users/maurinthalmann/Library/Application Supp
-ort/MiKTeX/texmfs/install/fonts/type1/urw/helvetic/uhvbo8a.pfb></Users/maurinth
-almann/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/urw/helvet
-ic/uhvr8a.pfb></Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/
-install/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on swde-zf.pdf (9 pages, 73874 bytes).
+{/Users/maurinthalmann/Libr
+ary/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/base/8r.enc}</Use
+rs/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/fonts/type1
+/public/amsfonts/cm/cmsy10.pfb></Users/maurinthalmann/Library/Application Suppo
+rt/MiKTeX/texmfs/install/fonts/type1/urw/helvetic/uhvb8a.pfb></Users/maurinthal
+mann/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/urw/helvetic
+/uhvbo8a.pfb></Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/i
+nstall/fonts/type1/urw/helvetic/uhvr8a.pfb></Users/maurinthalmann/Library/Appli
+cation Support/MiKTeX/texmfs/install/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on swde-zf.pdf (15 pages, 77155 bytes).
 PDF statistics:
- 53 PDF objects out of 1000 (max. 8388607)
+ 72 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

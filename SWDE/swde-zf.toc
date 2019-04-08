@@ -20,5 +20,9 @@
 \contentsline {subsection}{\numberline {3.2}Sie kennen die verschiedenen Konzepte und Arten von Versionskontrollsystemen}{7}% 
 \contentsline {subsection}{\numberline {3.3}Sie k\IeC {\"o}nnen mit verschiedenen (Client-)Werkzeugen von Versionskontrollsystemen alleine und im Team arbeiten}{7}% 
 \contentsline {section}{\numberline {4}Unit Testing}{8}% 
-\contentsline {section}{\numberline {5}Software Architektur}{8}% 
-\contentsline {section}{\numberline {6}Grafisches User Interface - mit JavaFX}{8}% 
+\contentsline {section}{\numberline {5}Software Architektur}{9}% 
+\contentsline {section}{\numberline {6}Grafisches User Interface - mit JavaFX}{10}% 
+\contentsline {section}{\numberline {7}Persistierung - JPA und OR Mapping}{11}% 
+\contentsline {section}{\numberline {8}Persistierung - Java Persistence Query Language (JPQL)}{12}% 
+\contentsline {section}{\numberline {9}Kommunikation - Remote Method Invocation (RMI)}{13}% 
+\contentsline {section}{\numberline {10}Web Services - REST}{14}% 
