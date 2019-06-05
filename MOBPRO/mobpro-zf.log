@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840) (preloaded format=pdflatex 2019.4.8)  8 APR 2019 11:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840) (preloaded format=pdflatex 2019.5.15)  5 JUN 2019 14:40
 entering extended mode
 **./mobpro-zf.tex
 (mobpro-zf.tex
@@ -26,11 +26,11 @@ File: size10.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
 )
 ("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/g
 eneric/babel/babel.sty"
-Package: babel 2018/11/13 3.27 The Babel package
+Package: babel 2019/05/04 3.31 The Babel package
 
 ("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/g
 eneric/babel/switch.def"
-File: switch.def 2018/11/13 3.27 Babel switching mechanism
+File: switch.def 2019/05/04 3.31 Babel switching mechanism
 )
 *************************************
 * Local config file bblopts.cfg used
@@ -53,7 +53,7 @@ aphy)
 
 ("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/g
 eneric/babel/babel.def"
-File: babel.def 2018/11/13 3.27 Babel common definitions
+File: babel.def 2019/05/04 3.31 Babel common definitions
 \babel@savecnt=\count88
 \U@D=\dimen103
 
@@ -274,7 +274,7 @@ Package: enumitem 2019/02/04 v3.8 Customized lists
 )
 ("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
 atex/csquotes/csquotes.sty"
-Package: csquotes 2018/04/13 v5.2d context-sensitive quotations (JAW)
+Package: csquotes 2019/05/10 v5.2e context-sensitive quotations (JAW)
 
 ("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
 atex/etoolbox/etoolbox.sty"
@@ -291,7 +291,7 @@ Package: etoolbox 2018/08/19 v2.5f e-TeX tools for LaTeX (JAW)
 
 ("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
 atex/csquotes/csquotes.def"
-File: csquotes.def 2018/04/13 v5.2d csquotes generic definitions (JAW)
+File: csquotes.def 2019/05/10 v5.2e csquotes generic definitions (JAW)
 )
 Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
 Package csquotes Info: ... configuration file loaded successfully.
@@ -635,373 +635,469 @@ LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
 (Font)              scaled to size 9.49997pt on input line 165.
  [3] [4]
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 265.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 269.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 9.49997pt on input line 265.
+(Font)              scaled to size 9.49997pt on input line 269.
 
-Underfull \hbox (badness 1924) in paragraph at lines 289--290
+Underfull \hbox (badness 1924) in paragraph at lines 294--295
 []|\T1/phv/m/n/10 Event-Handler, wel-che auf App-interne oder sys-tem-wei-te Br
 oadcast-
  []
 
 [5]
-<img/manifestxml.jpg, id=439, 665.76pt x 397.85pt>
+<img/manifestxml.jpg, id=465, 665.76pt x 397.85pt>
 File: img/manifestxml.jpg Graphic file (type jpg)
 <use img/manifestxml.jpg>
-Package pdftex.def Info: img/manifestxml.jpg  used on input line 321.
+Package pdftex.def Info: img/manifestxml.jpg  used on input line 327.
 (pdftex.def)             Requested size: 341.43306pt x 204.03603pt.
  [6 <./img/manifestxml.jpg>]
-<img/intents_comm.png, id=446, 955.57pt x 776.9025pt>
+<img/intents_comm.png, id=472, 955.57pt x 776.9025pt>
 File: img/intents_comm.png Graphic file (type png)
 <use img/intents_comm.png>
-Package pdftex.def Info: img/intents_comm.png  used on input line 337.
+Package pdftex.def Info: img/intents_comm.png  used on input line 344.
 (pdftex.def)             Requested size: 213.39566pt x 173.49152pt.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 8.54997pt on input line 348.
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 348.
+(Font)              scaled to size 8.54997pt on input line 355.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 355.
 
 ("/Users/maurinthalmann/Library/Application Support/MiKTeX/texmfs/install/tex/l
 atex/psnfss/t1pcr.fd"
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 4.74998pt on input line 349.
+(Font)              scaled to size 4.74998pt on input line 356.
  [7 <./img/intents_comm.png>]
-Overfull \hbox (4.2829pt too wide) in paragraph at lines 380--381
+Overfull \hbox (4.2829pt too wide) in paragraph at lines 390--391
 \T1/phv/m/sl/10 ACTION_VIEW \T1/phv/m/n/10 ist hier-bei kein ex-pli-zi-ter Emp-
 fän-ger-typ, son-dern nur ei-ne ge-wünsch-te Ak-ti-on. Die mitgege-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 380--381
+Underfull \hbox (badness 10000) in paragraph at lines 390--391
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 400--401
+Underfull \hbox (badness 10000) in paragraph at lines 410--411
 
  []
 
 [8]
-<img/lifecycle.jpg, id=495, 343.78906pt x 444.42673pt>
+<img/lifecycle.jpg, id=521, 343.78906pt x 444.42673pt>
 File: img/lifecycle.jpg Graphic file (type jpg)
 <use img/lifecycle.jpg>
-Package pdftex.def Info: img/lifecycle.jpg  used on input line 416.
+Package pdftex.def Info: img/lifecycle.jpg  used on input line 426.
 (pdftex.def)             Requested size: 369.88582pt x 478.16985pt.
-<img/lifetime.jpg, id=496, 667.14244pt x 130.98938pt>
+<img/lifetime.jpg, id=522, 667.14244pt x 130.98938pt>
 File: img/lifetime.jpg Graphic file (type jpg)
 <use img/lifetime.jpg>
-Package pdftex.def Info: img/lifetime.jpg  used on input line 422.
+Package pdftex.def Info: img/lifetime.jpg  used on input line 432.
 (pdftex.def)             Requested size: 312.9803pt x 61.45308pt.
  [9 <./img/lifecycle.jpg> <./img/lifetime.jpg>] [10]
-<img/androidstack.jpg, id=515, 408.42496pt x 283.77579pt>
+<img/androidstack.jpg, id=541, 408.42496pt x 283.77579pt>
 File: img/androidstack.jpg Graphic file (type jpg)
 <use img/androidstack.jpg>
-Package pdftex.def Info: img/androidstack.jpg  used on input line 464.
+Package pdftex.def Info: img/androidstack.jpg  used on input line 474.
 (pdftex.def)             Requested size: 312.9803pt x 217.46881pt.
  [11 <./img/androidstack.jpg>]
-<img/securitymodel.jpg, id=521, 544.68758pt x 260.172pt>
+<img/securitymodel.jpg, id=547, 544.68758pt x 260.172pt>
 File: img/securitymodel.jpg Graphic file (type jpg)
 <use img/securitymodel.jpg>
-Package pdftex.def Info: img/securitymodel.jpg  used on input line 493.
+Package pdftex.def Info: img/securitymodel.jpg  used on input line 503.
 (pdftex.def)             Requested size: 341.43306pt x 163.09538pt.
  [12 <./img/securitymodel.jpg>]
-<img/gui_xml_example.jpg, id=528, 514.16519pt x 250.46245pt>
+<img/gui_xml_example.jpg, id=554, 514.16519pt x 250.46245pt>
 File: img/gui_xml_example.jpg Graphic file (type jpg)
 <use img/gui_xml_example.jpg>
-Package pdftex.def Info: img/gui_xml_example.jpg  used on input line 507.
+Package pdftex.def Info: img/gui_xml_example.jpg  used on input line 517.
 (pdftex.def)             Requested size: 284.52756pt x 138.59937pt.
-<img/xml_layouts.jpg, id=529, 546.79755pt x 255.67216pt>
+<img/xml_layouts.jpg, id=555, 546.79755pt x 255.67216pt>
 File: img/xml_layouts.jpg Graphic file (type jpg)
 <use img/xml_layouts.jpg>
-Package pdftex.def Info: img/xml_layouts.jpg  used on input line 517.
+Package pdftex.def Info: img/xml_layouts.jpg  used on input line 527.
 (pdftex.def)             Requested size: 284.52756pt x 133.04001pt.
  [13 <./img/gui_xml_example.jpg> <./img/xml_layouts.jpg>]
-<img/constraintlayout.jpg, id=536, 247.85933pt x 119.91467pt>
+<img/constraintlayout.jpg, id=562, 247.85933pt x 119.91467pt>
 File: img/constraintlayout.jpg Graphic file (type jpg)
 <use img/constraintlayout.jpg>
-Package pdftex.def Info: img/constraintlayout.jpg  used on input line 569.
+Package pdftex.def Info: img/constraintlayout.jpg  used on input line 579.
 (pdftex.def)             Requested size: 149.62709pt x 72.39397pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 570.
+(caption)                particular \caption on input line 580.
 See the caption package documentation for explanation.
 
-<img/linearlayout.jpg, id=537, 222.97939pt x 171.86159pt>
+<img/linearlayout.jpg, id=563, 222.97939pt x 171.86159pt>
 File: img/linearlayout.jpg Graphic file (type jpg)
 <use img/linearlayout.jpg>
-Package pdftex.def Info: img/linearlayout.jpg  used on input line 594.
+Package pdftex.def Info: img/linearlayout.jpg  used on input line 604.
 (pdftex.def)             Requested size: 106.87697pt x 82.3746pt.
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 595.
+(caption)                particular \caption on input line 605.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (0.77484pt too wide) in paragraph at lines 601--602
+Overfull \hbox (0.77484pt too wide) in paragraph at lines 611--612
 []\T1/phv/m/n/10 Nach wie vor ein-fachs-te Lö-sung für Button- oder Action-Bars
  (  flow se-man-tik) und ein-fa-che Screens 
  []
 
 [14 <./img/constraintlayout.jpg> <./img/linearlayout.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 621--623
+Underfull \hbox (badness 10000) in paragraph at lines 631--633
 
  []
 
-<img/references_xml.jpg, id=546, 471.9231pt x 148.1535pt>
+<img/references_xml.jpg, id=572, 471.9231pt x 148.1535pt>
 File: img/references_xml.jpg Graphic file (type jpg)
 <use img/references_xml.jpg>
-Package pdftex.def Info: img/references_xml.jpg  used on input line 628.
+Package pdftex.def Info: img/references_xml.jpg  used on input line 638.
 (pdftex.def)             Requested size: 175.00381pt x 54.938pt.
-<img/references_code.jpg, id=547, 414.16269pt x 50.72798pt>
+<img/references_code.jpg, id=573, 414.16269pt x 50.72798pt>
 File: img/references_code.jpg Graphic file (type jpg)
 <use img/references_code.jpg>
-Package pdftex.def Info: img/references_code.jpg  used on input line 633.
+Package pdftex.def Info: img/references_code.jpg  used on input line 643.
 (pdftex.def)             Requested size: 175.00381pt x 21.43486pt.
-<img/ressources.jpg, id=548, 214.0034pt x 384.50447pt>
+<img/ressources.jpg, id=574, 214.0034pt x 384.50447pt>
 File: img/ressources.jpg Graphic file (type jpg)
 <use img/ressources.jpg>
-Package pdftex.def Info: img/ressources.jpg  used on input line 649.
+Package pdftex.def Info: img/ressources.jpg  used on input line 659.
 (pdftex.def)             Requested size: 131.2537pt x 235.8264pt.
 [15 <./img/references_xml.jpg> <./img/references_code.jpg> <./img/ressources.jp
 g>]
-<img/layout_id.jpg, id=556, 455.98929pt x 92.91856pt>
+<img/layout_id.jpg, id=582, 455.98929pt x 92.91856pt>
 File: img/layout_id.jpg Graphic file (type jpg)
 <use img/layout_id.jpg>
-Package pdftex.def Info: img/layout_id.jpg  used on input line 661.
+Package pdftex.def Info: img/layout_id.jpg  used on input line 671.
 (pdftex.def)             Requested size: 218.75394pt x 44.57628pt.
-<img/reference_code.jpg, id=557, 614.6921pt x 102.44868pt>
+<img/reference_code.jpg, id=583, 614.6921pt x 102.44868pt>
 File: img/reference_code.jpg Graphic file (type jpg)
 <use img/reference_code.jpg>
-Package pdftex.def Info: img/reference_code.jpg  used on input line 662.
+Package pdftex.def Info: img/reference_code.jpg  used on input line 672.
 (pdftex.def)             Requested size: 218.75394pt x 36.45786pt.
 
-Overfull \hbox (1.49216pt too wide) in paragraph at lines 670--673
+Overfull \hbox (1.49216pt too wide) in paragraph at lines 680--683
 \T1/pcr/m/n/10 OnClickListener, OnLongClickListener, OnKeyListener, OnTouchList
 ener,
  []
 
-<img/onclick.jpg, id=558, 524.14pt x 110.23pt>
+<img/onclick.jpg, id=584, 524.14pt x 110.23pt>
 File: img/onclick.jpg Graphic file (type jpg)
 <use img/onclick.jpg>
-Package pdftex.def Info: img/onclick.jpg  used on input line 692.
+Package pdftex.def Info: img/onclick.jpg  used on input line 702.
 (pdftex.def)             Requested size: 262.50739pt x 55.20735pt.
 [16 <./img/layout_id.jpg> <./img/reference_code.jpg> <./img/onclick.jpg>]
-<img/data_binding_model.png, id=579, 624.83438pt x 279.29344pt>
+<img/data_binding_model.png, id=605, 624.83438pt x 279.29344pt>
 File: img/data_binding_model.png Graphic file (type png)
 <use img/data_binding_model.png>
-Package pdftex.def Info: img/data_binding_model.png  used on input line 708.
+Package pdftex.def Info: img/data_binding_model.png  used on input line 718.
 (pdftex.def)             Requested size: 218.75394pt x 97.77972pt.
 
 [17 <./img/data_binding_model.png>]
-<img/menu_example.jpg, id=616, 424.91277pt x 113.19397pt>
+<img/menu_example.jpg, id=642, 424.91277pt x 113.19397pt>
 File: img/menu_example.jpg Graphic file (type jpg)
 <use img/menu_example.jpg>
-Package pdftex.def Info: img/menu_example.jpg  used on input line 765.
+Package pdftex.def Info: img/menu_example.jpg  used on input line 775.
 (pdftex.def)             Requested size: 218.75394pt x 58.27394pt.
-<img/menuinflater.jpg, id=617, 386.54504pt x 114.04074pt>
+<img/menuinflater.jpg, id=643, 386.54504pt x 114.04074pt>
 File: img/menuinflater.jpg Graphic file (type jpg)
 <use img/menuinflater.jpg>
-Package pdftex.def Info: img/menuinflater.jpg  used on input line 770.
+Package pdftex.def Info: img/menuinflater.jpg  used on input line 780.
 (pdftex.def)             Requested size: 218.75394pt x 64.53928pt.
 
-Overfull \hbox (2.01399pt too wide) in paragraph at lines 763--773
+Overfull \hbox (2.01399pt too wide) in paragraph at lines 773--783
 []$[]$ $[]$ 
  []
 
-<img/menu_string.jpg, id=618, 427.28978pt x 38.50883pt>
+<img/menu_string.jpg, id=644, 427.28978pt x 38.50883pt>
 File: img/menu_string.jpg Graphic file (type jpg)
 <use img/menu_string.jpg>
-Package pdftex.def Info: img/menu_string.jpg  used on input line 778.
+Package pdftex.def Info: img/menu_string.jpg  used on input line 788.
 (pdftex.def)             Requested size: 350.00763pt x 31.54395pt.
-<img/menu_selektierung.jpg, id=619, 404.10976pt x 102.98476pt>
+<img/menu_selektierung.jpg, id=645, 404.10976pt x 102.98476pt>
 File: img/menu_selektierung.jpg Graphic file (type jpg)
 <use img/menu_selektierung.jpg>
-Package pdftex.def Info: img/menu_selektierung.jpg  used on input line 783.
+Package pdftex.def Info: img/menu_selektierung.jpg  used on input line 793.
 (pdftex.def)             Requested size: 306.25417pt x 78.04921pt.
 [18 <./img/menu_example.jpg> <./img/menuinflater.jpg> <./img/menu_string.jpg> <
 ./img/menu_selektierung.jpg>]
-<img/adapter.png, id=628, 583.42969pt x 139.27031pt>
+<img/adapter.png, id=654, 583.42969pt x 139.27031pt>
 File: img/adapter.png Graphic file (type png)
 <use img/adapter.png>
-Package pdftex.def Info: img/adapter.png  used on input line 793.
+Package pdftex.def Info: img/adapter.png  used on input line 803.
 (pdftex.def)             Requested size: 350.00763pt x 83.55219pt.
-<img/adapter_string.png, id=629, 878.53218pt x 172.39406pt>
+<img/adapter_string.png, id=655, 878.53218pt x 172.39406pt>
 File: img/adapter_string.png Graphic file (type png)
 <use img/adapter_string.png>
-Package pdftex.def Info: img/adapter_string.png  used on input line 809.
+Package pdftex.def Info: img/adapter_string.png  used on input line 819.
 (pdftex.def)             Requested size: 350.00763pt x 68.68282pt.
-<img/adapterview_example.jpg, id=630, 592.18254pt x 53.93283pt>
+<img/adapterview_example.jpg, id=656, 592.18254pt x 53.93283pt>
 File: img/adapterview_example.jpg Graphic file (type jpg)
 <use img/adapterview_example.jpg>
-Package pdftex.def Info: img/adapterview_example.jpg  used on input line 819.
+Package pdftex.def Info: img/adapterview_example.jpg  used on input line 829.
 (pdftex.def)             Requested size: 350.00763pt x 31.87769pt.
 
-Overfull \hbox (27.05185pt too wide) in paragraph at lines 831--832
+Overfull \hbox (27.05185pt too wide) in paragraph at lines 841--842
 []\T1/phv/m/n/10 Leiten ab von \T1/pcr/m/n/10 android.widget.AdapterView<T exte
 nds android.widget.Adapter> 
  []
 
 [19 <./img/adapter.png> <./img/adapter_string.png> <./img/adapterview_example.j
 pg>]
-<img/spinner_demo.png, id=640, 904.88063pt x 639.13782pt>
+<img/spinner_demo.png, id=666, 904.88063pt x 639.13782pt>
 File: img/spinner_demo.png Graphic file (type png)
 <use img/spinner_demo.png>
-Package pdftex.def Info: img/spinner_demo.png  used on input line 861.
+Package pdftex.def Info: img/spinner_demo.png  used on input line 871.
 (pdftex.def)             Requested size: 437.50787pt x 309.01598pt.
  [20 <./img/spinner_demo.png>]
-Overfull \hbox (29.5385pt too wide) in paragraph at lines 910--912
+Overfull \hbox (29.5385pt too wide) in paragraph at lines 920--922
 \T1/phv/m/n/10 Wird bei Aus-wahl auf-ge-ru-fen (muss in Sub-klas-se über-schrie
 -ben wer-den, kei-ne Listener-Registrierung
  []
 
-<img/listview_demo.png, id=647, 909.3975pt x 616.55344pt>
+<img/listview_demo.png, id=673, 909.3975pt x 616.55344pt>
 File: img/listview_demo.png Graphic file (type png)
 <use img/listview_demo.png>
-Package pdftex.def Info: img/listview_demo.png  used on input line 917.
+Package pdftex.def Info: img/listview_demo.png  used on input line 927.
 (pdftex.def)             Requested size: 350.00763pt x 237.30324pt.
 [21 <./img/listview_demo.png>]
-<img/viewmodel.png, id=657, 606.01407pt x 207.02344pt>
+<img/viewmodel.png, id=683, 606.01407pt x 207.02344pt>
 File: img/viewmodel.png Graphic file (type png)
 <use img/viewmodel.png>
-Package pdftex.def Info: img/viewmodel.png  used on input line 929.
+Package pdftex.def Info: img/viewmodel.png  used on input line 939.
 (pdftex.def)             Requested size: 262.50739pt x 89.67538pt.
-<img/viewmodel_demo.png, id=658, 866.48718pt x 608.2725pt>
+<img/viewmodel_demo.png, id=684, 866.48718pt x 608.2725pt>
 File: img/viewmodel_demo.png Graphic file (type png)
 <use img/viewmodel_demo.png>
-Package pdftex.def Info: img/viewmodel_demo.png  used on input line 941.
+Package pdftex.def Info: img/viewmodel_demo.png  used on input line 951.
 (pdftex.def)             Requested size: 437.50787pt x 307.13342pt.
  [22 <./img/viewmodel.png> <./img/viewmodel_demo.png>]
-<img/alert_dialog.jpg, id=666, 207.4513pt x 125.30266pt>
+<img/alert_dialog.jpg, id=692, 207.4513pt x 125.30266pt>
 File: img/alert_dialog.jpg Graphic file (type jpg)
 <use img/alert_dialog.jpg>
-Package pdftex.def Info: img/alert_dialog.jpg  used on input line 976.
+Package pdftex.def Info: img/alert_dialog.jpg  used on input line 986.
 (pdftex.def)             Requested size: 153.13042pt x 92.49689pt.
  [23 <./img/alert_dialog.jpg>]
-<img/alertdialog.jpg, id=683, 572.60077pt x 364.82452pt>
+<img/alertdialog.jpg, id=709, 572.60077pt x 364.82452pt>
 File: img/alertdialog.jpg Graphic file (type jpg)
 <use img/alertdialog.jpg>
-Package pdftex.def Info: img/alertdialog.jpg  used on input line 1015.
+Package pdftex.def Info: img/alertdialog.jpg  used on input line 1025.
 (pdftex.def)             Requested size: 393.75441pt x 250.87747pt.
  [24 <./img/alertdialog.jpg>]
-<img/alertdialog_daten.png, id=694, 894.34125pt x 633.11531pt>
+<img/alertdialog_daten.png, id=720, 894.34125pt x 633.11531pt>
 File: img/alertdialog_daten.png Graphic file (type png)
 <use img/alertdialog_daten.png>
-Package pdftex.def Info: img/alertdialog_daten.png  used on input line 1023.
+Package pdftex.def Info: img/alertdialog_daten.png  used on input line 1033.
 (pdftex.def)             Requested size: 437.50787pt x 309.7172pt.
-<img/alertdialog_custom.png, id=695, 916.1728pt x 608.2725pt>
+<img/alertdialog_custom.png, id=721, 916.1728pt x 608.2725pt>
 File: img/alertdialog_custom.png Graphic file (type png)
 <use img/alertdialog_custom.png>
-Package pdftex.def Info: img/alertdialog_custom.png  used on input line 1028.
+Package pdftex.def Info: img/alertdialog_custom.png  used on input line 1038.
 (pdftex.def)             Requested size: 437.50787pt x 290.47318pt.
  [25 <./img/alertdialog_daten.png> <./img/alertdialog_custom.png>]
-<img/notification_demo.png, id=702, 906.38625pt x 678.28406pt>
+<img/notification_demo.png, id=728, 906.38625pt x 678.28406pt>
 File: img/notification_demo.png Graphic file (type png)
 <use img/notification_demo.png>
-Package pdftex.def Info: img/notification_demo.png  used on input line 1055.
+Package pdftex.def Info: img/notification_demo.png  used on input line 1065.
 (pdftex.def)             Requested size: 437.50787pt x 327.40456pt.
  [26 <./img/notification_demo.png>]
 LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <10> not available
-(Font)              Font shape `T1/pcr/b/n' tried instead on input line 1091.
+(Font)              Font shape `T1/pcr/b/n' tried instead on input line 1101.
  [27]
-<img/prefs_xml.jpg, id=724, 429.605pt x 307.37056pt>
+<img/prefs_xml.jpg, id=750, 429.605pt x 307.37056pt>
 File: img/prefs_xml.jpg Graphic file (type jpg)
 <use img/prefs_xml.jpg>
-Package pdftex.def Info: img/prefs_xml.jpg  used on input line 1128.
+Package pdftex.def Info: img/prefs_xml.jpg  used on input line 1138.
 (pdftex.def)             Requested size: 306.25417pt x 219.12103pt.
  [28 <./img/prefs_xml.jpg>] [29]
-<img/manifest_permissions.jpg, id=774, 464.59285pt x 103.88812pt>
+<img/manifest_permissions.jpg, id=800, 464.59285pt x 103.88812pt>
 File: img/manifest_permissions.jpg Graphic file (type jpg)
 <use img/manifest_permissions.jpg>
-Package pdftex.def Info: img/manifest_permissions.jpg  used on input line 1256.
+Package pdftex.def Info: img/manifest_permissions.jpg  used on input line 1266.
 
 (pdftex.def)             Requested size: 306.25417pt x 68.48552pt.
  [30 <./img/manifest_permissions.jpg>]
-<img/runtimeperm1.jpg, id=781, 575.6093pt x 136.88788pt>
+<img/runtimeperm1.jpg, id=807, 575.6093pt x 136.88788pt>
 File: img/runtimeperm1.jpg Graphic file (type jpg)
 <use img/runtimeperm1.jpg>
-Package pdftex.def Info: img/runtimeperm1.jpg  used on input line 1266.
+Package pdftex.def Info: img/runtimeperm1.jpg  used on input line 1276.
 (pdftex.def)             Requested size: 393.75441pt x 93.64229pt.
-<img/runtimeperm2.jpg, id=782, 546.88933pt x 167.47183pt>
+<img/runtimeperm2.jpg, id=808, 546.88933pt x 167.47183pt>
 File: img/runtimeperm2.jpg Graphic file (type jpg)
 <use img/runtimeperm2.jpg>
-Package pdftex.def Info: img/runtimeperm2.jpg  used on input line 1272.
+Package pdftex.def Info: img/runtimeperm2.jpg  used on input line 1282.
 (pdftex.def)             Requested size: 393.75441pt x 120.57962pt.
-<img/persist_text.jpg, id=783, 466.7156pt x 181.68813pt>
+<img/persist_text.jpg, id=809, 466.7156pt x 181.68813pt>
 File: img/persist_text.jpg Graphic file (type jpg)
 <use img/persist_text.jpg>
-Package pdftex.def Info: img/persist_text.jpg  used on input line 1298.
+Package pdftex.def Info: img/persist_text.jpg  used on input line 1308.
 (pdftex.def)             Requested size: 306.25417pt x 119.22697pt.
  [31 <./img/runtimeperm1.jpg> <./img/runtimeperm2.jpg> <./img/persist_text.jpg>
 ]
-<img/sqlite_framework.png, id=791, 2272.49pt x 1224.575pt>
+<img/sqlite_framework.png, id=817, 2272.49pt x 1224.575pt>
 File: img/sqlite_framework.png Graphic file (type png)
 <use img/sqlite_framework.png>
-Package pdftex.def Info: img/sqlite_framework.png  used on input line 1310.
+Package pdftex.def Info: img/sqlite_framework.png  used on input line 1320.
 (pdftex.def)             Requested size: 371.88435pt x 200.38315pt.
-<img/room_components.jpg, id=792, 304.85725pt x 275.33852pt>
+<img/room_components.jpg, id=818, 304.85725pt x 275.33852pt>
 File: img/room_components.jpg Graphic file (type jpg)
 <use img/room_components.jpg>
-Package pdftex.def Info: img/room_components.jpg  used on input line 1338.
+Package pdftex.def Info: img/room_components.jpg  used on input line 1348.
 (pdftex.def)             Requested size: 218.75394pt x 197.57977pt.
  [32 <./img/sqlite_framework.png> <./img/room_components.jpg>] [33]
 [34] [35] [36]
-<img/dbentries_list.png, id=932, 1091.07625pt x 717.68124pt>
+<img/dbentries_list.png, id=958, 1091.07625pt x 717.68124pt>
 File: img/dbentries_list.png Graphic file (type png)
 <use img/dbentries_list.png>
-Package pdftex.def Info: img/dbentries_list.png  used on input line 1553.
+Package pdftex.def Info: img/dbentries_list.png  used on input line 1563.
 (pdftex.def)             Requested size: 437.50787pt x 287.77922pt.
  [37 <./img/dbentries_list.png>]
-<img/content_uri.png, id=940, 1024.82875pt x 246.9225pt>
+<img/content_uri.png, id=966, 1024.82875pt x 246.9225pt>
 File: img/content_uri.png Graphic file (type png)
 <use img/content_uri.png>
-Package pdftex.def Info: img/content_uri.png  used on input line 1574.
+Package pdftex.def Info: img/content_uri.png  used on input line 1584.
 (pdftex.def)             Requested size: 350.00763pt x 84.3293pt.
-<img/state_transfer.png, id=941, 1133.23375pt x 263.98625pt>
+<img/state_transfer.png, id=967, 1133.23375pt x 263.98625pt>
 File: img/state_transfer.png Graphic file (type png)
 <use img/state_transfer.png>
-Package pdftex.def Info: img/state_transfer.png  used on input line 1609.
+Package pdftex.def Info: img/state_transfer.png  used on input line 1619.
 (pdftex.def)             Requested size: 437.50787pt x 101.91496pt.
  [38 <./img/content_uri.png> <./img/state_transfer.png>]
-<img/compare_query.png, id=949, 1099.10625pt x 323.2075pt>
+<img/compare_query.png, id=975, 1099.10625pt x 323.2075pt>
 File: img/compare_query.png Graphic file (type png)
 <use img/compare_query.png>
-Package pdftex.def Info: img/compare_query.png  used on input line 1648.
+Package pdftex.def Info: img/compare_query.png  used on input line 1658.
 (pdftex.def)             Requested size: 437.50787pt x 128.65437pt.
-<img/contentprovider.jpg, id=950, 635.1617pt x 396.97606pt>
+<img/contentprovider.jpg, id=976, 635.1617pt x 396.97606pt>
 File: img/contentprovider.jpg Graphic file (type jpg)
 <use img/contentprovider.jpg>
-Package pdftex.def Info: img/contentprovider.jpg  used on input line 1654.
+Package pdftex.def Info: img/contentprovider.jpg  used on input line 1664.
 (pdftex.def)             Requested size: 306.25417pt x 191.40648pt.
  [39 <./img/compare_query.png> <./img/contentprovider.jpg>]
-<img/content_sms.jpg, id=965, 543.67824pt x 153.98706pt>
+<img/content_sms.jpg, id=991, 543.67824pt x 153.98706pt>
 File: img/content_sms.jpg Graphic file (type jpg)
 <use img/content_sms.jpg>
-Package pdftex.def Info: img/content_sms.jpg  used on input line 1675.
+Package pdftex.def Info: img/content_sms.jpg  used on input line 1685.
 (pdftex.def)             Requested size: 437.50787pt x 123.92055pt.
-<img/content_notes.png, id=966, 1086.0575pt x 779.91376pt>
+<img/content_notes.png, id=992, 1086.0575pt x 779.91376pt>
 File: img/content_notes.png Graphic file (type png)
 <use img/content_notes.png>
-Package pdftex.def Info: img/content_notes.png  used on input line 1692.
+Package pdftex.def Info: img/content_notes.png  used on input line 1702.
 (pdftex.def)             Requested size: 328.1309pt x 235.6301pt.
- [40 <./img/content_sms.jpg> <./img/content_notes.png>] [41] [42] [43]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1746.
+ [40 <./img/content_sms.jpg> <./img/content_notes.png>]
+<img/thread_sleep.jpg, id=1000, 246.67006pt x 85.6854pt>
+File: img/thread_sleep.jpg Graphic file (type jpg)
+<use img/thread_sleep.jpg>
+Package pdftex.def Info: img/thread_sleep.jpg  used on input line 1723.
+(pdftex.def)             Requested size: 306.25417pt x 106.38867pt.
 
-[44]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1746.
+Overfull \hbox (10.28355pt too wide) in paragraph at lines 1758--1760
+\T1/phv/m/n/10 Spezielle Me-tho-den auf Main-Thread, bspw. \T1/pcr/m/n/10 onPro
+gressUpdate, onPostExecute, ... 
+ []
+
+[41 <./img/thread_sleep.jpg>]
+<img/background_work.jpg, id=1011, 607.26875pt x 652.4375pt>
+File: img/background_work.jpg Graphic file (type jpg)
+<use img/background_work.jpg>
+Package pdftex.def Info: img/background_work.jpg  used on input line 1771.
+(pdftex.def)             Requested size: 262.50739pt x 282.03595pt.
+ [42 <./img/background_work.jpg>]
+<img/asynctask.png, id=1019, 1044.90375pt x 165.61874pt>
+File: img/asynctask.png Graphic file (type png)
+<use img/asynctask.png>
+Package pdftex.def Info: img/asynctask.png  used on input line 1784.
+(pdftex.def)             Requested size: 437.50787pt x 69.3471pt.
+<img/ablauf_asynctask.png, id=1020, 1152.305pt x 713.66624pt>
+File: img/ablauf_asynctask.png Graphic file (type png)
+<use img/ablauf_asynctask.png>
+Package pdftex.def Info: img/ablauf_asynctask.png  used on input line 1811.
+(pdftex.def)             Requested size: 437.50787pt x 270.9673pt.
+ [43 <./img/asynctask.png> <./img/ablauf_asynctask.png>]
+<img/async_demo_01.png, id=1032, 1157.32375pt x 823.075pt>
+File: img/async_demo_01.png Graphic file (type png)
+<use img/async_demo_01.png>
+Package pdftex.def Info: img/async_demo_01.png  used on input line 1819.
+(pdftex.def)             Requested size: 393.75441pt x 280.03018pt.
+<img/async_demo_02.png, id=1033, 1151.30125pt x 838.13126pt>
+File: img/async_demo_02.png Graphic file (type png)
+<use img/async_demo_02.png>
+Package pdftex.def Info: img/async_demo_02.png  used on input line 1823.
+(pdftex.def)             Requested size: 393.75441pt x 286.64899pt.
+ [44 <./img/async_demo_01.png> <./img/async_demo_02.png>]
+<img/async_demo_03.png, id=1042, 1153.30875pt x 824.07875pt>
+File: img/async_demo_03.png Graphic file (type png)
+<use img/async_demo_03.png>
+Package pdftex.def Info: img/async_demo_03.png  used on input line 1828.
+(pdftex.def)             Requested size: 393.75441pt x 281.35248pt.
+<img/async_demo_04.png, id=1043, 1149.29375pt x 833.1125pt>
+File: img/async_demo_04.png Graphic file (type png)
+<use img/async_demo_04.png>
+Package pdftex.def Info: img/async_demo_04.png  used on input line 1832.
+(pdftex.def)             Requested size: 393.75441pt x 285.4283pt.
+ [45 <./img/async_demo_03.png> <./img/async_demo_04.png>]
+<img/threads_usage.png, id=1052, 1122.1925pt x 774.895pt>
+File: img/threads_usage.png Graphic file (type png)
+<use img/threads_usage.png>
+Package pdftex.def Info: img/threads_usage.png  used on input line 1857.
+(pdftex.def)             Requested size: 393.75441pt x 271.89128pt.
+
+[46 <./img/threads_usage.png>]
+<img/okhttp_verwendung.png, id=1060, 1140.26pt x 837.1275pt>
+File: img/okhttp_verwendung.png Graphic file (type png)
+<use img/okhttp_verwendung.png>
+Package pdftex.def Info: img/okhttp_verwendung.png  used on input line 1901.
+(pdftex.def)             Requested size: 437.50787pt x 321.19017pt.
+
+Overfull \hbox (7.49216pt too wide) in paragraph at lines 1910--1913
+\T1/pcr/m/n/10 uses-permission android:name=  android.permission.ACCESS_NETWOR
+K_STATE 
+ []
+
+[47 <./img/okhttp_verwendung.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1920--1921
+
+ []
+
+<img/restful_exmp.png, id=1067, 1133.23375pt x 260.975pt>
+File: img/restful_exmp.png Graphic file (type png)
+<use img/restful_exmp.png>
+Package pdftex.def Info: img/restful_exmp.png  used on input line 1941.
+(pdftex.def)             Requested size: 437.50787pt x 100.75244pt.
+
+Overfull \hbox (15.46463pt too wide) in paragraph at lines 1975--1981
+\T1/phv/m/n/10 Retrofit ba-siert auf Ok-Http, die-se Li-bra-ry ist al-so au-to-
+ma-tisch vor-han-den. Man kann ver-wen-de-te OkHttpClient-
+ []
+
+[48 <./img/restful_exmp.png>]
+<img/retrofit_config.png, id=1092, 1108.14pt x 784.9325pt>
+File: img/retrofit_config.png Graphic file (type png)
+<use img/retrofit_config.png>
+Package pdftex.def Info: img/retrofit_config.png  used on input line 1986.
+(pdftex.def)             Requested size: 415.63113pt x 294.39687pt.
+<img/retrofit_demo.png, id=1093, 1069.9975pt x 758.835pt>
+File: img/retrofit_demo.png Graphic file (type png)
+<use img/retrofit_demo.png>
+Package pdftex.def Info: img/retrofit_demo.png  used on input line 1993.
+(pdftex.def)             Requested size: 415.63113pt x 294.76341pt.
+ [49 <./img/retrofit_config.png> <./img/retrofit_demo.png>] [50] [51]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2017.
+ [52]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2017.
  (mobpro-zf.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1746.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1746.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2017.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2017.
 
 Package rerunfilecheck Info: File `mobpro-zf.out' has not changed.
-(rerunfilecheck)             Checksum: 71E3A83D83ED98810EDAB66529D835E8;5820.
+(rerunfilecheck)             Checksum: 35843662DF2888B0678404B76A5B661B;6212.
  ) 
 Here is how much of TeX's memory you used:
- 11942 strings out of 492982
- 183132 string characters out of 3118054
- 506812 words of memory out of 3000000
- 15188 multiletter control sequences out of 15000+200000
+ 12108 strings out of 492932
+ 186133 string characters out of 3115007
+ 508674 words of memory out of 3000000
+ 15306 multiletter control sequences out of 15000+200000
  40826 words of font info for 52 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,12n,40p,818b,1224s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1017,9 +1113,9 @@ helvetic/uhvbo8a.pfb></Users/maurinthalmann/Library/Application Support/MiKTeX/
 texmfs/install/fonts/type1/urw/helvetic/uhvr8a.pfb></Users/maurinthalmann/Libra
 ry/Application Support/MiKTeX/texmfs/install/fonts/type1/urw/helvetic/uhvro8a.p
 fb>
-Output written on mobpro-zf.pdf (45 pages, 3563239 bytes).
+Output written on mobpro-zf.pdf (53 pages, 6728658 bytes).
 PDF statistics:
- 1110 PDF objects out of 1200 (max. 8388607)
- 444 named destinations out of 1000 (max. 500000)
- 812 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1243 PDF objects out of 1440 (max. 8388607)
+ 497 named destinations out of 1000 (max. 500000)
+ 917 words of extra memory for PDF output out of 10000 (max. 10000000)
 

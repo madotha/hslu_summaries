@@ -209,59 +209,63 @@ Zusammenfassung FS 2019}}
 			
 		\end{itemize}
 	
-	\subsection{Android 4 - Kommunikation \& Nebenläufigkeit}
+		\subsection{Android 4 - Kommunikation \& Nebenläufigkeit}
+		
+		\begin{itemize}
+			
+			\item \textbf{Android Developers | ANR - Keep your App responsive}\\
+			\href{https://developer.android.com/training/articles/perf-anr.html}
+			{https://developer.android.com/training/articles/perf-anr.html}
+			
+			\item \textbf{Android Developers | Background Processing}\\
+			\href{https://developer.android.com/guide/background/}
+			{https://developer.android.com/guide/background/}
+			
+			\item \textbf{Android Developers | Threading}\\
+			\href{https://developer.android.com/topic/performance/threads}
+			{https://developer.android.com/topic/performance/threads}
+			
+			\item \textbf{Android Developers | Prozesse \& Threads (Übersicht)}\\
+			\href{https://developer.android.com/guide/components/processes-and-threads.html}
+			{https://developer.android.com/guide/components/processes-and-threads.html}
+			
+			\item \textbf{Android Developers | AsyncTask}\\
+			\href{https://developer.android.com/reference/android/os/AsyncTask?hl=en}
+			{https://developer.android.com/reference/android/os/AsyncTask?hl=en}
+			
+			\item \textbf{Android Developers | Verhaltensänderungen aller Apps}\\
+			\href{https://developer.android.com/about/versions/pie/android-9.0-changes-all?hl=en}
+			{https://developer.android.com/about/versions/pie/android-9.0-changes-all?hl=en}
+			
+			\item \textbf{HTTP Definition}\\
+			\href{https://tools.ietf.org/html/rfc2616}
+			{https://tools.ietf.org/html/rfc2616}
+			
+			\item \textbf{Github | OkHttpClient}\\
+			\href{http://square.github.io/okhttp/}
+			{http://square.github.io/okhttp/}
+			
+			\item \textbf{Github | Retrofit}\\
+			\href{https://square.github.io/retrofit/}
+			{https://square.github.io/retrofit/}
+			
+			\item \textbf{JSON Informations}\\
+			\href{http://json.org}
+			{http://json.org}
+			
+			\item \textbf{JSON Formatter \& Validator}\\
+			\href{https://jsonformatter.curiousconcept.com/}
+			{https://jsonformatter.curiousconcept.com/}
+			
+			\item \textbf{Acronime REST Service Doku}\\
+			\href{http://www.nactem.ac.uk/software/acromine/rest.html}
+			{http://www.nactem.ac.uk/software/acromine/rest.html}
+			
+		\end{itemize}
 	
-	\begin{itemize}
-		
-		\item \textbf{Android Developers | ANR - Keep your App responsive}\\
-		\href{https://developer.android.com/training/articles/perf-anr.html}
-		{https://developer.android.com/training/articles/perf-anr.html}
-		
-		\item \textbf{Android Developers | Background Processing}\\
-		\href{https://developer.android.com/guide/background/}
-		{https://developer.android.com/guide/background/}
-		
-		\item \textbf{Android Developers | Threading}\\
-		\href{https://developer.android.com/topic/performance/threads}
-		{https://developer.android.com/topic/performance/threads}
-		
-		\item \textbf{Android Developers | Prozesse \& Threads (Übersicht)}\\
-		\href{https://developer.android.com/guide/components/processes-and-threads.html}
-		{https://developer.android.com/guide/components/processes-and-threads.html}
-		
-		\item \textbf{Android Developers | AsyncTask}\\
-		\href{https://developer.android.com/reference/android/os/AsyncTask?hl=en}
-		{https://developer.android.com/reference/android/os/AsyncTask?hl=en}
-		
-		\item \textbf{Android Developers | Verhaltensänderungen aller Apps}\\
-		\href{https://developer.android.com/about/versions/pie/android-9.0-changes-all?hl=en}
-		{https://developer.android.com/about/versions/pie/android-9.0-changes-all?hl=en}
-		
-		\item \textbf{HTTP Definition}\\
-		\href{https://tools.ietf.org/html/rfc2616}
-		{https://tools.ietf.org/html/rfc2616}
-		
-		\item \textbf{Github | OkHttpClient}\\
-		\href{http://square.github.io/okhttp/}
-		{http://square.github.io/okhttp/}
-		
-		\item \textbf{Github | Retrofit}\\
-		\href{https://square.github.io/retrofit/}
-		{https://square.github.io/retrofit/}
-		
-		\item \textbf{JSON Formatter \& Validator}\\
-		\href{https://jsonformatter.curiousconcept.com/}
-		{https://jsonformatter.curiousconcept.com/}
-		
-		\item \textbf{Acronime REST Service Doku}\\
-		\href{http://www.nactem.ac.uk/software/acromine/rest.html}
-		{http://www.nactem.ac.uk/software/acromine/rest.html}
-		
-	\end{itemize}
+		\newpage
 	
-	\newpage
-	
-	\section{Android 1 - Grundlagen}
+\section{Android 1 - Grundlagen}
 	Informationen zur Androidprogrammierung können stets dem Android Developer Guide entnommen werden unter: \textit{\href{https://developer.android.com/}{developer.android.com}}
 	Apps sollen grundsätzlich gegen das aktuellste API entwickelt werden, aktuell API Level 28 Android 9 "Pie".
 	Im Gradle-Build-Skript werden deshalb folgende SDK-Versionen festgehalten:
@@ -278,224 +282,230 @@ Zusammenfassung FS 2019}}
 		\item Komponenten müssen beim System registriert werden (teilweise mit Rechten = Privileges)
 		\item System verwaltet Lebenszyklus von Komponenten: Gestartet, Pausiert, Aktiv, Gestoppt, etc.
 	\end{itemize}
-\subsection{Komponenten}
-	Applikationen sind aus Komponenten aufgebaut, die App verwendet dabei eigene Komponenten (min. eine) oder Komponenten von anderen, existierenden Applikationen.
-\begin{table}[h!]
-	\begin{tabular}{ l | p{11cm} }
-		\textbf{\textit{Name}}               & \textbf{\textit{Beschreibung}} \\
-		\hline
-		\textbf{Activity}           & UI-Komponente, entspricht typischerweise einem Bildschirm \\
-		\textbf{Service}            & Komponente ohne UI, Dienst läuft typischerweise im Hintergrund \\
-		\textbf{Broadcast Receiver} & Event-Handler, welche auf App-interne oder systemweite Broadcast-Nachrichten reagieren \\
-		\textbf{Content Provider}   & Komponente, welche Datenaustausch zwischen versch. Applikationen ermöglicht
-	\end{tabular}
-\end{table}
 
-\noindent
-\textbf{Activity} entspricht einem Bildschirm, stellt UI-Widgets dar, reagiert auf Benutzer-Eingabe \& -Ereignisse. Eine App besteht meist aus mehreren Activities / Bildschirmen, die auf einem "Stack" liegen. \\
-Basisklasse: \textit{android.app.Activity} \\
-\textbf{Service} läuft typischerweise im Hintergrund für unbeschränkte Zeit, hat keine graphische Benutzer\-schnittstelle (UI), ein UI für ein Service wird immer von einer Activity dargestellt. \\
-Basisklasse: \textit{android.app.Service} \\
-\textbf{Broadcast Receiver} ist eine Komponente, welche Broadcast-Nachrichten empfängt und darauf reagiert. Viele Broadcasts stammen vom System (Neue Zeitzone, Akku fast leer,...), App kann aber auch interne Broadcasts versenden. \\
-Basisklasse: \textit{android.content.BroadcastReceiver}\\
-\textbf{Content Provider} ist die einzige \textit{direkte} Möglichkeit zum Datenaustausch zwischen Android-Apps. Bieten Standard-API für Suchen, Löschen, Aktualisieren und Einfügen von Daten. \\
-Basisklasse: \textit{android.content.ContentProvider}
-\newpage
-\subsection{Das Android-Manifest}
-\textbf{AndroidManifest.xml} dient dazu, alle Komponenten einer Applikation dem System bekannt zu geben. Es enthält Informationen über Komponenten der Applikation, statische Rechte (Privileges), Liste mit Erlaubnissen (Permissions), ggf. Einschränkungen für Aufrufe (Intent-Filter). Es beschreibt die statischen Eigenschaften einer Applikation, beispielsweise: \\
-\textit{(Diese Infos werden bei der App-Installation im System registriert, zusätzliche Infos (Version, ID, etc.) befinden sich im Gradle-Build-Skript (können build-abhängig sein))}
-
-\begin{itemize}
-	\item Java-Package-Name
-	\item Benötigte Rechte (Internet, Kontakte, usw.)
-	\item Deklaration der Komponenten
+	\subsection{Komponenten}
+		Applikationen sind aus Komponenten aufgebaut, die App verwendet dabei eigene Komponenten (min. eine) oder Komponenten von anderen, existierenden Applikationen.
+	\begin{table}[h!]
+		\begin{tabular}{ l | p{11cm} }
+			\textbf{\textit{Name}}               & \textbf{\textit{Beschreibung}} \\
+			\hline
+			\textbf{Activity}           & UI-Komponente, entspricht typischerweise einem Bildschirm \\
+			\textbf{Service}            & Komponente ohne UI, Dienst läuft typischerweise im Hintergrund \\
+			\textbf{Broadcast Receiver} & Event-Handler, welche auf App-interne oder systemweite Broadcast-Nachrichten reagieren \\
+			\textbf{Content Provider}   & Komponente, welche Datenaustausch zwischen versch. Applikationen ermöglicht
+		\end{tabular}
+	\end{table}
+	
+	\noindent
+	\textbf{Activity} entspricht einem Bildschirm, stellt UI-Widgets dar, reagiert auf Benutzer-Eingabe \& -Ereignisse. Eine App besteht meist aus mehreren Activities / Bildschirmen, die auf einem "Stack" liegen. \\
+	Basisklasse: \textit{android.app.Activity} \\
+	\textbf{Service} läuft typischerweise im Hintergrund für unbeschränkte Zeit, hat keine graphische Benutzer\-schnittstelle (UI), ein UI für ein Service wird immer von einer Activity dargestellt. \\
+	Basisklasse: \textit{android.app.Service} \\
+	\textbf{Broadcast Receiver} ist eine Komponente, welche Broadcast-Nachrichten empfängt und darauf reagiert. Viele Broadcasts stammen vom System (Neue Zeitzone, Akku fast leer,...), App kann aber auch interne Broadcasts versenden. \\
+	Basisklasse: \textit{android.content.BroadcastReceiver}\\
+	\textbf{Content Provider} ist die einzige \textit{direkte} Möglichkeit zum Datenaustausch zwischen Android-Apps. Bieten Standard-API für Suchen, Löschen, Aktualisieren und Einfügen von Daten. \\
+	Basisklasse: \textit{android.content.ContentProvider}
+	
+	\newpage
+	\subsection{Das Android-Manifest}
+	\textbf{AndroidManifest.xml} dient dazu, alle Komponenten einer Applikation dem System bekannt zu geben. Es enthält Informationen über Komponenten der Applikation, statische Rechte (Privileges), Liste mit Erlaubnissen (Permissions), ggf. Einschränkungen für Aufrufe (Intent-Filter). Es beschreibt die statischen Eigenschaften einer Applikation, beispielsweise: \\
+	\textit{(Diese Infos werden bei der App-Installation im System registriert, zusätzliche Infos (Version, ID, etc.) befinden sich im Gradle-Build-Skript (können build-abhängig sein))}
+	
 	\begin{itemize}
-		\item Activities, Services, Broadcast Receivers, Content Providers
-		\item Name (+ Basis-Package = Java Klasse)
-		\item Anforderungen für Aufruf (Intent) für A, S, BR
-		\item Format der gelieferten Daten für CP
+		\item Java-Package-Name
+		\item Benötigte Rechte (Internet, Kontakte, usw.)
+		\item Deklaration der Komponenten
+		\begin{itemize}
+			\item Activities, Services, Broadcast Receivers, Content Providers
+			\item Name (+ Basis-Package = Java Klasse)
+			\item Anforderungen für Aufruf (Intent) für A, S, BR
+			\item Format der gelieferten Daten für CP
+		\end{itemize}
 	\end{itemize}
-\end{itemize}
-\begin{figure}[htb!]
-	\centering
-	\includegraphics[width=12cm]{img/manifestxml.jpg}
-	\caption{Beispiel eines Android-Manifests}
-	\label{fig:manifestxml}
-\end{figure}
-\subsection{Activities \& Aufruf mit Intents}
-Zwischen Komponenten herrscht das Prinzip der losen Kopplung:
-\begin{itemize}
-	\item Komponenten rufen andere Komponenten über Intents (= Nachrichten) auf
-	\item Offene Kommunikation: Sender weiss nicht ob Empfänger existiert
-	\item Parameterübergabe als Strings (untypisiert)
-	\item Parameter: von Empfänger geprüft, geparst \& interpretiert (oder ignoriert)
-	\item Keine expliziten Abhängigkeiten $\rightarrow$ Robuste Systemarchitektur
-\end{itemize}
-\newpage
-\begin{figure}[htb!]
-	\centering
-	\includegraphics[width=7.5cm]{img/intents_comm.png}
-	\caption{Kommunikation zwischen Komponenten mit Intents}
-	\label{fig:intents_comm}	
-\end{figure}
-\noindent
-Intents werden benutzt, um Komponenten zu benachrichtigen oder um Kontrolle zu übergeben. Es gibt folgende zwei Arten von Intents:
-\begin{description}
-	\item[Explizite Intents] adressieren eine Komponente direkt
-	\item[Implizite Intents] beschreiben einen geeigneten Empfänger
-\end{description}
-\textbf{WICHTIG:} Activities müssen immer im Manifest deklariert werden, da sie sonst nicht als "public" gelten und eine Exception schmeissen. Das geht auch ganz einfach folgendermassen im Manifest unter "application":
-\begin{lstlisting}
-<activity android:name=".Sender" />
-<activity android:name=".Receiver" />
-\end{lstlisting}
-\subsubsection{Beispielaufruf Expliziter Intent}
-\textbf{Sender Activity:}
-\begin{lstlisting}
-public void onClickSendBtn(final View btn) {
-	Intent intent = new Intent(this, Receiver.class); 
-	// Receiver.class ist hier der explizite Empfaenger
-	intent.putExtra("msg", "Hello World!");
-	startActivity(intent);
-}
-\end{lstlisting}
-\textbf{Receiver Activity:}
-\begin{lstlisting}
-public void onCreate(Bundle savedInstanceState) {
-	// ...
-	Intent intent = getIntent();
-	String msg = intent.getExtras().getString("msg");
-	displayMessage(msg);
-}
-\end{lstlisting}
-\newpage
-\subsubsection{Beispielaufruf Impliziter Intent}
-\textbf{Sender Activity:}
-\begin{lstlisting}
-Intent browserCall = new Intent();
-browserCall.setAction(Intent.ACTION_VIEW);
-browserCall.setData(Uri.parse("http://www.hslu.ch"));
-startActivity(browserCall);	
-\end{lstlisting}
-\textit{ACTION\_VIEW} ist hierbei kein expliziter Empfängertyp, sondern nur eine gewünschte Aktion. Die mitgege\-bene URL wird auch ein \textit{Call Parameter} genannt. Gesucht ist in diesem Fall eine Komponente, welche eine URL anzeigen/verwenden kann.\\
-\subsection{Activities \& Subactivities}
-\textbf{Activity Back Stack:} Activities liegen aufeinander wie ein Stapel Karten, neuste Activity zuoberst und in der Regel ist nur diese sichtbar (Durch Transparenz sind hier Ausnahmen möglich).
-Durch "back" oder "finish" wird die oberste Karte entfernt und man kehrt zur zweitletzten Activity zurück. Mehrere Instanzen derselben Activity wären mehrere solche Karten, das Verhalten kann jedoch konfiguriert werden (z.Bsp. maximal eine Instant, mehrere Activities öffnen, etc.)\\
-\textbf{(Sub-)Activities und Rückgabewerte:} Eine Activity kann Rückgabewerte einer anderen (Sub-)Activity erhalten.
-\begin{lstlisting}
-// 1. Aufruf der SubActivity mit
-startActivityForResult(intent, requestId)
+	\begin{figure}[htb!]
+		\centering
+		\includegraphics[width=12cm]{img/manifestxml.jpg}
+		\caption{Beispiel eines Android-Manifests}
+		\label{fig:manifestxml}
+	\end{figure}
 
-// 2. SubActivity setzt am Ende Resultat mit
-setResult(resultCode, intent) // intent als Wrapper fuer Rueckgabewerte
-
-// 3. SubActiity beendet sich mit
-finish()
-
-// 4. Nach Beendung der SubActivity wird folgendes im Aufrufer aufgerufen:
-onActivityResult(requestId, resultCode, intent)
-// resultCode: RESULT_OK, RESULT_CANCELLED
-\end{lstlisting}
-\subsection{Lebenszyklus \& Zustände von Applikationen/Activities}
-Das System kann Applikationen bei knappem Speicher ohne Vorwarnung terminieren (nur Activities im Hintergrund, dies geschieht unbemerkt vom User, die App wird bei Zurücknavigation wiederhergestellt). Eine Applikation kann ihren Lebenszyklus demnach nicht kontrollieren und muss in der Lage sein, ihren Zustand speichern und wieder laden zu können. Applikationen durchlaufen mehrere Zustände in ihrem Lebenszyklus, Zustandsübergänge rufen Callback-Methoden auf (welche von uns überschrieben werden können.\\
-
-\noindent
-\textbf{Activity-Zustände:}
-\begin{table} [h!]
-	\begin{tabular}{ c | p{10cm} }
-		\textbf{Zustand} & \textbf{Beschreibung} \\ \hline
-		\textbf{Running} & Die Activity ist im Vordergrund auf dem Bildschirm (zuoberst auf dem Activity-Stack für die aktuelle Aufgabe). \\ \hline
-		\textbf{Paused} & Die Activity hat den Fokus verloren, ist aber immer noch sichtbar für den Benutzer. \\ \hline
-		\textbf{Stopped} & Die Activity ist komplett verdeckt von einer andern Activity. Der Zustand der Activity bleibt jedoch erhalten.
-	\end{tabular}
-\end{table}
-\newpage
-\subsubsection{Lifecycle einer Applikation}
-\begin{figure}[h!]
-	\centering
-	\includegraphics[width=13cm]{img/lifecycle.jpg}
-	\caption{Lifecycle einer Applikation}
-	\label{fig:lifecycle}
-\end{figure}
-\begin{figure}[h!]
-	\centering
-	\includegraphics[width=11cm]{img/lifetime.jpg}
-	\caption{Lebenszeiten der einzelnen App-Zustände}
-	\label{fig:lifetime}
-\end{figure}
-\newpage
-\subsection{Charakterisierung einer Activity}
-\begin{itemize}
-	\item Muss im Manifest deklariert werden
-	\item GUI-Controller
+	\subsection{Activities \& Aufruf mit Intents}
+	Zwischen Komponenten herrscht das Prinzip der losen Kopplung:
 	\begin{itemize}
-		\item Repräsentiert eine Applikations-/Bildschirmseite
-		\item Definiert Seitenlayout und GUI-Komponenten
-		\item Kann aus Fragmenten ( = "Sub-Activities") aufgebaut sein
-		\item Reagiert auf Benutzereingaben
-		\item Beinhaltet Applikationslogik für dargestellte Seite
+		\item Komponenten rufen andere Komponenten über Intents (= Nachrichten) auf
+		\item Offene Kommunikation: Sender weiss nicht ob Empfänger existiert
+		\item Parameterübergabe als Strings (untypisiert)
+		\item Parameter: von Empfänger geprüft, geparst \& interpretiert (oder ignoriert)
+		\item Keine expliziten Abhängigkeiten $\rightarrow$ Robuste Systemarchitektur
 	\end{itemize}
-\end{itemize}
-\textbf{Beispiel einer Activity:}
-\begin{lstlisting}
-public class Demo extends Activity {
-	// Called when the Activity is first created
+	\newpage
+	\begin{figure}[htb!]
+		\centering
+		\includegraphics[width=7.5cm]{img/intents_comm.png}
+		\caption{Kommunikation zwischen Komponenten mit Intents}
+		\label{fig:intents_comm}	
+	\end{figure}
+	\noindent
+	Intents werden benutzt, um Komponenten zu benachrichtigen oder um Kontrolle zu übergeben. Es gibt folgende zwei Arten von Intents:
+	\begin{description}
+		\item[Explizite Intents] adressieren eine Komponente direkt
+		\item[Implizite Intents] beschreiben einen geeigneten Empfänger
+	\end{description}
+	\textbf{WICHTIG:} Activities müssen immer im Manifest deklariert werden, da sie sonst nicht als "public" gelten und eine Exception schmeissen. Das geht auch ganz einfach folgendermassen im Manifest unter "application":
+	\begin{lstlisting}
+	<activity android:name=".Sender" />
+	<activity android:name=".Receiver" />
+	\end{lstlisting}
+	
+	\subsubsection{Beispielaufruf Expliziter Intent}
+	\textbf{Sender Activity:}
+	\begin{lstlisting}
+	public void onClickSendBtn(final View btn) {
+		Intent intent = new Intent(this, Receiver.class); 
+		// Receiver.class ist hier der explizite Empfaenger
+		intent.putExtra("msg", "Hello World!");
+		startActivity(intent);
+	}
+	\end{lstlisting}
+	\textbf{Receiver Activity:}
+	\begin{lstlisting}
 	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.main); // Definiert Layout und UI
-	} 
-}	
-\end{lstlisting}
-\subsubsection{Zustandsänderung - Hook-Methoden}
-Das System benachrichtigt Activities durch Aufruf einer der folgenden Methoden der Klasse \textit{Activity}:
-\begin{itemize}
-	\item void onCreate(Bundle savedInstanceState)
-	\item void onStart() / void onRestart()
-	\item void onResume()
-	\item void onPause() $\rightarrow$ \textit{bspw. Animation stoppen}
-	\item void onStop()
-	\item void onDestroy() $\rightarrow$ \textit{bspw. Ressourcen freigeben}
-\end{itemize}
-Durch das Überschreiben dieser Methoden können wir uns in den Lebenszyklus einklinken. Immer \textbf{super()} aufrufen, sonst wirft es eine Exception.
-\newpage
-\subsection{Android - Hinter den Kulissen}
-\begin{figure}[h!]
-	\centering
-	\includegraphics[width=11cm]{img/androidstack.jpg}
-	\caption{Der Android-Stack}
-	\label{fig:androstack}
-\end{figure}
-\begin{itemize}
-	\item \textbf{Linux-Kernel:} OS, FS, Security, Drivers, ...
-	\item \textbf{HAL (Hardware Abstraction Layer):} Camera-, Sensor-, ... Abstraktion
-	\item \textbf{ART} (Android Runtime)
+		// ...
+		Intent intent = getIntent();
+		String msg = intent.getExtras().getString("msg");
+		displayMessage(msg);
+	}
+	\end{lstlisting}
+	
+	\newpage
+	
+	\subsubsection{Beispielaufruf Impliziter Intent}
+	\textbf{Sender Activity:}
+	\begin{lstlisting}
+	Intent browserCall = new Intent();
+	browserCall.setAction(Intent.ACTION_VIEW);
+	browserCall.setData(Uri.parse("http://www.hslu.ch"));
+	startActivity(browserCall);	
+	\end{lstlisting}
+	\textit{ACTION\_VIEW} ist hierbei kein expliziter Empfängertyp, sondern nur eine gewünschte Aktion. Die mitgege\-bene URL wird auch ein \textit{Call Parameter} genannt. Gesucht ist in diesem Fall eine Komponente, welche eine URL anzeigen/verwenden kann.\\
+	\subsection{Activities \& Subactivities}
+	\textbf{Activity Back Stack:} Activities liegen aufeinander wie ein Stapel Karten, neuste Activity zuoberst und in der Regel ist nur diese sichtbar (Durch Transparenz sind hier Ausnahmen möglich).
+	Durch "back" oder "finish" wird die oberste Karte entfernt und man kehrt zur zweitletzten Activity zurück. Mehrere Instanzen derselben Activity wären mehrere solche Karten, das Verhalten kann jedoch konfiguriert werden (z.Bsp. maximal eine Instant, mehrere Activities öffnen, etc.)\\
+	\textbf{(Sub-)Activities und Rückgabewerte:} Eine Activity kann Rückgabewerte einer anderen (Sub-)Activity erhalten.
+	\begin{lstlisting}
+	// 1. Aufruf der SubActivity mit
+	startActivityForResult(intent, requestId)
+	
+	// 2. SubActivity setzt am Ende Resultat mit
+	setResult(resultCode, intent) // intent als Wrapper fuer Rueckgabewerte
+	
+	// 3. SubActiity beendet sich mit
+	finish()
+	
+	// 4. Nach Beendung der SubActivity wird folgendes im Aufrufer aufgerufen:
+	onActivityResult(requestId, resultCode, intent)
+	// resultCode: RESULT_OK, RESULT_CANCELLED
+	\end{lstlisting}
+	\subsection{Lebenszyklus \& Zustände von Applikationen/Activities}
+	Das System kann Applikationen bei knappem Speicher ohne Vorwarnung terminieren (nur Activities im Hintergrund, dies geschieht unbemerkt vom User, die App wird bei Zurücknavigation wiederhergestellt). Eine Applikation kann ihren Lebenszyklus demnach nicht kontrollieren und muss in der Lage sein, ihren Zustand speichern und wieder laden zu können. Applikationen durchlaufen mehrere Zustände in ihrem Lebenszyklus, Zustandsübergänge rufen Callback-Methoden auf (welche von uns überschrieben werden können.\\
+	
+	\noindent
+	\textbf{Activity-Zustände:}
+	\begin{table} [h!]
+		\begin{tabular}{ c | p{10cm} }
+			\textbf{Zustand} & \textbf{Beschreibung} \\ \hline
+			\textbf{Running} & Die Activity ist im Vordergrund auf dem Bildschirm (zuoberst auf dem Activity-Stack für die aktuelle Aufgabe). \\ \hline
+			\textbf{Paused} & Die Activity hat den Fokus verloren, ist aber immer noch sichtbar für den Benutzer. \\ \hline
+			\textbf{Stopped} & Die Activity ist komplett verdeckt von einer andern Activity. Der Zustand der Activity bleibt jedoch erhalten.
+		\end{tabular}
+	\end{table}
+	\newpage
+	\subsubsection{Lifecycle einer Applikation}
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=13cm]{img/lifecycle.jpg}
+		\caption{Lifecycle einer Applikation}
+		\label{fig:lifecycle}
+	\end{figure}
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=11cm]{img/lifetime.jpg}
+		\caption{Lebenszeiten der einzelnen App-Zustände}
+		\label{fig:lifetime}
+	\end{figure}
+	\newpage
+	\subsection{Charakterisierung einer Activity}
 	\begin{itemize}
-		\item Jede App in eigenem Prozess
-		\item Optimiert für mehrere JVM auf low-memory Geräten
-		\item Eigenes Bytecode-Format (Crosscompiling)
-		\item JIT und AOT Support
+		\item Muss im Manifest deklariert werden
+		\item GUI-Controller
+		\begin{itemize}
+			\item Repräsentiert eine Applikations-/Bildschirmseite
+			\item Definiert Seitenlayout und GUI-Komponenten
+			\item Kann aus Fragmenten ( = "Sub-Activities") aufgebaut sein
+			\item Reagiert auf Benutzereingaben
+			\item Beinhaltet Applikationslogik für dargestellte Seite
+		\end{itemize}
 	\end{itemize}
-	\item \textbf{Native C/C++ Libriaries:} Zugriff via Android NDK
-	\item \textbf{Android Framework:} Android Java API
-	\item \textbf{Applications:} System- und eigene Apps
-\end{itemize}
-\newpage
-\subsubsection{Android-Security-Konzept}
-\textbf{Sandbox-Konzept:} 
-\begin{itemize}
-	\item Jede laufende Android-Anwendung hat seinen eigenen Prozess, Benutzer, ART-Instanz, Heap und Dateisystembereich $\rightarrow$ jedes App hat eigenen Linux-User
-	\item Das Berechtigungssystem von Linux ist Benutzer-basiert, es betrifft deshalb sowohl den Speicherzugriff wie auch das Dateisystem. 
-	\item Anwendungen signieren: erschwert Code-Manipulationen und erlaubt das Teilen einer Sandbox bei gleicher sharedUser-ID
-	\item Berechtigungen werden im Manifest deklariert, kontrollierte Öffnung der Sandbox-Restriktionen
-\end{itemize}
-\begin{figure}[htb!]
-	\centering
-	\includegraphics[width=12cm]{img/securitymodel.jpg}
-	\caption{Android Security-Modell}
-	\label{fig:secumodel}
-\end{figure}
-
-\newpage
+	\textbf{Beispiel einer Activity:}
+	\begin{lstlisting}
+	public class Demo extends Activity {
+		// Called when the Activity is first created
+		public void onCreate(Bundle savedInstanceState) {
+			super.onCreate(savedInstanceState);
+			setContentView(R.layout.main); // Definiert Layout und UI
+		} 
+	}	
+	\end{lstlisting}
+	\subsubsection{Zustandsänderung - Hook-Methoden}
+	Das System benachrichtigt Activities durch Aufruf einer der folgenden Methoden der Klasse \textit{Activity}:
+	\begin{itemize}
+		\item void onCreate(Bundle savedInstanceState)
+		\item void onStart() / void onRestart()
+		\item void onResume()
+		\item void onPause() $\rightarrow$ \textit{bspw. Animation stoppen}
+		\item void onStop()
+		\item void onDestroy() $\rightarrow$ \textit{bspw. Ressourcen freigeben}
+	\end{itemize}
+	Durch das Überschreiben dieser Methoden können wir uns in den Lebenszyklus einklinken. Immer \textbf{super()} aufrufen, sonst wirft es eine Exception.
+	\newpage
+	\subsection{Android - Hinter den Kulissen}
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=11cm]{img/androidstack.jpg}
+		\caption{Der Android-Stack}
+		\label{fig:androstack}
+	\end{figure}
+	\begin{itemize}
+		\item \textbf{Linux-Kernel:} OS, FS, Security, Drivers, ...
+		\item \textbf{HAL (Hardware Abstraction Layer):} Camera-, Sensor-, ... Abstraktion
+		\item \textbf{ART} (Android Runtime)
+		\begin{itemize}
+			\item Jede App in eigenem Prozess
+			\item Optimiert für mehrere JVM auf low-memory Geräten
+			\item Eigenes Bytecode-Format (Crosscompiling)
+			\item JIT und AOT Support
+		\end{itemize}
+		\item \textbf{Native C/C++ Libriaries:} Zugriff via Android NDK
+		\item \textbf{Android Framework:} Android Java API
+		\item \textbf{Applications:} System- und eigene Apps
+	\end{itemize}
+	\newpage
+	\subsubsection{Android-Security-Konzept}
+	\textbf{Sandbox-Konzept:} 
+	\begin{itemize}
+		\item Jede laufende Android-Anwendung hat seinen eigenen Prozess, Benutzer, ART-Instanz, Heap und Dateisystembereich $\rightarrow$ jedes App hat eigenen Linux-User
+		\item Das Berechtigungssystem von Linux ist Benutzer-basiert, es betrifft deshalb sowohl den Speicherzugriff wie auch das Dateisystem. 
+		\item Anwendungen signieren: erschwert Code-Manipulationen und erlaubt das Teilen einer Sandbox bei gleicher sharedUser-ID
+		\item Berechtigungen werden im Manifest deklariert, kontrollierte Öffnung der Sandbox-Restriktionen
+	\end{itemize}
+	\begin{figure}[htb!]
+		\centering
+		\includegraphics[width=12cm]{img/securitymodel.jpg}
+		\caption{Android Security-Modell}
+		\label{fig:secumodel}
+	\end{figure}
+	
+	\newpage
 \section{Android 2 - Benutzerschnittstellen}
 
 \subsection{GUI einer Activity}
@@ -1695,38 +1705,296 @@ Jeder Content Provider bietet eine eigene Standard-API, in der Android Dokumenta
 
 \section{Android 4 - Kommunikation \& Nebenläufigkeit}
 
-\subsection{Nebenläufigkeit}
-
-	\subsubsection{Android und der Main-Thread}
-
+	\subsection{Nebenläufigkeit}
+	
+		\subsubsection{Android und der Main-Thread}
+	
+		\begin{itemize}
+			\item Eine Applikation baut ihr UI nur auf einem Thread, dem \textbf{main-Thread} auf\\
+			$\rightarrow$ blockiert man den main-Thread, friert das ganze UI ein
+			\item UI-Komponenten sind nicht Thread-safe\\
+			$\rightarrow$ UI-Zugriff nur aus main-Thread, sonst Exception
+			\item Netzwerk- und andere Methoden können lange dauern und sind blockierend, werden diese auf dem main-Thread aufgerufen, wird er blockiert und es werden keine UI-Events mehr aufgerufen\\
+			Bsp. \texttt{URLConnection.connect(), Bitmap.resize(), Database.open(), ... }
+		\end{itemize}
+	
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=.7\textwidth]{img/thread_sleep.jpg}
+			\caption{Einfaches Blockieren der App mittels \texttt{Thread.sleep(long time)}}
+		\end{figure}
+	
+		\subsubsection{Android-Überwachung - ANR (Application Not Responding)}
+			\begin{itemize}
+				\item Android überwacht Ansprechbarkeit von Apps nach gewissen Kriterien
+					\begin{itemize}
+						\item Keine Reaktion auf Input-Event innert 5 Sekunden
+						\item Broadcast-Receiver nicht fertig innert 10 Sekunden
+					\end{itemize}
+				\item Möglicher Effekt ist ein ANR-Dialog ("App reagiert nicht")
+				\item System-Mechanismus zum Stoppen "böser" Apps
+				\item Fragen, die man sich stellt, um den main-Thread zu entlasten:
+					\begin{itemize}
+						\item Ist eine Hintergrundaufgabe aufschiebbar?
+						\item Hat ein Task Auswirkungen auf das UI?
+						\item Wartet der User auf ein Resultat?
+					\end{itemize}
+				\item Herausforderungen dabei:
+					\begin{itemize}
+						\item Das Resultat am Ende auf dem UI-Thread darstellen
+						\item Ist das UI noch da?
+					\end{itemize}
+				\item Wenn eine Aktion nicht aufschiebbar ist:
+					\begin{enumerate}
+						\item \textbf{Klasse \texttt{AsyncTask}}\\
+						Konstrukt zur Auslagerung zeitintensiver Aufgaben auf Background-Task, für die meisten Fälle ausreichend
+						\item \textbf{Eigene \texttt{Thread }Instanzen}\\
+						Standardimplementierung von Nebenläufigkeit in Java, kann komplex werden: Synchronisierung, Deadlocks, ...
+						\item \textbf{Foreground Service}\\
+						Hintergrundaktionen, die vom Nutzer bemerkt werden z.Bsp. Musik-Player
+					\end{enumerate}
+				\item Zurückgelangen zum UI-Thread:
+					\begin{enumerate}
+						\item Klasse \texttt{AsyncTask}: \\
+						Spezielle Methoden auf Main-Thread, bspw. \texttt{onProgressUpdate, onPostExecute, ...}
+						\item Eigener \texttt{Thread}, zwei Möglichkeiten:
+							\begin{itemize}
+								\item \texttt{Activity.runOnUiThread(Runnable action)}
+								\item \texttt{View.post(Runnable action)}
+								\item Klasse \texttt{android.os.Handler} $\rightarrow$ nutzt Message Queue von Thread
+							\end{itemize}
+					\end{enumerate}
+			\end{itemize}
+			\newpage
+			\begin{figure}[htb!]
+				\centering
+				\includegraphics[width=.6\textwidth]{img/background_work.jpg}
+				\caption{Verschiedene Arten für Hintergrundaufgaben}
+			\end{figure}
+		
+			\paragraph{Langandauernde Operationen}
+			Android lässt gewisse Operationen auf main-Thread gar nicht erst zu!
+			Bsp. Netzwerk-API, bspw. Aufruf von \texttt{URLConnection.connect()} führt zu einer\\ \textbf{NetworkOnMainThreadException}\\
+			Grund dafür ist, dass Netzwerk-Kommunikation lange dauern kann, Netzwerk-Calls nie auf UI-Thread ausführen, \textbf{AsyncTask oder eigenen Thread verwenden} (und UI-Aktualisierungen in Methoden auf dem main-Thread!)
+	
+	\newpage
+	\subsection{Nebenläufigkeit: AsyncTask}
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=\textwidth]{img/asynctask.png}
+			\caption{\texttt{MyAsyncTask} Klasse}
+		\end{figure}
+		
+		\begin{itemize}
+			\item 3 Typ-Parameter
+			\begin{itemize}
+				\item \textbf{Params}: Typ der Input-Elemente, \\ Bsp. \texttt{URL} (Links auf Textfiles,...)
+				\item \textbf{Progress}: Typ der Zwischenresultate, \\ Bsp. \texttt{String} (\texttt{Void} falls nicht genutzt) (Heruntergeladener Titel, ...)
+				\item \textbf{Result}: Typ des Resultats, \\ Bsp. \texttt{Integer} (\texttt{Void} falls nicht genutzt) (Anzahl heruntergeladener Titel, ...)
+			\end{itemize}
+			\item 3 wichtige Methoden
+				\begin{itemize}
+					\item \texttt{doInBackground(Params...)}: Lange andauernd (Worker-Thread)
+					\item \texttt{onProgressUpdate(Progress...)}: Zwischenresultat verarbeiten (UI-Thread)
+					\item \texttt{onPostExecute(Result)}: Resultat verarbeiten (UI-Thread)
+				\end{itemize}
+			\item Schlussfolgerungen:
+				\begin{enumerate}
+					\item AsyncTasks werden standardmässig (seriell) durch einen einzelnen Worker-Thread ausgeführt.
+					\item Thread-Pool (parallele Ausführung) durch Angabe Executor möglich.
+					\item Implementierungs-Details (ggf. auch relevante) können sich ändern.
+				\end{enumerate}
+		\end{itemize}
+		
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=\textwidth]{img/ablauf_asynctask.png}
+			\caption{Ablauf mit und ohne AsyncTask}
+		\end{figure}
+	
+		\newpage
+		\subsubsection{Einige Demos aus dem Unterricht}
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=.9\textwidth]{img/async_demo_01.png}
+		\end{figure}
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=.9\textwidth]{img/async_demo_02.png}
+		\end{figure}
+	\newpage
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=.9\textwidth]{img/async_demo_03.png}
+		\end{figure}
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=.9\textwidth]{img/async_demo_04.png}
+		\end{figure}
+	
+	\newpage
+	\subsection{Nebenläufigkeit: Threads}
+		\paragraph{Repetition}
+		\texttt{java.lang.Thread implements Runnable}
+		\begin{itemize}
+			\item Muss \texttt{Runnable} gesetzt haben, übergeben im Konstruktor, oder selber \texttt{run()} implementieren
+			\item Wichtigste Methoden:
+				\begin{itemize}
+					\item \texttt{run()}
+					\item \texttt{start()}
+					\item \texttt{sleep (long)}
+					\item \texttt{isAlive()}
+				\end{itemize}
+			\item Interface \texttt{java.lang.Runnable} (oder Lambda)
+				\begin{itemize}
+					\item Eine Methode: \texttt{run()}
+					\item Implementierung des relevanten nebenläufigen Codes
+				\end{itemize}
+		\end{itemize}
+	
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=.9\textwidth]{img/threads_usage.png}
+			\caption{Verwendung von Threads}
+		\end{figure}
+	
+	
+	\subsection{(Backend-) Kommunikation über HTTP}
+	
+		Apps können mit Server im Hintergrund kommunizieren (hält Daten, stellt Business-Logik bereit, authentisiert User etc.).
+		Kommunikation findet i.d.R. über (REST) HTTP-API im Datenformat JSON (seltener XML) statt.
+		
+		\begin{itemize}
+			\item HTTP: Hyper Text Transfer Protocol \\
+					Zustandsloses Kommunikationsprotokoll
+				
+			\item Transport über TCP / IP
+			\item Request / Response Muster (Anfrage/Antwort): \\
+					GET, PUT, POST, DELETE
+					
+			\item Nachrichten bestehen aus Header \& Body
+			\begin{itemize}
+				\item 0 .. n Headers: Key-Value Paare
+				
+				\item Body (Content): beliebig, typischerweise Text
+			\end{itemize}
+			
+			\item Mit jeder Antwort liefert Server einen Antwortcode (Bsp. 200 = OK)
+			
+		\end{itemize}
+	
+		\subsubsection{HTTP-Requests absetzen}
+		
+		\begin{itemize}
+			\item \textbf{Veraltet:}\\
+					\texttt{URL} und \texttt{URLConnection}: Standard-Java-Klassen, erlauben das Absetzen von HTTP-Requests, mühsame Verwendung, veraltete API
+			
+			\item \textbf{Besser:}\\
+					HTTP-Client-Library verwenden, "headless Browser"\\
+					Empfohlen: OkHttpClient, Gradle Dependencies: \\
+					\texttt{com.squareup.okhttp3:okhttp:3.13.1}\\
+					\texttt{com.squareup.okhttp3:logging-interceptor:3.12.1}
+		\end{itemize}
+	
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[width=\textwidth]{img/okhttp_verwendung.png}
+			\caption{Beispiel der Verwendung von OkHttpClient}
+			\label{fig:okhttp_verwendung}
+		\end{figure}
+		
+		\begin{itemize}
+			\item Unverschlüsselte Kommunikation über HTTP seit Android 9 (API 28) unterbunden, kann im Manifest explizit erlaubt werden:\\
+			\texttt{android:usesCleartextTraffic="true"}
+			
+			\item Für den Internetzugriff (und Netzwerkstatus) muss die Berechtigung vorliegen bzw. deklariert werden, dies kann im Manifest geschehen:\\
+			\texttt{uses-permission android:name="android.permission.INTERNET"}\\
+			\texttt{uses-permission android:name="android.permission.ACCESS\_NETWORK\_STATE"}
+		\end{itemize}
+		\vspace{1em}
+		\textbf{Demo für lokales Testen der Backend-Kommunikation und Umwandlung von Binärdaten können in den MOBPRO-Folien \textit{"MobPro\_Android\_4"} eingesehen werden.}	
+		
+	\newpage	
+	\subsection{JSON-Webservices mit Retrofit konsumieren}
+	
+	Möglichst immer REST-Semantik (HTTP-Methoden für gewünschte Operation) verwenden.\\
+	
 	\begin{itemize}
-		\item Eine Applikation baut ihr UI nur auf einem Thread, dem \textbf{main-Thread} auf\\
-		$\rightarrow$ blockiert man den main-Thread, friert das ganze UI ein
-		\item UI-Komponenten sind nicht Thread-safe\\
-		$\rightarrow$ UI-Zugriff nur aus main-Thread, sonst Exception
-		\item Netzwerk- und andere Methoden können lange dauern und sind blockierend, werden diese auf dem main-Thread aufgerufen, wird er blockiert und es werden keine UI-Events mehr aufgerufen
+		\item \textbf{REST-ful Webservices}\\
+				Webservice auf Basis von HTTP
+				
+		\item Grundidee:
+		
+		\begin{itemize}
+			\item Base-URL: Ressourcensammlung / einzelne Ressource\\
+					\textit{(http://directory.com/contacts/{17})}
+			
+			\item HTTP-Methode: Operation auf Daten\\
+					\textit{(GET, PUT, POST, DELETE)}
+			
+			\item Antwort-Datenformat: XML, JSON, ...
+		\end{itemize}
 	\end{itemize}
 
-	\subsubsection{Android-Überwachung - ANR (Application Not Responding)}
-
-		%TODO
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=\textwidth]{img/restful_exmp.png}
+		\caption{Beispiel für RESTful Webservice}
+		\label{fig:restful_example}
+	\end{figure}
+		
+	\subsubsection{JSON Parsing mit GSON}
 	
-\subsection{Nebenläufigkeit: AsyncTask}
-
-		%TODO
+	Gson ist ein JSON to Java Mapper, welcher JSON-Strukturen auf äquivalente Java-Klassen abbildet (ähnlich ORM bei Room).\\
+	\textbf{Beispiel:}
 	
-\subsection{Nebenläufigkeit: Threads}
+	\begin{lstlisting}
+String url = "http://www.nactem.ac.uk/.../dictionary.py?sf=HTTP"; 
+OkHttpClient client = new OkHttpClient();
+Request request = new Request.Builder().url(url).build(); 
+Response response = client.newCall(request).execute(); 
+String json = response.body().string(); 
 
-		%TODO
-
-\subsection{(Backend-) Kommunikation über HTTP}
-
-		%TODO
+Gson gson = new Gson(); 
+Type listType = new TypeToken<List<AcronymDef>>(){}.getType(); 
+List<AcronymDef> definitions = new Gson().fromJson(json, listType);
+	\end{lstlisting}
 	
-\subsection{JSON-Webservices mit Retrofit konsumieren}
-
-		%TODO
+	\subsubsection{Retrofit}
 	
+	Mit Retrofit möchte man das Backend als Interface abstrahieren, um HTTP-Calls mit Java-Calls zu ersetzen, wie folgt:
+	
+	\begin{lstlisting}
+public interface AcronymService {
+
+	@GET("dictionary.py")
+	Call<List<AcronymDef>> getDefinitionsOf(@Query("sf") String sf);
+	
+}
+	\end{lstlisting}
+	\noindent
+	Retrofit basiert auf OkHttp, diese Library ist also automatisch vorhanden.
+	Man kann verwendete OkHttpClient-Instanzen auch konfigurieren, bevor man sie auf die Retrofit-Factory setzt.\\
+	Gradle Dependencies:\\
+	\texttt{com.squareup.retrofit2:retrofit:2.5.0}\\
+	\texttt{com.squareup.retrofit2:converter-gson:2.5.0} (JSON Mapper)
+	
+	\newpage
+	
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=.95\textwidth]{img/retrofit_config.png}
+		\caption{Konfiguration und Aufruf von Retrofit}
+		\label{fig:retrofit_config}
+	\end{figure}
+
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=.95\textwidth]{img/retrofit_demo.png}
+		\caption{Demo: JSON-Service mit Retrofit konsumieren}
+		\label{fig:retrofit_demo}
+	\end{figure}
+		
 \newpage
 \section{Android 5 - Services \& Broadcast Receiver}
 
@@ -1742,5 +2010,8 @@ Jeder Content Provider bietet eine eigene Standard-API, in der Android Dokumenta
 
 This was such a fucking shitshow, there's nothing to even talk about here.
 
+\section{Android 8 - Entwicklungsansätze}
+
+	% TODO
 
 \end{document}

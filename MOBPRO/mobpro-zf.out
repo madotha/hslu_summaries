@@ -64,9 +64,14 @@
 \BOOKMARK [3][-]{subsubsection.5.1.1}{Android und der Main-Thread}{subsection.5.1}% 64
 \BOOKMARK [3][-]{subsubsection.5.1.2}{Android-\334berwachung - ANR \(Application Not Responding\)}{subsection.5.1}% 65
 \BOOKMARK [2][-]{subsection.5.2}{Nebenl\344ufigkeit: AsyncTask}{section.5}% 66
-\BOOKMARK [2][-]{subsection.5.3}{Nebenl\344ufigkeit: Threads}{section.5}% 67
-\BOOKMARK [2][-]{subsection.5.4}{\(Backend-\) Kommunikation \374ber HTTP}{section.5}% 68
-\BOOKMARK [2][-]{subsection.5.5}{JSON-Webservices mit Retrofit konsumieren}{section.5}% 69
-\BOOKMARK [1][-]{section.6}{Android 5 - Services \046 Broadcast Receiver}{}% 70
-\BOOKMARK [1][-]{section.7}{Android 6 - Intents, Fragments, App-Widgets}{}% 71
-\BOOKMARK [1][-]{section.8}{Android 7 - Hybrid WebApp}{}% 72
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Einige Demos aus dem Unterricht}{subsection.5.2}% 67
+\BOOKMARK [2][-]{subsection.5.3}{Nebenl\344ufigkeit: Threads}{section.5}% 68
+\BOOKMARK [2][-]{subsection.5.4}{\(Backend-\) Kommunikation \374ber HTTP}{section.5}% 69
+\BOOKMARK [3][-]{subsubsection.5.4.1}{HTTP-Requests absetzen}{subsection.5.4}% 70
+\BOOKMARK [2][-]{subsection.5.5}{JSON-Webservices mit Retrofit konsumieren}{section.5}% 71
+\BOOKMARK [3][-]{subsubsection.5.5.1}{JSON Parsing mit GSON}{subsection.5.5}% 72
+\BOOKMARK [3][-]{subsubsection.5.5.2}{Retrofit}{subsection.5.5}% 73
+\BOOKMARK [1][-]{section.6}{Android 5 - Services \046 Broadcast Receiver}{}% 74
+\BOOKMARK [1][-]{section.7}{Android 6 - Intents, Fragments, App-Widgets}{}% 75
+\BOOKMARK [1][-]{section.8}{Android 7 - Hybrid WebApp}{}% 76
+\BOOKMARK [1][-]{section.9}{Android 8 - Entwicklungsans\344tze}{}% 77
