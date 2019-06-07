@@ -2489,8 +2489,238 @@ getFragmentManager()
 
 	\subsection{Mobile Web-Anwendungen}
 	
-	
+	\begin{itemize}
+		
+		\item \textbf{Web-App}\\
+				JavaScript, HTML, CSS mit Responsive Design, wird im Browser ausgeführt
+				
+		\item \textbf{Hybrid}\\
+		Web-App in nativem Wrapper verpackt, Konnektor-Plugins für die Nutzung nativer Services, kann als Native App installiert werden (Bsp. Cordova / PhoneGap)
+	\end{itemize}
 
+
+		\subsubsection{Charakteristiken für eine Web-App}
+		
+		\begin{itemize}
+			\item Eine Web-Anwendung für mehrere/alle Plattformen
+			\item Voraussetzung pro Plattform ist nur ein Web-Browser
+			\item Verwenden meist JavaScript-Web-Frameworks\\
+			Bsp. Ionic, jQuery Mobile, Titanium etc.
+		\end{itemize}
+		\vspace{1em}
+		\textbf{Vorteile} einer Web-App:
+		\begin{itemize}
+			
+			\item Eine Codebasis für mehrere/alle Plattformen
+			
+			\item Kein App-Store, Download oder Installation notwendig
+			
+			\item App kann jederzeit veröffentlicht und verändert werden
+			
+			\item Eine vorhandene Web-App kann zu einer mobilen App erweitert werden (Responsive / Progressive)
+					
+		\end{itemize}
+		\vspace{1em}
+		\textbf{Nachteile} einer Web-App:
+		\begin{itemize}
+			
+			\item Läuft nur im Browser ("Rahmenapplikation")
+			
+			\item Kein Zugriff auf alle Funktionen (Kontakte, externe Hardware etc.)\\
+					\textit{(HTML5 ermöglicht immer mehr solcher Zugriffe (Storage, Kamera, GPS etc.))}
+					
+			\item App nicht im Store, Benutzer müssen diese erst finden (Marketing benötigt)\\
+					\textit{(Kein installiertes App-Icon, ggf. Browser-Lesezeichen auf Homescreen)}
+			
+		\end{itemize}
+		
+		\subsubsection{Charakteristiken für eine Hybride App}
+		
+		\begin{itemize}
+			
+			\item Web-Anwendung für mehrere/alle Plattformen, verpackt in einem nativen Container, welcher in einer WebView läuft und durch einen nativen Controller installierbar wird
+			
+			\item Zugriff auf native Features durch Plugins, können auch selber geschrieben werden
+			
+			\item Pro Plattform wird ein nativer Container vorausgesetzt\\
+					Bsp. Apache Cordova (Open Source), PhoneGap (kommerziell), Appcelerator Titanium
+			
+		\end{itemize}
+		\vspace{1em}
+		\textbf{Vorteile} einer Hybrid App:
+		\begin{itemize}
+			
+			\item Grundsätzlich eine Codebasis für alle Plattformen
+			
+			\item App in einem Store auffindbar, gewisse App-Qualität \& -Sicherheit
+			
+			\item Zugriff auf viele Gerätefunktionen dank nativer APIs
+			
+			\item Native Look \& Feel (je nach Technologie)
+			
+		\end{itemize}
+		\vspace{1em}
+		\textbf{Nachteile} einer Hybrid App:
+		\begin{itemize}
+			
+			\item Kein garantierter Zugriff auf alle Gerätefunktionen
+			
+			\item Unterstützung verschiedener Plattformen kann aufwendig sein, ggf. sind spezifische Anpassungen / Code nötig (evtl. selber Plugins schreiben)
+			
+		\end{itemize}
+	
+		\newpage
+	
+		\subsubsection{Warum eine App als Web-App entwickeln?}
+	
+		\begin{itemize}
+			
+			\item Läuft grundsätzlich auf allen Plattformen
+			
+			\item Für alle Applikationen derselbe Update-Prozess (einfacher)
+			
+			\item Developers: Web- vs. Native Know-How
+			
+			\item Kosten sparen, da App nur einmal entwickelt werden muss (nicht einmal pro Plattform)
+			
+			\item Leichtgewichtig, da keine Installation nötig ist (evtl. bei One-Time-Usage)
+			
+			\item Synergien: ggf. existierende Desktop-Web-Plattform
+			
+			\item Immer mehr native Fähigkeiten mit HTML5 (Kamera, Persistenz, Location etc.)
+			
+		\end{itemize}
+	
+		\subsubsection{Probleme von Webseiten auf Mobil-Geräten}
+		
+		\begin{itemize}
+			
+			\item Limitierte Display-Grössen
+			
+			\item Portrait / Landscape Modus
+			
+			\item Interaktion: Touch $\neq$ Maus, Gesten, Gyro etc.
+			
+			\item Unterschiedliche Browser (CSS, JavaScript)
+			
+			\item Kein Zugriff auf Hardware-Ressourcen (Kamera, GPS, Sensoren etc.) und Software-Ressourcen (Kontakte etc.)
+			
+		\end{itemize}
+		\vspace{1em}
+		Eine Reihe an \textbf{Toolkits} adressieren diese Probleme und helfen bei deren Behebung:\\
+		Bootstrap, Sencha Touch, jQuery (Mobile), \textbf{Ionic}, \textbf{Cordova / PhoneGap}, u.v.m.
+		
+		\subsubsection{Info zu Grundlagen HTML, CSS, JavaScript}
+		
+		Grundlagen für HTML, CSS und JavaScript sind in MOBPRO Folien ersichtlich in \textbf{MobPro\_WebHybridApp} Seiten ca. 18 - 29 (oder mach dich einfach im Internet kurz schlau darüber)
+		
+	\subsection{Mobile App-Entwicklung mit Ionic}
+	
+	Ionic bietet UI-Komponenten, APIs etc. inklusive Projektvorlagen (App-Layouts \& Navigation).
+	Ionic benutzt unter anderem Angular, TypeScript \& Cordova.
+	Eine Übersicht über alle CLI Commands für Installation \& Ausführung ist unter \textit{Nützliche Links} vermerkt.
+	
+		\subsubsection{Ionic: Projektstruktur}
+		
+		App-Seiten sind Angular-Module in TypeScript (.ts) geschrieben.
+		Diese liegen im Projekt in \texttt{src/app/pages}.
+		Müssen aber \textbf{registriert} werden unter \texttt{src/app/app.module.ts}!
+		
+			\paragraph{Angular}
+			
+			Ein von Google entwickeltes Web-Framework mit Dependency Injection für Komponenten-basierte Entwicklung von Web-Apps.\\
+			\textit{Achtung}: AngularJS $\neq$ Angular! (erste, inkompatible Version)
+			
+			\paragraph{TypeScript}
+			
+			Ein von Microsoft entwickelter JavaScript-Dialekt mit statischem Typing, Klassen und Interfaces.
+			Wird nach JavaScript kompiliert, sieht also im Browser wieder anders aus.
+			
+		\subsubsection{Ionic: Seitenaufbau}
+		
+		Kurz: eine Seite einer Ionic-App besteht aus
+		\begin{itemize}
+			\item \texttt{*.html}: Seitenaufbau mit Struktur\\
+			Besteht aus: ion-header, ion-content, ion-footer
+			\item \texttt{*.scss}: Erscheinung / Design der Seite
+			\item \texttt{*.ts}: App-Logik für eine Seite
+		\end{itemize}
+	
+		\newpage
+	
+		\subsubsection{Ionic: How-To's}
+		
+		\textit{Hinweis}: Ich schreibe hier nur die nützlichen Infos aus den Folien auf, für Code-Beispiele wieder Folien aus der Vorlesung konsultieren (Seiten 48 - 56)
+		
+		\paragraph{http-get}
+		
+		\texttt{httpClient.get(http://...)} ist asynchron, liefert als Resultat ein \texttt{Observable} zurück.
+		Mit \texttt{.subscribe(data =>\}} dieses Resultats wird ein Callback (data => {) gesetzt, welcher ausgeführt wird, wenn die Daten da bzw. vorhanden sind.\\
+		Die Funktionalität im Beispiel ist direkt im \texttt{page.ts} eingebaut, besser wäre diese in einen Service (Provider) auszulagern. Dazu muss das Modul \texttt{HttpClientModule} im File \texttt{src/app/app.module.ts} unter \texttt{imports} eingetragen werden.
+		
+		\paragraph{parse JSON in TypeScript}
+		
+		Die Grundidee hierbei ist, die erhaltenen JSON-Daten auf ein passendes TypeScript-Interface zu mappen (ähnlich wie bei RetroFit und Gson). 
+		In diesem Interface nur die gewünschten JSON-Properties aufnehmen, die anderen können einfach weggelassen werden.
+		
+		\paragraph{do data binding}
+		
+		Im \texttt{.html} kann bspw. ein Wert \texttt{title} eingegeben werden, welcher im \texttt{.ts} deklariert wird und einen Wert zugeteilt bekommt.
+		Dies gehört zur Basis-Funktionalität von Angular.
+		
+		\paragraph{use HTML input field}
+		
+		Für Text-Input kann im \texttt{.html} ein \textit{ion-input} eingefügt werden. \\
+		Mithilfe von bspw. \texttt{[(ngModel)]="searchQuery"}, welches im \texttt{.ts} abgerufen wird, können eingegebene Daten direkt zur Verarbeitung übergeben werden.
+		
+		\paragraph{push another page}
+		
+		Auf \texttt{(click)=} eines Buttons im \texttt{.html} kann eine Funktion aus\texttt{.ts} gebunden werden, welche mit \texttt{.push(page)} dann eine andere Seite "pusht" bzw. aufruft.
+		
+		\paragraph{use dynamic lists (aka *ngFor)}
+		
+		Mit \texttt{*ngFor} im \texttt{.html} kann über die List-Property eines Controllers iteriert werden, um so wie im Beispiel eine Liste von Filmen auf einer Page anzuzeigen.
+		
+		\paragraph{call method on controller on event}
+		
+		Einer Funktion im \texttt{.ts} kann ein Parameter übergeben werden, z.Bsp. um die DetailPage eines ausgewählten Filmes zu pushen. Für genauere Infos schaut in die Folien oder Ionic Doku.
+		
+	\newpage	
+		
+	\subsection{Hybride Web-Apps mit Cordova (Native Wrapper)}
+	
+	\textbf{Cordova} basiert auf HTML5, CSS3, JavaScript und nativem Code.
+	Unterstützt mittels Plugins den Zugriff auf native APIs	(bspw. für Zugriff auf Ressourcen des Geräts)
+	
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=.55\textwidth]{img/android7/cordova_architecture.jpg}
+		\caption{Cordova-Architektur im Überblick}
+		\label{fig:cordova_architecture}
+	\end{figure}
+	
+	\subsubsection{Cordova vs. Phonegap} 
+	
+	Cordova hiess früher Phonegap, bis die Firma dahinter von Adobe aufgekauft wurde. 
+	Die Codebase wurde Apache überlassen, welche das Projekt unter dem Namen Cordova weiterführten.
+	Phonegap ist nun eine Distribution von Cordova, welche eine einfachere Einbindung in Adobe Services erlaubt.
+	Beide Distributionen, Phonegap und Cordova, sind freie Software (Apache Lizenz 2.0)
+	
+	\subsubsection{Cordova \& Ionic}
+	
+	Cordova ist in Ionic integriert und kann direkt zusammen installiert werden.
+	Mit Plugins ist es möglich, dank Cordova auf native Möglichkeiten (APIs, HW) der Plattform zuzugreifen. 
+	Die Liste mit allen Plugins ist unter \textit{Nützliche Links} zu finden.
+	
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=.7\textwidth]{img/android7/cordova_commands.jpg}
+		\caption{Alle verfügbaren CLI-Commands für Cordova}
+		\label{fig:cordova_commands}
+	\end{figure}
+	
+		
+\newpage
 \section{Android 8 - Entwicklungsansätze}
 
 	% TODO
@@ -2808,6 +3038,54 @@ getFragmentManager()
 		\item \textbf{Guardsquare | ProGuard and R8: Comparison of Optimizers}\\
 		\href{https://www.guardsquare.com/en/blog/proguard-and-r8}
 		{https://www.guardsquare.com/en/blog/proguard-and-r8}
+		
+	\end{itemize}
+
+	\newpage
+
+	\subsection{Web- \& Hybrid Mobile Apps mit Ionic}
+	
+	\begin{itemize}
+		
+		\item \textbf{Ionic | What Is Ionic Framework?}\\
+		\href{https://ionicframework.com/docs/intro}
+		{https://ionicframework.com/docs/intro}
+		
+		\item \textbf{Ionic | Getting Started}\\
+		\href{https://ionicframework.com/getting-started/}
+		{https://ionicframework.com/getting-started/}
+				
+		\item \textbf{Ionic | Installing Ionic}\\
+		\href{https://ionicframework.com/docs/installation/cli}
+		{https://ionicframework.com/docs/installation/cli}
+		
+		\item \textbf{Ionic | Ionic CLI commands}\\
+		\href{https://ionicframework.com/docs/cli}
+		{https://ionicframework.com/docs/cli}
+				
+		\item \textbf{Ionic | ion-header}\\
+		\href{https://ionicframework.com/docs/api/header}
+		{https://ionicframework.com/docs/api/header}
+				
+		\item \textbf{Ionic | Network plugin}\\
+		\href{https://ionicframework.com/docs/native/network/}
+		{https://ionicframework.com/docs/native/network/}
+		
+		\item \textbf{JetBrains | Developing Ionic apps in WebStorm}\\
+		\href{https://blog.jetbrains.com/webstorm/2017/08/developing-ionic-apps-in-webstorm/}
+		{https://blog.jetbrains.com/webstorm/2017/08/developing-ionic-apps-in-webstorm/}
+		
+		\item \textbf{NodeJS}\\
+		\href{https://nodejs.org/en/}
+		{https://nodejs.org/en/}
+		
+		\item \textbf{Apache Cordova | Overview}\\
+		\href{https://cordova.apache.org/docs/en/latest/guide/overview/index.html}
+		{https://cordova.apache.org/docs/en/latest/guide/overview/index.html}
+		
+		\item \textbf{Ionic | Ionic Native (Cordova Plugins)}\\
+		\href{https://ionicframework.com/docs/native/}
+		{https://ionicframework.com/docs/native/}
 		
 		\item \textbf{Text}\\
 		\href{link}
