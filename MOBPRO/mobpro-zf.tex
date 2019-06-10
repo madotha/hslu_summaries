@@ -2990,9 +2990,309 @@ getFragmentManager()
 	
 	\newpage
 	
+\section{Flashtalk - Grade Build System}
 
+	\subsection{Buildsysteme für Java}
 	
+	\begin{table}[!htb]
+		\centering
+		\begin{tabular}{|l|l|l|}
+			\hline
+			\textbf{Ant (2000)}& \textbf{Maven (2004)}& \textbf{Gradle (2007)}\\ \hline
+			Deklarativ (XML)& Deklarativ (XML)& Deklarativ (DSL)\\ \hline
+			Ant Tasks& Projektmodell (POM)&Projektmodell\\ \hline
+			Kein Projektmodell         & Phases \& Goals                                                                               & Tasks \& Lifecycle                                                        \\ \hline
+			Keine Konvention           & \begin{tabular}[c]{@{}l@{}}Konventionen:\\ - Projektstruktur\\ - Lifecyclephasen\end{tabular} & \begin{tabular}[c]{@{}l@{}}Konventionen:\\ - Projektstruktur\end{tabular} \\ \hline
+			Kein Lifecycle             & Dependency Management                                                                         & Dependency Management                                                     \\ \hline
+			Kein Dependency Management & Plugins                                                                                       & Plugins                                                                   \\\hline
+			Kein Skripting             & Kein Skripting                                                                                & Skripting                                                                 \\ \hline
+		\end{tabular}
+		\caption{Übersicht der Build-Systeme für Java}
+		\label{tab:buildsystems_java}
+	\end{table}
+
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=.7\textwidth]{img/flashtalk1/buildprocess.jpg}
+		\caption{Buildprozess einer nativen Android-App}
+		\label{fig:buildprocess}
+	\end{figure}
+
+	\newpage
+
+	\subsection{Gradle Build-Scripts}
 	
+	\begin{itemize}
+		
+		\item Gradle Build-Scripts (grundsätzlich Groovy mit einer DSL (Domain Specific Language)) enthalten:
+		\begin{itemize}
+			
+			\item Task-Definitionen
+			
+			\item Konfiguration von Modellobjekten und Tasks \\
+					(Objektannotation ähnlich wie JSON / YAML)
+					
+			\item Ausführbaren Code
+		\end{itemize}
+		
+		\item Ein Gradle Build läuft in 2 Phasen ab:
+		\begin{enumerate}
+			
+			\item Konfiguration des Builds \\
+					(DAG = Direct Acyclic Graph; für die Ausführungsreihefolge und mögliche Parallelisierung)
+					
+			\item Ausführung des Builds \\
+					(bzw. Ausführung von spezifischen Tasks)
+			
+		\end{enumerate}
+		
+	\end{itemize}
+	
+	\subsection{Gradle Plugins}
+	
+	\begin{itemize}
+		
+		\item \textbf{Plugins...}\\
+				... definieren neue Modellobjekte\\
+				... fügen einem Projekt neue Tasks hinzu \\
+					\quad(Neue Tasks werden durch "Anhängen" an Standard-Tasks zusammen mit diesen ausgeführt)\\
+				... konfigurieren Buildparameter gemäss Konventionen
+				
+		\item Ein Gradle-Skript kann Plugins anwenden
+		\begin{enumerate}
+			
+			\item Plugin im \texttt{buildscript}-Block als Abhängigkeit hinzufügen
+			
+			\item Plugin mit \texttt{apply} aktivieren
+			
+			\item Wird automatisch installiert, falls es noch nicht vorhanden ist
+			
+		\end{enumerate}	
+		
+	\end{itemize}
+
+		\subsubsection{Gradle - Android-Plugin}
+		
+		\begin{itemize}
+			
+			\item Das Android-Plugin für Gradle definiert u.a. die folgenden Tasks:
+			\begin{itemize}
+				\item \texttt{assemble}
+				\item \texttt{check} $\rightarrow$ \texttt{lint}
+				\item \texttt{test}
+				\item \texttt{build} $\rightarrow$ \texttt{assemble, check}
+				\item \texttt{install}
+				\item \texttt{clean}
+			\end{itemize}
+			
+			\item Definiert das Modellobjekt \texttt{android}
+			
+		\end{itemize}
+	
+	\subsection{Module- und Project-Buildfile}
+	
+	\begin{itemize}
+		
+		\item Android-Applikationen können aus mehreren Modulen bestehen
+		
+		\item Der einfachste Fall wäre ein einzelnes \texttt{app}-Modul mit einem eigenen Buildfile\\
+		(In diesem Modul finden 99\% der Anpassungen für den App-Build statt)
+		
+		\item Auf Projekt-Ebene existiert ein \texttt{root}-Buildfile, welches für Multi-Modul-Projekte gemeinsame Build-Konfigurationen definiert (wird normalerweise nicht angepasst)
+		
+	\end{itemize}
+
+	\newpage
+	
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=.9\textwidth]{img/flashtalk1/gradle_project.png}
+		\caption{\texttt{build.gradle} (Projektebene)}
+		\label{fig:gradle_project}
+	\end{figure}
+
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=.9\textwidth]{img/flashtalk1/gradle_module.png}
+		\caption{\texttt{build.gradle} (Modulebene)}
+		\label{fig:gradle_module}
+	\end{figure}
+
+	\newpage
+	
+	\subsection{Build Konfiguration}
+	
+	\begin{itemize}
+		
+		\item Default Android Build Configuration:\\
+				(muss nicht statisch sein, sondern kann auch durch Skripting berechnet werden)
+		\begin{itemize}
+			\item \texttt{applicationId}
+			\item \texttt{minSdkVersion}
+			\item \texttt{targetSdkVersion}
+			\item \texttt{versionCode}
+			\item \texttt{versionName}
+		\end{itemize}
+				
+		\item Dependencies für Tasks:
+		\begin{itemize}
+			\item implementation
+			\item testImplementation
+			\item androidTestImplementation
+		\end{itemize}
+	
+		\item \texttt{applicationId} im Manifest:\\
+				ID für den Store und die App\\
+				\texttt{package} im Manifest:\\
+				Base-Package für Java-Klassen (und R-Klasse)
+		
+	\end{itemize}
+
+	\subsection{Build Variants}
+	
+	\begin{itemize}
+		
+		\item Der Android Build kann von derselben Applikation mehrere Varianten erstellen
+		\begin{itemize}
+			
+			\item \textbf{Build Types:} Debug, Release
+			\item \textbf{Product Flavors:} Free, Paid, Company1, Company2 
+			
+		\end{itemize}
+		
+		\item Daraus ergibt sich eine Task-Matrix für den Build (mit Priorität):
+		
+	\end{itemize}
+
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=.6\textwidth]{img/flashtalk1/taskmatrix.png}
+		\caption{Task-Matrix für den Build mit Priorisierung}
+		\label{fig:taskmatrix_build}
+	\end{figure}
+	
+	\subsection{Build Types}
+	
+	\begin{itemize}
+		
+		\item \textbf{Default Build Typen:} \texttt{debug, release}
+		
+		\begin{itemize}
+			
+			\item Unterschiedliche Signing-Konfigurationen (Keys)
+			
+			\item ProGuard-Konfiguration (Obfuscator / Shrinker) für die Release APK
+			
+			\item Setzen des "debuggable"-Flags
+			
+			\item Unterschiedliche \texttt{applicationId} und \texttt{versionName}\\
+			Ermöglicht die parallele Installation von Release- und Debug-Version
+			
+		\end{itemize}
+	
+		\item Sub-Konfiguration im Build-File: \textbf{android.buildTypes}
+		
+		\begin{itemize}
+			
+			\item Pro Build-Type ein neues \texttt{src/<buildType>} Verzeichnis im Modul
+			
+			\item Defintion alternativer Ressourcen \& Klassen für spezifischen Build-Type möglich
+			
+		\end{itemize}
+		
+	\end{itemize}
+
+	\subsection{Product Flavors}
+	
+	\begin{itemize}
+		
+		\item Product Flavors können verschiedene Varianten derselben App sein:
+		
+		\begin{itemize}
+			\item \textbf{Branding:} <Firma1>, <Firma2>
+			\item \textbf{Funktionalitätsunterschied:} <free>, <paid>
+		\end{itemize}
+	
+		\item \texttt{flavorDimensions} mit abnehmender Priorität, Product Flavors werden zugeordnet
+		
+		\item Subconfig im Buildfile: \textbf{android.productFlavors}
+		
+		\begin{itemize}
+			
+			\item Pro Build-Type ein neues Source-Set-Directory im Modul:\\
+					\texttt{src/<productFlavor>}
+					
+			\item Definition alternativer Ressource \& Klassen für spezifischen Product-Flavor möglich
+			
+		\end{itemize}
+		
+	\end{itemize}
+
+	\newpage
+	
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=.5\textwidth]{img/flashtalk1/gradle_flavors1.png}
+		\caption{Gradle-Auszug von Product Flavors - 01}
+		\label{fig:flavors01}
+	\end{figure}
+	
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=.9\textwidth]{img/flashtalk1/gradle_flavors2.png}
+		\caption{Gradle-Auszug von Product Flavors - 02}
+		\label{fig:flavors02}
+	\end{figure}
+	
+\newpage
+
+\section{Flashtalk - Flutter}
+
+	\subsection{Flutter Facts}
+	
+	\begin{itemize}
+		
+		\item Mobiles Cross-Compile Framework für iOS und Android Apps
+		
+		\item Flutter (SDK) und Dart (Programmiersprache) stammen von Google
+		
+		\item Aktuelles Release 1.5.8 (1.0 im Dezember 2018)
+		
+		\item Alles ist ein Widget
+		
+	\end{itemize}
+
+	\subsection{Developer Experience}
+	
+	\begin{itemize}
+		
+		\item Hot Reload (Changes während der Runtime "builden")
+		
+		\item Gute Integration in verschiedenste IDEs
+		
+		\item CLI Support
+		
+		\item Verständliche Error-Messages
+		
+		\item Dart: mächtige Programmiersprache mit vergleichbarer Syntax wie Java, C\#, JavaScript
+		
+	\end{itemize}
+
+	\subsection{Widgets}
+	
+	Activity, Service, Broadcast Receiver, Content Provider $\rightarrow$ \textbf{Alles} ist ein Widget!
+
+	\begin{itemize}
+		
+		\item Widget: Beschreibung eines Teil des UI (mit anderen Widgets)
+		
+		\item Stateless vs. Stateful Widgets
+		
+		\item Kann beliebig verschachtelt werden
+		
+		\item \textit{Ein Widget ist eine Dart-Klasse zur Abstraktion eines Teils des UI}
+		
+	\end{itemize}
 \newpage
 	
 \section{Nützliche Links}
@@ -3383,10 +3683,46 @@ getFragmentManager()
 		\href{https://en.wikipedia.org/wiki/App_Store_\%28iOS\%29}
 		{https://en.wikipedia.org/wiki/App\_Store\_\%28iOS\%29}
 		
-		\item \textbf{Text}\\
-		\href{link}
-		{link}
+	\end{itemize}
+
+	\subsection{Flashtalk - Gradle Build System}
+	
+	\begin{itemize}
+
+		\item \textbf{Apache Groovy}\\
+		\href{http://www.groovy-lang.org/}
+		{http://www.groovy-lang.org/}
 		
+		\item \textbf{Gradle Build Tool}\\
+		\href{https://gradle.org/}
+		{https://gradle.org/}
+
+	\end{itemize}
+
+	\subsection{Flashtalk - Flutter}
+	
+	\begin{itemize}
+	
+		\item \textbf{Flutter}\\
+		\href{https://flutter.dev/}
+		{https://flutter.dev/}
+		
+		\item \textbf{YouTube | Flutter}\\
+		\href{https://www.youtube.com/channel/UCwXdFgeE9KYzlDdR7TG9cMw}
+		{https://www.youtube.com/channel/UCwXdFgeE9KYzlDdR7TG9cMw}
+		
+		\item \textbf{Pub.dev | Flutter Packages}\\
+		\href{https://pub.dev/flutter}
+		{https://pub.dev/flutter}
+		
+		\item \textbf{Dart}\\
+		\href{https://dart.dev/}
+		{https://dart.dev/}
+		
+		\item \textbf{Medium | Flutter}\\
+		\href{https://medium.com/flutter}
+		{https://medium.com/flutter}
+	
 	\end{itemize}
 
 \end{document}
