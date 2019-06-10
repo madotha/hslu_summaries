@@ -1,7 +1,8 @@
 # Summaries HSLU
 Persönliche Zusammenfassungen von Modulen der HSLU Informatik. Einige sind mehr oder weniger komplett, meines Erachtens nach.
 
-- **MOBPRO** *(finished)* Aufgabencode [hier](https://github.com/madotha/mobpro_projects) zu finden
+- **MOBPRO** *(finished)* 
+  - Aufgabencode [hier](https://github.com/madotha/mobpro_projects) zu finden
 - **SWDE** *(WIP)*
 - **AD** *(finished)*
 
