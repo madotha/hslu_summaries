@@ -2718,13 +2718,279 @@ getFragmentManager()
 		\caption{Alle verfügbaren CLI-Commands für Cordova}
 		\label{fig:cordova_commands}
 	\end{figure}
-	
 		
 \newpage
 \section{Android 8 - Entwicklungsansätze}
 
-	% TODO
+	\subsection{Anforderungen für Entwicklung mobiler Apps}
 	
+	\begin{itemize}
+		
+		\item App-Entwickler und Designer müssen ihr "Mindset" an alle neuen Möglichkeiten anpassen.\\
+		\textit{(Touch, Drag, Pinch, Location, Orientation, NFC etc.)}
+		
+		\item Anforderungen und Wünsche der Nutzer \& des Markts prüfen!\\
+		\textit{(Benutzerinteraktion, Plattform-Standards etc.)}
+		
+		\item Plattformen (Geräte inkl. Sensoren) und Betriebssysteme (APIs) müssen den Entwicklern bekannt sein		
+		
+	\end{itemize}
+
+	\subsection{Entwicklung mobiler Apps}
+	
+	\begin{itemize}
+		
+		\item \textbf{Web-App}\\
+				JavaScript, HTML, CSS mit Responsive Design, wird im Browser ausgeführt
+				
+		\item \textbf{Hybrid}\\
+				Webapp in nativem Wrapper "verpackt", mit Konnektor-Plugins, kann als native App auf einer Plattform installiert werden (Bsp. Cordova, Phonegap)
+		
+		\item \textbf{Cross-compiled}\\
+				In Sprache X geschriebene App, die nach Java oder Objective-C (oder direkt binäres Format) kompiliert und somit "native" wird (Bsp. Xamarin: C\# / Ruby)
+				
+		\item \textbf{JIT-compiled / VM}\\
+				In JavaScript geschriebene App, die auf der JS-Engine des Zielsystems läuft und dort just-in-time (JIT) kompiliert wird. Verwendet natives GUI und Konnektoren (Plugins), um mit der nativen Plattform zu interagieren (Bsp. NativeScript)\\
+				\textit{(Daneben gibt es noch Game Engines bspw. Unity, welche ebenfalls JIT-compiled sind, laufen auf einer sehr spezifischen VM)}			
+		
+		\item \textbf{"Echte" Native App}\\
+				Spezifisch programmiert für ein mobiles OS (iOS, Android). Kann das volle Featureset der Zielplattform ausnutzen (inkl. der neusten Features)
+		
+	\end{itemize}
+
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=.8\textwidth]{img/android8/entwicklung_mobileapps.png}
+		\caption{Entwicklungsansätze für Mobile Apps}
+		\label{fig:entwicklung_mobapps}
+	\end{figure}
+
+	\newpage
+	
+	\subsection{Charakteristiken für eine Native App}
+	
+	\begin{itemize}
+		
+		\item Die Applikation wird in der von der Plattform vorgegebenen Sprache (inkl. vorgesehene APIs) entwickelt (pro mobile Plattform wird eine eigenständige Applikation entwickelt)
+		
+		\item Voraussetzungen pro Plattform: Natives API + SDK\\
+		Single-Platform-Ansatz, volle Ausnutzung plattformspezifischer Funktionen, Natives Look \& Feel inkl. Native UI Patterns
+		
+		\item \textit{Apple}: Objective-C / Swift\\
+				\textit{Android}: Java\\
+				\textit{Windows}: C\#
+		
+	\end{itemize}
+	\vspace{1em}
+	\textbf{Vorteile} einer Native App:
+	\begin{itemize}
+		
+		\item Zugriff auf alle nativen Möglichkeiten
+		
+		\item Natives Look and Feel
+		
+		\item Typischerweise die schnellste Lösung für Appentwicklung
+		
+		\item App-Stores: App auffindbar, gewisse App-Qualität \& -Sicherheit
+		
+	\end{itemize}
+	\vspace{1em}
+	\textbf{Nachteile} einer Native App:
+	\begin{itemize}
+		
+		\item Grosser Entwicklungsaufwand, da für eine Plattform je eine App entwickelt werden muss, mehrere Plattformen zu unterstützen ist teuer, die gleiche Funktionalität muss evtl. doppelt oder mehr entwickelt werden, kein Code-Sharing
+		
+		\item Benutzer können verschiedene OS-Versionen haben, ist aufwändiger zu unterstützen
+		
+		\item App-Store-Zulassung kann die Veröffentlichung verlangsamen oder verhindern (verglichen mit reinen Web-Apps)
+		
+	\end{itemize}
+
+	\subsection{Charakteristiken für Cross-/JIT-Compile Apps}
+	
+	\begin{itemize}
+
+		\item Cross-Plattform-Ansatz: Single-Code-Base für alle Plattformen mittels Cross-Compile
+		
+		\item Keine/wenig Kenntnis der nativen Plattform notwendig, Abstraktion, eigenes App-Modell, grösstes gemeinsames Vielfaches an Funktionen
+		
+		\item Installierbar und in einem Store
+		
+		\item \textbf{Cross-Compile}: Wird nach der Programmierung in nativen Code oder Binary umgewandelt
+		
+		\item \textbf{JIT-Compile}: Läuft auf JavaScript-VM auf der Zielplattform, just-in-time Kompilierung\\
+		\textit{(JS-VM ist heutzutage auf jeder Plattform vorhanden und i.d.R. up-to-date/schnell/modern via Platform Updates)}
+
+	\end{itemize}
+
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=.4\textwidth]{img/android8/jit_silo.png}
+		\caption{Silo-System bei Cross-/JIT-Compile Apps}
+		\label{fig:cross_jit_silo}
+	\end{figure}
+
+	\paragraph{Flutter} Für Cross-Platform-Development, entwickelt von Google (v1.0 Release am 4. Dezember 2018). Eine Code-Base für alle Plattformen (iOS \& Android). Läuft mit eigener Sprache (Dart, von Google entwickelt), hat zwar kein natives UI, zeichnet das UI jedoch selber (ist somit ähnlicher zur Web-App), es wird trotzdem "native performance" versprochen. So werden eigene Widgets möglich (Material-Look auf Android, Native Look auf iOS wird imitiert). Läuft JIT-compiled auf eigener VM (Flutter Engine)
+	
+	\newpage
+	\noindent
+	\textbf{Vorteile} von Cross-/JIT-Compile Apps:
+	\begin{itemize}
+		
+		\item Single Code-Base (Funktionalität muss nur einmal implementiert werden)
+		
+		\item Vorhandenes Entwicklerknowhow (Web, C\# etc.) wiederverwendbar, keine Einstiegsbarrieren (ausser evtl. bei Dart)
+		
+		\item Geringere Entwicklungskosten
+		
+		\item Sieht aus wie Native und läuft gleich schnell (kein Geflicker)
+		
+		\item \textit{Eigenes Applikationsmodell $\neq$ Native Modell}
+		
+	\end{itemize}
+	\vspace{1em}
+	\textbf{Nachteile} von Cross-/JIT-Compile Apps:
+	\begin{itemize}
+		
+		\item \textit{Eigenes Applikationsmodell $\neq$ Native Modell}
+		
+		\item Eingeschränktes Programmiermodell nach dem "grössten gemeinsamen Vielfachen"
+		
+		\item Native Features sind uneingeschränkt nutzbar, aber aufwändig zu nutzen
+		
+		\item Ggf, schwieriger zu Debuggen
+		
+	\end{itemize}
+	
+	\subsection{Native Android-Programmierung}
+	
+	\begin{itemize}
+		
+		\item Programmiersprache: Java
+		
+		\item App läuft in einer VM:\\
+				\quad Android Runtime (ART) für Android $\geq$ 5.0\\
+				\quad Dalvik VM für Android < 5.0
+		
+		\item IDE: Android Studio, IntelliJ, (Eclipse +  ADT) etc.
+		
+		\item Entwicklerkosten für Store-Publikation: 25\$ pro Entwickler (einmalig)
+		
+		\item App-Vertrieb (Google Play, andere Stores, Websites etc.): 3.4 Mio.+
+		
+	\end{itemize}
+
+	\subsection{Native iOS-Programmierung}
+	
+	\begin{itemize}
+		
+		\item Programmiersprache: Objective-C, Swift (C, C++)
+		
+		\item App läuft nativ auf iOS (binary Code $\neq$ VM)
+		
+		\item IDE: Xcode, (AppCode)
+		
+		\item Entwicklerkosten für Store-Publikation: 99\$ pro Entwickler (jährlich)
+		
+		\item App-Vertrieb (App Store, Enterprise Deployment): 2.2 Mio. +
+		
+	\end{itemize}
+
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=.8\textwidth]{img/android8/entwicklungsansatze_overview.png}
+		\caption{Übersicht über die mobilen Entwicklungsansätze}
+		\label{fig:ansatze_overview}
+	\end{figure}
+	
+	\newpage
+	
+	\subsection{Single vs. Cross Plattform Entwicklung}
+	
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=.4\textwidth]{img/android8/single_products.png}
+		\caption{Native Produktbeispiele für Single-Plattform Entwicklung}
+		\label{fig:single_products}
+	\end{figure}
+	\noindent
+	\textbf{Single-Plattform-Entwicklung} folgt immer dem nativen Ansatz (man entwickelt pro Plattform spezifisch eine App in der vorgegebenen Sprache).
+
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=.5\textwidth]{img/android8/cross_products.png}
+		\caption{Produktbeispiele für Cross-Plattform Entwicklung}
+		\label{fig:cross_products}
+	\end{figure}
+	\noindent
+	\textbf{Cross-Plattform-Entwicklung} erzeugt je nach Produkt hybride, native, jit-compiled oder Web Apps.
+	
+	\subsection{Szenarien \& Fazit}
+	
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=.6\textwidth]{img/android8/spannungsfeld.png}
+		\caption{Das Spannungsfeld in der Mobilen Entwicklung}
+		\label{fig:spannungsfeld}
+	\end{figure}
+	\noindent
+	Cross-, JIT-compiled und hybried werden typischerweise für Cross-Compile-Entwicklung eingesetzt.
+	Markante Unterschiede dabei sind:
+	\begin{itemize}
+		
+		\item \textbf{Cross-Compile}: erzeugt eine native App
+		
+		\item \textbf{Hybrid}: eine Web-App in einem nativen Container
+		
+		\item \textbf{JIT-Compile}: liegt irgendwo dazwischen
+		
+	\end{itemize}
+
+	Kurz: für mobile Apps gibt es 3 Ansätze: Nativ, Hybrid oder Web.
+	
+	\newpage
+	
+	\subsection{Bester Ansatz?}
+	
+	Die bestmögliche Lösung ist abhängig von den Anforderungen \& Möglichkeiten.
+	So wird stets nach Szenario unterschieden.
+	Single-Plattform bzw. nativ eignet sich am besten, wenn genügend Zeit und Geld vorhanden sind.
+	Cross-Plattform hat grundsätzlich Limitierungen und "hinkt" den OS hinterher.
+	Beispiele:
+	\begin{itemize}
+		
+		\item Info-App ohne viel Interaktionen \\
+		$\rightarrow$ \textbf{Web-App}
+		
+		\item Komplett natives Look \& Feel \\
+		$\rightarrow$ \textbf{Nativ (SP \& CP)}
+		
+		\item Viele Plattformen nativ unterstützen, preiswert, .NET- oder Angular-Knowhow vorhanden \\
+		$\rightarrow$ \textbf{Cross- / JIT-Compile (Xamarin, NativeScript)}
+		
+		\item Gemeinsame Code-Basis, Cross-Plattform, eigene Widgets, Hot Reload, Kleine App / Prototyping \\
+		$\rightarrow$ \textbf{Flutter}
+		
+		\item HW-Features werden auf verschiedenen Plattformen benötigt (NFC, Kamera, Storage etc.) \\
+		$\rightarrow$ \textbf{Hybrid / Nativ}
+		
+	\end{itemize}
+	
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=.8\textwidth]{img/android8/ansatze_vergleich.png}
+		\caption{Vergleich der verschiedenen Ansätze}
+		\label{fig:ansatze_vergleich}
+	\end{figure}
+	\noindent
+	Alles hat Vor- und Nachteile.
+	Web- und hybride Ansätze eignen sich oft, haben aber auch Nachteile gegenüber SP-Enwicklung.
+	Cross-Compile kann bspw. Sinn machen für ".NET-Firmen".
+	Solange ein Benutzer ein Gerät (bzw. das OS) unterscheiden kann, wird es immer ein Verlangen nach native Apps geben. 
+	
+	\newpage
+	
+
 	
 	
 \newpage
@@ -3086,6 +3352,36 @@ getFragmentManager()
 		\item \textbf{Ionic | Ionic Native (Cordova Plugins)}\\
 		\href{https://ionicframework.com/docs/native/}
 		{https://ionicframework.com/docs/native/}
+		
+	\end{itemize}
+
+	\subsection{Entwicklungsansätze für mobile Applikationen}
+	
+	\begin{itemize}
+		
+		\item \textbf{Flutter}\\
+		\href{https://flutter.dev/}
+		{https://flutter.dev/}
+		
+		\item \textbf{Wikipedia | Mobile operating system / Market Share}\\
+		\href{https://en.wikipedia.org/wiki/Mobile_operating_system#Market_share}
+		{https://en.wikipedia.org/wiki/Mobile\_operating\_system\#Market\_share}
+		
+		\item \textbf{Wikipedia | Xamarin}\\
+		\href{https://en.wikipedia.org/wiki/Xamarin}
+		{https://en.wikipedia.org/wiki/Xamarin}
+		
+		\item \textbf{Wikipedia | Just-in-time compilation}\\
+		\href{https://en.wikipedia.org/wiki/Just-in-time_compilation}
+		{https://en.wikipedia.org/wiki/Just-in-time\_compilation}
+		
+		\item \textbf{Wikipedia | Google Play}\\
+		\href{https://en.wikipedia.org/wiki/Google_Play}
+		{https://en.wikipedia.org/wiki/Google\_Play}
+		
+		\item \textbf{Wikipedia | App Store (iOS)}\\
+		\href{https://en.wikipedia.org/wiki/App_Store_\%28iOS\%29}
+		{https://en.wikipedia.org/wiki/App\_Store\_\%28iOS\%29}
 		
 		\item \textbf{Text}\\
 		\href{link}
