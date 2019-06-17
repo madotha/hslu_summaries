@@ -17,6 +17,9 @@
 \usepackage{graphicx}
 \usepackage{enumitem}
 
+\usepackage [autostyle]{csquotes}
+\MakeOuterQuote{"}
+
 % Package und Einstellungen für Java-Code-Darstellung
 \usepackage{listings}
 \usepackage{color}
@@ -509,19 +512,229 @@ Komponenten verknüpft und ausgeführt werden kann.}
 			\item Begleitmassnahmen: Reviews, Entwicklungsprozess, Walkthrough, Metriken, Analysen, Regression, Automatisation etc.
 		\end{itemize}
 		
-		
+			\subsubsection{Welche Fehler können wir finden?}
+			
+			\begin{itemize}
+				\item \textbf{Syntaktische Fehler:}\\
+						Abweichungen von der Sprachsyntax (Schreibweise \& Grammatik) $\rightarrow$ formale Fehler.\\
+						Diese werden durch Compiler aufgedeckt!
+						\begin{itemize}
+							\item Beispiel Sprache: \textit{"Der Lesr list ein Buck"}
+							\item Beispiel Java: \texttt{if(i = 10) then{ i = 0; }}
+						\end{itemize}
+					
+				\item \textbf{Semantische Fehler:}\\
+						Abweichungen/Unstimmigkeiten, die auf Kenntnisse über Dinge beruhen $\rightarrow$ inhaltliche Fehler
+						\begin{itemize}
+							\item Beispiel Sprache: \textit{"Die Erdnuss ass einen Elefanten"}
+							\item Beispiel Java: \texttt{double kelvin= celsius-273.15d;}
+						\end{itemize}
+					
+				\item \textbf{Funktionale Fehler:}\\
+						Abweichung von Anforderungen oder Erfüllung falscher/unerwünschter Anforderungen.\\
+						Funktionale Fehler können \textbf{nur bedingt} durch Testen gefunden werden
+						\begin{itemize}
+							\item Beispiel: \textit{"Ein Liter Bier kostet ab jetzt 1000.-"}
+						\end{itemize}
+			\end{itemize}
+			\vspace{1em}
+			\noindent
+			Testen ist systematisches, gezieltes  und möglichst effizientes "Durchprobieren" nach verschiedenen Qualitätskriterien.\\
+			\textbf{Systematisch, gezielt} mit wohlüberlegten Eingabedaten / Testwerten\\
+			\textbf{Effizient} möglichst aussagekräftige Tests durchführen\\
+			Testen ist also \textbf{nicht} zielloses, chaotisches Pröbeln, sondern anspruchsvoller als man denkt.\\
+			Man kann nur Vorhandensein von Fehlern, aber nie die Abwesenheit von Fehlern beweisen.
+			Nach Test weiss man nur, dass ein Programm für die getesteten Eingabedaten korrekt läuft.\\
+			$\rightarrow$ Eingabedaten so wählen, dass auf möglichst viele Varianten von möglichen Eingabedaten rückgeschlossen werden kann. 
+			Also auch untypische Daten miteinbeziehen.\\
+			Beispiel bei einem Sortieralgorithmus:
+			\begin{itemize}
+				\item beliebige, zufällige Daten (\textbf{Normalfälle})
+				\item vorsortierte Daten, keine Daten (\textbf{Sonderfälle})
+				\item ungültige, nicht sortierbare Daten (\textbf{Ausnahmefälle})
+			\end{itemize}
+			
+			\begin{figure}[htb!]
+				\centering
+				\includegraphics[keepaspectratio, height=3cm]{img/testing/planungstabelle.png}
+				\caption{Tabelle für die Planung von Testfällen}
+				\label{fig:table_testing}
+			\end{figure}
+			
+			
 		
 		\subsection{Sie kennen verschiedene grundlegende Testarten und –verfahren}
 		
-		
+		\begin{itemize}
+			\item \textbf{Unit Tests:}\\
+				\textit{Nur eine Methode/Klasse/Einheit wird getestet}\\
+					Sehr klein, übersichtlich, einfach, schnell ausführbar, einfach automatisierbar \\
+					(Ausführung \& Validation)
+					
+			\item \textbf{Integrationstests:}\\
+					\textit{Mehrere Klassen (Module/Teilsysteme) in ihrem Zusammenspiel werden getestet}\\
+					Deutlich aufwändiger, aber auch automatisierbar
+					
+			\item \textbf{Systemtest:}\\
+					\textit{Ganzes System (viele Klassen/Einheiten) wird getestet}\\
+					Klassisches Testen, erst spät möglich, aufwändig, auch automatisierbar
+					
+			\item \textbf{Black}- und \textbf{White}-Box Testing:\\
+					Testen \textbf{ohne} oder \textbf{mit} Kenntnis der Implementation
+			
+		\end{itemize}
 		
 		\subsection{Sie können in Ihrer Entwicklungsumgebung einfache und gute Unit Tests, basierend auf dem JUnit-Framework, implementieren und anwenden}
 		
+			\subsubsection{Unit Tests}
+			
+			\begin{itemize}
+				\item Testfälle programmiert, somit automatisiert, jederzeit schnell ausführbar und wiederholbar
+				\item Sind "self-validating": Automatische Verifizierung, ob Testfall erfolgreich ausgeführt wurde
+				\item Getestete Einheiten: einzelne Methoden oder Klassen\\
+						$\rightarrow$ Kleine, überschauliche Testfälle
+				\item Zahlreiche Frameworks für Testing, sind gut in IDEs integriert\\
+						$\rightarrow$ Für Java: JUnit, UnitNG etc.
+			\end{itemize}
 		
+			Nutzen daraus:
+			\begin{itemize}
+				\item Zeitersparnis: einmal schreiben, n-mal ausführen
+				\item Kein manuelles "Testen" mehr
+				\item \texttt{System.out.println()}-Orgien entfallen
+				\item Jederzeit reproduzierbar
+				\item Automatische Verifizierung der Ergebnisse mit Reporting
+				\item Testfälle "dokumentieren" erwartete Funktion/Resultat
+				\item Freiheit, mit geringem Risiko Code zu verändern / umschreiben (Refactoring)
+			\end{itemize}
 		
+			\subsubsection{JUnit Test Framework}
+			
+			\begin{itemize}
+				\item Aktuelle Version ist JUnit 5
+				
+				\item JUnit wird heute für alle automatisierbaren Testfälle eingesetzt\\
+						$\rightarrow$ \textit{Nicht jeder JUnit-Testfall ist ein Unit-Test!}
+						
+				\item JUnit 5 hat viele Verbesserungen, ist aber nicht rückwärtskompatibel (OMG ein Major-Release!)
+			\end{itemize}
+			\noindent
+			Ein Testfall entspricht dem "Build-Operate-Check"-Pattern:
+			\begin{enumerate}
+				\item \textbf{Erstellen} der Testobjekte bzw. -daten
+				\item \textbf{Manipulieren} der Testobjekte bzw. -daten
+				\item \textbf{Verifikation} der Ergebnisse (mit \texttt{assert*}-Methoden)
+			\end{enumerate}
+			\vspace{1em}
+			\noindent
+			Auch bekannt als "Triple-A"-Pattern: \textbf{A}rrange, \textbf{A}ct, \textbf{A}ssert
+			\begin{figure}[!htb]
+				\centering
+				\includegraphics[keepaspectratio, height=3cm]{img/testing/test_01.png}
+				\caption{Beispiel-Testfall}
+				\label{fig:test_01}
+			\end{figure}
+		
+				\paragraph{Self-Validating mit assert*-Methoden}
+				
+				Einfacher Vergleich zwischen einem Soll- und Ist-Wert, Methoden der Klasse \texttt{org.junit.jupiter.api.Assertions}, für viele Daten überladen (elementar oder Klasse \texttt{Object})
+				
+				\begin{figure}[!htb]
+					\centering
+					\includegraphics[keepaspectratio, height=3.5cm]{img/testing/test_asserts.png}
+					\caption{Beispiele für assert*-Methoden}
+					\label{fig:test_asserts}
+				\end{figure}
+			
+				\paragraph{Annotations für Test-Methoden}
+				
+				Zur Konfiguration von Tests stehen mit JUnit verschiedene Annotationen zur Verfügung:
+			
+				\begin{figure}[!htb]
+					\centering
+					\includegraphics[keepaspectratio, height=5.5cm]{img/testing/test_annotations.png}
+					\caption{Annotationen im Code für Testfälle}
+					\label{fig:test_annotations}
+				\end{figure}
+			
+				\paragraph{Namenskonventionen}
+				
+				\begin{itemize}
+					\item \textbf{Testklasse:}\\
+						Für Klasse \texttt{Demo}: \texttt{DemoTest}\\
+						\texttt{Test} als Appendix, alle Testklassen ind \texttt{/src/main/test}!
+					
+					\item \textbf{Testmethoden:}\\
+						Für Methode \texttt{foo(...)}: \texttt{testFoo[Xyz]()}\\
+						\texttt{test} als Präfix, \texttt{Xyz} als freie, ergänzbare Fallbeschreibung, Testmethoden haben keine formalen Parameter
+				\end{itemize}
+			
+			\subsubsection{Empfehlungen}
+			
+			\begin{itemize}
+				\item Besser viele kleine Testmethoden als wenig grosse \\
+				$\rightarrow$ im Fehlerfall bessere Selektivität
+				
+				\item Wenige \texttt{assert*}-Statements pro Testmethode \\
+				$\rightarrow$ höhere Selektivität im Fehlerfall und übersichtlicher
+				
+				\item Methoden mit Rückgabewert am einfachsten testbar\\
+				$\rightarrow$ Bei void-Methoden ggf. indirekt über Statusabfragen auf getestetes Objekt testen
+				
+				\item Getter \& Setter: gemeinsam oder indirekt "beiläufig" testen
+				
+				\item \textbf{Nie} Schnittstellen oder Sichtbarkeit nur für Testbarkeit ändern
+				
+				\item Klasse/Methode zu schwerig zu testen? $\rightarrow$ Hinterfrage mal deren Design...
+			\end{itemize}
+			
 		\subsection{Sie kennen die Vorteile von Test First}
 		
+		Wir testen \textbf{kontinuierlich} während der Implementation, um von Beginn an Gewissheit zu haben, dass es funktioniert.\\
+		Fehler finden, bevor man sie macht.
+		Fehler finden, bevor man sie implementiert hat.
+		Oder Fehler im Ansatz finden, bevor es jemand anders tut.
+		Bullshitsätz...
 		
+			\subsubsection{Test First}
+			
+			\textbf{Immer vor der Implementation die Testfälle schreiben!}\\
+			Vorteile dabei:
+			\begin{itemize}
+				\item Beim Schreiben der Testfälle denkt man automatisch an Implementation des zu testenden Codes\\
+				$\rightarrow$ Implementation "reift" sozusagen beim Schreiben der Testfälle heran
+				
+				\item Ausnahmen und Sonderfälle fallen auf, welche bei der eigentlichen Implementation dann "automatisch" berücksichtigt werden
+				
+				\item Sobald die Komponente fertig implementiert ist, kann sie sofort getestet werden
+			\end{itemize}
+		
+		\subsection{Code Coverage (Codeabdeckung)}
+		
+		\begin{itemize}
+			\item Code Coverage = Metrik, welche zur Lauftzeit misst, welche Quellcodezeilen von Testfällen abgearbeitet wurden
+			\item Wird typischerweise bei Ausführung der Unit-Testfällen (bspw. durch JUnit) durchgeführt\\
+				$\rightarrow$ oder zur "normalen" Laufzeit, zur Messung welche Funktionen effektiv genutzt werden
+			\item Ermöglicht eine Aussage, wie umfassend der Code getestet wurde\\
+			(gezielte Effizienzsteigerung der Testfälle)
+			\item Hohe Code Coverage ist \textbf{kein} Beweis für gute Testfälle oder Fehlerfreiheit!
+		\end{itemize}
+	
+		\subsection{Unit Tests - Bilanz}
+		
+		\textbf{Positiv:}
+		\begin{itemize}
+			\item Testen ist vollständig in Implementationsphase integriert $\rightarrow$ Aufgabe des Entwicklers
+			\item Neue / veränderte Methoden sind unmittelbar, reproduzierbar \& schnell testbar
+			\item Test First: problemlos möglich und motivierend
+			\item Automatisiertes, übersichtliches Feedback / Reporting
+			\item Messung von Codeabdeckung integrierbar
+		\end{itemize}
+		\textbf{Negativ:}
+		\begin{itemize}
+			\item Qualität der Testfälle im Auge behalten $\rightarrow$ \textbf{Qualität vor Quantität}
+			\item Für GUI(-Komponenten) aufwändiger
+		\end{itemize} 
 		
 	\newpage
 	\section{Automatisiertes Testing}
