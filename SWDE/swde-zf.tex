@@ -1065,7 +1065,343 @@ public void testGetEmptyList() {
 	\newpage
 	\section{Software Architektur}
 		
-		%TODO
+		\subsection{Sie können den Begriff «Software Architektur» einordnen}
+		
+		\begin{itemize}
+			\item Eine Architektur ist eine Abstraktion, etwas wird zusammenfassend/vereinfacht dargestellt\\
+			$\rightarrow$ vergleiche Modellierung
+			\item Architektur beschreibt ein System durch:
+				\begin{itemize}
+					\item \textbf{Struktur und Aufbau:}\\
+							Sub- \& Teilsysteme, Schichtung, "Zwiebel", Verteilung
+					\item \textbf{darin enthaltene Softwareteile:}\\
+							Gegliedert nacht Aufgaben, Zuständigkeiten, Komponenten, aber auch Technologien
+					\item \textbf{deren Beziehungen untereinander:}\\
+							Abhängigkeiten, Schnittstellen, Datenflüsse, Deployment
+				\end{itemize}
+		\end{itemize}
+	
+			\paragraph{Definitionen zu Architektur}
+			
+				\begin{quote}
+					\textit{«Softwarearchitektur definiert sich durch die Kernelemente eines Systems, welche als Basis für alle weiteren Teile nur schwer und aufwendig verändert werden können.»}\\
+					- Martin Fowler
+				\end{quote}
+				\begin{quote}
+					\textit{«Die Architektur repräsentiert die signifikanten Designentscheidungen die ein System festhalten, wobei die Signifikanz an den Kosten von Änderungen bemessen wird.»}\\
+					- Grady Booch
+				\end{quote}
+			
+		\subsection{Sie haben eine Vorstellung, welche Informationen und Artefakte eine Software Architektur beschreiben}
+		
+			\subsubsection{Übersicht über Aspekte der Softwarearchitektur}
+			
+				\begin{itemize}
+					\item Grundlegende Struktur
+					\begin{itemize}
+						\item Schichten, Client / Server, n-tiers etc.
+						\item Architekturmuster
+					\end{itemize}
+					\item Kommunikation \& Verarbeitung
+					\begin{itemize}
+						\item Kommunikationsmuster (bspw. synchron / asynchron)
+						\item Verteilbarkeit, Parallelität, Performance, Robustheit, Resilienz
+					\end{itemize}
+					\item Eingesetzte Technologien
+					\begin{itemize}
+						\item Userinterface (Fat-, Rich- oder Thin-Client)
+						\item Persistenz der Daten
+						\item Referenzarchitekturen
+					\end{itemize}
+					\item Qualitätsaspekte
+					\begin{itemize}
+						\item Wartungsfreundlichkeit, Erweiterbarkeit etc.
+					\end{itemize}
+				\end{itemize}
+			
+			\subsubsection{Motivation für (gute) Architektur}
+			
+				\begin{itemize}
+					\item Explizite Architektur macht ein System erst "verstehbar".
+					Fundamentale Grundlage für die Diskussion, Planung, Implementation und Betrieb eines Softwaresystems.
+					
+					\item Unmittelbare Qualitätsaspekte:
+					\begin{itemize}
+						\item bessere Wartbarkeit (Bugfixing)
+						\item höhere Wiederverwendbarkeit
+						\item leichte Erweiterbarkeit
+						\item grössere Sicherheit
+						\item vereinfachte Testbarkeit
+						\item höhere Stabilität \& Robustheit
+					\end{itemize}
+					
+					\item Auswirkung dieses Qualitätsaspekte:\\
+					Verkürzung der time-to-market, echte Agilität
+				\end{itemize}
+				
+			\newpage	
+		
+			\subsubsection{Architekturmuster und -stile}
+			
+			\begin{itemize}
+				\item Konzepte, beschreiben Grundaufbau eines ganzen Systems\\
+				(Vergleich: Entwurfsmuster sind (objektorientierte) Konzepte für einzelne Teilprobleme)
+				
+				\item Architekturmuster für verschiedene zentrale Aspekte/Schwierigkeiten in Softwarearchitektur:\\
+				für (grosse, komplexe), (stark) verteilte, inter(re)aktive etc. Systeme, diese zu strukturieren\\
+				Beispiele: Client/Server, peer-to-peer etc.
+				
+				\item Typisch nicht so stark vereinheitlicht \& standardisiert wie Entwurfsmuster
+				
+				\item Sehr viele Architekturstile hab sich im Laufe der Zeit entwickelt.
+				Je nach Applikationsart erweisen sich diese als sehr schlecht oder gut brauchbar.
+				
+				\item \textbf{Erkenntnis 1:}\\
+				Führte oft zum "FAT-Client" (Geschäftslogik im Client) und einer überforderten Datenbank\\
+				Vorteil: zentrale Datenhaltung, hohe Konsistenz (RI, Trigger, SP)\\
+				Nachteil: Transaktionen, Locking, Ressourcen, Verteilung etc.
+				
+				\item \textbf{Erkenntnis 2:}\\
+				"Im Kleinen" bspw. für lokale (Einbenutzer-)Apps auf Handys funktioniert das gut.
+				
+				\item \textbf{Wahre Kunst:} Richtige Applikation am richtigen Ort!
+			\end{itemize}
+		
+				\paragraph{Fliessender Wechsel zw. Design und Architektur}
+				
+				Grosse Palette an "altbekannten" Mustern, Prinzipien \& Techniken:
+				Modularisierung von Komponenten, Schnittstellen, Packages;
+				Gruppierung dieser zu (Sub-)Systemen;
+				Nutzung versch. Muster zur Strukturierung (bspw. MVC - Model View Control, Schichtenbildung etc.).
+				\textbf{Herausforderung:} All diese Prinzipien auf den unterschiedlichen Abstraktionsebenen angemessen zu befolgen und zu beurteilen.
+				Schlussendlich haben wir «nur» einen Haufen von Klassen und Schnittstellen - jede weitere Strukturierung ergibt sich weitgehend nur durch Organisation und Konventionen!
+				
+			\subsection{Versch. Arten von Applikationen}
+			
+			\begin{itemize}
+				\item Einzelbenutzerapplikation:\\
+				Eher klein, evtl. nur Mobile App, lokale Persistenz, wenig komplexe Funktionalität
+				\item Mehrbenutzerapplikation:\\
+				bspw. Unternehmensapplikation, zentrale Services \& Daten, beliebige Komplexität, typisch in mehrere (Teil-)Systeme aufgebrochen.
+				\item Internetanwendungen:\\
+				Typisch mit Web-GUI, beliebig viele Benutzer, verteilte Datenspeicherung, beliebige Komplexität\\
+				
+				\item Sehr unterschiedliche Anforderungen an Architektur!
+			\end{itemize}
+		
+		\subsection{Sie verstehen, dass die Bildung von Schichten eine fundamentale Basis für die meisten Architekturen ist}
+		
+		\begin{itemize}
+			\item \textbf{Schichten (Layers):} Gliederung eines Systems\\
+			in aufeinander aufbauende, funktional getrennte Schichten
+				\begin{itemize}
+					\item Kommunikation zw. Schichten über Schnittstellen
+					\item Abhängigkeit nur in Richtung der tieferliegenden Schicht
+				\end{itemize}
+			\item Zur Strukturierung, innerhalb eines Systems \& systemübergreifend
+			\item Mögliche physische Verteilung der Schichten: Schichten $\rightarrow$ Tiers
+		\end{itemize}
+	
+		\newpage
+		
+			\subsubsection{Schichtenbildung}
+			
+			\begin{itemize}
+				\item Bildung nach versch. Kriterien:\\
+				Logisch / Funktional, Technik, Abstraktionsebene etc.
+				\item Kann hierarchisch verfeinert werden:
+					\begin{enumerate}
+						\item funktionale Schichtung
+						\item Abstraktionslevel
+						\item Technologie
+					\end{enumerate}
+				\item Implementation mit Java:\\
+				Schichten manifestieren sich in Modul- und Packagestruktur:\\
+				\texttt{ch.domain.system.server} \& ch.domain.system.server\\
+				\textit{(Kann schlechter Ansatz sein, vergleiche "package by feature")}
+			\end{itemize}
+	
+				\paragraph{Schnittstelle zw. Schichten}
+				
+					\begin{itemize}
+						\item Explizite Schnittstellen zw. Schichten $\rightarrow$ siehe \textit{Modularisierung}
+						\item Erlauben Entkopplung von der konkreten Implementation, die ausgetauscht werden kann \\
+						$\rightarrow$ auch die vollständige Schicht
+						\item \textbf{Achtung:} zwischen Schichten ausgetauschte Daten sind Bestandteil der Schnittstelle und tragen zur impliziten Kopplung bei
+							\begin{itemize}
+								\item nützt nichts, wenn wir identische Datenobjekte über alle Schichten hinweg jagen
+								\item Entscheid nötig, bei welchen Schichten wir Schnittstellen auch über Datentypen brechen
+							\end{itemize}
+					\end{itemize}
+			
+				\paragraph{Verteilte Schichten auf Tiers}
+				
+					\begin{itemize}
+						\item Schichtenbildung:\\ 
+						Fundamentale Grundlage zur Realisierung von verteilten Anwendungen / Architekturen
+						\item Schichtengrenzen:\\ 
+						Eignen sich gut zur Auftrennung, um Teile auf verschiedene Systeme zu deployen / verteilen
+						\item Werden Schichten auch physisch getrennt, spricht man von Tiers\\
+						(Client / Server-Beziehung zwischen Schichten)
+					\end{itemize}
+				
+					\begin{figure}[!htb]
+						\centering
+						\includegraphics[keepaspectratio, height=5cm]{img/architecture/tiers.png}
+						\caption{Aufteilung von Schichten auf Client / Server - Tiers}
+						\label{fig:tiers}
+					\end{figure}
+			
+			\newpage
+			
+			\subsubsection{Logische 3/6-Schicht-Architektur}
+			
+			Aufteilung in drei fundamentale Schichten:
+			
+			\begin{itemize}
+				\item \textbf{Präsentation} (Presentation / [GU]I Layer):\\
+						Visualisierung, User-Interface, Logik\\
+						\textit{(bspw. Bestellmaske für Artikel)}
+						
+				\item \textbf{Geschäftslogik} (Business[logic] Layer, Domain Model):\\
+						Implementation Geschäftsprozesse und -modelle\\
+						\textit{(bspw. Ablauf einer Bestellung, Modell eines Artikels)}
+						
+				\item \textbf{Datenhaltung} {Data / Persistence Layer}\\
+						Persistente Datenspeicherung, Datenlogik\\
+						\textit{bspw. Speicherung der Artikeldaten in RDBMS}\\
+						
+				\item Diese Aufteilung lohnt sich quasi immer, unabhängig von physischer Verteilung\\
+				$\rightarrow$ SoC (Separation of Concerns)\\
+				$\rightarrow$ SRP (Single Responsibility Principle)\\
+				$\rightarrow$ \textbf{Modularisierung!}				
+			\end{itemize}
+		
+				\paragraph{Verfeinerung Präsentationsschicht}
+				
+					\begin{itemize}
+						\item Reine Präsentation (Formulare, Dialoge etc.) bei Rich-GUI/Client:\\ 
+						noch stärker von Präsentationslogik \& Daten trennen
+						
+						\item bspw. mit Model View Control (MVC):\\
+						Modelle für Präsentation, wiederverwendbare Views, Präsentationslogik im Control
+						
+						\item Trennung zwingend notwendig bei Thin-Clients (bspw. Web/HTML):\\
+						View durch HTML/CSS realisiert, Präsentationslogik und Modelle\\
+						im Client (JS/JSON/XML) und im Server (Servlet, JSP, JSP/POJO's etc.)
+					\end{itemize}
+				
+				\paragraph{Verfeinerung Geschäftslogikschicht}
+				
+					\begin{itemize}
+						\item Businessfunktionen $\rightarrow$ \textbf{Services / Businessmethoden}\\
+						Enthält Klassen für (Geschäfts-)Prozesse, arbeitet mit Domain Model\\
+						(bspw. \texttt{BestellService} [Kunde bestellt Artikel])\\
+						Kann technologisch weiter verfeinert werden bspw. Business Service als Web Service anbieten
+						
+						\item Business Objects, Domain Objects $\rightarrow$\textbf{Domain Model}\\
+						Reines objektorientiertes Modell, vollständig unabhängig von Präsentation \& Persistenz, enthält Daten und Methoden (bspw. \texttt{Artikel}, \texttt{Kunde}, \texttt{Adresse})
+					\end{itemize}
+				
+				\paragraph{Verfeinerung Datenhaltungsschicht}
+				
+					\begin{itemize}
+						\item Trennung / Abstraktion der reinen Datenlogik:\\
+						unabhängig vom physischen Datenmodell \& verwendetem (R)DBMS
+						\item O/R-Mapping: Einsatz eines Persistenz-Frameworks
+						\item Transparentes Einbinden von Legacy-Systemen, Abstraktion mehrerer Backend (DBMS-)Systeme
+					\end{itemize}
+
+				\begin{figure}[!htb]
+					\centering
+					\includegraphics[keepaspectratio, height=5cm]{img/architecture/6layers.png}
+					\caption{6-Schichten-Architektur aus Verfeinerung der 3-Schicht-Architektur}
+					\label{fig:6layers}
+				\end{figure}		
+			
+			\newpage
+			
+			\subsubsection{1, 2, 3, oder n-Schichten?}
+			
+			Je mehr Schichten ein System enthält...\\
+			\textbf{Positive Effekte:}
+			\begin{itemize}
+				\item Bessere Strukturierung, einzelne Schichten kleiner und einfacher\\
+				$\rightarrow$ besseres \& schnelleres Verständnis
+				\item Grössere Chance auf Wiederverwendung
+				\item Höhere Flexibilität bspw. Austausch einzelner Schichten
+				\item Tendenziell bessere Skalierbarkeit
+				\item Einfachere \& präzisere Planung / Schätzbarkeit
+				\item Parallele \& getrennte Entwicklung möglich
+			\end{itemize}
+			\textbf{Negative Effekte:}
+			\begin{itemize}
+				\item Komplexität des Systems wird grösser
+				\item Mehr Schnittstellen $\rightarrow$ mehr Aufwand $\rightarrow$ mehr Planung
+			\end{itemize}
+			
+			
+		\subsection{Sie sind sich der Bedeutung des Domänenmodells bewusst}
+
+			\begin{itemize}
+				\item Vollständige Abstraktion der Geschäftsprozesse und -daten\\
+				'Reines' objektorientiertes Modell der Domäne, vollständige Trennung der physischen Datenspeicherung, Interaktion "nur" zwischen (Domain-)Objekten
+				
+				\item Logisches Beispiel: Klassen \texttt{Artikel} und \texttt{Lager}\\
+				\texttt{Artikel}: Beschreibt konkreten Artikel, der einem Lagerort zugeordnet ist (entspricht Tupel)\\
+				\texttt{Lager}: Beschreibt Lager, welches Artikel enthält, hat Fähigkeit Artikel zu reservieren, beziehen etc.
+				
+				\item Technische Beispiele:\\
+				Enterprise Java Beans (Session \& Message Driven), \\
+				Domain Model mit POJOs, übergeordnete Business-Services
+			\end{itemize}
+		
+			\begin{figure}[!htb]
+				\centering
+				\includegraphics[keepaspectratio, height=12.6cm, angle=270, origin=c]{img/architecture/domainmodel.jpg}
+				\caption{Einordnung des Domain Model in der Schichtenarchitektur}
+			\end{figure}
+		
+			\newpage
+			
+			\paragraph{Domain Model - Diskussion}
+			Realisiert praktisch alle Vorteile einer logischen 3-Schicht-Architektur, besonders:
+			\begin{itemize}
+				\item Entkopplung von Präsentation und Datenspeicherung
+				\item Hohe Wiederverwendung (des Modelles)
+				\item Gute Wart- und Erweiterbarkeit
+				\item Starke Strukturierung, leichteres Verständnis
+				\item Skaliert: auch für grosse / komplexe Enterprise-Systeme geeignet
+			\end{itemize}
+			Nachteile:
+			\begin{itemize}
+				\item Abstraktion / Mapping des Persistenzmodells verursacht Overhead (bspw. durch OR-Mapping)
+				\item Effizienter Datenaustausch zw. Schichten ist herausfordernd \\
+				(wiederholtes Mapping zur Entkopplung)
+				\item \textit{Als Übung: Entwerfe ein Domänenmodell (fachliches Datenmodell) einer Anwendung, deren Funktion und Inhalt du gut kennst (gute Vorbereitung für Prüfungsaufgaben ;-) )} 
+			\end{itemize}
+		
+			\paragraph{Schichtenarchitekturen - Bilanz}
+			
+			\begin{itemize}
+				\item \textbf{Es kommt auf die Grösse an!}
+				\item "Im Kleinen":\\
+				Schichten funktionieren super und ergeben sich fast von selbst.\\
+				Herausforderung: Ab wann ist Interface sinnvoll / nötig?, zu viele Schichten gibt es fast nicht, bspw. OSI-Schichtenmodell
+				\item "Im Grossen":\\
+				Schnittstellen sind Pflicht, was sich bspw. aus Aggregation aus Modulen fast selbst ergibt. Man tendiert hier eher zur Minimierung (so viel wie möglich)
+				\item \textbf{Problem:} Nicht Anzahl ("Höhe") der Schichten ist die Herausforderung, sondern zu erkennen, wenn eine Schicht (oder ganzer Stack) zu breit wird.
+				\item Domäne einer App wird evtl. zu gross, als Konsequenz werden Schichten zu breit und es sind Dinge darin zusammengelegt, die nichts mehr miteinander zu tun haben.\\
+				Weiteres Mittel zur Partitionierung wird benötigt $\rightarrow$ \textit{Microservices?}
+			\end{itemize}
+		
+		
+		\subsection{Sie haben eine Vorstellung was Microservices sind}
+		
+		
+		
+		
+		\subsection{Sie kennen den Unterschied zwischen synchroner und asynchroner Kommunikation in verteilten Systemen}
 		
 	\newpage
 	\section{Grafisches User Interface - mit JavaFX}	
