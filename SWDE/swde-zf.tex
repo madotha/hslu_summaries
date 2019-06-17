@@ -305,7 +305,7 @@ Komponenten verknüpft und ausgeführt werden kann.}
 		\item Repositoryformat Maven mittlerweile Standard, jedoch grosse Vielfalt bei Werkzeugen:
 		\begin{itemize}
 			\item Apache Ivy - einziges "reines" DM-Tool
-			\item Apacke Maven - in Buildtool integriert, Original
+			\item Apache Maven - in Buildtool integriert, Original
 			\item DM anderer Buildtools basiert ebenfalls auf Maven-Repos:\\
 				Buildr, Groovy Grape, Gradle/Grails, SBT etc. 
 		\end{itemize}
@@ -725,7 +725,7 @@ Komponenten verknüpft und ausgeführt werden kann.}
 		\textbf{Positiv:}
 		\begin{itemize}
 			\item Testen ist vollständig in Implementationsphase integriert $\rightarrow$ Aufgabe des Entwicklers
-			\item Neue / veränderte Methoden sind unmittelbar, reproduzierbar \& schnell testbar
+			\item Neue / veränderte Methoden sind unmittelbar, reproduzierbar \& schnell testbar (regressiv)
 			\item Test First: problemlos möglich und motivierend
 			\item Automatisiertes, übersichtliches Feedback / Reporting
 			\item Messung von Codeabdeckung integrierbar
@@ -734,13 +734,334 @@ Komponenten verknüpft und ausgeführt werden kann.}
 		\begin{itemize}
 			\item Qualität der Testfälle im Auge behalten $\rightarrow$ \textbf{Qualität vor Quantität}
 			\item Für GUI(-Komponenten) aufwändiger
+			\item In manchen Architekturen / Umgebungen schwierig umsetzbar
 		\end{itemize} 
 		
 	\newpage
 	\section{Automatisiertes Testing}
 	
-		% TODO
+		\subsection{Sie kennen die verschiedenen Testarten und sind in der Lage gute Unit-und Integrationstests zu schreiben}
 		
+			\subsubsection{repeat(Unit Tests)}
+			
+			\begin{itemize}
+				\item Häufig mit Komponenten/Modul/Entwickler-Tests gleichgesetzt
+				\item Funktionale Tests von einzelnen, in sich abgeschlossenen Einheiten\\
+						(typisch Klasse, aber auch Komponente oder Modul)
+				\item Ziele von guten Unit-Tests:
+					\begin{itemize}
+						\item schnell, einfach ausführbar, selbstvalidierend (assert*-Methoden), automatisiert
+						\item mögl. ohne Abhängigkeiten zu anderen Klassen/Komponenten/Modulen (lose Kopplung)
+						\item Während Entwicklung geschrieben und ausgeführt (in IDE oder durch CI)
+					\end{itemize}
+				\item Gute Unterstützung durch Frameworks (JUnit, TestNG etc.)
+			\end{itemize}
+		
+			\subsubsection{Integrationstests (JUnit)}
+			
+			\begin{itemize}
+				\item \textbf{Namenskonvention:}\\
+					\texttt{XyzIT} für Integrationstest (Klassenname + Appendix \texttt{IT})\\
+					Ablegen unter \texttt{/src/test/java}
+					
+				\item Unterscheidung ergibt sich "nur" durch:\\
+				Zeitpunkt der Ausführung, Laufzeit und Abhängigkeiten während der Ausführung
+				
+				\item Eigene Apache Maven Stage (\texttt{integration-test}) für Integrationstests\\
+				Getrennte Plugins \texttt{surefire} und \texttt{failsafe} weisen Testresultate auch getrennt aus\\
+				(Unit und Integration)
+			\end{itemize}
+		
+			\subsubsection{Unit- vs. Integrationstests}
+			
+			\begin{itemize}
+				\item \textbf{Unit-Tests} sind wirklich Unit-Tests, wenn sie auf beliebigem System und jederzeit lauffähig sind und (bei Java) auf unterschiedlichen Betriebssystemen laufen
+				
+				\item \textbf{Konsequenz:}\\
+				Testfälle, die mit Dateisystem interagieren oder Sockets verwenden (auch wenn nur auf \texttt{localhost}), sind streng gesehen bereits Integrationstests
+				
+				\item Unit-Tests dürfen somit nie aufgrund von "Fremdeinflüssen" fehlschlagen\\
+				(bspw. falscher Pfad, Platz, Zugriffsrechte etc.)
+				
+				\item \textbf{Empfehlungen:}
+					\begin{itemize}
+						\item Bewusst zwischen beiden Kategorien trennen
+						\item Im Team auf gemeinsame Philosophie der Trennung der Kategorien einigen\\
+						(Kann auch mal projektspezifisch sein)
+						\item Je mehr als Unit Tests realisiert wird, desto besser
+						\item Jeder automatisierte Test hilft
+						\item Hilfsmittel wie Code Coverage oder Mocking nutzen
+					\end{itemize}
+			\end{itemize}
+		
+		
+		\subsection{Sie nutzen Werkzeuge zur Messung der Codeabdeckung aktiv zu Verbesserung Ihres Codes und der Testfälle}
+		
+		Ja klar tu ich das!
+		
+		\newpage
+		\subsection{Sie kennen das Prinzip der Dependency Injection}
+		
+		\begin{itemize}
+			\item Schlechte Testbarkeit durch zu stark gekoppelte Abhängigkeiten\\
+					$\rightarrow$ Schlechtes Design
+			\item High-Level-Klassen sollen nicht von Low-Level Klassen abhängig sein, \\
+			sondern beide von Interfaces
+			\item Interfaces sollen nicht von Details, sondern Details von Interfaces abhängig sein!
+			\item Isolation von Klassen, Auflösung von Abhängigkeiten durch Dependency Injection
+			\item Dependency Inversion Principle - DIP (aus S.O.L.I.D.)
+		\end{itemize}
+	
+			\subsubsection{Dependency Injection - Beispiel}
+		
+			Eine Klasse \texttt{PersonPersistor} soll implementiert werden, welche \texttt{Person}-Objekte als \texttt{String} serialisiert und in einer Datei speichert.
+			Es existiert eine Implementation \texttt{StringPersistorFile}, welche wiederverwendet wird:
+			
+			\begin{figure}[!htb]
+				\centering
+				\includegraphics[keepaspectratio, height=5cm]{img/testing/di_01.png}
+				\caption{Erster Lösungsansatz für das Problem}
+				\label{fig:di_01}
+			\end{figure}
+			
+			\textbf{EINE ZIEMLICH BEKNACKTE LÖSUNG FÜR TESTING!}\\
+			
+			\begin{lstlisting}
+public final class PersonPersistor {
+	private final StringPersistorFile spm = newStringPersistorFile();
+	...
+}
+			\end{lstlisting}
+			
+			\begin{itemize}
+				\item Einfach für die Realisierung, ist aber der einzige Vorteil, negative Aspekte:
+					\begin{itemize}
+					\item Typen und Implementation sind stark gekoppelt
+					\item Abhängigkeit zur Implementationsklasse (obwohl ein Interface existieren würde)
+					\item Unflexible Implementation
+					\end{itemize}
+				\item Wir wollen die Funktionalität der \texttt{PersonPersistor} testen, um Strings zu serialisieren und wieder zu deserialisieren
+				\item \texttt{StringPersistorFile} greift aber auf das Dateisystem zu, weshalb die Abhängigkeit uns in die Kategorie der \textbf{Integrationstests} wirft\\
+				Ausserdem würden wir den bereits getesteten \texttt{StringPersistorFile} nochmals testen\\
+				$\rightarrow$ Selektivität des Testfalls sinkt
+				\item Man müsste die Abhängigkeit auf den intern verwendeten \texttt{StringPersistorFile} durch etwas anderes ersetzen können
+			\end{itemize}
+			\vspace{1em}
+			\noindent
+			Lösung auf der nachfolgenden Seite
+		
+		\newpage
+		
+				\paragraph{Dependency Injection}
+				
+				Eine Klasse/Komponente erzeugt ihre Abhängigkeiten nicht selber, sondern lässt sich diese (wahlweise) auch von Aussen übergeben.
+				
+				\begin{figure}[!htb]
+					\centering
+					\includegraphics[keepaspectratio, height=5cm]{img/testing/di_02.png}
+					\caption{Besserer Lösungsansatz für Testing mit Dependency Injection}
+					\label{fig:di_02}
+				\end{figure}
+			
+				\begin{itemize}
+					\item Der konkrete Typ (Implementation) wird durch ein Interface ersetzt\\
+					$\rightarrow$ Kopplung nimmt stark ab
+					
+					\item Es können so verschiedene, alternative Implementierungen genutzt werden\\
+					$\rightarrow$ Andere Möglichkeiten / Ansätze testen
+					
+					\item Dependency Inversion Principle\\
+					$\rightarrow$ Resultiert in besserer "Separation of Concerns"
+					
+					\item Testbarkeit wird massiv vereinfacht, man kann während Tests eine alternative Implementation als Platzhalter einfügen $\rightarrow$ \textbf{Test Double}
+					
+					\item Integrationstest werden wieder zu Unit Tests, schnellere \& selektivere Tests
+				\end{itemize}
+		
+		\subsection{Sie wissen was Test Doubles sind und können Mocking-Frameworks einsetzen}
+		
+			\subsubsection{Test Doubles}
+			
+			\begin{itemize}
+				\item "Double" ist Platzhalter für eine echte, produktive Implementation während des Tests
+				\item Oberbegriff "Test Doubles" umfasst verschiedene, interessante Spezialisierungen
+				\item Test Doubles sollen Aufwand für Integrationstests reduzieren, indem stattdessen mehr Testfälle als Unit-Tests realisiert werden
+				\item Möglichst viel mit Unit-Tests prüfen, weil:
+					\begin{itemize}
+						\item Erste Teststufe, direkt bei Entwickler
+						\item Schnell, häufig, überall lauffähig, vollständig automatisiert
+						\item Hohe Selektivität der Testfälle
+					\end{itemize}
+				\item Test Doubles sind auch innerhalb von Integrationstests nützlich\\
+					$\rightarrow$ Gezielte Isolation der Tests von einzelnen Integrationen (Abhäng. von anderen Systemen)
+				\item Für Test Doubles muss gutes Design der Software vorliegen\\
+					$\rightarrow$ Einsatz von Interfaces lohnt sich (fast) immer, da ein Interface verschiedene Implementationen zulässt, minimum eine "echte" und eine Test-Implementation
+				\item Wahl der Implementation muss zur Test-Laufzeit beeinflusst werden können\\
+					$\rightarrow$ per Dependency Injection (manuell oder per Framework)\\
+					(\textbf{Achtung:} Sicherung nötig, dass das nicht in der \textbf{Produktion} passiert)
+			\end{itemize}
+		
+		\newpage
+		
+			\begin{figure}[!htb]
+				\centering
+				\includegraphics[keepaspectratio, height=4cm]{img/testing/doubles.png}
+				\caption{Übersicht über alle verfügbaren Test-Doubles}
+				\label{fig:doubles}
+			\end{figure}
+		
+			\paragraph{Dummy}
+			
+				\begin{itemize}
+					\item Sehr primitive, leere Ersatzimplementation, wird als aktueller Parameter an Methoden übergeben\\
+					$\rightarrow$ Aktueller Parameter ist zwar notwendig für Test, dessen Nutzung und Implementation (für Test) aber irrelevant
+					\item Dummy: dient funktionsloser Entkopplung der beim Test unerwünschten Abhängigkeiten
+				\end{itemize}
+				\begin{quote}
+					\textbf{Beispiel:}\\
+					Einem Objekt muss bspw. ein Logger übergeben werden.
+					Dieser soll aber nichts machen, da Loggen nicht das eigentliche Testziel ist.
+				\end{quote}
+		
+			\paragraph{Stub}
+			
+				\begin{itemize}
+					\item Einfache Implementation, die mit möglichst geringem Aufwand sinnvolle, vordefinierte Werte (bspw. Konstanten)zurückliefert
+					\item Erlaubt sogenanntes "State"-Testing\\
+						$\rightarrow$ State durch Daten repräsentiert, State bei Stubs in der Regel konstant
+					\item Für verschiedene Testziele ggf. auch mehrere untersch. Stubs erstellen
+				\end{itemize}
+				\begin{quote}
+					\textbf{Beispiel:}\\
+					Eine Klasse für Authentifizierung testen, welche...\\
+					- Beliebige Nutzer/Passwörter akzeptiert: \texttt{login = true}\\
+					- Niemanden akzeptiert: \texttt{login = false}
+				\end{quote}
+			
+			\paragraph{Spy}
+			
+				\begin{itemize}
+					\item Alternative Implementation, welche dynamische Werte zurückliefern kann.
+					Der Spy merkt sich gleichzeitig auch die Aufrufe der Methode\\
+					(Anzahl/Häufigkeit, Paramater, Zeitpunkt, Exceptions etc.)
+					\item Nach Interaktion können aufgezeichnete Ereignisse zur Verifikation des Testfalls genutzt werden.
+					\item Erlaubt "Behavior"-Testing (Verhalten)
+				\end{itemize}
+				\begin{quote}
+					\textbf{Beispiel:}\\
+					Wurde auf dem beim Testkandidaten registrierten \texttt{ActionListener}(-Spy)\\
+					die Methode \texttt{actionPerformed()} auch tatsächlich aufgerufen?
+				\end{quote}
+			
+			\paragraph{Mock}
+			
+				\begin{itemize}
+					\item Spezialisierung des Spy, welcher dynamische Werte zurückliefern kann und die korrekte Interaktion selber verifizieren kann $\rightarrow$ Abgrenzung zum Spy
+					\item Typisch mithilfe von Mock-Frameworks zur Laufzeit für jeden Testfall als individuelle Mock-Objekte erstellt (Proxy-Pattern, GoF)\\
+					$\rightarrow$ Verhalten für jeden Testfall dynamisch / programmatisch konfiguriert
+					\item Sehr ähnlich zu Spy, Unterschied ist jedoch der Ort der Verifikation, Mocks sind spezifischer
+				\end{itemize}
+			
+			\newpage
+			
+			\paragraph{Fake}
+			
+				\begin{itemize}
+					\item Alternative Implementation, welche eine Komponente \\
+					mit vernünftigem Aufwand vollständig ersetzen kann
+					\item Ermöglicht vollständige Entkopplung von einer Abhängigkeit\\
+						Trade-Off $\rightarrow$ Aufwand der Implementation des Fake muss in vernünftigem Verhältnis zum Nutzen sein (Unit vs. Integration)
+				\end{itemize}
+				\begin{quote}
+					\textbf{Beispiel:}\\
+					Abhängigkeit von Webservices durch lokale Fake-Implementation ersetzt\\
+					- Kommunikation fällt weg, ist somit schneller\\
+					- Implementation trotzdem vorhanden (wenn nicht zu komplex), \\
+					idealerweise auch wiederverwendet
+				\end{quote}
+		
+		\subsubsection{Effektives Testen mit Test Doubles - Beispiele}
+		
+		\textbf{Mockito} - bewährtes Testing-Framework für Java.\\
+		In Maven einbinden mit \texttt{org.mockito:mockito-core:2.23.0}\\
+		Viele statische Klassen auf der Klasse \texttt{org.mockito.Mockito}.\\
+		Bestenfalls statischer Import aller Funktionen:\\
+		\texttt{import static org.mockito.Mockito.*;}
+		
+		\paragraph{Test mit Fake}
+		
+			Für Testausführung wird Fake-Implementation \texttt{StringPersistorMemory} (statt \texttt{File}) verwendet, welche Strings nur im Memory "speichert":
+			
+			\begin{lstlisting}
+@Test
+public void testGetEmptyList() {
+	final Person Persistorinstance = 
+		new PersonPersistor(new StringPersistorMemory());
+	assertThat(instance.getList()).isEmpty();
+}
+			\end{lstlisting}
+			\noindent
+			Für diesen Testfall resultiert:
+			\begin{itemize}
+				\item Keine Abhängigkeit mehr zum Dateisystem
+				\item Unit-Test (kein Integrationstest)
+				\item Testet viel weniger Dritt-Code und wird damit selektiver
+			\end{itemize}
+		
+		\paragraph{Test mit Mock}
+		
+			Für Testausführung wird Mock (oder Spy) verwendet, welcher direkt im Testfall erzeugt / konfiguriert wird:
+			
+			\begin{lstlisting}
+@Test
+public void testGetEmptyList() {
+	finalStringPersistor mock = 
+									mock(StringPersistor.class);
+	when(mock.get(0)).thenReturn(Collections.emptyList());
+	finalPersonPersistorinstance = 
+									newPersonPersistor(mock);
+	assertThat(instance.getList()).isEmpty();
+}
+			\end{lstlisting}
+			\noindent
+			Der Testfall:
+			\begin{itemize}
+				\item Keine Abhängigkeit mehr zu einer Implementation
+				\item Selektivität ist maximal
+			\end{itemize}
+				
+		\newpage
+		
+		\subsubsection{Empfehlungen}
+		
+		\begin{itemize}
+			\item Gewisse Klassen sind zu aufwändig für Mocking
+			\item Gewisse Klassen sind zu einfach für Mocking
+			\item Verständlichkeit des Testcodes am wichtigsten, wenn Testfall durch Mocking zu kompliziert wird, dass man ihn nicht mehr versteht, hed mer huere verlore.
+			\item Überleged si sich öbs sich lohnt. Stiiged si doch langsam id Technik ii, si esch absolut faszinierend!\\
+			\textit{- Roli Gisler}
+		\end{itemize}
+	
+			\paragraph{Wann setzt man was ein?}
+			
+			\begin{itemize}
+				\item \textbf{Dummy / Stub:}\\
+				Einfache Ersatzimplementationen, um bessere Testisolation zu erreichen\\
+				Geringer Aufwand $\rightarrow$ höhere Selektivität / Stabilität der Testfälle (einfach)
+				
+				\item \textbf{Spy / Mock:}\\
+				"Universalwaffen" für Behavior-Testing mithilfe Mocking-Frameworks.
+				Können auch zur Realisierung von Stubs / Dummies genutzt werden (komplexer)
+				
+				\item \textbf{Fake:}\\
+				Aufwändige Implementation, zur vollständigen Entkopplung vom Original.\\
+				Muss sich lohnen (aufwändig)\\
+				(Ja aber was wänn de Fake besser isch as de Original..??)\\
+				
+				\item Design ist entscheidend:\\
+				So oft wie möglich Interfaces verwenden, um schneller alternative Implementationen zu integrieren
+			\end{itemize}
+				
 	\newpage
 	\section{Software Architektur}
 		
