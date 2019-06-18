@@ -17,6 +17,7 @@
 \usepackage{graphicx}
 \usepackage{subcaption}
 \usepackage{enumitem}
+\usepackage{pdfpages}
 
 \usepackage [autostyle]{csquotes}
 \MakeOuterQuote{"}
@@ -1585,7 +1586,124 @@ public void testGetEmptyList() {
 	\newpage
 	\section{Grafisches User Interface - mit JavaFX}	
 		
-		%TODO
+		\subsection{Sie wissen, was unter deklarative GUI Beschreibung zu verstehen ist und welche Vorteile dieses Vorgehen mit sich bringt}
+		
+		\begin{itemize}
+			\item JavaFX im Code erstellen: \\
+			Komponenten erstellen, verknüpfen und Verhalten ad hoc vor Ort implementieren
+			\item JavaFX GUI in FXML (JavaFX Markup Language) deklarativ beschreiben \\
+			nach \textbf{Model View Control} Pattern:
+				\begin{itemize}
+					\item GUI-Komponenten (View) werden mithilfe von FXML beschrieben
+					\item Verhalten (Controller) und Datenmodell (Model) mit Java-Klassen implementieren
+				\end{itemize}
+			\item Ermöglicht Trennung zw. Modell / Verhalten und der Darstellung
+			\item Schnellere GUI-Erstellung (GUI-Code in XML-Datei)
+			\item Bessere Code-Wartbarkeit
+			\item GUI-Erstellung kann von Designer, Verhalten von Programmierer übernommen werden
+			\item Einfachere Anpassung unterschiedlicher Ausgabetypen (Desktop, Tablet, Handy)\\
+			$\rightarrow$ gerätespezifische FXML-Datei
+		\end{itemize}
+		
+		\subsection{Sie sind in der Lage ein einfaches GUI mit Hilfe von SceneBuilder zu erstellen und in die Applikation korrekt zu integrieren}
+		
+		\textit{(Nei ned werkli, aber ech Kopy-Pasta mol d Biispel \& Demo us de Folie)}
+		
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[keepaspectratio, width=\textwidth]{img/gui/gui.png}
+			\caption{Traditionelle GUI-Programmierung}
+			\label{fig:tradgui}
+		\end{figure}
+		
+		\newpage
+		\noindent
+		\textbf{Aufgabe}: JavaFX-App, welche prüfen soll, ob eingegebene Zahl eine Primzahl ist. 
+		GUI-Aufbau deklarativ mit FXML. 
+		Für Erstellung der FXML-Datei soll SceneBuilder verwendet werden.
+		
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[keepaspectratio, width=\textwidth]{img/gui/fxml.jpg}
+			\caption{FXML-Datei für ein GUI}
+			\label{fig:fxmlgui}
+		\end{figure}
+		\textbf{FXML-Datei laden}
+		\begin{itemize}
+			\item GUI-Aufbau Implementierung im Code entfällt dank XML-Deklaration
+			\item GUI mithilfe der \texttt{FXMLLoader}-Klasse erstellen:\\
+			FXML-Datei mithilfe von \texttt{load()} im Code laden
+		\end{itemize}
+		\noindent
+		\textbf{Beispiele} (versch. Variante, Code in der Klasse \texttt{application.}App)
+		
+		\begin{lstlisting}
+AnchorPane root = FXMLLoader.load(getClass()
+	.getResource("view/PrimeNumberCheckerView.fxml");
+	
+AnchorPane root = FXMLLoader.load(getClass()
+.getResource("application/view/PrimeNumberCheckerView.fxml");
+
+AnchorPane root = FXMLLoader.load(getClass().getClassLoader()
+.getResource("application/view/PrimeNumberCheckerView.fxml");
+		\end{lstlisting}
+		\noindent
+		FXML-Datei sinnvollerweise in Unterpaket ablegen (bspw. \texttt{view}), Laden der ersten FXML-Datei in der Methode \texttt{start}:
+		
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[keepaspectratio, height=4cm]{img/gui/start.png}
+			\caption{Implementierung in der \texttt{start}-Methode}
+			\label{fig:startimpl}
+		\end{figure}
+		
+		\newpage
+		
+		\paragraph{Verhalten implementieren}
+		
+		\begin{itemize}
+			\item GUI-Komponenten (Buttons, Textfelder, Radio-Button, Menu-Item etc.):\\
+			Lösen Aktionen aus, sind in Controller-Klasse in Form von Methoden implementiert
+			\item Controller-Klasse:\\
+			Notwendig, auf GUI-Komponenten zuzugreifen, welche aber in FXML-Datei definiert wurden
+			\item \textbf{Lösung}: Komponenten beim Laden des FXML durch Injection dem Controller zur Verfügung stellen\\
+			$\rightarrow$ @FXML Annotation
+		\end{itemize}
+	
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[keepaspectratio, height=8cm]{img/gui/verhalten.png}
+			\caption{Implementierung des Verhaltens im Controller}
+			\label{fig:verhalten}
+		\end{figure}
+		
+		\subsubsection{JavaFX mit SceneBuilder}
+		
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[keepaspectratio, height=7cm]{img/gui/scenebuilder.png}
+			\caption{Ansicht des SceneBuilder}
+			\label{fig:scene01}
+		\end{figure}
+	
+		\newpage
+	
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[keepaspectratio, width=\textwidth]{img/gui/scenebuilder_comp.png}
+			\caption{Accordion-Panels-Beschreibungen des SceneBuilder}
+			\label{fig:scene02}
+		\end{figure}
+		\noindent
+		\begin{center}
+			\textbf{Die Folien für die JavaFX-Demo aus der Vorlesung \\
+			sind am Ende dieser Zusammenfassung ersichtlich!}
+		\end{center}
+		\noindent
+		SceneBuilder für einfache, schnelle JavaFX-GUI-Erstellung verwendbar, braucht anfangs evtl. etwas Übung.
+		In der Foliendemo wurde einfaches Beispiel gezeigt, welches nur ein Formular (View) benötigt.
+		Das Vorgehen kann analog auf die Erstellung von GUIs mit mehreren Formularen (Views) übertragen werden.
+		Es käme noch die Navigation hinzu, welche bspw. mithilfe einer \texttt{MenuBar}-Komponente realisiert werden kann.
 		
 	\newpage
 	\section{Persistierung - JPA und OR Mapping}
@@ -1606,6 +1724,15 @@ public void testGetEmptyList() {
 	\section{Web Services - REST}
 	
 		%TODO
+		
+	\newpage	
+	\section{Zusammenfassung auf Folien}
+	
+		%TODO A LOT
+		
+	\newpage
+		
+	\includepdf[pages=-, pagecommand={}, width=.8\textwidth, nup=1x3]{pdf/javafx.pdf}
 		
 		
 \end{document}
