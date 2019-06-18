@@ -15,6 +15,7 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
+\usepackage{subcaption}
 \usepackage{enumitem}
 
 \usepackage [autostyle]{csquotes}
@@ -1398,11 +1399,189 @@ public void testGetEmptyList() {
 		
 		\subsection{Sie haben eine Vorstellung was Microservices sind}
 		
+		\begin{quote}
+			\textit{“In short, the microservice architectural style is an approach to developing a single application as a suite of small services, each running in its own process and communicating with lightweight mechanisms, often an HTTP resource API. These services are built around business capabilities and independently deployable by fully automated deployment machinery.”\\
+			- Martin Fowler}
+		\end{quote}
 		
-		
+		\begin{itemize}
+			\item Eine Applikation wird in mehrere, kleine Services aufgeteilt
+			\item Jeder Service läuft in eigenem Prozess / auf eigener Plattform
+			\item Leichtgewichtige Kommunikation (meist RESTfull / HTTP / JSON)
+			\item Voneinander unabhängig deploybar
+			\item Automatisiertes Deployment (DevOps, PaaS, IaaS)
+		\end{itemize}
+	
+				\paragraph{Aufteilung einer Applikation in kleine Services}
+				
+					\begin{itemize}
+						\item Applikation (primär vertikal) in mehrere, (möglichst) eigenständige Teile aufteilen\\
+								$\rightarrow$ Teile sollen autark arbeiten können \& auf eigene Daten(-modelle) zugreifen können
+						\item Domänenmodell muss in verschiedene "bounded context" aufgebrochen werden\\
+								$\rightarrow$ Gut für Design, aber nicht einfach, Datenhaltung ist so auch getrennt!
+						\item Einzelne Teile sollten nicht (direkt) miteinander kommunizieren, werden über das GUI oder vorgelagerten Gateway orchestriert
+						\item Microservices sind unterschiedlich gross, meistens gilt:\\
+								Applikation > Microservice  $\geq$ Modul
+					\end{itemize}
+				
+				\newpage
+				
+				\paragraph{Jeder Service hat eigenen Prozess / Plattform}
+				
+					\begin{itemize}
+						\item Services als eigenständige Prozesse
+							\begin{itemize}
+								\item Unterschiedliche Plattformen (OS, Programmiersprach etc.), in virtualisiertem Container
+								\item Plattformen für ganze App. müssen nicht identisch sein, können schrittweise geändert werden
+							\end{itemize}
+						\item Services laufen in echter Parallelität als verteiltes System
+							\begin{itemize}
+								\item Ganzes Potenziell, alle Herausforderungen von verteilten Systemen:\\
+										$\rightarrow$ Netzwerkkommunikation, Latenz, Skalierung, Ausfall etc.
+								\item Nutzt Client mehrere Services asynchron, erhöht sich Performance
+							\end{itemize}
+						\item \textbf{Komplexität des Systems erhöht sich!}
+					\end{itemize}
+
+				\paragraph{Leichtgewichtige Kommunikation}
+				
+					\begin{itemize}
+						\item Populär: JSON-basierende REST-Schnittstellen (sind "einfach")
+						\item Kritisch hinterfragen: JSON/REST "leichtgewichtig" im vergleich mit schnellen, effizienten binären Protokolle wie RMI, RPC etc.?
+						\item Auf HTTP(S) basierende Kommunikation leicht zu implementieren \& automatisiert testbar\\
+						$\rightarrow$ Authentifizierung \& Verschlüsselung abgedeckt, gute Akzeptanz im Operating, bestehende / bekannte Protokolle
+					\end{itemize}
+				
+				\paragraph{Voneinander unabhängig deploybar / releasebar}
+				
+					\begin{itemize}
+						\item Microservices: eigenständige Projekte / Releases, erst durch gemeinsame "Orchestrierung" eine Applikation $\rightarrow$ kleinere Einheiten flexibler entwickeln, Änderungen mit tieferem Risiko \& Erweiterungen leicht ergänzbar (OCP)
+						\item Unabhängig deploybar: Gesamte Applikation damit umgehen können, dass einzelne Teile/Services ausfallen und nicht verfügbar sind
+						\item Häufigere Ausfälle $\rightarrow$ Resilienz wird wichtig\\
+						(Bei einem Teilausfall nicht vollständig versagen)
+					\end{itemize}
+				
+				\paragraph{Deployment automatisiert (DevOps)}
+				
+					\begin{itemize}
+						\item Automatisierung ist für Microservices ein Muss-Feature\\
+								(mit schnelleren Start-/Stop-Sequenzen)
+								
+						\item Klassische, monolithische Deployments: (halb-)manuelle Deployments und Start-/Stop-Sequenz war häufig bei "schwergewichtigen" Applikationen $\rightarrow$ Manuell, fehleranfällig, Dauer im Bereich weniger Minuten, mit Microservices würde sich diese Tätigkeit um die Anzahl Microservices verlängern
+					\end{itemize}
+				
+				\paragraph{Klassisch vs. Microservices}
+				
+					\begin{itemize}
+						\item Schichten (horizontal) und Microservices (vertikal) sind orthogonal
+						\item Am Schnittpunkt zwischen diesen befindet sich idealerweise ein Modul
+						\item Entscheidend ist Grösse und Schnitt der Release- und Deployment-Einheiten
+						\item Gegenseitige Abhängigkeiten sollen minimal sein
+							\begin{itemize}
+								\item Möglichst wenig und gering, ideal keine (minimale Kopplung)
+								\item Microservices forcieren Modularisierung, verlagern das Problem ins Deployment (Operating)\\
+							\end{itemize}
+					\end{itemize}
+				
+				\textbf{Vorteile von Microservices:}
+				\begin{itemize}
+					\item einzeln überschaubar, unabhängig, gut wartbar
+					\item relativ schnell \& flexibel (agil) anpassbar
+					\item von kleinen, schlagkräftigen Teams entwickelbar
+					\item unterschiedliche Plattformen, Sprachen \& Technologien
+				\end{itemize}
+				\textbf{Nachteile von Microservices:}
+				\begin{itemize}
+					\item Hohe Anfoderungen an Operatin (DevOps)
+					\item Höhere Komplexität durch Asynchronität \& Resilienz
+					\item Neue Herausforderung (cross-cutting concerns) wie \\
+					Sicherheit, Überwachung, Monitoring \& Logging\\
+				\end{itemize}
+				\textbf{Herausforderung}: Design (bounded contexts) / verteilte Applikationen
+					
+		\newpage			
 		
 		\subsection{Sie kennen den Unterschied zwischen synchroner und asynchroner Kommunikation in verteilten Systemen}
 		
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[keepaspectratio, height=6cm]{img/architecture/muster.png}
+			\caption{Muster für verteilte Applikationen}
+			\label{fig:muster}
+		\end{figure}
+	
+		\begin{itemize}
+			\item Einzelne Teile (Teilsysteme, Komponenten, Module, Services, Schichten etc.)\\
+			auf mehrere versch. Rechner (hosts, tiers) verteilt
+			\item Konsequenzen: Teile laufen in einzelnen unabhängigen Prozessen \& in "echter" Parallelität
+			\item Anforderungen:
+				\begin{itemize}
+					\item Auswahl geeigneter Kommunikationstechnologie zw. Teilen
+					\item Einzelne Teile müssen sich finden \& kenne
+					\item Aufwändigeres Deployment, mehr und häufiger, Abhängigkeiten beachten \& koordinieren
+					\item Mit Teilausfällen muss umgegangen werden können
+				\end{itemize}
+		\end{itemize}
+	
+	\newpage
+	
+	\subsubsection{Kommunikationsmodelle}
+	
+		\begin{figure}[htb!]
+			\centering
+			\begin{subfigure}{.45\textwidth}
+				\centering
+				\includegraphics[keepaspectratio, height=6.5cm]{img/architecture/sync.png}
+				\caption{Synchrone Kommunikation}
+				\label{fig:synccomm}
+			\end{subfigure}
+			\begin{subfigure}{.45\textwidth}
+				\centering
+				\includegraphics[keepaspectratio, height=6.5cm]{img/architecture/async.png}
+				\caption{Asynchrone Kommunikation}
+				\label{fig:asynccomm}
+			\end{subfigure}
+			\caption{Kommunikationsmodelle (synchron \& asynchron)}
+			\label{fig:commmodels}
+		\end{figure}
+
+				\paragraph{Synchrones Modell / Kommunikation}
+		
+					\begin{itemize}
+						\item Server muss verfügbar sein, bevor Kommunikation durch Client gestartet werden kann
+						\item Sender muss auf Antwort des Empfängers warten, bevor er weiterarbeiten kann (blockierend)
+					\end{itemize}
+					\textbf{Vorteile:}
+					\begin{itemize}
+						\item Einfacher in Implementierung
+						\item Zugriff auf gemeinsame Ressourcen weniger kritisch, da zeitlicher Ablauf überschaubar
+					\end{itemize}
+					\textbf{Nachteile:}
+					\begin{itemize}
+						\item "Wartezeit" beim Client: negative Auswirkung auf Performance (verlorene Zeit?)
+						\item Enge Kopplung zw. Sender / Empfänger, weniger robust bspw. bei Ausfall
+						\item Server muss verfügbar sein \& auf Anfragen warten
+					\end{itemize}
+			
+				\paragraph{Asynchrones Modell / Kommunikation}
+				
+					\begin{itemize}
+						\item Client kann Nachricht senden, egal ob Server für Empfang bereit oder nicht
+						\item Client wird nicht blockiert, kann nach Übermittlung der Anfrage weiter arbeiten
+						\item Antwort trifft später asynchron ein oder wird abgeholt
+					\end{itemize}
+					\textbf{Vorteile:}
+					\begin{itemize}
+						\item Lose Kopplung Client / Server $\rightarrow$ robuster
+						\item Keine gegenseitige Blockierung \\
+						(Server muss nicht Anfrage erwarten, Client muss nicht auf Antwort warten \& arbeitet weiter)
+					\end{itemize}
+					\textbf{Nachteile:}
+					\begin{itemize}
+						\item Komplexere Implementierung: zusätzliche Infrastruktur für Kommunikation (Queues)
+						\item Wenn Client ohne Antwort nicht weiterarbeiten kann, macht async. Anfrage wenig Sinn
+					\end{itemize}
+				
 	\newpage
 	\section{Grafisches User Interface - mit JavaFX}	
 		
