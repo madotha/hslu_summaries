@@ -1706,10 +1706,268 @@ AnchorPane root = FXMLLoader.load(getClass().getClassLoader()
 		Es käme noch die Navigation hinzu, welche bspw. mithilfe einer \texttt{MenuBar}-Komponente realisiert werden kann.
 		
 	\newpage
-	\section{Persistierung - JPA und OR Mapping}
+	\section{Persistierung - JPA \& OR Mapping}
 	
-		%TODO
+		\subsection{Sie wissen, was unter OR Mapping zu verstehen ist und welche Vor- und Nachteile OR Mapping mit sich bringt}
 		
+			\subsubsection{Varianten zur Persistierung von Objekten in relationale Datenbanken}
+			
+				\paragraph{Variante 1: Persistierung mit SQL und JDBC}
+				
+					\begin{itemize}
+						\item \textbf{Vorgehen:} Programmierer schreibt SQL-Queries, um Abbildung von Objekten auf Tabellen sicherzustellen
+						\item Programmieren mit Objekten, Verwaltung dieser aber mithilfe von Relationen (Tabellen) realisiert \\
+						$\rightarrow$ Objekte nicht mehr als logische, zusammengehörende Einheiten, werden i.d.R. auf mehrere Tabellen verteilt, zusammengehörende Teile müssen verknüpft werden (Fremdschlüssel-Konzept)
+						\item Abbildung von Objekten auf Relationen und Beziehungen (inkl. Vererbung)\\
+						$\rightarrow$ von Hand mithilfe von SQL
+						\item \textbf{Nachteil:} Aufwändig, viel SQL und fehleranfällig
+					\end{itemize}
+				
+				\paragraph{Variante 2: OR-Mapping (object relational)}
+				
+					\begin{itemize}
+						\item \textbf{Vorgehen:} Programmierer arbeitet mit Objekten\\
+						$\rightarrow$ SQL-Teil (Abbildung Objekte auf Tabellen) von OR Mapper übernommen
+						\item Job des Entwicklers:\\
+						Erstellt, speichert und holt vollwertige(-ständige) Objekte aus Datenbank
+						\item Entwickler arbeitet mit Objekten, hat mit SQL nichts mehr zu tun (ausser Ausnahmefälle)
+						\item Abbildung von Objekten auf Relationen mit SQL übernimmt seperate Instanz (OR-Mapper)
+					\end{itemize}
+		
+		\subsection{Sie kennen die wichtigsten von JPA zur Verfügung gestellte Annotationen und deren Bedeutung}
+		
+			\subsubsection{Java Persistence API (JPA)}
+			
+			\begin{quote}
+				\textit{The Java Persistence API (JPA) is a Java specification for accessing, persisting, and managing data between Java objects / classes and a relational database.\\
+				\\
+				JPA is now considered the standard industry approach for Object to Relational Mapping (ORM) in the Java Industry.\\
+				\\
+				JPA itself is just a specification, not a product; it cannot perform persistence or anything else by itself. JPA is just a set of interfaces, and requires an implementation.}
+			\end{quote}
+		
+			\begin{itemize}
+				\item JPA-\textbf{Provider} stellen eine konkrete Implementation der JPA-Spezifikation zur Verfügung, solche Provider wären:\\
+				EclipseLink, Hibernate, OpenJPA, DataNucleus etc.
+				\item JPA-Vorteile:
+					\begin{itemize}
+						\item ermöglicht Speichern von Daten auf objektorientierte Weise (als Objekte)
+						\item einfach im Gebrauch, nicht von einem Provider abhängig
+						\item stellt Portabilität von Anwendungen sicher
+						\item kann mit JEE \& JSE verwendet werden
+					\end{itemize}
+				\item Anforderungen an JPA-Provider:
+					\begin{itemize}
+						\item Verwaltung von Verbindungen zu DB
+						\item Mapping von Klassen und deren Felder auf Tabellen \& Spalten (Attribute)
+						\item Abbildung von Beziehungen
+						\item Verwaltung von Relationen (Tabellen)
+						\item Objektorientierte Suchmöglichkeiten zur Verfügung stellen
+					\end{itemize}
+			\end{itemize}
+		
+			\newpage
+			
+			\subsubsection{JPA mit EclipseLink}
+			
+			\begin{itemize}
+				\item EclipseLink: JPA-Referenzimplementierung\\
+				\textit{(Zusammen mit Hibernate der meistverwendete JPA-Provider, lustige Zusatzinfo höhö)}
+				\item JPA-Annotationen: Sprachelemente, ermöglichen Einbindung von Metadaten in Quellcode\\
+				(Beginnen mit @, gefolgt von Annotationsnamen, können auch Parameter (Attribute) enthalten)
+				\item Beispiele:
+					\begin{itemize}
+						\item \texttt{@Entity}
+						\item \texttt{@Id}
+						\item \texttt{@GeneratedValue(strategy=GenerationType.AUTO)}
+						\item \texttt{@Column(name="GEB\_DATUM")}
+						\item \texttt{@JoinTable(name="student\_lerngruppe")}
+						\item \texttt{@ManyToMany(mappedBy="projects")}
+					\end{itemize}
+			\end{itemize}
+		
+			\begin{figure}[!htb]
+				\centering
+				\includegraphics[keepaspectratio, height=4cm]{img/persistence/grundbegriffe.png}
+				\caption{Grundbegriffe und Klassen von JPA}
+				\label{fig:jpa_base}
+			\end{figure}
+		
+			\begin{itemize}
+				\item \textbf{Entity}:\\
+						Bezeichnung für Objekte (POJO), deren Zustände in DB verwaltet werden soll\\
+						\textit{Beispiel:} \texttt{Adresse, Person, Buch}...
+						
+				\item \textbf{Klasse} \texttt{javax.persistence.Persistence}:\\
+						Benötigt Namen der "PersistenceUnit"\\
+						Für Erzeugung des DB Schema und \texttt{EntityManagerFactory}-Instanz zuständig
+						
+				\item \textbf{Klasse} \texttt{javax.persistence.EntityManagerFactory}:\\
+						Für Erzeugung von \texttt{EntityManager}-Instanzen zuständig
+						
+				\item \textbf{Klasse} \texttt{javax.persistence.EntityManager}:\\
+						Von \texttt{EntityManagerFactory} erstellt\\
+						\textit{(Erstellung kann in seperate Util-Klasse ausgelagert werden)}\\
+						Für Verwaltung von Entities (PersistenceContext) zuständig
+						
+				\item \textbf{Klasse} \texttt{javax.persistence.EntityTransaction}:\\
+						Für Verwaltung von Transaktionen zuständig \textit{(no shit)}
+						
+				\item \textbf{Persistenzkontext} (PersistenceContext):
+						\begin{itemize}
+							\item Summer aller vom EntityManager verwalteten Entities
+							\item Kann sich (nach Bedarf) ändern: Entities hinzufügen/entfernen etc.
+							\item Zuständiger EntityManager muss immer wissen, in welchem Zustand sich eine Entity die er verwaltet (in seinem Kontext) befindet\\
+							(Ist sie neu hinzugefügt aber noch nicht gespeichert, geändert etc. worden)
+						\end{itemize}
+			\end{itemize}
+		
+			\paragraph{Konfiguration}
+			
+			JPA-Provider benötigt Infos für Verbindung zur DB, Datenbewirtschaftung etc.
+			Können entweder in statischer Datei \texttt{persistence.xml} oder dynamisch während Laufzeit konfiguriert werden. 
+			\texttt{persistence.xml} muss im Verzeichnis \texttt{META-INF} abgelegt sein.
+			Dynamische Variante (wird weniger genutzt) kann bspw. zum Wechsel von Datenbanken während Laufzeit genutzt werden.
+			
+			\newpage
+		
+			\begin{figure}[!htb]
+				\centering
+				\includegraphics[keepaspectratio, height=6.5cm]{img/persistence/persistencexml.png}
+				\caption{Beispiel einer Konfigurationsdatei \texttt{persistence.xml}}
+				\label{fig:persistence_xml}
+			\end{figure}
+			
+			\paragraph{EntityManager}
+			
+			\begin{figure}[!htb]
+				\centering
+				\includegraphics[keepaspectratio, height=5cm]{img/persistence/entityutil.png}
+				\caption{Beispiel einer Util-Klasse, die \texttt{EntityManager}-Instanzen erzeugt}
+				\label{fig:entity_util}
+			\end{figure}
+		
+			\begin{itemize}
+				\item Entity Manager CRUD-Methoden:
+					\begin{itemize}
+						\item \texttt{void persist (Object entity)}
+						\item \texttt{<T> T find(Class<T>, Object primaryKey)}
+						\item \texttt{<T> T merge (T entity)}
+						\item \texttt{void remove(Object entity)}
+						\item ja gäbe scheinbar noch andere\\
+					\end{itemize}
+			\end{itemize}
+		\noindent
+		Beispiel zum Speichern einer Adresse-Entity:
+		
+		\begin{lstlisting}
+Adresse adr = new Adresse("Seestr. 2", 6000, "Luzern");
+EntityManager em = JpaUtil.createEntityManager(); // Beispiel Util-Klasse siehe oben
+
+em.getTransaction().begin();		// Transaktion starten
+em.persist(adr);						// Entity speichern (persistieren)
+em.getTransaction().commit();	// Transaktion abschliessen (commit)
+em.close();
+		\end{lstlisting}
+		
+		\newpage
+		
+		\paragraph{Entity}
+		
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[keepaspectratio, height=4cm]{img/persistence/entity.png}
+			\caption{Beispiel Entity-Klasse mit entsprechenden Annotationen}
+			\label{fig:entity}
+		\end{figure}
+	
+		Klasse, deren Instanzen als Entitäten in DB geschrieben werden sollen, muss mit entsprechenden Annotationen versehen werden.
+		
+		\subsection{Sie wissen, wie die Beziehungen zwischen Objekten (ausgehend von einem Klassendiagramm oder von dem gegebenen Code) nach JPA Regeln korrekt spezifiziert werden}
+		
+			\subsubsection{Assoziationen}
+			
+			JPA-Annotationen für Definition von Beziehungen:
+			\begin{itemize}
+				\item \texttt{@OneToOne} \qquad\quad[ 1 : 1 ]
+				\item \texttt{@OneToMany} \qquad [ 1 : m ]
+				\item \texttt{@ManyToOne} \qquad [ m : 1 ]
+				\item \texttt{@ManyToMany} \qquad[ m : m ]
+				\item Für minimale Kardinalität ist auch Null erlaubt, mithilfe von Annotation:\\
+				\texttt{@Column (nullable=true)}\\
+				\texttt{private String telefon;}
+			\end{itemize}
+		
+			\begin{figure}[!htb]
+				\centering
+				\includegraphics[keepaspectratio, width=.9\textwidth]{img/persistence/associations.png}
+				\caption{Codebeispiele für die verschiedenen Beziehungen}
+				\label{fig:associations}
+			\end{figure}
+			
+			\newpage
+			
+			\subsubsection{Vererbung}
+			
+			\begin{figure}[!htb]
+				\centering
+				\includegraphics[keepaspectratio, height=6cm]{img/persistence/inheritance.png}
+				\caption{Simples Beispiel von Vererbung zw. Entitäten}
+				\label{fig:inheritance}
+			\end{figure}
+		
+			\paragraph{InheritanceType SINGLE\_TABLE}
+			
+			Alle Klassen der Vererbungshierarchie werden in einer Tabelle abgebildet.
+			Mit einer "Diskriminator"-Spalte (hier \texttt{typ}) wird der Datentyp markiert.\\
+			JPA-Annotation: \texttt{@Inheritance(strategy=InheritanceType.SINGLE\_TABLE)}
+			
+			\begin{figure}[!htb]
+				\centering
+				\includegraphics[keepaspectratio, height=4cm]{img/persistence/single_table.png}
+				\caption{SINGLE\_Table Vererbung in einer Tabelle}
+				\label{fig:single_table}
+			\end{figure}
+		
+			\paragraph{InheritanceType JOINED}
+			
+			Pro konkrete und abstrakte Klasse einer Vererbungshierarchie wird eine Tabelle angelegt.
+			Das Objekt wird dann über \textbf{Sup}- und \textbf{Sub}-Tabellen "verteilt".\\
+			JPA-Annotation der Oberklasse: \texttt{@Inheritance(strategy=InheritanceType.JOINED)}
+			
+			\begin{figure}[!htb]
+				\centering
+				\includegraphics[keepaspectratio, height=4cm]{img/persistence/joined.png}
+				\caption{JOINED Vererbung "verteilt" auf zwei Tabellen}
+				\label{fig:joined}
+			\end{figure}
+		
+			\newpage
+		
+			\begin{figure}[!htb]
+				\centering
+				\includegraphics[keepaspectratio, height=6cm]{img/persistence/joined_code.png}
+				\caption{Konkretes Code-Beispiel für eine JOINED-Vererbung}
+				\label{fig:joined_code}
+			\end{figure}
+		
+		
+		\subsection{Sie sind in der Lage, OR Mapping in einem konkreten Fall korrekt anzuwenden}
+		
+		Jo locker, das setti scho chönne.
+		Soscht luegi mis SWDE-Projekt aa, \textbf{det hanis schliesslech gmacht}.
+		Soscht heds ide Folie no di folgend Üebig:\\
+		\textit{Vervollständigen Sie die im Rahmenprogramm zur Verfügung gestellten Klassen so, das deren Instanzen in eine Datenbank mit Hilfe eines OR Mappers persistiert werden können. 
+		Die für die Beziehungen relevanten Informationen können dem Klassendiagramm entnommen werden.}
+		
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[keepaspectratio, height=9cm]{img/persistence/jpa_exercise.png}
+			\caption{Rahmendiagramm zur Vorlesungsübung}
+			\label{fig:jpa_exercise}
+		\end{figure}
+		
+				
 	\newpage
 	\section{Persistierung - Java Persistence Query Language (JPQL)}
 		
