@@ -1408,7 +1408,7 @@ public void testGetEmptyList() {
 		\begin{itemize}
 			\item Eine Applikation wird in mehrere, kleine Services aufgeteilt
 			\item Jeder Service läuft in eigenem Prozess / auf eigener Plattform
-			\item Leichtgewichtige Kommunikation (meist RESTfull / HTTP / JSON)
+			\item Leichtgewichtige Kommunikation (meist RESTful / HTTP / JSON)
 			\item Voneinander unabhängig deploybar
 			\item Automatisiertes Deployment (DevOps, PaaS, IaaS)
 		\end{itemize}
@@ -2514,24 +2514,395 @@ grant {
 				
 	\newpage
 	\section{Web Services - REST}
-	
-		%TODO
 		
 		\subsection{Sie wissen, was unter Web Service zu verstehen ist und welche Vor- und Nachteile diese mit sich bringen}
 		
+		\paragraph{Motivation für Webservices}
 		
+			\begin{itemize}
+				\item Diverse Verfahren für Zugriff auf entfernte Objekte
+					\begin{itemize}
+						\item DCOM (Distributed Component Object Model)
+						\item CORBA (Common Object Request Broker Architecture)
+						\item RPC (Remote Procedure Call) bspw. XML-RPC
+						\item RMI (Remote Methode Invocation)
+					\end{itemize}
+				\item Fehlende Interoperabilität bei diesen Verfahren\\
+				$\rightarrow$ Zu übertragende Daten-Formate nur innert Modell-Welt standardisiert\\
+				$\rightarrow$ Kommunikation zw. verschiedenen Verfahren nur über "Brücken" möglich
+			\end{itemize}
 		
-		\subsection{Sie können die Eigenschaften von SAOP und REST basierenden Web Services}
+		\paragraph{Web Services}
 		
+			\begin{quote}
+				\textit{Ein Web Service	ist ein im Internet verfügbarer Dienst, der von Clients über URLs angesprochen werden kann ... \\
+				\\
+				Ein Web Service ist eine im Internet verfügbare Komponente, deren Funktionalitäten über die von der Komponente zur Verfügung gestellten Schnittstelle entfernt aufgerufen werden können...}
+			\end{quote}
 		
+			\begin{itemize}
+				\item Sollen einfachen Datenaustausch zw. Applikationen durch Verwendung bekannter Standards \& Technologien ermöglichen.
+				\item Zur Gewährleistung maximaler Interoperabilität werden etablierte Internet-Standards verwendet
+				\item Sind so konzipiert, dass machine-to-machine Kommunikation ermöglicht wird
+				\item Sollen selbstbeschreiben sein, Nutzung soll möglichst einfach sein
+				\item Quasi Nachfolger vom XML-RPC, wurden ursprünglich von Microsoft entwickelt
+				\item Web Service Typen:
+					\begin{itemize}
+						\item SOAP Web Services (interface-zentriert)
+						\item REST Web Services (jünger, leichtgewichtiger)
+					\end{itemize}
+			\end{itemize}
+		
+		\subsection{Sie kennen die Eigenschaften von SAOP und REST basierenden Web Services}
+		
+				\paragraph{SOAP}
+				
+					\begin{itemize}
+						\item Basieren auf offenen Protokollen
+						\item Sind "selbstbeschreibend" \\
+							\textit{(WSDL - Web Services Description Language)}
+						\item Können registriert \& gefunden werden \\
+							\textit{(UDDI - Universal Description Discovery and Integration)}
+						\item Basisplattform für SOAP Web Services:
+							\begin{itemize}
+								\item SOAP als Protokoll
+								\item WDSL als WS Beschreibungssprache
+								\item UDDI als Verzeichnisdienst
+							\end{itemize}
+					\end{itemize}
+				
+				\paragraph{REST}
+				
+					\begin{itemize}
+						\item Wird in der nächsten Sektion durchgenommen, musste nur die Seite kurz "füllen"
+					\end{itemize}
+		
+		\newpage
 		
 		\subsection{Sie wissen, was unter REST zu verstehen ist und was mit RESTful gemeint ist}
 		
+			\paragraph{REST - Representational State Transfer}
+			
+				\begin{itemize}
+					\item Architekturstil, definiert einen Satz von Prinzipien, welche eine REST-konforme Architektur einhalten soll, wesentliche \textbf{REST-Prinzipien}
+						\begin{itemize}
+							\item Statuslose Kommunikation (Zustandslosigkeit)
+							\item Ressourcenorientierung \& eindeutige Ressourcen-Identifikation
+							\item Verknüpfungen / Hypermedia (HATEOAS)
+							\item Verwendung von HTTP-Methoden
+							\item Unterschiedliche Repräsentation von Methoden
+						\end{itemize}
+					\item REST-konforme Architektur basiert auf Client/Server Architektur
+					\item \textbf{URI:} Uniform Resource Identifier
+				\end{itemize}
+			
+			\paragraph{Statuslose Kommunikation}
+			
+				\begin{itemize}
+					\item Kommunikation zw. Client / Server zustandslos\\
+						$\rightarrow$ Kopplung Client / Server verringern \& Skalierbarkeit erhöhen (keine Session)
+						
+					\item Bei jeder Anfrage: Alle für Bearbeitung der Anfrage relevanten Informationen mitsenden
+					
+					\item Sollte Zustand doch nötig sein:
+						\begin{itemize}
+							\item Zustand wird vom Client gehalten
+							\item Server erstellt für Status eine eigene Ressource (bspw. Warenkorb)
+						\end{itemize}
+					
+					\item Vorteile:	
+						\begin{itemize}
+							\item Setzen des Bookmarks möglich (Link per Mail sendbar)
+							\item Bessere Skalierbarkeit, lose Kopplung zw. Client / Server
+						\end{itemize}
+				\end{itemize}
+			
+			\paragraph{Ressourcenorientierung \& eindeutige Ressourcen-Identifikation}
+			
+				\begin{itemize}
+					\item Ressource: beliebige Einheit, die über URI eindeutig identifizierbar / ansprechbar ist
+					\item Jede Client-Anfrage bezieht sich auf eindeutige Ressource\\
+					(Single-Ressource oder Sammlung von gleichartigen Ressourcen)
+					\item Ressource kann Bild, Bestellung, Liste von Positionen, PDF etc. sein
+					\item \textbf{Wichtig:} REST-konforme URI enthält keine Namen von Operationen!
+					\item Beispiele:\\
+					\texttt{http://moebel-walker.com/kunden\\
+					http://moebel-walker.com/kunden/136\\
+					http://moebel-walker.com/bestellungen/eingaenge\\
+					http://moebel-walker.com/bestellungen?jahr=2017\\
+					http://moebel-walker.com/produkte/48/bild\\
+					http://moebel-walker.com/produkte/12/montageanleitung?format=pdf}
+				\end{itemize}
+			
+			\paragraph{Verknüpfungen / Hypermedia}
+			
+				\begin{itemize}
+					\item Konzept der Verknüpfung unterschiedlicher Ressourcen (Links) in einer Ressourcen-Präsentation
+					\item Erhält Client eine Antwort, kann er enthaltene Verknüpfungen verwenden bzw. denen folgen
+					\item Das Folgen eines solchen Links gibt eine weitere Repräsentation einer anderen Ressource zurück und Client wird in neuen Zustand versetzt (State Transfer)
+					\item HATEOAS: Hypermedia As The Engine Of Application State
+				\end{itemize}
+			
+				\begin{figure}[!htb]
+					\centering
+					\includegraphics[keepaspectratio, height=3cm]{img/ws/bsp_hateoas.png}
+					\caption{Beispiel einer Ressourcenrepräsentation}
+					\label{fig:hateoas_res}
+				\end{figure}
+			
+		\newpage
 		
+			\paragraph{Verwendung von HTTP Methoden}
+			
+				\begin{itemize}
+					\item REST-konforme Applikation verwendet HTTP-Methoden:\\
+					GET, PUT, POST, DELETE, HEAD, OPTIONS etc.
+					
+					\item Idempotente Methoden (GET, PUT, DELETE, HEAD, OPTIONS)\\
+					Können beliebig oft aufgerufen werden, ohne Seiteneffekte hervorzurufen
+					
+					\item Nicht idempotente Methode (POST)\\
+					Darf nicht mehrfach aufgerufen werden, da sie Seiteneffekte hervorruft
+				\end{itemize}
+			
+				\begin{figure}[!htb]
+					\centering
+					\includegraphics[keepaspectratio, height=2.5cm]{img/ws/http_methods.png}
+					\caption{Wichtigste HTTP-Methoden und deren Bedeutung}
+					\label{fig:http_methods}
+				\end{figure}
+			
+			\paragraph{Ressourcen \& Repräsentationen}
+			
+				\begin{itemize}
+					\item Client, der ein bestimmtes Datenformat verarbeiten (lesen/erzeugen) kann, kann mit einer beliebigen Ressource interagieren, wenn diese eine Repräsentation in diesem Format zur Verfügung stellt.
+					\item Ressource kann verschiedene Repräsentationen haben (XML, JSON, PDF, CSV etc.)
+					\item Stellt eine Ressource mehrere Repräsentationen zur Verfügung, können Client \& Server vereinbaren, welches Format verwendet werden soll.
+					\item Beispiele für Angabe des MIME-Type in einer Client-Anfrage:\\
+					\texttt{Accept: application/json, application/xml}\\
+					\texttt{Accept: application/zip, text/plain, text/rtf}
+				\end{itemize}
+			
+			\paragraph{RESTful}
+			
+			Eine Applikation ist dann RESTful, wenn bei deren Realisierung die wesentlichen REST-Prinzipien eingehalten wurden.
+			Das Maturity-Model zeigt, inwiefern eine Applikation wirklich eine RESTful Applikation ist.\\
+			Hinweis: Die meisten Applikationen erreichen Level 2!
+			
+			
+			\begin{figure}[!htb]
+				\centering
+				\includegraphics[keepaspectratio, height=6cm]{img/ws/restful.jpg}
+				\caption{Richardson Maturity-Model}
+				\label{fig:restful}
+			\end{figure}
+		
+		\newpage
 		
 		\subsection{Sie sind in der Lage, einen einfachen Web Service mit JAX RS zu implementieren}
 		
+			\paragraph{JAX-RS (Java API for RESTful Web Services)}
+			
+				\begin{itemize}
+					\item Spezifikation einer Programmierschnittstelle (API) für Java
+					\item Ermöglicht \& vereinheitlicht Verwendung des SW-Architekturstils REST im Rahmen von WS
+					\item Verwendet Annotationen zur Vereinfachung der Entwicklung/Deployments von WS-Clients
+				\end{itemize}
 		
+			\paragraph{Wichtigste Annotationen aus \texttt{javax.ws.rs}}
+			
+				\begin{itemize}
+					\item \textbf{@Path}\\
+					Annotiert vor der Definition einer Klasse; definiert den Ressourcenpfad, \\
+					kann auch zum Annotieren einer Methode verwendet werden
+					
+					\item \textbf{@Consumes}\\
+					Definiert HTTP-Content-Type für Daten, welche in einer HTTP-Anfrage erwartet werden\\ 
+					(Methoden werden damit annotiert)
+					
+					\item \textbf{@Produces}\\
+					Definiert HTTP-Content-Type, welchen die GET-Antwort hat\\
+					(bspw. \texttt{application/json, application/xml} etc.)
+					
+					\item \textbf{@GET, @DELETE, @PUT, @POST}\\
+					HTTP-Methoden
+					
+					\item \textbf{@PathParam}\\
+					Bindet Werte der URI Template-Paramter (oder Path-Segment) \\
+					an Parameter der entsprechenden Ressource-Methode.
+					
+					\item \textbf{@QueryParam}\\
+					Bindet Werte der Query-Parameter aus Anfrage\\
+					an Parameter der entsprechenden Ressource Methode
+					
+					\item \textbf{@FormParam}\\
+					Bindet Werte der Form-Parameter aus Anfrage\\
+					an Parameter der entsprechenden Ressource-Methode
+					
+					\item \textbf{@Context}\\
+					Ermöglicht, dass das Laufzeitsystem bestimmte Objekte in einer Klasse injizieren kann\\ (bspw. UriInfo)
+				\end{itemize}
+			
+			\newpage
+			
+			\paragraph{Vorgehen}
+			
+				1. Schritt wäre die Definition der URIs
+				
+				\begin{figure}[!htb]
+					\centering
+					\includegraphics[keepaspectratio, height=3cm]{img/ws/definitions.png}
+					\caption{Beispiel für URI-Definitionen}
+					\label{fig:definitions}
+				\end{figure}
+			\noindent
+			2. Schritt ist die Implementierung der Ressourcenklasse
+		
+			\begin{figure}[!htb]
+				\centering
+				\begin{subfigure}{.45\textwidth}
+					\centering
+					\includegraphics[keepaspectratio, height=4.5cm]{img/ws/res_01.png}
+					\caption{Beispiel WS-Klasse}
+					\label{fig:res_01}
+				\end{subfigure}
+				\begin{subfigure}{.45\textwidth}
+					\centering
+					\includegraphics[keepaspectratio, height=4.5cm]{img/ws/res_02.png}
+					\caption{Beispiel WS-Klasse}
+					\label{fig:res_02}
+				\end{subfigure}
+				\caption{text}
+				\label{fig:ressourceclass}
+			\end{figure}
+		
+		\paragraph{HTTP-Statuscode}
+		
+			\begin{itemize}
+				\item Mithilfe von Statuscodes kann der Server dem Client mitteilen, ob die Bearbeitung seiner Anfrage erfolgreich abgeschlossen wurde und wenn nicht, welches Problem aufgetreten ist.
+				\item Statuscode-Gruppen:
+					\begin{description}
+						\item[1xx] Informationen
+						\item[2xx] Erfolgreich abgeschlossene Operation
+						\item[3xx] Umleitung der Anfrage
+						\item[4xx] Client-Fehler
+						\item[5xx] Server-Fehler
+					\end{description}
+				\item Im Kontext RESTful WS wird eine Submenge an Statuscodes verwendet
+				\item Wichtigste Statuscodes sind in folgender Enumeration als Konstanten zu finden:\\
+				\texttt{javax.ws.rs.core.Response.Status}
+			\end{itemize}
+		
+			\begin{figure}[!htb]
+				\centering
+				\includegraphics[keepaspectratio, height=3cm]{img/ws/statuscodes.png}
+				\caption{JAX-RS HTTP-Statuscodes}
+				\label{fig:statuscodes}
+			\end{figure}
+		
+		\newpage
+		
+		\paragraph{Klasse \texttt{javax.ws.rs.Response}}
+		
+			\begin{itemize}
+				\item Abstrakte Klasse, unterstützt die Erstellung einer Antwort auf eine Anfrage
+				\item Stellt Klassenmethoden zur Verfügung, welche Erstellung der Antwort vereinfachen
+					\begin{itemize}
+						\item \texttt{public static Response.ResponseBuilder ok()}
+						\item \texttt{public static Response.ResponseBuilder ok(Object entity)}
+						\item \texttt{public static Response.ResponseBuilder ok(Object entity, MediaType type)}
+						\item \texttt{public static Response.ResponseBuilder created(URI location)}
+						\item \texttt{public static Response.ResponseBuilder noContent()}
+						\item \texttt{public abstract boolean hasEntity()}
+						\item \texttt{public abstract <T> T readEntity (Class<T> entityType)}
+						\item \texttt{public abstract <T> T readEntity (GenericType<T> entityType)}
+						\item \texttt{public abstract MediaType getMediaType()}
+						\item \texttt{public static Response.ResponseBuilder status(Response.Status status)}
+					\end{itemize}
+			\end{itemize}
+		
+		\subsubsection{Beispiele für \texttt{javax.ws.rs.Response}}
+		
+			\begin{itemize}
+				\item \textbf{Erstellung einer neuen Ressource (add)}
+				\item Rückgabe:
+					\begin{itemize}
+						\item Code 201 (Created)
+						\item URI der neuen Ressource
+					\end{itemize}
+			\end{itemize}
+			\begin{figure}[!htb]
+				\centering
+				\includegraphics[keepaspectratio, height=4cm]{img/ws/resp_01.png}
+				\caption{Erstellung einer neuen Ressource}
+				\label{fig:resp_01}
+			\end{figure}
+		
+		
+			\begin{itemize}
+				\item \textbf{Aktualisierung einer bestehenden Ressource (update)}
+				\begin{itemize}
+					\item Rückgabe Variante 1: Code 200 (ok) und aktualisierte Entity
+					\item Rückgabe Variante 2: Code 404 (no content)
+				\end{itemize}
+			\end{itemize}
+			\begin{figure}[!htb]
+				\centering
+				\includegraphics[keepaspectratio, height=6cm]{img/ws/resp_02.png}
+				\caption{Aktualisierung einer bestehenden Ressource}
+				\label{fig:resp_02}
+			\end{figure}
+		
+		\newpage
+		
+			\begin{itemize}
+				\item \textbf{Löschen einer bestehenden Ressource, deren ID übergeben wird (delete)}
+				\item Rückgabe:
+				\begin{itemize}
+					\item Code 204 (no content)
+					\item Code 404 (not found)
+				\end{itemize}
+			\end{itemize}
+			\begin{figure}[!htb]
+				\centering
+				\includegraphics[keepaspectratio, height=5cm]{img/ws/resp_03.png}
+				\caption{Löschen einer bestehenden Ressource (mit ID-Übergabe)}
+				\label{fig:resp_03}
+			\end{figure}
+		
+		
+			\begin{itemize}
+				\item \textbf{Suche nach bestehender Ressource nach ID (findById)}
+				\item Rückgabe:
+				\begin{itemize}
+					\item Code 202 (ok) und gefundene Ressource
+					\item Code 404 (not found)
+				\end{itemize}
+			\end{itemize}
+			\begin{figure}[!htb]
+				\centering
+				\includegraphics[keepaspectratio, height=3cm]{img/ws/resp_04.png}
+				\caption{Suche nach bestehender Ressource (mit ID-Übergabe)}
+				\label{fig:resp_04}
+			\end{figure}
+		
+		
+			\begin{itemize}
+				\item \textbf{Suche nach Ressourcen (alle oder gefiltert nach Kriterien)}
+				\item Rückgabe:
+				\begin{itemize}
+					\item Code 202 (ok) und Liste der gefundenen Ressourcen
+					\item Liste wird als generischer Typ zurückgegeben (Class<T>)
+				\end{itemize}
+			\end{itemize}
+			\begin{figure}[!htb]
+				\centering
+				\includegraphics[keepaspectratio, height=3cm]{img/ws/resp_05.png}
+				\caption{Suche nach allen oder gefilterten Ressourcen}
+				\label{fig:resp_05}
+			\end{figure}
+		
+		\newpage	
 		
 		\subsection{Sie wissen, wie ein REST Client Programm als Java Programm erstellt wird und wie ein REST Web Service in einem konkreten Fall korrekt benutzt bzw. angesprochen werden kann}
 		
@@ -2547,7 +2918,7 @@ grant {
 		
 		
 	\newpage	
-	\section{Zusammenfassung auf Folien}
+	\section{Zusammenfassung aus den Folien}
 	
 		%TODO A LOT
 		
