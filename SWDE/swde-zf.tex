@@ -1971,22 +1971,251 @@ em.close();
 	\newpage
 	\section{Persistierung - Java Persistence Query Language (JPQL)}
 		
-		%TODO
+		\subsection{Sie wissen, wie mit Hilfe von JPQL Daten aus einer relationalen Datenbank abgefragt werden können (data retrieving)}
+		
+		\begin{itemize}
+			\item JPQL erinnert an SQL, ist jedoch komplett objektorientiert
+			\item Nicht Case-Sensitive (abgesehen von Klassen- und Attributnamen)
+			\item JPQL-Abfrage: mindestens ein SELECT- und ein FROM-Block
+				\begin{itemize}
+					\item \texttt{SELECT}: Daten angeben, welche aus Wertebereich des FROM-Block zurückgeliefert werden
+					\item \texttt{FROM}: Wertebereich \& Identifikationsvariablen definieren,\\
+						können in anderen Blöcken wiederverwendet werden
+				\end{itemize}
+			\item \textbf{Beispiel:}\\
+			\texttt{SELECT p FROM Person p}\\
+			\textit{Person}: Name der Klasse\\
+			\textit{p}: Identifikationsvariable\\
+		\end{itemize}
+		\noindent
+		Einschränkung der Datenmenge mit WHERE, wobei unterschiedliche Operatoren verwendet werden können. Eine einfache Abfrage mit WHERE wäre:
+		
+		\begin{lstlisting}
+SELECT p
+FROM Person p
+WHERE p.vorname='Hansli'
+		\end{lstlisting}
+		\noindent
+		Abfragen mit logischen \& relationalen Operatoren:
+		\begin{lstlisting}
+SELECT p FROM Person p WHERE p.name='Meier' AND p.vorname LIKE '%and'
+SELECT a FROM Adresse a WHERE a.plz > 10000 OR ort LIKE '%ns'
+		\end{lstlisting}
+		\noindent
+		Anfrage mit Menge-Operatoren:
+		\begin{lstlisting}
+SELECT a FROM Adresse a WHERE a.plz between '6000' AND '7000'
+SELECT a FROM Adresse a WHERE a.plz IN ('6000', '6010', '6030', '6048')
+		\end{lstlisting}
+		\noindent
+		JPQL erlaubt auch Verwendung von String-Methoden:
+		\begin{lstlisting}
+SELECT p
+FROM Person p
+WHERE p.vorname.length() > 5
+
+SELECT substring(p.vorname, 2, 5)
+FROM Person p
+WHERE p.vorname.toLowerCase()='hanspeter'
+		\end{lstlisting}
+		\noindent
+		Sortieren der Ergebnismenge kann mit ORDER BY vorgenommen werden:
+		\begin{lstlisting}
+SELECT p FROM Person p WHERE p.name='Meier' ORDER BY p.vorname DESC
+SELECT a FROM Adresse a ORDER BY a.plz ASC
+SELECT p FROM Person p ORDER BY p.adresse ASC
+		\end{lstlisting}
+		
+		\newpage
+		
+		\subsection{Sie kennen die wesentlichen JPQL Konstrukte (Query, TypedQuery , NamedQuery) und deren Eigenschaften}
+		
+				\paragraph{Query}
+				
+					\begin{itemize}
+						\item Interface \texttt{javafx.persistence.Query}:\\ 
+						Zentrale Schnittstelle bei JPA-Abfragen\\
+						Wird immer benötigt, wenn Entity-Primärschlüssel nicht zur Verfügung steht
+						\item Query-Instanz mithilfe EntityManager erstellen:\\
+								\texttt{Query query = em.createQuery("SELECT p FROM Person p");}
+						\item Abfrage kann mit einer der folgenden Methoden durchgeführt werden:
+						\begin{itemize}
+							\item \texttt{Object getSingleResult()}
+							\item \texttt{List getResultList()}
+						\end{itemize}
+						\item Rückgabewert beider Methoden ist nicht typisiert, muss gecastet werden (Typumwandlung):\\
+						\texttt{Person p = (Person) query.getSingleResult();}
+					\end{itemize}
+				
+				\paragraph{TypedQuery}
+				
+					\begin{itemize}
+						\item Interface \texttt{javafx.persistence.TypedQuery<T>}:\\
+						Ermöglicht Abfragen mit typisiertem Rückgabewert
+							\begin{itemize}
+								\item \texttt{T getSingleResult()}
+								\item \texttt{List<T> getResultList()}
+							\end{itemize}
+						\item TypedQuery wird vom EntityManager erstellt:\\
+							\texttt{TypedQuery<Person> tQuery = em.createQuery("SELECT p FROM Person p", Person.class);}
+						\item Rückgabewert typisiert, muss nicht mehr gecastet werden:\\
+						\texttt{Person p = tQuery.getSingleResult();}\\
+					\end{itemize}
+					Konkretes Beispiel:
+					\begin{lstlisting}
+List<Person> personListe = tQuery.getResultList();
+
+for (Person p : personliste) {
+	System.out.println(p.getName() + " " + p.getVorname());
+}
+					\end{lstlisting}
+					JPA ermöglicht Erstellung von "parametrisierten" Abfragen.
+					Dabei werden die aktuellen Parameterwerte (Argumente) nachträglich in die Abfrage "injiziert". Beispiel:
+					\begin{lstlisting}
+TypedQuery<Person> tQuery = em.createQuery("SELECT p FROM Person p
+																WHERE p.name=:name
+																AND p.vorname=:vorname",
+																Person.class);
+tQuery.setParameter("name", "Pechvogel");
+tQuery.setParameter("vorname", "Hansli");
+					\end{lstlisting}
+					Alternative Möglichkeit:
+					\begin{lstlisting}
+TypedQuery<Person> tQuery = em.createQuery("SELECT p FROM Person p
+																WHERE p.name=?1 AND p.vorname=?2",
+																Person.class);
+tQuery.setParameter(1, "Pechvogel");
+tQuery.setParameter(2, "Hansli");
+					\end{lstlisting}
+				
+				\newpage
+				
+				\paragraph{NamedQueries}
+					
+					\begin{itemize}
+						\item JPA kann benannte Abfragen definieren (named queries)
+						\item Werden mit eindeutigen Namen versehen \& können beliebig wiederverwendet werden
+						\item Abfragen mit vordefinierten Abfragestrings
+						\item Üblich in der zugehörigen Entity-Klasse definiert
+						\item Trennung der Abfragen vom Code $\rightarrow$ positive Auswirkung auf Codeorganisation\\
+					\end{itemize}
+					Definitionsbeispiel:
+					\begin{lstlisting}
+@Entity
+@NamedQuery(name = "Student.findBySemester",
+					query = "SELECT e FROM Student e WHERE e.semester=:semester")
+@NamedQuery(name = "Student.findByLastnameAndFirstname",
+					query = "SELECT e FROM Student e WHERE e.lastname=:lastname
+									AND e.firstname=:firstname")
+public class Student implements Serializable(
+		// Implementierung
+)
+					\end{lstlisting}
+					Diese \texttt{NamedQueries} können beliebig oft vom \texttt{EntityManager} verwendet werden, Beispiel:
+					\begin{lstlisting}
+TypedQuery<Student> q = 
+				em.createNamedQuery("Student.findBySemester", Student.class);
+q.setParameter("semester", 5);
+List<Student> studentList = q.getResultList();
+					\end{lstlisting}
+					Anzeige der Ergebnismenge:
+					\begin{lstlisting}
+for (Student s : studentList) {
+		System.out.println(s.getLastName() + " " + 
+		s.getFirstName() + ", Semester: + s.getSemester());
+}
+					\end{lstlisting}
+					
+				\paragraph{Fetching von Daten}
+				
+					\begin{itemize}
+						\item JPA spezifiziert zwei Fetching-Strategien:
+							\begin{itemize}
+								\item \textbf{Lazy Load}: Daten erst aus DB laden, wenn sie benötigt werden
+								\item \textbf{Eager Load}: Daten sofort vollständig laden
+							\end{itemize}
+						\item Angabe der Fetching-Strategien bei der Beziehung:\\
+						\texttt{@OneToMany(fetch = FetchType.EAGER)\\
+									private List<Student> studentList;}				
+					\end{itemize}
+			
+				\paragraph{Kaskadierung von Aktionen}
+				
+					\begin{itemize}
+						\item JPA stellt Möglichkeit zur Verfügung:\\
+						Auf dem Aggregat-Objekt auszuführende Aktionen automatisch auf Teil-Objekt ausführen
+						\item Beispiel A (Klasse \texttt{Verleger}):\\
+						\texttt{@OneToMany (cascade = CascadeType.ALL)\\
+						private List<Buch> buchListe;}
+							\begin{itemize}
+								\item Hier wird jede Aktion, die auf dem \texttt{Verleger} ausgeführt wird, auch auf allen \texttt{Buch}-Entities aus der \texttt{buchListe} ausgeführt
+							\end{itemize}
+						\item Beispiel B (Klasse \texttt{Person}):\\
+						\texttt{@OneToOne (cascade = {CascadeType.PERSIST, CascadeType.REMOVE})\\
+						private Adresse adresse;}
+							\begin{itemize}
+								\item Hier wird beim Speichern und Löschen einer \texttt{Person}-Entity auch die zugehörige \texttt{Adresse}-Entity gespeichert bzw. gelöscht
+							\end{itemize}
+					\end{itemize}
 		
 	\newpage
 	\section{Kommunikation - Remote Method Invocation (RMI)}
 	
 		%TODO
+		
+		\subsection{Sie wissen, was unter RMI zu verstehen ist und kennen die Schwächen und Stärken von RMI}
+		
+		
+		
+		\subsection{Sie wissen, wie die Kommunikation zwischen Komponenten mit Hilfe von RMI realisiert wird}
+
+
+
+		\subsection{Sie sind in der Lage, die Kommunikation zwischen einzelnen Komponenten einer verteilten Applikation mit Hilfe von RMI zu realisieren}
+		
+		
+		
 	
 	\newpage
 	\section{Web Services - REST}
 	
 		%TODO
 		
+		\subsection{Sie wissen, was unter Web Service zu verstehen ist und welche Vor- und Nachteile diese mit sich bringen}
+		
+		
+		
+		\subsection{Sie können die Eigenschaften von SAOP und REST basierenden Web Services}
+		
+		
+		
+		\subsection{Sie wissen, was unter REST zu verstehen ist und was mit RESTful gemeint ist}
+		
+		
+		
+		\subsection{Sie sind in der Lage, einen einfachen Web Service mit JAX RS zu implementieren}
+		
+		
+		
+		\subsection{Sie wissen, wie ein REST Client Programm als Java Programm erstellt wird und wie ein REST Web Service in einem konkreten Fall korrekt benutzt bzw. angesprochen werden kann}
+		
+		
+		
+		\subsection{Sie kennen die Unterschiede zwischen RMI und Web Services im Kontext der Kommunikation in einer verteilten Anwendung}
+		
+		
+		
+		\subsection{Sie sind in der Lage zu entscheiden, welche Middleware sich in einem konkreten Fall besser eignen würde}
+		
+		
+		
+		
 	\newpage	
 	\section{Zusammenfassung auf Folien}
 	
 		%TODO A LOT
+		
+		
 		
 	\newpage
 		
