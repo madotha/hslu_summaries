@@ -53,6 +53,15 @@ Zusammenfassung FS 2019}}
 \begin{document}
 	\pagenumbering{gobble}
 	\maketitle
+	
+	\begin{itemize}
+		\item Jegliche in diesem Dokument verwendete Infos wurden den Unterrichtsvorlagen entnommen, es wurden keine zusätzlichen Quellen verwendet.
+		\item Zu JavaFx wurde in der Vorlesung noch eine Demo vorgestellt.
+		Diese wurde aus den Vorlesungsfolien direkt entnommen und befindet sich ganz am Ende des Dokuments.
+		\item Wer Rechtschreibfehler findet, darf diese behalten.
+		\item Vell Spass bim Ineprögle!
+	\end{itemize}
+	
 	\newpage
 	\pagenumbering{arabic}
 	\tableofcontents
@@ -2906,23 +2915,315 @@ grant {
 		
 		\subsection{Sie wissen, wie ein REST Client Programm als Java Programm erstellt wird und wie ein REST Web Service in einem konkreten Fall korrekt benutzt bzw. angesprochen werden kann}
 		
+		\begin{itemize}
+			\item REST-Client nimmt Dienstleistung in Anspruch, welche von einer anderen Komponente erbracht wird, die in einem anderen Prozess ausgeführt wird
+			\item Vorgehen: Anfrage an entfernte Komponente senden, zugestelltes Ergebnis verarbeiten
+			\item Interprozess-Kommunikation nötig, um Komponente ansprechen zu können
+		\end{itemize}
+	
+			\paragraph{Marshalling \& Unmarshalling}
+			
+				\begin{itemize}
+					\item RESTful Web Service erhält HTTP-Anfrage, welche unter Umständen\\
+					auch Daten im Body der Anfrage enthalten kann (bspw. als XML, JSON etc.)
+					
+					\item \textbf{Marshalling:}\\
+					Vor dem Senden der Anfrage Daten aus "lokalem Format" in "gemeinsames Format" überführen\\
+					bspw. Room-Objekt in einen XML-/JSON-Datenstrom
+					
+					\item \textbf{Unmarshalling:}\\
+					Bevor Empfänger (Web Service) die Anfrage bearbeitet, werden Daten aus dem Body\\
+					aus "gemeinsamen Format" in "lokales Format" überführt\\
+					bspw. aus XML-/JSON-Datenstrom ein Room-Objekt erstellen
+					
+					\item Beim Rücksenden vom WS an Client geschieht genau das Gleiche wieder (\texttt{ M A G I C })\\
+					
+					
+					\item \textbf{Request:}
+						\begin{itemize}
+							\item Client: Objekt \qquad $\rightarrow$ JSON | XML \textit{(Marshalling)}
+							\item Server: JSON | XML $\rightarrow$ Objekt \textit{(Unmarshalling)}
+						\end{itemize}
+					
+					\item \textbf{Response:}
+						\begin{itemize}
+							\item Server: Objekt \qquad $\rightarrow$ JSON | XML \textit{(Marshalling)}
+							\item Client: JSON | XML $\rightarrow$ Objekt \textit{(Unmarshalling)}
+						\end{itemize}
+					
+					\item Zur Format-Überführung der Daten kann eigene Implementierung zur Verfügung gestellt werden (Marshaller-Unmarshaller-Komponente)\\
+					Bei XML/JSON Daten werden bereits bestehende, mehrfach getestete Bibliotheken verwendet:\\
+					Jackson, GSON, JAXB etc.
+				\end{itemize}
+			
+				\begin{figure}[!htb]
+					\centering
+					\includegraphics[keepaspectratio, height=7cm]{img/ws/overview.png}
+					\caption{Gesamtübersicht eines Systems mit REST-Architektur}
+					\label{fig:rest_overview}
+				\end{figure}
 		
+		\newpage
+		
+			\subsubsection{Jersey-Client}
+			
+			\begin{itemize}
+				\item Jersey: Referenzimplementierung für JAX-RS, stellt auch einen einfachen Client zur Verfügung, welcher Anfragen senden \& Antworten einfach verarbeiten kann
+				\item Ein solcher Client wird nach folgenden Vorgehen erstellt:\\
+			\end{itemize}
+		
+				\textbf{1. Jersey-Client Instanz erstellen}
+				
+				\begin{lstlisting}
+import javax.ws.rs.client.Client;
+// ...
+Client client = ClientBuilder.newClient();
+				\end{lstlisting}
+				
+				\textbf{2. WebTarget erstellen}
+				
+				\begin{lstlisting}
+import javax.ws.rs.client.WebTarget;
+// ...
+private String BASE_URI = "http://localhost:8080";
+
+WebTarget target = client.target(BASE_URI).path("messages/2")
+				\end{lstlisting}
+					
+				\textbf{3. Anfrage senden}
+				
+				\begin{lstlisting}
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+// ...
+Response response = target.request(MediaType.APPLICATION_XML).get();
+				\end{lstlisting}
+					
+				\textbf{4. Antwort verarbeiten}
+				
+				\begin{lstlisting}
+// ...
+Message message = response.readEntity(Message.class);
+// do something with the message ... ;-)
+				\end{lstlisting}
+					
+			\subsubsection{Beispiele mit Jersey-Client}
+			
+				\begin{figure}[!htb]
+					\centering
+					\includegraphics[keepaspectratio, height=6cm]{img/ws/jersey_01.png}
+					\caption{\textbf{HTTP GET:} Holen einer Entität (bspw. aufgrund ID-Wert)}
+					\label{fig:jersey_httpget1}
+				\end{figure}
+			
+				\newpage
+			
+				\begin{figure}[!htb]
+					\centering
+					\includegraphics[keepaspectratio, height=6cm]{img/ws/jersey_02.png}
+					\caption{\textbf{HTTP GET:} Holen einer Collection / Liste von Entitäten}
+					\label{fig:jersey_httpget2}
+				\end{figure}
+			
+				\begin{figure}[!htb]
+					\centering
+					\includegraphics[keepaspectratio, height=7cm]{img/ws/jersey_03.png}
+					\caption{\textbf{HTTP POST:} Erstellen einer neuen Entität}
+					\label{fig:jersey_httppost}
+				\end{figure}
+			
+				\begin{figure}[!htb]
+					\centering
+					\includegraphics[keepaspectratio, height=6cm]{img/ws/jersey_04.png}
+					\caption{\textbf{HTTP PUT:} Aktualisierung einer bestehenden Entität}
+					\label{fig:jersey_httpput}
+				\end{figure}
+			
+				\newpage
+			
+				\begin{figure}[!htb]
+					\centering
+					\includegraphics[keepaspectratio, height=6cm]{img/ws/jersey_05.png}
+					\caption{\textbf{HTTP DELETE:} Löschen einer Entität (aufgrund ID-Wert)}
+					\label{fig:jersey_httpdelete}
+				\end{figure}
 		
 		\subsection{Sie kennen die Unterschiede zwischen RMI und Web Services im Kontext der Kommunikation in einer verteilten Anwendung}
 		
+		\paragraph{RMI}
 		
+			\begin{itemize}
+				\item RMI verfolgt einen Interface-zentrierten Ansatz
+				\item Vorteile:
+					\begin{itemize}
+						\item alles, was benötigt wird, ist im JDK bereits enthalten
+						\item keine Berührungspunkte mit HTTP
+						\item einfach in der Umsetzung
+					\end{itemize}
+				\item Nachteile:
+					\begin{itemize}
+						\item Java-to-Java Only!
+						\item Eher nur für Kommunikation im Intranet geeignet (kein Extranet)
+						\item Interoperabilität mit anderen Plattformen: schwer bis gar nicht möglich
+					\end{itemize}
+			\end{itemize}
+		
+		\paragraph{REST Web Services}
+		
+			\begin{itemize}
+				\item REST WS verfolgen einen nicht-Interface-zentrierten Ansatz
+				\item Vorteile:
+					\begin{itemize}
+						\item Plattformübergreifende Interoperabilität einfach zu erreichen
+						\item Einsatz bekannter, etablierter Technologien \& Konzepte
+						\item Sehr gut geeignet für Public-APIs
+					\end{itemize}
+				\item Nachteile:
+					\begin{itemize}
+						\item Kenntnisse über die HTTP-Konzepte benötigt (wenn auch nur minimal)
+						\item Realisierung des höchsten Maturity-Levels schwierig bzw. aufwändig
+						\item Saubere URI-Definition nicht immer einfach,\\ 
+						kann bei sehr vielen URIs zu einer grossen Herausforderung werden
+					\end{itemize}
+			\end{itemize}
 		
 		\subsection{Sie sind in der Lage zu entscheiden, welche Middleware sich in einem konkreten Fall besser eignen würde}
 		
-		
+		Jo aber secher doch, mer hend das jetz schliesslech glernt!
 		
 		
 	\newpage	
-	\section{Zusammenfassung aus den Folien}
+	\section{Zusammenfassungen aus den Folien}
 	
-		%TODO A LOT
+		\subsection{Buildautomatisation \texttt{[null]}}
 		
+		\subsection{Dependency Management \texttt{[null]}}
 		
+		\subsection{Versionskontrollsysteme}
+		
+			\begin{itemize}
+				\item Versionskontrollsysteme bewusst einsetzen und nutzen
+					\begin{itemize}
+						\item Erfahrungen sammeln in der Anwendung
+						\item Zunehmend Funktionalitäten nutzen
+					\end{itemize}
+				\item Minimale Basis
+					\begin{itemize}
+						\item Lokal: \texttt{checkout} und \texttt{commit}
+						\item Verteilt/zentral: \texttt{clone}, \texttt{pull (fetch/merge)} und \texttt{push}
+					\end{itemize}
+				\item Fortgeschrittene Nutzung
+					\begin{itemize}
+						\item Taggen - Markieren von Revisionsständen (Baseline)
+						\item Branchen - getrennte Entwicklungszweige
+					\end{itemize}
+				\item \textbf{Koordination} zwischen den Teammitgliedern \textbf{sinnvoll}!
+					\begin{itemize}
+						\item Konflikte können passieren, sind aber nicht das Ziel!
+					\end{itemize}
+				\item Commits \textbf{immer} mit sinnvollen, aussagekräftigen Kommentaren!
+			\end{itemize}
+		
+		\subsection{Modularisierung}
+			
+			\begin{itemize}
+				\item Modularisierung teilt ein grosses System in kleinere, möglichst unabhängige, wiederverwendbare, lose gekoppelte Module auf.
+				\item Ein Modul definiert sich über Funktionalität, Import und Export.
+				\item Eine Komponente ist ein Modul, das einem Komponentenmodell folgt und somit noch \\ 
+				eine (Laufzeit-)Umgebung als Kontext benötigt.
+				\item Modularisierung ist eine zentrale, sehr anspruchsvolle aber auch interessante Aufgabe zwischen Softwaredesign und –architektur.
+				\item Bis und mit Java 8 war echte Modularisierung nur über zusätzliche Hilfsmitte und Frameworks realisierbar (JEE, OSGietc.)
+				\item Seit Java 9 ist die Java Runtime selber modularisiert und stellt explizite Mechanismen zur Modularisierung zur Verfügung.
+			\end{itemize}
+		
+		\subsection{Testing Grundlagen \& Automatisiertes Testing}
+		
+			\begin{itemize}
+				\item Nicht nachträgliches Testen zur Fehlersuche, sondern kontinuierliches Unit-Testen zur Bestätigung, dass es funktioniert!
+					\begin{itemize}
+						\item Test First mit Unit Tests: einfaches und attraktives Vorgehen.
+					\end{itemize}
+				\item Grosse Unterstützung durch zahlreiche Werkzeuge, Frameworks und Plugins gegeben, JUnit ist bei Java Quasistandard:
+					\begin{itemize}
+						\item Vollständige Integration der Unit Tests in die Implementationsphase des Projektes.
+						\item Automatisierung der Testausführung und Validation.
+					\end{itemize}
+				\item Messung der Code Coverage als Motivationsfaktor.
+				\item Designregeln für gute Testbarkeit: SRP, SoC, Dependency Injection.
+				\item Qualität der Testfälle immer im Auge behalten!
+				\item Test Doubles (Mocking) um Testfälle noch stärker zu entkoppeln und mehr Unit Tests (statt Integration) machen zu können.
+				\item \textit{PlÖtZli mAcHt tEsTe sPaSs!}
+			\end{itemize}
+		
+		\newpage
+		
+		\subsection{Software Architektur}
+		
+			\begin{itemize}
+				\item Verschiedene Aspekte der Software-Architektur:\\
+				Fachlich, Technologisch, Verteilung, Organisation etc.
+				\item Schichtenbildung und Schnittstellen als (sehr) zentrale Grundkonzepte.
+				\item Domain Model Patterns, Service Layer und Distribution Patterns.
+				\item Microservices als «moderne», verteilte Architektur.
+				\item Synchrone und Asynchrone Kommunikation.
+			\end{itemize}
+		
+		\subsection{Grafisches User Interface}
+		
+			\begin{itemize}
+				\item Deklarative GUI Beschreibung erleichtert die Erstellung von graphischen User Interfaces, wobei das Layout vom Verhalten getrennt wird (MVC)
+				\item Die Implementierung eines UI kann von einem Designer vorgenommen werden, während das Verhalten vom Programmierer übernommen werden kann
+				\item Durch die Zurverfügungstellung unterschiedlicher FXML-Dateien können unterschiedliche Typen von Geräten einfach unterstützt werden, das Verhalten bleibt immer gleich
+				\item SceneBuilder ist ein Tool, das sich sehr gut mit IDEs kombinieren lässt und gute Unterstützung bei der Erstellung von GUIs bietet (viele vorgefertigte Komponenten, intuitive Bedienung und Konfiguration der einzelnen Komponenten etc.)
+			\end{itemize}
+		
+		\subsection{Persistierung von Daten - JPA und OR Mapping}
+		
+			\begin{itemize}
+				\item Java Persistence API (JPA)
+					\begin{itemize}
+						\item ist eine Spezifikation, die sich um Abbildung von Objekten auf Relationen (Tabellen) kümmert (OR Mapping)
+						\item definiert die CRUD Operationen und eine eigene Abfragesprache (JPQL)
+					\end{itemize}
+				\item Für die Persistierung wird ein JPA Framework (JPA Provider, OR Mapper) benötigt, das die JPA Funktionalitäten zur Verfügung stellt (z.B. EclipseLink, Hibernate, OpenJPA)
+				\item JPA stellt unterschiedliche Annotationen zur Verfügung, mit deren Hilfe (unter anderem) die Abbildung von unterschiedlichen Beziehungen zwischen einzelnen Objekten (Vererbung inklusive) realisiert wird
+				\item JPA unterstützt "von Haus aus" die Persistierung von primitiven Datentypen, Strings, LocalDate , LocalTime etc., die Angabe von Annotationen ist nicht nötig.
+				\item Durch die Verwendung von JPA wird die Abhängigkeit von einem konkreten JPA Provider (OR Mapper) oder DBMS eliminiert
+			\end{itemize}
+		
+		\subsection{Persistierung von Daten - JPQL}
+		
+			\begin{itemize}
+				\item JPQL ist eine mächtige Abfragesprache, mit der die Abfragen definiert werden können, die auf dem Entity Modell basieren
+				\item JPQL ermöglicht sowohl die Nutzung von unterschiedlichen Operatoren als auch die Nutzung von einigen Methoden der Klasse String.
+				\item Die Nutzung von benannten Abfragen (NamedQuery) ermöglicht eine saubere Organisation des Codes, da die Abfragen getrennt von dem restlichen Code definiert werden können
+				\item JPA unterstützt unterschiedliche Fetching Strategien: LazyLoad und EagerLoad. Welche besser geeignet ist muss situativ entschieden werden.
+				\item JPA unterstützt die Kaskadierung von Aktionen, die in bestimmten Situationen sinnvoll verwendet werden können.
+			\end{itemize}
+		
+		\newpage
+		\subsection{Kommunikation - RMI}
+		
+			\begin{itemize}
+				\item RMI ist eine Middleware, mit der die Kommunikation zwischen Komponenten einer in Java implementierten verteilten Anwendung realisiert werden kann
+				\item RMI maskiert die Details der Netzwerkprogrammierung und ermöglicht dem Entwickler, sich auf die Lösung des Anwendungsproblems zu konzentrieren
+				\item RMI stellt einen einfachen Namensdienst zur Verfügung, bei dem die entfernten Objekte registriert werden können (binding)
+				\item Die Generierung von Request und Reply Protokollen sowie Stubs und Skeletons wird in Echtzeit durch die RMI Umgebung automatisch vorgenommen
+				\item Wenn ein Client nach einem entfernten Objekt sucht, sendet er eine Anfrage an das Namensdienst (lookup) und bekommt den Stub (die Referenz auf das entfernte Objekt) zugestellt
+				\item Da mit RMI der Code dynamisch geladen wird, muss im RMI Kontext ein SecurityManager verwendet werden, um Missbrauch zu unterbinden
+			\end{itemize}
+		
+		\subsection{Web Services}
+		
+			\begin{itemize}
+				\item Web Services verfolgen das Ziel, die plattformübergreifende Zusammenarbeit von Applikationen zu erleichtern
+				\item Die plattformübergreifende Zusammenarbeit wird durch die Verwendung von etablierten Standards und Technologien ermöglicht: XML, SOAP, HTTP Protokoll und Methoden etc.
+				\item XML Basierende Web Services (SOAP Webservices) sind interface-zentriert und etwas weniger flexibel (da interface-, und nicht ressourcen-zentriert)
+				\item RESTful Web Services sind etwas "leichtgewichtiger" und insbesondere für public API gut geeignet
+				\item Sie sind Ressourcen-zentriert und verwenden die zur Verfügung stehenden HTTP Methoden (GET, POST, PUT, DELETE etc
+				\item Gut skalierbar, zustandslose Kommunikation und unterschiedliche Repräsentation von Ressourcen.
+				\item JAX RS ist eine Spezifikation für RESTful Web Services in Java, während Jersey eine Referenz Implementierung dieser Spezifikation ist.
+			\end{itemize}
 		
 	\newpage
 		
