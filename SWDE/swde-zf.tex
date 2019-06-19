@@ -2165,17 +2165,353 @@ for (Student s : studentList) {
 		
 		\subsection{Sie wissen, was unter RMI zu verstehen ist und kennen die Schwächen und Stärken von RMI}
 		
+		\begin{itemize}
+			\item Mechanismus in Java, mit welchem entfernte Objekte (deren Angebote) genutzt werden können
+			\item Einfaches Framework zur Entwicklung verteilter Anwendungen in Java
+			\item Entwicklung mit RMI nur in Java möglich (Java-to-Java only)
+			\item Internet Inter-Orb Protocol (RMI-IIOP):\\
+			Ermöglicht einer Java-RMI-Anwendung mit Anwendungen / Komponenten zu kommunizieren, welche die Common Object Request Broker Architecture (CORBA) verwenden
+		\end{itemize}
+	
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[keepaspectratio, height=5cm]{img/rmi/overview.png}
+			\caption{Position von RMI in einer Anwendung}
+			\label{fig:rmi_overview}
+		\end{figure}
 		
+			\paragraph{Stärken}
+			
+				\begin{itemize}
+					\item RMI "maskiert" Details der Netzwerkkommunikation
+					\item Ermöglicht Verteilung von Objekten durch einen Namensdienst (RMI-Registry)
+					\item Ermöglicht das dynamische Laden von Code
+					\item Java-Standardedition (JSE) enthält alle für RMI-Entwicklung benötigte Klassen \& Interfaces
+					\item Bietet von Haus aus synchrone Kommunikation zw. Client \& Server (entferntes Objekt)
+				\end{itemize}
+			
+			\paragraph{Schwächen}
+			
+				\begin{itemize}
+					\item Basiert auf objektorientierten Konzepten von Java, Integration mit anderen Verteilungstechniken, vorallem mit anderen Programmiersprachen, sehr schwierig und nur über IIOP möglich
+					\item Der mitgelieferte Namensdienst ist sehr einfach, genügt für manche Anwendungen evtl. nicht
+					\item Synchronisation bei konkurrierenden Zugriffen nicht von RMI realisiert,\\ 
+					liegt im Verantwortungsbereich des Entwicklers
+				\end{itemize}
 		
 		\subsection{Sie wissen, wie die Kommunikation zwischen Komponenten mit Hilfe von RMI realisiert wird}
+		
+				\paragraph{Begrifflichkeiten}
+				
+					\begin{itemize}
+						\item Client-Host und Client-Programm
+						\item Server-Hose und Server-Programm
+						\item Namensdienst (RMI-Registry)
+						\item Entferntes Objekt (remote object), Stub und Skeleton
+					\end{itemize}
 
-
-
+		\newpage
+		
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[keepaspectratio, height=4cm]{img/rmi/rmi.png}
+			\caption{Übersicht über eine RMI-Anwendung}
+			\label{fig:rmi}
+		\end{figure}
+	
+		\begin{itemize}
+			\item \textbf{Server-Programm:}
+				\begin{itemize}
+					\item Meldet das entfernte Objekt beim Namensdienst an und auch wieder ab, wenn es nicht mehr benötigt wird (Registrierung \& Deregistrierung)
+				\end{itemize}
+			\item \textbf{Client-Programm:}
+				\begin{itemize}
+					\item Nimmt Dienste des entfernten Objekts in Anspruch
+					\item Fragt bei Namensdienst, ob für gewünschten Dienst passendes Objekt existiert \textit{(lookup)}
+					\item Wenn lookup-Anfrage positiv beantwortet:\\
+						Client erhält von Namensdienst "Referenz auf entferntes Objekt" \textit{(Stub)}
+					\item Ruft Methoden des entfernten Objekts auf
+				\end{itemize}
+			\item \textbf{Entferntes Objekt:}
+				\begin{itemize}
+					\item Läuft auf Server-Knoten (Server-Host)
+					\item Stellt bestimmte Dienste zur Verfügung
+					\item Vom Server erzeugt \& beim Namensdienst registriert
+					\item Kann von entferntem Client (andere JVM) verwendet werden
+					\item EO empfindet Client-Aufrufe aus anderer JVM als lokale Aufrufe, da seine Methoden in Wirklichkeit vom Skeleton aufgerufen werden
+				\end{itemize}
+			\item \textbf{Stub \& Skeleton:}
+				\begin{itemize}
+					\item Durch rmci (rmi compiler) aus Klasse erzeugt, welche entferntes Objekt implementiert
+					\item Stub wird Client nach erfolgreicher Anfrage (lookup) automatisch (in Echtzeit) zugestellt
+					\item Seid jdk1.5.0: Stub \& Skeleton werden dynamisch erzeugt (nicht mehr manuell generieren)
+				\end{itemize}
+			\item \textbf{Namensdienst (RMI-Registry):}
+				\begin{itemize}
+					\item Aufgaben des Namensdienst:
+						\begin{itemize}
+							\item \textbf{binding:} Registrierung von EO ermöglichen
+							\item \textbf{lookup:} Finden des EO ermöglichen
+							\item \textbf{unbinding:} De-Registrierung von EO ermöglichen
+						\end{itemize}
+					\item Namensdienst auf Host-System (Server) ausführen
+					\item Server kann EO beim Namensdienst registrieren
+					\item Client kann Namensdienst anfragen, ob EO verfügbar ist bzw. registriert wurde
+				\end{itemize}
+		\end{itemize}
+	
+				\paragraph{Marshalling \& Unmarshalling}
+				
+					\begin{itemize}
+						\item \textbf{Marshalling:}
+						\begin{itemize}
+							\item Verpacken von Nachrichten, bevor sie zu EO (Server) gesendet werden
+							\item Wird immer auf Sender-Seite vorgenommen									
+						\end{itemize}
+						\item \textbf{Unmarshalling:}
+							\begin{itemize}
+								\item Entpacken von Nachrichten, welche vom Sender in verpackter Form eintreffen, bevor sie dem echten EO übergeben werden
+								\item Wird immer auf Empfänger-Seite vorgenommen
+							\end{itemize}
+						\item Wird beides automatisch von Stub \& Skeleton vorgenommen,\\
+						Entwickler muss sind nicht darum kümmern
+						\item Aufbau Anfrage-Nachricht (Request-Protokoll):\\
+								\texttt{AnfrageID \# NameDerMethode \# Parameter(s)}
+						\item Aufbau Antwort-Nachricht (Reply-Protokoll):\\
+								\texttt{AnfrageID \# Inhalt \# ExceptionInfos | null}
+					\end{itemize}
+				
+					\newpage
+			
+			\subsubsection{Ablauf RMI}
+			
+			\begin{figure}[!htb]
+				\centering
+					\begin{subfigure}{.45\textwidth}
+						\centering
+						\includegraphics[keepaspectratio, height=6.5cm]{img/rmi/rmi_ablauf.png}
+						\caption{Ablauf der RMI-Kommunikation}
+						\label{fig:rmi_ablauf}
+					\end{subfigure}
+					\begin{subfigure}{.45\textwidth}
+						\centering
+						\includegraphics[keepaspectratio, height=4.5cm]{img/rmi/rmi_architecture.png}
+						\caption{Architektur von RMI}
+						\label{fig:rmi_architecture}
+					\end{subfigure}			
+				\caption{Architektur und Ablauf von RMI}
+				\label{fig:rmi_architecture_ablauf}
+			\end{figure}	
+		
+			\begin{enumerate}[itemsep=0.5em]
+				\item \textbf{RMI-Server} erzeugt EO \& registriert es beim Namensdienst
+				
+				\item \textbf{RMI-Client} möchte EO benutzen, fragt bei Namensdienst,\\
+				ob / welches EO für gewünschten Dienst zur Verfügung steht.\\
+				Namensdienst sendet Client die Referenz auf EO, falls vorhanden (Stub)\\
+				Client-Stub fungiert für den Client als Server (Proxy)
+				
+				\item \textbf{RMI-Client} besitzt Referenz auf EO (Stub), kann gewünschte Methoden des Objekts aufrufen
+				
+				\item \textbf{Stub-Objekt} nimmt Client-Anfrage entgegen, verpackt übergebene Parameter (Marshalling)\\
+				Sendet Methodenaufruf an RMI-Server, nutzt dazu zugrundeliegende OS-Funktionen
+				
+				\item \textbf{Betriebssystem} überträgt Daten über physikalisches Netzwerk zum Host,\\
+				RMI-Client wartet auf Antwort (blockierend)
+				
+				\item \textbf{Entferntes Betriebssystem} nimmt Anfrage entgegen,\\
+				leitet diese an entsprechendes Skeleton-Objekt weiter
+				
+				\item \textbf{Skeleton} entpackt erhaltene Anfrage (Unmarshalling),\\
+				generiert daraus entsprechenden Methodenaufruf \& \\
+				ruft gewünschte Methode des echten Objekts auf
+				
+				\item \textbf{Echtes Objekt (EO)} erbringt geforderten Dienst, \\
+				gibt Ergebnis an Aufrufer (Methode aus Skeleton) zurück
+				
+				\item \textbf{Skeleton} nimmt Rückgabewert (oder Exception) entgegen, \\
+				verpackt Antwort (Marshalling) für Übertragung und übergibt diese für Übertragung an OS
+				
+				\item \textbf{Entferntes OS} sendet Antwort an lokales OS
+				
+				\item \textbf{Lokales OS} nimmt Antwortnachricht entgegen \& leitet diese an Stub weiter
+				
+				\item \textbf{Stub} entpackt Nachricht und extrahiert Rückgabewert / Ausnahme (Unmarshalling), liefert Antwort an Client zurück, welcher den Rückgabewert entgegennimmt und weiterarbeiten kann.\\
+				$\rightarrow$ Wurde auf Serverseite eine Ausnahme geworfen, muss der Client-Stub diese extrahieren und werfen und Client muss darauf entsprechen reagieren.
+			\end{enumerate}
+		
+		\newpage
+		
 		\subsection{Sie sind in der Lage, die Kommunikation zwischen einzelnen Komponenten einer verteilten Applikation mit Hilfe von RMI zu realisieren}
 		
-		
-		
+		\begin{itemize}
+			\item Trennung von Zuständigkeiten (Separation of Concerns)\\
+			Definition \& Implementierung des Verhaltens werden getrennt
+			\item Definition des Verhaltens: Interface
+			\item Implementierung des Verhaltens: Klasse, die das Interface realisiert
+		\end{itemize}
 	
+				\paragraph{Definition der Schnittstelle}
+				
+					\begin{itemize}
+						\item Methoden, die zur Verfügung gestellt werden, in passender Schnittstelle definieren
+						\item Schnittstelle muss von Schnittstelle \texttt{java.rmi.Remote} abgeleitet werden
+						\item Alle Methoden von \texttt{java.rmi.Remote} können\\
+							\texttt{java.rmi.RemoteException} werfen \& müssen diese entsprechen deklarieren
+						\item Wir sprechen von entfernter Schnittstelle (remote interface)
+					\end{itemize}
+				
+					\begin{figure}[!htb]
+						\centering
+						\includegraphics[keepaspectratio, height=5cm]{img/rmi/remote_int.png}
+						\caption{Beispiel einer entfernten Schnittstelle}
+						\label{fig:remote_int}
+					\end{figure}
+				
+				\paragraph{Definition der implementierenden (entfernten) Klasse}
+				
+					\begin{itemize}
+						\item Klasse für Instanzierung entfernter Objekte muss:
+							\begin{itemize}
+								\item Abgeleitet sein von Klasse \texttt{java.rmi.UnicastRemoteObject}
+								\item Standardkonstruktor zur Verfügung stellen\\
+								(welcher Ausnahme \texttt{java.rmi.RemoteException} deklarieren muss)
+								\item Entfernte Schnittstelle implementieren
+							\end{itemize}
+						\item Aus dieser Klasse werden mit \texttt{rmic}-Tools Stub \& Skeleton generiert
+						\item Namensgebung: Name der Schittstelle + \texttt{Impl} als Suffix (Empfehlung/Konvention)
+					\end{itemize}
+				
+					\begin{figure}[!htb]
+						\centering
+						\includegraphics[keepaspectratio, height=5cm]{img/rmi/rmi_impl.png}
+						\caption{Beispiel einer implementierenden (entfernten) Klasse}
+						\label{fig:rmi_impl}
+					\end{figure}
+		
+			\newpage
+			
+				\begin{figure}[!htb]
+					\centering
+					\includegraphics[keepaspectratio, height=3cm]{img/rmi/rmi_components.png}
+					\caption{Alle RMI-Komponenten auf einen Blick}
+					\label{fig:rmi_components}
+				\end{figure}
+			
+				\begin{figure}[!htb]
+					\centering
+					\includegraphics[keepaspectratio, height=8cm]{img/rmi/rmi_server.png}
+					\caption{Code-Beispiel für einen RMI-Server}
+					\label{fig:rmi_server}
+				\end{figure}
+			
+				\begin{figure}[!htb]
+					\centering
+					\includegraphics[keepaspectratio, height=8cm]{img/rmi/rmi_client.png}
+					\caption{Code-Beispiel für einen RMI-Client}
+					\label{fig:rmi_client}
+				\end{figure}
+	
+			\newpage
+			
+				\paragraph{RMI-Client}
+				
+					\begin{itemize}
+						\item RMI-Client muss
+							\begin{itemize}
+								\item Security-Manager installieren (Schutz vor "bösartigen" Stubs)
+								\item Namensdienst finden (mithilfe \texttt{java.rmi.Naming})
+								\item Namensdienst um Referenz auf entferntes Objekt anfragen (Methode \texttt{lookup})
+								\item Typ der Referenz auf Typ entfernter Schnittstelle casten\\
+								(Da \texttt{lookup} ein Objekt vom Typ \texttt{java.rmi.Remote} zurückgibt)
+							\end{itemize}
+						\item Über erhaltene Referenz kann entferntes Objekt benutzt werden
+						\item URL-Angabe der Adresse des Namensdiensts:\\
+						\texttt{rmi://host\_ip\_adresse:rmi\_port/NameDesEntferntenObjekts}\\
+						Bsp.: \textit{rmi://192.168.1.25:1099/PRIME\_CHECKER\_RO}
+					\end{itemize}
+			
+				\paragraph{Java-Security und Policy-Datei}
+				
+					\begin{itemize}
+						\item In verteiltem System wird fremder Code geladen und auf lokalem System ausgeführt\\
+						$\rightarrow$ Kann gefährlich sein (Code könnte manipuliert sein)
+						\item Download \& Ausführen von fremden Code wird durch SecurityManager überwacht
+						\item SecurityManager auf Client installiert, braucht Anweisungen, welche Aktionen von fremden Code (nicht) ausgeführt werden dürfen\\
+						$\rightarrow$ Anweisungen in \texttt{policy}-Datei festhalten
+						\item \texttt{policy}-Datei am besten im \texttt{<ROOT>} des RMI-Client speichern
+					\end{itemize}
+					Beispiele \texttt{policy}-Datei:
+					\begin{lstlisting}
+grant {
+		permission java.Security.AllPermission; // erlaubt sozusagen alles
+};
+
+grant {
+		permission java.net.SocketPermission "*:1024-5000", "connect, accept";
+		permission java.net.SocketPermission "10.177.1.94:8080", "connect, accept";
+};
+					\end{lstlisting}
+	
+				\paragraph{Verteilung (Deployment)}
+				
+					\begin{itemize}
+						\item \textbf{Server-Seite}\\
+						Folgende Komponenten müssen im CLASSPATH sein:
+							\begin{itemize}
+								\item entfernte Schnittstelle (\texttt{PrimeChecker.class})
+								\item entfernte Klasse (\texttt{PrimeCheckerImpl.class})
+								\item Server-Klasse (welche \texttt{main}-Methode enthält)
+							\end{itemize}
+						\item \textbf{Client-Seite}\\
+						Folgende Komponenten müssen im CLASSPATH sein:
+							\begin{itemize}
+								\item entfernte Schnittstelle (\texttt{PrimeChecker.class})
+								\item Client-Klasse (welche \texttt{main}-Methode enthält)
+								\item \texttt{checker.policy} im ROOT-Verzeichnis
+							\end{itemize}
+						\item Namensdienst aus Server-Programm gestartet, \\
+						kann aber auch als eigenständiger Prozess gestartet werden:\\
+						\texttt{start rmiregistry [port]}\\
+						Im Server Referenz auf Registry-Instanz holen:\\
+						\texttt{LocateRegistry.getRegistry(int port)}
+						\item Nicht die einzige Art, wie Klassen verteilt sein können, aber die einfachste\\
+						\textit{(Mer musses jo ned schweriger mache ases scho esch)}
+					\end{itemize}
+				
+				\newpage
+				
+					\begin{figure}[!htb]
+						\centering
+						\includegraphics[keepaspectratio, height=5cm]{img/rmi/rmi_execution.png}
+						\caption{Ausführung von RMI-Kommunikation}
+						\label{fig:rmi_execution}
+					\end{figure}
+	
+				\paragraph{Übertragung von Parametern}
+				
+					\begin{itemize}
+						\item Parameter werden aus Client-Speicherraum in Server-Speicherraum übertragen
+						\item Rückgabewerte werden aus Server-Speicherraum in Client-Speicherraum übertragen
+						\item Parameter / Rückgabewerte sind primitive Datentypen, lokale / entfernte Objekte\\
+						
+						\item Regeln für Übertragung von Parametern / Rückgabewerten zw. entfernten Methoden:
+							\begin{itemize}
+								\item Primitive Datentypen werden \textbf{by value} übertragen
+								\item Lokale Objekte werden auch \textbf{by value} übertragen
+									\begin{itemize}
+										\item vor Übertragung serialisieren
+										\item nach Übertragung deserialisieren
+										\item Müssen vom Typ \texttt{java.io.Serializable} sein, wenn sie übertragbar sein sollen
+									\end{itemize}
+								\item Entfernte Objekte (EO) werden \textbf{by reference} übertragen
+									\begin{itemize}
+										\item Nur Stub des EO, nicht die echte Kopie des EO werden übertragen
+										\item Wenn auf entferntem \texttt{Konto}-Objekt Methoden auf Client-Seite aufrufbar sein sollen, muss die implementierende Klasse das Interface \texttt{java.rmi.Remote} realisieren, um das Objekt "exportierbar" zu machen
+									\end{itemize}
+ 							\end{itemize}
+					\end{itemize}
+				
 	\newpage
 	\section{Web Services - REST}
 	
