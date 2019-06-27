@@ -41,8 +41,9 @@
 \usepackage{subcaption}
 \usepackage{pdfpages}
 
-\title{\textbf{Zusammenfassung PMRE}\\
-Project Management \& Requirements Engineering}
+\title{\textbf{PMRE - Project Management \& \\
+		Requirements Engineering}\\
+Zusammenfassung}
 \date{\today}
 \author{Maurin D. Thalmann}
 
@@ -51,13 +52,13 @@ Project Management \& Requirements Engineering}
 	\pagenumbering{gobble}
 	\maketitle
 	
-	\newpage
+\newpage
 	\pagenumbering{arabic}
 	\tableofcontents
 	
-	\newpage
+\newpage
 	
-	\section{Project Management}
+	\section{Project Management - MTW in der Projektabwicklung}
 	
 		% TODO evtl. Einleitende Gedanken beifügen
 	
@@ -105,7 +106,7 @@ Project Management \& Requirements Engineering}
 			Bei Systemgestaltung steht die eigentliche Problemlösung / Lösungsfindung im Vordergrund.
 			Somit das eigentliche Problem selbst, gedanklicher Lösungsansatz, Abgrenzung zur Umwelt, Anforderungen, die Lösung im engeren inhaltlichen Sinne, Aspekte des Entwurfs, der Architektur des Aufbaus der Lösung, die detaillierte Ausgestaltung etc.
 			
-			\newpage
+\newpage
 			
 			\paragraph{Gesamtheitliche Sicht auf die Projektabwicklung}
 			
@@ -113,13 +114,974 @@ Project Management \& Requirements Engineering}
 		
 			\begin{figure}[!htb]
 				\centering
-				\includegraphics[keepaspectratio, height=6.5cm]{img/pm/project_view.jpeg}
+				\includegraphics[keepaspectratio, height=8cm]{img/pm/project_view.jpeg}
 				\caption{Gesamtheitliche Sicht auf Mikroprozesse der Projektabwicklung}
 				\label{fig:pm_projectview}
 			\end{figure}
 		
+			\paragraph{Business Case}
+			
+			Neuere Denkmodelle beinhalten ebenfalls die Betriebsphase in den Projektüberlegungen.
+			Der effektive Erfolg eines Projekts manifestiert sich erst in langjähriger Anwendung des erhaltenen Systems, der Erfolg eines Projekts kann also erst in der Betriebsphase wirklich überprüft werden.
+			In einigen Projektmethoden wird der Erstellung und ständiger Überprüfung des Business Case hohes Gewicht zugesprochen.
+			Der \textbf{Business Case} ist die unternehmerische Rechtfertigung eines Projekts.
+			
+			\paragraph{Phasenkonzept \& Meilensteine}
+			
+			Ein Projekt wird wesentlich in Phasen unterteilt, um die Gesamtaufgabe in sinnvolle, besser überschaubare Teile zu gliedern.\\
+			\textit{Projektphase:} zetlicher Abschnitt eines Projektablaufs, sachlich von anderen Abschnitten getrennt.\\
+			\textit{Meilenstein:} beschreibt Zustand einer Leistung, eines oder mehrere entscheidende Lieferobjekte, die in definierter Qualität bis zu einem bestimmten Zeitpunkt mit entsprechenden Kosten erstellt werden müssen.\\
+			Phasen bilden die Schnittstelle zwischen Projektmanagement und Systemgestaltung.
+			Sie erlauben offizielle "Marschhalte" in der Projektabwicklung.
+			Meilensteine trennen die einzelnen Schritte der Makroprozesse, können aber auch in einzelnen Projektschritten angewendet werden. 
+			
+	\subsection{Projektmanagement}
+	
+		\subsubsection{Projektmethoden}
 		
+		Eine Projektmethode ist ein auf einem Regelsystem aufbauendes Verfahren zur Erlangung praktischer Ergebnisse.
+		Sie beinhaltet somit auch Themen der Aufbauorganisation, von Rechten und Pflichten (AVK - Aufgaben, Verantwortung und Kompetenzen), von normativen Vorgaben, von funktionalen, institutionellen, instrumentellen und personellen Aspekten.
+		Sie definiert sich in einem kasualen / prozessualen Modell (bspw. Vorgehensmodell) und zusätlichen Beschreibungen (Rollen, Organisation, Verantwortlichkeiten, Standards etc.)
+		Sie können wiederverwendet werden und dienen als Orientierungshilfen für andere Personen mit ähnlichen Problemen / Projekten.
 		
+\newpage
+		
+			\paragraph{Herausforderung / Nutzen}
+			
+			Die Herausforderung ist, für ein bestimmtes Projekt die geeignetste Projektmethode zu eruieren und korrekt anzuwenden.
+			Eine korrekte Projektmethode hilft dabei...
+			\vspace{1em}
+			\begin{itemize}
+				\item ... Qualität, Termin- und Kostentreue zu verbessern / einzuhalten
+				\item ... Abwicklungseffizienz von Projekten zu verbessern
+				\item ... unterstützt Beteiligte in Projekten bei der Führung und Durchführung
+				\item ... unterstützt Projektleitung durch Einsatz standartisierter Werkzeuge
+				\item ... Kommunikation innerhalb Projektteam / Unternehmen / externer Stakeholder zu verbessern
+				\item ... gewonnenes Know-How (best practices) wieder anzuwenden, somit von anderen zu profitieren
+				\item ... Projekte untereinander besser zu koordinieren (Priorisierung) und aufeinander abzustimmen (Ressourceneinsatz)
+				\item Abhängigkeiten zu Personen \& Firmen zu reduzieren
+			\end{itemize}
+		
+			\paragraph{Typisierung von Projektmethoden}
+			
+			Da in einem Projekt überlicherweise ein Produkt / System realisiert wird, sollte man die Typisierung aufgrund von Produkteigenschaften vorzunehmen. Es sind bereits folgende Methoden bekannt:
+			\vspace{1em}
+			\begin{itemize}
+				\item Traditionelle Methode - Wasserfall (sequentielle Methoden, plan-driven)
+				\item Agile Methode - Scrum (inkrementelle methoden, event-driven)
+				\item Hybride Methoden - SoDa (Software Development agile)
+			\end{itemize}
+	
+		\subsubsection{Grundlegende Denkansätze bei Projektmethoden}
+			
+			\paragraph{Konstruktivistischer (sequenzieller) Ansatz}
+			
+				\begin{itemize}
+					\item Vollständiges Produkt wird in einem Durchlauf zu 100\% Umfang (nach Zielen und Anforderungen) realisiert und am Ende des Entwicklugnszyklus zur Einführung oder zum Kauf freigegeben
+					\item Ziel / Zielgrösse wird nach deren Festlegung nicht mehr verändert
+					\item Alles zu 100\%: Einführung als Big Bang oder parallel zu altem System
+					\item Typischer Ansatz für monolithische Systeme (bspw. Bauwerk (Tunnel), neue SW-Lösung etc.)
+				\end{itemize}
+		
+			\paragraph{Inkrementeller Ansatz}
+			
+				\begin{itemize}
+					\item Eigenständiger Teil des Gesamtprodukts vollständig fertigstellen und freigeben, weitere eigenständige Teile werden parallel / verzögert oder anschliessend fertiggestellt und freigegeben
+					\item 1. Teil zu 100\% fertiggestellt, ein 2. Teil ebenfalls zu 100\%, n-ter Teil ebenfalls etc.
+					\item Ziel/Ziele (Zielgrösse) werden nach Festlegung nicht mehr verändert
+					\item Typischer Ansatz für modulare Systeme wie Standard-SW mit versch. Modulen, welche unabhängig voneinander realisiert \& eingeführt werden können
+				\end{itemize}
+			
+			\paragraph{Evolutionärer Ansatz}
+			
+				\begin{itemize}
+					\item Ganzes Produkt wird initial auf einem tiefen Funktions- / Qualitätslevel fertiggestellt und freigegeben, in weiterer Entwicklungsstufe wird das Produkt funktional / qualitativ weiterentwickelt
+					\item Pro Stufe/Release immer grösserer Funktionsumfang
+					\item Ziel / Ziele (Zielgrösse) kann nach jedem Release verändert werden, muss aber nicht, und dies immer aufbauend auf dem bestehenden Release-Stand
+					\item Typischer Ansatz bei unklaren Aufgabenstellungen
+				\end{itemize}
+			
+			\paragraph{Iterativ / Iterationen}
+			
+			\textit{Inkrementell} und \textit{evolutionär} sind iterative Ansätze, da sie die Phasen mehrmals durchlaufen.
+			
+			\paragraph{Auswahl an Vorgehensmodellen}
+			
+			PmBoK - Project Management Book of Knowledge, 
+			Hermes - der Eidgenosse, 
+			Prince 2, 
+			ISO 21500:2012, 
+			DIN 69901, 
+			Wasserfall, 
+			diverse V-Modell(e), 
+			Kanban, 
+			Scrum, 
+			DevOps, 
+			SAFe, 
+			(fast) Prototyping, 
+			eXtreme Programming (XP), 
+			Rational Unified Process (RUP), 
+			Lean Project Management, 
+			6-Sigma, 
+			ICB (IPMA Competence Baselines), 
+			firmenspezifische Projektmanagement-Systeme (PMS), 
+			ITIL - IT Infrastructure Library (mehr als eine PM), 
+			CMMI - Capatiblity Maturity Model Integration, 
+			System Engineering (SE, mehr als eine PM)
+			
+\newpage
+	
+	\subsection{Systemgestaltung}
+	
+	Die Wissenschaft der Gestaltung von Systemen nennt sich System Engineering (SE).
+	Dazu gibt es ein ganzes Buch, welches aber nicht zum Stoff gehört.
+	Folgendes Denkmodell soll jedoch veranschaulichen, welche Kompetenzbereiche dem System Engineering angehören:
+	
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[height=7cm]{img/pm/denkmodell.png}
+		\caption{Denkmodell zum System Engineering}
+		\label{fig:pm_se_denkmodell}
+	\end{figure}
+\noindent
+	\textit{Projektmanagement} in diesem Modell ist Teil des übergeordneten \textit{Problemlösungsprozesses}; 
+	anderer Teil ist der gestalterische Aspekt der Projektarbeit (\textit{Systemgestaltung}).
+	Dies ist unterteilt in die Disziplinen \textit{Architekturgestaltung} und \textit{Konzeptgestaltung}.
+	Architekturgestaltung enthält das grundlegende Lösungsprinzip, Konzeptgestaltung die konkrete \& umsetzungsorientierte Ausarbeitung der Lösung.
+	Folgt dem Denkansatz "Vom Groben zum Detail".\\
+	Randbedingungen sind eine immer komplexere Welt (vernetzter und dynamischer), gekoppelt mit ungenügenden Informationen darüber.
+	
+		\subsubsection{Systemdenken}
+		
+		Systemdenken wird definiert als eine Denkweise, die es ermöglicht, komplexe Erscheinungen  (= Systeme) besser verstehen und gestalten zu können. 
+	
+		\subsubsection{Systemmerkmale und -Struktur}
+	
+			\paragraph{Elemente \& Beziehungen}
+			\vspace{1em}
+				\begin{itemize}
+					\item \textbf{Systeme} bestehen aus \textbf{Elementen (Komponenten)}
+					\item Elemente haben Eigenschaften und Funktionen
+						\begin{itemize}
+							\item \textbf{Eigenschaften} können Attribute sein (Farbe, Material, Zustand etc.)
+							\item \textbf{Funktionen} geben Zweck eines Elements in konkretem Kontext wieder
+						\end{itemize}
+					\item Elemente können als Systeme betrachtet werden, die man wiederum in Elemente gliedern kann
+					\item Elemente sind untereinander durch \textbf{Beziehungen} verbunden.
+					Beziehungen können gerichtet sein (wirkungsorientiert). 
+					Beziehungen können als Informationsflüsse, Materialflüsse, Lagebeziehungen etc. verstanden werden.
+					\item Elemente können dynamisch sein (zu unterschiedlichen Zeitpunkten eine unterschiedliche Ausprägung haben).
+					Solche dynamischen Systeme werden als komplex betrachtet.
+				\end{itemize}
+		
+			\paragraph{Ordnung}
+			
+			Elemente \& Beziehungen stellen ein Gefüge / eine Einheit dar und weisen dadurch eine Ordnung auf.
+			Die Ordnung wird als eine Struktur welche \textit{hierarchisch}, \textit{sternförmig} oder \textit{any-to-many (Netzstruktur)} sein kann.
+			
+		\subsubsection{Darstellungsarten}
+		
+		Zur Darstellung von Systemen bieten sich folgende Arten an:
+		\vspace{1em}
+		\begin{itemize}
+			\item Graphen / Knoten-Kanten-Diagramme, Elemente werden als Knoten (Kreise/Rechtecke), Beziehungen als Kanten (Pfeile, gerichtete/ungerichtete Beziehungen) dargestellt
+			\item Graphen / CLD gemäss Sterman, einensich zur Darstellung der Dynamik von Systemen
+			\item Matrizen, Elemente als Spalten/Zeilen, Beziehungen in jeweiligen Knotenpunkten markieren
+		\end{itemize}
+	
+		\subsubsection{Denkansätze und Betrachtungsweisen}
+		
+		\begin{description}
+			\item[Blackbox] Innere Struktur eines Systems interessiert in der Betrachtung nicht, nur Inputs und Outputs.
+			Hilfreich, um die Komplexität zu reduzieren.
+			\item[Whitebox] Innere Struktur (Zusammenhang Inputs/Outputs) ist für die Betrachtung von hoher Relevanz.
+			Wenn das System bspw. weiter unterteilt oder simuliert werden soll.
+			\item[Greybox] Zwischenform der Detailierung, System ist grob und teilweise strukturiert.
+			\item[Aspekte] Systeme unter verschiedenen Gesichtspunkten analysieren.
+			Je nach Nutzer interessiert jeden ein anderer Aspekt des gesamten Systems.
+		\end{description}
+	
+		\subsubsection{Systemtypen}
+		
+			\paragraph{Einfaches System}
+			
+			Einfach zu verstehen und beschreiben.
+			Typisiert sich, indem es nur wenige Elemente aufweist, welche durch wenige, nicht-dynamische Beziehungen verbunden sind.
+			Einfache Systeme können in ihrer Gesamtheit explizit beschrieben werden.
+			
+			\paragraph{Kompliziertes System (massiv vernetzt)}
+			
+			Wenn Anzahl und Vielfalt von Komponenten \& Beziehungen zunehmen, nennt man es ein massiv vernetztes kompliziertes System.
+			Beziehungen sind jedoch immer noch nicht-dynamisch.
+			Durch Systemgrösse wird es jedoch sehr schwierig, ein solches System explizit zu beschreiben.\\
+			$\rightarrow$ Technische Systeme
+			
+			\paragraph{Kompliziertes System (dynamisch)}
+			
+			Beziehungen zwischen Elementen verändern sich über die Zeit, sowohl hinsichtlich der Art der Interaktion, Stärke und Struktur.
+			Solche Systeme sind aufgrund dynamischer Beziehungen schwierig quantitativ zu beschreiben bzw. ihr Verhalten vorherzusagen.\\
+			$\rightarrow$ Sozio-technische Systeme\\
+			$\rightarrow$ Technische Systeme
+			
+			\paragraph{Komplexes System}
+			
+			Hohe Vielfalt und hohe Dynamik in den Beziehungen zeichnen ein komplexes System aus.
+			Sind sehr schwer, wenn überhaupt, zu beschreiben.
+			
+		\subsubsection{Anwendung des Systemdenkens im Projektmanagement}
+		
+		SEUSAG-Analyse als sytemtheoretischer Ansatz zur Bestimmung des Projektgegenstandes\\ 
+		(resp. zum Umgang mit Komplexität)
+		\vspace{1em}
+		\begin{description}
+			\item[S] Systemgrenzen bilden
+			\item[E] Einflussgrössen ermitteln
+			\item[U] Unter- und Teilsysteme abgrenzen
+			\item[S] Schnittstellen definieren
+			\item[A] Analyse der Unter- und Teilsysteme
+			\item[G] Gemeinsamkeiten ermitteln
+		\end{description}
+	
+			\paragraph{Agilität von Systemen}
+			
+			Man muss mit dem Gedanken spielen können dass es eine Anforderung sein kann, ein agiles Lieferobjekt zu erstellen und nicht nur agil vorzugehen.
+			Dies muss unterschieden werden können und wird im dazugehörigen Dokument vom ILIAS genauer beschrieben. \textit{(agile SYSTEMS Engingeering versus AGILA SYSTEMS Engineering)}
+
+\newpage
+
+		\subsubsection{Dynamik von Systemen}
+		
+			\paragraph{Policy Resistance}
+			
+			Sozio-technische Systeme verhalten sich selten wie vorhergesagt oder erwünscht.
+			Dieses Phänomen der "Policy Resistance" wird darin begründet, dass Menschen die Feedbacks ihrer Handlungen nicht versehen und ein rein lineares Denken in Abfolgen praktizieren\\
+			$\rightarrow$ Event-oriented View\\
+			\\
+			Unsere Aktionen verändern jedoch den Zustand eines Systems, andere Teilnehmer des Systems reagieren um das Gleichgewicht wiederherzustellen.
+			Aktionen haben immer Nebeneffekte zur Folge, welche erkannt werden müssen.\\
+			$\rightarrow$ Feedback-oriented View
+			
+			\paragraph{Feedback Loops}
+			
+			Die höchste Komplexität resultiert aus den Interaktionen zwischen Komponenten, nicht von den Komponenten selbst.
+			Es werden zwei Arten von Feedback Loops unterschieden:
+			\begin{itemize}
+				\item Positive Loops (self-reinforcing)
+				\item Negative Loops (self-correctiong, balancing)
+			\end{itemize}		
+			Ein System besteht, unabhängig der Komplexität, aus einer Struktur von positiven und negativen Feedbacks.
+			Die Systemdynamik stammt aus den Interaktionen zwischen diesen Feedback Loops.
+			Feedbacklogik wird in Causal Loop Diagrams (CLD) dargestellt.
+	
+			\begin{figure}[!htb]
+				\centering
+				\includegraphics[height=5cm]{img/pm/feedback_loop.jpeg}
+				\caption{Causal Loop Diagram als Beispiel}
+				\label{fig:pm_feedback_loops}
+			\end{figure}
+		
+			\begin{description}
+				\item[+]Effekt steht positiv in Beziehung zur Ursache\\ 
+							(mehr/weniger vom einen hat mehr/weniger vom anderen zur Folge) 
+				\item[-] Effekt steht negativ in Beziehung zur Ursache\\
+							(mehr/weniger von einen hat mehr/weniger vom anderen zur Folge)
+			\end{description}
+		
+\newpage
+		
+		\subsubsection{SE-Vorgehensmodell}
+	
+		Im Software Engineering definiertes Vorgehensmodell, bestehend aus 4 Pfeilern / Komponenten, die in Kombination angewendet werden.
+	
+			\paragraph{Top-Down - Vom Groben ins Detail}
+			
+				\begin{itemize}
+					\item \textit{Grundidee}:\\
+					Von der Blackbox zur Whitebox, Details verhindern oft den Blick auf das Ganze.
+					\item Das Betrachtungsfeld weiter fassen und schrittweise einengen.
+					Betrifft die Untersuchung des Problemfelds, der Ausgangssituation und den Entwurf von Lösungen.
+					\item Bei Untersuchung der Ausgangssituation (Problemfeld) nicht mit detaillierten Erhebungen beginnen, bevor das Problemfeld grob strukturiert, in seine Umwelt eingebettet / gegen sie eingegrenzt ist und Schnittstellen definiert sind (oft auch nur Arbeitshypothese)
+					\item Bei Lösungsgestaltung erst generelle Ziele \& Lösungsrahmen festlegen.
+					Detaillierungs- und Konkretisierungsgrad im Verlauf der Projektarbeit schrittweise vertiegen.
+					Konzepte auf höheren Ebenen als Orientierungshilfen für detaillierte Ausgestaltung der Lösung.
+				\end{itemize}
+			
+			\paragraph{Variantenbildung - Denken in Varianten}
+			
+				\begin{itemize}
+					\item \textit{Grundidee}:\\
+					Vielfalt von Lösungsmöglichkeiten Rechnung tragen
+					\item Unverzichtbarer Bestandteil guter Planung.
+					Methodische Grundhaltung, muss nicht zu nennenswertem zusätzlichem Arbeitsaufwand führen.
+					\item Nichtbeachtung: grosses Risiko, dass andere Lösungsansätze erst später im Projektverlauf eingebracht werden.
+					Konsequenzen wären Abwürgen der Diskussion, Planungsstopp und Rückkehr auf eine höhere Ebene.
+				\end{itemize}
+			
+			\paragraph{Projektphasen - Makrologik}
+			
+				\begin{itemize}
+					\item \textit{Grundidee}:\\
+					Gliedern eines Projekts nach zeitlich-logischen Gesichtspunkten zur Kontrolle von Komplexität
+					\item Nach zeitlichen Gesichtspunkten gegliedertes Raster, hilft den Werdegang eines Lösung in überschaubare Teiletappen zu gliedern.
+					\item Stufenweiser Planungs-, Entscheidungs-, Realisierungsprozess mit vordefinierten Marschhalten / Korrekturpunkten, reduziert Komplexität der Projektabwicklung und schafft Lernchance für Planenden, Durchführenden \& Auftraggeber.
+					\item Konzept kann im Sinne einer Makrologik als managementorientierte Komponente gesehen werden.
+					Fordert zwischen Entwicklert \& Arbeitgeber/Management an vordefinierten Stellen eine Kontaktaufnahme, Willensbildung und Entscheidung.
+				\end{itemize}
+			
+			\paragraph{Problemlösungszyklus - Mikrologik}
+	
+				\begin{itemize}
+					\item \textit{Grundidee}:\\
+					Systematisches Vorgehen bei Auftreten jeder Art von Problemen in jeder Phase des Projekts
+					\item Als eine Art Mikrologik ein Leitfaden zur Behandlung von Problemen oder Aufgabestellungen, in jeder Phase eines Projekts anwendbar.
+				\end{itemize}
+	
+\newpage
+		
+		\subsubsection{Problemlösungszyklus - PLZ}
+	
+		\begin{itemize}
+			\item \textbf{Problem}: Differenz zwischen "Ist-" und "Soll-Zustand"
+			\item Versuchs-Irrtum-Methode (try and error): natürliche Art und Weise, Mensch kann jedoch den Try \& Error Prozess vorwegnehmen, bevor er eine Entscheidung treffen muss.
+			Er besitzt die Fähigkeit, Folgen seines Handelns abzuschätzen.
+			Dies erlaubt ihm systematische Vorgehen zur Problemlösung.
+		\end{itemize}
+	
+		\paragraph{Design Thinking}
+		
+			Möglichkeit zur systematischen Vorgehensweise zum Problemlösen.
+			
+			\begin{figure}[!htb]
+				\centering
+				\begin{subfigure}{.5\textwidth}
+					\centering
+					\includegraphics[height=5.5cm]{img/pm/design_thinking.png}
+					\caption{Design-Thinking-Zyklus}
+					\label{fig:pm_designthinking}
+				\end{subfigure}
+				\begin{subfigure}{.4\textwidth}
+					\centering
+					\includegraphics[height=4cm]{img/pm/plz.png}
+					\caption{Problemlösungszyklus}
+					\label{fig:pm_plz}
+				\end{subfigure}
+			\end{figure}
+			\noindent		
+			Der \textbf{Anstoss} setzt den PLZ in Gange.
+			Er startet entweder das ganze Projekt oder befindet sich innerhalb einer Phase oder eines Arbeitspaketes als Auslöser des PLZ.
+				
+		\paragraph{Problemlösungszyklus - Zielsuche}
+		
+			\begin{itemize}
+				\item Teilschritte der Zielsuche sind die \textit{Situationsanalyse} und \textit{Zielformulierung}
+				\item Zweck der \textbf{Situationsanalyse}:
+					\begin{itemize}
+						\item Erarbeitung grundlegendes Verständnis bzgl. des Problems, dessen Erscheinungsformen sowie Ursachen und deren Zusammenhänge
+						\item Strukturierung \& Abgrenzung des Problems bzw. Untersuchuntsfelds
+						\item Definition des Eingriffs- und Gestaltungsbereichs für Lösungssuche
+						\item Schaffung der notwendigen Informationsbasis für nachfolgende Arbeitsschritte
+					\end{itemize}
+				\item Zweck der \textbf{Zielformulierung}:
+					\begin{itemize}
+						\item Alle Ziele, die zur Lösung eines Problems erreicht werden, müssen möglichst\\
+						\textit{vollständig, präzise und verständlich, realistisch} und \textit{lösungsneutral} definiert werden
+						\item Unterscheiden zwischen Muss-, Soll- und Wunschzielen\\
+								$\rightarrow$ Diese Unterscheidung setzt Prioritäten der Ziele in der Projektabwicklung
+						\item Zielvorstellung(-en) können bereits durch \textit{Anstoss} vorgegeben sein
+						\item Durch diese beiden Teilschritte sollen Randbedingungen einer Problemlösung definiert werden, es darf keineswegs ein bestimmter Lösungsweg vorgegebern werden\\ ($\rightarrow$ Lösungsneutralität der Ziele)
+					\end{itemize}
+				\item Methoden/Techniken/Werkzeuge:
+					\begin{itemize}
+						\item \textbf{Informationsbeschaffung:} Befragung, Beobachtung, Checklisten, Fragebogen, Interview, Panelbefragung, Prognosen, Stichproben etc.
+						\item \textbf{Informationsaufbereitung:} ABC-Analyse, Ablaufdiagramm, Analysetechniken, Benchmarks, Korrelationsanalyse, Math-Statistik, Regressionsanalyse, Schwachstellenanalyse etc.
+						\item \textbf{Informationsdarstellung:} Darstellungstechniken, Mind Maps, Input-Output-Methode etc.
+						\item \textbf{Zielformulierung:} Operationalisierung, Target Costing, Use Case etc.
+					\end{itemize}
+			\end{itemize}
+	
+\newpage
+		
+		\paragraph{Problemlösungszyklus - Zielsuche}
+		
+			\begin{itemize}
+				\item Teilschritte der Lösungssuche sind \textbf{Synthese} und \textbf{Analyse} von Lösungen
+				\item Zweck der \textbf{Synthese}:
+					\begin{itemize}
+						\item Sammlung \& Ausarbeitung von Lösungsalternativen.
+						\item Kreativer, aufbauend-konstruktiver Schritt, baut auf Resultaten der Situationsanalyse auf (Situationskenntnis, Problemverständnis, Zielformulierungen, Anforderungskatalog)
+					\end{itemize}
+				\item Zweck der \textbf{Analyse}:
+					\begin{itemize}
+						\item Machbarkeit einer Lösungsalternative verifizieren\\ 
+						(ohne zu werten oder mit anderen Alternativen zu vergleichen, erfolgt in \textit{Auswahl})
+						\item Kritischer, analytisch-destruktiver Schritt
+						\item Erfüllt eine Lösungsalternative die Ansprüche nicht, kann sie verworfen werden oder muss überarbeitet werden
+					\end{itemize}
+				\item Methoden/Techniken/Werkzeuge:
+					\begin{itemize}
+						\item \textbf{Synthese - Kreativität:} Analogiemethode, Bionik, Brainstorming, Just in Time, Kärtchentechnik, Kreativitätstechniken, Morphologie etc.
+						\item \textbf{Synthese - Optimierung:} Operations Research, Dynamische Optimierung, Entscheidungsbaum, Lineare Optimierung, Spieltheorie, Warteschlangenmodelle, Use Case etc.
+						\item \textbf{Analyse:} FMEA, Fehlerbaumanalyse, Gefährdungsanalyse, Reverse Engineering, Risk Management, Schwachstellenanalyse, Total Quality Control, Wert-Analyse etc.
+					\end{itemize}
+			\end{itemize}
+		
+		\paragraph{Problemlösungszyklus - Zielsuche}
+		
+			\begin{itemize}
+				\item Teilschritte der Auswahl sind \textbf{Bewertung} und \textbf{Entscheid}
+				\item Zweck der \textbf{Bewertung}:
+					\begin{itemize}
+						\item Taugliche Lösungsvarianten gegenüberstellen (jene, welche alle Muss-Ziele erfüllen)
+						\item Formale Bewertung wird angezeigt, wenn keine Variante als Beste identifiziert werden kann
+						\item 3 Bedingungen müssen erfüllt werden:
+							\begin{itemize}
+								\item Min. 2 echte Lösungsalternativen müssen existieren
+								\item Bewertungskriterien (bezogen auf Zielformulierungen) müssen definiert sein
+								\item Bewerter müssen Alternativen hinsichtlich Bewertungskriterien beurteilen können
+							\end{itemize}
+					\end{itemize}
+				\item Zweck des \textbf{Entscheids/Auswahl}:
+					\begin{itemize}
+						\item Basierend auf Bewertungsergebnissen die weiter zu bearbeitende Variante bestimmen
+					\end{itemize}
+				\item Methoden/Techniken/Werkzeuge:
+					\begin{itemize}
+						\item \textbf{Bewertung \& Entscheidung:}
+						Analytic-Hierarchie-Process, Bewertungstechniken, Entscheidungstheorie/-baumverfahren, Kosten-Nutzen-Analyse, Kriterienplan, Nutzwerkanalyse, Wirtschaftlichkeitsrechnung, Punktbewertung etc.
+					\end{itemize}
+			\end{itemize}
+			\vspace{1em}
+			Es kann sein dass PLZ keine zufriedenstellende Variante hervorbringt.
+			Oder dass sich das Projekt mit verfügbaren Mitteln nicht realisieren lässt.
+			Es sind Schlussfolgerungen möglich:\\
+			\begin{itemize}
+				\item Projektabbruch
+				\item Sistierung der Zusammenarbeit mit Systementwicklern
+				\item Zielreduktion
+				\item Zurück auf höhere Systemebene, mit anderen Wegen zum Ziel kommen
+				\item Problem neu umschreiben / definieren
+			\end{itemize}
+			
+\newpage
+		
+		\begin{figure}[!htb]
+			\centering
+			\begin{subfigure}{.45\textwidth}
+				\centering
+				\includegraphics[height=8cm]{img/pm/plz_teile.jpg}
+				\caption{Aufteilung des PLZ in Grob-/Feinzyklen}
+				\label{fig:plz_teile}
+			\end{subfigure}
+			\begin{subfigure}{.45\textwidth}
+				\centering
+				\includegraphics[height=8cm]{img/pm/plz_ext.jpg}
+				\caption{Erweiterter PLZ}
+				\label{fig:plz_ext}
+			\end{subfigure}
+		\end{figure}
+		
+		\paragraph{Erweiterter PLZ}
+		
+		Im Erweiterten PLZ werden die Schritte bezogen auf Rollen Auftraggeber und Projektgruppe unterschieden.
+		Unter Projektgruppe ist auch der Projektmanager miteinbezogen, welcher den PLZ begleitet und führt.
+	
+	\subsection{Erfolgsmuster in der Projektarbeit}
+	
+		\paragraph{Erfolg / Misserfolg?}
+		
+		\begin{itemize}
+			\item \textbf{Wer} entscheidet darüber?\\
+					Auftraggeber, Stakeholder, Endbenutzer des neuen Systems?
+			\item \textbf{Wann} wird darüber entschieden?\\
+					Nach Projektende, nach Teil der Nutzungsphase?
+			\item Zusätzliche Themen: Standish Chaos Report, PMI (Dokumente dazu im ILIAS)
+		\end{itemize}
+	
+	
+\newpage
+	
+	\section{Project Management - Projekt in Gang setzen}
+	
+		\subsection{Projekt präparieren}
+		
+			\paragraph{Projektorganisation}
+			
+			Massgebende Entscheidungsgremien initialisieren:
+				\begin{itemize}
+					\item Reine Projektorganisation / Linien-PO
+					\item Stab-Linien-Projektorganisation / Projektkoordination
+					\item Matrix-Projektorganisation
+					\item Mischformen
+				\end{itemize}
+			
+			\paragraph{(Erste) Ziele setzen}
+			
+			Ziele sollen Lösungssuche steuern und eine Lösung nicht nachträglich rechtfertigen.
+			Erarbeitung der Zielsetzungen ist Tätigkeit des Projektmanagements.
+			Zielsuche ist die erste Phase des PLZ, Zielformulierung der 2. Schritt.
+			
+		\subsection{Zielbegriff}
+		
+			\paragraph{Definitionen}
+			
+				\begin{itemize}
+					\item Ziel: angestrebter Zustand / erwünschte Wirkung
+					\item Zukünftige Ergebnisse, die durch Massnahmen / Lösungen erreicht werden sollen
+					\item Ziele sollen bekannt sein, bevor Ermittlung der Anforderungen begonnen wird
+					\item Jede Anforderung muss sich auf ein Ziel zurückführen lassen
+					\item Unterscheiden zwischen:
+						\begin{itemize}
+							\item \textbf{Abwicklungsziele}\\
+							Unterteilt in Leistungs-, Qualitäts-, Zeit/Termin- und Kostenziele
+							\item \textbf{Systemziele}\\
+							Fokussieren auf Akzeptanz \& Wirtschaftlichkeit des zu erstellenden Systems. Hierarchisch unterteilt in Global-, Gruppen- und Detailziele
+						\end{itemize}
+					\item Ziele sollen folgenden Prinzipien folgen:
+						\begin{itemize}
+							\item Wertorientierung
+							\item Lösungsneutralität (keine mögliche Lösung favorisieren / vorgeben)
+							\item Operationalität (Ziel-Mittel-Denken)
+							\item Vollständigkeit der Zielinhalte
+							\item Berücksichtigung der wichtigen Informationsquellen \& Interessenslagen
+							\item Feststellbarkeit der Zielerfüllung
+							\item Prioritätensetzung
+								\begin{description}
+									\item[Muss-Ziele] müssen zwingend eingehalten werden
+									\item[Soll-Ziele] hohe Bedeutung, wenn möglich einhalten
+									\item[Wunschziele] tiefe Verbindlichkeit, "nice to have"
+								\end{description}
+							\item Widerspruchsfreiheit, Zielkonflikte vermeiden / eliminieren
+							\item Überblickbarkeit \& Bewältigbarkeit des Zielkatalogs
+						\end{itemize}
+				\end{itemize}
+			
+			\paragraph{Zielformen}
+			
+			\begin{description}
+				\item[Abwicklungsziele] Bezug auf Projektmanagement, geben vor was bei Meilensteinen konkret vorliegen muss (Lieferobjekte, Meilensteinplan)
+				\item[Vorgehensziele] Bezug auf Projektmanagement, geben vor wie das Projekt abgewickelt wird, bspw. systematisches Stakeholder-Management durchführen
+				\item[Systemziele] Bezug auf Systemgestaltung, Teil des Problemlösungsprozess.
+				Sagen aus was mit zu gestaltender Lösung erreicht / vermieden werden soll (Zustand).
+			\end{description}
+	
+		\subsection{Anforderungsbegriff}
+		
+			\begin{itemize}
+				\item Anforderung: eine Aussage über eine Eigenschaft oder Leistung eines Produkts, Prozess oder der am Prozess beteiligten Personen
+				\item Unterscheidung:
+					\begin{description}
+						\item[Ziel] Zustand
+						\item[Anforderung] Eigenschaft (Verhalten, Fähigkeit, Funktion)
+					\end{description}
+			\end{itemize}
+		
+\newpage
+		
+		\subsection{Ziel-Mittel-Denken}
+		
+		\begin{itemize}
+			\item Kann ein Ziel ("WAS") zu einem Mittel ("WIE") werden?
+			\item Ziel-Mittel-Denken: Instrument zur Entwicklung und Operationalisierung von Zielen
+			\item Nutzt zur Visualisierung eine Ziel-Mittel-Hierarchie
+			\item Prinzip der Lösungsneutralität muss jederzeit sichergestellt sein!
+		\end{itemize}
+	
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[height=6cm]{img/pm/zmd.png}
+			\caption{Ziel-Mittel-Denken}
+			\label{fig:pm_zmd}
+		\end{figure}
+	
+		\paragraph{S.M.A.R.T. Objectives}
+		
+			\begin{itemize}
+				\item Ziele sollten möglichst SMART sein:
+					\begin{description}
+						\item[S] Spezifisch\\
+						Grenzen des Zielbereichs werden vorgegeben, für konkrete Organisation o.ä.
+						\item[M] Messbar\\
+						Qualitäten / Quantitäten der Zielerreichung bestimmbar, Indikatoren ableitbar
+						\item[A] Angemessen\\
+						Das "richtige" Ziel? Besteht Bedarf für geplante Massnahme?
+						\item[R] Realistisch\\
+						Aussichten, Ziel zu erreichen, unter Rahmenbedingungen ausreichend hoch
+						\item[T] Terminiert\\
+						Zeitlicher Rahmen wird vorgegeben
+					\end{description}
+				\item Ziele müssen nicht auf jeder Stufe s.m.a.r.t. formuliert sein
+				\item Zur Messbarkeit der Zielerreichung: Prinzip der Feststellbarkeit der Zielerfüllung (Kap. 2.2)\\ $\rightarrow$ setzt s.m.a.r.t.e Formulierung voraus
+			\end{itemize}
+		
+\newpage
+		
+		\subsection{Zielrelationen (-Matrix)}
+		
+		Ziele können in unterschiedlicher Beziehung zueinander stehen.
+		Ziele sollen dem Prinzip der Widerspruchsfreiheit georchen.
+		Dazu werden alle aufeglisteten Ziele auf ihre Relationen überprüft.
+		
+			\begin{itemize}
+				\item sich gegenseitig unterstützen (\textbf{unterstützend})
+					\begin{itemize}
+						\item Erreichung von Ziel A unterstützt Erreichung von Ziel B und umgekehrt
+						\item \textbf{angenehm}
+					\end{itemize}
+				\item unabhängig voneinander sein (\textbf{indifferent})
+					\begin{itemize}
+						\item Erreichung Ziel A ist unabhängig von Erreichung Ziel B und umgekehrt
+						\item \textbf{problemlos}
+					\end{itemize}
+				\item \textbf{gegenläufig} sein (Gegenläufigkeit / Zielkonkurrenz)
+					\begin{itemize}
+						\item Ziel A \& B behindern sich: Je besser A erreicht wird, umso schlechter kann B realisiert werden und umgekehrt
+						\item \textbf{Kompromisse müssen gefunden werden}
+					\end{itemize}
+				\item Im Konflikt zueinander stehen (\textbf{widersprüchlich}, Zielkonflikt)
+					\begin{itemize}
+						\item Ziel A und B logisch oder situationsbedingt im Konflikt, \\
+						können nicht gleichzeitig nebeneinander existieren
+						\item \textbf{Konflikt muss aufgelöst werden}
+							\begin{itemize}
+								\item Prioritäten setzen (Muss, Soll, Wunsch)
+								\item Auflösung des Konflikts durch Innovation
+								\item Einführung von Mindest- und Höchstwerten
+								\item Streichen eines Konfliktverursachers							
+							\end{itemize}
+					\end{itemize}
+			\end{itemize}
+		
+		\subsection{Zielgewichtung}
+		
+		Nicht alle Ziele sind gleich wichtig, sie müssen gewichtet werden.
+		
+			\subsubsection{Paarvergleich}
+			
+			Methode zur Bestimmung und Berechnung der Präferenzen / Gewichtung von Zielen oder Kriterien untereinander.
+			Funktionsweise: Jedes Ziel wird mit jedem anderen 1:1 verglichen und ein "Sieger" bestimmt.
+			
+			\begin{quote}
+				Mögliche Kombinationen im Paarvergleich: $K=\frac{n(n-1)}{2}$
+			\end{quote}
+		
+			\subsubsection{Präferenzmatrix}
+			
+			Instrument zum Paarvergleich und der Berechnung der Gewichtung.
+			Jede Zielkombination wird mit dem Sieger (a ist wichtiger als b) benennt.
+			2 Möglichkeiten zur Berechnung des Gewichts:
+			
+			\begin{quote}
+				$Gewicht[\%] = \frac{Anzahl Nennungen \cdot 100}{Total Nennungen}$\\
+				\\
+				$Gewicht[\%] = \frac{umgedrehterRang \cdot 100}{Summe Aller Raenge}$\\
+				\\
+				\textit{(2. Variante hat den Vorteil, dass Ziele ohne Nennung ein Gewicht erhalten \\
+				und nicht 0\% Gewichtung haben)}
+			\end{quote}
+		
+			\begin{figure}[!htb]
+				\centering
+				\includegraphics[height=3.7cm]{img/pm/prefmatrix.png}
+				\caption{Beispiel Gewichtung in Präferenzmatrix}
+				\label{fig:prefmatrix}
+			\end{figure}
+	
+\newpage
+	
+		\subsubsection{Analytical Hierarchy Process (AHP)}
+		
+		Alternative Methode zur Berechnung der Zielgewichte.
+		Man kann hiermit bestimmen, um wieviel ein Ziel wichtiger ist als ein anderes.
+		Zur Berechnung wird jedoch Vektorgeometrie benötigt, was wir dann gar nicht angeschaut haben.
+		
+		\subsubsection{Lieferobjekte aus "Projekt präparieren"}
+		
+		Aus diesem ersten Schritt resultiert ein Projektantrag, welches als Vertrag für die Aufnahme der aufwändigen Planungsaktivitäten dient.
+		
+		\begin{quote}
+			Ziel $\rightarrow$ Projektantrag liegt im Status "approved" vor\\
+			Lieferobjekt $\rightarrow$ Projektantrag, freigegeben
+		\end{quote}
+	
+	\subsection{Projekt planen (Planungsprozess)}
+	
+	Im Planungsprozess werden Pläne (= dokumentarische Lieferobjekte) entwickelt.
+	Sie beinhalten Planung, sind gleichzeitig aber auch immer die erste Analyse der Aufgabenstellung.
+	Der Problemlösungszyklus PLZ wird ein erstes Mal durchlaufen.
+	Er ist in 9 Schritte aufgeteilt:
+	
+	\begin{itemize}
+		\item \textbf{Meilensteinplanung} $\rightarrow$ Abwicklungszielplan (Meilensteine)
+		\item \textbf{Projektstrukturplanung} $\rightarrow$ Projektstrukturplan (Arbeitspakete \& deren Strukturierung)
+		\item \textbf{Ablaufplanung} $\rightarrow$ Ablaufplan (Abhängigkeiten, Projektdauer, Pufferzeiten)
+		\item \textbf{Ressourcenplanung} $\rightarrow$ Ressourcenplan (Durchlaufzeit (Aufwand) der Arbeitspakete)
+		\item \textbf{Organisationsplanung} $\rightarrow$ Organisationsplan (Mitarbeitende zugeteilt auf Arbeitspakete)
+		\item \textbf{Kostenplanung} $\rightarrow$ Projektkostenplan (Dokumentierte Kosten \& Finanzierung)
+		\item \textbf{Terminplanung} $\rightarrow$ Terminplan (konkrete Termin- und Einsatzplanung)
+		\item \textbf{Budgetplanung} $\rightarrow$ Projektbudgetplan (kalendarische Finanzierung)
+		\item \textbf{Informationsplanung} $\rightarrow$ Informations-/Dokumentationsplan (Kommunikations-/Infokonzept)
+	\end{itemize}
+
+		\subsubsection{Meilenstein- / Phasenplanung}
+		
+		\begin{description}
+			\item[Input] Zielsetzungen an das Projekt (aus Projektantrag)
+			\item[Ziel] Bündelung der Ziele \& Umsetzung in definierte Zwischenresultate (Meilensteine)\\
+			\textit{Kriterien Meilenstein}: Zeit, Qualität, Lieferobjekt, Aufwand/Kosten
+			\item[Output] Definierte Meilensteine
+			\item[Lieferobjekt] Abwicklungszielplan
+		\end{description}
+	
+			\paragraph{Phasenplan}
+			
+			Phasenplan in Anlehnung an gewählte Projektmethode erstellen.
+			Es gibt mehrere Möglichkeiten, wie bspw. nur zwei Phasen oder Phasen mit Benennung (Initiieren - Konzipieren - Realisieren - Einführen).
+			Man muss nicht zwingend weiter unterteilen, wenn dies nicht nötig ist.
+			
+			\paragraph{Meilensteinplan}
+			
+				\begin{quote}
+					\textit{Meilenstein beschreibt einen Zustand einer Leistung (ein oder mehrere Lieferobjekte), die bis zu einem bestimmten Zeitpunkt in der definierten Qualität zu den entsprechenden Kosten erstellt werden müssen.}
+				\end{quote}
+				\noindent
+				Meilensteine normalerweise zwischen den Phasen des Phasenplans definieren.
+				Es können auch innerhalb von Phasen Meilensteine vorgesehen werden, wenn dies der Absicherung von Risiken oder Qualität sinnvoll erscheint.
+				Bei einem Meilenstein wird das Projekt "eingefroren".
+				Projekt wird je nach Lieferobjekt in die nächste Phase freigegeben oder Korrekturen an Lieferobjekten werden vorgenommen.
+				Meilenstein kann eine "Exit"-Möglichkeit sein, um das Projekt zu stoppen.
+		
+	
+\newpage
+		
+		\subsubsection{Projektstrukturplanung (PSP)}
+		
+		\begin{description}
+			\item[Input] Meilensteinplan
+			\item[Ziel] Gliederung des gesamten Projekts in plan- und kontrollierbare Arbeitspakete
+			\item[Output] Definierte Arbeitspakete \& deren Strukturierung
+			\item[Lieferobjekt] Projektstrukturplan (PSP)
+		\end{description}
+	
+			\paragraph{Arbeitspaket}
+			
+				\begin{quote}
+					\textit{Ein Arbeitspaket ist eine in sich geschlossene Aufgabenstellung innerhalb eines Projekts.
+					Kann bis zu einem festgelegten Zeitpunkt mit definiertem Ergebnis und Aufwand vollbracht werden.}
+				\end{quote}
+			
+			\begin{itemize}
+				\item Arbeitspaket ist die tiefste Gliederungsebene des PSP, somit auch die kleinste Planungseinheit
+				\item Sie werden einem Projektmitarbeiter oder Projektteam zugeteilt
+				\item Faustregeln für den Umfang eines Arbeitspakets:
+					\begin{itemize}
+						\item Zeit- und Kostenanteil pro AP: 2-5\% des Gesamtprojekts
+						\item Dauer in Abhängigkeit des Berichtsintervalls: Faktor 1.5\\
+						(bspw. bei Berichtsintervall von 4 Wochen ist Dauer des AP max. 6 Wochen)					
+					\end{itemize}
+				\item Arbeitspaket soll auch ein "messbares" deliverable beinhalten (analog Meilenstein), da zwischen APs Abhängigkeiten bestehen
+				\item Nachläufer (nachfolgendes AP) kann nur gestartet werden, wenn Vorläufer (vorhergehendes AP) korrekt abgeschlossen wurde
+				\item Hierarchische Struktur:
+					\begin{itemize}
+						\item Programm $\rightarrow$ 2-n Projekte $\rightarrow$ 2-n Teilprojekte $\rightarrow$ 2-n Aktivitäten (mündl. Delegation an MA)
+					\end{itemize}
+			\end{itemize}
+		
+			\paragraph{PSP - Objekt- oder vorgehensorientiert}
+			
+				\begin{itemize}
+					\item \textbf{Work-Breakdown-Structure (WBS)}\\
+					Vorgehensorientierter PSP strukturiert die APs entlang der Phasen, in ihrer logischen zeitlichen Folge.
+					Kann als wiederverwertbarer Standardrahmen für die Abwicklung von Projekten in einem Unternehmen genutzt werden.
+					\item \textbf{Product-Breakdown-Structure (PBS)}\\
+					Objektorientierter PSP (Produktstrukturplan) definiert APs entlang des zu erstellenden Produktes/Systems.
+					Einmaliges Werk, kann meistens nicht wiederverwendet werden.
+				\end{itemize}
+			
+			\paragraph{PSP - Wertorientiert}
+			
+			Wertorientierter PSP macht Sinn, falls der "Wert" eines APs auf den Wert des gesamten Projekts appliziert werden soll.
+			Kann sinnvoll sein, wenn bspw. ein AP aus Kostengründen weggelassen werden soll oder nicht.
+			
+			\paragraph{Formale Regeln im PSP}
+			
+			AP ist die kleinste Planungseinheit.
+			Für Schätzung von Aufwänden in weitere Aktivitäten unterteilbar, muss aber immer wieder zu einem AP zusammengefügt werden.
+			\begin{itemize}
+				\item AP / Aktivität besteht aus Substantiv + Verb: \textit{Pflichtenheft erstellen}
+				\item Meilenstein als Zustand (Ereignis) zu formulieren: \textit{Pflichtenheft erstellt}
+			\end{itemize}
+			
+			\paragraph{Arbeitspaketliste}
+			
+			Resultat dieses Planungsschritts ist eine Arbeitspaketliste, in welcher alle einzelnen Arbeitspakete erfasst werden.
+			
+\newpage
+		
+		\subsubsection{Ablaufplanung}
+		
+		\begin{description}
+			\item[Input] Projektstrukturplan (PSP)
+			\item[Ziel] Eruierung von sachlogischen Abhängigkeiten zw. APs \& Durchlaufzeiten von APs
+			\item[Output] sachlogische Abhängigkeiten, Projektdauer, Pufferzeiten
+			\item[Lieferobjekt] Ablaufplan
+		\end{description}
+		\vspace{1em}
+		Ermittelt für im PSP identifizierte APs die sachlogischen Abhängigkeiten.
+		Dazu werden Vorläufer / Nachläufer jedes APs bestimmt.
+		Genaue kalendarische Termine sind noch irrelevant, jedoch wird pro AP erste Durchlaufzeit/Dauer geschätzt (aus Erfahrungswerten oder ersten Vorstellungen des PL/Auftraggebers)
+		
+			\paragraph{Arbeitspaketliste - erweitert}
+			
+			Für diesen Planungsschritt wird die AP-Liste um den Block \textit{"Vorgänge"} und evtl. auch schon um \textit{"Einsatzmittel"} erweitert. Diese beinhalten jeweils folgende Spalten:
+			
+			\begin{itemize}
+				\item \textbf{Vorgänge}
+					\begin{itemize}
+						\item Vorgangsdauer (Schätzung der Dauer)
+						\item Direkter Vorläufer
+						\item Direkter Nachläufer
+					\end{itemize}
+				\item \textbf{Einsatzmittelbedarf}
+					\begin{itemize}
+						\item Personal
+						\item Sachmittel
+						\item Finanzmittel
+					\end{itemize}
+			\end{itemize}
+			
+			\paragraph{Schätzung der Dauer von APs}
+			
+			Dauer, Aufwand und Personaleinsatz noch unbekannt, APs können mit einer fixen Dauer versehen werden.
+			Er werden erste Schätzungen der Dauer von APs gemacht für einen ersten Anhaltspunkt der Durchlaufzeit des Projekts.
+			Dauer wird so ermittelt, dass ein gewünschter Endtermin des Projekts zustande kommt (ohne Berücksichtigung der effektiven Aufwände \& Ressourcen).
+			Kann unter \textit{Vorgangsdauer} in der AP-Liste eingetragen werden.
+			
+			\paragraph{Sachlogische Abhängigkeit}
+			
+			Setzt ein Verständnis der Problemstellung voraus.
+			Abhängigkeiten werden über die Spalten \textit{Direkter Vorläuger} \& \textit{Direkter Nachläufer} dargestellt.
+			Eine grafische Darstellung als Balkendiagramm ist möglich.
+			
+			\paragraph{Netzplanverfahren}
+			
+			Ermöglichen Simulationen ("was passiert wenn...") und ein klares Bild der Pufferzeiten wird errechenbar.
+			Es existieren mehrere Arten von Netzplanverfahren.
+			
+			\begin{figure}[!htb]
+				\centering
+				\includegraphics[height=3cm]{img/pm/netzplanverfahren.png}
+				\caption{Übersicht der verschiedenen Netzplanverfahren}
+				\label{fig:pm_netzplanverfahren}
+			\end{figure}
+		
+			\paragraph{Vorgangpfeil-Netzplan (VPN) - Critical Path Methode (CPM)}
+			
+			\begin{itemize}
+				\item Ziel ist im Netzplan zu erkennen, welche Aktivitäten mit und welche ohne Zeitreserve (kritischer Pfad) durchführbar sind (und somit Ausführungsdauer für das Projekt direkt beeinflussen)
+				\item CPM als Planmethode: Darstellungmittel für Teminplanung \& Algorithmus für die Berechnung des kritischen Pfades sowie der Projekt-Gesamtdauer
+				\item Netzplan in CPM-Darstellung mit Knoten und Kanten
+				\item Ermittlung der Puffer: Aus den unterschiedlichen Zeitpunkten berechnen
+			\end{itemize}
+		
+\newpage
+		
+			\paragraph{Darstellungsregeln}
+			
+			\begin{itemize}
+				\item \textbf{Knoten}: Darstellungselement für ein Ereignis (Zustand) innerhalb eines Projekts
+				\item \textbf{Pfeile/Kanten}: Darstellungselement für einen Vorgang (Tätigkeit, AP) in einem Projekt\\
+				(Ein Vorgang entspricht einem AP)
+			\end{itemize}
+		
+			\begin{figure}[!htb]
+				\centering
+				\includegraphics[height=4cm]{img/pm/vpn_notation.png}
+				\caption{VPN-Notation von Knoten \& Kanten}
+			\end{figure}
+		
+			\paragraph{Regeln zur Erstellung eines Netzplans nach CPM}
+			
+			\begin{description}
+				\item[Regel 1] Ein Vorgang kann erst beginnen, wenn alle Vorgänger abgeschlossen sind.
+						Es fällt das Anfangsereignis mit dem Endereignis des vorhergehenden Vorgans zusammen\\ (Ausnahme erster Vorgang)
+						
+				\item[Regel 2] Müssen mehrere Vorgänge beendet sein, bevor ein Nachfolger beginnen kann, so enden sie alle im Anfangsbereich des Nachfolgers.
+				
+				\item[Regel 3] Können mehrere Nachfolger beginnen, nachdem ein Vorgänger beendet ist, so beginnen sie alle im Endereignis des Vorgängers.
+				
+				\item[Regel 4] Haben zwei oder mehr Vorgänge gemeinsame Anfangs- und Endereignisse, so ist ihre eindeutige Kennzeichnung durch Einfügen von \textbf{Scheinvorgängen} (fiktiver Vorgang mit der Dauer 0) sicherzustellen
+				
+				\item[Regel 5] Beginnen und enden in einem Ereignis mehrere Vorgänge, die nicht alle voneinander abhängen, muss die Eindeutigkeit ebenfalls durch \textit{Scheinvorgänge} erreicht werden (bspw. Zusammenführung an Meilensteinen)
+				
+				\item[Regel 6]  In einer Folge von Vorgängen können beliebig viele \textit{Scheinvorgänge} eingefügt werden $\rightarrow$ logische Verknüpfung und bessere Übersicht, so wenig wie möglich einsetzen
+				
+				\item[Regel 7] Kann ein Vorgang beginnen, bevor der Vorgänger vollständig abgeschlossen ist, muss der Vorgänger unterteilt werden
+				
+				\item[Regel 8] Jeder Vorgang darf nur einmal ablaufen, es dürfen keine Schleifen auftreten
+			\end{description}
+			
+			\paragraph{Beispiel eines Netzplans nach CPM}
+			
+			\begin{figure}[!htb]
+				\centering
+				\includegraphics[height=3cm]{img/pm/cpm_vorgangsliste.png}
+				\caption{Vorgangsliste}
+				\label{fig:pm_cpm_vorgangsliste}
+			\end{figure}
+			\noindent
+			In Vorgangsliste sind pro AP direkte Vorläufer \& Nachläufer aufgelistet.
+			Zur Erstellung des Vorgangsdiagramm würde eines davon ausreichen.
+			Daraus wird nun das Vorgangsdiagramm erstellt.
+			Bei diesem fehlen jedoch noch die Zeitpunkte.
+			Die Dauer der Vorgänge werden auf den Pfeilen eingetragen.
+			
+			\newpage
+			
+			\begin{figure}[!htb]
+				\centering
+				\includegraphics[height=3.5cm]{img/pm/cpm_netzplan.png}
+				\caption{Vorgangspfeil-Netzplan ohne Zeitpunkte}
+				\label{fig:pm_cpm_netzplan}
+			\end{figure}
+			\noindent
+			Als Nächstes werden die \textbf{frühesten Zeitpunkte} ermittelt.\\
+			\textit{(Werden 2 oder mehr Pfade zusammengeführt, wird als FA des nachlaufenden Vorgangs der höchste errechnete Wert eingefügt, da die frühest möglichen Zeitpunkte gesucht sind)}
+			
+			\begin{figure}[!htb]
+				\centering
+				\includegraphics[height=3.5cm]{img/pm/cpm_soonest.png}
+				\caption{VPN: Berechnung der frühesten Zeitpunkte}
+				\label{fig:pm_cpm_soonest}
+			\end{figure}
+			\noindent
+			Als Nächstes werden noch die \textbf{spätesten Zeitpunkte} berechnet.\\
+			\textit{(Werden 2 oder mehr Pfade zusammengeführt, wird als SE des nachlaufenden Vorgangs der tiefste errechnete Wert eingefügt, da die spätest möglichen Zeitpunkte gesucht sind)}
+			
+			\begin{figure}[!htb]
+				\centering
+				\includegraphics[height=3.5cm]{img/pm/cpm_latest.png}
+				\caption{VPN: Berechnung der spätesten Zeitpunkte}
+				\label{fig:pm_cpm_latest}
+			\end{figure}
+			\noindent
+			Nun wird noch der kritische Pfad ermittelt.
+			Dieser besteht aus den Vorgängen, welche keine (gesamte) Pufferzeit aufweisen (in diesem Fall A, B, E, G)
+			
+			\begin{figure}[!htb]
+				\centering
+				\includegraphics[height=3.5cm]{img/pm/cpm_critical.png}
+				\caption{VPN: Ermitteln des kritischen Pfads}
+				\label{fig:pm_cpm_critical}
+			\end{figure}
+		
+\newpage
+
+			\paragraph{Precedence Diagramming Method (PDM)}
+			
+			
+			
+	
+	
 				
 	\section{Requirements Engineering}
 	
