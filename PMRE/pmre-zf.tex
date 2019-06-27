@@ -1302,9 +1302,228 @@ Zusammenfassung}
 			\item[Output] Dokumentierte Kosten und deren Finanzierung
 			\item[Lieferobjekt] Projektkostenplan
 		\end{description}
-			
+		\vspace{1em}
+		\textbf{Projektkosten} werden die im Projekt anfallenden Kosten für das gesamte Projekt bzw. für die Gesamtheit aller AP verstanden.\\
+		\textbf{Betriebskosten}, welche nach Einführung anfallen, sind nicht Bestandteil der Projektkosten, müssen jedoch im Business Case aufgeführt sein.
 		
+		\begin{itemize}
+			\item Fragen, die in \textbf{diesem Planungsschritt} beantwortet werden:
+				\begin{itemize}
+					\item Was kostet das Projekt?
+					\item Welche Verluste fallen an, wenn das Projekt nach Konzeption/Realisierung/Einführung gestoppt wird ($\rightarrow$ Ausblick auf Projektbudgetplan)?
+					\item Welche Kosten fallen intern/extern an?
+					\item Welche Kosten sind Investitionen, die amortisiert werden müssen?
+					\item Welche der möglichen Lösungsvarianten ist kostenmässig optimal (Kostenvergleichsrechnung)?
+				\end{itemize}
+			\item Fragen, die in einem Business Case beantwortet werden müssen:
+				\begin{itemize}
+					\item Was ist der Nutzen des Projekts? $\rightarrow$ Business Case
+					\item Was sind die Folgekosten ($\rightarrow$ Nutzungsphase) des Projekts?
+					\item Welche Lösungsvariante ist über die gesamte Lebensdauer die Optimale (Kosten-Nutzen)?
+				\end{itemize}
+		\end{itemize}
+	
+			\paragraph{Kostenarten \& Kostenstruktur}
 			
+			Mögliche Projektkosten:
+			
+			\begin{itemize}
+				\item Interne Personalkosten
+				\item Externe Personalkosten
+				\item Material (HW, SW)
+				\item Temporäre Mieten für Räumlichkeiten
+				\item Interne Kosten für Bereistellung \& Betrieb von Testsystemen
+				\item Zusätzliche Lizenzkosten pro-rata während Projektdauer
+				\item etc.
+			\end{itemize}
+			\vspace{1em}
+			\noindent
+			Möglichkeiten für die Strukturierung der obigen Kostenarten:
+			
+			\begin{itemize}
+				\item \textit{Ausgabenwirksame Kosten vs. Interne Kosten:}\\
+				\textbf{Ausgabenwirksame Kosten}, die ohne Projekt nicht angefallen wären, bewirken einen Mittelabfluss.
+				(bspw. Kosten für externe Projekt-MAs oder Investitionen)\\
+				\textbf{Interne Kosten} fallen nur kalkulatorisch an, sie fallen auch ohne Projekt an.
+				(bspw. Kosten für interne Projekt-MAs, Umlagen anderer OEs auf Projekt o.ä.)
+				
+				\item \textit{Kosten vs. Investitionen:}\\
+				\textbf{Kosten}, die während Projekt anfallen, beeinflussen Erfolgsrechnung, wobei \textbf{Investionen} aktiviert werden ($\rightarrow$ Anlagevermögen), sind somit bilanzwirksam und werden über bestimmte Zeitdauer abgeschrieben.
+			\end{itemize}
+			
+\newpage
+
+			\paragraph{Kosten-Nutzen-Betrachtungen: Business Case (BC)}
+			
+			\begin{itemize}
+				\item \textit{Projektkostenplanung} kann auch für Erarbeitung/Verfeinerung des BC genutzt werden
+				\item Im BC wird direkter/indirekter, der (nicht) quantifizierbare Nutzen eines Projekts ausgewiesen
+				\item BC betrachtet neben Projektphase auch explizit die Nutzungsphase\\
+				(Gesamt-Lifecycle eines Systems)
+				\item Positiver BC is die unternehmerische Rechtfertigung für das Projekt!
+				\item Direkter Nutzen:
+					\begin{itemize}
+						\item Direkte Einsparungen
+						\item Vermeidung von Kosten
+						\item Erhöhung von Einnahmen
+						\item Nicht quantifizierbarer Nutzen
+						\item etc.
+					\end{itemize}
+				\item Indirekter Nutzen:
+					\begin{itemize}
+						\item Technische Vorteile
+						\item Marktauftritt
+						\item etc.
+					\end{itemize}
+			\end{itemize}
+		
+			\paragraph{Variantenberechnungen}
+			
+			\begin{itemize}
+				\item Eine oder mehrere grobe Varianten einer Lösung vorhanden
+				\item Erste Variantenberechnungen durchführbar, Vergleich dieser wird möglich
+				\item Behandelte Variante: \textbf{Statische Kostenvergleichsrechnung}
+			\end{itemize}
+		
+			\paragraph{Statische Kostenvergleichsrechnung}
+			
+			\begin{itemize}
+				\item Statische Methode, ermöglicht Kostenvergleich über gewisse Zeitperiode (üblich 1 Jahr)\\
+					\textit{bspw. zwischen bisherigem \& neuem System oder zwei neuen Systemen (Variante A \& B)}
+				\item Nur Kosten berücksichtigen, keine Erlöse\\ 
+				$\rightarrow$ beide Varianten haben denselben angenommenen Erlös / Nutzen
+			\end{itemize}
+		
+			\begin{figure}[!htb]
+				\centering
+				\includegraphics[height=3cm]{img/pm/kosten.png}
+				\caption{Kostenvergleich zwischen Variante A und B}
+				\label{fig:pm_kosten}
+			\end{figure}
+			\noindent
+			Welche der beiden Varianten hat die tieferen jährlichen Gesamtkosten? \textbf{(Jahrl. GK)}\\
+			Jährliche Gesamtkosten \textbf{GK} setzen sich zusammen aus
+			\begin{description}
+				\item[JB] jährliche Betriebskosten
+				\item[JA] jährliche Abschreibungen (auf getätigte Investitionen)
+				\item[Z] jährliche Zinskosten
+			\end{description}
+		
+			\begin{quote}
+				$Jahrl. GK = JB + JA + Z$
+			\end{quote}
+			
+			\textbf{JB} sind Kosten, die für die Aufrechterhaltung des betriebsanfallen (bspw. Personalkosten, Strom, Räume, Wartung etc.)\\
+			$\rightarrow$ im Beispiel: CHF 200'000 / CHF 190'000\\
+			\\
+			\textbf{JA} Abschreibungen berechnen sich aus Investitionen/Kapitaleinsatz dividiert durch Abschreibungsdauer (fixe Dauer, manchmal gleichgesetzt mit Nutzungsdauer).\\
+			$\rightarrow$ im Beispiel: $\frac{CHF 360'000}{4}$ = CHF 90'000 / $\frac{CHF 420'000}{6}$ = CHF 70'000\\
+			\\
+			\textbf{Z} Jährlicher Zins wird auf Basis des eingesetzten Durchschnittkapitals ($\frac{Investition}{2}$) und dem kalkulatorischen Zinsfuss (durch CFO festgelegt) errechnet.\\
+			$\rightarrow$ im Beispiel: $\frac{CHF 360'000}{2} \times 7 \%$ = CHF 12'600 / $\frac{CHF 420'000}{2} \times 7 \%$ = CHF 14'700
+			
+\newpage
+			
+			\begin{figure}[!htb]
+				\centering
+				\includegraphics[height=3cm]{img/pm/kosten_result.png}
+				\caption{Jährliche Gesamtkosten der Variante A und B}
+				\label{fig:pm_kosten_result}
+			\end{figure}
+			\noindent
+			\textbf{Hinweis:} Das Resultat gilt für Jahr 1 bis 4, ab Jahr 5 muss Var. A durch eine neue Lösung ersetzt sein.
+			
+		\subsubsection{Terminplanung}
+		
+		\begin{description}
+			\item[Input] Ablaufplan, Projektkostenplan
+			\item[Ziel] Festlegung von Terminen (kalendarisch) für Meilensteine und APs (Start, Ende)
+			\item[Output] Konkrete Termin- und Einsatzplanung
+			\item[Lieferobjekt] Terminplan
+		\end{description}
+	
+		Bisher flossen zeitliche Aspekte ein, es gab jedoch noch kein "Mapping" auf kalendarischer Ebene.
+		Bisheriger Plan wird auf Kalender gesetzt, Woche 1 erhält einen konkreten Starttermin.
+		Es kommt zu \textbf{Planungsiterationen}: Zugeteilte Mitarbeiter sind abwesend, Auftraggeber nicht mehr zufrieden mit Wunschtermin etc.\\
+		Nach Terminplanung muss oft gesamte Planung (Aufwände, Ressourcen, Dauer) neu aufgesetzt werden, um obige Ansprüche zu berücksichtigen.
+		Planungstools sind hier von Vorteil.
+		
+		\subsubsection{Projektbudgetplanung}
+		
+		\begin{description}
+			\item[Input] Projektkostenplan, Terminplan
+			\item[Ziel] Abstimmung/Aufteilung Projektkosten auf effektiv verfügbare (finanzielle) Mittel\\
+					und eventuelle Budgetrestriktionen
+ 			\item[Output] Kalendarische Finanzierung
+			\item[Lieferobjekt] Projektbudgetplan
+		\end{description}
+		\vspace{1em}
+		\noindent
+		Planung der Projektkosten mit effektiv (im Unternehmen) vorhandenen Mitteln abgeglichen.\\
+		\textbf{Budgetrestriktionen}, vorallem wenn ein Projekt über Rechnungsabschluss (Jahresende) dauert, können in diesem Planungsschritt eruiert \& gelöst werden.
+		Einbezug der Finanzabteilung ist entscheidend.\\
+		Alle Projekt- und Folgekosten müssen in entsprechenden Budgets berücksichtigt sein.
+		Vorallem Folgekosten fallen meist in den Kostenstellen der stehenden Organisation an, nicht in dedizierten Projektkostenstellen.\\
+		Budgetplanung stellt zudem sicher, dass bei Projekt, welches über das Jahresende hinweg läuft, korrekte Kosten in den richtigen Jahren budgetiert werden.
+		Diese Kosten fallen ebenfalls in stehender Organisation an und müssen von Kostenstellenleitern in deren Budget berücksichtigt werden (Projektleiter hat Bring-Schuld!)\\
+		Budgetprozess für neues folgendes Jahr startet oft bereits Ende Sommer des laufenden Jahres (Vorlaufzeigen), was die Projektbudgetplanung weiter erschwert.
+		
+\newpage
+		
+		\subsubsection{Informationsplanung}
+		
+		\begin{description}
+			\item[Input] Organisationsplan, Terminplan
+			\item[Ziel] Sicherstellung der Versorgung aller Stakeholder mit relevanten Infos \& Dokumentation
+			\item[Output] Kommunikations- \& Informationskonzept
+			\item[Lieferobjekt] Informationsplan, Dokumentationsplan
+		\end{description}
+	
+		\paragraph{Informationsplan}
+		
+		Klarheit darüber, wann wer welche Informationen über welche Kommunikationskanäle in welcher Form zur Verfügung gestellt bekommt (\textbf{"push"}). Sollte folgende Spalten enthalten:
+		
+		\begin{itemize}
+			\item \textbf{Was} (Fortschrittsbericht monatlich, Requirements Katalog präsentieren etc.)
+			\item \textbf{Verantwortliche Person} (Projektleiter etc.)
+			\item \textbf{Wann} (Anfangs nächsten Monat, 5.3.2017 etc.)
+			\item \textbf{Form} (Bericht, Präsentation etc.)
+			\item \textbf{Empfänger} (Steuerungskomitee, Teilprojektleiter, Power User etc.)
+			\item \textbf{Kanal} (Email, Meeting etc.)
+		\end{itemize}
+		
+		\paragraph{Dokumentationsplan}
+		
+		Zu klärende Fragen:
+		
+		\begin{itemize}
+			\item \textbf{Dokubedürfnisse:}\\
+			Was und für wen muss dokumentiert werden?
+			\item \textbf{Dokuzeitpunkt:}\\
+			Wann muss dokumentiert werden? Wie langt gilt eine Aufbewahrungspflicht?
+			\item \textbf{Doku-Art / Doku-Träger:}\\
+			Wie muss dokumentiert werden? Wo wird die Doku aufbewahrt?\\
+			
+			\item Kategorien im Dokumentenplan:
+				\begin{itemize}
+					\item Abwicklungsdokumentation (Projektauftrag, Phasenabnahmen etc.)
+					\item Benutzerdokumentation (Benutzerhandbuch, Krisenplan etc.)
+					\item Wartungs-/Betriebsdokumente (Systemarchitektur, Systembeschrieb etc.)
+				\end{itemize}
+			\item Spalten für Dokumentenplan:\\
+			Dok-Nr., Dokumentationsart, Erstellzeitpunkt, Träger, Aufbewahrungsort
+		\end{itemize}
+		
+\newpage
+		
+	\section{Project Management - Projekt in Gang halten}
+	
+		
+		
+		
+		
+		
+		
 \newpage
 				
 	\section{Requirements Engineering}
