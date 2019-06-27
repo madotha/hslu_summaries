@@ -1078,10 +1078,234 @@ Zusammenfassung}
 
 			\paragraph{Precedence Diagramming Method (PDM)}
 			
+			Findet sich in toolgestützten PM-Werkzeugen.
+			Pufferzeiten werden ebenfalls durch Vorwärts- / Rückwärtsrechnung errechnet.
 			
+			\begin{itemize}
+				\item FAZ bis FEZ: Puffer
+				\item SAZ bis SEZ: Dauer des Vorgangs
+			\end{itemize}
+		
+			\paragraph{Pufferzeiten}
 			
-	
-	
+			Pufferzeiten geben Auskunft, wie viel Reserve im Ablaufplan beinhaltet ist.
+			Kritischer Pfad gibt Auskunft in welchen APs keine Reserven vorhanden sind bzw. welche Vorgangskette optimiert werden muss, um den Projektendzeitpunkt zu beeinflussen.\\
+			\textit{(Aufwände \& Ressourcen/Skills in diesem Planungsstadium noch nicht berücksichtigt.
+			Diese haben eine entscheidende Auswirkung auf die Dauer von APs)}
+		
+			\paragraph{Berechnung von Pufferzeiten}
+			
+			\begin{figure}[!htb]
+				\centering
+				\includegraphics[height=4cm]{img/pm/pdm_pufferzeiten.png}
+				\caption{Pufferzeiten nach PDM}
+				\label{fig:pm_pdm_pufferzeiten}
+			\end{figure}
+			
+			\paragraph{Gesamte Pufferzeit (GP)}
+			
+			\begin{quote}
+				$GP = SE(B) - FA(A) - Vorgangsdauer$
+			\end{quote}
+			\noindent
+			Gibt an, wie lange ein Vorgang bzw. sein Anfangszeitpunkt maximal ausgedehnt/hinausgezögert werden darf, ohne dass das nachfolgende AP (und Endzeitpunkt des Projekt) beeinträchtigt wird\\
+			Vorgang(-skette) ist \textbf{kritisch} (auf kritischem Pfad), wenn GP = 0 ist!
+			
+			\paragraph{Freie Pufferzeit (FP)}
+			
+			\begin{quote}
+				$FP = FE(B) - FA(A) - Vorgangsdauer$
+			\end{quote}
+			\noindent
+			Gibt an, wie lange ein Vorgang bzw. sein Anfangszeitpunkt maximal ausgedehnt/hinausgezögert werden darf, ohne dass der früheste Anfangszeitpunkt des nachfolgenden Vorgangs beeinträchtigt wird
+			
+			\paragraph{Unabhängige Pufferzeit (UP)}
+			
+			\begin{quote}
+				$UP = FE(B) - SA(A) - Vorgangsdauer$
+			\end{quote}
+			\noindent
+			Gibt an, wie lange ein Vorgang bzw. sein Anfangszeitpunkt maximal ausgedehnt/hinausgezögert werden darf, ohne dass der früheste Anfangszeitpunkt des nachfolgenden Vorgangs beeinträchtigt wird - \textbf{unabhängig} darum, weil nicht relevant ist, wann das Anfangsereignis tatsächlich ausgelöst wird
+			
+			\paragraph{Resultat - Ablaufplan}
+			
+			Als Resultat dieses Planungsschrittes entsteht ein Ablaufplan, wobei bei der AP-Liste die Spalten von \textit{Vorgänge} (also \textit{Vorgangsdauer}, \textit{Direkter Vorläufer} und \textit{direkter Nachläufer}) ausgefüllt werden.
+			
+\newpage
+
+			\subsubsection{Ressourcenplanung}
+			
+			\begin{description}
+				\item[Input] Ablaufplan
+				\item[Ziel] Kapazitäten SOLL vs. Kapazitäten IST, Aufwände \& Dauer ermitteln
+				\item[Output] Durchlaufzeit/Dauer (Aufwand) der APs
+				\item[Lieferobjekt] Ressourcenplan, Kapazitätsbelastungsdiagramm
+			\end{description}
+		
+			\paragraph{FTE - Full Time Equivalent}
+			
+			\begin{itemize}
+				\item Einplanung von personenneutralen Ressourcen (keine konkreten Mitarbeitenden)
+				\item \textbf{1 FTE} entspricht einer Vollzeitstelle (Ein Mitarbeiter, der zu 100\% im Projekt tätig ist)\\
+				(\textit{bspw. 1 FTE = 3 Mitarbeitende (1x 50\%, 2x je 25\%)})
+			\end{itemize}
+		
+			\paragraph{Dauer / Aufwand / FTE}
+			
+			\begin{quote}
+				Verhältnis von \textbf{FTE} zu Dauer \& Aufwand:\\
+				\\
+				(1) $FTE = \frac{Aufwand[Tagen]}{Dauer[Tagen]}$\\
+				\\
+				(2) $Aufwand[Tagen] = Dauer[Tagen] \times FTE$\\
+				\\
+				(3) $Dauer[Tagen] = \frac{Aufwand[Tagen]}{FTE}$		
+			\end{quote}
+		
+			\begin{itemize}
+				\item \textbf{Terminfixierte Planung}\\
+						Bei personeller Ressourcenplanung ist Dauer eines AP grundsätzlich gesetzt, es sind die benötigten Ressourcen/ Personalkapazitäten (in FTE) pro AP in Abhängigkeit der Dauer \& des Aufwands gesucht. Dazu wird \textbf{Formel (1)} verwendet (Aufwand muss noch geschätzt werden)
+				\item \textbf{Ressourcenfixierte Planung} (Einsatz verfügbarer personeller Ressourcen)\\
+						Sind die personellen Ressourcen fix vorgegeben und der Aufwand ist klar, wird die Dauer des AP änderbar. 
+						Man verwendet \textbf{Formel (3)}.
+			\end{itemize}
+			
+			\paragraph{Aufwandschätzung / Schätztechniken}
+			
+			Schätzung der Aufwände sehr schwierig, Dauer eines AP oder Personaleinsatz in AP hängen davon ab.
+			Aufwände bestimmen letztendlich die Durchlaufzeit \& Kosten eines AP und somit des Projekts.
+			Aufwandschätzungen werden periodisch überprüft und damit im Laufe des Projektfortschritts immer genauer.
+			
+			\begin{quote}
+				Parkinson's erstes Gesetz:\\
+				\textit{Work exdpands so as to fill the time available for its completion}\\
+				\textit{Arbeit dehnt sich aus, soweit es geht}
+			\end{quote}
+			Aus der Praxis bekannt, ist man zu früh fertig, findet man immer Arbeit zur "Verschönerung" oder testet mehr etc. $\rightarrow$ Time Boxing
+			
+			\paragraph{Techniken zur Aufwandschätzung}
+			
+			\begin{itemize}
+				\item Standard Delphi-Verfahren
+				\item Breitband Delphi-Verfahren
+				\item Beta-Verfahren
+				\item Function Point ($\rightarrow$ SW-Development)
+				\item COCOMO (Constructive Cost Model); in vielen Varianten
+				\item LOC (Lines of Code $\rightarrow$ SW-Development)
+				\item etc.
+			\end{itemize}
+			
+\newpage
+
+			\paragraph{Kapazitätsbelastung (-sdiagramm)}
+			
+			Nachfolgende Abbilding zeigt die berechneten Ressourcen pro Arbeitspaket auf.
+			
+			\begin{figure}[!htb]
+				\centering
+				\includegraphics[height=5cm]{img/pm/belastung.png}
+				\caption{Beispiel Kapazitätsbelastung}
+				\label{fig:pm_belastung}
+			\end{figure}
+			\noindent
+			Aus obiger Abbildung lässt sich nun ein Kapazitätsdiagramm erstellen, welches die notwendige Kapazität über die Projektdauer visualisiert.
+			Somit wird ersichtlich, wann im Projekt wieviel Kapazität eines bestimmten Skills einer Personalressource verfügbar sein muss.
+		
+			\begin{figure}[!htb]
+				\centering
+				\includegraphics[height=5cm]{img/pm/belastung_dia.png}
+				\caption{Beispiel Kapazitätsbelastungsdiagramm}
+				\label{fig:pm_belastung_diagramm}
+			\end{figure}
+			\noindent
+			Lustige Info: Im Skript \textit{Projekt in Gang halten} unter zugehörigem Kapitel ist eine übungsaufgabe, bei welcher mithilfe eines VPN und zugehörigen Netzplänen für frühste und späteste Lage jeweils ein Kapazitätsbelastungsdiagramm für früheste/späteste Lage erstellt wird.
+			Ich bin zu müde dass jetzt noch hier reinzuklatschen.
+			
+\newpage
+
+		\subsubsection{Organisationsplanung / Aufbauorganisation}
+			
+			\begin{description}
+				\item[Input] Ressourcenplan, Projektorganisation
+				\item[Ziel] Selektions Projektmitarbeitender, Überführung Ressourcenplanung in Aufbauorganisation
+				\item[Output] Mitarbeitende (intern, extern) zugeteilt auf APs
+				\item[Lieferobjekt] Organisationsplan
+			\end{description}
+			\vspace{1em}
+			\noindent
+			Tätigkeiten der Organisationsplanung:
+			\begin{itemize}
+				\item Projektmitarbeitende selektieren
+				\item Projektorganisation initialisieren
+				\item Stellebeschriebe $\rightarrow$ AKV : Aufgabe, Kompetenz, Verantwortung
+				\item Arbeitspakete an Projektmitarbeitende zuordnen
+			\end{itemize}
+		
+			\paragraph{Projektorganisationen}
+			
+			3 verschiedene Projektorganisationsarten:
+			
+			\begin{figure}[!htb]
+				\centering
+				\begin{subfigure}{.45\textwidth}
+					\centering
+					\includegraphics[height=4.5cm]{img/pm/po_linien.png}
+					\label{fig:pm_po_linie}
+				\end{subfigure}
+				\begin{subfigure}{.45\textwidth}
+					\centering
+					\includegraphics[height=4.5cm]{img/pm/po_stablinie.png}
+					\label{fig:pm_po_stablinie}
+				\end{subfigure}
+			\end{figure}
+		
+			\begin{figure}[!htb]
+				\centering
+				\includegraphics[height=5cm]{img/pm/po_matrix.png}
+				\label{fig:pm_po_matrix}
+			\end{figure}
+		
+			\paragraph{Optimale Teamgrösse}
+			
+			Optimale Teamgrösse basierend auf der Anzahl Kommunikationsbeziehungen in einer Gruppe.
+			
+			\begin{itemize}
+				\item Pro Kommunikationsbeziehung: wöchentlicher Zeitverlust von 40 Minuten pro Mitarbeiter
+				\item Arbeitszeit pro Woche \& MA = 40 Stunden
+				\item \#MA = Anzahl Mitarbeiter
+			\end{itemize}
+		
+			\begin{quote}
+				$Dauer[Tage] = \frac{Aufwand[Tage]}{\#MA}$\\
+				\\
+				$Dauer = \frac{1}{\#MA} \times Aufwand$\\
+				\\
+				$Dauer = \frac{1}{\#MA \times Produktivitaet} \times Aufwand$ (Produktivität des MA berücksichtigt)
+			\end{quote}
+		
+\newpage
+
+			\begin{figure}[!htb]
+				\centering
+				\includegraphics[height=4cm]{img/pm/opt_team.png}
+				\caption{Tabelle zur Berechnung der optimalen Teamgrösse}
+				\label{fig:pm_opt_team}
+			\end{figure}
+			\noindent
+			Aus der Tabelle ist ersichtlich: Bei einer Teamgrösse von 7 zeigt die Berechnung der Dauer einen Minimalwert von 0.22 $\rightarrow$ die kürzeste Dauer
+			
+		\subsubsection{Projektkostenplanung}
+		
+		\begin{description}
+			\item[Input] Organisationsplan, Ressourcenplan
+			\item[Ziel] Ermittlung, Optimierung \& Finanzierung der im Projekt anfallenden Kosten
+			\item[Output] Dokumentierte Kosten und deren Finanzierung
+			\item[Lieferobjekt] Projektkostenplan
+		\end{description}
+			
+		
+			
+\newpage
 				
 	\section{Requirements Engineering}
 	
