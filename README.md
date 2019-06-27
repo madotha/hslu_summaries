@@ -5,6 +5,7 @@ Persönliche Zusammenfassungen von Modulen der HSLU Informatik. Einige sind mehr
   - Aufgabencode [hier](https://github.com/madotha/mobpro_projects) zu finden
 - **SWDE** *(finished)*
 - **AD** *(finished)*
+- **PMRE** *(WIP)*
 
 ## Ersichtlichkeit
 
