@@ -2160,8 +2160,240 @@ Zusammenfassung}
 
 	\section{Requirement Engineering - Anforderungen dokumentieren}
 	
+	Zu Beginn muss man sich über die zu beschreibenden Eigenschaften einigen.
+	Der Verwendungszweck bestimmt, ob ein Modell geeignet ist oder nicht.
 	
+		\subsection{Drei komplementäre Perspektiven}
+		
+		Dabei gibt es drei komplementäre Perspektiven zu beachten:
+		
+		\begin{description}
+			\item[Struktur] Relevante Objekte \& ihre Beziehungen untereinander modellieren\\
+				$\rightarrow$ Informations- / Datenmodell (Business Object Model)
+			\item[Funktion] Abläufe der Manipulation von relevanten Informationen modellieren\\
+				$\rightarrow$ Aktivitätsdiagramm / Datenflussdiagramm
+			\item[Verhalten] Erlaubte Systemzustände \& Zuständsänderungen aufgrund \\
+					eintretender Ereignisse modellieren\\
+				$\rightarrow$ Zustandsdiagramm
+		\end{description}
 	
+				\paragraph{Beispiel Perspektiven an Containerschiff}
+				
+				\begin{description}
+					\item[Struktur] Schiff, Ladung, Besatzung, Hafen etc.
+					\item[Funktion] Ladung löschen, Anlegen, Fortbewegen, Laden, Schiff in Hafen lotsen etc.
+					\item[Verhalten] Zustandsübergänge $\rightarrow$ angelegt, auf hoher See, geladen, entladen etc.
+				\end{description}
+	
+		\subsection{Sichten der Anforderungsformulierung}
+		
+			\begin{figure}[!htb]
+				\centering
+				\includegraphics[height=6cm]{img/re/03/anforderungssichten.png}
+				\caption{Anforderungssichten}
+				\label{fig:re_anforderungssichten}
+			\end{figure}
+	
+		\subsection{Diagramme im RE}
+	
+			\begin{figure}[!htb]
+				\centering
+				\includegraphics[height=3.5cm]{img/re/03/re_diagramme.png}
+				\caption{Diagramm-Möglichkeiten im RE}
+				\label{fig:re_diagramme}
+			\end{figure}
+		
+\newpage
+
+			\subsubsection{Beispiele von Diagrammen}
+			
+			\begin{figure}[!htb]
+				\centering
+				\begin{subfigure}{.45\textwidth}
+					\centering
+					\includegraphics[width=\textwidth]{img/re/03/usecase.png}
+					\caption{Use Case Beschreibung}
+					\label{fig:re_usecase_desc}
+				\end{subfigure}
+				\begin{subfigure}{.45\textwidth}
+					\centering
+					\includegraphics[width=\textwidth]{img/re/03/usecase_dia.png}
+					\caption{Use Case Diagramm}
+					\label{fig:re_usecase_dia}
+				\end{subfigure}
+				\caption{Komponenten eines Use Case}
+				\label{fig:re_usecase}
+			\end{figure}
+
+			\begin{figure}[!htb]
+				\centering
+				\begin{subfigure}{.45\textwidth}
+					\centering
+					\includegraphics[width=\textwidth]{img/re/03/activity_dia.png}
+					\caption{Activitätsdiagramm}
+					\label{fig:re_activity_dia}
+				\end{subfigure}
+				\begin{subfigure}{.45\textwidth}
+					\centering
+					\includegraphics[width=\textwidth]{img/re/03/class_dia.png}
+					\caption{Klassendiagramm}
+					\label{fig:re_class_dia}
+				\end{subfigure}
+				\caption{Aktivitäts- und Klassendiagramm}
+				\label{fig:re_activity_class_dia}
+			\end{figure}
+		
+			\begin{figure}[!htb]
+				\centering
+				\begin{subfigure}{.45\textwidth}
+					\centering
+					\includegraphics[width=\textwidth]{img/re/03/state_dia.png}
+					\caption{Zustandsdiagramm}
+					\label{fig:re_state_dia}
+				\end{subfigure}
+				\begin{subfigure}{.45\textwidth}
+					\centering
+					\includegraphics[width=\textwidth]{img/re/03/crud_matrix_dia.png}
+					\caption{CRUD-Matrix}
+					\label{fig:re_crud_dia}
+				\end{subfigure}
+				\caption{Zustandsdiagramm und CRUD-Matrix}
+				\label{fig:re_state_crud_dia}
+			\end{figure}
+		
+\newpage
+
+			\subsubsection{Modellelemente verschiedener Diagramme}
+			
+			\begin{figure}[!htb]
+				\centering
+				\begin{subfigure}{.45\textwidth}
+					\centering
+					\includegraphics[width=\textwidth]{img/re/03/usecase_elements.png}
+					\caption{Use Case Modellelemente}
+					\label{fig:re_usecase_elements}
+				\end{subfigure}
+				\begin{subfigure}{.45\textwidth}
+					\centering
+					\includegraphics[width=\textwidth]{img/re/03/activity_elements.png}
+					\caption{Aktivitätsdiagramm Modellelemente}
+					\label{fig:re_activity_elements}
+				\end{subfigure}
+				\caption{Modellelemente Use Case \& Aktivitätsdiagramm}
+				\label{fig:re_elements_01}
+			\end{figure}
+		
+			\begin{figure}[!htb]
+				\centering
+				\begin{subfigure}{.45\textwidth}
+					\centering
+					\includegraphics[width=\textwidth]{img/re/03/class_elements.png}
+					\caption{Klassendiagramm Modellelemente}
+					\label{fig:re_class_elements}
+				\end{subfigure}
+				\begin{subfigure}{.45\textwidth}
+					\centering
+					\includegraphics[width=\textwidth]{img/re/03/state_elements.png}
+					\caption{Zustandsdiagramm Modellelemente}
+					\label{fig:re_state_elements}
+				\end{subfigure}
+				\caption{Modellelemente Klassen- und Zustandsdiagramm}
+				\label{fig:re_elements_02}
+			\end{figure}
+
+				\paragraph{Use Case}
+		
+					\begin{itemize}
+						\item Informationen sammeln - woher soll man das wissen?
+						\item Mögliche Akteure finden - Wer arbeitet mit dem System?
+						\item Mögliche Anwendungsfälle - Welche Ziele werden mit dem System erreicht?
+						\item Akteure \& Anwendungsfälle verbinden - Wer tut was mit dem System?
+						\item Akteure beschreiben - Wofür steht ein Akteur?
+						\item Weitere Anwendungsfälle suchen - Wie unterstützt das System die Akteure?
+						\item Anwendungsfälle bearbeiten - Was gehört wirklich zu Anwendungsfall?
+						\item Anwendungsfälle dokumentieren - Was passiert im Anwendungsfall?
+						\item Beziehungen zw. Anwendungsfällen modellieren - Was ist wieder verwendbar?
+						\item Sicht validieren - Alles richtig?
+							\begin{itemize}
+								\item Ist Anwendungsfalldiagramm vollständig?
+								\item Sind alle Anwendungsfälle korrekt?
+								\item Ist der Detailierungsgrad zweckmässig?
+								\item Sind Anwendungsfälle richtig benannt?
+								\item Sind Akteure korrekt?
+							\end{itemize}
+						\item Mögliches \textbf{Abstrahieren} von Akteuren
+					\end{itemize}
+		
+\newpage
+		
+				\paragraph{CRUD-Matrix}
+				
+					Ist quasi die Gegenüberstellung von Use Cases (Funktionen) und Klassen/Entities (Datenstrukturen).
+					Validierung der Struktur- und Funktionsperspektive.
+					Datenzugriff wird über die Funktionalität eines Use Cases bestimmt.
+					
+				\paragraph{Aktivitäts-, Klassen-, Zustandsdiagramm}
+				
+				Das haben wir jetzt schon so oft, die ganze Zeit, gehabt.
+				Das sollte man mittlerwile ungefähr im Griff haben.
+				
+			\subsection{Anfoderungen in Textform}
+			
+					\paragraph{Regeln}
+					
+						\begin{itemize}
+							\item Anfoderungen stets in vollständigen Sätzen schreiben
+							\item Immer im Aktiv formulieren
+							\item Begriffe konsistent verwenden, Synonyme \& Hynonyme vermeiden
+							\item Glossar erstellen, darin definierte Begriffe verwenden
+							\item Prozesse durch Vollverben fomulieren
+						\end{itemize}
+					
+					\paragraph{Transformationsprozesse}
+					
+						\begin{itemize}
+							\item Nominalisierung
+							\item Substantive ohne Bezugsindex
+							\item Universalquantoren
+							\item Unvollständig spezifizierte Bedingungen
+							\item Unvollständig spezifizierte Prozesswörter
+						\end{itemize}
+					
+					\begin{figure}[!htb]
+						\centering
+						\includegraphics[height=2.5cm]{img/re/03/satzschablone.png}
+						\caption{Vollständige Satzschablone}
+						\label{fig:re_satzschablone}
+					\end{figure}
+					
+					\paragraph{Entscheidungstabelle} 
+					
+					Anwendung bei unvollständig spezifizierten Bedingungen.
+					
+					\begin{description}
+						\item[R(X)] mögliche Fälle
+						\item[Bedingungen] können erfüllt oder nicht erfüllt sein
+						\item[Aktionen] Definieren, bei welchen Bedingungen was (nicht) ausgeführt werden soll
+					\end{description}
+				
+					\begin{figure}[!htb]
+						\centering
+						\includegraphics[height=4.5cm]{img/re/03/entscheidungstabelle.png}
+						\caption{Beispiel einer Entscheidungstabelle}
+						\label{fig:re_entscheidungstabelle}
+					\end{figure}
+	
+\newpage
+
+	\section{Requirements Engineering - Agiles RE}
+	
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[height=7cm]{img/re/05/scrum_overview.png}
+		\caption{SCRUM im Überblick}
+		\label{fig:re_scrum_overview}
+	\end{figure}
+
 	
 	
 	
