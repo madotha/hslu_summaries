@@ -1518,12 +1518,477 @@ Zusammenfassung}
 		
 	\section{Project Management - Projekt in Gang halten}
 	
+	\begin{figure}[!htb]
+		\centering
+		\begin{subfigure}{.35\textwidth}
+			\centering
+			\includegraphics[height=5cm]{img/pm/teufelsquadrat.jpeg}
+			\caption{Teufelsquadrat}
+			\label{fig:pm_teufelsquadrat}
+		\end{subfigure}
+		\begin{subfigure}{.55\textwidth}
+			\centering
+			\includegraphics[height=6cm]{img/pm/steuerung.png}
+			\caption{Steuerung vs. Regelung}
+			\label{fig:pm_steuerung}
+		\end{subfigure}
+		\caption{Teufelsquadrat \& Steuerung vs. Regelung}
+		\label{fig:pm_teufel_steuerung}
+	\end{figure}
+
+	\begin{itemize}
+		\item Planungswerte durch Dimensionen des Teufelsquadrat repräsentiert
+		\item Planungseinheit, die Einfluss nehmen kann, ist ein definiertes AP
+		\item Die 4 Dimensionen sind voneinander abhängig,\\ 
+		Änderung einer Dimension hat Reaktion auf anderer Achse zur Folge
+	\end{itemize}
+
+	\paragraph{Steuerung vs. Regelung}
+	
+	In einem Projekt wird geregelt, nicht nur gesteuert.
+	(Wenn wir ein Fahrzeug "steuern", sind wir eig. regelnd unterwegs).
+	
+	\paragraph{Zusammenhang zw. Projektplanung \& Projektfortschritt überwachen}
+	
+	Aus Planung entsteht Basisplan zu Zeitpunkt $t_{0}$.
+	Zu einem Zeitpunkt $t_{x}$ wird der Fortschritt des Projekts dann kontrolliert/überwacht.
+	Je nachdem wie kritisch die Abweichungen sind werden Massnahmen ergriffen und ein neuer Plan zum Zeitpunkt $t_{x}$ erstellt (der wieder abgenommen werden muss).
+	
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[height=6cm]{img/pm/basisplan.png}
+		\caption{Zusammenhang Projektplanung / Projektfortschritt überwachen}
+		\label{fig:pm_basisplan}
+	\end{figure}
+
+\newpage
+
+		\subsection{Kontrollbereiche}
 		
+		\begin{itemize}
+			\item \textbf{Definition "messen":}\\
+			Kann als kontrollieren/überwachen interpretiert werden; 
+			umfasst alle Aktivitäten, um projektbezogene Abweichungen zw. Plan- und Ist-Zustand aufzudecken
+			\item Korrigierende Massnahmen sind Teil des Steuerns, nicht des Messens
+			\item Unterscheiden:
+				\begin{itemize}
+					\item Planungskontrolle (Kontrolle bezieht sich auf Projektabwicklung)
+					\item Realisierungskontrolle (Kontrolle auf das vom Projekt zu liefernde Produkt)
+				\end{itemize}
+		\end{itemize}
+	
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[height=5cm]{img/pm/kontrollbereiche.png}
+			\caption{Kontrollbereiche in Projektabwicklung}
+			\label{fig:pm_kontrollbereiche}
+		\end{figure}
+	
+		\begin{itemize}
+			\item \textbf{Terminkontrolle}
+				\begin{description}
+					\item[Ziel] Projektüberprüfung auf Einhaltung des geplanten Endtermins. Fokus auf kritische Pfade
+					\item[Fragestellung] Sind in Planung vorgegebene Termine (Meilensteine) eingehalten worden?
+					\item[Prognose] Wann wir das Projekt voraussichtlich beendet?
+				\end{description}
+			\item \textbf{Kostenkontrolle}
+				\begin{description}
+					\item[Ziel] Überprüfung des Projekts aus Einhaltung geplanter Kosten
+					\item[Fragestellung] Sind bis zum Kontrollzeitpunkt kumulierte Kosten eingehalten worden?
+					\item[Prognose] Zu welchen Kosten wird Projekt voraussichtlich abgeschlossen?
+				\end{description}
+			\item \textbf{Leistungs-/Sachfortschrittskontrolle}
+				\begin{description}
+					\item[Ziel] Produckt pberprüfen auf Erreichung des geplanten Lieferumfangs
+					\item[Fragestellung] Wie weit ist Arbeit am Produkt fortgeschritten?
+					\item[Prognose] Wird Projektgegenstand wie abgemacht geliefert?
+				\end{description}
+		\end{itemize}
+	
+		\paragraph{Kontrollzeitpunkte}
+	
+		\begin{itemize}
+			\item Festlegen der Kontrollzeitpunkte nach:
+				\begin{itemize}
+					\item \textbf{nach einer Zeitdauer oder Arbeitsvolumen}\\
+						nach vorgegebener Zeitdauer oder bei Erreichen eines Kontrollvolumens, egal ob bei Phasenende oder Resultat.
+						Zeitdauer typischerweise zw. 1-3 Monaten, Volumen bei 100-200 geleisteten Personentagen.
+					\item \textbf{bei Erreichung eines Resultates}\\
+						Lieferobjekt nach Erstellung möglichst unmittelbar kontrollieren, um allfällige Fehler schnell erkennen zu können
+					\item \textbf{bei Erreichung von Phasenende/Meilenstein}\\
+						Phasenabschluss ist prädestiniert für einen Kontrollzeitpunkt
+				\end{itemize}
+		\end{itemize}
 		
+\newpage
+
+	\subsection{Terminkontrolle}
 		
+	\begin{itemize}
+		\item \textbf{Wieso Projekttermine kontrollieren?}\\
+			Endzeitpunkt des Projekts sicherstellen, erreichte Projekttermine müssen gesichert werden
+		\item Termine haben mit Dauer eines Projekts zu tun, nur kontrollierbar wenn sie eindeutig benannt sind
+		\item Typische Termine:
+			\begin{itemize}
+				\item Meilensteintermine
+				\item Start- und Endtermine von APs
+				\item Audit- \& Reviewtermine
+				\item Projektanfangs- und -endtermin
+				\item Weitere wie Berichtstermine etc.
+			\end{itemize}
+		\item Dauer aus Aufwand und verfügbaren Ressourcen:\\
+			\\
+			$Dauer[Tage] = \frac{Aufwand[PT]}{Personen[P]}$
+	\end{itemize}
 		
+		\subsubsection{Termintreue (\%)}
 		
+		Kennzahl, wie viele vergangene Termine eingehalten werden konnten oder eben nicht.
+		Diese Kennzahl gibt Auskunft über Termintreue bzw. lässt aufschliessen, wie akkurat die Planung war (Aufwand \& Dauer)
 		
+		\begin{quote}
+			Termintreue [\%] = $\frac{\#TermineEingehalten}{\#Termine} \times 100[\%]$
+		\end{quote}
+	
+		\subsubsection{Zeitlicher Fortschrittsgrad (\%)}
+		
+		\begin{quote}
+			Zeitl. Fortschrittsgrad$_{IST}$ [\%] = $\frac{Dauer[Wochen]}{prog.Gesamtdauer[Wochen]} \times 100\%$\\
+			\\
+			Freiheitsgrad PLAN: zeitFG$_{PLAN}$ = $\frac{Istdauer}{geplante Dauer}$\\
+			\\
+			Freiheitsgrad IST: zeitFG$_{IST}$ = $\frac{Istdauer}{voraussichtliche Dauer}$\\
+			\\
+			\textit{(Abweichung zw. zeitFG$_{PLAN}$ \& zeitFG$_{IST}$: grobes Indiz für Einhaltung des Endtermins)}
+		\end{quote}
+		
+		\subsubsection{Termin-Trenddiagramm}
+		
+		\begin{minipage}{.45\textwidth}
+			\includegraphics[height=5cm]{img/pm/termintrend.png}
+		\end{minipage}
+		\begin{minipage}{.45\textwidth}
+			\textbf{Leselogik:}
+			\begin{itemize}
+				\item Kurve nach oben, wenn Termine immer wieder nach hinter verschoben.
+				Strebt weg von ursprünglich geplantem Termin (weg von der Diagonale)
+				\item Kurvenverlauf horizontal, wenn keine Terminabweichungen erkennbar sind
+				\item Kurve nach unten, wenn Termine vorverschoben werden können (strebt der Diagonale entgegen)
+			\end{itemize}
+		\end{minipage}
+		\vspace{1em}
+		\begin{itemize}
+			\item \textbf{Vorteile:} einfach, schnell zu erstellen, Terminabweichungen sofort erkennbar, geeignetes Kommunikationsmittel (innerhalb/ausserhalb Projekt), Abstimmungsdefizite erkennbar, fördert Terminbewusstsein
+			\item \textbf{Nachteile:} subjektive Einschätzung, Trendkurve allein nicht ausreichen zur Ursachenanalyse, Diagramm muss kommentiert sein
+		\end{itemize}
+		
+\newpage
+
+	\subsection{Kostenkontrolle (Aufwandkontrolle)}
+	
+			\paragraph{Wieso Projektkosten kontrollieren?}
+			
+			Ziel der Kostenkontrolle ist, vereinbarten Kostenrahmen des Projekts sicherzustellen.
+			Der gemäss Planung vorgesehene zeitliche Kostenanfall muss gesichert werden.
+			Kosten können \textit{time} oder \textit{material} sein.
+			
+		\subsubsection{Ist- und Plankosten}
+		
+		\begin{itemize}
+			\item In der Kostenkontrolle werden zwei Kosten einander gegenübergestellt \& verglichen:
+				\begin{itemize}
+					\item IST-Kosten (zum Kontrollzeitpunkt $t_x$ aufgelaufene effektive Kosten, kumuliert)
+					\item Plankosten (zum Zeitpunkt nach Planung verbrauchte Kosten, kumuliert)
+				\end{itemize}
+			\item Es können 3 mögliche Zustände vorliegen (siehe Abbildung \ref{fig:pm_kostenkurve}):
+				\begin{itemize}
+					\item IST-Kosten liegen zum Zeitpunkt $t_x$ unter dem geplanten Verbrauch
+					\item IST-Kosten entsprechen zum Zeitpunkt $t_x$ dem geplanten Verbrauch
+					\item IST-Kosten liegen zum Zeitpunkt $t_x$ über geplantem Verbrauch
+				\end{itemize}
+			\item Es interessieren primär Personalkosten (reflektieren effektiv geleistete Aufwände)
+		\end{itemize}
+	
+		\begin{figure}[!htb]
+			\centering
+			\begin{subfigure}{.45\textwidth}
+				\centering
+				\includegraphics[height=4cm]{img/pm/kostenkurve.png}
+				\caption{schematische Kostenkurve}
+				\label{fig:pm_kostenkurve}
+			\end{subfigure}
+			\begin{subfigure}{.45\textwidth}
+				\centering
+				\includegraphics[height=4cm]{img/pm/kostenbewertung.png}
+				\caption{Bewertungsbereich von Kosten}
+				\label{fig:pm_kostenbewertung}
+			\end{subfigure}
+		\end{figure}
+	
+		\begin{itemize}
+			\item Zum Zeitpunkt $t_x$ mehr Ressourcen verbraucht als geplant\\
+			Zum Zeitpunkt $t_{x-1}$ jedoch weniger als geplant
+			\item Zustand bei $t_x$ so interpretierbar, dass Projekt weiter fortgeschritten als geplan, da offenbar mehr Aufwände rapportiert als geplant
+			\item Oder dass trotz Mehrkosten resultatmässig weniger erreicht wurde als bei $t_x$ geplant
+			\item Kostenkontrolle muss deshalb unbedingt den \textbf{Sachfortschritt} des Projekts miteinbeziehen
+		\end{itemize}
+	
+		\subsubsection{SOLL-Kosten (Earned Value)}
+		
+		Aufgelaufene IST-Kosten zum Kontrollzeitpunkt $t_x$ reflektieren geleisteten (Personen-)Aufwand im Projekt.
+		Ist aber nicht gleichbedeutend mit Fortschritt bezogen auf das zu erstellende Endresultat (Produkt).
+		Von Interesse ist, was mit rapportiertem Aufwand geleistet wurde!
+		Kostenkontrolle muss immer auch den Leistungsstand in Betrachtung ziehen.\\
+		\textbf{Arbeitswert, SOLL-Kosten:} Entspricht Kosten, die in einem AP bei einem bestimmten Fortschrittsgrad (FG) nach Plan hätten anfallen dürfen. 
+		Earned Value kann maximal den Planwert (Planned Value PV) des APs erreichen.
+			
+			\paragraph{Beispiel}
+			
+			\begin{itemize}
+				\item Arbeitspaket:
+				\begin{description}
+					\item[Plankosten] CHF 10'000
+					\item[IST-Kosten] CHF 7'500
+					\item[Fortschrittsgrad] 25\%
+				\end{description}
+				\item AP wird in der Hälfte seiner Dauer überprüft, zum Zeitpunkt t$t_x$ sind IST-Kosten CHF 7'500
+				\item FG ist aber nur bei 25\% (nicht wie erwartet bei 50\%, bei Hälfte der Dauer)
+				\item Es hätten nur $\frac{1}{4}$ der Plankosten (also CHF 2'500) anfallen dürfen
+				\item \textbf{SOLL-Kosten} liegen somit bei CHF 2'500
+			\end{itemize}
+		
+\newpage
+
+	\subsection{Leistungskontrolle / Sachfortschrittskontrolle}
+	
+	\begin{itemize}
+		\item \textbf{Wieso Leistungsfortschritt kontrollieren?}\\
+			Soll den Lieferumfang des Projekts sicherstellen.
+		\item Dazu müssen zum Zeitpunkt $t_x$ vorgesehene Leistungen, Resultate \& Fortschritt gesichert werden
+	\end{itemize}
+
+		\subsubsection{Methoden zur Bestimmung des Fortschrittsgrads}
+		
+		Zur Berechnung des Arbeitswertes (SOLL-Kosten) muss Fortschrittsgrad zum Kontrollzeitpunkt $t_x$ bestimmt sein.
+		Dazu bieten sich folgende Möglichkeiten an:
+		\vspace{1em}
+		\begin{itemize}
+			\item \textbf{Meilensteinmethode}\\ 
+				Anzahl erreichte Meilensteine vs. Total aller Meilensteine
+			\item \textbf{Relativer Fertigstellungsgrad / Befragung}\\
+				relative Betrachtung der Fertigstellung;
+				Ermittlung einer genauen \%-Grösse, sehr subjektiv
+			\item \textbf{0/50/100\%-Methode}\\
+				Betrachtung, welche noch nicht gestartetes AP mit 0\%, begonnenes AP mit 50\% und abgeschlossenes AP mit 100\% bewertet
+			\item 0/100\%-Methode\\
+				Betrachtung, welche erst bei Abschluss eines AP 100\% vergibt, alle laufenden / nicht begonnenen APs werden mit 0\% bewertet
+			\item \textbf{Restaufwandschätzung}\\ 
+				zukunftsorientierte Methode;
+				Statt erbrachte Leistung zu bewerten wird Restaufwand geschätzt (wieviel Aufwand muss noch geleistet werden), Substraktion des Restaufwands von geplantem Aufwand ergibt eine Abschätzung des Fortschritts (unter Berücksichtigung eingesetzter Ressourcen)
+		\end{itemize}
+		
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[height=8cm]{img/pm/fg_methoden.png}
+			\caption{Möglichkeiten zur Bestimmung des Fortschrittsgrads}
+			\label{fig:pm_fg_methoden}
+		\end{figure}
+	
+\newpage
+		
+		\paragraph{Beispiel}
+		
+		Gegeben ist ein Arbeitsplan mit APs A bis F.
+		Für jedes ist effektiver Leistungsfortschritt indiziert (100\% oder 25\%).
+		Auch PLAN- und IST-Kosten sind für das Projekt bekannt:
+		
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[height=6cm]{img/pm/leistung_01.png}
+			\caption{Terminplan mit aktuellen Daten}
+			\label{fig:pm_leistung_01}
+		\end{figure}
+		\noindent
+		Die Arbeitswerte (erwirtschafteter Wert) für die APs lässt sich nach 0/50/100-Methode folglich berechnen:
+		
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[height=4cm]{img/pm/leistung_02.png}
+			\caption{Berechnung des Fortschritts \& erwirtschaftetem Wert}
+			\label{fig:pm_leistung_02}
+		\end{figure}
+		
+	\subsection{Integrierte Kontrollsicht - Leistung-/Kosten-Kontrolle}
+	
+	Kosten reflektieren geleisteten Personenaufwand, ist jedoch nicht gleichbedeutend mit Fortschritt bezogen auf das zu erstellende Endresultat (Produkt).
+	Kostenkontrolle muss auch Leistungsstand (Fortschritt) mit einbeziehen.\\
+	$\rightarrow$ Earned-Value-Methode
+	
+		\subsubsection{Earned Value (EV)}
+		
+		\begin{itemize}
+			\item Neben PLAN- und IST-Kosten auch SOLL-Kosten (Earned Value) betrachten
+			\item Synonym: \textit{Budgeted Cost of Work Performed - BCWP}
+			\item \textbf{EV} entspricht denjenigen \textbf{Kosten, die für Erreichung des eruierten FG hätten anfallen dürfen}
+			\item EV eines AP zum Kontrollzeitpunkt $t_x$ berechnen:\\
+			\\
+			EV$_{tx}$ = FG$_{tx} \times$ Plankosten$_{AP}$\\
+			\textit{(EV eines AP kann nie höher sein als die Plankosten eines AP)}
+		\end{itemize}
+	
+\newpage
+
+		\subsubsection{Earned Value Methode (EVM)}
+		
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[height=5cm]{img/pm/evm_dia.png}
+			\caption{PV, BV und EV auf der Zeitachse}
+			\label{fig:pm_evm_dia}
+		\end{figure}
+		
+		\textbf{Kennzahlen:}
+		\begin{itemize}[itemsep=0.5em]
+			\item \textbf{Burned Value (BV)}\\
+			Kumulierte IST-Kosten (auch \textit{Actual Cost (AC)} oder \textit{Actual Cost of Work Performed (ACWP)})\\
+			Herkunft: aus der Rapportierung
+			
+			\item \textbf{Planned Value (PV)}\\
+			Kumulierte PLAN-Kosten (auch \textit{Budgeted Cost of Work Scheduled (BCWS)})\\
+			Herkunft: aus der Planung
+			
+			\item \textbf{Earned Value (EV)}\\
+			Wie erläutert (auch \textit{Budgeted Cost of Work Performed (BCWP)})\\
+			Herkunft: berechnet aus eruiertem Fortschrittsgrad (\%) bei $t_x$ mal Plankosten des AP
+			
+			\item \textbf{Scheduled Performance Index (SPI)}\\
+			Zeitliche Kenngrösse, sagt aus ob Projekt vor oder hinter dem Plan liegt\\
+			Berechnung: $SPI = \frac{EV}{PV}$
+				\begin{description}
+					\item[SPI = 1] Projekt ist planmässig unterwegs
+					\item[SPI > 1] Erbrachte Leistung grösser als geplant, Projekt schneller als geplant
+					\item[SPI < 1] Erbrachte Leistung kleiner als geplant, Projekt langamer als geplant\\
+				\end{description}
+			\begin{itemize}
+				\item Terminprognose mit SPI: $progDauer = \frac{Dauer.geplant}{SPI}$\\
+			\end{itemize}
+			
+			\item \textbf{Cost Performance Index (CPI)}\\
+			Kostenbezogene Kenngrösse, sagt aus ob Projekt über oder unter Plan läuft\\
+			Berechnung: $CPI = \frac{EV}{BV}$
+				\begin{description}
+					\item[CPI = 1] Projekt kostenmässig gemäss Plan unterwegs
+					\item[CPI > 1] Erbrachte Leistung grösser als tatsächliche Kosten, Projekt kostengünstiger als geplant
+					\item[CPI < 1] Erbreachte Leistung kleiner als tatsächliche Kosten, Projekt teurer als geplant\\
+				\end{description}
+			\begin{itemize}
+				\item Kostenprognose mit CPI: $progKosten = \frac{Kosten.geplant}{CPI}$\\
+			\end{itemize}
+			
+		\end{itemize}
+		
+\newpage
+
+		\subsubsection{Beispiel einer Anwendung der EVM}
+		
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[height=7cm]{img/pm/evm_example.png}
+			\caption{Übersicht von AP mit jeweiligen Werten}
+			\label{fig:pm_evm_example}
+		\end{figure}
+	
+		\begin{itemize}[itemsep=.5em]
+			\item \textbf{PV} bei $t_x$: 40'000 + 40'000 + $\frac{60'000}{2}$ = 110'000 CHF
+			\item \textbf{BV} bei $t_x$: 45'000 + 40'000 + 65'000 = 150'000 CHF
+			\item \textbf{EV} bei $t_x$: 100\% $\cdot$ 40'000 + 100\% $\cdot$ 40'000 + 100\% $\cdot$ 60'000 = 140'000 CHF\\
+				\textit{(EV berechnet sich auf Plankosten des gesamten AP)}
+			\item \textbf{SPI}: $\frac{EV}{PV} = \frac{140'000}{110'000} = 1.3$\\
+			prog. Endtermin: $\frac{Dauer.geplant}{SPI} = \frac{40}{1.3} =$ 31 Tage
+			\item \textbf{CPI}: $\frac{EV}{BV} = \frac{140'000}{150'000} = 0.9$\\
+			prog. Kosten: $\frac{Kosten.geplant}{CPI} = \frac{200'000}{0.9} = $215'000 CHF
+		\end{itemize}
+	
+		\subsubsection{Erfahrungssicherung}
+		
+		\begin{itemize}
+			\item Aufgetretene Probleme werden nach \textit{vermeidbar}, \textit{kaum vermeidbar} und \textit{nicht vermeidbar} aufgeteilt
+			\item Fragen, die zu beantworten sind:
+				\begin{itemize}
+					\item Erfahrungen in Zusammenarbeit mit Lieferanten, Kunden, Fachabteilungen etc.?
+					\item Qualität der Teamarbeit?
+					\item Zweckmässigkeit des gewählten Vorgehen im Projekt?
+					\item Bewährten sich die eingesetzten Instrumente?
+					\item Angemessene Arbeitspakete (Aufwand, Dauer)?
+					\item Kompetenzen \& Verantwortung richtig zugeteilt?
+				\end{itemize}
+		\end{itemize}
+			
+		\subsubsection{Reporting / Berichtswesen}
+		
+		Berichtswesen und Projektdokumentation obliegen der Fortschrittskontrolle.
+		Ein akkurates Berichtswesen muss folgende 3 Kriterien erfüllen:
+			\begin{itemize}
+				\item Aktualität
+				\item Empfängerbezogenheit
+				\item Entscheidungsorientierung
+			\end{itemize}
+	
+\newpage
+
+	\subsection{Projekt steuern}
+	
+		\subsubsection{"Adding People to a late project makes it even later"}
+		
+		Was, wenn Projekt in Schieflage gerät?
+		Massnahmen gefragt, welche sind jedoch wirksam?\\
+		\textbf{Wieso?} Möglich ist, dass Kommunikations- bzw. Abstimmungsaufwand entlang Teamgrösse wächst.
+		Je mehr Mitglieder einem Team zugehören, umso tiefer ist individuelle Produktivität der Einzelnen.\\
+		$\rightarrow$ Kapitel zu \textit{Optimale Teamgrösse}!
+		
+		\subsubsection{Dynamik der Projektarbeit}
+		
+		Projekt unterliegt dynamischen Einflüssen und Feedback Loops.
+		
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[height=7cm]{img/pm/dynamik_01.png}
+			\caption{Projektablauf mit dynamischen Einflüssen}
+			\label{fig:pm_dynamik_01}
+		\end{figure}
+		\noindent
+		Korrekt geplante Projekte (ohne Reserven) können nach dieser Logik immer ins Hintertreffen kommen.
+		Customer Changes (obsolence rate) reduzieren Fortschritt (apparent progress) massgebend.
+		Change Management ist ein Muss!\\
+		Korrigieren durch Massnahmen wie bspw. \textbf{Hiring} (weitere Personen ins Projekt), \textbf{Overtime} (Überzeit anordnen), \textbf{Schedule Acceleration} (Arbeitstakt beschleunigen) etc.
+		
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[height=7cm]{img/pm/dynamik_02.png}
+			\caption{Projektablauf mit korrigierenden Massnahmen}
+			\label{fig:pm_dynamik_02}
+		\end{figure}
+	
+\newpage
+		\noindent
+	 	Ausgleichende Massnahmen haben jedoch Wechselwirkungen (lösen Reaktionen aus)
+	 	\begin{itemize}
+	 		\item \textit{Overtime}: mehr Überzeit, desto grösser wird Müdigkeit jedes Projektmitarbeitenden, Burn-Out-Rate steigt, was direkten Einfluss auf Produktivität/Qualität hat, sie sinkt
+	 		\item \textit{Hiring}: nominelle Stärkung der Belegschaft, aber durchschnittlicher Ausbildungsstand tiefer, führt zu Qualitätseinbussen
+	 		\item \textit{Schedule Acceleration}: Einfluss auf Qualität \& Produktivität, da Koordinationsaufwand grösser wird, Engpässe entstehen, Motivation sinkt
+	 	\end{itemize}
+ 		Es entstehen \textit{self-reinforcing Loops}, welche verstärkend wirken
+ 		
+ 		\begin{figure}[!htb]
+ 			\centering
+ 			\includegraphics[height=9cm]{img/pm/dynamik_03.png}
+ 			\caption{Einfluss der Wechselwirkungen auf Projektablauf}
+ 			\label{fig:pm_dynamik_03}
+ 		\end{figure}
+		\noindent
+		Projektleiter muss getroffene Massnahmen sehr kritisch hinterfagen und effektive Wirksamkeit beurteilen.
+		Gilt besonders für Personalmassnahmen \textit{("Adding People to a late project makes it even later")}
+	
 \newpage
 				
 	\section{Requirements Engineering}
