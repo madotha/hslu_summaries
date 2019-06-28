@@ -2385,15 +2385,246 @@ Zusammenfassung}
 	
 \newpage
 
-	\section{Requirements Engineering - Agiles RE}
+	\section{Requirement Engineering - Agiles RE}
 	
 	\begin{figure}[!htb]
 		\centering
-		\includegraphics[height=7cm]{img/re/05/scrum_overview.png}
+		\includegraphics[height=8cm]{img/re/05/scrum_overview.png}
 		\caption{SCRUM im Überblick}
 		\label{fig:re_scrum_overview}
 	\end{figure}
 
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[height=8cm]{img/re/05/scrum_roles.png}
+		\caption{Zusammenspiel zwischen den SCRUM-Rollen}
+		\label{fig:re_scrum_roles}
+	\end{figure}
+
+	\begin{description}
+		\item[Product Backlog] Beinhaltet User Stories, welche umgesetzt werden sollen
+		\item[User Story Task] User Story und ihre dazugehörigen Anforderungen/Ziele
+		\item[Sprint Backlog] Zu bearbeitende User Stories im Sprint, offene/in Arbeit/fertig
+	\end{description}
+
+\newpage
+
+		\subsection{Dokumentation von Anforderungen in agilen Projekten}
+		
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[height=8cm]{img/re/05/req_artifacts.png}
+			\caption{überblick über alle Requirements-Artefakte}
+			\label{fig:re_req_artifacts}
+		\end{figure}
+		
+			\subsubsection{Blacklog Items in agilem Projekt}
+			
+			\begin{itemize}
+				\item Backlog Items dienen
+					\begin{itemize}
+						\item zur Strukturierung \& Einordnung von Anforderungen
+						\item zur Release-Planung
+						\item als Speicher für detaillierte Anforderungen
+						\item zur Aufwandschätzung (beim Zuteilen zu einem Sprint)
+					\end{itemize}
+				\item \textit{Backlog Refinement:} zur Umsetzung von Backlog Items ist oft eine Verfeinerung / Detaillierung der User Stories notwendig
+			\end{itemize}
+		
+			\subsubsection{User Story Mapping}
+			
+			\begin{itemize}
+				\item Landkarten für das Produkt Backlog
+				\item Bietet die Möglichkeit, gesamtes Produkt/Dienstleistung als Reihe von Aufgaben zu betrachten, die der Benutzer erfüllt
+				\item Praktisch gesehen: Raster von User Stories aufbauen, mit Überschriften anordnen (soll die Erfahrung des Benutzers beim Durchlaufen des Produkts darstellen)
+			\end{itemize}
+			
+			\begin{figure}[!htb]
+				\centering
+				\includegraphics[width=\textwidth]{img/re/05/story_mapping.png}
+				\caption{Vorgehen beim Erstellen einer Story Map}
+				\label{fig:re_story_mapping}
+			\end{figure}
+			
+\newpage
+			
+			\begin{figure}[!htb]
+				\centering
+				\includegraphics[width=.9\textwidth]{img/re/05/story_map.png}
+				\caption{Beispiel einer Story Map}
+				\label{fig:re_story_map}
+			\end{figure}
+		
+			\subsubsection{Scrum User Story}
+			
+			\begin{itemize}
+				\item Kurzer, narrativer Text, der Interaktion zw. Benutzer \& System beschreibt
+				\item Gilt als Grundlage für Kommunikation\\ 
+						als Ausgangspunkt für Umsetzung von Produktfunktionalitäten
+				\item User Stories werden im Scrum Product Backlog verwaltet
+				\item Dienen als Planungsinstrument für die Sprints
+				
+				\item Bestandteile einer User Story:
+					\begin{itemize}
+						\item \textbf{Name}: kurze prägnante Benennung
+						\item \textbf{Beschreibung}:
+							\begin{itemize}
+								\item Wer? - \textit{Als [Rolle/Akteur]}
+								\item Was? - \textit{möchte ich [Funktionsbeschreibung]}
+								\item Warum? - \textit{damit [Begründung]}
+							\end{itemize}
+						\item \textbf{Akzeptanzkriterien}: Wie wird festgestellt, ob User Story entsprechend der Anforderungen umgesetzt wurde?
+						Beantwortet die Frage, was getestet werden soll\\
+						\textit{Die Funktion ist korrekt implementiert, wenn [messbare Kriterien]}
+						\item \textbf{Ergänzende Beschreibungen}: typisch Link auf Use Case oder andere Anforderungsformen
+					\end{itemize}
+			\end{itemize}
+		
+				\paragraph{I.N.V.E.S.T.-Kriterien für User Stories}
+				
+					\begin{description}
+						\item[I] Independent\\
+							\textit{Story ist unabhängig von anderen Stories.
+							Darf nicht davon abhängen, dass andere Stories zuerst umgesetzt werden müssen.}
+						\item[N] Negotiable\\
+							\textit{Kunden \& Entwickler erarbeiten und präzisieren User Stories gemeinsam.
+							Kunde beschreibt grob Funktionalität, Details werden mit Entwickler ausgearbeitet.}
+						\item[V] Valuable\\
+							\textit{Stories sollen erkennbaren Mehrwert für betroffene Nutzergruppen liefern.
+							Möglicher Weg ist, Stories gemeinsam mit jeweiligen Benutzern zu verfassen.}
+						\item[E] Estimatable\\
+							\textit{Story muss überschaubar sein, dass Entwickler die Umsetzung der Anforderung schätzen können.
+							Entwickler müssen auch über fachliche \& technische Kompetenzen verfügen.}
+						\item[S] Small\\
+							\textit{Konkreter Umfang von User Stories muss von Team entschieden werden.
+							Stories könen zu gross/klein sein.
+							Regel: Story soll min. halben Personentag, max. zehn Personentage erfordern.}
+						\item[T] Testable\\
+							\textit{Tests bilden Massstab, ob eine Story erfolgreich abgeschlossen wurde oder nicht.
+							Testbarkeit muss zwingend gewährleistet sein.}
+					\end{description}
+		
+\newpage
+
+		\subsection{Scrum Backlog Items}
+		
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[width=.6\textwidth]{img/re/05/backlog_items.png}
+			\caption{Übersicht über Scrum Backlog Items und deren Zugehörigkeiten}
+			\label{fig:re_backlog_items}
+		\end{figure}
+			
+			\subsubsection{Tasks}
+			
+			\begin{itemize}
+				\item Teilaufgaben innerhalb von Backlog Items:\\
+					Werden durch Team vor der Umsetzung definiert, dienen der Arbeitsteilung
+				\item Dienen häufig der personenbezogenen Zuordnung (Zuordnung meist auch fachlich bedingt)
+				\item Tasks verbessern die Aufwandschätzung
+				\item Backlog-Items (besonders User Stories) besitzen oft einheitliche Tasklisten\\
+				(bspw. nach Disziplinen aufgeteilt: \textit{Architektur erweitern, GUI, Datenbank anpassen, etc.})
+			\end{itemize}
+			
+			\subsubsection{Epics}
+			
+			\begin{itemize}
+				\item Grobgranulare Anforderung, die zu komplex/umfangreich sind, um geschätzt oder in einem Sprint umgesetzt zu werden
+				\item Meist nicht nach User Story Schema formuliert
+				\item Müssen in andere Backlog-Items zerlegt werden (bspw. User Stories / Quality Attribute Scenario)\\
+					$\rightarrow$ User Story Splitting (Aktivität des RE in Scrum $\rightarrow$ Backlog Refinement)
+				\item Unterscheidung versch. Arten von Epics
+					\begin{itemize}
+						\item \textbf{Business Epics}
+							\begin{itemize}
+								\item fachliche Anforderungen aus Geschäftswelt
+								\item beschreiben organisations-/prozessübergreifende Eigenschaften
+								\item Beispiel: \textit{Die Zeiterfassung wird effiziente Erfassungs- und Auswertemöglichkeiten für alle Zeitarten (Tagesarbeitszeit, Fehlzeiten etc.) bereitstellen.}
+							\end{itemize}
+						\item \textbf{Architectural Epics}
+							\begin{itemize}
+								\item weitreichende technische Vorgaben
+								\item betreffen hauptsächlich Architekturfragen
+								\item Beispiel: \textit{Die neue SW-Lösung für die Arbeitszeiterfassung wird auf allen Typen von Endgeräten zur Verfügung stehen und wir werden damit technologisch führend sein.}
+							\end{itemize}
+					\end{itemize}
+			\end{itemize}
+		
+			\subsubsection{Quality Attribute Scenario}
+			
+			\begin{itemize}
+				\item Mess- und testbar formulierte, nichtfunktionale Anforderungen \textbf{(Qualitätsanforderung)}
+					\begin{description}
+						\item[Source] (Benutzer, Computer, System etc.)
+						\item[Stimulus] zu betrachtende Bedingung
+						\item[Environment] In welchem Zustand befindet sich das System
+						\item[Artefact] Welcher Teil des Systems wird beeinflusst
+						\item[Response] Systemantwort
+						\item[Response Measure] Messbares Attribut der Antwort (bspw. Zeit)
+					\end{description}
+				\item Beispiele:
+					\begin{itemize}
+						\item Response Time:\\
+							\textit{When customers click check-out button, order info appears in $\leq$ 2 seconds}\\
+							\textit{A validity check may not take more than 5 seconds.}
+						\item Scalability:\\
+							\textit{Access to product catalog must scale up to 10'000 concurrent users that experience the maximum response times stated above}
+					\end{itemize}
+			\end{itemize}
+	
+\newpage
+		
+			\subsubsection{Spikes / UX-Spikes / Other Work Items}
+			
+			\begin{description}
+				\item[Spike] Time-boxed AP zur Minimierung von Risiken (bspw. Abklären Realisierungsmöglichkeiten)
+				\item[UX-Spike] APs zur Erarbeitung \& Überprüfung der User Experience (bspw. Prototyping)
+				\item[Other Work Item] Arbeitem zum Aufbau \& Pflege der Arbeitsumgebung
+			\end{description}
+		
+		\subsection{User Story Splitting}
+		
+		\begin{itemize}
+			\item In einem Epic sind meist mehrere zusammenhängende\\
+			User Stories (funktionale Anforderungen) und \\
+			Quality Attribute Scenarios (nichtfunktionale Anforderungen)
+			\item Nach Aufteilung/Verfeinerung von Epics ist realistische Sprint Planung möglich
+			\item Jede neu erzeugte User Story muss weiterhin einen Kundennutzen darstellen
+			\item 9 Patterns für eine praktische Herangehensweise des User Story Splittings:
+				\begin{itemize}
+					\item \textbf{Workflow Schritte} (Workflow Steps)\\
+					evtl. Minimalworkflow herausteilen, später erweitern, nur Beginn und Ende des Workflow etc.
+					\item \textbf{Performance nachlagern} (Defer Performance)\\
+					Erst funktional, danach nichtfunktionalen Anteil nachliefern (bspw. Performance)
+					\item \textbf{Simpel / Komplex} (Simple/Complex)\\
+					Erst einfacher Kern, später die Erweiterungen
+					\item \textbf{Grösster Aufwand} (Major Effort)\\
+					Hauptaufwand herauspicken, spöter weitere Ausprägungen
+					\item \textbf{Variation der Schnittstellen} (Data Entry Methods)\\
+					Erst Daten einer Schnittstelle, danach die der anderen verarbeiten
+					\item \textbf{Variation der Daten} (Variations in Data)\\
+					Erst einen Teil der Daten, danach die restlichen Teile verarbeiten
+					\item \textbf{Variation der Geschäftsregeln} (Business Rule Variations)\\
+					Erst eine Teilmenge der Regeln, später die erweiterten Regeln umsetzen
+					\item \textbf{Operationen} (Operations [e.g. CRUD])\\
+					Mehrere Operationen (verwalten, konfigurieren etc.) in separate Stories aufteilen
+					\item \textbf{Einen Spike herausbrechen} (Break out a Spike)\\
+					Explorative Story schreiben, die mit minimalem Aufwand zur Klärung von Fragen führt, wiederholen
+				\end{itemize}
+		\end{itemize}
+	
+\newpage
+
+	\section{Requirement Engineering - Qualitative Anforderungen}
+	
+	
+	
+	
+	
+\newpage
+
+	\section{Requirement Engineering - Anforderungen prüfen}
+	
 	
 	
 	
