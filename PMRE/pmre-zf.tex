@@ -1991,14 +1991,181 @@ Zusammenfassung}
 	
 \newpage
 				
-	\section{Requirements Engineering}
+	\section{Requirement Engineering - Einführung / Setting}
 	
-		\subsection{title}
+		\subsection{Ziel}
 		
+		\begin{itemize}
+			\item Ziel: angestrebter Zustand / erwünschte Wirkung, zukünftige Ergebnisse welche durch bestimmte Massnahmen / Lösungen erreicht werden sollen
+			\item Ziele sollen vor Ermittlung der Anforderungen bekannt sein
+			\item Ziele beschreiben übergeordnete Erwartungen an Erfolg eines Projekts
+			\item Jede einzelne Anforderung muss sich auf ein Ziel zurückführen lassen
+			\item Eine Zieldokumentation enthält (aus \textit{Pohl/Rupp S. 67 ff.})
+				\begin{itemize}
+					\item Ziel-Nummer
+					\item Zielname
+					\item Zielwert
+					\item Messgrösse
+					\item Zeitraum
+				\end{itemize}
+		\end{itemize}
+	
+		\begin{figure}[!htb]
+			\centering
+			\begin{subfigure}{.45\textwidth}
+				\centering
+				\includegraphics[height=5.5cm]{img/re/01/kontext_block.jpeg}
+				\caption{Blockdiagramm (Kontext)}
+				\label{fig:re_kontext_block}
+			\end{subfigure}
+			\begin{subfigure}{.45\textwidth}
+				\centering
+				\includegraphics[height=5.5cm]{img/re/01/kontext_datenfluss.jpeg}
+				\caption{Datenflussdiagramm (Kontext)}
+				\label{fig:re_kontext_datenfluss}
+			\end{subfigure}
+			\caption{Kontextdiagramme}
+			\label{fig:re_kontext_dias}
+		\end{figure}
+	
+			\paragraph{Typische Fehler in einem Kontextdiagramm}
+			
+			\begin{itemize}
+				\item Zusammenhänge ausserhalb, die das System gar nicht betreffen
+				\item Unspezifizierte Ein- und Ausgaben im System
+				\item Nicht identifizierte Nachbarsysteme
+			\end{itemize}
 		
+		\subsection{Stakeholder}
 		
+		\begin{itemize}
+			\item Werden in einer Stakeholdertabelle festgehalten
+			\item Benötigt werden dabei pro Stakeholder mindestens:
+				\begin{itemize}
+					\item Seine Rolle im System
+					\item Name
+					\item Wissen
+					\item Interessen
+				\end{itemize}
+		\end{itemize}
+		\vspace{1em}
+		\noindent
+		Es gilt ebenfalls zu klären:
+		Was ist die\textbf{Aufgabe} des Stakeholders, wofür ist der Stakeholder \textbf{verantwortlich}, welche \textbf{Weisungsbefugnis} hat der Stahekolder, welche \textbf{Ziele} sollen vom Stakeholder erreicht werden, welche \textbf{Freigaben} kann der Stakeholder zu geben, auf welche Informationen hat der Stakeholder \textbf{Zugriff}, über welche \textbf{Kommunikationswege} werden Informationen ausgetauscht, wann erhält der Stakeholder \textbf{Feedback} zu seinen gelieferten Informationen, welche verantwortlichen \textbf{Personen} werden in welchen \textbf{Situationen} vom Stakeholder informiert, mit wem \textbf{koordiniert} der Stakeholder bestimmte Anforderungen, welche \textbf{Zugriffsrechte} erhält der Stakeholder für das Anforderungsrepository, für welche Fachgebiete ist der Stakeholder offizieller \textbf{Ansprechpartner}?
 		
+\newpage
+
+		\subsection{RE - Komponenten}
+			
+		Requirement Engineering setzt sich aus R-Development (Entwicklung) und R-Management (Verwaltung) zusammen.
+		Anforderungen können dabei sein: Geschäftprozesse, Geschäftsfälle, Standards, technische Rahmenbedingungen, Funktionalitäten, qualitative Bestimmungen, Geschäftsregeln, Prototypen, Screens etc.\\
+		$\rightarrow$ was zur Festlegung der zu entwickelnden Dienstleistung gebraucht wird
 		
+		\begin{itemize}
+			\item Development setzt sich zusammen aus
+				\begin{description}
+					\item[Elicitation] (Erheben, Ermitteln) welche Erhebungstechniken eignen sich für welche speziellen Informationsbedürfnisse?
+					Vorgehen, wenn man etwas in Erfahrung bringen will/soll?
+					\item[Analysis] (Analyse, Auswertung) wie Resultate der Erhebung auswerten? (Strukturieren, Zusammenhänge herstellen, Lücken aufdecken etc.)
+					\item[Specification] (Spezifikation, Dokumentation) Welche Artefakte, Dokumente, Modelle, Ergebnisse etc. sollen angelegt werden, um das System adäquat zu beschreiben?
+					Verständlich und sinnvoll für die Stakeholder?
+					\item[Validation] (Validierung) Wie eignet man sich mit entscheidungsrelevanten Stakeholdern auf eine zu realisierende Version? (Prüfen \& Priorisieren der Anforderungen etc.)
+				\end{description}
+			\item \textbf{Management (Verwaltung)}: Wie / wo werden alle notwendigen Dokumente der Anforderungsentwicklung verwaltet, um einen Überblick zu behalten?
+		\end{itemize}
+		
+	\section{Requirement Engineering - Anforderungen ermitteln}
+	
+		\subsection{Klassifizieren von Stakeholder-Inputs}
+		
+		Bedürfnisse (Anforderungsinformationen) müssen verschiedenen Kategorieren zugeordnet werden:
+		
+		\begin{itemize}
+			\item \textbf{Geschäftsanforderungen}\\
+			Alles, was finanziellen/geschäftlichen Vorteil auf dem Markt beschreibt, das Kunden oder Unternehmen mit dem Produkt erzielen möchten.
+			Kann bspw. mit einem Wert assoziiert werden \textit{(Der Marktanteil wird um X\% erhöht)}
+			\item \textbf{Anwendungsfälle und -szenarien}\\
+			Allgemeine Aussagen zu Benutzerzielen/Geschäftsausgaben, die die Benutzer ausführen müssen.
+			Kann mittels eines Anwendungsszenarios dargestellt/ausgedrückt werden, bspw. \textit{Ich möchte ein Adressetikett für ein versendetes Paket ausdrucken können}
+			\item \textbf{Geschäftsregeln}\\
+			Wenn nur bestimmte Benutzerklassen unter bestimmten Bedingungen einer Aktivität nachgehen können, bspw. \textit{Chemiker soll nur Chemikale von Gefahrenstufe 1 bestellen können, wenn er für diese Stufe geschult wurde}
+			\item \textbf{Funktionelle Anforderungen}\\
+			Beschreiben erkennbares Verhalten des Systems unter bestimmten Bedingungen sowie Tätigkeiten, die ein Benutzer mithilfe des Systems verrichten kann, bspw. \textit{Steigt der Druck über 40 bar, muss das entsprechende Warnlich aufleuchten}
+			\item \textbf{Qualitätsmerkmale}\\
+			Geben Aufschluss darüber, wie gut das System bestimmte Aufgaben ausführt.
+			\item \textbf{Anforderungen an die externe Schnittstelle}\\
+			Beschreiben die Schnittstelle zwischen einem System und dem Rest der Welt.
+			\item \textbf{Einschränkungen}\\
+			Einschränkungen in Design \& Implementierung begrenzen verfügbare Optionen des Entwickler.
+			\item \textbf{Datendefinitionen}\\
+			Beschreiben Vorgabewerte, Datentyp oder Formate, die vom Stakeholder gewünscht/verlangt werden.
+			\item \textbf{Lösungsideen}\\
+			Konkrete Verfahren oder Anforderungen, welche eine Interaktion mit dem System beschreiben, welches erforderlich ist, um bestimmte Tätigkeiten zu verrichten.
+		\end{itemize}
+	
+\newpage
+	
+		\subsection{Ermitteln}
+		
+			\begin{itemize}
+				\item Was wissen wir? (bekanntes Wissen)
+				\item Was wissen wir noch nicht? (unbekanntes Wissen)
+				\item Wie bringen wir "Nichtwissen" in Erfahrung? Welche Anforderungsquellen/Erhebungstechniken?
+				\item Wie dokumentieren wir unser Wissen, was soll/muss dokumentiert werden?
+				\item Wie überprüfen/validieren wir unser Wissen?
+			\end{itemize}
+	
+		\subsection{7 Product Dimensions}
+		
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[height=4cm]{img/re/02/product_dimensions.png}
+			\caption{Die 7 Produktdimensionen}
+			\label{fig:re_product_dimensions}
+		\end{figure}
+	
+		\begin{description}
+			\item[User] Wer initiiert eine Aktion und was sind die Ziele? Wer erhält Output des Produkts?
+			\item[Interface] Welche Schnittstellen senden Daten/Nachrichten zu oder aus dem Produkt?
+			\item[Action] Welche Aktivitäten erfüllen die Bedürfnisse des Nutzers?
+			\item[Data] Welche Daten benötigen die Nutzer vom Produkt?
+			\item[Control] Welches sind die Policies, Regulationen und Geschäftsregeln, \\
+				die das Produkt erzwingen muss?
+			\item[Environment] Wo wird das Produkt genutzt? Welche Software/Hardware wird genutzt, \\
+				um das Produkt zu entwickeln/bedienen?
+			\item[Quality Attribute] Welches sind die Service-Stufen für Availability, Installability, Usability etc.?
+		\end{description}
+	
+		\subsection{W-Fragen für bspw. Interviews}
+		
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[height=3.5cm]{img/re/02/w_fragen.png}
+			\caption{Einteilung der W-Fragen}
+			\label{fig:re_w_fragen}
+		\end{figure}
+	
+			\paragraph{K.R.O.K.U.S. Regel zur Formulierung von Fragen}
+			
+			\begin{description}
+				\item[K] Kurze Fragen stellen
+				\item[R] Redundante fragen vermeiden
+				\item[O] Offene Fragen stellen
+				\item[K] Konkrete Fragen stellen
+				\item[U] Unterfragen (\& Kettenfragen) vermeiden
+				\item[S] Suggestive Fragen vermeiden
+			\end{description}
+	
+\newpage
+
+	\section{Requirement Engineering - Anforderungen dokumentieren}
+	
+	
+	
+	
+	
+	
+	
 	
 	
 \end{document}
