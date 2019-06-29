@@ -2617,15 +2617,209 @@ Zusammenfassung}
 
 	\section{Requirement Engineering - Qualitative Anforderungen}
 	
+		\subsection{Anforderungsarten}
+		
+		\begin{description}
+			\item[Ziele] beschreiben Zustände
+			\item[Funktionen] beschreiben Fähigkeiten (Verben)
+			\item[Qualitäten] beschreiben Eigenschaften (Attribute)
+			\item[Randbedingungen] schränken den Lösungsraum ein
+		\end{description}
 	
+		\subsection{Vorgehen beim Klassifizieren von Anforderungen}
+		
+		Wird die Anforderung gestellt, weil...
+		\begin{itemize}
+			\item Systemverhalten, Daten, Eingaben oder Reaktionen auf Eingaben zu spezifizieren sind - unabhängig davon, wie dies geschehen soll?\\
+				$\rightarrow$ \textbf{funktionale Anforderung}
+			\item Restriktionen bzgl. Verarbeitungs-/Reaktionszeiten, Datenmengen oder Datenraten zu spezifizieren sind?\\
+				$\rightarrow$ \textbf{Leistungsanforderung}
+			\item eine spezielle Qualität, die das System aufweisen soll, zu spezifizieren ist?\\
+				$\rightarrow$ \textbf{besondere Qualität}
+			\item irgend eine andere Restriktion zu spezifizieren ist?\\
+				$\rightarrow$ \textbf{Randbedingung}
+		\end{itemize}
 	
-	
+		\subsection{Anforderungstypen ISO/IEC 25030}
+		
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[width=.9\textwidth]{img/re/06/iso25030.png}
+			\caption{Software- und Realisierungsbedingungen nach ISO/IEC 25030}
+			\label{fig:re_iso25030}
+		\end{figure}
+
+		\subsection{Quality Model}
+		
+		Qualitätsmerkmale sind in zwei Modelle organisiert:
+		\begin{itemize}
+			\item \textbf{Quality In Use Model}: Qualität eines Systems aus Sicht des Anwenders
+			\item \textbf{Product In Use Model}: Qualität des Systems als inheränte Eigenschaft
+		\end{itemize}
+		Qualitätsmerkmale dienen als Grundlage für Ableitung von Qualitätsanforderungen.
 	
 \newpage
+		
+			\subsubsection{Quality In Use Attributes}
+			
+			\begin{description}
+				\item[Effectiveness] \textit{(Effektivität) }
+				Exaktheit und Vollständigkeit, mit welcher Anwender bei Verwendung des Systems ihre spezifischen Ziele erreichen
+				
+				\item[Efficiency] \textit{(Effizienz)} 
+				Betrachtet aufgewendete Ressourcen zur Erreichung der Ziele.
+				Nach Standards umfasst dies auch Zeit (wie lange bis Anwender Ziel erreicht), Material (welche Materialien muss Anwender bereitstellen) oder Kosten (welche Kosten entstehen für Anwender bei Nutzung)
+				
+				\item[Satisfaction] \textit{(Zufriedenheit)} 
+				Grad der Zufriedenheit des Anwenders bei Systemnutzung.
+				Anwender soll Erfahrung machen, dass System nützlich ist, er ihm vertrauen kann und dass Arbeit mit dem System ein angenehmes Erlebnis ist.
+				
+				\item[Freedom of Risk] \textit{(Risikofreiheit)} 
+				Grad der Verhinderung von Risiken bei Nutzung des Systems.
+				Welche Massnahmen das System ergreift, um Risikofolgen gering zu halten.
+				
+				\item[Context coverage] \textit{(Kontextabdeckung)} 
+				Grad der Abdeckung für ursprünglich gedachten Anwendungsbereicht, Flexibilität um System ausserhalb des Anwendungsbereich zu nutzen.
+			\end{description}
+		
+			\subsubsection{Product in Use Attributes}
+		
+			\begin{description}
+				\item[Functional Suitability] \textit{(Funktionelle Eignung)} 
+				Setzt erwartete Funktionalität in angemeesener/korrekter Art und Weise unter Berücksichtigung festgelegter Randbindungen/Eigenschaften um.
+				Fragestellungen nach Angemessenheit von Funktionalitäten für vorgegebenen Einsatzbereich.
+				
+				\item[Performance Efficiency] \textit{(Performanz \& Effizienz)} 
+				Leistungsniveau in Abhängigkeit eingesetzter Betriebsmittel und geforderter Bedingungen.
+				Zeitverhalten der Anwendung, Verbrauchsverhalten in Bezug auf Speicher, Prozessorzeit \& weitere Ressourcen
+				
+				\item[Compatiblity] \textit{(Kompatiblität)} 
+				Explizite Zusammenarbeit mit anderen Systemen und extreme Auswirkungen auf Systeme gleicher HW
+				
+				\item[Usability] \textit{(Benutzerfreundlichkeit)} 
+				Qualitätsmerkmal, misst wie gut Benutzerfreundlichkeit, um Nutzer bei effizienter/effektiver Zielerreichung zu helfen.
+				Aufwand für Erlernung/Bedienung des Systems.
+				Attraktivität des Systems für Benutzer.
+				
+				\item[Reliability] \textit{(Zuverlässigkeit)}
+				Leistungsniveau unter festgelegten Bedingungen über festgelegten Zeitraum zu bewahren.
+				(bspw. Robustheit gegenüber fehlerhaften Eingaben, Stabilität bei Umgang mit fehlerhaften Systemzuständen und Wiederherstellbarkeit bei Systemausfällen)
+				
+				\item[Security] \textit{(Sicherheit)}
+				steigende Bedeutung;
+				alle in Bezug auf Datensicherheit revelante Teilmerkmale (Datenintegrität, Authentizität, Vertraulichkeit)
+				
+				\item[Maintainability] \textit{(Wartbarkeit/Änderbarkeit)}
+				interne Qualität des Systems;
+				Aufwand zur Analyse eines Fehlers/Fehlverhaltens, Aufwand zur Durchführung von Modifikationen mit Testbarkeit, Stabilität des Systems gegenüber unerwarteten Seiteneffekten.
+				
+				\item[Portability] \textit{(Portabilität)}
+				Aufwand, System strukturell zu verändern, um auf andere Umgebung zu verlagern oder einzelne Systemkomponenten auszutauschen.
+				Teilmerkmale sind Anpassbarkeit des Systems an untersch. Umgebungen, Aufwand zu Installation und Austauschbarkeit von Komponenten.
+				
+			\end{description}
+		
+		\subsection{Abnahmekriterien}
+		
+		\begin{description}
+			\item[Metrik] Explizites Verfahren zur Messung der Eigenschaft mit Kennzahlen
+			\item[Akzeptanzkriterium] Grenzwerte oder Grenzbereiche, die bei einer Messung die Erfüllung einer Eigenschaft nachweisen
+			\item[Operationalisierung] Optionale Angabe; Testszenarien/Testumgebung, kann Erfüllung der Eigenschaft sinnvoll mit vertretbarem Aufwand prüfen
+		\end{description}
+	
+\newpage
+	
+			\subsubsection{Beispiele von Metriken}
+			
+			\begin{description}
+				\item[Funktionelle Eignung] Vorgaben für Genauigkeit von Berechnungen
+				\item[Performanz/Effizienz] Antwortzeit, Durchsatz, Speicherverbrauch
+				\item[Kompatibilität] Anzahl Verletzungen von Standardvorgaben in Schnittstellen
+				\item[Benutzbarkeit] Durchschnittszeitaufwand Schulungen, Anzahl Clicks zur Zielerreichung
+				\item[Zuverlässigkeit] Verfügbarkeit (Gesamt(ausfall-)zeit)
+				\item[Sicherheit] Anzahl erfoglreich abgewendete vordefinierte Misuse Cases
+				\item[Wartbarkeit] Vollständigkeitsgrad Doku, Transitive Abhängigkeiten/Ähnlichkeit von Methoden
+				\item[Portabilität] Anzahl nicht-konfigurierbare Systemeigenschaften im Code
+			\end{description}
+	
+		\subsection{Quality Grid}
+		
+		Raster zur Bewertung von Qualitätsmerkmalen in einem System.
+		Dabei werden die "Product in Use" Merkmale nach ihrer Wichtigkeit bewertet
+		Dabei kann der Grad der Wichtigkeit bewertet werden mit:
+		\begin{itemize}
+			\item kritisch
+			\item wichtig
+			\item gemäss Firmenstandard (as usual)
+			\item unwichtig
+			\item vernachlässigbar
+		\end{itemize}
+		\textit{(Vorallem bei unwichtig/vernachlässigbar sind Begründungen hilfreich oder unerlässlich!)}
 
 	\section{Requirement Engineering - Anforderungen prüfen}
 	
+				\paragraph{Warum Anforderungen überprüfen?}
+				
+				\begin{itemize}
+					\item \textbf{Risiko:}
+						\begin{itemize}
+							\item Juristisch:
+								Entwicklungsauftrag auf Basis eines Anforderungsdokument, wenn dies falsch oder unvollständig ist, kann es zu Streitigkeiten führen
+							\item Fehlerfortpflanzung:
+								Fehler in Anforderungen pflanzen sich in der Umsetzung fort.
+								Späte Entdeckung $\rightarrow$ hohe Kosten
+						\end{itemize}
+					\item \textbf{Ziel:}
+						\begin{itemize}
+							\item Fehler (mehrdeutige/widersprüchliche/unvollständige Anforderungen) möglichst früh im Entwicklungsprozess entdecken
+						\end{itemize}
+					\item \textbf{Anforderungsfreigabe:}
+						\begin{itemize}
+							\item Weitere Entwicklung mittels festgelegter Prüf- und Abnahmekriterien entscheiden
+						\end{itemize}
+				\end{itemize}
 	
+		\subsection{Überprüfen von Anforderungen}
+		
+		Hauptziele beim Überprüfen von Anforderungen:
+		
+		\begin{itemize}
+			\item \textbf{Inhalt}\\
+			Alle relevanten Anforderungen im erforderlichen Detaillierungsgrad erfasst?
+			\item \textbf{Dokumentation}\\
+			Anforderungen gemässt festgelegten Dokumentations-/Spezifikationsvorschriften dokumentiert?
+			\item \textbf{Abgestimmtheit}\\
+			Alle Stakeholder zufrieden mit dokumentierten Anforderungen, alle bekannten Konflikte aufgelöst?
+		\end{itemize}
+			
+\newpage
+			
+				\paragraph{Prüfkriterien "Inhalt"}
+				
+				\begin{itemize}
+					\item Vollständigkeit
+						\begin{itemize}
+							\item 
+						\end{itemize}
+				\end{itemize}
+				
+				\paragraph{Prüfkriterien "Dokumentation"}
+				
+				\begin{itemize}
+					\item Konformität zum Dokumentationsformat / Dokumentenstruktur
+						\begin{itemize}
+							\item 
+						\end{itemize}
+				\end{itemize}
+			
+				\paragraph{Prüfkriterien "Abgestimmtheit"}
+				
+				\begin{itemize}
+					\item Abstimmung
+						\begin{itemize}
+							\item 
+						\end{itemize}
+				\end{itemize}
 	
 	
 	
