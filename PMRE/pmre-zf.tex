@@ -2799,7 +2799,32 @@ Zusammenfassung}
 				\begin{itemize}
 					\item Vollständigkeit
 						\begin{itemize}
-							\item 
+							\item alle relevanten Anforderungen erfasst?
+							\item alle für eine Anforderung notwendigen Informationen erfasst?
+						\end{itemize}
+					\item Verfolgbarkeit
+						\begin{itemize}
+							\item alle relevanten Anforderungsquellen erfasst?
+						\end{itemize}
+					\item Korrektheit / Adäquatheit
+						\begin{itemize}
+							\item spiegeln Anforderungen die Bedürfnisse der Stakeholder wider?
+						\end{itemize}
+					\item Konsistenz
+						\begin{itemize}
+							\item stehen Anforderungen nicht miteinander in Widerspruch?
+						\end{itemize}
+					\item Keine vorzeitigen Entwurfsentscheidungen
+						\begin{itemize}
+							\item keine Lösungen in den Anforderungen vorweggenommen?
+						\end{itemize}
+					\item Überprüfbarkeit
+						\begin{itemize}
+							\item Abnahme- bzw. Prüfkriterien definiert?
+						\end{itemize}
+					\item Notwendigkeit
+						\begin{itemize}
+							\item trägt jede Anforderung zur Erfüllung eines definierten Ziels bei?
 						\end{itemize}
 				\end{itemize}
 				
@@ -2808,21 +2833,207 @@ Zusammenfassung}
 				\begin{itemize}
 					\item Konformität zum Dokumentationsformat / Dokumentenstruktur
 						\begin{itemize}
-							\item 
+							\item vorgegebene Schablonen / Modellierungssprache verwendet?
+							\item Struktur des Anforderungsdokuments eingehalten?
+						\end{itemize}
+					\item Verständlichkeit
+						\begin{itemize}
+							\item wurden verwendete Begriffe in einem Glossar definiert?			
+						\end{itemize}
+					\item Eindeutigkeit
+						\begin{itemize}
+							\item textuelle Anforderung sprachlich eindeutig?
+						\end{itemize}
+					\item Konformität mit Dokumentationsregeln
+						\begin{itemize}
+							\item Syntax der Modellierungssprache eingehalten?
 						\end{itemize}
 				\end{itemize}
 			
 				\paragraph{Prüfkriterien "Abgestimmtheit"}
 				
+				Im Verlauf der RE-Prozesses erwerben Stakeholder neues Wissen über das geplante System.
+				Die Meinung über bereits abgestimmte Anforderungen kann sich ändern.
+				Stakeholder können Änderungswünsche äussern, ohne nachfolgende Entwicklungsaktivitäten zu beeinträchtigen.
+				
 				\begin{itemize}
 					\item Abstimmung
 						\begin{itemize}
-							\item 
+							\item jede Anforderung mit allen revelanten Stakeholdern abgestimmt?
+						\end{itemize}
+					\item Abstimmung nach Änderungen
+						\begin{itemize}
+							\item für jede geänderte Anforderung erneute Zustimmung der Stakeholder eingeholt?
+						\end{itemize}
+					\item Konflikte aufgelöst
+						\begin{itemize}
+							\item alle bekannten Konflikte bzgl. Anforderungen aufgelöst?
 						\end{itemize}
 				\end{itemize}
+			
+				\paragraph{Prinzipien der Prüfung von Anforderungen}
+				
+				Diese verbessern die Qualität der Prüfungsergebnisse:
+				
+				\begin{description}
+					\item[Prinzip 1] Beteilung der richtigen Stakeholder
+					\item[Prinzip 2] Trennung von Fehlersuche und Fehlerkorrektur
+					\item[Prinzip 3] Prüfung aus unterschiedlichen Sichten
+					\item[Prinzip 4] Geeigneter Wechsel der Dokumentationsform
+					\item[Prinzip 5] Konstruktion von Entwicklungsartefakten
+					\item[Prinzip 6] Wiederholte Prüfung
+				\end{description}
+		
+\newpage
+			
+		\subsection{Reviews - Begriff, Objekte, Typen \& Arten}
+		
+			\subsubsection{Reviews / Audits / User Acceptance Tests}
+			
+			\begin{description}
+				\item[Reviews] are public, verbal, interpersonal examinations of an artifact (documentation, code etc.)\\
+					$\rightarrow$ Product Quality
+				\item[Audit] is an impersonal verification of tangible evicende of a process such as documentation\\
+					$\rightarrow$ Process Quality
+				\item[Acceptance Tests] typically involve blackbox testing, performed on a system \\
+					prior to transfer of ownership\\
+					$\rightarrow$ Validation \textit{(in Scrum misleadingly called review ("Sprint Review"))}
+			\end{description}
+		
+			\subsubsection{Reviews nach Objekten}
+			
+			\begin{itemize}
+				\item \textbf{Management Reviews} $\rightarrow$ Prozess\\
+				bspw. Review des Projektmanagement-Plans
+					\begin{itemize}
+						\item wird vorgehenskonform geplant?
+						\item entsprich Projektverlauf der Planung?
+					\end{itemize}
+				\item \textbf{Technical Reviews} $\rightarrow$ Produkt\\
+				bspw. Review der Systemspezifikation
+					\begin{itemize}
+						\item entspricht Architektur den Anforderungen?
+						\item ist Architektur vernünftig umsetzbar?
+					\end{itemize}
+				\item \textbf{Sprint Review} in Scrum, am Ende eines Sprints\\
+					$\rightarrow$ Produkt-Inkrement wird untersucht
+					\begin{itemize}
+						\item war wurde im Sprint fertiggestellt?
+						\item muss Product Backlog angepasst werden?
+						\item \textit{in SoDa spricht man von Sprint-Abnahme, da es eig. kein Review ist}
+					\end{itemize}
+			\end{itemize}
+		
+			\subsubsection{Reviews im Detail}
+			
+				\paragraph{Reviews und Meilensteine}
+				
+					\begin{itemize}
+						\item Reviews oft an Meilensteinen (oder als Vorbereitung dafür) durchführen
+						\item Ein Meilenstein ist ein geplanter Punkt im Projektablauf, an dem vorher festgelegte (Zwischen-)Ergebnisse vorliegen, die es erlauben den Projektfortschritt zu messen
+						\item Zu jedem Meilenstein gehören Artefakte: Dokumente, SW-Komponenten etc.
+						\item Meilenstein ist erreicht, wenn geforderte Artefakte vorliegen und Review/Test erfolgreich war
+					\end{itemize}
+			
+				\paragraph{Review Typen}
+				
+					\begin{description}
+						\item[Inspection] strenger, wohldefinierter Prozess
+						\item[Team Review] geplant, strukturiert, etwas weniger formal
+						\item[Walkthrough] Autor stellt sein Werk einer Gruppe von Fachkollegen vor
+						\item[Pair Programming] zwei Entwickler arbeiten gemeinsam am selben Produkt
+						\item[Peer Deskcheck] nur eine Person prüft das Arbeitsergebnis
+						\item[Passaround] Kopien an versch. Personen versenden und deren Feedback einholen
+						\item[Ad Hoc Review] gewöhnlich normaler Bestandteil der Teamarbeit
+					\end{description}
+					
+				\paragraph{Reviews im Projekt Lebenszyklus}
+				
+					\begin{description}
+						\item[Feasibility Review] Systemdefinition \& Projektplan
+						\item[Requirements Review] Requirementsspez., User Management, System \& Acceptance Test Design
+						\item[Preliminary Design Review] System Design \& Intergrated Test Spezifikation
+						\item[Critical Design Review] Detailled Design \& Unit Test Spezifikationen
+						\item[Source Code Review] 
+						\item[Product Release Review]
+					\end{description}
+				
+\newpage
+				
+				\paragraph{Review - Dauer und Zeitpunkt}
+				
+					\begin{itemize}
+						\item Review-Sitzungen: maximal 1-2 Stunden
+						\item pro Sitzung nur ein Objekt / Artefakt überprüfen (oder mehrere kleine verwandte)
+						\item Klassisches Projektvorgehen: Reviews eng an Projektlebenszyklus gekoppelt, müssen dann angesetzt werden, wenn zu überprüfende Objekte/Artefakte vorliegen sollten
+						\item Besser Anforderungen \& Konzepte reviewen statt Detail-Design \& Code
+					\end{itemize}
 	
+				\paragraph{Review - Psychologie}
+				
+				Hauptsächlich zu beachten:
+				Der erste Zug zu einem Review muss so aussehen, als käme er vom Autor und nicht vom Gutachter.
+				Der Autor muss sich mit der Idee des Review wohlfühlen.
+				Reviews sind vorallem eine zwischenmenschliche Angelegenheit, Erfolg hängt von der persönlichen Dynamik zwischen Autor und Reviewer ab.
+				
+				\begin{itemize}
+					\item Flexibel sein, wer wessen Arbeit reviewed; kompatible Paare sich suchen lassen
+					\item guter Reviewer ist nicht wertend \& erkennt, dass der primäre Nutzen einer Review das gemeinsame Sprechen über ein Werk ist
+					\item Mögliche / tatsächliche Fehler, die in Review gefunden werden, soll man möglichst lokal lösen (nicht an die grosse Glocke hänger und ein Trari Trara draus machen)
+				\end{itemize}
 	
-	
-	
+				\paragraph{Review - Vorgehen \& Stil}
+				
+					\begin{itemize}
+						\item Teilnehmer erhalten Objekte / Artefakte einige Tage vor der Review-Situng
+						\item Alle Mitglieder des Review-Teams bereiten sich darauf vor (Unterlagen ernsthaft studieren)
+						\item Leider der Review geht die Objekte / Artefakte durch und fragt Teilnehmer, ob sie Fragen bzgl. bestimmten Abschnitten / Seiten haben
+						\item Entdeckte Fehler / aufgeworfene Probleme werden in Standard Reviewprotokoll festgehalten
+						\item Disziplin benötigt, um Review nach entdecktem Fehler abzubrechen\\
+							$\rightarrow$ Art der Korrektur ist nicht Teil der Review
+						\item Reviews \& Walkthroughs fördern eine Lernkultur im Betrieb
+					\end{itemize}
+				
+				\paragraph{Review - Checkliste}
+				
+					\begin{enumerate}
+						\item Reviews im Projektplan vorsehen
+							\begin{itemize}
+								\item alle Phasen mit einer Review abschliessen
+								\item Zeit für Vorbereitung \& Sitzung planen
+							\end{itemize}
+						\item Review-Ergebnisse systematisch erfassen
+							\begin{itemize}
+								\item Anzahl Fehler pro Objekt/Artefakt, aufgewendete Zeit
+								\item Formular verwenden, wo Beschreibung, Schweregrad \& Typ der Beanstandung erfasst werden können
+								\item Festlegen, wer, wo und wie Metrikdaten ablegt (verantwortliche Person)
+							\end{itemize}
+						\item Den Review-Teilnehmern Rollen zuordnen
+							\begin{itemize}
+								\item bspw. Autor, Moderator/Protokollführer, Leser
+							\end{itemize}
+						\item Sicherstellen, dass jeder Teilnehmer sich vorbereitet
+							\begin{itemize}
+								\item bspw. Beanstandungen auf Formular vorerfasst mitbringen
+							\end{itemize}
+					\end{enumerate}
+				
+		\subsection{Anforderungsüberprüfung in hybriden Projekten (SoDa)}
+		
+		Bei hybridem Vorgehen sind nur wichtigste Anforderungen im Produktbacklog erfasst.
+		Anforderungen werden erst im Rahmen der Sprintplanung präzisiert.
+		Änderungen/Ergänzungen können jederzeit einfliessen und Priorisierung wird laufend nachgeführt.
+		Dazu gibt es in Scrum/SoDa drei Institutionen zur Anforderungsüberprüfung:
+		
+		\begin{itemize}
+			\item \textbf{Backlog Grooming:}
+			Priorisierung der Anforderungen, ihre Verständlichkeit und gegenseitige Abhängigkeit vom PO in regelmässiger Absprache mit Auftraggeber hinterfragen \& überprüfen
+			\item \textbf{Sprint-Abnahme:}
+			Umsetzung der Anforderungen, laufende Änderung \& Ergänzung und deren neue Abstimmung zwischen Product Owner und Auftraggeber kontinuierlich aushandeln
+			\item \textbf{Retrospektive:}
+			Qualität der Anforderungen hinterfragen und für künftige Sprints verbessern
+		\end{itemize}
+		$\rightarrow$ agiles Vorgehen fördert laufenden Kontakt mit Arbeitgeber und verbessert das frühe Erkennen von Fehlern.
+		Iterativer Ansatz reduziert Koten von nachträglichen Korrekturen der Anforderungen.
 	
 \end{document}
