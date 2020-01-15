@@ -113,7 +113,233 @@
 		\begin{description}
 			\item[Web-App] JS, HTML, CSS mit Responsive Design, im Browser ausgeführt
 			\item[Hybrid] Web-App in nativem Wrapper verpackt, mit Connector-Plugins, kann als native App installiert werden (Cordova, Flutter etc.)
+			\item[Cross-Compiled] In Sprache X geschriebene App, wird nach Java/Object-C oder binäres Format kompiliert und somit "native" (Xamarin, Ruby etc.)
+			\item[JIT-compiled / VM] Javascript-App, läuft auf JS-Engine des Zielsystems und wird dort "just in time" kompiliert.
+			Natives GUI und Konnektoren, um mit nativer Platform zu interagieren (NativeScript)
+			\item[Native App] Spezifisch pro OS programmiert, nutzt volles Featureset der Plattform, auch neuste Features
 		\end{description}
+	
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=.55\textwidth]{img/techintro/entwicklungsansätze.png}
+			\caption{Übersicht mobiler Entwicklungsansätze}
+			\label{fig:techintro_entwicklungsansätze}
+		\end{figure}
+	
+		\newpage
+	
+		Welches ist jedoch der beste Ansatz für eine App?
+		Immer abhängig von Anforderungen und Möglichkeiten.
+		Mögliche Szenarien:
+		
+		\begin{itemize}
+			\item Info-App ohne viel Interaktion $\rightarrow$ \textbf{Web-App}
+			\item 100\% natives Look n Feel $\rightarrow$ \textbf{Nativ}
+			\item Viele Plattformen nativ unterstützen, preiswert, .NET oder Angular Knowhow vorhande $\rightarrow$ \textbf{Cross-/JIT-Compile (Xamarin, NativeScript)}
+			\item Gemeinsame Codebase, Crossplattform, eigene Widgets, Hot-Reload, kleine App / Prototyp $\rightarrow$ \textbf{Flutter}
+			\item HW-Features benötigt auf verschiedenen Plattformen (NFC, Kamera, BT, Storage...) $\rightarrow$ \textbf{Hybrid / Nativ}
+		\end{itemize}
+	
+		\subsection{Android Grundlagen}
+		
+		\begin{itemize}
+			\item Android-Applikationen bestehen aus vier Komponenten:
+			\begin{description}
+				\item[Activity] UI-Komponente, entspricht typischerweise einem Bildschirm
+				\item[Service] Komponente ohne UI, Dienst läuft typischerweise im Hintergrund
+				\item[Broadcast Receiver] "Event-Handler", reagiert auf Broadcastsnachrichten (Intents)
+				\item[Content Provider] Komponente, ermöglicht Datenaustausch zwischen versch. Applikationen
+			\end{description}
+			\item \textbf{Android Runtime (ART)} verwaltet die einzelnen Komponenten einer Applikation
+			\begin{itemize}
+				\item Mit Intent-Mechanismus kann eine Komponente eine andere Komponente aufrufen
+				\item Komponenten müssen beim System registriert sein (teilweise Rechte = Privileges)
+				\item System verwaltet Lebenszyklus von Komponenten (Gestartet, Pausiert, Aktiv, Gestoppt etc.)
+			\end{itemize}
+			\item Android empfiehlt für Hintergrundaufgaben nicht mehr Services, sondern \texttt{android.app.job.JobScheduler}\\
+			Neu ist JobScheduler auch in WorkManager von Android Jetpack integriert
+		\end{itemize}
+	
+			\subsubsection{Android Manifest}
+			
+			\begin{itemize}
+				\item Beschreibt statische Eigenschaften einer Applikation
+				\begin{itemize}
+					\item Basis Java-Package-Name
+					\item Benötigte Rechte (Internet, Kontakte etc.)
+					\item Deklaration von Komponenten
+					\begin{itemize}
+						\item Activities, Services, Content Providers, Broadcast Receivers
+						\item Name (+ Basis-Package = Java-Klasse)
+						\item Anforderungen für Aufruf (Intent-Filter) für \textbf{A, S, BR}
+						\item Format der gelieferten Daten für \textbf{CP}
+					\end{itemize}
+				\end{itemize}
+				\item Diese Infos werden bei der App-Installation im System registriert
+				\item Zusatzinfos (Version, ID etc.) befinden sich im Build-Skript (da diese build-abhängig sein können)
+			\end{itemize}
+		
+			\subsubsection{Android Projekt-Struktur}
+			
+			\begin{itemize}
+				\item Manifest
+				\item Java-Code: Activities (App-Logik, Tests usw.)
+				\item Ressourcen (\texttt{res})
+				\begin{itemize}
+					\item Bilder (\texttt{drawable})
+					\item Layouts (\texttt{layout})
+					\item Menus (\texttt{menu})
+					\item Werte (\texttt{value})
+				\end{itemize}
+				\item Gradle Skripts (Angaben zum Build)
+			\end{itemize}
+		
+		\newpage
+		
+		\subsection{Android Jetpack \& App-Architektur}
+		
+		Zwei massive Neuerungen in letzter Zeit:\\
+		Seit 2019: Kotlin wird primäre Android-Sprache\\
+		Seit 2018: Android Jetpack wird ins Leben gerufen
+		
+			\subsubsection{Android Jetpack}
+			
+			\begin{itemize}
+				\item Sammlung von SW-Komponenten, die bei der Entwicklung von state-of-the-art Android-Applikationen unterstützen soll
+				\item Jetpack-Komponenten im \texttt{androidx.}-Namespace, wurden teils aus Standard-API hierhin verschoben
+				\item Alle Komponenten sind rückwärtskompatibel, können unabhängig von Android-Release-Zyklus aktualisiert und verwendet werden
+				\item Jetpack wird von Google entwickelt und dokumentiert
+			\end{itemize}
+			\vspace{1em}
+			Jetpack wird unterteilt in 4 Bereiche:
+			\vspace{1em}
+			\begin{itemize}
+				\item Architecture
+				\begin{itemize}
+					\item Data Binding, Lifecycles, LiveData etc.
+				\end{itemize}
+				\item UI
+				\begin{itemize}
+					\item Animation/Transitions, Auto, TV, Wear, Emoji, Fragment etc.
+				\end{itemize}
+				\item Behavior
+				\begin{itemize}
+					\item Download Manager, Media \& Playback, Permissions, Notifications etc.
+				\end{itemize}
+				\item Foundation
+				\begin{itemize}
+					\item AppCompat, Android KTX, Multidex, Test
+				\end{itemize}
+			\end{itemize}
+			
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=0.5\textwidth]{img/techintro/apparch.png}
+			\caption{Empfohlene App-Architektur}
+			\label{fig:techintro_apparch}
+		\end{figure}
+		
+		\newpage
+		
+			\subsubsection{Android Architecture Components (AAC)}
+			
+			\begin{itemize}
+				\item Android Architecture Components enthalten eine Reihe von Lifecycle-bewussten Komponenten
+				\item Komponenten helfen bei der Lösung von Problemen mit Konfigurationswechsel, Persistenz, Memory-Leaks und asynchronem Datenupdate auf dem UI
+				\item AAC definieren seit 2017 eine standardisierte Vorgehensweise und stellen die offiziell empfohlene Lösung von Google dar
+			\end{itemize}
+		
+			\begin{figure}[htb!]
+				\centering
+				\includegraphics[width=0.7\textwidth]{img/techintro/overview_aac.png}
+				\caption{Übersicht der Android Architecture Components}
+				\label{fig:techintro_overview_aac}
+			\end{figure}
+		
+				\paragraph{Data Binding}
+				
+				\begin{itemize}
+					\item Separiert das UI von den Daten
+					\item Synchronisiert UI mit Daten (1-way oder 2-way Binding)
+					\item Verwendet "Binding Expressions" mit @{...} Syntax im Layout-File, um View-Attribute zu initialisieren
+				\end{itemize}
+			
+				\paragraph{Lifecycle}
+				
+				\begin{itemize}
+					\item Kann Code aus den Lifecycle-Hooks von Activities entfernen und direkt auf der beobachtenden Komponente implementieren.
+					\item \texttt{Lifecycle} ist ein Objekt, welches den Lebenszyklus einer Komponente abbildet (Activity, Fragment etc.)
+					\item Andere Komponenten können das Lifecycle-Objekt beobachten und auf Lifecycle-Events reagieren
+				\end{itemize}
+			
+				\paragraph{LiveData}
+				
+				\begin{itemize}
+					\item Updates können im Hintergrund erfolgen, werden aber nur ausgeführt, wenn der Observer der LiveData in einem aktiven Zustand ist (\texttt{STARTED, RESUMED})
+					\item \texttt{LiveData} ist eine lifecycle-aware Observable-Klasse
+					\item Kann als Source für Data Binding verwendet werden, um Aktualisierungen des UI während der Laufzeit zu forcieren
+				\end{itemize}
+			
+				\paragraph{Navigation}
+				
+				\begin{itemize}
+					\item Android gibt neu Navigationsprinzipien vor, hierbei hilft die \texttt{Navigation}-Komponente bei der Implimentierung dieser Prinzipien
+					\item \texttt{Navigation} basiert Navigation-Graph (Resources) mit Destinations (Knoten) und Actions (Kanten)
+						\textit{(Navigation-Graph wird von Hand oder mit Navigation-Editor in Android Studio erstellt)}
+					\item Navigation benötigt \texttt{NavHostFragment} im Layout (um die Zielfragmente einzublenden);
+					Aus dem Code heraus wird mit einer \texttt{NavController}-Instanz navigiert
+				\end{itemize}
+			
+				\paragraph{Paging}
+				
+				\begin{itemize}
+					\item Es müssen nicht alle Daten auf einmal geladen werden: schneller und weniger Load
+					\item Unterstützt asynchrones Laden von Daten
+					\item \texttt{PagedList} und \texttt{PagedListAdapter}, um bei Bedarf weitere Daten in einer \texttt{RecyclerView} zu laden
+				\end{itemize}
+			
+				\paragraph{Room}
+				
+				\begin{itemize}
+					\item Bessere Abstraktion, Speichern/Laden von Modellobjekten, kein handgestricktes SQL-Mapping
+					\item Room ist ein ORM (Object-Relational Mapper) für SQLite
+					\item Arbeit mit Entities (Modell-Objekten) und DAO-Pattern anstatt SQL
+				\end{itemize}
+			
+				\paragraph{ViewModel}
+				
+				\begin{itemize}
+					\item Weniger Aufwand für Behandlung von Konfigurationsänderungen (keine Serialisierung nötig)
+					\item Kapselt UI-Daten so, dass sie bei Konfigurationsänderung einer Activity in-memory erhalten bleiben
+					\item Aber: Für den Fall eines App-Kills durch das OS müssen Daten immer noch persistiert werden!
+				\end{itemize}
+			
+				\paragraph{WorkManager}
+				
+				\begin{itemize}
+					\item Kein Kopfzerbrechen über Regeln für Hintergrundtasks, Synchronisation von UI via LiveData
+					\item \texttt{WorkManager} führt asynchrone \texttt{WorkRequests} sofort oder zu geeignetem Zeitpunkt aus
+					\item Respektiert Doze-Mode, versucht Ressourcen zu sparen und Load zu minimieren.
+						Je nach Zustand von App/System werden Tasks unterschiedlich scheduled.
+					\item Pro WorkRequest wird ein LiveData-Objekt erzeugt, Zustand und Daten sind darüber beobachtbar
+				\end{itemize}
+			
+				\paragraph{App-Architektur: Tipps \& Empfehlungen}
+				
+				\begin{itemize}
+					\item Standards / Patterns soweit möglich benutzen
+					\item Aber: Kein Over-Engineering!
+					\item Alle AAC können einzeln oder zusammen verwendet werden
+					\item Herausfinden, was im Projekt am besten funktioniert bzw. am meisten Sinn macht
+					\item Vorsicht bei Background-Tasks
+					\begin{itemize}
+						\item System zunehmend restriktiver, grosse Änderungen mit API 26
+						\item "Background = Service" gilt nicht mehr
+						\item WorkManager meist die bessere Alternative, Service für Logikexport 
+					\end{itemize}
+				\end{itemize}
+				
+	\newpage	
 		
 	\section{SA - Kotlin \& Android}
 	
