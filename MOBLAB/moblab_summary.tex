@@ -477,7 +477,80 @@
 	
 	\section{SA - Fastlane}
 	
+		\subsection{Übersicht}
+		
+		\begin{itemize}
+			\item Fastlane als Tool zur Automatisierung von Apps
+			\item Gefördert von Google und optmiert für macOS, da Basisfunktionalitäten auch für Automatisierung von iOS-Apps benötigt wird (nur auf macOS möglich)
+			\item Im Kern eine Sammlung nützlicher Ruby-Skripts, Funktionalität kann um Plugins oder eigene Skripte einfach erweitert werden
+			\item Standardfunktionen beinhalten Kompilation und Signierung von Apps, Ausführen von Tests, Anpassen von Metainformationen, Erstellen von App-Screenshots, Veröffentlichungen in App-Stores, Versenden von Statusmeldungen via Slack, Twitter etc.
+		\end{itemize}
 	
+		\subsection{Installation}
+		
+		\begin{itemize}
+			\item Fastlane ist nur eine Wrapper um bestehende Werkzeuge, unterteilt in \textbf{Fastlane Actions}
+			\item Nebst einer Ruby-Installation werden Basis-Entwicklerwerkzeuge vorausgesetzt \\
+				(Android SDK für Android, Xcode für iOS etc.)
+			\item Zur Versionierung der verwendeten Ruby-Pakete wird \texttt{Bundler} benutzt \\
+				Bundler speichert alle pro Projekt verwendeten Pakete mit Versionsnummern, ermöglicht somit Wiederherstellung aller Abhängigkeiten			
+		\end{itemize}
+	
+		\subsection{Grundwissen zu Fastlane}
+		
+		\begin{itemize}
+			\item Fastlane unterstützt neben Android und iOS auch andere Tools wie Xamarin dank Plugins
+			\item Die minimale Struktur des Grundgerüsts von Fastlane beinhaltet folgende Dateien \\
+				(Diese sollten in einem Versionskontrollsystem verwaltet werden, damit spätere Reproduzierbarkeit mit den exakten Abhängigkeiten gewährleistet wird):			
+			\begin{description}
+				\item[Gemfile] Liste aller verwendeten Ruby-Pakete
+				\item[Gemfile.lock] Speichert Versionsnummer aller verwendeten Ruby-Pakete
+				\item[Appfile] Konfigurationsparameter der zu automatisierenden App
+				\item[Fastfile] Enthält Anweisungen und Aktionen für Fastlane, Haupttätigkeit bei der Automatisierung ist die Anpassung dieser Datei
+			\end{description}
+			\item Bundler analysiert Gemfile und Gemfile.lock zur Wiederherstellung der Ruby-Pakete
+			\item Fastlane wird ebenfalls verwaltet, weshalb immer die lokale Fastlane-Installation genutzt werden sollte: 
+				\texttt{bundle exec fastlane [parameters]}
+			\item Strukturierung des Fastfile:
+			\begin{itemize}
+				\item \texttt{Platforms}: Oberste Schicht, beschreibt Plattform (Android, iOS)
+				\item \texttt{Lanes}: genauere Unterteilung, evtl. nach Funktion, Tätigkeit, fasst Actions zusammen
+				\item \texttt{Actions}: wiederverwendbare Automatisierungsschritte
+			\end{itemize}
+		\end{itemize}
+	
+		\subsection{Fortgeschrittene Themen}
+		
+		\paragraph{Actions \& Plugins}
+		\begin{itemize}
+			\item Actions können auch direkt über das CLI ausgeführt werden\\
+				\texttt{bundle exec fastlane run [action-name] [parameters]}
+			\item 221 Standard-Aktionen in Fastlane, diese können um Plugins erweitert werden, welche über das CLI oder die Webseite gesucht werden können \\
+				Plugins suchen: \texttt{bundle exec fastlane search\_plugins [search-term]} \\
+				Plugins installieren: \texttt{bundle exec fastlane add\_plugin [plugin-name]}
+			\item Hilfe über eine Action (Beschreibung, Umgebungsvariablen etc.) können abgefragt werden: \\
+				\texttt{bundle exec fastlane action [action-name]}
+			\item Neue Actions können ebenfalls erstellt werden: \\
+				\texttt{bundle exec fastlane new\_action}
+			\item Neue Actions, welche veröffentlich werden sollen, am besten in eigenem Plugin erstellen. 
+				Dieses soll in einem eigenen Verzeichnis erstellt werden, da es unabhängig vom Projekt sein soll: \\
+				\texttt{fastlane new\_plugin [plugin-name]}
+			\item Ist das Plugin publiziert, kann es dem Projekt hinzugefügt werden:
+				\texttt{bundle exec fastlane add\_plugin [plugin-name]}
+			\item Ein Plugin kann mit demselben Befehl auch vor der Publizierung eingebunden werden.
+				Nach Eingabe des Befehls fragt Fastlane dann nach dem Pfad des Plugins.
+		\end{itemize}
+	
+		\paragraph{Parameterisierung von Actions}
+		\begin{itemize}
+			\item Actions können Parameter direkt bei Eingabe im CLI entgegennehmen
+			\item Actions besitzen Umgebungsvariablen, diese können abgefragt werden: \\
+				\texttt{bundle exec fastlane action [action-name]}
+			\item Wird der Umgebungsvariable ein Wert zugeteilt, nutzt Fastlane beim Aufruf der Action ohne mitgegebene Parameter diesen auf
+			\item Fastlane kennt auch \texttt{.env} Dateien, in welcher Umgebungsvariablen eingetragen werden können (nützlich für Publizierung oder Zusammenarbeit) $\rightarrow$ werden nur bei \textbf{Ausführung einer Lane} genutzt!
+			\item Für bspw. Test-Automatisierung können verschiedene .env Dateien erstellt und genutzt werden \\
+				Bsp. \texttt{.env.test} $\rightarrow$ \texttt{bundle exec fastlane [lane] --env test}
+		\end{itemize}
 	
 	\section{SA - Unreal Engine}
 	
