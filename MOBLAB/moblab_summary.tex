@@ -322,7 +322,7 @@
 					\item Respektiert Doze-Mode, versucht Ressourcen zu sparen und Load zu minimieren.
 						Je nach Zustand von App/System werden Tasks unterschiedlich scheduled.
 					\item Pro WorkRequest wird ein LiveData-Objekt erzeugt, Zustand und Daten sind darüber beobachtbar
-				\end{itemize}
+				\end{itemize}\textbf{}
 			
 				\paragraph{App-Architektur: Tipps \& Empfehlungen}
 				
@@ -343,8 +343,84 @@
 		
 	\section{SA - Kotlin \& Android}
 	
+		\subsection{Sprachübersicht}
+		
+			\begin{itemize}
+				\item Variablen zwingend mit \texttt{var} (veränderbar) oder \texttt{val} (unveränderbar) kennzeichnen
+				\item Primitive Datentypen gibt es nicht, dafür Klassen für diese (Int, Double etc.)
+				\item Kontrollstruktur-Ausdrücke haben immer einen Wert
+				\item Keine checked Exceptions
+				\item Strichpunkt am Ende einer Zeile ist optional
+				\item Typinferenzen, weniger explizite Typangaben als bei Java
+				\item Nullable-Typen können gegen NullPointerExceptions vorbeugen
+				\item Mit Extensions Klassen ohne Vererbung erweitern
+				\item Data Classes für kompakte Klassendeklaration inkl. automatisch implementierten equal / toString / hashCode Methoden
+			\end{itemize}
 	
+		\subsection{Spracheigenschaften (eine Auswahl)}
+		
+			\paragraph{Variablen-Deklaration: var, val \& Typinferenz}
+			\begin{itemize}
+				\item \texttt{var} (veränderbar) und \texttt{val} (unveränderbar)
+				\item Typangaben können grundsätzlich weggelassen werden \\
+					(Compiler erkennt Datentyp automatisch und weist diesen korrekt zu)
+				\item Java kennt für lokale Variablen seit 2018 ähnliche var-Syntax mit Typinferenz für lokale Variablen
+				\item Bei Kotlin: Typangabe nach dem Namen\\
+					Bei Java: Typangabe vor dem Namen
+			\end{itemize}
+		
+			\paragraph{Nullable-Typen, Safe-Calls \& Elvis-Operator}
+			\begin{itemize}
+				\item In Kotlin können jegliche Typen nie den Wert null annehmen\\ 
+					(ausser sie werden explizit als nullable deklariert)
+				\item Variable, die Wert null zulassen soll, so deklarieren mit \texttt{[type]?}
+				\item Nullable-Variablen können nicht direkt abgerufen werden (könnte ja null sein)
+				\begin{itemize}
+					\item Variable entweder erst auf null überprüfen
+					\item Safe-Call Operator \texttt{?.} nutzen (druckt Wert der Variable oder null)
+					\item Not-Null-Assertion-Operator \texttt{!!} (wirf NullPointerException, falls Wert null ist)
+				\end{itemize}
+				\item Spezialfall: falls nicht-null, nimm den Wert und sonst X
+				\begin{itemize}
+					\item Elvis-Operator \texttt{?:} (folgend auf diesen kann ein Wert angegeben werden)
+					\item Zusammen mit Safe-Call-Operator nützlich, da so ein Alternativwert angegeben werden kann, falls eine Variable doch null sein sollte
+				\end{itemize}
+			\end{itemize}
+		
+			\paragraph{Funktionen: Benannte Parameter \& Default-Werte}
+			\begin{itemize}
+				\item Schlüsselwort \texttt{fun} zur Deklaration von Funktionen
+				\item Benannte Parameter und Default-Werte für Parameter
+				\begin{itemize}
+					\item Benannte Parameter für bessere Lesbarkeit
+					\item Default-Werte für übersichtliche Aufrufe
+					\item Bei Aufruf einer Funktion mit bennanten Parametern können diese beliebig angeordnet werden, 
+					jedoch darf beim Aufruf nicht zwischen unbenannt und benannt gemischt werden, da sonst die Position der Parameter nicht mehr stimmen könnte
+				\end{itemize}
+				\item Default-Werte helfen bei der Code-Einsparung (bei Java brucht es bei x Parametern x Methoden)
+				\item Weitere spannende Möglichkeiten von Funktionen:\\
+					\texttt{tailrec} für endrekursive Funktionen, Funktionen mit nur einem Ausdruck, Funktionen mit expliziten Rückgabetypen, Modifier \texttt{infix} für infix-Aufrufe (infix-Notation und ohne Klammern)
+			\end{itemize}
+		
+			\paragraph{Extension: Erweiterung ohne Vererbung}
+			\begin{itemize}
+				\item Extensions, um bestehende oder auch fremde Klassen um Funktionen zu erweitern\\
+					z.Bsp. kann Klasse \texttt{Int} um Funktion \texttt{myPrettyPrint()} erweitert werden
+			\end{itemize}
 	
+		\newpage	
+	
+		\subsection{Kotlin \& Android}
+		
+		\begin{itemize}
+			\item Kotlin offizielle Androidsprache, da kompakt, ausdrucksstark, Typ- und Null-sicher
+			\item Parallele Verwendung von Java und Kotlin möglich für Android-Entwicklung
+			\item Aus Kotlin-Klasse kann auf Java-Klasse zugegriffen werden (und umgekehrt)
+			\item Sicherer als Java dank non-nullable Typen und kompakteren Konstrukten \\
+				40\% weniger Zeilen Code als bei Java
+			\item Android findViewById() entfällt bei Kotlin, da direkt Extension-Properties für alle id's in Ressourcen-Dateien angelegt werden, so kann direkt auf jede id zugegriffen werden
+		\end{itemize}
+		
 	\section{SA - Data Binding \& ViewModel}
 	
 	
