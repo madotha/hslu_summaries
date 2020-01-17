@@ -423,7 +423,57 @@
 		
 	\section{SA - Data Binding \& ViewModel}
 	
+		\subsection{Kontext}
+		
+		\begin{itemize}
+			\item Eine Activity ist ein Bildschirm, zu jeder Activity gehört ein UI-Layout in einem XML, welches darzustellende Views definiert
+			\item UI-Initialisierung in der \texttt{onCreate()} einer Activity
+			\item Code mit Zuständigkeit für Daten, UI und Eventhandling wird vermischt
+			\item Data Binding soll Daten und UI strikt trennen
+			\item ViewModel soll Behandlung von Konfigurationsänderungen von der Activity separieren
+		\end{itemize}
 	
+		\subsection{Data Binding}
+		
+		\begin{itemize}
+			\item Anbindung eines Datenmodells an UI-Komponente
+			\item Modell für UI-Daten erzeugen und mit UI verbinden
+			\item \textit{One-Way-Binding}: Wird Datenmodell modifiziert, aktualisiert UI automatisch mit neuen Daten
+			\item \textit{Two-Way-Binding}: Auf UI eingegebene Daten werden auch mit dem Modell synchronisiert
+			\item Eliminiert viel Listener- und Update-Code in den Activity-Klassen
+			\item Test- und Wartbarkeit wird erhöht, im Best Case nur noch Modell-Logik testen
+			
+			\item Data Binding über spezielle Layout-Files definieren
+			\begin{itemize}
+				\item \texttt{<layout>} mit zwei Unterelementen
+				\begin{itemize}
+					\item \texttt{<data>}: deklariert Namen und Typen der verwendeten Datenquellen
+					\item \texttt{View}: entspricht Root-Komponente eines normalen Layout-Files
+				\end{itemize}
+				\item Für beliebige Attribute von View-Elementen Binding-Expressions definierbar\\
+					(werden zum Zeitpunkt der Instanzierung ausgewerten und deren Resultat als Wert des Attributs gesetzt)
+				\item Binding-Expressions innerhalb des Markers \texttt{@{...}} definiert, können auf Variablen/Modellobjekte referenzieren, welche im <data> Element des Layouts definiert worden sind
+				\item Binding-Expressions können auch einen Default-Wert enthalten (falls sie Null sind)
+			\end{itemize}
+			\item Model-Klasse implementiert definierte Properties, am besten als public-Felder
+			\item Klassen werden automatisch generiert, welche die Binding-Logik für jedes Layout implementieren (mit Suffix \textit{Binding} nach dem Activity-Namen)
+			\item Initialisierung des UI mit \texttt{DataBindingUtil.setContentView()} in \texttt{onCreate()}\\
+				Die Model-Klasse wird ebenfalls hier geladen, mit Werten belegt und gebunden
+			\item Observables für Aktualisierungen in der Model-Klasse definieren
+		\end{itemize}
+	
+		\subsection{ViewModel}
+		
+		\begin{itemize}
+			\item ViewModel, um den mit UI verbundenen Zustand in-memory zu speichern
+			\item Mit Data Binding kombinierbar, da Data Binding nach erneuter Initialisierung der Activity sonst den Wert null oder Default-Werte wieder annimmt
+			\item ViewModel-Klasse erstellen, welche von ViewModel ableitet / erbt
+			\item Hier Observables definieren, mit den zu überwachenden UI-Elementen
+			\item ViewModel-Klasse muss mit der Activity verbunden werden, mit welches es seine Daten synchronisiert (\texttt{ViewModelProviders})
+			\item ViewModel muss einen Default Konstruktor haben, welcher eine Application als Argument nimmt, für den Fall von AndroidViewModel
+			\item Bei Verbindung mit Backend / DB überprüfen, ob diese schon einmal geladen worden, da ansonsten das ViewModel zurückgesetzt wird wenn keine Verbindung zum Backend besteht, was unerwünscht ist
+		\end{itemize}
+		
 	
 	\section{SA - Fastlane}
 	
