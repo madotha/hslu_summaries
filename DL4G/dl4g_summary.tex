@@ -83,7 +83,244 @@
 	
 	\section{Sequential Games with perfect information}
 	
+		\subsection{Finite Sequential Games}
+		
+		\begin{itemize}
+			\item Eine endliches Set an \textbf{Spielern}, jeder mit einem endlichen Set an möglichen \textbf{Aktionen}
+			\item Spieler wählen ihre Aktionen \textbf{sequenziell} (einer nach dem anderen, in Zügen)
+			\item Eine endliche Anzahl an \textbf{Zügen} wird gespielt
+			\item Spätere Spieler \textbf{beobachten} die Züge der früheren Spieler (Perfect Recall)
+			\item Eine \textbf{Strategie} sagt dem Spieler, welche Aktion er in seinem Zug spielen soll
+			\item Ein \textbf{Strategieprofil} ist eine gewählte Strategie eines jeden Spielers
+			\item Ein \textbf{Utility} oder \textbf{Payoff Function} bestimmt den Ausgang jedes Aktionprofils
+		\end{itemize}
 	
+		\subsection{Complexity Factors in Game Analysis}
+		
+		\begin{enumerate}
+			\item Anzahl Spieler
+			\begin{itemize}
+				\item Spiele mit 4 Spielern sind schwieriger zu analysieren als solche mit 2 Spielern
+			\end{itemize}
+			\item Grösse des Suchraums
+			\begin{itemize}
+				\item Bestimmt durch Anzahl gespielte Züge und Anzahl Aktionen für jeden Spieler
+			\end{itemize}
+			\item Kompetitive Spiele vs. Kooperative Spiele
+			\begin{itemize}
+				\item Kompetitive Spiele involvieren Spieler mit komplett gegensätzlichen Interessen 
+			\end{itemize}
+			\item Stochastische Spiele vs. Deterministische Spiele
+			\begin{itemize}
+				\item Stochastische Spiele beinhalten Zufälle, bspw. Verteilung der Karten, Würfel rollen
+			\end{itemize}
+			\item Perfekte vs. imperfekte Informationsspiele
+			\begin{itemize}
+				\item Imperfekte Information heisst das Spiel ist nur teilweise überwachbar, bspw. kennen wir nicht die Karten eines gegnerischen Spielers beim Poker oder Jass
+			\end{itemize}
+		\end{enumerate}
+	
+		\subsection{Illustration of State Space Complexity}
+		
+		\begin{table}[htb!]
+			\begin{tabular}{ |c|c|}
+				\textbf{Game} & \textbf{\begin{tabular}[c]{@{}c@{}}State Space\\ (as log to base 10; 10$^x$)\end{tabular}} \\
+				Tic-Tac-Toe   & 3                                                                                                         \\
+				Connect-4     & 13                                                                                                        \\
+				Backgammon    & 20                                                                                                        \\
+				Chess         & 47                                                                                                        \\
+				Go 19x19      & 170                                                                                                      
+			\end{tabular}
+		\end{table}
+	
+		\begin{itemize}
+			\item State Space beschreibt die Anzahl erlaubter Boardpositionen
+			\item Schach / Chess hat 10$^{47}$ verschiedene Boards, Go hat 10$^{170}$ verschiedene Boards
+			\item Zum Vergleich: Geschätzt sind im Universum 10$^{80}$ Atome
+		\end{itemize}
+	
+		\subsection{Extensive Form Representation}
+	
+		\begin{itemize}
+			\item Sequenzielle Spiele können (im Prinzip) als Spielbäume repräsentiert werden
+			\item Knoten sind Spielzustände/Positionen und Kanten sind Aktionen/Bewegungen
+			\item Blätter (Leaves) bestimmen den Payoff
+		\end{itemize}
+	
+		\newpage
+	
+		\subsection{Game Tree Analysis - Backward Induction}
+		
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=0.6\textwidth]{img/01_sequential_games/gametree_backward_induction.png}
+			\caption{Backward Induction am Beispiel eines simplen Spielbaums}
+			\label{fig:01_seq_backward_induction}
+		\end{figure}
+	
+		\begin{itemize}
+			\item Backward Induction ist der Lösungsalgorithmus für endliche, sequenzielle Spiele
+			\item Im Beispiel oben hat Black den First-Mover Vorteil.
+			\item Wenn beide Spieler perfekt spielen, endet das Spiel mit den Payoffs (2,1) \\
+				(2 für Black, 1 für White)
+			\item Solche Spiele immer rückwärts analysieren!
+		\end{itemize}
+	
+		\subsection{Reasoning about Finite Sequential Games}
+		
+		\begin{itemize}
+			\item Eine \textbf{ultra-schwache Lösung} beweist ob der erste Spieler aus der Initialposition gewinnen, verlieren oder unentschieden machen wir, in Annahme eines perfekten Spiels des Gegners \\
+			\textit{Im Beispiel: Schwarz kann einen Gewinn forcieren und hat demnach den First-Mover Vorteil}
+			
+			\item Eine \textbf{schwache Lösung} bietet einen Algorithmus welcher ein komplettes Spiel an perfekten Zügen aus der Initialposition offenbart, in Annahme eines perfekten Spiels des Gegners \\
+			\textit{Schwache Lösung für das Spiel: Black spielt U, White spielt L, Black spielt D}
+			
+			\item Eine \textbf{starke Lösung} bietet einen Algorithmus, welcher perfekte Züge aus jeder Position produzieren kann, auch wenn vorher von irgendeinem Spieler Fehler gemacht wurden. \\
+			\textit{Starke Lösung für dieses Spiel:}
+				\begin{itemize}
+					\item \textit{Algorithmus für White: wenn Black U spielt $\rightarrow$ spiel L; wenn Black D spielt $\rightarrow$ spiel H}
+					\item \textit{Algorithmus für Black: Spiel D im ersten Zug; wenn White L im oberen Knoten spielt, spiel D}
+				\end{itemize}
+		\end{itemize}
+	
+		\paragraph{A Strong Solution to Nim}
+		
+		Algorithmus für einen perfekten Nim Bot:
+		
+		\begin{enumerate}
+			\item Wenn nur ein Haufen übrig bleibt \\
+				$\rightarrow$ Nimm alle Objekte des Haufens und hol den Preis
+			\item Wenn zwei Haufen mit unterschiedlicher Anzahl Objekte übrig bleiben \\
+				$\rightarrow$ Nimm Objekte vom grösseren Haufen und mache beide gleich gross
+			\item Wenn zwei Haufen diesselbe Anzahl Objekte haben \\
+				$\rightarrow$ Egal was du tust, du hast verloren (in Annahme eines perfekten Spiels des Gegners)
+		\end{enumerate} 
+	
+		\newpage
+	
+		\subsection{Zero-Sum Games}
+		
+		\begin{itemize}
+			\item Ein Spiel ist Zero-Sum, wenn der totale Gewinn des Siegers gleich dem totalen Verlust des Verlierers ist
+				\begin{itemize}
+					\item Einen Kuchen zu schneiden ist zero-sum bspw. wenn ich ein Stück esse, ist es für dich verloren
+					\item Brettspiele sind zero-sum bspw. wenn der Sieger +1 erhält und der Verlierer -1
+				\end{itemize}
+			\item $u_{1}$ und $u_{2}$ umschreiben die Utility-Funktion von Spieler 1 und 2, somit ist für jedes Strategiepaar $s_{1}$ und $s_{2}$ von Spieler 1 und 2 und es gilt $u_{1}(s_{1}, s_{2}) + u_{2}(s_{1}, s_{2}) = 0$, dann lässt sich sagen: \\
+			$$u_{1}(s_{1}, s_{2}) = -u_{2}(s_{1}, s_{2})$$
+		\end{itemize}
+	
+		\paragraph{Backward Induction \& Minimax}
+		
+		\begin{itemize}
+			\item Backward Induction ist die Lösungsstrategie für endliche Spiele mit perfekter Information
+			\item Eine einzelne Durchführung von Backward Induction aus einem Startzustand offenbart eine schwache Lösung.
+			Wenn Backward Induction dynamisch (während des Spiels) aus jedem Zustand ausgeführt werden kann, erhalten wir eine starke Lösung.
+			\item Wenn das Spiel zusätzlich zero-sum ist, kann Backward Induction mit dem Minimax Algorithmus implementiert werden.
+			Minimax wird oft für Zwei-Spieler-Spiele definiert, ist aber auch für mehr Spieler erweiterbar.
+			\item Minimax erlaubt effizientes Pruning ("Ausästen") und nahtlose Integration von Heuristiken
+			\item Hinweis: Backward Induction kann auch für Spiele genutzt werden, die nicht zero-sum sind und kompliziertere Payoffs enthalten als eine einzelne Zahl
+		\end{itemize}
+	
+		\subsection{Minimax Algorithm}
+		
+		\begin{itemize}
+			\item 1928 von John von Neumann erfunden
+			\item Beide Spieler wollen ihre respektiven Payoffs maximieren
+			\item Weil das Spiel zero-sum ist, ist mein Gewinn = Verlust des Gegners
+			\item Anstatt nach eigenem Gewinn zu maximieren, kann der Gewinn des Gegeners minimiert werden
+			\item Im Spielbaum kann folgendermassen vorgegangen werden:
+				\begin{itemize}
+					\item Gehört der Knoten mir, wähle die Aktion welche den Payoff maximiert
+					\item Gehört der Knoten dem Gegner, wähle die Aktion welche den Payoff minimiert
+				\end{itemize}
+		\end{itemize}
+	
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=0.6\textwidth]{img/01_sequential_games/minimax_solution.png}
+			\caption{Lösungsweg eines Spielbaums mithilfe des Minimax-Algorithmus}
+			\label{fig:01_seq_minimax_solution}
+		\end{figure}
+	
+		\paragraph{Programming a Minimax Bot}
+		
+		\begin{itemize}
+			\item Minimax implementiert Backward Induction für zero-sum Spiele.
+				Dank der vereinfachenden zero-sum Eigenschaft können einige Tricks angewandt werden, um einen herusitischen Algorithmus zu erhalten:
+			\begin{itemize}
+				\item Minimax nur bis zu einer limitierten Tiefe, bspw. 5 Runden vorausschauen und dann stoppen.
+					Wie tief man gehen kann ist abhängig von den Spielregeln (Anzahl mögliche Züge), Effizienz der Implementation und Rechenleistung.
+				\item Da die Tiefe limitiert ist, werden die Blattknoten nicht erreicht und wir kennen die echten Payoffs nicht.
+					Wir müssen eine Heuristik erfinden, um die Situation abzuschätzen an welcher wir stoppen.
+					Je besser die Heuristik, desto besser der Bot.
+			\end{itemize}
+		\end{itemize}
+	
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=0.6\textwidth]{img/01_sequential_games/minimax_pseudocode.png}
+			\caption{Pseudocode eines Minimax-Algorithmus mit limitierter Tiefe und Heuristik}
+			\label{fig:01_seq_minimax_pseudocode}
+		\end{figure}
+	
+		\subsection{Search Tree Pruning}
+		
+		\begin{itemize}
+			\item Es müssen nicht alle Knoten abgelaufen werden, um die optimale Strategie zu finden.
+			\item Wir "stutzen" (prunen) Sub-Bäume, welche keine bessere Lösung beinhalten können und demnach nicht besucht werden müssen.
+			\item Dazu enthält der Algorithmus zwei Parameter: \\
+			\textit{(Vorfahren sind alle Knoten auf dem Weg zwischen dem aktuellen und dem Root-Knoten)}
+				\begin{itemize}
+					\item $\alpha$ ist der höchste Wert aller MAX-Vorfahren eines MIN Knoten
+					\item $\beta$ ist der tiefste Wert alles MIN-Vorfahren eines MAX Knoten
+				\end{itemize}
+			\item Der Algorithmus Alpha-Beta Pruning aktualisiert diese beiden Parameter im Minimax-Prozess und schneidet nicht besuchte Sub-Bäume ab, sobald er weiss dass die Werte aus diesem Sub-Baum den Wert $\alpha$ nicht überbieten oder $\beta$ nicht unterbieten können.
+		\end{itemize}
+		
+		\paragraph{Alpha-Beta Pruning Rules}
+		
+		\begin{itemize}
+			\item Alpha ($\alpha$) ist der minimale Score, welcher dem maximierenden Spieler versichert werden kann
+			\item Beta ($\beta$) ist der maximale Score, welcher dem minimierenden Spieler versichert werden kann
+			\item Daraus lassen sich folgende beiden Regeln schliessen:
+				\begin{itemize}
+					\item \textbf{Regel 1}: Schneide ab, sobald der aktuelle Wert eines MIN Knoten kleiner ist als $\alpha$
+					\item \textbf{Regel 2}: Schneide ab, sobald der aktuelle Wert eines MAX Knoten grösser ist als $\beta$
+				\end{itemize}
+		\end{itemize}
+	
+		\subsection{Illustrations for Alpha-Beta Pruning}
+		
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=0.5\textwidth]{img/01_sequential_games/alphabeta_rule1.png}
+			\caption{Illustration der Durchführung der 1. Regel des Alpha-Beta Pruning}
+			\label{fig:01_seq_alphabeta_rule1}
+		\end{figure}
+	
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=0.5\textwidth]{img/01_sequential_games/alphabeta_rule2.png}
+			\caption{Illustration der Durchführung der 2. Regel des Alpha-Beta Pruning}
+			\label{fig:01_seq_alphabeta_rule2}
+		\end{figure}
+	
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=0.5\textwidth]{img/01_sequential_games/alphabeta_pseudocode.png}
+			\caption{Pseudocode eines Minimax mit limitierter Tiefe mithilfe von Alpha-Beta Pruning}
+			\label{fig:01_seq_alphabeta_pseudocode}
+		\end{figure}
+	
+		\paragraph{Speed-Up of Alpha-Beta Pruning}
+		
+		\begin{itemize}
+			\item In einem Spielbaum mit Tiefe $m$ mit $b$ möglichen Aktionen bei jedem Knoten ist die Zeitkomplexität des Minimax O($b^{m}$) bzw.. es gibt b$^{m}$ Blattknoten
+			\item Im Idealfall benötigt Alphe-Beta Pruning nur O($b^{m/2}$) = O($(\sqrt{b})^{m}$). 
+			Dies korrespondiert zu einer Reduzierung des Branching-Faktors von $b$ zu $\sqrt{b}$, bspw. bei Schach bedeutet dies 6 mögliche Aktionen bei jedem Knoten (anstelle von 35)
+			\item Um diesen maximalen Speed-Up zu erreichen, müssen die verschiedenen States in gescheiter Anordnung erforscht werden, was jedoch problemspezifisch ist.
+		\end{itemize}
 	
 	\section{Monte Carlo Search Tree}
 	
