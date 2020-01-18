@@ -567,6 +567,36 @@
 	\section{SA - Xamarin.Forms}
 	\label{section:xamarinforms}
 	
+		\subsection{Xamarin \& Entstehung}
+	
+		\begin{itemize}
+			\item Xamarin ist ein Open-Source-Framework, ermöglicht Entwicklen von Apps für Android und iOS mittels C\# und .NET
+			\item Bisher musste das UI native pro Plattform erstellt werden, Xamarin-Projekte konnten sich nur die "Businesslogik" teilen
+			\item Xamarin.Forms soll ermöglichen, das UI für beide Plattformen zu vereinen, dass ebenfalls der Code für das UI geteilt wird
+			\item Xamarin Apps werden mithilfe des Mono Execution Frameworks ausgeführt (auf Android läuft dazu eine zusätzliche VM auf welche ART zugreift, während auf iOS Bindings des Mono EE auf die Native SDK existieren)
+		\end{itemize}
+	
+		\subsection{Xamarin.Forms}
+		
+		\paragraph{Essentials \& Head Projects}
+		\begin{itemize}
+			\item Xamarin.Essentials bieten viele Grundfunktionalitäten, welche plattformspezifische Funktionalitäten in einer Library vereint (bspw. Zugriff auf Accelerometer, KeyStore/KeyChains usw.)
+			\item Typisch gibt es 3 Projekte bei einem Xamarin-Projekt: das normale und 2 mit einem Suffix pro Plattform (diese werden Head Projects genannt)
+			\item In den Head Projects sind MainActivity (Android) und AppDelegate sowie Main.cs (iOS), über welche eine Referenz des Hauptprojekts weitergegeben wird und die App geladen wird.
+			Hier befindet sich ebenfalls plattformspezifischer Code, welcher nicht geteilt genutzt werden kann.
+		\end{itemize}
+	
+		\vspace{1em}
+		
+		\begin{itemize}
+			\item XAML wurde hauptsächlich für das Designen von UIs entwickelt
+			\item Jedes XAML besitzt ein Code-behind File, welches die Logik für das UI beinhaltet
+			\item Typ bzw. Technologie am Anfang des XAML definieren (hier Xamarin)
+			\item UI kann mittels Properties im XAML verändert werden oder auch über C\#-Code
+			\item Event Handling: Bester Weg ist, im XAML Properties als x:[Type] zu deklarieren und über Code auf diese zuzugreifen (besser für Separation of Concerns)
+			\item Plattformspezifische Werte können im code-behind oder XAML angegeben werden (falls eine Plattform gewisse UI-Elemente anders anzeigen sollte)
+			\item Head Projects müssen angepasst werden, wenn gewisse Logik eine plattformspezifische Anpassung benötigt (Hintergrundwissen der Plattformen sollte dazu für beide Plattformen etwas vorhanden sein)
+		\end{itemize}
 	
 	\section{SA - PWA: Progressive Web Apps}
 	\label{section:pwa}
