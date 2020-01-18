@@ -270,7 +270,7 @@
 			\item Es müssen nicht alle Knoten abgelaufen werden, um die optimale Strategie zu finden.
 			\item Wir "stutzen" (prunen) Sub-Bäume, welche keine bessere Lösung beinhalten können und demnach nicht besucht werden müssen.
 			\item Dazu enthält der Algorithmus zwei Parameter: \\
-			\textit{(Vorfahren sind alle Knoten auf dem Weg zwischen dem aktuellen und dem Root-Knoten)}
+			\textit{(Vorfahren sind alle Knoten auf dem Weg zwischen dem aktuellen und dem Wurzelknoten)}
 				\begin{itemize}
 					\item $\alpha$ ist der höchste Wert aller MAX-Vorfahren eines MIN Knoten
 					\item $\beta$ ist der tiefste Wert alles MIN-Vorfahren eines MAX Knoten
@@ -322,9 +322,146 @@
 			\item Um diesen maximalen Speed-Up zu erreichen, müssen die verschiedenen States in gescheiter Anordnung erforscht werden, was jedoch problemspezifisch ist.
 		\end{itemize}
 	
-	\section{Monte Carlo Search Tree}
+	\section{Monte Carlo Tree Search}
 	
+		\subsection{Random Walks}
+		
+		\begin{itemize}
+			\item Suchräume sind meist zu gross für eine vollständige Suche
+			\item Minimax soll bei einer bestimmten Baum-Tiefe stoppen und raten (mit Heuristik)
+			\item Monte Carlo Tree Search ist ein anderes Vorgehen: \\
+			\textit{Monte Carlo Tree Search führt Random Walks durch, um möglichst viel des Suchbaums in einem vorbestimmten Zeitraum abzusuchen.
+			Danach wird der vielversprechendste Zug gespielt.}
+		\end{itemize}
 	
+		\newpage
+	
+		\subsection{The 4 Phases in Monte Carlo Tree Search}
+		
+		\begin{enumerate}
+			\item \textbf{Selection}
+				\begin{itemize}
+					\item Starte beim Wurzelknoten \texttt{R} und wähle fortlaufend Kinderknoten
+					\item Stoppe, wenn du einen Knoten erreichst, der noch nicht komplett erweitert/erforscht wurde
+					\item Benötigt ein Kriterum für die Auswahl der Kinderknoten, sogennante \textit{tree policy}
+				\end{itemize}
+			\item \textbf{Expansion}
+				\begin{itemize}
+					\item Wenn das Zeitlimit \texttt{L} das Spiel beendet, gib die Payoffs zurück
+					\item Sonst, wähle eine unerforschte Aktion und kreiere einen Knoten \texttt{C} für diese
+				\end{itemize}
+			\item \textbf{Simulation}
+				\begin{itemize}
+					\item Simuliere ein Weiterspielen von Knoten \texttt{C} aus, mithilfe einer \textit{default policy}
+					\item Im simpelsten Fall, spiele einfach bis zu irgendeinem Ende mit zufälligen Zügen
+				\end{itemize}
+			\item \textbf{Backpropagation}
+				\begin{itemize}
+					\item Aktualisiere die gespeicherten Informationen in jedem Knoten von \texttt{C} zurück bis zu \texttt{R}
+					\item MCTS erwartet einen Payoff in [0,1]
+				\end{itemize}
+		\end{enumerate}
+	
+		\subsection{MCTS for Tic-Tac-Toe}
+		
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=0.6\textwidth]{img/02_mcts/random_ttt.png}
+			\caption{Zufälliger Durchlauf eines Runde Tic-Tac-Toe}
+			\label{fig:02_mcts_random_tictactoe}
+		\end{figure}
+	
+		\begin{itemize}
+			\item Es gibt Punkte für einen Gewinn (1), unenentschieden (0.5) und Verlust (0)
+			\item MCTS ist nicht limitiert auf zero-sum Spiele
+			\item Payoffs werden durch Vektoren repräsentiert
+			\item Die Simulation endet mit einem Gewinn für Spieler X mit Payoff +1 $\rightarrow$ Payoff-Vektor (1,0) \\
+			(Spieler Y hat in dieser Simulation also einen Payoff von 0)
+		\end{itemize}
+	
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=0.6\textwidth]{img/02_mcts/ttt_payoffs.png}
+			\caption{übersicht der Simulationen eines Tic-Tac-Toe Spiels}
+			\label{fig:02_mcts_ttt_payoffs}
+		\end{figure}
+	
+		\begin{itemize}
+			\item \texttt{N} speichert die Anzahl Simulationen, die vom Knoten $s_{0}$ aus gestartet wurden
+			\item \texttt{W} sind die akkumulierten Payoff-Vektoren (eine Komponente für jeden Spieler)
+			\item Backpropagation kalkuliert lediglich die Summe von \texttt{N}$^{*}$ und \texttt{W}
+			\item \textbf{Wichtig}: Ist der Wurzelknoten ebenfalls auch ein Kindesknoten, muss sein Payoff nach oben ebenfalls hinzugerechnet werden 
+		\end{itemize}
+	
+		\newpage
+	
+		\subsection{Selection Policy: Which Node to Choose}
+		
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=0.6\textwidth]{img/02_mcts/selection_policy.png}
+			\caption{Durchschnittliche Payoffs der durchlaufenen Simulationen mit MCTS}
+			\label{fig:02_mcts_selection_policy}
+		\end{figure}
+		
+		\begin{itemize}
+			\item \textbf{Exploitation} \\
+			Knoten $s_{0,1}$ hat den höchsten durchschnittlichen Payoff bzw. basierend auf aktuell verfügbaren Informationen, maximiert dieser Knoten meinen erwarteten Gewinn
+			\item \textbf{Exploration} \\
+			Knoten $s_{0,4}$ wurde nur 40 mal probiert, wie kann ich sicher sein dass der Score tiefer bleibt als bei $s_{0,1}$, auch wenn ich jetzt noch 66 mal spielen würde?
+		\end{itemize}
+	
+		\subsection{Example of Multi-Armed Bandits}
+		
+		\begin{itemize}
+			\item Es gibt eine Reihe an Slotmaschinen mit verschiedenen (unbekannten) Auszahlungswahrscheinlichkeiten und -mengen
+			\item Man hat 1000 Münzen und möchte den erwarteten Gewinn erhöhen
+			\item Idealerweise würde man immer an der Maschine mit dem grössten erwarteten Gewinn spielen
+			\item Unglücklicherweise weiss man jedoch nicht, welche Maschine dafür am besten ist
+			\item Es ist keine Person da, welcher man zuschauen und mehr über die Maschinen erfahren kann
+		\end{itemize}
+		\vspace{1em}
+		Wie wählt man nun die beste Strategie in dieser Situation?
+	
+		\subsection{UCB1: Upper Confidence Bound}
+		
+		\begin{itemize}
+			\item Am besten Exploration und Exploitation ausbalancieren
+				\begin{itemize}
+					\item \textbf{Exploration}: Spiele alle Maschinen um möglichst viele Informationen zu sammeln
+					\item \textbf{Exploitation}: Spiele die beobachtet beste Maschine um den erwarteten Gewinn zu maximieren
+				\end{itemize}
+			\item UCB1 bietet die beste Balance zwischen Exploration und Exploitation, es gibt quasi ein statistisches Vertrauensintervall für jede Maschine aus
+				\begin{itemize}
+					\item Parameter $c \geq 0$ kontrolliert den Trade-Off zwischen Exploitation (tiefes $c$) und Exploration (hohes $c$)
+				\end{itemize}
+		\end{itemize}
+	
+		$$U_{i} = \frac{W_{i}}{N_{i}} + c \sqrt{\frac{\ln N_{p}}{N_{i}}}$$
+		
+		\vspace{1em}
+		\begin{description}
+			\item[$\frac{W_{i}}{N_{i}}$] \textbf{Exploitation}, der durchsch. Gewinn für Maschine $i$ ($\frac{Gewinne}{Versüche}$)
+			\item
+			\item[$\sqrt{\frac{\ln N_{p}}{N_{i}}}$] \textbf{Exploration}
+				\begin{description}
+					\item[$N_{p}$] Wie oft haben wir insgesamt gespielt (wie viele Münzen wurden verbraucht)
+					\item[$N_{i}$] Wie oft wurde Maschine $i$ ausprobiert
+				\end{description}
+		\end{description}
+		
+		\newpage
+		
+		\paragraph{How to play with UCB1}
+		Für jede der 1000 Münzen...
+		\begin{itemize}
+			\item Kalkuliere das UCB1 ($U_{i}$) von jeder Maschine $i$
+			\item Spiele an der Maschine mit dem höchsten Upper Bound ($U_{i}$)
+			\item Wähle entweder zufällig oder in nummerischer Ordnung
+		\end{itemize}
+		
+		
+		
 	
 	\section{Information Sets}
 	
