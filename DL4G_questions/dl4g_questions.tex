@@ -325,6 +325,48 @@ Deep Learning for Games}
 	
 		\subsection{Was ist ein Information Set?}
 		
+		\begin{itemize}
+			\item Ein Information Set ist eine Menge von Knoten des gleichen Spielers
+			\item Der Spieler kennt den vorherigen Zug nicht
+			\item Alle Knoten müssen die gleichen Optionen bieten
+			\item Sind immer aus der Sicht eines Spielers
+		\end{itemize}
+	
+		\subsection{Was ist der Unterschied zwischen perfekter und imperfekter Information?}
+		
+		\begin{itemize}
+			\item Unterschiedliche Strategien werden gewählt
+			\item Bei perfekter Information hat jeder Knoten exakt eine Option
+		\end{itemize}
+	
+		\subsection{Was ist die Idee hinter Determinization?}
+		
+		\begin{itemize}
+			\item Unbekannte Karten zufällig auf die Gegner verteilen
+			\item Danach das Anwenden der Regeln von perfekter Information (bspw. mit MCTS)
+			\item Ergibt dann mehrere mögliche Suchbäume
+			\item Schlussendlich über alle Bäume die Option wählen, die am meisten besucht wurde
+			\item Manchmal werden Entscheidungen getroffen, welche gar nie eintreten können, was zu falschen Entscheidungen führen kann
+		\end{itemize}
+	
+		\subsection{Was muss bei einer Implementation von MCTS mit Information Sets beachtet werden?}
+		
+		\begin{itemize}
+			\item Der Baum besteht aus Information Sets und nicht mehr aus Zuständen
+			\item Knoten entsprechen Information Sets aus der Sicht des Wurzelspielers
+			\item Karten werden zufällig verteilt und ungültige Varianten werden ausgeblendet
+			\item Kanten entsprechen einer Aktion, welche in mindestens einem Zustand möglich ist
+			\item Funktioniert danach wie ein Spiel mit perfekter Information
+		\end{itemize}
+	
+		\subsection{Wie muss die UCB1 angepasst werden für Information Sets?}
+		
+		\begin{itemize}
+			\item $N_{p}$ = Anzahl Besuche des Vorgänger-Knotens und wie oft Knoten $i$ verfügbar war
+			\item Knotenliste ergänzen um "wie viel mal war jede Option verfügbar"
+		\end{itemize}
+	
+	
 		
 		
 		
