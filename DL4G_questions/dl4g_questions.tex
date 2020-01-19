@@ -229,8 +229,107 @@ Deep Learning for Games}
 		\subsection{Wieso werden Random Walks eingesetzt? (Tree Search)}
 		
 		\begin{itemize}
-			\item 
+			\item Der Suchraum ist oft zu gross für eine vollständige Suche
+			\item Die Idee, verglichen zu Minimax, ist, bei einer bestimmten Tiefe zu stoppen und zu raten
 		\end{itemize}
+		
+		\subsection{Was ist die Idee hinter Monte Carlo Tree Search?}
+		
+		\begin{itemize}
+			\item Macht einen Random Walk und spielt zufällige Simulationen
+			\item Versucht, in einer fixen Zeit möglichst viel des Suchraums zu entdecken
+			\item Am Schluss wird der vielversprechendste Spielzug ausgewählt
+		\end{itemize}
+	
+		\subsection{Welche 4 Phasen gibt es bei Monte Carlo Tree Search?}
+		
+		\begin{enumerate}
+			\item \textbf{Selection}
+			\begin{itemize}
+				\item Starte beim Wurzelknoten \texttt{R} und wähle fortlaufend Kinderknoten
+				\item Stoppe, wenn du einen Knoten erreichst, der noch nicht komplett erweitert/erforscht wurde
+				\item Benötigt ein Kriterum für die Auswahl der Kinderknoten, sogennante \textit{tree policy}
+			\end{itemize}
+			\item \textbf{Expansion}
+			\begin{itemize}
+				\item Wenn das Zeitlimit \texttt{L} das Spiel beendet, gib die Payoffs zurück
+				\item Sonst, wähle eine unerforschte Aktion und kreiere einen Knoten \texttt{C} für diese
+			\end{itemize}
+			\item \textbf{Simulation}
+			\begin{itemize}
+				\item Simuliere ein Weiterspielen von Knoten \texttt{C} aus, mithilfe einer \textit{default policy}
+				\item Im simpelsten Fall, spiele einfach bis zu irgendeinem Ende mit zufälligen Zügen
+			\end{itemize}
+			\item \textbf{Backpropagation}
+			\begin{itemize}
+				\item Aktualisiere die gespeicherten Informationen in jedem Knoten von \texttt{C} zurück bis zu \texttt{R}
+				\item MCTS erwartet einen Payoff in [0,1]
+			\end{itemize}
+		\end{enumerate}
+	
+		\subsection{Welche zwei Ansätze gibt es beim Auswählen eines neuen Knotens?}
+		
+		\begin{itemize}
+			\item Exploitation
+			\begin{itemize}
+				\item Immer den besten Payoff wählen
+				\item Anhand von Beobachtungen auf der besten Maschine spielen, um Gewinn zu maximieren
+			\end{itemize}
+			\item Exploration
+			\begin{itemize}
+				\item Etwas Neues wählen, versuchen möglichst viel zu erkunden
+				\item Alle Maschinen spielen, um möglichst viel Informationen zu gewinnen
+			\end{itemize}
+		\end{itemize}
+	
+		\subsection{Was ist die Idee hinter UCB1 (Upper Confidence Bound)?}
+		
+		\begin{itemize}
+			\item Die beste Strategie ist eine Mischung aus Exploitation und Exploration
+			\item Ergibt ein statistisches Konfidenzintervall für jede Option
+			\item Parameter $c$ kontrolliert den Trade-Off zwischen Exploitation und Exploration
+		\end{itemize}
+	
+		\subsection{Was ist sehr wichtig bei der Anwendung von UCB1?}
+		
+		Immer die Vektor-Komponente des aktuellen Spielers für die Berechnung verwenden.
+		
+		\subsection{Was passiert bei MCTS, wenn die Zeit abgelaufen ist?}
+		
+		Spielt die Aktion mit der höchsten Anzahl an Besuchen.
+		
+		\subsection{Was sind Unterschiede zwischen Minimax und MCTS?}
+		
+		\begin{itemize}
+			\item Beide Algorithmen setzen perfekte Informationen voraus
+			\item Minimax ist nur anwendbar auf Nullsummenspiele mit zwei Spielern
+			\item MCTS funktioniert für jedes Spiel mit perfekter Information
+			\item Minimax optimiert Payoffs, MCTS optimiert einen Exploitation-Exploration Trade-Off
+			\item MCTS ist ein Anytime-Algorithmus, Minimax nicht
+			\item Monte Carlo Bäume sind asymmetrisch, Minimax Bäume sind symmetrisch
+		\end{itemize}
+		
+		\subsection{Was ist ein Anytime-Algorithmus?}
+		
+		Er kann eine gültige Lösung zurückgeben, auch wenn die Ausführung vorzeitig abgebrochen wird.
+		Es wird erwartet, dass er eine immer bessere Lösung findet, je länger er ausgeführt wird.
+		
+		\subsection{Wie sehen die Payoffs bei MCTS aus und was wird maximiert?}
+		
+		\begin{itemize}
+			\item Für ein Beispiel mit 2 Spielern nimmt der Payoff-Vektor die Form $(W, N-W)$ an
+			\item Spieler 1 maximiert $W$, Spieler 2 maximiert $N-W$ (implizit minimiert Spieler 2 so auch $-W$)
+		\end{itemize}
+	
+	\section{Information Sets}
+	
+		\subsection{Was ist ein Information Set?}
+		
+		
+		
+		
+		
+		
 		
 		
 	
