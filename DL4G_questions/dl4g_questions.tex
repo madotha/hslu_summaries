@@ -764,8 +764,100 @@ Deep Learning for Games}
 			\item Die Gewichte werden für jede Position geteilt
 		\end{itemize}
 		
+		\subsection{Was bedeutet Regularisierung und wieso wird es gebraucht?}
 		
+		\begin{itemize}
+			\item Penalty auf den Gewichten
+			\item Zum Beispiel: Quadrate der Gewichte zur Loss-Funktion addieren
+			\item Um eine glättere Kurve zu bekommen
+			\item Verhindert Overfitting
+		\end{itemize}
+	
+		\subsection{Was bedeutet Dropout und wieso wird es gebraucht? (RL)}
 		
+		\begin{itemize}
+			\item Verwirft zufällig Knoten (setzt sie auf 0)
+			\item Zwingt das Netzwerk, Alternativen zu finden
+			\item Gibt ein stabileres Netzwerk
+		\end{itemize}
+	
+		\subsection{Was ist die Idee hinter Inception und Res-Net?}
+		
+		\begin{itemize}
+			\item Inception
+				\begin{itemize}
+					\item Mehrere Layer nebeneinander und dann addieren
+				\end{itemize}
+			\item Res-Net
+				\begin{itemize}
+					\item Shortcut zwischen einzelnen Knoten
+					\item Einfacheres Lernen von komplizierten Netzwerken
+				\end{itemize}
+		\end{itemize}
+		
+		\subsection{Was ist Reinforcement Learning?}
+		
+		\begin{itemize}
+			\item Ziel: Reward maximieren
+			\item Reward kann durch Aktionen verändert werden
+			\item Aktionen beeinflussen die Umgebung
+		\end{itemize}
+	
+		\subsection{Was ist Reinforcement Learning nicht?}
+		
+		\begin{itemize}
+			\item Supervised Learning: es gibt keinen Supervisor, der sagt, was richtig ist
+			\item Unsupervised Learning: es werden auch keine Strukturen gesucht
+		\end{itemize}
+	
+		\subsection{Was sind die Eigenschaften von Reinforcement Learning?}
+		
+		\begin{itemize}
+			\item Verzögertes Feedback
+			\item Zeit ist relevant
+			\item Aktionen beeinflussen die Umgebung und die Daten
+		\end{itemize}
+	
+		\subsection{Was ist das Ziel von Reinforcement Learning?}
+		
+		Ein Reward $Rt$ ist ei Feedback, welches angibt, wie gut sich der Agent zum Zeitpunkt $t$ verhält.
+		
+		\subsection{Welche Arten von RL-Agenten gibt es?}
+		
+		\begin{itemize}
+			\item Value Based: no policy (implicit), value function
+			\item Policy Based: policy, no value function
+			\item Actor Critic: policy, value function
+			\item Model Free: policy and/or value function, no model
+			\item Model: policy and/or value function, model
+		\end{itemize}
+	
+		\subsection{Welche Varianten von Greedy Algorithmen gibt es?}
+		
+		\begin{itemize}
+			\item greedy
+				\begin{itemize}
+					\item Aktion wählen mit dem maximal geschätzten Wert
+				\end{itemize}
+			\item non greedy
+				\begin{itemize}
+					\item Zufällige Aktion wählen
+				\end{itemize}
+			\item e-greedy
+				\begin{itemize}
+					\item Mit Wahrscheinlichkeit beliebige Aktion auswählen
+					\item Mit 1- Wahrscheinlichkeit maximale Aktion auswählen
+				\end{itemize}
+		\end{itemize}
+	
+		\subsection{Wie kann eine Policy ausgearbeitet werden?}
+		
+		\begin{itemize}
+			\item Beginnen mit einer zufälligen Policy
+			\item Berechnen der Value-Funktion $v$ unter Berücksichtigung der aktuellen Policy
+			\item Policy verbessern durch greedy-Auswahl der Aktionen aus $v$
+			\item Wiederholen, bis sich die Policy nicht mehr verändert
+		\end{itemize}
 		
 		
 		
