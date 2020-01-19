@@ -366,7 +366,205 @@ Deep Learning for Games}
 			\item Knotenliste ergänzen um "wie viel mal war jede Option verfügbar"
 		\end{itemize}
 	
+	\newpage
 	
+	\section{Supervised Machine Learning}
+	
+		\subsection{Welche Disziplinen gibt es bei Machine Learning?}
+		
+		\begin{itemize}
+			\item Supervised Learning
+			\begin{itemize}
+				\item Dem Algorithmus werden gelabelte Trainingsdaten übergeben
+				\item Er lernt, Labels von unbenannten Daten vorherzusagen
+			\end{itemize}
+			\item Unsupervised Learning
+			\begin{itemize}
+				\item Dem Algorithmus werden nicht gelabelte Trainingsdaten übergeben
+				\item Er entdeckt / lernt selbstständig die Struktur der Daten
+			\end{itemize}
+			\item Semi-Supervised Learning
+			\begin{itemize}
+				\item Mischung zwischen Supervised und Unsupervised Learning
+				\item Wird meist benutzt, wenn eine kleine Anzahl gelabelter Daten zur Verfügung steht
+			\end{itemize}
+			\item Reinforcement Learning
+			\begin{itemize}
+				\item Keine Daten stehen zur Verfügung
+				\item Der Algorithmus wird durch eine Reward Funktion geleitet
+				\item Das ideale Verhalten wird gesucht, um die Reward Funktion zu maximieren
+			\end{itemize}
+		\end{itemize}
+		
+		\subsection{Was können die Gründe für schlechte Datenqualität sein?}
+		
+		\begin{itemize}
+			\item Schlechtes Design, mangelhafte oder inkonsistente Datenformate
+			\item Programmierfehler oder technische Probleme
+			\item Alter der Daten (bspw. ungültige E-Mail-Adressen)
+			\item Schlechte Dateneingabemasken (fehlende Validierung bei Erfassung der Daten)
+			\item Menschliche Fehler beim Datenexport
+			\item Ungültige oder falsche Informationen
+		\end{itemize}
+	
+		\subsection{Welche Möglichkeiten gibt es, um die Qualität von Daten festzustellen?}
+		
+		\begin{itemize}
+			\item Datenquellen und deren Zuverlässigkeit überprüfen
+			\item Statistische Kennzahlen interpretieren und überprüfen
+			\item Visuelles Überprüfen eines Datenauszugs
+			\item Manuell Datenbereiche überprüfen (bspw. negative Löhne)
+			\item Plausibilität von Zusammenhängen überprüfen
+			\item Redundanz der Daten messen
+			\item Abweichungen in Syntax und Semantik der Daten
+			\item NULL-Werte und doppelte Daten untersuchen
+		\end{itemize}
+		
+		\subsection{Wie läuft ganz einfaches Machine Learning ab?}
+		
+		\begin{itemize}
+			\item Daten in Testdaten und Trainingsdaten aufteilen
+			\item Klassifikator auf den Trainingsdaten trainieren
+			\item Klassifikator anhand der Testdaten bewerten
+		\end{itemize}
+		$\rightarrow$ Funktioniert nur mit vielen Daten und wenn die Hyperparameter festgelegt sind
+		
+		\subsection{Wie sollten die Daten in einem Date Pool aufgeteilt werden?}
+		
+		\begin{itemize}
+			\item ca. 70-80\% Trainingsdaten
+			\item ca. 20-30\% Testdaten
+		\end{itemize}
+	
+		\subsection{Wie sollte beim Aufteilen der Daten vorgegangen werden?}
+		
+		\begin{itemize}
+			\item Daten zufällig mischen
+			\item Daten aufteilen in Training und Test
+			\item Training- und Testdaten müssen disjunkt sein (keine gemeinsamen Elemente)
+		\end{itemize}
+		
+		\subsection{Was bedeutet Training? (ML)}
+		
+		Minimierung einer Kostenfunktion auf den Trainingsdaten durch Anpassen der Modellparameter
+		
+		\subsection{Was bedeutet Testing? (ML)}
+		
+		Nur eine Auswertung auf unbekannten Daten ermöglicht, die Leistung eines Modells festzustellen
+		
+		\subsection{Was ist k-NN?}
+		
+		\begin{itemize}
+			\item Steht für K-Nearest Neighbors
+			\item Ist ein sehr einfacher Machine-Learning-Algorithmus
+			\item Bei $k=1$ wird das Label des nächstgelegenen Trainingspunkt verwendet
+			\item Bei $k>1$ findet ein Mehrheitsbeschluss der nächsten $k$ Nachbarn statt
+		\end{itemize}
+		
+		\subsection{Was sind Hyperparameter?}
+		
+		\begin{itemize}
+			\item Entscheidungen, die vom Menschen getroffen werden
+			\item Zum Beispiel: Angleichung an eine lineare Funktion
+		\end{itemize}
+	
+		\subsection{Was sind Beispiele für Hyperparameter?}
+		
+		\begin{itemize}
+			\item Anzahl Nachbarn bei k-NN
+			\item Regularisierung der Parameter
+			\item Kernel einer Support-Vektoren-Maschine
+			\item Baumtiefe und Selection-Policy im Entscheidungsbaum
+			\item Anzahl Layers, Neuronen, Aktivierungsfunktion, Dropout bei Deep Learning
+		\end{itemize}
+	
+		\subsection{Wie sieht ein komplizierter Auswertungsvorgang aus? (ML)}
+		
+		\begin{itemize}
+			\item Daten aufteilen in 60\% Training, 20\% Validation und 20\% Test
+			\item Über alle interessanten Hyperparameter-Konfigurationen iterieren
+			\item Modell anhand der ausgewählten Hyperparameter auf den Trainingsdaten trainieren
+			\item Modell auf dem Validation-Set überprüfen und Leistung messen
+			\item Modell mit der besten Leistung auswählen und auf den Testdaten Leistug messen
+		\end{itemize}
+		$\rightarrow$ Diese variante benötigt ziemlich viele Daten
+		
+		\subsection{Was ist das Ziel von Cross Validation?}
+		
+		\begin{itemize}
+			\item Falls zu wenig Daten vorhanden sind
+			\item Aufteilen in 80\% Training und 20\% Test
+			\item Training aufteilen in $k$ Folds (bspw. 10)
+			\item Jeder Fold ist einmal das Validation-Set
+			\item Die restlichen Folds werden als Trainingsdaten verwendet
+			\item Schlussendlich den Mittelwert über alle Folds ziehen
+		\end{itemize}
+	
+		\subsection{Was ist das Ziel bei Aufteilung in Test- und Trainings-Set?}
+		
+		Gleiche Verteilungen über Test- und Trainings-Set
+		
+		\subsection{Was sollte man über Learning-Curves wissen?}
+		
+		\begin{itemize}
+			\item Wenn Kurven weit auseinander sind, hilft es wenn man mehr Daten nutzt
+			\item Wenn Kurven parallel sind, dann bringt es ziemlich sicher nichts
+		\end{itemize}
+	
+	\newpage
+	
+		\subsection{Welche Möglichkeiten gibt es bei einer Confusion Matrix für einen Binary Classifier?}
+		
+		\begin{description}
+			\item[TN] = true-negative
+			\item[FP] = false-positive
+			\item[FN] = false-negative
+			\item[TP] = true-positive
+		\end{description}
+	
+		\begin{table}[]
+			\begin{tabular}{|l|l|l|}
+				\hline
+				\textbf{Vorhersage}       & \textbf{Wahr} & \textbf{Falsch} \\ \hline
+				\textbf{Realität: \textit{Wahr}}   & TP            & FN              \\ \hline
+				\textbf{Realität: \textit{Falsch}} & FP            & TN              \\ \hline
+			\end{tabular}
+		\end{table}
+	
+		\subsection{Wie werden Accuracy und Error Rate berechnet?}
+		
+		\begin{itemize}
+			\item Accuracy = $\frac{TP + TN}{Total}$\\
+			\item Error Rate = $\frac{FP + FN}{Total} = 1 - Accuracy$
+		\end{itemize}
+	
+	\section{Neuronal Networks}
+	
+		\subsection{Was ist der Unterschied zwischen AI und Deep Learning?}
+		
+		\begin{itemize}
+			\item Artificial Intelligence (regelbasiert / MCTS)
+			\item Machine Learning (Training auf Daten mit festgelegten Features)
+			\item Deep Learning (Lernen der Features aus den Daten)
+		\end{itemize}
+	
+		\subsection{Was ist die Definition von Machine Learning?}
+		
+		\begin{itemize}
+			\item Ein Computerprogramm \textbf{lernt} aus der Experience $E$...
+			\item ...mit Rücksicht auf eine Klasse von Tasks $T$ und Performance Measures $P$...
+			\item ...wenn es Tasks in $T$ durchführt, gemessen an $P$, seine Experience $E$ verbessert.
+		\end{itemize}
+	
+		\subsection{Was ist $T$ beim Jassen? (ML)} 
+		
+		Tasks ($T$)
+		\begin{itemize}
+			\item Trumpf auswählen
+			\item Karte auswählen
+			\item Werte der Karten
+			\item Punkte im Spiel
+		\end{itemize}
 		
 		
 		
