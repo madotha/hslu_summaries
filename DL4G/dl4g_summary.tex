@@ -399,7 +399,7 @@
 		
 		\begin{figure}[htb!]
 			\centering
-			\includegraphics[width=0.6\textwidth]{img/02_mcts/selection_policy.png}
+			\includegraphics[width=0.8\textwidth]{img/02_mcts/selection_policy.png}
 			\caption{Durchschnittliche Payoffs der durchlaufenen Simulationen mit MCTS}
 			\label{fig:02_mcts_selection_policy}
 		\end{figure}
@@ -441,7 +441,7 @@
 		
 		\vspace{1em}
 		\begin{description}
-			\item[$\frac{W_{i}}{N_{i}}$] \textbf{Exploitation}, der durchsch. Gewinn für Maschine $i$ ($\frac{Gewinne}{Versüche}$)
+			\item[$\frac{W_{i}}{N_{i}}$] \textbf{Exploitation}, der durchsch. Gewinn für Maschine $i$ ($\frac{W(Gewinne)}{N(Versuche)}$)
 			\item
 			\item[$\sqrt{\frac{\ln N_{p}}{N_{i}}}$] \textbf{Exploration}
 				\begin{description}
@@ -457,9 +457,53 @@
 		\begin{itemize}
 			\item Kalkuliere das UCB1 ($U_{i}$) von jeder Maschine $i$
 			\item Spiele an der Maschine mit dem höchsten Upper Bound ($U_{i}$)
-			\item Wähle entweder zufällig oder in nummerischer Ordnung
+			\item Wähle entweder zufällig oder in numerischer Ordnung
+			\item Solange man dies tut, wird der beobachtete Mittelwert für die Maschine sich verschieben und das Vertrauensintervall wird schmaler, aber die Intervalle aller anderen Maschinen werden breiter.
+			Der Upper Bound einer anderen Maschine wird womöglich grösser als jener der aktuellen Maschine und man wird zu dieser Maschine wechseln.
+			\item Bei Berechnung des UCB1 muss die Vektorkomponente für den aktuellen Spieler gewählt werden! \\
+				Bsp. UCB1($s_{0,1}$) = 0.71, UCB1($s_{0,2}$) = ...
+		\end{itemize}
+	
+		\paragraph{The final Move}
+		
+		\begin{itemize}
+			\item Wenn die Zeit vorüber ist, spiele die erste Aktion mit der \textbf{höchsten Anzahl an Besuchen }$N$!
+			\begin{itemize}
+				\item Es benötigt keine Exploration wenn die finale Aktion ausgewählt werden soll
+				\item Deshalb ist die Aktion mit dem höchsten UCB1 Score in der letzten Runde nicht zwingend die beste Wahl
+				\item Die Aktion, welche am meisten gewählt wurde, gab meistens auch den höchsten UCB1 Score
+			\end{itemize} 
 		\end{itemize}
 		
+		\subsection{Minimax vs. Monte Carlo Tree Search}
+		
+		\begin{itemize}
+			\item Beide Algorithmen setzen perfekte Information voraus
+			\item Minimax ist nur für 2-Spieler zero-sum Spiele anwendbar
+			\item MCTS funktioniert für jedes perfekte-Informationsspiel
+			\item Minimax optimiert Payoffs; MCTS optimiert einen Exploitation-Exploration Trade-Off
+			\item In Kontrast zu Minimax, ist MCTS ein "Anytime" Algorithmus
+			\item Monte Carlo Bäume sind asymmetrisch, Minimax Bäume sind symmetrisch
+		\end{itemize}
+	
+		\subsection{MCTS for Zero-Sum Games}
+		
+		\begin{itemize}
+			\item Im Fall von 2 Spielern, Payoff Vektoren sind von der Form ($W, N-W$)
+			\item Spieler 1 maximiert $W$, Spieler 2 maximiert $N-W$ (ignoriert den Exploitation-Teil in UCB1)
+			\item Anders gesagt, könnte Spieler 2 $-W$ minimieren
+			\item Wir können nur die Rewards $W$ für Spieler 1 speichern und die Zeichen für Spieler 2 "flippen"
+			\item Daraus entsteht eine Minimax-ähnliche Variante von MCTS
+		\end{itemize}
+	
+		\paragraph{Convergence to Optimal Play}
+		
+		\begin{itemize}
+			\item Mit genügend Ressourcen konvergiert MCTS zu Minimax
+			\item UCB1 hat logarithmisches Bereuen (\textit{logarithmic regret}), weil nur bestimmte Zeit zur Verfügung steht
+			\item Die Fehlerwahrscheinlichkeit an der Wurzel des Baums konvergiert zu null in polynomialer Rate wenn die Anzahl simulierter Spiele in Richtung unendlich ansteigt.
+			Dieser Beweist bedeutet, unter Annahme von genug Zeit, dass UCB1 der MCTS erlaubt zum Minimax-Baum zu konvergieren und ist demnach optimal.
+		\end{itemize}
 		
 		
 	
