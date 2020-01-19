@@ -169,7 +169,7 @@
 		\subsection{Reasoning about Finite Sequential Games}
 		
 		\begin{itemize}
-			\item Eine \textbf{ultra-schwache Lösung} beweist ob der erste Spieler aus der Initialposition gewinnen, verlieren oder unentschieden machen wir, in Annahme eines perfekten Spiels des Gegners \\
+			\item Eine \textbf{ultra-schwache Lösung} beweist ob der erste Spieler aus der Initialposition gewinnen, verlieren oder unentschieden machen wird, in Annahme eines perfekten Spiels des Gegners \\
 			\textit{Im Beispiel: Schwarz kann einen Gewinn forcieren und hat demnach den First-Mover Vorteil}
 			
 			\item Eine \textbf{schwache Lösung} bietet einen Algorithmus welcher ein komplettes Spiel an perfekten Zügen aus der Initialposition offenbart, in Annahme eines perfekten Spiels des Gegners \\
@@ -431,7 +431,7 @@
 					\item \textbf{Exploration}: Spiele alle Maschinen um möglichst viele Informationen zu sammeln
 					\item \textbf{Exploitation}: Spiele die beobachtet beste Maschine um den erwarteten Gewinn zu maximieren
 				\end{itemize}
-			\item UCB1 bietet die beste Balance zwischen Exploration und Exploitation, es gibt quasi ein statistisches Vertrauensintervall für jede Maschine aus
+			\item UCB1 bietet die beste Balance zwischen Exploration und Exploitation, es gibt quasi ein statistisches Konfidenzintervall für jede Maschine aus
 				\begin{itemize}
 					\item Parameter $c \geq 0$ kontrolliert den Trade-Off zwischen Exploitation (tiefes $c$) und Exploration (hohes $c$)
 				\end{itemize}
@@ -458,7 +458,7 @@
 			\item Kalkuliere das UCB1 ($U_{i}$) von jeder Maschine $i$
 			\item Spiele an der Maschine mit dem höchsten Upper Bound ($U_{i}$)
 			\item Wähle entweder zufällig oder in numerischer Ordnung
-			\item Solange man dies tut, wird der beobachtete Mittelwert für die Maschine sich verschieben und das Vertrauensintervall wird schmaler, aber die Intervalle aller anderen Maschinen werden breiter.
+			\item Solange man dies tut, wird der beobachtete Mittelwert für die Maschine sich verschieben und das Konfidenzintervall wird schmaler, aber die Intervalle aller anderen Maschinen werden breiter.
 			Der Upper Bound einer anderen Maschine wird womöglich grösser als jener der aktuellen Maschine und man wird zu dieser Maschine wechseln.
 			\item Bei Berechnung des UCB1 muss die Vektorkomponente für den aktuellen Spieler gewählt werden! \\
 				Bsp. UCB1($s_{0,1}$) = 0.71, UCB1($s_{0,2}$) = ...
