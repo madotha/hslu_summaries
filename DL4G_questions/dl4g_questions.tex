@@ -565,7 +565,204 @@ Deep Learning for Games}
 			\item Werte der Karten
 			\item Punkte im Spiel
 		\end{itemize}
+	
+		\subsection{Was ist $P$ beim Jassen? (ML)}
 		
+		Performance Measure ($P$)
+		\begin{itemize}
+			\item Anzahl Gewinne / Punkte
+			\item Vergleich mit Daten
+		\end{itemize}
+		
+		\subsection{Was wäre $E$ beim Jassen? (ML)}
+		
+		Experience ($E$)
+		\begin{itemize}
+			\item Spielen
+			\item Daten lesen
+		\end{itemize}
+		
+		\subsection{Welche zwei Task-Typen werden unterschieden? (ML)}
+		
+		Regression \& Classification
+		
+		\subsection{Aus welchen 3 Teilen besteht ein Feed Forward Network?}
+		
+		\begin{itemize}
+			\item Input Layer
+			\item Hidden Layer
+			\item Output Layer
+		\end{itemize}
+	
+		\subsection{Was beinhaltet ein Knoten eines Netzwerks?}
+		
+		\begin{itemize}
+			\item Inputs ($x_{1}$, $x_{2}$, ...)
+			\item Internen Parameter ($\Theta$)
+			\item Funktion, die den Output basierend auf dem Parameter berechnet
+		\end{itemize}
+	
+		\subsection{Was ist eine Epoche?}
+		
+		Ein (1) Training des gesamten Datensets
+		
+		\subsection{Welche Aktivierungsfunktionen gibt es?}
+		
+		\begin{itemize}
+			\item Sigmoid für eine binäre Klassifizierung
+			\item relu für Nodes innerhalb eines Netzwerks
+			\item Aktivierungsfunktion sollte nicht linear sein
+		\end{itemize}
+	
+		\subsection{Was ist eine Kostenfunktion?}
+		
+		\begin{itemize}
+			\item Ist die Funktion, welche durch das Lernen minimiert werden soll
+			\item Häufig wird eine Likelihood-Funktion verwendet
+		\end{itemize}
+	
+		\subsection{Was sollte bei Multi-Class Problemen beachtet werden?}
+		
+		\begin{itemize}
+			\item 1-hot encoded Array für Labels
+			\item Letzter Layer mit softmax Funktion (für Normierung)
+		\end{itemize}
+	
+		\subsection{Was ist ein neuronales Netzwerk?}
+		
+		\begin{itemize}
+			\item Besteht aus mathematischen Knoten
+			\item Knoten haben Inputs und Outputs
+			\item Knoten sind organisiert in Layers
+			\item Knoten berechnen aus Inputs und Parameter einen Output
+			\item Knoten haben lineare Funktion (Gewicht, Bias, Input)
+			\item Auf Funktion wird eine Aktivierungsfunktion angewendet (sigmoid, relu)
+		\end{itemize}
+	
+		\subsection{Wie berechnet ein neuronales Netzwerk das Resultat?}
+		
+		\begin{itemize}
+			\item Parameter werden während dem Training definiert
+			\item Danach nur noch Layer für Layer durchrechnen
+		\end{itemize}
+	
+		\subsection{Was ist eine Loss Funktion?}
+		
+		\begin{itemize}
+			\item Grundsätzlich eine Fehlerfunktion
+			\item Die Funktion, welche während dem Training minimiert werden soll
+		\end{itemize}
+		
+		\subsection{Wie wird ein neuronales Netzwerk trainiert?}
+		
+		\begin{itemize}
+			\item Differenz zwischen berechnetem Wert und gegebenem Label
+			\item Es wird versucht, Differenzen zu minimieren
+		\end{itemize}
+	
+		\subsection{Wie kann das Training auf seine Wirksamkeit überprüft werden?}
+		
+		\begin{itemize}
+			\item Benötigt eine Metrik und Testdaten
+			\item Zum Beispiel: Überprüfen der Accuracy
+		\end{itemize}
+	
+		\subsection{Was ist der Vorteil eines Deep Neuronal Networks?}
+		
+		Features werden automatisch berechnet
+		
+		\subsection{Was ist das Problem mit der optimalen Kapatität? (NN)}
+		
+		\begin{itemize}
+			\item Mit mehr Trainingsdaten wird der Fehler kleiner
+			\item Der Fehler der Testdaten wird dann jedoch immer grösser
+		\end{itemize}
+	
+		\subsection{Welche 3 Klassen gibt es bei VOC Challenges?}
+		
+		\begin{itemize}
+			\item \textbf{Klassifizierung}: Enthält das Bild ein Objekt einer Klasse?
+			\item \textbf{Erkennung}: Welche Klasse haben die Objekte eines BIldes?
+			\item \textbf{Segmentierung}: zu welcher Klasse gehört ein einzelnes Pixel?
+		\end{itemize}
+	
+		\subsection{Was ist die Funktion einer Support Vector Machine?}
+		
+		\begin{itemize}
+			\item Berechnet Features und Deskriptoren
+			\item Berechnet eine Art Fingerabdruck auf dem Bild
+		\end{itemize}
+	
+		\subsection{Was ist die Idee hinter einem Residual Network?}
+		
+		\begin{itemize}
+			\item Layer darf das Ergebnis nicht verschlechtern
+			\item Falls Layer nichts bewirkt, einfach ignorieren
+		\end{itemize}
+	
+		\subsection{Welche Layer-Typen gibt es? (NN)}
+		
+		\begin{itemize}
+			\item Dense / Fully-Connected
+				\begin{itemize}
+					\item Jeder Knoten ist mit jedem Knotem aus dem Layer davor verbunden
+					\item Jede Verbindung hat ein Gewicht
+				\end{itemize}
+			\item Convolutional
+				\begin{itemize}
+					\item Knoten ist nur mit einem Teil der vorherigen Knoten verbunden
+					\item Immer die gleichen Gewichtungen verwenden
+				\end{itemize}
+			\item Polling
+				\begin{itemize}
+					\item Berechnet das Maximum oder den Durchschnitt einer Region
+					\item Macht das Bild kleiner
+				\end{itemize}
+		\end{itemize}
+	
+		\subsection{Was ist Regularisierung?}
+		
+		\begin{itemize}
+			\item Zur Loss-Funktion wird eine Penalty-Funktion addiert
+			\item Penalty-Funktion ist abhängig von den Gewichten
+		\end{itemize}
+	
+		\subsection{Was ist L2-Regularisierung?}
+		
+		Quadrat der Gewichte zur Loss-Funktion addieren
+		
+		\subsection{Welche anderen Regularisierungs-Methoden gibt es?}
+		
+		\begin{itemize}
+			\item Ensemble Method
+				\begin{itemize}
+					\item Abstimmung von mehreren separat trainierten Netzwerken
+				\end{itemize}
+			\item Dropout
+				\begin{itemize}
+					\item Zufällige Knoten mit 0 multiplizieren
+					\item Netzwerk muss mehrere Wege finden
+				\end{itemize}
+			\item Early Stopping
+				\begin{itemize}
+					\item Stoppen, wenn Fehler des Validation-Sets zu wachsen beginnt
+					\item Lernen der benötigten Anzahl Trainingsschritte (Hyperparameter)
+				\end{itemize}
+		\end{itemize}
+	
+		\subsection{Was ist der Unterschied zwischen einem Non-Deep und Deep Neural Network?}
+		
+		\begin{itemize}
+			\item Deep Neural Network erkennt die Features selbstständig
+			\item Es werden nur noch die Daten benötigt
+		\end{itemize}
+	
+		\subsection{Was ist ein Convolutional Neural Network?}
+		
+		\begin{itemize}
+			\item Es sind nicht alle Knoten mit dem vorherigen Layer verbunden
+			\item Die Gewichte werden für jede Position geteilt
+		\end{itemize}
 		
 		
 		
