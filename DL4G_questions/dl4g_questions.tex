@@ -1,0 +1,237 @@
+% Dokumentklassen:
+% article, report, beamer, book, letter etc.
+% https://en.wikibooks.org/wiki/LaTeX/Document_Structure
+\documentclass[a4paper]{article}
+
+% Seitenränder Abstand setzen
+\usepackage[margin=80pt]{geometry}
+
+% Deutsches Sprachpaket
+\usepackage[ngerman]{babel}
+% UTF8 Input Encoding
+\usepackage[utf8]{inputenc}
+
+% Schriftbild ändern
+% https://en.wikibooks.org/wiki/LaTeX/Fonts
+\usepackage[scaled]{helvet}
+% (Sans) Serifen oder anderes
+% \rmdefault: Serifen
+% \sfdefault: Sans-Serifen
+% \ttdefault: Typewriter
+\renewcommand{\familydefault}{\sfdefault}
+% Fontencoding (für ä, ö, ü etc.)
+\usepackage[T1]{fontenc}
+
+% Gänsefüsschen richtig kompilieren
+\usepackage [autostyle]{csquotes}
+\MakeOuterQuote{"}
+
+% Hyperlinks farblos
+\usepackage[hidelinks]{hyperref}
+\hypersetup{colorlinks=false}
+
+% Package für Aufzählungen
+\usepackage{enumitem}
+% kein Abstand zwischen Aufzählungen
+% Sollen doch Abstände vorhanden sein: nach Aufzählung {itemsep=1em}
+\setlist{nosep}
+
+% Grafik-Packages, für Figures, Subfigures und PDF als Import
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{pdfpages}
+
+% Package und Einstellungen für Java-Code-Darstellung
+% Werden erstellt mit \begin{lstlisting}
+\usepackage{listings}
+\usepackage{color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstset{frame=tb,
+	language=Java,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3
+}
+
+\title{\textbf{DL4G - Questionnaire} \\
+Deep Learning for Games}
+\date{\today}
+\author{Maurin D. Thalmann}
+
+\begin{document}
+	
+	\pagenumbering{gobble}
+	\maketitle
+	
+	\begin{center}
+		Dieser Questionnaire wurde basierend auf einer Card2Brain Sammlung erstellt:  \\
+		\href{https://card2brain.ch/box/20190124_dl4g}{Card2Brain - DL4G} (Credits: Cyrille Ulmi)
+	\end{center}
+	
+	\newpage
+	\pagenumbering{arabic}
+	\tableofcontents
+	
+	\newpage
+	
+	\section{Sequenzielle Spiele}
+	
+		\subsection{Was sind die Eigenschaften von endlichen-sequenziellen Spielen?}
+		
+		\begin{itemize}
+			\item Eine endliche Anzahl Spieler mit einer endlichen Anzahl Aktionen
+			\item Die Aktionen werden sequenziell ausgewählt
+			\item Es wird eine endliche Anzahl Runden gespielt
+			\item Spätere Spieler sehen die Aktionen vorheriger Spieler
+		\end{itemize}
+	
+		\subsection{War wird unter Perfect Recall verstanden?}
+		
+		Perfekte Erinnerung an alle vorherigen Züge
+		
+		\subsection{Was ist eine Strategie?}
+		
+		Sagt einem Spieler, welche Aktion im aktuellen Zug auszuführen ist
+		
+		\subsection{Was ist ein Strategie-Profil?}
+		
+		Die ausgewählte Strategie eines Spielers
+		
+		\subsection{Was ist eine Utility- oder Payoff-Function?}
+		
+		Sie berechnet das Resultat für jede Aktion
+		
+		\subsection{Was sind die Komplexitätsfaktoren bei einer Spielanalyse?}
+		
+		\begin{itemize}
+			\item Anzahl Spieler
+			\item Grösse des Suchraums (Anzahl gespielte Züge \& Anzahl mögliche Aktionen)
+			\item Kompetitiv vs. Kooperativ
+			\item Stochastische Spiele (mit Zufall) vs. Deterministisch
+			\item Perfekte vs. imperfekte Information
+		\end{itemize}
+	
+		\subsection{Was ist imperfekte Information?}
+		
+		\begin{itemize}
+			\item Das Spiel konnte nur teilweise beobachtet werden
+			\item Man kennt bspw. nicht die Karten der anderen Spieler
+		\end{itemize}
+	
+		\subsection{Beispiele von Spielen mit perfekten / imperfekten Informationen?}
+		
+		Perfekt (Schach) und imperfekt (Jass, Poker)
+		
+		\subsection{Was ist der Suchraum?}
+		
+		Anzahl gültige Brettpositionen und die untere Grenze des Suchbaums
+		
+		\subsection{Was ist ein Suchbaum?}
+		
+		\begin{itemize}
+			\item Knoten sind Spielpositionen / Spielzustände
+			\item Kanten sind Aktionen / Spielzüge
+			\item Blätter werden durch Payoff-Funktionen definiert
+		\end{itemize}
+	
+		\subsection{Wie funktioniert Backward Induction?}
+		
+		\begin{itemize}
+			\item Den Baum von unten nach oben durcharbeiten (bzw. von rechts nach links)
+			\item Immer den besten Weg für den aktuellen Spieler markieren
+			\item Geeignet für sequenzielle endliche Spiele mit perfekter Information
+		\end{itemize}
+		
+		\subsection{Was bedeutet Rationalität?}
+		
+		Dass der Spieler nicht die schlechtere Alternative wählt
+		
+		\subsection{Welche Arten von Lösungen werden bei endlich-sequenziellen Spielen unterschieden?}
+		
+		\begin{itemize}
+			\item Ultra-schwache Lösung
+			\begin{itemize}
+				\item Bestimmt, ob der erste Spieler einen Vorteil aus der Initialposition hat, ohne die genaue Strategie zu kennen
+				\item Setzt perfektes Spielen des Gegners voraus
+				\item Beispielsweise durch Existenzbeweise in der Mathematik
+			\end{itemize}
+			\item Schwache Lösung
+			\begin{itemize}
+				\item Kann ein komplettes Spiel mit perfekten Zügen aus der Initialposition durchspielen
+				\item Geht von einem perfekten Spiel des Gegners aus
+			\end{itemize}
+			\item Starke Lösung
+			\begin{itemize}
+				\item Kann aus jeder Position heraus perfekte Züge spielen
+				\item Kann auch gewinnen, wenn vorherige Spieler einen Fehler gemacht haben
+			\end{itemize}
+		\end{itemize}
+		
+		\subsection{Was versteht man unter einem Zero-Sum Game (Nullsummenspiel)?}
+		
+		\begin{itemize}
+			\item Der Vorteil für einen Spieler ist zum Nachteil des anderen Spielers
+			\item Die Punktesumme für zwei Strategien ist immer gleich Null
+		\end{itemize}
+	
+		\subsection{Was sind Charakteristiken des Minimax-Algorithmus?}
+		
+		\begin{itemize}
+			\item Gilt nur für ein Nullsummenspiel
+			\item Zwei Möglichkeiten / Ziele
+				\begin{itemize}
+					\item den eigenen Gewinn maximieren
+					\item den Gewinn des Gegners minimieren
+				\end{itemize}
+		\end{itemize}
+	
+		\subsection{Wie funktioniert der Minimax-Algorithmus?}
+		
+		\begin{itemize}
+			\item Wenn der Knoten mir gehört: Aktion wählen, die den Payoff maximiert
+			\item Wenn der Knoten dem Gegner gehört: Aktion wählen, die den Payoff minimiert
+			\item Wenn es ein Endknoten ist: den Payoff berechnen
+		\end{itemize}
+	
+		\subsection{Was versteht man unter Search Tree Pruning?}
+		
+		Nicht relevante Teilbäume können weggelassen werden, reduziert den Rechenaufwand
+		
+		\subsection{Was sind die Regeln von Alpha-Beta Pruning?}
+		
+		\begin{itemize}
+			\item $\alpha$ ist der grösste Wert alles MAX Vorfahren eines MIN Knoten
+			\item $\beta$ ist der kleinste Wert alles MIN Vorfahren eines MAX Knoten
+			\item Den Teilbaum abschneiden, falls er grösser als $\alpha$ oder kleiner als $\beta$ ist
+		\end{itemize}
+		
+		\subsection{Was ist der Vorteil von Alpha-Beta Pruning?}
+		
+		\begin{itemize}
+			\item $b$ = Anzahl Kanter der Knoten und $m$ = Tiefe des Baums
+			\item Ordnung verbessert sich von $O(b^{m})$ nach $O(b^{m/2})$, halbiert also die Tiefe der Suchbäume
+		\end{itemize}
+	
+	\section{Monte Carlo Tree Search}
+	
+		\subsection{Wieso werden Random Walks eingesetzt? (Tree Search)}
+		
+		\begin{itemize}
+			\item 
+		\end{itemize}
+		
+		
+	
+\end{document}
