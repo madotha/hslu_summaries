@@ -505,11 +505,144 @@
 			Dieser Beweist bedeutet, unter Annahme von genug Zeit, dass UCB1 der MCTS erlaubt zum Minimax-Baum zu konvergieren und ist demnach optimal.
 		\end{itemize}
 		
-		
+	\newpage	
 	
 	\section{Information Sets}
 	
+	\begin{figure}[htb!]
+		\centering
+		\includegraphics[width=0.4\textwidth]{img/03_information_sets/information_sets.png}
+		\caption{Spielbeispiel mit imperfekter Information für Spieler 2}
+		\label{fig:infosets_information_sets}
+	\end{figure}
+
+	\begin{itemize}
+		\item In diesem Beispiel kann Spieler 2 nicht zwischen den oberen beiden Zuständen unterscheiden (gestrichelte Box),
+			also ob Spieler 1 im ersten Zug U oder M gewählt hat.
+		\item Er weiss also auch nicht, ob Spieler 1 D gewählt hat oder nicht
+		\item Spieler 1 kann also zufällig zwischen U und M wählen
+	\end{itemize}
+
+		\subsection{Formal Definition of Information Sets}
+		
+		\begin{itemize}
+			\item Ein Information Set von Spieler $i$ ist eine Sammlung von Knoten, welche Spieler $i$ gehören, zwischen welchen ich nicht unterscheiden kann.
+			\item Es müssen einige Regeln erhoben werden, wie ein Information Set aufgebaut sein sollen.
+				Ansonsten könnte Spieler 2 betrügen (bspw. mithilfe von Side-Channel-Informationen).
+				Wir gehen jedoch von Perfect Recall aus, dass sich jeder Spieler seine bisherigen Züge merken kann.
+				\begin{enumerate}
+					\item Alle Knoten in einem Information Set müssen die gleichen Aktionen / Kinder haben.
+					\item Aufgrund meiner Historie (bzw. vorgängigen Aktionen) darf ich keinen Hinweis darauf erhalten, dass ich mich in einem Information Set befinde.
+				\end{enumerate}
+		\end{itemize}
 	
+		\subsection{Perfect vs. Imperfect Information}
+		
+		\begin{itemize}
+			\item In einem perfekten Informaionsspiel besteht jedes Information Set aus genau einem Knoten.
+				Ansonsten ist es ein Spiel mit imperfekter Information.
+			\item Eine (pure) Strategie von Spieler $i$ ist ein kompletter Plan von Aktionen.
+				Sie spezifiziert, was Spieler $i$ tun wird, für jedes seiner Information Sets.
+			\item Backward Induction kann nicht für Spiele mit imperfekter Information angewandt werden
+			\item Stattdessen müssen sequenzielle Spiele mit imperfekter Information in simultane Spiele umgewandelt und mit der Best Response Funktion ein Gleichgewicht gefunden werden.
+		\end{itemize}
+	
+		\subsection{Determinization}
+		
+		\begin{itemize}
+			\item Determinization erlaubt, alle Möglichkeiten für Spiele mit perfekter Information für Spiele mit imperfekter Information nutzen zu können.
+			\item Eine Determinization ist eine Probe aus dem Information Set des aktuellen Spielstands, bspw. für Kartenspiele, ziehe zufällig eine Handvoll Karten an Spieler, welche konsistent ist mit den Beobachtungen des aktuellen Spielers
+			\item Zum Beispiel:
+				\begin{itemize}
+					\item Wende MCTS auf jede Determinization an
+					\item Wähle einen Zug, für welchen die summierte Anzahl Besuche über alle Bäume hinweg maximal ist
+				\end{itemize}
+		\end{itemize}
+	
+		\subsection{Strategy Fusion}
+		
+		Strategy Fusion referenziert auf den Effekt, wenn ein deterministischer "Solver" unterschiedliche Entscheidungen innerhalt desselben Information Set macht
+		
+			\subsubsection{Strategy Fusion Example}
+			
+			\begin{figure}[htb!]
+				\centering
+				\includegraphics[width=0.5\textwidth]{img/03_information_sets/strategy_fusion.png}
+				\caption{Strategy Fusion an einem Information Set Beispiel}
+				\label{fig:infoset_strategy_fusion}
+			\end{figure}
+		
+			\begin{itemize}
+				\item 1-Spieler-Spiel mit zwei Information Sets
+				\item Spieler kann $a_{2}$ wählen für einen sofortigen Payoff von 0.5
+				\item Wählt er $a_{1}$, ist der erwartete Payoff 0
+				\item Die beste Strategie ist demnach $a_{2}$ zu spielen
+				\item Determinization würde von {x,y} sampeln und einen perfekten-Informations-Gewinn spielen
+				\item Aber Sampling vom ersten Information Set würde das zweite Information Set auflösen (unter Annahme von Perfect Recall)
+				\item In einem perfekten Informationsspiel würde der Spieler bei der Wahl von $a_{1}$ immer einen Payoff von +1 erhalten
+				\item Determinization würde hier fälschlicherweise empfehlen, $a_{1}$ zu spielen
+				\item Dies rührt daher, dass wir mit perfekter Information den besten Spielzug von $z_{1}$ und $z_{2}$ bestimmen könnten
+			\end{itemize}
+		
+		\subsection{Information Set Search Trees}
+
+		Strategy Fusion bewältigen, indem ein Baum von Information Sets durchsucht wird, anstelle von Zuständen.
+		(Sampling von {x,y} enthüllt nicht direkt $z_{1}$ oder $z_{2}$)
+
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=0.3\textwidth]{img/03_information_sets/infoset_search_tree.png}
+			\caption{Baum von Information Sets zur Durchsuchung}
+			\label{fig:infoset_infoset_search_tree}
+		\end{figure}
+	
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=0.8\textwidth]{img/03_information_sets/jass_search_tree.png}
+			\caption{Information Set Search Trees am Beispiel von Jass}
+			\label{fig:infoset_jass_search_tree}
+		\end{figure}
+	
+		\subsection{Information Set Monte Carlo Tree Search}
+		
+		\begin{itemize}
+			\item Knoten korrespondieren zu Information Sets aus der Sicht des Root-Spielers
+			\item Kanten korrepondieren zu Aktionen (welche in mindestens einem Zustand verfügbar sind)
+			\item Der Algorithmus beginnt damit, vom Root Information Set zu samplen und blendet alle inkompatiblen Knoten mit der gesampleten Determinization aus
+			\item Dann wird MCTS auf dem perfekten Informationsspiel ausgeführt
+		\end{itemize}
+	
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=0.8\textwidth]{img/03_information_sets/ismcts.png}
+			\caption{Phasen der Information Set Monte Carlo Tree Search}
+			\label{fig:infoset_ismcts}
+		\end{figure}
+	
+		\newpage
+	
+		\paragraph{Necessary Change in Selection Phase}
+	
+		\begin{itemize}
+			\item Für die Selection wird UCB1 verwendet:
+			
+			$U_{i} = \frac{W_{i}}{N_{i}} + c \sqrt{\frac{\ln N_{p}}{N_{i}}}$
+			
+			\item Bei ISMCTS kann sich die Anzahl möglicher Züge an einem gegnerischen Knoten zwischen den Besuchen an diesem Knoten unterscheiden
+			\item Dies korrespondiert zum Subset-Armed-Bandit-Problem: \\
+			Ersetze $N_{p}$ mit der Anzahl Besuchen des Vater-Knotens und wie oft Knoten $i$ verfügbar war für die Selection
+			\item Ohne diese Modifizierung $\uparrow$ werden seltene Züge "übererforscht"
+		\end{itemize}
+	
+		\subsection{Information Set vs. Perfect Information MCTS}
+		
+		\begin{itemize}
+			\item ISMCTS hat den Vorteil, dass ganze "rechnerische Budget" auf einen einzelnen Baum konzentriert wird.
+			Die Determinization-Technik hingegen teilt dies auf mehrere Bäume auf.
+			Dies erlaubt üblicherweise eine tiefere Suche.
+			\item Jedoch kann für einige Spiele, der Branching Faktor drastisch steigen aufgrund einer hohen Anzahl möglicher Züge bei jedem Information Set.
+			Dadurch sinkt die Performance von ISMCTS in den meisten Fällen im Vergleich zur Determinization.
+		\end{itemize}
 	
 	\section{Supervised Machine Learning}
 	
