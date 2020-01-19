@@ -1,16 +1,26 @@
 # Summaries HSLU
 Persönliche Zusammenfassungen von Modulen der HSLU Informatik. Einige sind mehr oder weniger komplett, meines Erachtens nach.
 
-- **MOBLAB** (unfinished, personal)
-- **DL4G** (WIP)
-- **DL4G Questionnaire** (WIP)
-- **MOBPRO** *(finished)* 
-  - Aufgabencode [hier](https://github.com/madotha/mobpro_projects) zu finden
-- **SWDE** *(finished)*
-- **AD** *(finished)*
-- **PMRE** *(finished)*
+## Finished
 
-## Ersichtlichkeit
+- **MOBPRO**
+  - Aufgabencode [hier](https://github.com/madotha/mobpro_projects) zu finden
+- **SWDE**
+- **AD**
+- **PMRE**
+
+## Work in Progress
+
+- **DL4G**
+- **DL4G Questionnaire**
+
+## Unfinished (and probably never will be)
+
+- **MOBLAB** *(persönliche Zusammenfassung von Seminararbeiten)*
+
+
+
+# Download
 
 Neuere Zusammenfassungen sind in LaTeX verfasst.
 Um dabei jeweils die aktuellste Version zu erhalten:
