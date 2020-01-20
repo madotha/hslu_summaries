@@ -185,6 +185,8 @@
 	
 		\paragraph{A Strong Solution to Nim}
 		
+		
+		
 		Algorithmus für einen perfekten Nim Bot:
 		
 		\begin{enumerate}
@@ -513,7 +515,7 @@
 		\centering
 		\includegraphics[width=0.4\textwidth]{img/03_information_sets/information_sets.png}
 		\caption{Spielbeispiel mit imperfekter Information für Spieler 2}
-		\label{fig:infosets_information_sets}
+		\label{fig:03_infosets_information_sets}
 	\end{figure}
 
 	\begin{itemize}
@@ -569,7 +571,7 @@
 				\centering
 				\includegraphics[width=0.5\textwidth]{img/03_information_sets/strategy_fusion.png}
 				\caption{Strategy Fusion an einem Information Set Beispiel}
-				\label{fig:infoset_strategy_fusion}
+				\label{fig:03_infoset_strategy_fusion}
 			\end{figure}
 		
 			\begin{itemize}
@@ -593,14 +595,14 @@
 			\centering
 			\includegraphics[width=0.3\textwidth]{img/03_information_sets/infoset_search_tree.png}
 			\caption{Baum von Information Sets zur Durchsuchung}
-			\label{fig:infoset_infoset_search_tree}
+			\label{fig:03_infoset_infoset_search_tree}
 		\end{figure}
 	
 		\begin{figure}[htb!]
 			\centering
 			\includegraphics[width=0.8\textwidth]{img/03_information_sets/jass_search_tree.png}
 			\caption{Information Set Search Trees am Beispiel von Jass}
-			\label{fig:infoset_jass_search_tree}
+			\label{fig:03_infoset_jass_search_tree}
 		\end{figure}
 	
 		\subsection{Information Set Monte Carlo Tree Search}
@@ -616,7 +618,7 @@
 			\centering
 			\includegraphics[width=0.8\textwidth]{img/03_information_sets/ismcts.png}
 			\caption{Phasen der Information Set Monte Carlo Tree Search}
-			\label{fig:infoset_ismcts}
+			\label{fig:03_infoset_ismcts}
 		\end{figure}
 	
 		\newpage
@@ -646,7 +648,218 @@
 	
 	\section{Supervised Machine Learning}
 	
+		\subsection{Disciplines in Machine Learning}
+		
+		\begin{enumerate}
+			\item Supervised Learning
+				\begin{itemize}
+					\item Dem Algorithmus werden gelabelte Trainingsdaten übergeben
+					\item Er lernt, Labels von bisher unbekannten Beispielen voraussagen zu können
+				\end{itemize}
+			\item Unsupervised Learning
+				\begin{itemize}
+					\item Dem Algorithmus werden ungelabelte Daten übergeben
+					\item Er erkennt und exploitiert die Struktur der Daten
+				\end{itemize}
+			\item Semi-Supervised Learning
+				\begin{itemize}
+					\item Eine Mischung aus supervised und unsupervised ML-Techniken
+					\item Wird meist dann genutzt, wenn nur limitiert gelabelte Daten vorhanden sind
+				\end{itemize}
+			\item Reinforcement Learning
+				\begin{itemize}
+					\item Keine Daten verfügbar, aber der Algorithmus wird von einer Reward Funktion geleitet
+					\item Es sucht das ideale Verhalten, welches den Reward des Agents maximiert
+				\end{itemize}
+		\end{enumerate}
 	
+		\subsection{Example Binary Classification Problem}
+		
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=0.7\textwidth]{img/04_supervised_ml/example_decision_boundary.png}
+			\caption{Decision Boundary am Beispiel von Brustkrebsanalysen}
+			\label{fig:04_superv_ml_example_decision_boundary}
+		\end{figure}
+	
+		\newpage
+	
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=0.6\textwidth]{img/04_supervised_ml/example_confusion_matrix.png}
+			\caption{Beispiel der Confusion Matrix an Beispiel aus Abbildung \ref{fig:04_superv_ml_example_decision_boundary}}
+			\label{fig:04_superv_ml_example_confusion_matrix}
+		\end{figure}
+	
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=\textwidth]{img/04_supervised_ml/example_class_algos.png}
+			\caption{Unterschiede zwischen verschiedenen Classification Algorithmen}
+			\label{fig:04_superv_ml_example_class_algos}
+		\end{figure}
+		
+		\newpage
+		
+		\subsection{Hyperparameters}
+		
+		Hyperparameter stellen die manuelle Konfiguration von Machine Learning Modellen dar.
+		Beispiele von solchen Hyperparametern:
+		
+		\begin{itemize}
+			\item In k-NN ist die Anzahl Nachbarn $k$ ein Hyperparameter
+			\item Grad des Polynoms für Regressionsmodelle
+			\item Regularisierungsparameter
+			\item Kernel für Support-Vektor-Maschinen (SVM)
+			\item Tiefe des Baumes und Variablen-Selektions-Policy in Decision Tree Modellen
+			\item Anzahl Layers, Neuronen, Aktivierungsfunktion in Deep Learning Modellen
+			\item Dropout, Batch Normalisierung, Optimizer etc. in Deep Learning Modellen
+		\end{itemize}
+	\noindent
+		Wenn man als ML-Ingenieur die Hyperparameter-Konfiguration erreichen möchte, welche auf unbekannten Daten am besten performt, kann eine simplistische Train-Test Aufteilung nicht genutzt werden.
+		
+		\subsection{Simplest Machine Learning Workflow}
+		
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=0.6\textwidth]{img/04_supervised_ml/simple_ml.png}
+			\caption{Einfachst möglicher ML Workflow}
+			\label{fig:04_superv_ml_simple_ml}
+		\end{figure}
+		
+		\begin{itemize}
+			\item Daten aufteilen in Trainings- und Test-Set
+			\item Trainiere einen Klassifikator auf dem Trainings-Set
+			\item Evaluation gibt Rückmeldung über Performance auf einem unbekannten Test-Set
+			\item Dies funktioniert nur mit sehr viel Daten und wenn die Hyperparameter fixiert sind
+		\end{itemize}
+	
+		\subsection{Train / Test Splits}
+		
+		\begin{itemize}
+			\item Daten durchmischen (ausser man arbeitet mit Zeitreihen)
+			\item Teile die Daten auf in Training- und Test-Set
+			\item Empfohlene Aufteilung: 70\% Training / 30\% Test
+			\item Training- und Test-Set müsen "disjoint" sein (keine gemeinsamen Elemente haben)
+			\item Baue dein Model auf Basis des Training-Set
+			\item Evaluiere dein Model auf dem Test-Set
+			\item Wenn das Test-Set nicht mehrmals genutzt wurde, gibt es eine Schätzung, wie gut das Modell auf unbekannten Daten performt
+		\end{itemize}
+	
+		\subsection{How to get Fired as a Data Scientist}
+		
+		\begin{itemize}
+			\item Anzahl Nachbarn $k$ ist ein Hyperparameter
+			\item Wir optimieren $k$ indem wir testen: $k$ = 1, ... , 10
+			\item Für jedes $k$ wird...
+			\begin{itemize}
+				\item das Modell auf dem Training-Set trainiert
+				\item die Performance auf dem Test-Set gemessen
+			\end{itemize}
+			\item Hyperparameter $k$ = 6 gewinnt, weshalb wir eine Accuracy von 0.99 auf unbekannten Daten erwarten
+				$\rightarrow$ \textbf{Diese Schlussfolgerung ist gottverdammt noch mal falsch!}
+				\begin{itemize}
+					\item Der Hyperparameter ist gewählt basierend auf der Test-Set-Evaluation, demnach basiert dieser logischerweise auf dem Test-Set
+					\item Das Test-Set Resultat kann nicht mehr als unverfälschte Schätzung angesehen werden
+				\end{itemize}
+		\end{itemize}
+	
+		\subsection{More Complex Evaluation Workflows}
+		
+		\begin{itemize}
+			\item Empfohlene Aufteilung: 60\% Training / 20\% Validation / 20\% Test
+			\item Wie evaluiert man einen ML Klassifizierer korrekt:
+				\begin{enumerate}
+					\item Loop über alle Hyperparameter-Kombinationen, die man ausprobieren möchte
+					\item Trainiere das Modell mit ausgewählten Hyperparameter-Einstellungen auf dem \underline{Training-Set}
+					\item Evaluiere das Modell auf dem \underline{Validation-Set} und messe die Performance
+					\item Wähle das Modell mit der besten Performance als Kandidaten
+					\item Evaluiere das Modell auf dem \underline{Test-Set} für eine finale Performance-Schätzung
+				\end{enumerate}
+			\item Ein solcher Workflow benötigt eine grosse Menge an "guten" Daten
+		\end{itemize}
+	
+		\subsection{Confusion Matrix for Binary Classifiers}
+		
+		Wir stellen uns einen Klassifizierer vor, welcher die Präsenz von Lungenkrebs voraussagen soll:
+		
+		\begin{table}[htb!]
+			\begin{tabular}{l|l|l|}
+				\cline{2-3}
+				n=165                             & \textbf{Predicted: NO} & \textbf{Predicted: YES} \\ \hline
+				\multicolumn{1}{|l|}{\textbf{Actual: NO}}  & 50            & 10             \\ \hline
+				\multicolumn{1}{|l|}{\textbf{Actual: YES}} & 5             & 100            \\ \hline
+			\end{tabular}
+		\end{table}
+	\noindent
+		Das Test-Set besteht aus 165 Patientenaufzeichnungen ($n$ = 165)
+	
+		\begin{itemize}
+			\item 50x wurde vom Klassifizierer NO vorausgesagt, die wahre Aussage war tatsächlich NO \\
+				$\rightarrow$ Der Klassifizierer hatte recht, dies ist ein \textbf{true-negative (TN)}
+			\item 10x wurde vom Klassifizierer YES vorausgesagt, die wahre Aussage war aber NO \\
+				$\rightarrow$ Der Klassifizierer lag falsch, dies ist ein \textbf{false-positive (FP)}
+			\item 5x wurde vom Klassifizierer NO vorausgesagt, die wahre Aussage war aber YES \\
+				$\rightarrow$ Der Klassifizierer lag falsch, dies ist ein \textbf{false-negative (FN)}
+			\item 100x wurde vom Klassifizierer YES vorausgesagt, die wahre Aussage war tatsächlich YES \\
+				$\rightarrow$ Der Klassifizierer hatte recht, dies ist ein \textbf{true-positive (TP)}
+		\end{itemize}
+	
+		\subsection{Accuracy and Error Rate}
+		
+		\begin{table}[htb!]
+			\begin{tabular}{l|l|l|l}
+				\cline{2-3}
+				n=165                                      & \textbf{Predicted: NO} & \textbf{Predicted: YES} &                                   \\ \hline
+				\multicolumn{1}{|l|}{\textbf{Actual: NO}}  & TN = 50                & FP = 10                 & \multicolumn{1}{l|}{\textit{60}}  \\ \hline
+				\multicolumn{1}{|l|}{\textbf{Actual: YES}} & FN = 5                 & TP = 100                & \multicolumn{1}{l|}{\textit{105}} \\ \hline
+				& \textit{55}            & \textit{110}            &                                   \\ \cline{2-3}
+			\end{tabular}
+		\end{table}
+	\noindent
+		Accuracy misst, wie oft der Klassifizierer richtig lag.\\
+		(In diesem Fall: Accuracy = 91\%, Error Rate = 9\%)\\
+		
+		\begin{itemize}
+			\item Accuracy = $\frac{TP + TN}{Total}$\\
+			
+			\item Error Rate = $\frac{FP + FN}{Total} = 1 - Accuracy$
+		\end{itemize}
+	
+		\paragraph{Accuracy for Imbalanced Data}
+		
+		\begin{itemize}
+			\item Man stelle sich mal vor, man möchte eine seltene Krankheit voraussagen
+			\item Ein Test-Set mit 5000 NO- und 20 YES-Aufzeichnungen ist nicht ungewöhnlich...
+			\item Der Klassifizierer zeigt eine fantastische Accuracy von 99.6\% - stimmt? Wohl kaum lol
+			\item $\rightarrow$ Immer auf Klassen-Unausgeglichenheit überprüfen vor Berechnung der Accuracy!
+		\end{itemize}
+	
+		\newpage
+		
+		\subsection{Multiclass Classification}
+		
+		\begin{enumerate}
+			\item Einige Algorithmen sind inhärent Multiclass, wie Neurale Netzwerke oder Entscheidungsbäume
+			\item Für rein binäre Klassifizierer können wir one-vs-rest Techniken anwenden
+				\begin{itemize}
+					\item Isoliere Diamanten gegen den Rest
+					\item Isoliere Herzen gegen den Rest
+					\item Zu guter Letzt, wähle die Klasse wessen Klassifizierer den höchsten Confidence-Score ausgibt
+				\end{itemize}
+			\item Eine dritte Option wäre hierarchische Klassifizierung
+				\begin{enumerate}
+					\item Der erste Klassifizierer entscheiden zwischen "Schieben" oder "nicht Schieben"
+					\item Der zweite Klassifizierer entscheiden zwischen Trumpf oder {Obe-Abe, Une-Ufe}
+					\item etc.
+				\end{enumerate}
+		\end{enumerate}
+	
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=0.6\textwidth]{img/04_supervised_ml/multiclass_confusion_matrix.png}
+			\caption{Beispiel einer Multiclass Confusion Matrix am Beispiel vom Jassen}
+			\label{fig:04_superv_ml_multiclass_confusion_matrix}
+		\end{figure}
 	
 	\section{Neuronal Networks}
 	
