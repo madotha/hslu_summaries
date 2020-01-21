@@ -11,6 +11,9 @@
 % UTF8 Input Encoding
 \usepackage[utf8]{inputenc}
 
+\usepackage{amssymb}
+\usepackage{amsmath}
+
 % Schriftbild ändern
 % https://en.wikibooks.org/wiki/LaTeX/Fonts
 \usepackage[scaled]{helvet}
@@ -40,6 +43,7 @@
 \usepackage{graphicx}
 \usepackage{subcaption}
 \usepackage{pdfpages}
+\usepackage{mwe}
 
 % Package und Einstellungen für Java-Code-Darstellung
 % Werden erstellt mit \begin{lstlisting}
@@ -863,7 +867,197 @@
 	
 	\section{Neuronal Networks}
 	
+		\subsection{AI vs. Machine Learning vs. Deep Learning}
+		
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=0.7\textwidth]{img/05_neuronal_networks/ai_ml_dl.png}
+			\caption{Darstellung der Unterschiede zwischen AI / ML / DL}
+			\label{fig:05_neuronet_ai_ml_dl}
+		\end{figure}
 	
+		\newpage
+		
+		\paragraph{Definition von Machine Learning}
+		
+		Ein Computerprogramm \textbf{lernt} aus der Experience $E$ mit Rücksicht auf eine Klasse von Tasks $T$ und Performance Measures $P$, wenn es Tasks in $T$ durchführt, gemessen an $P$, seine Experience $E$ verbessert.
+		
+		\subsection{Task Types}
+		
+		\begin{itemize}
+			\item Regression: $f : \mathbb{R}^{n} \rightarrow \mathbb{R}$ \\
+			\item Classification: $f : \mathbb{R}^{n} \rightarrow {1,...,k}$
+		\end{itemize}
+	
+		\subsection{Feed forward Network}
+		
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=0.5\textwidth]{img/05_neuronal_networks/feed_forward_network.png}
+			\caption{Feed Forward Network mit seinen verschiedenen Layers}
+			\label{fig:05_neuronet_ff_network}
+		\end{figure}
+	
+		\begin{itemize}
+			\item Jeder Knoten $n_{i}$ im Netzwerk hat...
+				\begin{itemize}
+					\item Inputs $\overline{x} = (x_{1}, ...)$
+					\item Interne Parameter $\Theta$
+					\item Eine Funktion $y = f_{n_{i}}(\overline{x})$, welche den Output berechnet \\
+					(Die Funktion wiederum ist abhängig von den Parametern $\Theta$)
+				\end{itemize}
+		\end{itemize}
+	
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=0.3\textwidth]{img/05_neuronal_networks/ffn_rec_calc.png}
+			\caption{Feed Forward Network mit kleiner Anzahl Knoten}
+			\label{fig:05_neuronet_ffn_rec_calc}
+		\end{figure}
+	
+		Recursive Calculation für ein Feed Forward Network:
+		
+		$$y = f_{0}(a_{1}, a_{2}) = f_{0}(f_{a_{1}}(x_{1}, x_{2}), f_{a_{2}}(x_{1}, x_{2}))$$
+		
+		Tiefere neurale Netzwerke haben lediglich mehr Hidden Layers (we need to go deeper $\rightarrow$ $a_{n1}, a_{n_2}, ...$)
+		
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=0.3\textwidth]{img/05_neuronal_networks/dnn.png}
+		\end{figure}
+		
+		\newpage
+		
+		\subsection{Linear Model}
+		
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=0.4\textwidth]{img/05_neuronal_networks/linear_model.png}
+			\caption{Linear Modell eines linearen Neuralen Netzwerks}
+			\label{fig:05_neuronet_linear_model}
+		\end{figure}
+	
+		$$f_{W,b}(x) = act(W^{T}x + b)$$
+		
+		\subsection{Neural network basics in Keras}
+		
+		Nein, hier sind keine Code-Beispiele aus dem Jupyter-Notebook zu finden.
+		Installiert es selber und schaut euch das Beispiel aus dem Unterricht an.
+		\begin{itemize}
+			\item Lernen wird in \textit{Batches} vollzogen
+			\item Eine \textit{Epoche} ist \underline{ein} Traning über das gesamte (Training-)Daten-Set, die Anzahl Epochen hängt vom Task, der Netzwerkkapazität und den Daten ab.
+			\item Keras ist ein simples Interface für Beispiele und kleine Tasks, grössere Datensets benötigten meist detailliertere Kontrolle
+			\item Keras ist das Standard High-Level Interface von Tensorflow
+		\end{itemize}
+	
+		\subsection{Activation Function}
+		
+		\begin{itemize}
+			\item Sigmoid ist eine gute Wahl für binäre Klassifizierung
+			\item Dazwischenliegende Knoten können andere Aktivierungsfunktionen benutzen
+			\item Aktivierungsfunktionen sollten non-linear sein
+			\item Heutzutage (oder heute?) wird vor allem \textit{relu} als Aktivierungsfunktion für Hidden Layers genutzt
+		\end{itemize}
+	
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=0.8\textwidth]{img/05_neuronal_networks/activation_functions.png}
+			\caption{Verschiedene Aktivierungsfunktionen und deren Kurven}
+			\label{fig:05_neuronet_activation_functions}
+		\end{figure}
+		
+		\newpage
+		
+		\subsection{Loss Function}
+		
+		Loss (oder Kosten-)Funktion ist jene Funktion, welche von den Learning Tasks minimiert werden soll.
+		
+		\subsection{Likelihood}
+		
+		\begin{figure*}[htb!]
+			\centering
+			\begin{subfigure}[b]{0.475\textwidth}
+				\centering
+				\includegraphics[width=\textwidth]{img/05_neuronal_networks/likelihood_01.png}
+			\end{subfigure}
+			\hfill
+			\begin{subfigure}[b]{0.475\textwidth}
+				\centering
+				\includegraphics[width=\textwidth]{img/05_neuronal_networks/likelihood_02.png}
+			\end{subfigure}
+			\vskip \baselineskip
+			\begin{subfigure}[b]{0.475\textwidth}
+				\centering
+				\includegraphics[width=\textwidth]{img/05_neuronal_networks/likelihood_03.png}
+			\end{subfigure}
+			\quad
+			\begin{subfigure}[b]{0.475\textwidth}
+				\centering
+				\includegraphics[width=\textwidth]{img/05_neuronal_networks/likelihood_04.png}
+			\end{subfigure}
+		\end{figure*}
+	\noindent
+		Was ist die Wahrscheinlichkeit (likelihood), dass die Daten (blaue Kurve) vom Modell (grüne Kurve) produziert wurden?
+		Wähle ein Modell, welches diese Likelihood maximiert.
+		
+		\paragraph{Example: Likelihood}
+		
+		\begin{itemize}
+			\item Werfen einer Münze (Heads, Tails): H = 1, T = 0
+			\item $p$: Wahrscheinlichkeit für Head (Modell), die Wahrscheinlichkeit für Tails ist also $(1-p)$ (Bernoulli-Verteilung)
+			\item Was ist die Likelihood für ein spezifisches $p$, nach einigen Beobachtungen?
+			\item Welches ist das beste Modell $p$ welches zu einer maximalen Likelihood korrespondiert?
+			\item Beobachtete Daten:
+				\begin{enumerate}
+					\item HHH
+					\item HHHHHHHHHHHHHHHHHHHHHHHHHH
+					\item HHT
+				\end{enumerate}
+		\end{itemize}
+	
+		\paragraph{Likelihood}
+		
+		\begin{itemize}
+			\item Maximiere die Likelihood, dass die Daten vom Modell produziert wurden (mit Parameter $\Theta$)
+			\item $y_{i}$: Trainingslabel für Punkt $x_{i}$
+			\item $\hat{y_{i}}$: Vorausgesagtes Label für Punkt $x_{i}$ (mit Modell $\Theta$)
+		\end{itemize}
+	
+		$$\underset{\Theta}{max}L( y, \hat{y} ) = \prod_{i=0}^{n} L(y_{i}, \hat{y_{i}})$$
+
+		$$ -\log \prod_{i=0}^{n} L(y_{i}, \hat{y_{i}}) = \sum_{i=0}^{n} -\log L(y_{i}, \hat{y_{i}}) $$
+		
+		\newpage
+		
+		\subsection{Optimal loss function}
+		
+		Für kategorische Probleme (Entscheidungen zwischen 0 und 1), ist die optimale Loss Function die Cross Entropy
+		
+		$$  H_{i} = - ( y_{i} \log( \hat{y_{i}} ) + (1 - y_{i}) \log( 1-\hat{y_{i}} ) ) $$
+		
+		$$ H = - \sum_{i=0}^{n} ( y_{i} \log ( \hat{y_{i}} ) + ( 1 - y_{i} ) \log ( 1 - \hat{y_{i}} ) ) $$
+		
+		\subsection{Multi-class problem}
+		
+		\begin{itemize}
+			\item In Multi-Class Klassifizierung wollen wir in eine von $k$ verschiedenen Klassen entscheiden
+			\item Für Training und Evaluation: Wir nutzen nicht die Labels direkt, stattdessen nutzen wir One-Hot Encoded oder kategorische Vektoren
+		\end{itemize}
+	
+		\begin{table}[htb!]
+			\centering
+			\begin{tabular}{|l|l|}
+				\hline
+				\textbf{Klasse} & \textbf{Vektor} \\ \hline \hline
+				0               & (1, 0, 0, 0)    \\ \hline
+				1               & (0, 1, 0, 1)    \\ \hline
+				2               & (0, 0, 1, 0)    \\ \hline
+				3               & (0, 0, 0, 1)    \\ \hline
+			\end{tabular}
+		\end{table}
+		
+		
+		
 	
 	\section{Deep Neuronal Networks}
 	
