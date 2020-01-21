@@ -1678,9 +1678,193 @@ Q_{n+1} & = \frac{1}{n} \sum_{i=1}^{n} R_i \\
 		
 		\subsection{How would we use Reinforcement Learning for Trump Selection?}
 		
+		\begin{itemize}
+			\item Ziel:
+				\begin{itemize}
+					\item Wähle den Trumpf, welcher den höchsten Wert im gegebenen Zustand gibt
+				\end{itemize}
+			\item Problem:
+				\begin{itemize}
+					\item Im Vergleich zum Multi-Armed Bandit, haben wir jetzt verschiedene Zustände (verschiedene Karten)
+					\item Die Value Funktion $v(s)$ für einen Zustand ist unbekannt
+				\end{itemize}
+			\item Goal (revised): 
+				\begin{itemize}
+					\item Finde die Value Funktion $v(s)$ mittels Reinforcement Learning
+				\end{itemize}
+		\end{itemize}
+	
+		\paragraph{Example for Trump states}
+		
+		\begin{itemize}
+			\item Alle Kartenkombinationen ergäben zu viele Zustände, die Value Funktion kann also nicht explizit in einer Tabelle gespeichert werden.
+			\item Wir können aber wieder Features verwenden, bspw.:
+				\begin{itemize}
+					\item F1: 3 Zahlen pro Farbe oder weniger
+					\item F2: 5 Zahlen pro Farbe oder mehr
+					\item F3: Junge haben
+					\item F4: 9 haben
+					\item F5: Ass haben
+				\end{itemize}
+			\item Kombination ergibt Zustände
+		\end{itemize}
+		
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=0.5\textwidth]{img/08_reinforcement_learning/trump_select.png}
+			\caption{Trumpf-Selektion nach Zustand}
+		\end{figure}
+	
+		\begin{itemize}
+			\item Initialisiere Value $V$ für alle Zustände $S$ zum gleichen Value
+			\item Für eine gegebene Hand:
+				\begin{itemize}
+					\item Wähle den Trump mit der Nutzung einer Methode, die $V$ involviert (greedy, $\varepsilon$-greedy, UCB, andere...)
+					\item Spiele, um den totalen Reward $G$ am Ende des Spiels zu berechnen (Monte Carlo Simulation)
+					\item Aktualisiere $V$
+				\end{itemize}
+		\end{itemize}
+		
+		$$ V(S_t) \leftarrow V(S_t) + \alpha \left[ G_t - V(S_t) \right] $$
+		
+		\begin{itemize}
+			\item Können wir Reinforcement Learning auch vwenden, um die Karten direkt zu nutzen, anstelle von Features?
+			\item Wir können keine Tabelle erstellen, wie könnten wir die Value Funktion stattdessen modellieren?
+		\end{itemize}
+	
+		\newpage
+	
+		\subsection{Policy Evaluation}
+		
+		\begin{itemize}
+			\item Ein kleines \textit{Gridworld} Beispiel
+			\item Was ist der erwartete Reward, wenn wir uns bewegen (bis der Endzustand erreicht ist?)
+			\item Welches ist die beste Policy und wie finden wir diese?
+		\end{itemize}
+	
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=0.5\textwidth]{img/08_reinforcement_learning/policy_eval_gridworld.png}
+			\caption{Policy-Evaluation mittels \textit{Gridworld}}
+		\end{figure}
+	
+		\begin{figure*}[htb!]
+			\centering
+			\begin{subfigure}[b]{0.475\textwidth}
+				\centering
+				\includegraphics[width=\textwidth]{img/08_reinforcement_learning/policy_eval_01.png}
+			\end{subfigure}
+			\hfill
+			\begin{subfigure}[b]{0.475\textwidth}
+				\centering
+				\includegraphics[width=\textwidth]{img/08_reinforcement_learning/policy_eval_02.png}
+			\end{subfigure}
+		\end{figure*}
+		
+		\subsection{Policy Iteration}
+		
+		\begin{itemize}
+			\item Beginne mit einer zufälligen Policy
+				\begin{itemize}
+					\item Berechne die Value Funktion $v$ mit der aktuellen Policy
+					\item Verbessere die Policy mittels Auswahl "gieriger" Aktionen von $v$
+					\item Wiederhole, bis die Policy stabil bleibt
+				\end{itemize}
+		\end{itemize}
+		
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=0.5\textwidth]{img/08_reinforcement_learning/policy_iteration.png}
+			\caption{Policy Iteration visuell dargestellt, wie schön.}
+		\end{figure}
+	
+		\newpage
+			
+		\subsection{Jack's Car Rental - Example}
+		
+		\begin{itemize}
+			\item 2 Auto-Verleih-Standorte, jede mit maximal 20 Autos
+			\item Autos müssen nicht an denselben Standort retourniert werden
+			\item Wenn Autos verfügbar sind, können diese für 10\$ gemietet werden, wenn ein Kunde ankommt
+			\item Jack kann in der Nacht bis zu 5 Autos transportieren, für Kosten von 2\$
+			\item Poisson-Modell, wie die Autos vermietet und retourniert werden, nicht gleich an beiden Standorten
+		\end{itemize}
+	
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=0.7\textwidth]{img/08_reinforcement_learning/car_rental.png}
+			\caption{Visualisierung der Verteilung der Autos auf beide Standorte}
+		\end{figure}
+
+		\subsection{Temporal Difference Learning (TD)}
+		
+		Idee dahinter: Aktualisiere den Value $V$, nachdem nur der nächste Schritt angeschaut wurde.
+		
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=0.7\textwidth]{img/08_reinforcement_learning/td.png}
+			\caption{Temporal Difference Learning}
+		\end{figure}
+	
+		\newpage
+	
+		\subsection{SARSA}
+		
+		\begin{itemize}
+			\item Anstelle der Value Funktion, wollen wir oft den erwarteten totalen Reward aus Aktion $A$ in Zustand $S$ wissen.
+				Dies ist die Q Funktion und repräsentiert den Value eines Zustand-Aktion-Paares.
+			\item Die Aktion in jeder Berechnung ist aufgrund einer Policy gewählt (bspw. $\varepsilon$-Greedy)
+			\item (\textbf{S}tate, \textbf{A}ction) $\rightarrow$ \textbf{R}eward $\rightarrow$ (\textbf{S}tate, \textbf{A}ction)
+		\end{itemize}
+	
+		$$ Q(S_t, A_t) \leftarrow Q(S_t, A_t) + \alpha \left[ R_{t+1} + \gamma Q(S_{t+1}, A_{t+1}) - Q (S_t, A_t) \right] $$
+		
+		\subsection{Q-Learning}
+		
+		\begin{itemize}
+			\item Q-Learning ist SARSA sehr ähnlich, der kleine feine Unterschied ist jedoch, dass es nicht eine Policy nutzt, um den Q-Value zu aktualisieren, sondern es wählt die beste Aktion aus.
+			\item Dabei handelt es sich um einen Off-Policy Algorithmus
+		\end{itemize}
+	
+		$$ Q(S_t, A_t) \leftarrow Q(S_t, A_t) + \alpha \left[ R_{t+1} + \gamma max_{a}Q(S_{t+1}, a) - Q (S_t, A_t) \right] $$
+		
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=0.7\textwidth]{img/08_reinforcement_learning/sarsa_q.png}
+		\end{figure}
+	
+		\newpage
+		
+		\subsection{"Classical" RL in Games}
+		
+		\begin{itemize}
+			\item TD-Gammon (1992)
+				\begin{itemize}
+					\item Temporal Difference Deep Learning
+					\item Neurales Netzwerk für die Value Funktion mit Wahrscheinlichkeit eines Gewinns
+				\end{itemize}
+		\end{itemize}
+	
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=0.55\textwidth]{img/08_reinforcement_learning/td_gammon.png}
+		\end{figure}
+	
+	\section{Example: AlphaGo}
+		
+		\subsection{Uff...}
+		
+
+
+		
 		
 	
 	
 	
+	
+	
+	
+	
+
 	
 \end{document}
