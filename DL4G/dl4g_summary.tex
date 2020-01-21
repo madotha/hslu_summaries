@@ -1055,8 +1055,41 @@
 				3               & (0, 0, 0, 1)    \\ \hline
 			\end{tabular}
 		\end{table}
+	
+		\begin{itemize}
+			\item Der Output soll für jede Klasse eine Wahrscheinlichkeit annähern
+			\item Um dies zu erreichen, nutzen wir die \textit{Softmax} Funktion als Aktivierungsfunktion für den letzten Layer
+		\end{itemize}
+	
+		$$ softmax(z)_{i} = \frac{exp(z_{i})}{\sum_{j} exp(z_{j})} $$
 		
+		\paragraph{Minimizing a function}
 		
+		\begin{itemize}
+			\item Wie minimieren wir eine Funktion?
+			\item Welche Funktionen sind einfacher zu minimieren?
+			\item Welche Eigenschaften muss eine Funktion haben, damit wir das Minimum finden können?
+			\item Ein Weg: Einen Punkt nehmen, ableiten und determinieren auf welcher Seite die Werte hoch- oder runtergehen, für weitere Punkte der Funktion wiederholen.
+		\end{itemize}
+	
+		\subsection{Gradient descend}
+		
+		Wie berechnen wir den Gradienten der Loss Funktion? (Kettenregel, Ableitung)
+		
+		$$ y = f_{0} ( a_1, a_2 ) = f_0 ( f_{a_1} ( x_1, x_2 ), f_{a_2} ( x_1, x_2 ) ) $$
+		
+		\newpage
+		
+		\subsection{Back propagation}
+		
+		Berechnung des Gradienten durch das Netzwerk. Gradient der Loss Funktion, mit Rücksicht auf den Parameter $\Theta$.
+		
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=0.5\textwidth]{img/05_neuronal_networks/back_prop.png}
+			\caption{Berechnungsvorgang in einem neuralen Netzwerk}
+			\label{fig:05_neuronet_back_prop}
+		\end{figure}
 		
 	
 	\section{Deep Neuronal Networks}
@@ -1064,6 +1097,12 @@
 	
 	
 	\section{Convolutional Neuronal Networks}
+	
+	
+	
+	\section{Reinforcement Learning}
+	
+	
 	
 	
 \end{document}
