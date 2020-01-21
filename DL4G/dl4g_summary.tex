@@ -1164,19 +1164,21 @@
 			\centering
 			\includegraphics[width=0.4\textwidth]{img/06_deep_nn/regularization.png}
 		\end{figure}
+	\noindent
+		$\alpha \Omega(\Theta)$: Penalty über die Gewichte der Knoten (die Loss Funktion versucht, diesen zu minimieren, entweder durch Abändern der Gewichte oder der Parameter)
 	
 		\begin{figure*}[htb!]
 			\centering
 			\begin{subfigure}[b]{0.475\textwidth}
 				\centering
 				\includegraphics[width=0.8\textwidth]{img/06_deep_nn/l2_regularization.png}
-				\caption{$L^2$ Regularisierung}
+				\caption{$L^2$ Regularisierung \\ Versucht, jedes Gewicht klein zu halten}
 			\end{subfigure}
 			\hfill
 			\begin{subfigure}[b]{0.475\textwidth}
 				\centering
 				\includegraphics[width=\textwidth]{img/06_deep_nn/l1_regularization.png}
-				\caption{$L^1$ Regularisierung}
+				\caption{$L^1$ Regularisierung \\ Versucht, die Summe aller Gewichte klein zu halten}
 			\end{subfigure}
 		\end{figure*}
 	
@@ -1306,7 +1308,8 @@
 		\subsection{Choosing Optimization Algorithms}
 		
 		\begin{itemize}
-			\item Man muss die Hyperparameter kennen, für die effektive Nutzung von fortgeschrittenen Algorithmen
+			\item Man muss die Hyperparameter kennen, für die effektive Nutzung von fortgeschrittenen Algorithmen.
+				Wenn bereits der Start schlecht gewählt ist, kann es lange dauern, gute Resultate zu finden.
 			\item Mein Rezept (von unserem lieben Tommy Koller)
 				\begin{itemize}
 					\item Beginne mit SGD, bis das Modell konvergiert
@@ -1326,7 +1329,179 @@
 	
 	\section{Convolutional Neuronal Networks}
 	
+		\subsection{Review Questions}
+		
+		\begin{itemize}
+			\item \textbf{Was ist die Kapazität eines Netzwerks?} \\
+				Je tiefer und breiter das Netzwerk ist, desto höher ist die Kapazität.
+			\item \textbf{Was ist Regularisierung und wie wird sie genutzt?} \\
+				Bspw. genutzt bei Overfitting. Das Netzwerk wird "bestraft" mit verschiedenen Gewichten.
+			\item \textbf{Was ist ein Dropout und wie wird es genutzt?} \\
+				Knoten werden "gelöscht" (nur für das Training). Das Gewicht wird mit 0 multipliziert (damit es 0 wird, smart)
+			\item \textbf{Was ist ein (Mini) Batch während des Trainings?} \\
+				Ein Batch definiert, wie viele Daten auf einmal genutzt werden.
+		\end{itemize}
 	
+		\paragraph{Deep convolutional neural networks}
+		
+		Neue Layer-Typen: Convolution und Pooling Layers.
+		Die ursprüngliche Anwendung dieser Layers war für Bild-Klassifizierung.
+		
+		\subsection{ImageNet Challenge - Example}
+		
+		\begin{itemize}
+			\item Erkennung von Objekten (Klassen) in Bildern
+			\item Ein Label pro Bild
+			\item Scoring auf Top-1 und Top-5 Fehlern
+			\item 14'197'122 Bilder, organisiert in WordNet Hierarchie (Nomen)
+			\item 21'841 Synsets (Synonyme)
+			\item Beispiel: 3822 Synsets in Tieren mit 732 Bildern pro Set (im Durchschnitt)			
+		\end{itemize}
+	
+		\subsection{Support Vector Machines}
+		
+		\begin{itemize}
+			\item Berechne die Features eines Bildes
+				\begin{itemize}
+					\item Beispiel: SIFT Features und Deskriptoren, Color Distributions etc.
+					\item Verhalten sich wie \textit{Fingerabdrücke} auf dem Bild 
+				\end{itemize}
+		\end{itemize}
+	
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=0.5\textwidth]{img/07_convolutional_nn/svm_bird_example.png}
+			\caption{Support Vector Machines am Beispiel eines Vogel-Bildes}
+		\end{figure}
+	
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=0.5\textwidth]{img/07_convolutional_nn/svm_example.png}
+			\caption{SVM zur Unterscheidung eines Vogels von einer Katze (oder so ähnlich)}
+		\end{figure}
+	
+		\newpage
+		
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=0.5\textwidth]{img/07_convolutional_nn/nn_birb.png}
+			\caption{Beispiel eines simplen Neuralen Netzwerks zur Erkennung eines Vogels}
+		\end{figure}
+	
+		\subsection{Convolutional Neural Networks}
+	
+		\begin{figure*}[htb!]
+			\centering
+			\begin{subfigure}[b]{0.475\textwidth}
+				\centering
+				\includegraphics[width=0.7\textwidth]{img/07_convolutional_nn/cnn_01.png}
+			\end{subfigure}
+			\hfill
+			\begin{subfigure}[b]{0.475\textwidth}
+				\centering
+				\includegraphics[width=0.7\textwidth]{img/07_convolutional_nn/cnn_02.png}
+			\end{subfigure}
+			\vskip \baselineskip
+			\begin{subfigure}[b]{0.475\textwidth}
+				\centering
+				\includegraphics[width=0.7\textwidth]{img/07_convolutional_nn/cnn_03.png}
+			\end{subfigure}
+			\quad
+			\begin{subfigure}[b]{0.475\textwidth}
+				\centering
+				\includegraphics[width=0.7\textwidth]{img/07_convolutional_nn/cnn_04.png}
+			\end{subfigure}
+		\caption{Convolution / Faltung der Knoten eines Neuralen Netzwerks}
+		\end{figure*}
+	
+		\begin{itemize}
+			\item Die Gewichte $w_{x}$ bleiben diesselben, werden jedoch mit den Inputknoten verrechnet
+			\item Beispiel der letzten Faltung: $w_1 \cdot x_3 + w_2 \cdot x_4 + w_3 \cdot x_5$
+			\item Der Output gibt die Wahrscheinlichkeit jeder Klasse zurück
+		\end{itemize}
+	
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=0.55\textwidth]{img/07_convolutional_nn/cnn_birb.png}
+			\caption{Training of Convolutional Neural Network: \\
+				Zur Bestimmung, dass das Bild der Klasse "Vogel" angehört}
+		\end{figure}
+	
+		\subsection{Deep Learning architectures}
+		
+		\begin{itemize}
+			\item LeNet (1998)
+				%TODO
+			\item AlexNet Architecture (2012)
+				%TODO
+			\item GoogLeNet: Inception Architecture
+				%TODO
+			\item VGG Net
+				%TODO
+		\end{itemize}
+		
+		\paragraph{Residual Networks}
+		
+		\begin{itemize}
+			\item Netzwerk wird tiefer: Wenn es genug Layers gibt, sollte das Hinzufügen von mehr Layers die Performanz nicht mindern
+			\item Layers lernen Identitäts-Transformation nicht sonderlich leicht
+			\item Die Lösung: Residual Connections (Zurückbleibende Verbindungen)
+		\end{itemize}
+	
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=0.35\textwidth]{img/07_convolutional_nn/res_conn.png}
+			\caption{Residual Connections zwischen Layers}
+		\end{figure}
+	
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=0.7\textwidth]{img/07_convolutional_nn/res_net.png}
+			\caption{Das Res-Net}
+		\end{figure}
+	
+		\newpage
+		
+		\begin{figure*}[htb!]
+			\centering
+			\begin{subfigure}[b]{0.475\textwidth}
+				\centering
+				\includegraphics[width=0.7\textwidth]{img/07_convolutional_nn/sparse_connections.png}
+				\caption{Sparse Connections}
+			\end{subfigure}
+			\hfill
+			\begin{subfigure}[b]{0.475\textwidth}
+				\centering
+				\includegraphics[width=0.7\textwidth]{img/07_convolutional_nn/receptive_field.png}
+				\caption{Receptive Field}
+			\end{subfigure}
+			\vskip \baselineskip
+			\begin{subfigure}[b]{0.475\textwidth}
+				\centering
+				\includegraphics[width=0.7\textwidth]{img/07_convolutional_nn/parameter_sharing.png}
+				\caption{Parameter Sharing}
+			\end{subfigure}
+			\quad
+			\begin{subfigure}[b]{0.475\textwidth}
+				\centering
+				\includegraphics[width=0.7\textwidth]{img/07_convolutional_nn/pooling_layers.png}
+				\caption{Pooling Layers}
+			\end{subfigure}
+		\end{figure*}
+	
+		\subsection{Keras}
+		\begin{lstlisting}
+model = Sequential()
+model.add(Conv2D(32, (3, 3), activation="relu", input_shape=(100, 100, 3)))
+model.add(Conv2D(32, (3, 3), activation="relu"))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Flatten())
+model.add(Dense(256, activation="relu"))
+model.add(Dropout(0.5))
+model.add(Dense(10, activation='softmax'))
+		\end{lstlisting}
+	
+	\newpage
 	
 	\section{Reinforcement Learning}
 	
