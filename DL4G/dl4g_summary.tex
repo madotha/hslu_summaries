@@ -1490,6 +1490,7 @@
 		\end{figure*}
 	
 		\subsection{Keras}
+		
 		\begin{lstlisting}
 model = Sequential()
 model.add(Conv2D(32, (3, 3), activation="relu", input_shape=(100, 100, 3)))
@@ -1504,6 +1505,180 @@ model.add(Dense(10, activation='softmax'))
 	\newpage
 	
 	\section{Reinforcement Learning}
+	
+		\begin{itemize}
+			\item Hat ein explizites Ziel
+			\item Kann Aspekte aus der Umgebung heraus spüren
+			\item Kann Aktionen wählen, welche die Umgebung beeinflussen
+			\item Man nimmt normalerweise an, dass eine Ungewissheit in der Umgebung besteht
+		\end{itemize}
+	
+		\subsection{Reinforcement Learning}
+		
+			Was ist es nicht?
+			\begin{itemize}
+				\item Supervised Learning (keine Daten von einem kenntnisreichen externen Supervisor)
+				\item Unsupervised Learning (es geht nicht um's Suchen von Strukturen in ungelabelten Daten)
+			\end{itemize}
+			Eigenschaften:
+			\begin{itemize}
+				\item Verzögertes Feedback
+				\item Zeit ist von Bedeutung
+				\item Aktionen beeinflussen die Umgebung und anschliessend erhaltene Daten
+			\end{itemize}
+		
+		\subsection{Goal of Reinforcement Learning}
+		
+		\begin{itemize}
+			\item \textbf{Reward Hypothese:} 
+				Alle Ziele können anhand der Maximierung des erwarteten kumulativen Rewards beschrieben werden.
+			\item Ein Reward $R_t$ ist ein skalares Feedback, welches angibt, \\
+				wie gut sich der Agent zum Zeitpunkt $t$ schlägt.
+		\end{itemize}
+		
+		\subsection{Basic Concepts}
+	
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=0.5\textwidth]{img/08_reinforcement_learning/basic_concepts.png}
+			\caption{Grundkonzept des Reinforcement Learning}
+		\end{figure}
+	
+		\begin{description}
+			\item[$A_t$] Aktion zum Zeitpunkt $t$
+			\item[$S_t$] Zustand / State zum Zeitpunkt $t$
+			\item[$R_t$] Reward zum Zeitpunkt $t$ (aufgrund von $S_{t-1}$ und $A_{t-1}$)
+			\item[$\pi$] Policy (Decision Making Rule)
+			\item[$\pi(a|s)$] Wahrscheinlichkeit, dass Aktion $a$ in Zustand $s$ gewählt wird
+			\item[$G_t$] Return (kumulativer discounted Reward)
+			\item[$\upsilon(s)$] Wert (erwarteter Return) in Zustand $s$
+		\end{description}
+	
+		$$ G_t = R_{t_{1}} + R_{t+2} + R_{t+3} + \cdots + R_{\tau}$$
+		
+		$$ G_t = R_{t_{1}} + \gamma R_{t+2} + \gamma^{2} R_{t+3} + \cdots = \sum_{k=0}^{\infty} \gamma^{k} R_{t+k+1} $$
+	
+		\newpage
+		
+		\subsection{Types of RL Agents}
+		
+		\begin{itemize}
+			\item \textbf{Value based}
+				\begin{itemize}
+					\item \textit{Keine Policy (implizit)}
+					\item Value Funktion
+				\end{itemize}
+			\item \textbf{Policy based}
+				\begin{itemize}
+					\item Policy
+					\item \textit{Keine Value Funktion}
+				\end{itemize}
+			\item \textbf{Actor Critic}
+				\begin{itemize}
+					\item Policy
+					\item Value Funktion
+				\end{itemize}
+			\item \textbf{Model Free}
+				\begin{itemize}
+					\item Policy und/oder Value Funktion
+					\item \textit{Kein Modell}
+				\end{itemize}
+			\item \textbf{Model}
+				\begin{itemize}
+					\item Policy und/oder Value Funktion
+					\item Modell
+				\end{itemize}
+		\end{itemize}
+	
+		\subsection{Types of Learning}
+		
+		\begin{itemize}
+			\item On Policy
+				\begin{itemize}
+					\item Lernt, während die Policy Funktion beachtet wird, welche gelernt wird
+				\end{itemize}
+			\item Off Policy
+				\begin{itemize}
+					\item Lernt eine Policy Funktion, während eine andere Policy beachtet wird 
+					(bspw. lerne, indem du jemanden über die Schulter schaust, während er tut was du lernen willst)
+					\item Oder lerne, indem mehrere Policies simultan evaluiert werden (bspw. Best Policy, Maximum Policy)
+				\end{itemize}
+		\end{itemize}
+	
+		\paragraph{Revisiting Multi-Armed Bandits}
+		
+		\begin{itemize}
+			\item 1000 Münzen, maximiere den erwarteten Reward
+			\item Single-State Problem
+		\end{itemize}
+	
+		\subsection{Actions and rewards}
+		
+		\begin{itemize}
+			\item Jede Aktion hat einen erwarteten Reward: \\
+			$$ q_{\ast} (a) \circeq \mathbb{E} \left[ R_{t} | A_{t} = a \right] $$
+			\item Wir schätzen den Wert als $Q_t(a)$
+			\item Greedy Aktion: Nimm die Aktion mit dem höchsten geschätzten Wert \\
+			
+			\item Greedy Aktion $\rightarrow$ Ausnutzen des aktuellen Wissens (\textbf{exploiting})
+			\item Non-greedy Aktion $\rightarrow$ Erforschen (\textbf{exploring})
+		\end{itemize}
+	
+		\subsection{Action methods}
+		
+		\begin{itemize}
+			\item $\varepsilon$-greedy Aktion
+				\begin{itemize}
+					\item mit Wahrscheinlichkeit 1-$\varepsilon$: Nimm Aktion mit maximalem $Q_{t}(a)$
+					\item mit Wahrscheinlichkeit $\varepsilon$: Nimm irgendeine Aktion mit gleicher Wahrscheinlichkeit
+				\end{itemize}
+		\end{itemize}
+	
+		\newpage
+	
+		\subsection{General update formula}
+		
+		\begin{equation}
+		\begin{split}
+Q_{n+1} & = \frac{1}{n} \sum_{i=1}^{n} R_i \\
+			& = \frac{1}{n} \big( R_n + \sum_{i=1}^{n-1} R_i \big) \\
+			& = \frac{1}{n} \big( R_n + (n-1) \frac{1}{n-1} \sum_{i=1}^{n-1} R_i \big) \\
+			& = \frac{1}{n} \big( R_n + (n-1) Q_n \big) \\
+			& = \frac{1}{n} \big( R_n + n Q_n - Q_n \big) \\
+			& = Q_n + \frac{1}{n} \big[ R_n - Q_n \big] \\
+		\end{split}
+		\end{equation}
+		
+		$$ NewEstimate \leftarrow OldEstimate + StepSize [Target - OldEstimate] $$
+		
+		\begin{itemize}
+			\item $StepSize$, also $\frac{1}{Steps}$ (bspw. $\frac{1}{100}$)\\
+			
+			\item Würde man nun an einem Automaten 1.1 und an einem anderen 2 Coins bekommen, könnten die Werte folgendermassen gewählt werden:
+			
+			$$ NewEstimate \leftarrow 1.1 + \frac{1}{100} [2 - 1.1]$$
+		\end{itemize}
+	
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=0.6\textwidth]{img/08_reinforcement_learning/e_greedy.png}
+			\caption{Evaluation von $\varepsilon$-Greedy}
+		\end{figure}
+	
+		\paragraph{Better algorithm than e-Greedy?}
+		
+		\begin{itemize}
+			\item Wir haben es doch schon bei MCTS gesehen!
+			\item Den Upper Confidence Bound (UCB) nutzen, um Exploitation und Exploration auszubalancieren
+		\end{itemize}
+	
+		$$ A_t \circeq arg max_a\left[ Q_t(a) + c \sqrt{\frac{\ln t}{N_t(a)}} \right] $$
+		
+		\newpage
+		
+		\subsection{How would we use Reinforcement Learning for Trump Selection?}
+		
+		
 	
 	
 	
