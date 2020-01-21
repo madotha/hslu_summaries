@@ -1094,7 +1094,134 @@
 	
 	\section{Deep Neuronal Networks}
 	
+		\subsection{Review Questions}
+		
+		\begin{itemize}
+			\item \textbf{Was ist ein Neurales Netzwerk?} \\
+				Ein neurales Netzwerk enthält verschiedene Layers, welche verschiedene Funktionen mit verschiedenen Parametern haben.
+				Ein Neuron ist eine lineare Funktion (bspw. \textit{relu} ($w \cdot x + b$ wobei $x$ = Input, Werte des letzten Layers, $w$ = Gewicht der Verbindung, $b$ = Bias (wird vom Netzwerk gelernt)))
+			\item \textbf{Wie berechnet ein Neurales Netzwerk ein Resultat?} \\
+				Es versucht den Loss zu minimieren (mit einer Loss Funktion)
+			\item \textbf{Was ist eine Loss Funktion?} \\
+				Phaha kei Blame.
+				%TODO
+			\item \textbf{Wie wird ein Neurales Netzwerk trainiert?} \\
+				Backpropagation wird genutzt um die Gewichte zu verbessern (funktioniert dank der Kettenregel) und Gradient Descend wird verwendet. Erst wird versucht, die Accuracy zu verbessern, danach die Loss Funktion.
+			\item \textbf{Wie weisst du, dass das Training erfolgreich war?} \\
+				Durch die Resultate der Evaluation mit dem Test-Set.
+		\end{itemize}
 	
+		\subsection{Deeper neuronal Networks}
+		
+		\begin{itemize}
+			\item Deeper $\rightarrow$ Representation Learning
+			\item NN: $Features \rightarrow Outputs$
+			\item DNN: $Raw Input \rightarrow Features \rightarrow Output$
+		\end{itemize}
+		
+		\paragraph{Capacity}
+		
+		Wie gross/tief/weit sollte ein Netzwerk sein?
+		
+		\begin{figure*}[htb!]
+			\centering
+			\begin{subfigure}[b]{0.475\textwidth}
+				\centering
+				\includegraphics[width=0.6\textwidth]{img/06_deep_nn/capacity_01.png}
+			\end{subfigure}
+			\hfill
+			\begin{subfigure}[b]{0.475\textwidth}
+				\centering
+				\includegraphics[width=0.6\textwidth]{img/06_deep_nn/capacity_02.png}
+			\end{subfigure}
+		\end{figure*}
+		
+		\newpage
+		
+		\subsection{Errors}
+		
+		\begin{itemize}
+			\item \textbf{Training Error}: Fehler auf dem Training-Set
+			\item \textbf{Generalization Error}: Lücke zwischen Fehler auf Training- und Test-Set
+			\item \textbf{Underfitting}: Grosser Bias, nicht genug Kapazität, grosser Fehler auf Training- (und Test-)Set
+			\item \textbf{Overfitting}: Grosse Varianz, zu viel Kapazität, kleiner Fehler auf Training-, aber grosser Fehler auf Test-Set $\rightarrow$ Large Generalization Error
+		\end{itemize}
+	
+		\subsection{Optimal Capacity}
+		
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=0.6\textwidth]{img/06_deep_nn/optimal_capacity.png}
+			\caption{Wahl der optimalen Kapazität, um Fehler auszugleichen}
+			\label{fig:06_deep_nn_optimal_capacity}
+		\end{figure}
+	
+		\subsection{Regularization}
+	\noindent
+		Limitiere die Kapazität des Netzwerks, indem eine Parameter Norm Penalty zum Loss hinzugefügt wird.
+		
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=0.4\textwidth]{img/06_deep_nn/regularization.png}
+		\end{figure}
+	
+		\begin{figure*}[htb!]
+			\centering
+			\begin{subfigure}[b]{0.475\textwidth}
+				\centering
+				\includegraphics[width=0.8\textwidth]{img/06_deep_nn/l2_regularization.png}
+				\caption{$L^2$ Regularisierung}
+			\end{subfigure}
+			\hfill
+			\begin{subfigure}[b]{0.475\textwidth}
+				\centering
+				\includegraphics[width=\textwidth]{img/06_deep_nn/l1_regularization.png}
+				\caption{$L^1$ Regularisierung}
+			\end{subfigure}
+		\end{figure*}
+	
+		\newpage
+	
+		\paragraph{Other regularization}
+		
+		\begin{itemize}
+			\item Ensemble Methods
+				\begin{itemize}
+					\item Nutze einige Modelle, welche separat trainiert werden, und stimme dann auf das Resultat ab
+				\end{itemize}
+			\item Dropout
+				\begin{itemize}
+					\item Entferne einen zufälligen Knoten, aus einem Hidden Layer, oder einen Eingabewert \\
+						(Im Grunde genommen, multipliziere das Resultat dieses Knoten mit 0)
+					\item Das Training lernt alle Sub-Netzwerke des originalen Netzwerks
+				\end{itemize}
+			\item Early Stopping
+				\begin{itemize}
+					\item Stoppe, wenn der Fehler auf dem Validation-Set wieder zu wachsen beginnt
+					\item Im Grunde genommen, lerne die benötigte Anzahl Training-Steps (als Hyperparameter)
+				\end{itemize}
+		\end{itemize}
+	
+		\begin{figure*}[htb!]
+			\centering
+			\begin{subfigure}[b]{0.475\textwidth}
+				\centering
+				\includegraphics[width=\textwidth]{img/06_deep_nn/dropout.png}
+				\caption{Dropout Regularisierung}
+			\end{subfigure}
+			\hfill
+			\begin{subfigure}[b]{0.475\textwidth}
+				\centering
+				\includegraphics[width=\textwidth]{img/06_deep_nn/early_stopping.png}
+				\caption{Early Stopping Regularisierung}
+			\end{subfigure}
+		\end{figure*}
+		
+		
+	
+	
+		
+		
 	
 	\section{Convolutional Neuronal Networks}
 	
