@@ -9,10 +9,11 @@ Persönliche Zusammenfassungen von Modulen der HSLU Informatik. Einige sind mehr
 - **AD**
 - **PMRE**
 - **DL4G Questionnaire**
+- **DL4G** (ohne AlphaGo Teil aus SW11)
 
 ## Work in Progress
 
-- **DL4G**
+
 
 ## Unfinished (and probably never will be)
 
