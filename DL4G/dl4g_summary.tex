@@ -1217,11 +1217,112 @@
 			\end{subfigure}
 		\end{figure*}
 		
+		\subsection{Optimization for Deep Models}
 		
+		\begin{itemize}
+			\item Lernen ist nicht gleich Optimierung
+				\begin{itemize}
+					\item Normalerweise sind wir an einer Performance Measure interessiert (auf dem Test-Set)
+					\item Aber wir optimieren eine Loss Function (auf dem Training-Set)
+				\end{itemize}
+			\item Wir möchten den erwarteten Loss über die echte Daten-generierende Funktion optimieren (aber wir haben nur das Training-Set)
+		\end{itemize}
 	
+		\subsection{Batch algorithms}
+		
+		\begin{itemize}
+			\item Die genutzten Properties in der Optimierung (bspw. Gradient) sind Erwartungen über das Training-Set hinweg
+			\item Erwartungen über das gesamte Daten-Set zu berechnen ist sehr zeitintensiv
+			\item Wir können diese auch berechnen, indem wir zufällig Sampling im Daten-Set betreiben \\ 
+				$\rightarrow$ Minibatch Algorithmen
+		\end{itemize}
 	
+		\newpage
+	
+		\paragraph{What minibatch size to use?}
 		
+		\begin{itemize}
+			\item Grosse Batches $\rightarrow$ bessere Schätzungen, aber mit non-linear steigenden Kosten
+			\item Sehr kleine Batches nutzt die Hardware nicht aus
+			\item Speicher kann die Batch-Grösse in paralleler Verarbeitung limitieren (bspw. auf der GPU)
+			\item Kleine Batch-Grössen können einen Regularisierungs-Effekt bieten
+		\end{itemize}
+	
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=0.5\textwidth]{img/06_deep_nn/approx_mini.png}
+			\caption{Geschätzte Minimierung mit alternierendem $x$}
+			\label{fig:06_deep_nn_approx_minimization}
+		\end{figure}
+	
+		\subsection{Stochastic Gradient Descent}
 		
+		\begin{itemize}
+			\item Während man \textit{nicht stoppt}, mache folgendes:
+				\begin{itemize}
+					\item Sample einen Minibatch von $m$ Beispielen $x^i, y^i$
+					\item Berechne die Gradient-Schätzung: \\
+					$\hat{g} \leftarrow \frac{1}{m} \triangledown_\theta \sum_{i} L( f ( x^{(i)}; \theta ) , y^{(i)} )$ \\
+					\item Wende das Update / Aktualisierung an: \\
+					$ \theta \leftarrow \theta + \epsilon \hat{g} $ \\
+				\end{itemize}
+			\item Üblicherweise verfällt die Learning-Rate über eine Zeit \\
+			$ \epsilon_{k} = ( 1 - \alpha ) \epsilon_{0} + \alpha \epsilon_{\tau} $
+		\end{itemize}
+	
+		\subsection{Momentum}
+		
+		Berechne den Durchschnitt von vergangenen Gradienten
+		
+		$$ \upsilon \leftarrow \alpha \upsilon - \epsilon \triangledown_\theta (\frac{1}{m} \sum_{i} L ( f ( x^{(i)}; \theta ), y^{(i)} ) )$$
+		
+		$$ \theta \leftarrow \theta + \upsilon $$
+	
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=0.35\textwidth]{img/06_deep_nn/momentum.png}
+		\end{figure}
+	
+		\newpage
+		
+		\subsection{Adaptive Learning Rates}
+	
+		\begin{itemize}
+			\item AdaGrad
+				\begin{itemize}
+					\item Skaliert die individuellen Learning-Raten umgekehrt nach quadratischem Historic Gradient
+					\item Grösserer Fortschritt für Richtungen mit schmalen Gradienten
+				\end{itemize}
+			\item RMSProp
+				\begin{itemize}
+					\item Ähnlich, aber die Gradienten-Akkumulation wird mit exponentiell gewichtetem Moving Average gemacht
+				\end{itemize}
+			\item Adam
+				\begin{itemize}
+					\item Kombination von RMSProp mit Momentum
+				\end{itemize}
+		\end{itemize}
+		
+		\subsection{Choosing Optimization Algorithms}
+		
+		\begin{itemize}
+			\item Man muss die Hyperparameter kennen, für die effektive Nutzung von fortgeschrittenen Algorithmen
+			\item Mein Rezept (von unserem lieben Tommy Koller)
+				\begin{itemize}
+					\item Beginne mit SGD, bis das Modell konvergiert
+					\item Dann nutze AdaGrad oder Adam, um die Konvergenz schneller und robuster zu machen
+				\end{itemize}
+		\end{itemize}
+	
+		\paragraph{Additional Data (für den Jass)}
+		
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=0.5\textwidth]{img/06_deep_nn/additional_data.png}
+			\caption{Weiss au ned so gnau was das jetz sell}
+		\end{figure}
+		
+	\newpage
 	
 	\section{Convolutional Neuronal Networks}
 	
