@@ -51,22 +51,32 @@
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
 \definecolor{mauve}{rgb}{0.58,0,0.82}
-\lstset{frame=tb,
-	language=Java,
-	aboveskip=3mm,
-	belowskip=3mm,
-	showstringspaces=false,
-	columns=flexible,
-	basicstyle={\small\ttfamily},
-	numbers=none,
-	numberstyle=\tiny\color{gray},
-	keywordstyle=\color{blue},
-	commentstyle=\color{dkgreen},
-	stringstyle=\color{mauve},
-	breaklines=true,
-	breakatwhitespace=true,
-	tabsize=3
-}
+\lstset{ %
+	language=R,                     % the language of the code
+	basicstyle=\footnotesize,       % the size of the fonts that are used for the code
+	numbers=left,                   % where to put the line-numbers
+	numberstyle=\tiny\color{gray},  % the style that is used for the line-numbers
+	stepnumber=1,                   % the step between two line-numbers. If it's 1, each line
+	% will be numbered
+	numbersep=5pt,                  % how far the line-numbers are from the code
+	backgroundcolor=\color{white},  % choose the background color. You must add \usepackage{color}
+	showspaces=false,               % show spaces adding particular underscores
+	showstringspaces=false,         % underline spaces within strings
+	showtabs=false,                 % show tabs within strings adding particular underscores
+	frame=single,                   % adds a frame around the code
+	rulecolor=\color{black},        % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. commens (green here))
+	tabsize=2,                      % sets default tabsize to 2 spaces
+	captionpos=b,                   % sets the caption-position to bottom
+	breaklines=true,                % sets automatic line breaking
+	breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+	title=\lstname,                 % show the filename of files included with \lstinputlisting;
+	% also try caption instead of title
+	keywordstyle=\color{blue},      % keyword style
+	commentstyle=\color{dkgreen},   % comment style
+	stringstyle=\color{mauve},      % string literal style
+	escapeinside={\%*}{*)},         % if you want to add a comment within your code
+	morekeywords={*,...}            % if you want to add more keywords to the set
+} 
 
 \title{\textbf{Zusammenfassung DASB} \\
 Data Science Basics}
@@ -82,6 +92,40 @@ Data Science Basics}
 	\pagenumbering{arabic}
 	\tableofcontents
 	
+	\newpage
+	
+	\section{Learning Objectives}
+	
+		\paragraph{Introduction to Data Science}
+		
+			\begin{itemize}
+				\item Define the term "Data Science" and differentiate it from similar concepts such as big data, data mining, OLAP, predictive modeling, data analysis
+				\item Describe why and how value is created from data, especially in form of processes
+				\item Describe the skills and activities of a data science professional
+				\item Describe possible applications of data science
+			\end{itemize}
+		
+		\paragraph{Intro to R and Exploratory Data Analysis (EDA)}
+		
+			\begin{itemize}
+				\item Define the term "Exploratory Data Analysis" and explain why it is a fundamental part of making data science
+				\item Give a short introduction to R and present its main features
+				\item Indicate the key actors and actions that compose EDA and how they are related to the data sources considered
+				\item Indicate different ways of importing data into R for analysis and how to check for their quality
+				\item Describe the main operations available in R (through libraries) to manipulate data and prepare it for the analysis
+			\end{itemize}
+		
+		\paragraph{ggplot2 and its usage in EDA}
+		
+			\begin{itemize}
+				\item Define the role of graphical representations in the "Exploratory Data Analysis" and explain why it is a fundamental tool to make it effective
+				\item Give a short introduction to ggplot2 and its features
+				\item Ddescribe the main way of working of ggplot2 and how to compose complex graphs (e.g.: representing more than 3 variables in a single graph, for multidimensional data)
+				\item Explain the role of the facets and how they can support the representation of "partial" relationships
+				\item Indicate the role of the coordinates in the graph usage for EDA
+			\end{itemize}
+		
+		
 	\newpage
 	
 	\section{Introduction to Data Science}
@@ -221,9 +265,235 @@ Data Science Basics}
 	
 		\subsection{Intro to R}
 		
+		\begin{itemize}
+			\item \textbf{R} ist a software and programming language for statistical applications and graphics
+			\item It's an implementation of the programming language S, with some extensions
+			\item It provides functions for linear/non-linear modelling, classical statistical tests, time-series analysis, classification, clustering etc.
+			\item \textbf{RStudio} is an integrated development environment (IDE) for R
+		\end{itemize}
+	
+			\subsubsection{Basic Operation in R}
+			
+			\begin{itemize}
+				\item Assignment:\\
+					\texttt{my\_var <- 46, nr <- 38} \\
+					(You can also use \texttt{copy my\_var = 46}, but it is not suggested)
+				\item Printing (explicit and implicit): every line with only a name of an object \\
+					Implicit: \texttt{my\_var} \\
+					Explicit using functions like print: \texttt{print(my\_var)}
+				\item Arithmetic operators: \\
+					\texttt{4 + 5} \\
+					\texttt{2 \^{} 3 - 7 \%\% 3 - 2 \^{} (3 - 7 \%\% 3)} etc. etc. etc.
+				\item Control flow, conditionals, loops can be used as in any other language \\
+					\texttt{for (i in 1:10) {print(i)}} \\
+					\texttt{while (nr < 42) {print("We have "+str(nr)+" : still space..."); nr=nr+1}}
+			\end{itemize}
+	
+		\subsection{What is EDA}
 		
+		\begin{itemize}
+			\item Exploratory Data Analysis is the
+				\begin{itemize}
+					\item critical process of performing initial investigations on data so as to
+						\begin{itemize}
+							\item discover patterns
+							\item spot anomalies
+							\item test hypothesis
+							\item check assumptions
+						\end{itemize}
+					\item with the help of \textbf{summary statistics} and \textbf{graphical representations}
+				\end{itemize}
+		\end{itemize}
+	\noindent
+		The use of a statistical model is not mandatory, in this step, even if it is normally adopted to test hypotheses and check assumptions.
+		For anomalies and patterns discovery, correlations (represented into the correlation matrix) and distribution (represented with box and whisker diagrams) are the usual approaches.
 		
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=.7\textwidth]{img/sw02/eda_context.png}
+			\caption{EDA in the context of Data Science}
+		\end{figure}
+	
+			\newpage
+	
+			\subsubsection{EDA process "in practice"}
+			
+			\begin{itemize}
+				\item EDA is an iterative cycle
+				\item Process:
+					\begin{itemize}
+						\item Generate questions about the data
+						\item Search for answers by visualizing, transforming and modelling the data
+						\item Use the insights to refine the questions and/or generate new questions
+					\end{itemize}
+				\item Start with many ideas...
+				\item some will be evidently useless and other will end up in a dead end
+				\item a few of them will help to have a better understanding of the data/process
+				\item repeat with generating other ideas until the insight is enough
+				\item then you can apply the model to the data for forecasting and process explanation
+				\item EDA also allows you to verify/test the quality of your data
+			\end{itemize}
+		
+		\subsection{Data Import / Transform / Link}
+		
+			\subsubsection{Data Import}
+			
+			\begin{itemize}
+				\item R provides importing functions, depending on the format of the data source:
+					\begin{itemize}
+						\item CSV / TSV / delimited texts: \texttt{read\_csv()} \& \texttt{read\_csv2()} (semicolon), \texttt{read\_tsv()}, \texttt{read\_delim()}
+						\item Fixed width columns: \texttt{read\_fwf()} \& \texttt{read\_table()}
+						\item Logs (e.g. webserver logs): \texttt{read\_log()}
+					\end{itemize}
+			\end{itemize}
+			These are all similar in terms of parameters, examples:
+			
+			\begin{lstlisting}
+read_delim(file, delim, quote = "\", escape_backslash = FALSE, escape_double = TRUE,
+col_names = TRUE, col_types = NULL, locale = default_locale(), na = c("", "NA"),
+quoted_na = TRUE, comment = "", trim_ws = FALSE, skip = 0, n_max = Inf, guess_max =
+			\end{lstlisting}
+			
+			\subsubsection{Data Transform (example dataset)}
+		
+			Example dataset loaded from: \href{https://archive.ics.uci.edu/ml/machine-learning-databases/auto-mpg/}{\textit{\underline{Auto MPG Data Set}}}
+
+			\begin{lstlisting}
+> library(tidyverse)
+> DS <- read.table("C:/Users/JumpStart/Downloads/auto-mpg.data",
+quote="\", comment.char="")
+> names(DS) <-
+c("mpg","cylinders","displacement","horsepower","weight","acceleration","
+model year","origin","car name")
+> DS <- as_tibble(DS); attach(DS); View(DS)
+			\end{lstlisting}
+			
+			\newpage
+			
+			\subsubsection{Data Transform}
+		
+			\begin{itemize}
+				\item Filter rows with \texttt{filter()}
+					\begin{itemize}
+						\item subset observations based on their values \\
+						\texttt{filter(DS, weight > 3500)} or \texttt{filter(DS, DS\$weight > 3500)}
+					\end{itemize}
+				\item Arrange rows with \texttt{arrange()}
+					\begin{itemize}
+						\item changes the order of rows \\
+						\texttt{arrange(DS, desc(DS\$acceleration))}
+					\end{itemize}
+				\item Select columns with \texttt{select()}
+					\begin{itemize}
+						\item Subset columns with position and/or negative condition (by name or index) \\
+						\texttt{select(DS, -1)} \\
+						\texttt{select(DS, 2, 3, 4)} \\
+						\texttt{select(DS, c(mpg, 5))}
+					\end{itemize}
+				\item Add new variables with \texttt{mutate()} 
+					\begin{itemize}
+						\item Allow to create new dimension(s) \\
+						\texttt{mutate(DS, a4w = acceleration/weight, pre75 = as.numeric(DS\$'model year' < 75))}
+					\end{itemize}
+				\item Grouped summaries with \texttt{summarise()}
+					\begin{itemize}
+						\item Allows to compute aggregate metrics \\
+						\texttt{summarise(group\_by(DS, 'model year'), mean\_display = mean(displacement), sd\_displ = sd(displacement), n=n()}
+					\end{itemize}
+			\end{itemize}
+			\vspace{1em}
+			\begin{itemize}
+				\item All verbs work similarly:
+					\begin{itemize}
+						\item The first argument is a dataframe
+						\item The subsequent arguments describe what to do with the data frame, using the variable names (without quotes)
+						\item The result is a new data frame
+					\end{itemize}
+			\end{itemize}
+		
+			\subsubsection{Data "Linkage"}
+			
+			Some prices of cars of the 70's: \href{http://www.thepeoplehistory.com/70scars.html}{\textit{\underline{70's Cars}}}. \\
+			This data is imported into a new tibble and we will try to use it for creating another View for exploring the relationship between cost, year, power and mpg.
+			
+			\begin{lstlisting}
+> car_cost <-read_delim("C:/Users/JumpStart/switchdrive/__/DASB/SW02/car_197x_costs_2.csv", 
+		delim = "-", 
+		escape_double = FALSE, 
+		na = "NA", 
+		trim_ws = TRUE, 
+		col_types = cols(`Car Name` = col_factor(), 
+		Price = col_character(), 
+		Location = col_character(), 
+		`Matriculation Year` = col_integer()))
+> car_cost <- as_tibble(car_cost)
+> car_cost <- mutate(car_cost, Location = sapply(Location,as.factor))
+> car_cost <- mutate(car_cost, Price = as.integer(str_replace(str_sub(Price, 2, -1),",","")))
+> View(car_cost)
+			\end{lstlisting}
+	
+			\begin{figure}[htb!]
+				\centering
+				\includegraphics[width=.7\textwidth]{img/sw02/data_linkage.png}
+				\caption{R functions to link data frames with each other}
+			\end{figure}
+	
+			\newpage
+		\noindent
+			There are different types of R functions for linking tibbles/dataframes (\textasciitilde datasets)
+					\begin{itemize}
+						\item \textbf{Mutating} joins allows to combine variable from two tables
+							\begin{itemize}
+								\item \texttt{inner\_join(x, y, by = keys)} \\
+								matches pairs of observations whenever their keys are equal
+								\item Outer join keeps observations that appear in at least one of the tables.
+									There are three types of outer joins:
+										\begin{itemize}
+											\item \texttt{left\_join(x, y, by = keys)} \\
+												keeps all observations in x
+											\item \texttt{right\_join(x, y, by = keys)} \\
+												keeps all observations in y
+											\item \texttt{full\_join(x, y, by = keys)} \\
+												keeps all observations in x and y
+										\end{itemize}
+							\end{itemize}
+						\item \textbf{Filtering} joins allow to restrict the set of row from the 1$^{st}$ table
+							\begin{itemize}
+								\item \texttt{semi\_join(x, y, by = keys)} \\
+									keeps all observations in x that have a match in y
+								\item \texttt{anti\_join(x, y, by = keys)} \\
+									drops all observations in x that have a match in y
+							\end{itemize}
+						\item \textbf{Set Operations} (work on complete rows, comparing each variable values.
+							Inputs needs the same variables, for treating observations like sets)
+							\begin{itemize}
+								\item \texttt{intersect(x, y)} \\
+									return only observations in both x and y
+								\item \texttt{union(x, y)} \\
+									return unique observations in x and y
+								\item \texttt{setdiff(x, y)} \\
+									return observations in x, but not in y
+							\end{itemize}
+					\end{itemize}
+				
+			\subsubsection{Applying data loading/transforming/linking}
+			
+			\begin{itemize}
+				\item Find one or more data sources you are interested into (\href{https://archive.ics.uci.edu/ml/datasets.php}{UCI ML Repository} / \href{https://www.kaggle.com/datasets}{Kaggle})
+				\item Start the EDA "mindset":
+					\begin{enumerate}
+						\item What I believe about the data / what I would like to discover \\
+							$\rightarrow$ Make hypotheses and formulate assumptions
+						\item Think how this can be supported by data $\rightarrow$ experiment
+						\item Run the experiment to verify
+						\item Acquire new knowledge that can help you improve step 1
+					\end{enumerate}
+				\item Repeat the process at least 3 times \\
+				\textit{(Optional: short report of the process you followed, document it in a short presentation)}
+			\end{itemize}
+		
+	\section{ggplot2 and its usage in EDA}
 	
 	
-	
+				
 \end{document}
