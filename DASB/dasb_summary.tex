@@ -688,6 +688,125 @@ ggplot(diamonds, aes(x=carat, y=price, color=cut)) +
 	
 	\section{Intro to Forecasting}
 	
+		\subsection{Indication}
 		
+		\begin{itemize}
+			\item Forecast: the ability to use a set of variables for predicting another one
+			\item Predictors $\rightarrow$ $F(x)$ $\rightarrow$ Output
+			\item Can assume two forms:
+				\begin{itemize}
+					\item Continuous Output $\rightarrow$ Regression
+					\item Discrete (Categorical) Output $\rightarrow$ Classification
+				\end{itemize}
+			\item It uses similar approaches, but with a different result
+			\item The function $F(x)$ is called the model.
+				Can be used for two goals:
+				\begin{itemize}
+					\item Pure prediction: care only for the forecast
+					\item Interpretation: care of the existing relationship, to better understand the phenomena
+				\end{itemize}
+		\end{itemize}
+	
+		\subsection{Linear Modeling}
+		
+			\subsubsection{Modeling}
+			
+			\begin{itemize}
+				\item Simplest form of a model is the Linear Model
+				\item With one predictor (bidimensional space) represent the equation of a line: \\
+					$ y = F(x) = \beta_0 + \beta_1 \cdot x $ \\
+			\end{itemize}
+		
+			\begin{minipage}[c]{0.4\textwidth}
+				\centering
+				\includegraphics[width=\textwidth]{img/sw08/linear_equations.png}
+			\end{minipage}
+			\hfill
+			\begin{minipage}[c]{0.5\textwidth}
+				\centering
+				\includegraphics[width=\textwidth]{img/sw08/linear_model.png}
+			\end{minipage}
+		
+			\begin{itemize}
+				\item With more predictors (multidimensional space or Hyperspace), \\
+					the model can be seen as a hyperplane: \\
+					$ y = F(x) = \beta_0 + \beta_1\cdot + \beta_2 \cdot x_2 + \dots + \beta_n \cdot x_n $
+			\end{itemize}
+		
+			\begin{figure}[htb!]
+				\centering
+				\includegraphics[width=.65\textwidth]{img/sw08/hyperplane.png}
+			\end{figure}
+		
+			\newpage
+			
+			\subsubsection{Model Identification}
+			
+			Following steps need to be done
+				\begin{itemize}
+					\item Define the predictors set and the output variables (also using correlation)
+						\begin{itemize}
+							\item $x = \dots$, $y = \dots$
+						\end{itemize}
+					\item Create the model
+						\begin{itemize}
+							\item \texttt{model <- lm(y \textasciitilde{} x, data = d)}
+						\end{itemize}
+					\item Inspect the model
+						\begin{itemize}
+							\item Parameters $\beta_0, \beta_1, \beta_2, \dots, \beta_n$
+						\end{itemize}
+					\item Verify that the model is "trustable"
+						\begin{itemize}
+							\item P-values of each $\beta_a$, everyone should be under 0.05 (5\%)
+						\end{itemize}
+				\end{itemize}
+			
+			\subsubsection{Prediction}
+			
+			\begin{itemize}
+				\item It is natural to interpret the model for regression:
+					\begin{itemize}
+						\item Given a single set of predictor values $X$ (point) $\rightarrow$ compute the value of the output ($y$)
+					\end{itemize}
+				\item but what about for classification?
+					\begin{itemize}
+						\item We need to define a way to transform the output of the linear model to our output categories
+						\item This is done by the logistic function
+					\end{itemize}
+				\item How to do predictions:
+					\begin{itemize}
+						\item \texttt{Pred <- predict(model, data = d2)}
+					\end{itemize}
+			\end{itemize}
+				
+			\begin{figure}[htb!]
+				\centering
+				\includegraphics[width=.6\textwidth]{img/sw08/prediction.png}
+			\end{figure}
+		
+			\subsubsection{Model Evaluation}
+			
+			\begin{itemize}
+				\item We need to evaluate models based on performances
+					\begin{itemize}
+						\item Regression $\rightarrow$ the sum of squared errors (RSS $\rightarrow$ residual sum of squares)
+						\item Classification $\rightarrow$ the misclassification error rate
+					\end{itemize}
+				\item Every model with more predictors has a higher predictive power... \\
+					...but, we don't want to learn the noise on the data!
+				\item Create an independent test set
+					\begin{itemize}
+						\item Use most part (e.g. 70\%) of the data for training purposes
+						\item Use the rest for the model performance estimation $\rightarrow$ Test Error Rate
+					\end{itemize}
+			\end{itemize}
+		
+			\newpage
+				
+				
+				
+				
+				
 				
 \end{document}
