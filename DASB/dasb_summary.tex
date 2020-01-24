@@ -135,6 +135,18 @@ Data Science Basics}
 				\item Apply basic forecasting in R, given the datasource
 			\end{itemize}
 		
+		\paragraph{Forecasting Models: Usage / Application}
+		
+			\begin{itemize}
+				\item Presents the limits of the linear models
+				\item Define the way of extending linear models
+				\item Justify forecasting \& interpretation (phenomena comprehension) in data science, also by presenting examples
+				\item Present advantages and limits of the defined extensions
+				\item Presenting Parametric and Nonparametric idea in model definition (ML)
+				\item Indicate how EDA can support and scaffold the model identification
+				\item Apply more advanced forecasting in R, given the datasource
+			\end{itemize}
+		
 	\newpage
 	
 	\section{Introduction to Data Science}
@@ -804,9 +816,271 @@ ggplot(diamonds, aes(x=carat, y=price, color=cut)) +
 		
 			\newpage
 				
+	\section{Forecasting Models: Usage / Application}
+	
+		\subsection{Forecasting vs. Interpretation}
+		
+		\begin{itemize}
+			\item Linear model
+				\begin{itemize}
+					\item Rigid (strong assumptions about the relationship)
+						\begin{itemize}
+							\item Predictors can only be represented by variables
+							\item Predictors do not have interactions (can be analyzed separately)
+						\end{itemize}
+					\item $y = F(X) = \beta_0 + \beta_1 x_1 + \dots + \beta_n x_n$
+				\end{itemize}
+			
+			\item Two extensions:
+				\begin{itemize}
+					\item  Transformation applied to variables, to be used as predictor and/or output
+						\begin{itemize}
+							\item E.g.: $\log_2(y) = F(X) = \beta_0+ \beta_1 \sin x_1 + \dots + \beta_n e^{x_n}$
+							\item Formula $\rightarrow$ $y \sim I(\sin(x_1)) + \dots + I(\exp(x_n))$
+						\end{itemize}
+					\item Interaction between variables
+						\begin{itemize}
+							\item E.g.: $y = F(X) = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \beta_{1\_2} x_1 x_2$
+							\item Formula $\rightarrow$ $y \sim x_1 \cdot x_2$
+						\end{itemize}
+				\end{itemize}
+		\end{itemize}
+	
+		\subsection{Performance vs. Interpretability}
+		
+		\begin{itemize}
+			\item Every extension adds more predictive performances, but reduces interpretability.
+			\item Limits (boxes between Input $\rightarrow$ $\dots$ $\rightarrow$ Output):
+				\begin{itemize}
+					\item Pure linear model $\rightarrow$ white box
+					\item Complex extensions $\rightarrow$ black box
+					\item Intermediate $\rightarrow$ gray boxes
+				\end{itemize}
+		\end{itemize}
+	
+		\subsection{Parametric vs. non-Parametric models}
+		
+		\begin{itemize}
+			\item All linear models (ad extensions) are called \textbf{parametric} models:
+				\begin{itemize}
+					\item They make assumptions on the data distribution
+					\item Are bound to the amount they can learn, depending on the fixed number of parameters of the model
+					\item Other examples of parametric models are: \\
+					Logistic Regression, Polynomial Regression and Perception
+					\item A learning model that summarizes data with a et of parameters of fixed size (independent of the number of training examples) is called a parametric model.
+					No matter how much data you throw at a parametric model, it won't change its mind about how many parameters it needs.
+				\end{itemize}
+			\item More complex models from Machine Learning are \textbf{non-parametric}:
+				\begin{itemize}
+					\item Nonparametric methods are good when you have a lot of data and no prior knowledge, 
+						and when you don't want to worry too much about choosing just the right features.
+					\item The amount of information that the model is able to capture can grow with the increase in the amount of data analysed.
+					\item Examples of non-parametric models are: k-Nearest Neighbors (kNN), Decision Trees, Support Vector Machines, Neural Networks
+					\item They are normally more powerful (predictive power), but their interpretation is limited or basically impossible.
+				\end{itemize}
+		\end{itemize}
+			
+			\newpage
 				
+			\subsubsection{Pros and Cons (Param vs. non-Param)}
+			
+			\begin{figure}[htb!]
+				\centering
+				\includegraphics[width=\textwidth]{img/sw09/pro_con.png}
+			\end{figure}
+		
+			Rigidness (Bias) vs. Instability/Sensibility to data (Variance) tradeoff.
+			It depends on:
+			\begin{itemize}
+				\item the amount of data
+				\item the complexity and the underlying function/relationship to estimate
+			\end{itemize}
+		
+		\subsection{General approach to ML / Data Science}
+		
+		Mathwork guides about ML: \href{https://ch.mathworks.com/content/dam/mathworks/tag-team/Objects/i/88655_93014v00_machine_learning_section2_ebook.pdf}{Guide 1} and
+		\href{https://ch.mathworks.com/content/dam/mathworks/tag-team/Objects/i/90221_80827v00_machine_learning_section4_ebook_v03.pdf}{Guide 2}
+		
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=\textwidth]{img/sw09/ml_approach.png}
+		\end{figure}
+	
+		\subsection{An example (yup, that's the title)}
+		
+		\begin{itemize}
+			\item This example is based on a cell phone health-monitoring app.
+			\item The input consists of three-axial sensor data from the phone's accelerometer and gyroscope.
+			\item The responses (or output) are the activies performed: walking, standing, running, climbing stairs or lying down.
+				\begin{itemize}
+					\item \textbf{Supervised} = we have the classes
+					\item  \textbf{Unsupervised} = we would like to discover some structure, but don't have a real output variable
+				\end{itemize}
+			\item Supervised $\rightarrow$ Classification
+				\begin{itemize}
+					\item The trained model (or classifier) will be integrated into an app to help users track their activity levels throughout the day.
+				\end{itemize}
+		\end{itemize}
+	
+		\newpage
+		
+		The five steps:
+		\begin{itemize}
+			\item Step 1: Load the data
+			\item Step 2: Preprocess the data
+			\item Step 3: Derive features (predictors)
+			\item Step 4: Build and train the model
+			\item Step 5: Improve the model
+		\end{itemize}
+	
+			\subsubsection{Step 1: Load the Data}
+			
+			\begin{itemize}
+				\item To load data from the accelerometer and gyroscope, we need to do the following:
+					\begin{enumerate}
+						\item Sit down holding the phone, log data from the phone, and store it in a text file labeled "Sitting".
+						\item Stand up holding the phone, log data from the phone, and store it in a second text file labeled "Standing".
+						\item Repeat the steps until we have data for each activity we want to classify.
+					\end{enumerate}
+				\item We store the labeled data sets in a text file.
+				\item A flat file format such as text or CSV is easy to work with and makes it straightforward to import data.
+				\item Machine learning algorithms are not smart enough to tell the difference between noise and valuable information.
+				\item Before using the data for training, we need to make sure it's clean and complete.
+			\end{itemize}
+		
+			\subsubsection{Step 2: Preprocess the data}
+			
+			\begin{itemize}
+				\item We import the data into our environment and plot each labeled set.	
+					To preprocess the data we do the following:
+					\begin{enumerate}
+						\item Look for outliers $\rightarrow$ data points that lie outside the rest of the data
+							\begin{itemize}
+								\item We must decide whether the outliers can be ignored or whether they indicate a phenomenon that the model should account for.
+								\item In our example, they can safely be ignored (it turns out that we moved unintentionally while recording the data).
+							\end{itemize}
+						\item Check for missing values (perhaps we lost data because the connection dropped during recording).
+							\begin{itemize}
+								\item We could simply ignore the missing values, but this will reduce the size of the data set.
+									Alternatively, we could substitute approximations for the missing values by interpolating or using comparable data from another sample (data augmentation).
+							\end{itemize}
+						\item Remove gravitational effects from the accelerometer data so that our algorithm will focus on the movement of the subject, not the movement of the phone.
+							A simple high-pass filter such as a biquad filter is commonly used for this.
+						\item Create a training and test set (Also eventually a train-test-validation, e.g. 70\% / 20\% / 10\%)
+					\end{enumerate}
+			\end{itemize}
+			
+			\subsubsection{Step 3: Derive features (predictors)}
+			
+			\begin{itemize}
+				\item Deriving features turns raw data into information that a machine learning algorithm can use to learn the model.
+				\item For the activity tracker, we want to extract features that capture the frequency content of the accelerometer data.
+					These features will help the algorithm distinguish between walking (low frequency) and running (high frequency).
+					We create a new table that includes the selected features.
+				\item Derive as many features as you can think of.
+			\end{itemize}
+		
+			\newpage
+		
+			\begin{figure}[htb!]
+				\centering
+				\includegraphics[width=.9\textwidth]{img/sw09/step_03.png}
+				\caption{Common techniques used to derive features from data set}
+			\end{figure}
+			
+			\subsubsection{Step 4: Build and Train the Model}
+			
+			When building a model, it's a good idea to start with something simple;
+			It will be faster to run and easier to interpret.
+			We start with a basic decision tree.
+			
+			\begin{figure}[htb!]
+				\centering
+				\includegraphics[width=.5\textwidth]{img/sw09/step4_tree.png}
+			\end{figure}
+		\noindent
+			To see how well it performs, we plot the confusion matrix:
+		
+			\begin{figure}[htb!]
+				\centering
+				\includegraphics[width=.5\textwidth]{img/sw09/step4_matrix.png}
+			\end{figure}
+		\noindent
+			It gives us a 94.1\% correct classification rate on train.
+			Anyway, it also shows that our model is clearly having trouble distiguishing between dancing and running.
+			Maybe a decision tree doesn't work for this type of data.
+			Then, we will try a few different algorithms.
+			
+			\newpage
+			
+			K-nearest neighbors (KNN), a simple algorithm that compares new points to the training data and returns the most frequent class of the "K" nearest points.
+			That gives us 98\% accuracy compared to 94.1\% for the simple decision tree and a better confusion matrix.
+			
+			\begin{figure}[htb!]
+				\centering
+				\includegraphics[width=.45\textwidth]{img/sw09/step4_knn.png}
+			\end{figure}
+			
+			However, KNNs take a considerable amount of memory to run, since they require all training data to make a prediction.
+			We try a linear discriminant model, but that doesn't improve the results.
+			Finally, we try a multi-class support vector machine (SVM).
+			The SVM does very well - we now get 99\% accuracy.
+			
+			\begin{figure}[htb!]
+				\centering
+				\includegraphics[width=.45\textwidth]{img/sw09/step4_svm.png}
+			\end{figure}
+		
+			We achieved our goal by iterating on the model and trying different algorithms.
+			If our classifier still couldn't reliably differentiate between dancing and running, we'd look into ways to improve the model.
+			
+			\newpage
 				
-				
-				
+			\subsubsection{Step 5: Improve the model}
+			
+			Improving a model can take two different directions:
+			make the model simpler (simplify) or add complexity. \\
+		\noindent
+			First, we look for opportunities to reduce the number of features.
+			Popular feature reduction techniques include:
+			
+			\begin{itemize}
+				\item \textbf{Correlation matrix} - shows the relationship between variables, so that variables (or features), that are not highly correlated with the output, can be removed.
+				\item \textbf{Principal component analysis (PCA)} - eliminates redundancy by finding a combination of features that captures key distinctions between the original features and brings out strong patterns in the dataset.
+				\item \textbf{Sequential feature reduction} - reduces features iteratively on the model until there is no improvement in performance.
+			\end{itemize}
+		\noindent
+			Next, we look at way to reduce the model itself.
+			We can do this by:
+				\begin{itemize}
+					\item Pruning branches from a decision tree
+					\item Removing learners from an ensemble
+				\end{itemize}
+		\noindent
+			The other approach is to add Complexity:
+			\begin{itemize}
+				\item If our model can't differentiate dancing from running because it is over-generalizing, then we need to find ways to make it more fine-tuned.
+			\end{itemize}
+			To do this, we can either:
+			\begin{itemize}
+				\item \textbf{Use model combination} — merge multiple simpler models into a larger model that is better able to represent the trends in the data than any of the simpler models could on their own.
+				\item \textbf{Add more data sources} — look at the gyroscope data as well as the accelerometer data.
+					The gyroscope records the orientation of the cell phone during activity.
+					This data might provide unique signatures for the different activities;
+					e.g. there might be a combination of acceleration and rotation that's unique for running.
+			\end{itemize}
+			Once we've adjusted the model, we validate its performance on the test data that we set aside during preprocessing.
+			If the model can reliably classify activities on the test data, we're ready to move it to the phone and start tracking.
+		
+		\subsection{How to choose the right model (ML view)}
+		
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=\textwidth]{img/sw09/right_model.png}
+		\end{figure}
+	
+	\newpage
+	
+	\section{Next...}
 				
 \end{document}
