@@ -10,10 +10,10 @@ Persönliche Zusammenfassungen von Modulen der HSLU Informatik. Einige sind mehr
 - **PMRE**
 - **DL4G Questionnaire**
 - **DL4G** (ohne AlphaGo Teil aus SW11)
+- **DASB**
 
 ## Work in Progress
 
-- **DASB**
 
 ## Unfinished (and probably never will be)
 
