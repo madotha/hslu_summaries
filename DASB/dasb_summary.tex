@@ -147,6 +147,16 @@ Data Science Basics}
 				\item Apply more advanced forecasting in R, given the datasource
 			\end{itemize}
 		
+		\paragraph{Ethics in Data Science}
+		
+			\begin{itemize}
+				\item List ethical issues with big data analytics
+				\item Know the conditions for processing of personal data
+				\item Know the Rights of Individuals regarding personal data processing
+				\item Provide recommendations for more ethical data science
+				\item Being able to analyze a given case and provide conclusion on the ethical aspects involved
+			\end{itemize}
+		
 	\newpage
 	
 	\section{Introduction to Data Science}
@@ -1081,6 +1091,211 @@ ggplot(diamonds, aes(x=carat, y=price, color=cut)) +
 	
 	\newpage
 	
-	\section{Next...}
+	\section{Ethics in Data Science}
+	
+		\subsection{Data Ethics}
+		
+		\begin{itemize}
+			\item Data ethics is an emerging branch of applied ethics.
+			\item It describes the value judgements and approaches we make when generating, analysing and disseminating data.
+			\item This includes:
+				\begin{itemize}
+					\item a sound knowledge of data protection law and other relevant legislation
+					\item the appropriate use of new technologies
+				\end{itemize}
+			\item UK Data Ethics Framework (\href{https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/737137/Data_Ethics_Framework.pdf}{\textit{\underline{Link}}})
+		\end{itemize}
+	
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=.5\textwidth]{img/sw11/ethical_position.png}
+		\end{figure}
+	
+		\subsection{Big Data Analytics and Data Science}
+	
+		\begin{itemize}
+			\item Some of the distinctive aspects of big data analytics are:
+				\begin{itemize}
+					\item the use of algorithms
+					\item the opacity of the processing
+					\item the tendency to collect "all the data"
+					\item the re-purposing of data
+					\item the use of new types of data
+				\end{itemize}
+			\item Types of data:
+				\begin{itemize}
+					\item \textbf{Provided data} is consciously given by individuals, e.g. when filling in an online form
+					\item \textbf{Observed data} is recorded automatically, e.g. by online cookies or sensors or CCTV linked to facial recognition
+					\item \textbf{Derived data} is produced from other data in a relatively simple and straightforward fashion, e.g. calculating customer profitability
+				\end{itemize}
+		\end{itemize}
+	
+		\subsection{Possible problems with data science}
+		
+		\begin{itemize}
+			\item Some types of big data analytics, such as profiling, can have intrusive effects on individuals
+				\begin{itemize}
+					\item it may use personal data to make decisions affecting individuals
+					\item e.g. credit limits, but also promotions ("people analytics")
+				\end{itemize}
+			\item Organisations need to consider whether the use of personal data in big data applications is within people's reasonable expectations
+			\item The complexity of the methods of big data analysis, such as machine learning, can make it difficult for organizations to be transparent about the processing of personal data.
+		\end{itemize}
+	
+		\newpage
+	
+		\subsection{Ethical concerns about personal data}
+		
+		\begin{itemize}
+			\item \textbf{Surveillance}\\
+				A 2013 study by the Wellcome Trust, consisting of focus groups and telephone interviews, found there to be a \textit{"widespread wariness" about being spied on} by the government, corporations and criminals.
+			\item \textbf{Discrimination}\\
+				The same study revealed concerns about \textit{possible discrimination against people} based on medical data, for instance where such data is shared with employers who might make discriminatory decisions about people because of mental health issues.
+			\item \textbf{Consent}\\
+				An online survey conducted by Demos in 2012 found that people's top concern for personal data use was about \textit{companies using it without their consent}.
+			\item \textbf{Data sharing}\\
+				The Institute for Insight in the Public Services conducted a telephone survey in 2008 which revealed that while people are generally happy for their personal data to be held by one organisation, they are concerned when it is shared with others.
+				These concerns centered on \textit{loss of control over personal data} and fears that \textit{errors in the data would be perpetuated through sharing}.
+		\end{itemize}
+	
+		\subsection{Conditions for processing personal data}
+		
+		\begin{enumerate}
+			\item \textbf{Consent} must be a freely given, specific and informed indication that subjects agree to the data processing.
+			\item Data processing must be necessary for the \textbf{legitimate interests of the organization} collecting the data.
+			\item Data processing must be \textbf{necessary for the performance of a contract} to which the data subject is a party.
+		\end{enumerate}
+	\vspace{1em}
+	\noindent
+		Big data analysis carried out in the public sector may be legitimized by other conditions, for instance where processing is necessary for the exercise of functions of a government department.
+		
+		\subsection{Purpose Limitation}
+		
+		\begin{itemize}
+			\item The purpose limitation principle does not necessarily create a barrier for big data analytics, but it means an \textbf{assessment of compatibility} of processing purposes must be done.
+				\begin{itemize}
+					\item First, the \textbf{purpose} for which the data is collected must be specified and lawful.
+					\item Second, if the data is further processed for any other purpose, it \textbf{must not be incompatible with the original purpose}.
+					\item If an organization is buying personal data from elsewhere for big data analytics, it needs to \textbf{practice} \href{https://en.wikipedia.org/wiki/Due_diligence}{\textit{\textbf{due diligence}}}.
+						It will need to assess whether the new processing is incompatible with the original purpose for which the data was collected.
+				\end{itemize}
+			\item \textbf{Fairness} is a key factor in determining whether big data analysis is incompatible with the original processing purpose. 
+		\end{itemize}
+	
+		\subsection{Data Minimization: Collection \& Retention}
+		
+		\begin{itemize}
+			\item Big data analytics can result in the collection of personal data that is excessive for the processing purpose.
+			\item Organizations may be encouraged to retain personal data for longer than necessary because big data applications are capable of analyzing large volumes of data.
+		\end{itemize}
+	
+		\newpage
+	
+		\subsection{Accuracy}
+		
+		\begin{itemize}
+			\item There are implications regarding the \textbf{accuracy} of personal data at all stages of a big data project: collection analysis and application.
+				\begin{itemize}
+					\item Personal data must be accurate and, where necessary, kept up to date
+				\end{itemize}
+			\item Results of data analysis may not be \textbf{representative} of the population as a whole.
+			\item \textbf{Hidden biases} in data sets can lead to inaccurate predictions about individuals.
+		\end{itemize}
+	
+		\subsection{Rights of Individuals}
+		
+		\begin{itemize}
+			\item The vast quantities of data used in big data analytics may make it more difficult for organisations to comply with the \textbf{right of access to personal data}.
+			\item People have the right to be told:
+				\begin{itemize}
+					\item What personal data about them is being processed.
+					\item The purposes for which it is being processed.
+					\item Who it may be disclosed to.
+					\item They have the right to receive a copy of the information that constitutes their personal data, as well as information about its sources.
+				\end{itemize}
+			\item Organisations will need to have appropriate processes in place to deal with the GDPR's extension of \textbf{rights regarding decisions based on automated processing}.
+			\item People have the \textbf{right not to be subject to a decision based solely on automated processing}, including profiling, if it "significantly affects" them, such as automated decisions made on online credit applications, VISA emission or e-recruitement.
+		\end{itemize}
+	
+		\subsection{Security}
+		
+		\begin{itemize}
+			\item There are several \textbf{information security risks} specific to big data analytics.
+				\begin{itemize}
+					\item E.g. the high level of replication in big data storage and the frequency of outsourcing the analytics increase the risk of breaches, data leakages and degradation; also, the creation of links between the different datasets could increase the impact of breaches and leakages.
+				\end{itemize}
+			\item Organisations need to recognize these new risks and put in place appropriate security measures. (\href{https://ico.org.uk/media/for-organisations/documents/1540/cloud_computing_guidance_for_organisations.pdf}{Link for Cloud Computing})
+		\end{itemize}
+	
+		\subsection{Accountability and Governance}
+		
+		\begin{itemize}
+			\item \textbf{Accountability} is increasingly important for big data analytics and will become an explicit requirement under the GDPR.
+				\begin{itemize}
+					\item Records of processing activities must be maintained when processing personal data that could result in a risk to individuals' rights and freedoms.
+				\end{itemize}
+			\item Big data organisations may need to \textbf{make changes to their reporting structures}, internal record keeping and resource allocation.
+			\item Machine learning algorithms have the potential to make decisions that are \textbf{discriminatory, erroneous and unjustified}.
+			\item \textbf{Data quality} is a key issue for those with information governance responsibilities in a big data context.
+		\end{itemize}
+	
+		\subsection{Data Controllers \& Data Processors}
+		
+		\begin{itemize}
+			\item Big data analytics can make it difficult to distinguish between \textit{data controllers} and \textit{data processors}.
+			\item A data controller has \textbf{overall control over the processing of personal data} - it determines the purposes and manner of the processing, either on its own, jointly or in common with another data controller.
+			\item A data processor does not have such control - it merely \textbf{processes personal data on a data controller's behalf}.
+			\item Organizations outsourcing analytics to companies specializing in AI and machine learning need to consider carefully who has control over the processing of any personal data.
+		\end{itemize}
+	
+		\newpage
+		
+		\subsection{Key Recommendations}
+		
+			\subsubsection{Anonymization}
+			
+			\begin{itemize}
+				\item Carefully \textbf{consider} whether the big data analytics to be undertaken actually requires the processing of personal data.
+				\item Ofthen, this will not be the case; in such circumstances, organizations should use appropriate techniques to \textbf{anonymize} the personal data in their dataset(s) before analysis.
+			\end{itemize}
+		
+			\subsubsection{Privacy Notices}
+			
+			\begin{itemize}
+				\item Be \textbf{transparent} about their processing of personal data by using a combination of innovative approaches in order to provide meaningful privacy notices at appropriate stages throughout a big data project.
+				\item This may include the use of icons, just-in-time notifications and layered privacy notices.
+				\item The processing of personal data cannot be considered \textbf{fair} unless the data subject is given some basic information about it, including the data controller's identity, the purpose of the processing and any other information necessary.
+				\item Ticking a box to say "I have read and agreed to the terms and conditions" has been described as \textbf{"the biggest lie on the web"}.
+			\end{itemize}
+		
+			\subsubsection{Privacy Impact Assessment}
+			
+			\begin{itemize}
+				\item Embed a \textbf{privacy impact assessment framework} into the big data processing activities to help identify privacy risks and assess necessity and proportionality of a given project.
+				\item The privacy impact assessment should involve \textbf{input from all relevant parties} including data analysts, compliance officers, board members and the public.
+			\end{itemize}
+	
+			\subsubsection{Privacy by Design}
+			
+			\begin{itemize}
+				\item Adopt a privacy by design approach in the development and application of their big data analytics.
+				\item This should include implementing \textbf{technical and organizational measures} to address matters including \textit{data security, data minimization and data segregation}.
+			\end{itemize}
+		
+			\subsubsection{Ethical Approaches}
+			
+			\begin{itemize}
+				\item Develop ethical principles to help reinforce key data protection principles.
+				\item Employees in smaller orgaisations should use these \textbf{principles as a reference point} when working on big data projects.
+					Conversely, larger organizations (e.g. IBM, Accenture are doing it) should create ethics boards to help scrutinise projects and assess complex issues arising from big data analytics.
+			\end{itemize}
+		
+			\subsubsection{Algorithmic Transparency}
+			
+			\begin{itemize}
+				\item Implement innovative techniques to develop \textbf{auditable} machine learning algorithms \\
+					($\rightarrow$ explainable AI)
+				\item Internal and external audits should be undertaken with a view to \textbf{explaining the rationale behind algorithmic decisions} and checking for bias, discrimination and errors.
+			\end{itemize}
 				
 \end{document}
