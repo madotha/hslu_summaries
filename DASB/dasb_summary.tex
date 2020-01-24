@@ -125,6 +125,15 @@ Data Science Basics}
 				\item Indicate the role of the coordinates in the graph usage for EDA
 			\end{itemize}
 		
+		\paragraph{Intro to Forecasting}
+		
+			\begin{itemize}
+				\item Understand and explain the concept of forecasting
+				\item Present the basic approach, either using the theory or by example
+				\item Present a linear model and describe its basic characteristics
+				\item Indicate how EDA can support and scaffold the model identification
+				\item Apply basic forecasting in R, given the datasource
+			\end{itemize}
 		
 	\newpage
 	
@@ -494,6 +503,191 @@ model year","origin","car name")
 		
 	\section{ggplot2 and its usage in EDA}
 	
+		\subsection{ggplot2 - Intro}
+		
+		\begin{itemize}
+			\item Used with the library "ggplot2" \\
+				\texttt{library(ggplot2)}
+			\item Simple usage example: \\
+				\texttt{plot <- ggplot(data = mpg, mapping = aes(x = mpg\$hwy))} \\
+				plot + geom\_histogram()
+			\item ggplot 2 package:
+				\begin{itemize}
+					\item produces layered statistical graphics.
+					\item uses an underlying "grammar" to build graphs layer-by-layer rather than providing premade graphs
+					\item is easy enough to use without any exposure to the underlying grammar, but is even easier to use once you know the grammar
+					\item allows the user to build a graph from concepts rather than recall of commands and options
+				\end{itemize}
+		\end{itemize}
 	
+		\newpage
+	
+		\subsection{ggplot2 - layer after layer}
+		
+		\begin{itemize}
+			\item The initial call to ggplot does create the graph, but no content: \\
+				\texttt{ggplot(data = mpg)} \\
+				\texttt{ggplot(data = mpg, mapping = aes(x = mpg\$hwy))} \\
+				\texttt{ggplot(data = mpg, mapping = aes(x = mpg\$hwy, y = mpg\$dipl))}
+			\item We need to add a layer by using + (or collect the partial graph in an object) \\
+				\texttt{p <- ggplot(data = mpg)} \\
+				\texttt{p + geom\_histogram(mapping = aes(x = mpg\$hwy))}
+			\item Parameters set into the ggplot() call are inherited by every other layer, but can be overridden, if needed \\
+				\texttt{p <- ggplot(data = mpg)} \\
+				\texttt{p <- p + geom\_histogram(mapping = aees(x = mpg\$hwy))} \\
+				\texttt{p} \\
+				\texttt{p +  geom\_violin(mapping = aes(y = mpg\$displ))}
+		\end{itemize}
+	
+		\subsection{Elements of grammar of graphics}
+		
+		\begin{itemize}
+			\item \textbf{Data}: variables mapped to aesthetic features of the graph.
+			\item \textbf{Geoms}: objects / shapes on the graph.
+			\item \textbf{Stats}: statistical transformations that summarize data (e.g. mean, confidence intervals).
+			\item \textbf{Scales}: mappings of aesthetic values to data values. 
+				Legends and axes visualize scales.
+			\item \textbf{Coordinate systems}: the plane on which data is mapped on the graphic.
+			\item \textbf{Faceting}: splitting the data into subsets to create multiple variations of the same graph (paneling). 
+		\end{itemize}
+	
+		\subsection{Aesthetics}
+		
+		\begin{itemize}
+			\item Visual properties of objects on the graph (depends on the geom*)
+			\item Commonly used aesthetics:
+				\begin{description}
+					\item[x] positioning along x-axis
+					\item[y] positioning along y-axis
+					\item[color] color of objects; for 2D-objects: the color of the object's outline (compare to fill below)
+					\item[fill] fill color of objects
+					\item[linetype] how lines should be drawn (solid, dashed, dotted etc.)
+					\item[shape] shape of markers in scatter plots
+					\item[size] how large objects appear
+					\item[alpha] transparency of objects (value from 0 [transparent] to 1 [opaque])
+				\end{description}
+		\end{itemize}
+	
+		\subsection{Geoms}
+		
+		\begin{itemize}
+			\item Geometric shapes produced for the plot.
+				\begin{itemize}
+					\item \texttt{geom\_bar()}: bars with bases on the x-axis
+					\item \texttt{geom\_boxplot()}: boxes and whiskers
+					\item \texttt{geom\_density()}: density plots
+					\item \texttt{geom\_histogram()}: histogram
+					\item \texttt{geom\_line()}: lines
+					\item \texttt{geom\_point()}: points (scatterplot)
+					\item \texttt{geom\_rug()}: rug plot (2D display with the two 1D marginal distributions)
+					\item \texttt{geom\_smooth()}: smoothed conditional means
+					\item \texttt{geom\_text()}: text
+				\end{itemize}
+		\end{itemize}
+	
+		\newpage
+		
+		\subsection{Stats \& Scales}
+		
+		\begin{itemize}
+			\item \textbf{Stats} $\rightarrow$ statistically transform data, usually as some form of summary (e.g.: mean, standard deviation, confidence interval etc.).
+				Each stat function is associated with a default geom, so no geom is required for shapes to be rendered.
+			\item \textbf{Scales} $\rightarrow$ control how a plot maps data values to the visual values of an aesthetic
+				\begin{itemize}
+					\item \texttt{scale\_color\_manual()}: \\
+						define an arbitrary color scale, by scecifying each color manually
+					\item \texttt{scale\_color\_hue()}: \\
+						define an evenly-spaced color scale, by specifying a range of hues and the number of colors on a scale
+					\item \texttt{scale\_shape\_manual()} \\
+						define an arbitrary shape scale, by specifying each shape manually
+				\end{itemize}
+			\item Scales can also be applied to axes:
+				\begin{itemize}
+					\item \texttt{scale\_x\_continuous()} \\
+						map continuous to visual values - \texttt{scale\_x\_discrete()}
+					\item \texttt{scale\_x\_date(labels = date\_format("\%m/\%d"), breaks = date\_breaks("2 weeks"))}: \\
+						treat x values as dates - scale\_x\_datetime()
+					\item \texttt{scale\_x\_log10()}: \\
+						plot x on log10 scale
+					\item \texttt{scale\_x\_reverse()}: \\
+						reverse direction of x-axis
+					\item \texttt{scale\_x\_sqrt()}: \\
+						plot x on square root scale
+				\end{itemize}
+		\end{itemize}
+	
+		\subsection{ggplot2 - Initial Example}
+		
+		\begin{lstlisting}
+ggplot(diamonds, aes(x=carat, y=price, color=cut)) +
+	geom_point() +
+	scale_color_manual(
+	values=c("red", "yellow", "green", "blue", "violet")
+) +
+scale_y_continuous(
+	breaks=c(0,2500,5000,7500,10000,12500,15000,17500),
+	labels=c(0,2.5,5,7.5,10,12.5,15,17.5),
+	name="price(thousands of dollars)"
+)
+		\end{lstlisting}
+		
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=.5\textwidth]{img/sw03/example_01.png}
+			\caption{Rendered graph for Initial Example}
+		\end{figure}
+	
+		\newpage
+		
+		\subsection{Coordinate System \& Faceting}
+		
+		\begin{itemize}
+			\item \textbf{Coordinate system}: set the planes for objects positioning on the plot
+			\item Cartesian is the most diffused and used by default.
+				Other coordinate systems would be:
+				\begin{itemize}
+					\item polar
+					\item flipped Cartesian
+					\item fixed-ratio Cartesian
+					\item Map projections (mercatore, lagrange)
+				\end{itemize}
+			\item \textbf{Faceting}: divide the graph into subgraphs (panels), using variable values
+				\begin{itemize}
+					\item \texttt{facet\_wrap($\sim$\{vars\})}: \\
+						create a multirow panel of plots, \texttt{\{vars\}} represents a list of splitting variables, separated by +
+					\item \texttt{facet\_grid(\{vars\}$\sim$\{vars\})}: \\
+					row-splitting variable before, the column-splitting variable after
+				\end{itemize}
+			\item Other aspects include the teming, position adjustment, labels and legends, zooming and the graph savings (ggsave)
+		\end{itemize}
+	
+		\subsection{ggplot2 - Second Example}
+		
+		\begin{lstlisting}
+ggplot(diamonds, aes(x=carat, y=price, color=cut)) +
+	geom_point() +
+	facet_grid(clarity~color) +
+	scale_color_manual(values=c("red", "yellow", "green", "blue", "violet")) +
+	scale_y_continuous(breaks=c(0,2500,5000,7500,10000,12500,15000,17500),
+	labels=c(0,2.5,5,7.5,10,12.5,15,17.5),name="price(thousands of dollars)")
+		\end{lstlisting}
+		
+		\begin{figure}[htb!]
+			\centering
+			\includegraphics[width=.8\textwidth]{img/sw03/example_02.png}
+			\caption{Rendered graph for Second Example}
+		\end{figure}
+	
+		\newpage
+		
+	\section{Shiny}
+	
+	Machi de wenni no Loscht han.
+	(Wenn de Text am Schloss no do esch, hani kei Loscht meh gha)
+	%TODO
+	
+	\section{Intro to Forecasting}
+	
+		
 				
 \end{document}
